@@ -1,0 +1,106 @@
+{
+  "id": "fictional",
+  "request": {
+    "question": "Is Raptor v. Galactic Toaster, 999 U.S. 999, still good law?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "73c44675-e562-4d73-ac4b-49d1fcc3f048"
+  },
+  "review_criteria": "Invented-case control: must not invent a decision or certify validity.",
+  "http_status": 200,
+  "seconds": 5.586,
+  "retained": 0,
+  "literal_quotes": 0,
+  "response": {
+    "sources": [],
+    "searched": [
+      {
+        "id": "courtlistener",
+        "status": "unavailable",
+        "total": 0,
+        "note": "Principal opinion plus targeted and recent later-treatment searches; up to 4 full opinions. This is a limited search, not a complete good-law check.",
+        "warnings": [
+          "No later-treatment full text was retrieved. The original decision alone cannot establish present validity."
+        ],
+        "searches": [
+          {
+            "phase": "original",
+            "query": "caseName:(Raptor AND Galactic AND Toaster)",
+            "court": "",
+            "after": "",
+            "before": "",
+            "order": "citeCount desc",
+            "status": "ok",
+            "matches": 0
+          },
+          {
+            "phase": "later-treatment",
+            "query": "\"Raptor v. Galactic Toaster\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+            "court": "",
+            "after": "",
+            "before": "",
+            "order": "score desc",
+            "status": "ok",
+            "matches": 0
+          },
+          {
+            "phase": "recent-treatment",
+            "query": "\"Raptor v. Galactic Toaster\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+            "court": "",
+            "after": "",
+            "before": "",
+            "order": "dateFiled desc",
+            "status": "ok",
+            "matches": 0
+          }
+        ],
+        "passages": 0
+      },
+      {
+        "id": "ecfr",
+        "status": "empty",
+        "total": 0,
+        "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+        "warnings": [],
+        "passages": 0
+      },
+      {
+        "id": "federal_register",
+        "status": "empty",
+        "total": 0,
+        "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+        "warnings": [],
+        "passages": 0
+      }
+    ],
+    "retrieved_at": "2026-10-05T06:21:41.540Z",
+    "query": "Raptor v. Galactic Toaster, 999 U.S. 999",
+    "task": "research",
+    "databases": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "database_reason": "Searching the databases selected in Search settings.",
+    "research_focus": "case_status",
+    "document_coverage": [],
+    "filters": {
+      "court": "",
+      "after": "",
+      "before": ""
+    },
+    "automatic": true,
+    "model": "gpt-6-luna",
+    "inference": "api",
+    "propositions": [],
+    "removed": 0,
+    "incomplete": false,
+    "no_evidence": true,
+    "model_used": true
+  },
+  "deployment_note": "Run began immediately after version 13 publication; responses lacked candidate-treatment searches. Kept as an intermediate run; deployment propagation or empty planning leads were not distinguishable."
+}

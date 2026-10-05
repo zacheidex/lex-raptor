@@ -1,0 +1,391 @@
+{
+  "id": "roe",
+  "request": {
+    "question": "What is the current status of Roe vs Wade?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "f2a43b3f-4122-4ea2-bb56-81cef2536987"
+  },
+  "seconds": 11.365,
+  "events": [
+    {
+      "seconds": 0.223,
+      "stage": "accepted",
+      "message": "Starting research\u2026"
+    },
+    {
+      "seconds": 0.223,
+      "stage": "planning",
+      "message": "Planning the research\u2026"
+    },
+    {
+      "seconds": 3.935,
+      "stage": "plan",
+      "message": "Searching selected databases\u2026",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "reason": "Searching the databases selected in Search settings."
+    },
+    {
+      "seconds": 3.935,
+      "stage": "searching",
+      "database": "courtlistener",
+      "message": "Searching CourtListener\u2026"
+    },
+    {
+      "seconds": 3.935,
+      "stage": "searching",
+      "message": "Finding the principal opinion\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 3.935,
+      "stage": "searching",
+      "database": "ecfr",
+      "message": "Searching eCFR\u2026"
+    },
+    {
+      "seconds": 3.935,
+      "stage": "searching",
+      "database": "federal_register",
+      "message": "Searching Federal Register\u2026"
+    },
+    {
+      "seconds": 4.037,
+      "stage": "reading",
+      "message": "Reading Roe v. Wade\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 4.411,
+      "stage": "source_complete",
+      "database": "ecfr",
+      "message": "eCFR: 6 passages retrieved."
+    },
+    {
+      "seconds": 4.818,
+      "stage": "source_complete",
+      "database": "federal_register",
+      "message": "Federal Register: 9 passages retrieved."
+    },
+    {
+      "seconds": 5.324,
+      "stage": "searching",
+      "message": "Searching for later treatment\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 5.811,
+      "stage": "reading",
+      "message": "Reading Dobbs v. Jackson Women's Health Organization\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 5.812,
+      "stage": "reading",
+      "message": "Reading June Medical Services L. L. C. v. Russo\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 8.534,
+      "stage": "searching",
+      "message": "Searching for later treatment\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 8.534,
+      "stage": "reading",
+      "message": "Reading Mirabelli v. Bonta\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 9.103,
+      "stage": "source_complete",
+      "database": "courtlistener",
+      "message": "CourtListener: 12 passages retrieved."
+    },
+    {
+      "seconds": 9.103,
+      "stage": "drafting",
+      "message": "Writing an answer from 9 source passages\u2026"
+    },
+    {
+      "seconds": 11.331,
+      "stage": "checking",
+      "message": "Checking source quotations\u2026"
+    }
+  ],
+  "retained": 2,
+  "literal_quotes": 2,
+  "response": {
+    "sources": [
+      {
+        "case_id": "cl-6353492",
+        "name": "Dobbs v. Jackson Women's Health Organization",
+        "citation": "597 U.S. 215; 213 L. Ed. 2d 545; 142 S. Ct. 2228",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2022-06-24",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/6481357/dobbs-v-jackson-womens-health-organization/",
+        "official_url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "later-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S1",
+        "text": "iction on abortion violates this Court\u2019s cases forbidding States to ban abortion pre-viabil- ity. The Fifth Circuit affirmed. Before this Court, petitioners defend the Act on the grounds that Roe and Casey were wrongly decided and that the Act is constitutional because it satisfies rational-basis review. Held: The Constitution does not confer a right to abortion; Roe and Casey are overruled; and the authority to regulate abortion is returned to the people and their elected representatives. Pp. 8\u201379. (a) The critical question is whether the Constitution, properly un- derstood, confers a right to obtain an abortion. Casey\u2019s controlling opinion skipped over that question and reaffirmed Roe solely on the basis of stare decisis. A proper application of stare decisis, however, requires an assessment of the strength of the grounds on which Roe 2 DOBBS v. JACKSON WOMEN\u2019S HEALTH ORGANIZATION Syllabus was based. The Court therefore turns to the question that the Casey plurality did not consider. Pp. 8\u201332. (1) First, the Court reviews the standard that the Court\u2019s cases have used to determine whether the Fourteenth Amendment\u2019s refer- ence to \u201cliberty\u201d protects a particular right. The Constitution makes no express reference to a right to obtain an abortion, but several con- stitutional provisions have been offered as potential homes for an im- plicit constitutional right. Roe held that the abortion right is part of a right to privacy that springs from the First, Fourth, Fifth, Ninth, and Fourteenth Amendments. See 410 U. S., at 152\u2013153. The Casey Court grounded its decision solely on the theory that the right to obtain an abortion is part of the \u201cliberty\u201d protected by the Fourteenth Amend- ment\u2019s Due Process Clause. Others have suggested that support can be found in the Fourteenth ",
+        "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+        "original_id": "cl-6353492:1600"
+      },
+      {
+        "case_id": "ecfr-43-51.27-2026-10-01",
+        "name": "Subsistence taking of fish.",
+        "citation": "43 CFR 51.27",
+        "court": "Public Lands: Interior",
+        "decision_date": "2026-10-01",
+        "opinion_type": "Regulation",
+        "source_url": "https://www.ecfr.gov/on/2026-10-01/title-43/section-51.27",
+        "database_id": "ecfr",
+        "database_name": "eCFR",
+        "kind": "regulation",
+        "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+        "id": "S2",
+        "text": "titude, 152\u00b028.15\u2032 West longitude, to a marker located onshore south of the river mouth at approximately 57\u00b045.15\u2032 North latitude, 152\u00b028.65\u2032 West longitude. (C) In Afognak Bay north and west of a line from the tip of Last Point to the tip of River Mouth Point. (iv) You must have a subsistence fishing permit for taking salmon, trout, and char for subsistence purposes. You must have a subsistence fishing permit for taking herring and bottomfish for subsistence purposes during the State commercial herring sac roe season from April 15 through June 30. (v) The annual limit for a subsistence salmon fishing permit holder is as follows: (A) In the road-accessible Zone (Northeastern Kodiak Island), east of the line from Crag Point south to the westernmost point of Saltery Cove, including the inland waters of Spruce, Woody, and Long Islands, and the Federal marine waters of and around Womens Bay, 25 salmon for the permit holder plus an additional 25 salmon for each member of the same household whose names are listed on the permit; an additional permit may be obtained upon request. (B) In the remainder of the Kodiak Area not described in paragraphs (e)(9)(iii)(A) and (e)(9)(v)(A) of this section, there is no annual harvest limit for a subsistence salmon fishing permit holder. (vi) You must record on your subsistence permit the number of subsistence fish taken. You must record all harvested fish prior to leaving the fishing site and must return the permit by the due date marked on the permit. (vii) You may take fish other than salmon by gear listed in this part unless restricted under the terms of a subsistence fishing permit. (viii) You may take salmon only by gillnet, rod and reel, or seine. (ix) You must be physically present at the net when the net is being fished. (10) Cook I",
+        "locator": "Whitespace-normalized extracted text, characters 44801\u201346600",
+        "original_id": "ecfr-43-51.27-2026-10-01:44800"
+      },
+      {
+        "case_id": "fr-2024-30300",
+        "name": "Bill of Rights Day, 2024",
+        "citation": "89 FR 102673",
+        "court": "Executive Office of the President",
+        "decision_date": "2024-12-18",
+        "opinion_type": "Presidential Document",
+        "source_url": "https://www.federalregister.gov/documents/2024/12/18/2024-30300/bill-of-rights-day-2024",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-12-18/pdf/2024-30300.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Presidential Document; no effective date supplied; verify operative status in the official edition",
+        "id": "S3",
+        "text": "ginal sin of slavery to giving women the right to vote. But freedom is never guaranteed--every generation has had to defend and fight for it. In recent years, long- established civil rights principles and protections have been undermined and challenged. The Supreme Court gutted the Voting Rights Act in 2013, opening the floodgates to a new wave of restrictive voting laws that States across the country have passed. Anti- LGBTQI+ rights bills have emboldened discrimination against Americans for who they are and whom they love. And in 2022, the Court overruled Roe v. Wade and took away the constitutional right to choose, which had been the law of the land for nearly 50 years. As President, I made it my mission to protect our democracy and the freedoms it guarantees. When the Supreme Court overturned Roe v. Wade, I took executive action to protect women's access to reproductive health care. To protect the will of the people, right to vote, and have that vote counted--which is the threshold of democracy and liberty--I signed the Electoral Count Reform Act to ensure the peaceful transfer of power. And to protect the civil rights and liberties of LGBTQI+ Americans, I signed the landmark Respect for Marriage Act, upholding the rights of same-sex and interracial couples. But there is still more to do to ensure that our Nation respects the civil rights and liberties of all Americans. I continue to call on the Congress to restore the protections of Roe v. Wade in Federal law and pass the Freedom to Vote Act and the John Lewis Voting Rights Advancement Act. On Bill of Rights Day, we recommit to protecting and expanding Americans' civil rights and liberties. We must continue fighting for progress and following our Nation's north star, securing dignity and respect for all Americans. ",
+        "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+        "original_id": "fr-2024-30300:1600"
+      },
+      {
+        "case_id": "cl-9889188",
+        "name": "June Medical Services L. L. C. v. Russo",
+        "citation": "140 S. Ct. 2103; 207 L. Ed. 2d 566",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2020-06-29",
+        "opinion_type": "lead-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/4764452/june-medical-services-l-l-c-v-russo/",
+        "official_url": "",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "later-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S4",
+        "text": "pments, and the reliance interests that the precedent has engendered. See Janus v. State, County, and Municipal Employees, 585 U. S. ----, ---- - ----, 138 S.Ct. 2448, 201 L.Ed.2d 924 (2018) (slip op., at 34-35). Stare decisis principles also determine how we handle a decision that itself departed from the cases that came before it. In those instances, \"[r]emaining true to an 'intrinsically sounder' doctrine established in prior cases better serves the values of stare decisis than would following\" the recent departure. *2135Adarand Constructors, Inc. v. Pe\u00f1a , 515 U.S. 200, 231, 115 S.Ct. 2097, 132 L.Ed.2d 158 (1995) (plurality opinion). Stare decisis is pragmatic and contextual, not \"a mechanical formula of adherence to the latest decision.\" Helvering v. Hallock , 309 U.S. 106, 119, 60 S.Ct. 444, 84 L.Ed. 604 (1940). II A Both Louisiana and the providers agree that the undue burden standard announced in Casey provides the appropriate framework to analyze Louisiana's law. Brief for Petitioners in No. 18-1323, pp. 45-47; Brief for Respondent in No. 18-1323, pp. 60-62. Neither party has asked us to reassess the constitutional validity of that standard. Casey reaffirmed \"the most central principle of Roe v. Wade ,\" \"a woman's right to terminate her pregnancy before viability.\" Casey , 505 U.S. at 871, 112 S.Ct. 2791 (plurality opinion).1 At the same time, it recognized that the State has \"important and legitimate interests in ... protecting the health of the pregnant woman and in protecting the potentiality of human life.\" Id., at 875-876, 112 S.Ct. 2791 (internal quotation marks and brackets omitted). To serve the former interest, the State may, \"[a]s with any medical procedure,\" enact \"regulations to further the health or safety of a woman seeking an abortion.\" Id., at 8",
+        "locator": "Whitespace-normalized extracted text, characters 75201\u201377000",
+        "original_id": "cl-9889188:75200"
+      },
+      {
+        "case_id": "ecfr-43-51.27-2026-10-01",
+        "name": "Subsistence taking of fish.",
+        "citation": "43 CFR 51.27",
+        "court": "Public Lands: Interior",
+        "decision_date": "2026-10-01",
+        "opinion_type": "Regulation",
+        "source_url": "https://www.ecfr.gov/on/2026-10-01/title-43/section-51.27",
+        "database_id": "ecfr",
+        "database_name": "eCFR",
+        "kind": "regulation",
+        "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+        "id": "S5",
+        "text": "\u00a7 51.27 Subsistence taking of fish. (a) Applicability. (1) Regulations in this section apply to the taking of fish or their parts for subsistence uses. (2) You may take fish for subsistence uses at any time by any method unless you are restricted by the subsistence fishing regulations found in this section. The harvest limit specified in this section for a subsistence season for a species and the State harvest limit set for a State season for the same species are not cumulative, except as modified by regulations in paragraph (e) of this section. This means that if you have taken the harvest limit for a particular species under a subsistence season specified in this section, you may not, after that, take any additional fish of that species under any other harvest limit specified for a State season. (3) You may not possess, transport, give, receive, or barter subsistence-taken fish or their parts that have been taken contrary to Federal law or regulation or State law or regulation (unless superseded by regulations in this part). (b) Methods, means, and general restrictions. (1) Unless otherwise specified in this section or under terms of a required subsistence fishing permit (as may be modified by regulations in this section), you may use the following legal types of gear for subsistence fishing: (i) A set gillnet; (ii) A drift gillnet; (iii) A purse seine; (iv) A hand purse seine; (v) A beach seine; (vi) Troll gear; (vii) A fish wheel; (viii) A trawl; (ix) A pot; (x) A longline; (xi) A fyke net; (xii) A lead; (xiii) A herring pound; (xiv) A dip net; (xv) Jigging gear; (xvi) A mechanical jigging machine; (xvii) A handline; (xviii) A cast net; (xix) A rod and reel; and (xx) A spear. (2) You must include an escape mechanism on all pots used to take fish or shellfish. The es",
+        "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+        "original_id": "ecfr-43-51.27-2026-10-01:0"
+      },
+      {
+        "case_id": "fr-2024-30300",
+        "name": "Bill of Rights Day, 2024",
+        "citation": "89 FR 102673",
+        "court": "Executive Office of the President",
+        "decision_date": "2024-12-18",
+        "opinion_type": "Presidential Document",
+        "source_url": "https://www.federalregister.gov/documents/2024/12/18/2024-30300/bill-of-rights-day-2024",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-12-18/pdf/2024-30300.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Presidential Document; no effective date supplied; verify operative status in the official edition",
+        "id": "S6",
+        "text": "Federal Register, Volume 89 Issue 243 (Wednesday, December 18, 2024) [Federal Register Volume 89, Number 243 (Wednesday, December 18, 2024)] [Presidential Documents] [Pages 102673-102674] From the Federal Register Online via the Government Publishing Office [www.gpo.gov] [FR Doc No: 2024-30300] Presidential Documents Federal Register / Vol. 89, No. 243 / Wednesday, December 18, 2024 / Presidential Documents ___________________________________________________________________ Title 3-- The President [[Page 102673]] Proclamation 10872 of December 13, 2024 Bill of Rights Day, 2024 By the President of the United States of America A Proclamation America is the only country in the world founded on an idea: that we are all created equal and deserve to be treated equally throughout our lives. Two hundred and thirty-three years ago today, that idea was at the heart of our Nation's Bill of Rights, launching the greatest self-government experiment in the history of the world and endowing all of us with fundamental rights and liberties. Today, we recommit to safeguarding those first 10 freedoms guaranteed by the Bill of Rights and all the progress we have made to protect Americans since. The freedoms guaranteed to us in the Bill of Rights help define the soul of our Nation. The first 10 Amendments to the United States Constitution include the freedoms of religion, speech, press, assembly, and privacy, which form our Nation's north star. And the 17 additional Amendments that came later helped our Nation realize its promise of liberty and justice for all-- from abolishing our Nation's original sin of slavery to giving women the right to vote. But freedom is never guaranteed--every generation has had to defend and fight for it. In recent years, long- established civil rights principles",
+        "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+        "original_id": "fr-2024-30300:0"
+      },
+      {
+        "case_id": "cl-11269328",
+        "name": "Mirabelli v. Bonta",
+        "citation": "",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2026-03-02",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/10802600/mirabelli-v-bonta/",
+        "official_url": "https://www.supremecourt.gov/opinions/25pdf/25a810_b97d.pdf",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "recent-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S7",
+        "text": "us quite obviously excludes parents from highly important decisions about their child\u2019s mental health, see Parham, 442 U. S., at 601\u2013 604, and is unlikely to satisfy heightened scrutiny. Our res- olution of the parents\u2019 likelihood of success on this claim is dictated by existing law. The dissent questions how the Court can adhere to parental-rights precedent after its decision in Dobbs v. Jackson Women\u2019s Health Organization, 597 U. S. 215 (2022). Post, at 5\u20136 (opinion of KAGAN, J.). But Dobbs calls into question neither the doctrine of substantive due pro- cess nor the other unexpressed rights that the doctrine pro- tects. Applying Glucksberg, Dobbs holds that Roe v. Wade, 410 U. S. 113 (1973), and Planned Parenthood of Southeast- ern Pa. v. Casey, 505 U. S. 833 (1992), were incorrectly de- cided because a right to abortion is not \u201c \u2018deeply rooted in this Nation\u2019s history and tradition\u2019 and \u2018implicit in the con- cept of ordered liberty.\u2019 \u201d Dobbs, 597 U. S., at 231. And be- cause the Court concluded that the stare decisis factors counseled against retaining these cases, Dobbs overruled them. Id., at 263\u2013290. It does not follow from Dobbs that all our substantive due process cases conflict with Glucks- berg, much less that stare decisis would counsel overruling any that do. No party to this dispute questions the continued validity of Meyer, Pierce, or Parham. For all its concerns about de- ciding the issue in this posture, the dissent expresses \u201cno doubt that parents have rights, even though Cite as: 607 U. S. ____ (2026) 3 BARRETT, J., concurring unenumerated, concerning their children and the life choices they make.\u201d Post, at 6. And the precedent recog- nizing those rights controls our assessment of whether the parents are likely to succeed on the merits. The word \u201clike",
+        "locator": "Whitespace-normalized extracted text, characters 14401\u201316200",
+        "original_id": "cl-11269328:14400"
+      },
+      {
+        "case_id": "ecfr-43-51.27-2026-10-01",
+        "name": "Subsistence taking of fish.",
+        "citation": "43 CFR 51.27",
+        "court": "Public Lands: Interior",
+        "decision_date": "2026-10-01",
+        "opinion_type": "Regulation",
+        "source_url": "https://www.ecfr.gov/on/2026-10-01/title-43/section-51.27",
+        "database_id": "ecfr",
+        "database_name": "eCFR",
+        "kind": "regulation",
+        "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+        "id": "S8",
+        "text": "A mechanical jigging machine; (xvii) A handline; (xviii) A cast net; (xix) A rod and reel; and (xx) A spear. (2) You must include an escape mechanism on all pots used to take fish or shellfish. The escape mechanisms are as follows: (i) A sidewall, which may include the tunnel, of all shellfish and bottomfish pots must contain an opening equal to or exceeding 18 inches in length, except that in shrimp pots the opening must be a minimum of 6 inches in length. The opening must be laced, sewn, or secured together by a single length of untreated, 100 percent cotton twine, no larger than 30 thread. The cotton twine may be knotted at each end only. The opening must be within 6 inches of the bottom of the pot and must be parallel with it. The cotton twine may not be tied or looped around the web bars. Dungeness crab pots may have the pot lid tie-down straps secured to the pot at one end by a single loop of untreated, 100 percent cotton twine no larger than 60 thread, or the pot lid must be secured so that, when the twine degrades, the lid will no longer be securely closed. (ii) All king crab, Tanner crab, shrimp, miscellaneous shellfish and bottomfish pots may, instead of complying with paragraph (b)(2)(i) of this section, satisfy the following: a sidewall, which may include the tunnel, must contain an opening at least 18 inches in length, except that shrimp pots must contain an opening at least 6 inches in length. The opening must be laced, sewn, or secured together by a single length of treated or untreated twine, no larger than 36 thread. A galvanic timed-release device, designed to release in no more than 30 days in saltwater, must be integral to the length of twine so that, when the device releases, the twine will no longer secure or obstruct the opening of the pot. The tw",
+        "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+        "original_id": "ecfr-43-51.27-2026-10-01:1600"
+      },
+      {
+        "case_id": "fr-2024-30300",
+        "name": "Bill of Rights Day, 2024",
+        "citation": "89 FR 102673",
+        "court": "Executive Office of the President",
+        "decision_date": "2024-12-18",
+        "opinion_type": "Presidential Document",
+        "source_url": "https://www.federalregister.gov/documents/2024/12/18/2024-30300/bill-of-rights-day-2024",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-12-18/pdf/2024-30300.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Presidential Document; no effective date supplied; verify operative status in the official edition",
+        "id": "S9",
+        "text": "commit to protecting and expanding Americans' civil rights and liberties. We must continue fighting for progress and following our Nation's north star, securing dignity and respect for all Americans. And we must continue to strengthen the guardrails of our democracy, ensuring that our Nation and all the freedoms it guarantees will be enjoyed for generations to come. I know we can do it--because together, nothing is beyond our capacity. NOW, THEREFORE, I, JOSEPH R. BIDEN JR., President of the United States of America, by virtue of the authority vested in me by the Constitution [[Page 102674]] and the laws of the United States, do hereby proclaim December 15, 2024, as Bill of Rights Day. I call upon the people of the United States to observe this day with appropriate ceremonies and activities. IN WITNESS WHEREOF, I have hereunto set my hand this thirteenth day of December, in the year of our Lord two thousand twenty-four, and of the Independence of the United States of America the two hundred and forty- ninth. (Presidential Sig.) [FR Doc. 2024-30300 Filed 12-17-24; 8:45 am] Billing code 3395-F4-P",
+        "locator": "Whitespace-normalized extracted text, characters 3201\u20134311",
+        "original_id": "fr-2024-30300:3200"
+      }
+    ],
+    "searched": [
+      {
+        "id": "courtlistener",
+        "status": "ok",
+        "total": 11,
+        "note": "Principal opinion plus targeted and recent later-treatment searches; up to 4 full opinions. This is a limited search, not a complete good-law check.",
+        "warnings": [],
+        "searches": [
+          {
+            "phase": "original",
+            "query": "caseName:(Roe AND Wade)",
+            "court": "",
+            "after": "",
+            "before": "",
+            "order": "citeCount desc",
+            "status": "ok",
+            "matches": 11
+          },
+          {
+            "phase": "later-treatment",
+            "query": "\"Roe v. Wade\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+            "court": "scotus",
+            "after": "1973-01-22",
+            "before": "",
+            "order": "score desc",
+            "status": "ok",
+            "matches": 86
+          },
+          {
+            "phase": "recent-treatment",
+            "query": "\"Roe v. Wade\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+            "court": "scotus",
+            "after": "1973-01-22",
+            "before": "",
+            "order": "dateFiled desc",
+            "status": "ok",
+            "matches": 86
+          }
+        ],
+        "passages": 12
+      },
+      {
+        "id": "ecfr",
+        "status": "ok",
+        "total": 15,
+        "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+        "warnings": [],
+        "passages": 6
+      },
+      {
+        "id": "federal_register",
+        "status": "ok",
+        "total": 86,
+        "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+        "warnings": [],
+        "passages": 9
+      }
+    ],
+    "retrieved_at": "2026-10-05T06:16:51.934Z",
+    "query": "Roe v. Wade",
+    "task": "research",
+    "databases": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "database_reason": "Searching the databases selected in Search settings.",
+    "research_focus": "case_status",
+    "document_coverage": [],
+    "filters": {
+      "court": "",
+      "after": "",
+      "before": ""
+    },
+    "automatic": true,
+    "model": "gpt-6-luna",
+    "inference": "api",
+    "propositions": [
+      {
+        "section": "Findings",
+        "claim": "The supplied excerpt from the Supreme Court\u2019s June 24, 2022 decision states that Roe v. Wade was overruled; accordingly, Roe is no longer controlling precedent.",
+        "source_id": "S1",
+        "quote": "Held: The Constitution does not confer a right to abortion; Roe and Casey are overruled;"
+      },
+      {
+        "section": "Findings",
+        "claim": "A later Supreme Court opinion, Mirabelli v. Bonta, dated March 2, 2026, describes Dobbs as having overruled Roe and Casey. These excerpts establish that historical treatment but do not establish a comprehensive current-validity check.",
+        "source_id": "S7",
+        "quote": "Dobbs overruled them."
+      }
+    ],
+    "removed": 0,
+    "incomplete": false,
+    "abstained": false,
+    "missing_sections": [],
+    "model_used": true,
+    "status": 200
+  }
+}

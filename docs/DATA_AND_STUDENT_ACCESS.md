@@ -45,8 +45,13 @@ describes coverage of over nine million decisions from more than 2,000 courts.
 4. For hosting, add the token as a server-side secret and redeploy. For local
    use, restart `npm run local`.
 
-The website is connected. App-imposed count ceilings have been removed for testing; CourtListener still enforces the account’s own quotas. A search can use one search request plus up to three opinion
-requests; cached public documents reduce that. Citation lookup also consumes
+The website is connected. App-imposed count ceilings have been removed for testing; CourtListener still enforces the account’s own quotas. An ordinary search can use one search request plus up to three opinion
+requests. Case-status questions can use four searches and four opinions: the
+principal decision, an independently retrieved later-case search lead, relevant
+later treatment, and recent treatment. Suggested case names alone are never
+evidence; only fetched source text enters the answer. This is a
+limited evidence search, not a comprehensive good-law determination. Cached
+public documents reduce repeat requests. Citation lookup also consumes
 source requests. It verifies existence/ambiguity only; it is not a replacement
 for a treatment citator. Provider limits cover every installation sharing the
 account. Rate-limited searches report incomplete coverage instead of retrying.

@@ -1,0 +1,270 @@
+{
+  "id": "roe",
+  "request": {
+    "question": "What is the current status of Roe vs Wade?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "2ec3a357-8a7b-4b16-aa69-07f96d31af1f"
+  },
+  "review_criteria": "Should identify Dobbs (2022) and the overruling of Roe using the retrieved decision.",
+  "http_status": 200,
+  "seconds": 14.025,
+  "retained": 1,
+  "literal_quotes": 1,
+  "response": {
+    "sources": [
+      {
+        "case_id": "cl-6353492",
+        "name": "Dobbs v. Jackson Women's Health Organization",
+        "citation": "597 U.S. 215; 213 L. Ed. 2d 545; 142 S. Ct. 2228",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2022-06-24",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/6481357/dobbs-v-jackson-womens-health-organization/",
+        "official_url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "later-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S1",
+        "text": "iction on abortion violates this Court’s cases forbidding States to ban abortion pre-viabil- ity. The Fifth Circuit affirmed. Before this Court, petitioners defend the Act on the grounds that Roe and Casey were wrongly decided and that the Act is constitutional because it satisfies rational-basis review. Held: The Constitution does not confer a right to abortion; Roe and Casey are overruled; and the authority to regulate abortion is returned to the people and their elected representatives. Pp. 8–79. (a) The critical question is whether the Constitution, properly un- derstood, confers a right to obtain an abortion. Casey’s controlling opinion skipped over that question and reaffirmed Roe solely on the basis of stare decisis. A proper application of stare decisis, however, requires an assessment of the strength of the grounds on which Roe 2 DOBBS v. JACKSON WOMEN’S HEALTH ORGANIZATION Syllabus was based. The Court therefore turns to the question that the Casey plurality did not consider. Pp. 8–32. (1) First, the Court reviews the standard that the Court’s cases have used to determine whether the Fourteenth Amendment’s refer- ence to “liberty” protects a particular right. The Constitution makes no express reference to a right to obtain an abortion, but several con- stitutional provisions have been offered as potential homes for an im- plicit constitutional right. Roe held that the abortion right is part of a right to privacy that springs from the First, Fourth, Fifth, Ninth, and Fourteenth Amendments. See 410 U. S., at 152–153. The Casey Court grounded its decision solely on the theory that the right to obtain an abortion is part of the “liberty” protected by the Fourteenth Amend- ment’s Due Process Clause. Others have suggested that support can be found in the Fourteenth ",
+        "locator": "Whitespace-normalized extracted text, characters 1601–3400",
+        "original_id": "cl-6353492:1600"
+      },
+      {
+        "case_id": "fr-2024-04819",
+        "name": "Women's History Month, 2024",
+        "citation": "89 FR 15939",
+        "court": "Executive Office of the President",
+        "decision_date": "2024-03-05",
+        "opinion_type": "Presidential Document",
+        "source_url": "https://www.federalregister.gov/documents/2024/03/05/2024-04819/womens-history-month-2024",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-03-05/pdf/2024-04819.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Presidential Document; no effective date supplied; verify operative status in the official edition",
+        "id": "S2",
+        "text": " American Rescue Plan helped working mothers, especially during the most challenging times of the pandemic, by keeping the doors of 220,000 child care centers open--90 percent of which are owned and staffed by women. Our Child Tax Credit cut the number of children in poverty by 50 percent and provided breathing room for 65 million children and their families, and we will keep fighting to restore it. I have also signed legislation that provides new protections for pregnant and postpartum workers. [[Page 15940]] To promote the health and wellness of women in America, under the leadership of Vice President Harris, we launched the Blueprint for Addressing the Maternal Health Crisis to combat the high incidence of maternal mortality--especially for Black, Native, and rural women--due to systemic inequities in quality health care. We have expanded access to health care services for women veterans--the fastest growing group of veterans receiving services at the Department of Veterans Affairs. Last fall, we launched the White House Initiative on Women's Health Research to change how we approach and fund women's health research, and pioneer the next generation of discoveries in women's health care. Further, Vice President Harris and I are fighting to protect women's reproductive freedom. In 2022, the Supreme Court made an extreme decision to overturn Roe v. Wade, reversing nearly five decades of recognizing a woman's constitutional right to choose and make deeply personal decisions about her health care. Now, tens of millions of women live in States with an extreme and dangerous abortion ban currently in effect. Across the country, women are being turned away from emergency rooms, forced to go to court to seek permission for the medical attention they need, and made to travel hu",
+        "locator": "Whitespace-normalized extracted text, characters 3201–5000",
+        "original_id": "fr-2024-04819:3200"
+      },
+      {
+        "case_id": "cl-9889188",
+        "name": "June Medical Services L. L. C. v. Russo",
+        "citation": "140 S. Ct. 2103; 207 L. Ed. 2d 566",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2020-06-29",
+        "opinion_type": "lead-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/4764452/june-medical-services-l-l-c-v-russo/",
+        "official_url": "",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "later-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S3",
+        "text": "pments, and the reliance interests that the precedent has engendered. See Janus v. State, County, and Municipal Employees, 585 U. S. ----, ---- - ----, 138 S.Ct. 2448, 201 L.Ed.2d 924 (2018) (slip op., at 34-35). Stare decisis principles also determine how we handle a decision that itself departed from the cases that came before it. In those instances, \"[r]emaining true to an 'intrinsically sounder' doctrine established in prior cases better serves the values of stare decisis than would following\" the recent departure. *2135Adarand Constructors, Inc. v. Peña , 515 U.S. 200, 231, 115 S.Ct. 2097, 132 L.Ed.2d 158 (1995) (plurality opinion). Stare decisis is pragmatic and contextual, not \"a mechanical formula of adherence to the latest decision.\" Helvering v. Hallock , 309 U.S. 106, 119, 60 S.Ct. 444, 84 L.Ed. 604 (1940). II A Both Louisiana and the providers agree that the undue burden standard announced in Casey provides the appropriate framework to analyze Louisiana's law. Brief for Petitioners in No. 18-1323, pp. 45-47; Brief for Respondent in No. 18-1323, pp. 60-62. Neither party has asked us to reassess the constitutional validity of that standard. Casey reaffirmed \"the most central principle of Roe v. Wade ,\" \"a woman's right to terminate her pregnancy before viability.\" Casey , 505 U.S. at 871, 112 S.Ct. 2791 (plurality opinion).1 At the same time, it recognized that the State has \"important and legitimate interests in ... protecting the health of the pregnant woman and in protecting the potentiality of human life.\" Id., at 875-876, 112 S.Ct. 2791 (internal quotation marks and brackets omitted). To serve the former interest, the State may, \"[a]s with any medical procedure,\" enact \"regulations to further the health or safety of a woman seeking an abortion.\" Id., at 8",
+        "locator": "Whitespace-normalized extracted text, characters 75201–77000",
+        "original_id": "cl-9889188:75200"
+      },
+      {
+        "case_id": "fr-2024-04819",
+        "name": "Women's History Month, 2024",
+        "citation": "89 FR 15939",
+        "court": "Executive Office of the President",
+        "decision_date": "2024-03-05",
+        "opinion_type": "Presidential Document",
+        "source_url": "https://www.federalregister.gov/documents/2024/03/05/2024-04819/womens-history-month-2024",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-03-05/pdf/2024-04819.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Presidential Document; no effective date supplied; verify operative status in the official edition",
+        "id": "S4",
+        "text": "rtion ban currently in effect. Across the country, women are being turned away from emergency rooms, forced to go to court to seek permission for the medical attention they need, and made to travel hundreds of miles for care. This is unacceptable. That is why I have taken action to safeguard access to reproductive care, including abortion and contraception. Vice President Harris and I will keep calling on the Congress to restore the protections of Roe v. Wade in Federal law--the only way to ensure women in every State have the right to choose. As we lift up women's health and economic prosperity, we also have to protect their physical security. As a United States Senator, I was proud to write the Violence Against Women Act, which helped change the culture of silence around the scourge of gender-based violence in America. When we reauthorized the law, we increased our total investment in prevention and support to $700 million for 2023 alone--the highest funding ever to protect women from gender-based violence in nearly 30 years. I have also spearheaded historic military justice reforms to better protect survivors and ensure that, in cases of gender-based violence, prosecutorial decisions are fully independent from the chain of command. Last year, my Administration released the first-ever National Plan to End Gender- Based Violence, advancing a comprehensive Government- wide approach to preventing and addressing gender-based violence across the United States. Globally, my Administration is supporting initiatives that help expand access to child care, end gender-based violence, cut the digital gender divide in half, promote women's leadership, and more. Thanks to the leadership of Vice President Harris, we have galvanized more than $2.9 billion in investments to advance th",
+        "locator": "Whitespace-normalized extracted text, characters 4801–6600",
+        "original_id": "fr-2024-04819:4800"
+      },
+      {
+        "case_id": "cl-11269328",
+        "name": "Mirabelli v. Bonta",
+        "citation": "",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2026-03-02",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/10802600/mirabelli-v-bonta/",
+        "official_url": "https://www.supremecourt.gov/opinions/25pdf/25a810_b97d.pdf",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "recent-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S5",
+        "text": "us quite obviously excludes parents from highly important decisions about their child’s mental health, see Parham, 442 U. S., at 601– 604, and is unlikely to satisfy heightened scrutiny. Our res- olution of the parents’ likelihood of success on this claim is dictated by existing law. The dissent questions how the Court can adhere to parental-rights precedent after its decision in Dobbs v. Jackson Women’s Health Organization, 597 U. S. 215 (2022). Post, at 5–6 (opinion of KAGAN, J.). But Dobbs calls into question neither the doctrine of substantive due pro- cess nor the other unexpressed rights that the doctrine pro- tects. Applying Glucksberg, Dobbs holds that Roe v. Wade, 410 U. S. 113 (1973), and Planned Parenthood of Southeast- ern Pa. v. Casey, 505 U. S. 833 (1992), were incorrectly de- cided because a right to abortion is not “ ‘deeply rooted in this Nation’s history and tradition’ and ‘implicit in the con- cept of ordered liberty.’ ” Dobbs, 597 U. S., at 231. And be- cause the Court concluded that the stare decisis factors counseled against retaining these cases, Dobbs overruled them. Id., at 263–290. It does not follow from Dobbs that all our substantive due process cases conflict with Glucks- berg, much less that stare decisis would counsel overruling any that do. No party to this dispute questions the continued validity of Meyer, Pierce, or Parham. For all its concerns about de- ciding the issue in this posture, the dissent expresses “no doubt that parents have rights, even though Cite as: 607 U. S. ____ (2026) 3 BARRETT, J., concurring unenumerated, concerning their children and the life choices they make.” Post, at 6. And the precedent recog- nizing those rights controls our assessment of whether the parents are likely to succeed on the merits. The word “like",
+        "locator": "Whitespace-normalized extracted text, characters 14401–16200",
+        "original_id": "cl-11269328:14400"
+      },
+      {
+        "case_id": "fr-2024-04819",
+        "name": "Women's History Month, 2024",
+        "citation": "89 FR 15939",
+        "court": "Executive Office of the President",
+        "decision_date": "2024-03-05",
+        "opinion_type": "Presidential Document",
+        "source_url": "https://www.federalregister.gov/documents/2024/03/05/2024-04819/womens-history-month-2024",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-03-05/pdf/2024-04819.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Presidential Document; no effective date supplied; verify operative status in the official edition",
+        "id": "S6",
+        "text": ", cut the digital gender divide in half, promote women's leadership, and more. Thanks to the leadership of Vice President Harris, we have galvanized more than $2.9 billion in investments to advance the economic status of women around the world and ensure they play a meaningful role in the industries of the future. This Women's History Month, may we recognize the long, storied history of great women helping to realize our Nation's founding promise and highest aspirations. May we all continue working to build a world worthy of the dreams and goals of all women and girls. NOW, THEREFORE, I, JOSEPH R. BIDEN JR., President of the United States of America, by virtue of the authority vested in me by the Constitution and the laws of the United States, do hereby proclaim March 2024 as Women's History Month. I call upon all Americans to observe this month and to celebrate International Women's Day on March 8, 2024, with appropriate programs, ceremonies, and activities. I also invite all Americans to visit WomensHistoryMonth.gov to learn more about the vital contributions of women to our Nation's history. [[Page 15941]] IN WITNESS WHEREOF, I have hereunto set my hand this twenty-ninth day of February, in the year of our Lord two thousand twenty-four, and of the Independence of the United States of America the two hundred and forty- eighth. (Presidential Sig.) [FR Doc. 2024-04819 Filed 3-4-24; 11:15 am] Billing code 3395-F4-P",
+        "locator": "Whitespace-normalized extracted text, characters 6401–7837",
+        "original_id": "fr-2024-04819:6400"
+      },
+      {
+        "case_id": "cl-9425157",
+        "name": "Roe v. Wade",
+        "citation": "35 L. Ed. 2d 147; 93 S. Ct. 705; 410 U.S. 113; 1973 U.S. LEXIS 159",
+        "court": "Supreme Court of the United States",
+        "decision_date": "1973-01-22",
+        "opinion_type": "lead-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/108713/roe-v-wade/",
+        "official_url": "",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "original",
+        "source_status": "Original search result; does not establish current validity",
+        "id": "S7",
+        "text": "t man’s attitudes toward the abortion procedure over the centuries. We bear in mind, too, Mr. Justice Holmes’ admonition in his now-vindicated dissent in Lochner v. New York, 198 U. S. 45, 76 (1905): “[The Constitution] is made for people of fundamentally differing views, and the accident of our finding certain opinions natural and familiar or novel and even shocking ought not to conclude our judgment upon the question whether statutes embodying them conflict with the Constitution of the United States.” I The Texas statutes that concern us here are Arts. 1191-1194 and 1196 of the State’s Penal Code.1 These make it a crime to “procure an abortion,” as therein *118defined, or to attempt one, except with respect to “an abortion procured or attempted by medical advice for the purpose of saving the life of the mother.” Similar statutes are in existence in a majority of the States.2 *119Texas first enacted a criminal abortion statute in 1854. Texas Laws 1854, c. 49, § 1, set forth in 3 H. Gammel, Laws of Texas 1502 (1898). This was soon modified into language that has remained substantially unchanged to the present time. See Texas Penal Code of 1857, c. 7, Arts. 531-536; G. Paschal, Laws of Texas, Arts. 2192-2197 (1866); Texas Rev. Stat., c. 8, Arts. 536-541 (1879); Texas Rev. Crim. Stat., Arts. 1071-1076 (1911). The final article in each of these compilations provided the same exception, as does the present Article 1196, for an abortion by “medical advice for the purpose of saving the life of the mother.” 3 *120HH h — I Jane Roe,4 a single woman who was residing m Dallas County, Texas, instituted this federal action in March 1970 against the District Attorney of the county. She sought a declaratory judgment that the Texas criminal abortion statutes were unconstitutional on t",
+        "locator": "Whitespace-normalized extracted text, characters 1601–3400",
+        "original_id": "cl-9425157:1600"
+      },
+      {
+        "case_id": "fr-2026-08717",
+        "name": "Marine Mammal Protection Act List of Fisheries for 2026",
+        "citation": "91 FR 24176",
+        "court": "Commerce Department, National Oceanic and Atmospheric Administration",
+        "decision_date": "2026-05-05",
+        "opinion_type": "Notice",
+        "source_url": "https://www.federalregister.gov/documents/2026/05/05/2026-08717/marine-mammal-protection-act-list-of-fisheries-for-2026",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-05-05/pdf/2026-08717.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Notice; no effective date supplied; verify operative status in the official edition",
+        "id": "S8",
+        "text": "g data, and the species and distribution of marine mammals in the area, or at the discretion of the Assistant Administrator for Fisheries. Further, eligible commercial fisheries not specifically identified on the LOF are deemed to be Category II fisheries until the next LOF is published (50 CFR 229.2). How does NMFS determine which species or stocks are included as incidentally killed or injured in a fishery? The LOF includes a list of marine mammal species and/or stocks incidentally killed or injured in each commercial fishery. The list of species and/or stocks incidentally killed or injured includes serious and non-serious documented injuries as described below in the List of Species and/or Stocks Incidentally Killed or Injured in the Pacific Ocean and List of Species and/or Stocks Incidentally Killed or Injured in the Atlantic Ocean, Gulf of America, and Caribbean sections. To determine which species or stocks are included as incidentally killed or injured in a fishery, NMFS annually reviews the information presented in the current SARs and injury determination reports. SARs are brief reports summarizing the status of each stock of marine mammals occurring in waters under U.S. jurisdiction. Information includes the identity and geographic range of the stock, population statistics related to abundance, trend, and annual productivity, notable habitat concerns, and estimates of human-caused M/SI by source. The SARs are based upon the best available scientific information at the time of their publication and generally provide the most current and inclusive information on each stock's PBR level and level of interaction with commercial fishing operations. The best available scientific information used in the SARs and reviewed for the 2026 LOF generally summarizes data from",
+        "locator": "Whitespace-normalized extracted text, characters 8001–9800",
+        "original_id": "fr-2026-08717:8000"
+      }
+    ],
+    "searched": [
+      {
+        "id": "courtlistener",
+        "status": "ok",
+        "total": 11,
+        "note": "Principal opinion plus targeted and recent later-treatment searches; up to 4 full opinions. This is a limited search, not a complete good-law check.",
+        "warnings": [],
+        "searches": [
+          {
+            "phase": "original",
+            "query": "caseName:(Roe AND Wade)",
+            "court": "",
+            "after": "",
+            "before": "",
+            "order": "citeCount desc",
+            "status": "ok",
+            "matches": 11
+          },
+          {
+            "phase": "candidate-treatment",
+            "query": "caseName:(Dobbs AND Jackson AND Women AND s AND Health AND Organization)",
+            "court": "scotus",
+            "after": "1973-01-22",
+            "before": "",
+            "order": "citeCount desc",
+            "status": "ok",
+            "matches": 0
+          },
+          {
+            "phase": "later-treatment",
+            "query": "\"Roe v. Wade\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+            "court": "scotus",
+            "after": "1973-01-22",
+            "before": "",
+            "order": "score desc",
+            "status": "ok",
+            "matches": 86
+          },
+          {
+            "phase": "recent-treatment",
+            "query": "\"Roe v. Wade\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+            "court": "scotus",
+            "after": "1973-01-22",
+            "before": "",
+            "order": "dateFiled desc",
+            "status": "ok",
+            "matches": 86
+          }
+        ],
+        "passages": 12
+      },
+      {
+        "id": "ecfr",
+        "status": "empty",
+        "total": 0,
+        "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+        "warnings": [],
+        "passages": 0
+      },
+      {
+        "id": "federal_register",
+        "status": "ok",
+        "total": 52,
+        "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+        "warnings": [],
+        "passages": 9
+      }
+    ],
+    "retrieved_at": "2026-10-05T06:24:35.970Z",
+    "query": "Roe v. Wade current status",
+    "task": "research",
+    "databases": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "database_reason": "Searching the databases selected in Search settings.",
+    "research_focus": "case_status",
+    "document_coverage": [],
+    "filters": {
+      "court": "",
+      "after": "",
+      "before": ""
+    },
+    "automatic": true,
+    "model": "gpt-6-luna",
+    "inference": "api",
+    "propositions": [
+      {
+        "section": "Findings",
+        "claim": "In Dobbs v. Jackson Women’s Health Organization (June 24, 2022), the Supreme Court held that Roe v. Wade was overruled. The supplied excerpts establish that historical status but do not provide a comprehensive check of later treatment.",
+        "source_id": "S1",
+        "quote": "Roe and Casey are overruled; and the authority to regulate abortion is returned to the people and their elected representatives."
+      }
+    ],
+    "removed": 0,
+    "incomplete": false,
+    "abstained": false,
+    "missing_sections": [],
+    "model_used": true
+  }
+}

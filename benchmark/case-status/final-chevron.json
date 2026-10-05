@@ -1,0 +1,276 @@
+{
+  "id": "chevron",
+  "request": {
+    "question": "Is Chevron U.S.A. Inc. v. Natural Resources Defense Council still good law?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "11f7caf2-ae6c-4328-93a5-2032059abc84"
+  },
+  "review_criteria": "Should identify Loper Bright (2024), the rejection of Chevron deference, and the express preservation of prior holdings.",
+  "http_status": 200,
+  "seconds": 9.321,
+  "retained": 2,
+  "literal_quotes": 2,
+  "response": {
+    "sources": [
+      {
+        "case_id": "cl-11066629",
+        "name": "Loper Bright Enterprises v. Raimondo",
+        "citation": "603 U.S. 369",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2024-06-28",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/10600041/loper-bright-enterprises-v-raimondo/",
+        "official_url": "https://www.supremecourt.gov/opinions/23pdf/603us1r54_o7jp.pdf",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "candidate-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S1",
+        "text": "ding whether an Publication agency has acted within its statutory authority, and courts may not defer to an agency interpre- tation of the law simply because a statute is ambiguous; Chevron is overruled. Pp. 384–413. (a) Article III of the Constitution assigns to the Federal Judiciary the responsibility and power to adjudicate “Cases” and “Controversies”— concrete disputes with consequences for the parties involved. The Framers appreciated that the laws judges would necessarily apply in resolving those disputes would not always be clear, but envisioned that the fnal “interpretation of the laws” would be “the proper and peculiar province of the courts.” The Federalist No. 78, p. 525 (A. Hamilton). As Chief Justice Marshall declared in the foundational decision of Mar- bury v. Madison, “[i]t is emphatically the province and duty of the judi- cial department to say what the law is.” 1 Cranch 137, 177. In the decades following Marbury, when the meaning of a statute was at issue, the judicial role was to “interpret the act of Congress, in order to ascer- tain the rights of the parties.” Decatur v. Paulding, 14 Pet. 497, 515. *Together with No. 22–1219, Relentless, Inc., et al. v. Department of Commerce et al., on certiorari to the United States Court of Appeals for the First Circuit. 370 LOPER BRIGHT ENTERPRISES v. RAIMONDO Syllabus The Court recognized from the outset, though, that exercising inde- pendent judgment often included according due respect to Executive Branch interpretations of federal statutes. Such respect was thought especially warranted when an Executive Branch interpretation was is- sued roughly contemporaneously with enactment of the statute and re- mained consistent over time. The Court also gave “the most respect- ful consideration” to Executive Branch i",
+        "locator": "Whitespace-normalized extracted text, characters 1601–3400",
+        "original_id": "cl-11066629:1600"
+      },
+      {
+        "case_id": "fr-2026-14633",
+        "name": "Endangered and Threatened Wildlife and Plants; Regulations Pertaining to Endangered and Threatened Wildlife and Plants",
+        "citation": "91 FR 45723",
+        "court": "Interior Department, Fish and Wildlife Service",
+        "decision_date": "2026-07-21",
+        "opinion_type": "Rule",
+        "source_url": "https://www.federalregister.gov/documents/2026/07/21/2026-14633/endangered-and-threatened-wildlife-and-plants-regulations-pertaining-to-endangered-and-threatened",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-21/pdf/2026-14633.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Rule; stated effective date 2026-08-20; verify operative status in the official edition",
+        "id": "S2",
+        "text": "istencies in threatened species protections across States, unless the best scientific and commercial data available indicates that certain protections should be tailored to a specific geographic area, with rationale provided within the species-specific 4(d) rulemaking. Blanket Rule Option Comment 13: Multiple commenters remarked on whether ``blanket rules'' are legal under the Act, whether they are the best interpretation of the Act, and whether they are consistent with congressional intent. Some commenters suggested that the ``blanket rules'' are unlawful because the statutory language and legislative history indicate that Congress intended for the protections for threatened species to differ from, and be more flexible than, the protections for endangered species, as well as for the Service to develop a separate and individualized set of protective regulations for each threatened species. Commenters also suggested that use of a ``blanket rule'' option is inconsistent with the best reading of the Act as required by Loper Bright and that the Service may only issue protective regulations for threatened species--including those prohibiting take--on a species-by-species basis, and only after determining that such regulation is ``necessary and advisable for the conservation'' of that species. Commenters noted that prior to Loper Bright, and analyzed under the Chevron framework (Chevron, U.S.A., Inc. v. NRDC, Inc., 467 U.S. 837 (1984)) in which Federal courts defer to administrative agencies' reasonable interpretations of ambiguous statutes), at least one court upheld a ``reasonable and permissible'' reading of the ESA to allow for ``blanket rules'' (Sweet Home Chapter of Communities for a Greater Oregon v. Babbitt, 1 F.3d 1, 8 (D.C. Cir. 1993), modified on other grounds on r",
+        "locator": "Whitespace-normalized extracted text, characters 48001–49800",
+        "original_id": "fr-2026-14633:48000"
+      },
+      {
+        "case_id": "cl-11066629",
+        "name": "Loper Bright Enterprises v. Raimondo",
+        "citation": "603 U.S. 369",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2024-06-28",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/10600041/loper-bright-enterprises-v-raimondo/",
+        "official_url": "https://www.supremecourt.gov/opinions/23pdf/603us1r54_o7jp.pdf",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "candidate-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S3",
+        "text": "merely change errati- cally, but will develop in a principled and intelligible fashion,” Vasquez v. Hillery, 474 U. S. 254, 265, is for the Court to leave Chevron behind. By overruling Chevron, though, the Court does not call into question prior cases that relied on the Chevron framework. The holdings of those cases that specifc agency actions are lawful—including the Clean Air Act holding of Chevron itself—are still subject to statutory stare decisis despite the Court's change in interpretive methodology. See CBOCS West, Inc. v. Humphries, 553 U. S. 442, 457. Mere reliance on Chevron cannot constitute a “ `special justifcation' ” for overruling such a holding. Halliburton Co. v. Erica P. John Fund, Inc., 573 U. S. 258, 266 (quoting Dickerson v. United States, 530 U. S. 428, 443). Pp. 407–412. No. 22–451, 45 F. 4th 359; and No. 22–1219, 62 F. 4th 621, vacated and remanded. Roberts, C. J., delivered the opinion of the Court, in which Thomas, Alito, Gorsuch, Kavanaugh, and Barrett, JJ., joined. Thomas, J., post, p. 413, and Gorsuch, J., post, p. 416, fled concurring opinions. Kagan, J., fled a dissenting opinion, in which Sotomayor, J., joined, and in which Jackson, J., joined as it applies to No. 22–1219, post, p. 448. Jackson, J., took no part in the consideration or decision of the case in Page Proof Pending Publication No. 22–451. Paul D. Clement argued the cause for petitioners. With him on the briefs were Andrew C. Lawrence, Ryan P. Mul- vey, Eric R. Bolinder, and R. James Valvo III. Solicitor General Prelogar argued the cause for respond- ents. With her on the brief were Assistant Attorney Gen- eral Kim, Deputy Solicitor General Kneedler, Matthew Guarnieri, Rachel Heron, and Dina B. Mishra.† †Briefs of amici curiae urging reversal were fled for the State of West Vi",
+        "locator": "Whitespace-normalized extracted text, characters 20801–22600",
+        "original_id": "cl-11066629:20800"
+      },
+      {
+        "case_id": "fr-2026-14633",
+        "name": "Endangered and Threatened Wildlife and Plants; Regulations Pertaining to Endangered and Threatened Wildlife and Plants",
+        "citation": "91 FR 45723",
+        "court": "Interior Department, Fish and Wildlife Service",
+        "decision_date": "2026-07-21",
+        "opinion_type": "Rule",
+        "source_url": "https://www.federalregister.gov/documents/2026/07/21/2026-14633/endangered-and-threatened-wildlife-and-plants-regulations-pertaining-to-endangered-and-threatened",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-21/pdf/2026-14633.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Rule; stated effective date 2026-08-20; verify operative status in the official edition",
+        "id": "S4",
+        "text": "s as a matter of statutory construction; that is, a regulation prohibiting take is merely an example of the types of regulations that could be promulgated and the necessary and advisable finding must apply to those regulations (see Home Depot U.S.A., Inc. v. Jackson, 587 U.S. 435, 441 (2019)). Some commenters noted Sweet Home deferred to the Service under the now-overruled Chevron doctrine and suggest this is not necessarily what a court would determine under Loper Bright. Further, commenters stated that recent case law supports the requirement to include a necessary and advisable determination for all section 4(d) rules (see Kansas Natural Resources Coalition). Response: Regardless of whether or not we are required to make such a determination, we have chosen to be as transparent as possible and explain why, as a whole, each species-specific 4(d) rule is necessary and advisable to provide for the conservation of threatened species. This is in line with our past practice and with what we stated was our intention in our 2024 rule (89 FR 23919 at 23922, April 5, 2024). For species-specific 4(d) rules, we will continue to include the [[Page 45731]] rationale for why the rule as a whole is necessary and advisable to provide for the conservation of the species that is the subject of the rule. Comment 15: We received multiple comments on the new provision in 50 CFR 17.31(d) and 17.71(d) regarding the additional requirement to consider conservation and economic impacts as part of the required necessary and advisable determination for all species-specific 4(d) rules. Some commenters stated that the Service is required to consider economic costs and benefits of a section 4(d) rule to ensure that it is in fact necessary and advisable. For example, commenters cited to Michigan v. ",
+        "locator": "Whitespace-normalized extracted text, characters 54401–56200",
+        "original_id": "fr-2026-14633:54400"
+      },
+      {
+        "case_id": "cl-145854",
+        "name": "Coeur Alaska, Inc. v. Southeast Alaska Conservation Council",
+        "citation": "129 S. Ct. 2458; 557 U.S. 261; 2009 U.S. LEXIS 4730; 77 U.S.L.W. 4559; 21 Fla. L. Weekly Fed. S 973",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2009-06-22",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/145854/coeur-alaska-inc-v-southeast-alaska-conservation-council/",
+        "official_url": "",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "later-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S5",
+        "text": "ed Judicial Review of Agency Action, 58 Vand. L. Rev. 1443, 1464 (2005). I favor overruling Mead. Failing that, I am pleased to join an opinion that effectively ignores it. —————— 49, 61 (CA2 2004) (according Chevron deference to policy statements issued by Department of Housing and Urban Development) and Schu etz v. Banc One Mortgage Corp., 292 F. 3d 1004, 1012 (CA9 2002) (same), with Krzalic v. Republic Title Co., 314 F. 3d 875, 881 (CA7 2002) (denying Chevron deference to same policy statements). Compare American Federation of Govt. Employees, AFL–CIO, Local 446 v. Nicholson, 475 F. 3d 341, 353–354 (CADC 2007) (according Chevron deference to informal adjudication by Department of Veterans Affairs), with American Federation of Govt. Employees, AFL–CIO, Local 2152 v. Principi, 464 F. 3d 1049, 1057 (CA9 2006) (denying Chevron deference to similar action). It is not even clear that notice-and-comment rule making will assure Chevron deference to agency interpretation of an ambiguous statute. See Rubie’s Costume Co. v. United States, 337 F. 3d 1350, 1355 (CA Fed. 2003) (customs classification). Cite as: 557 U. S. ____ (2009) 1 GINSBURG, J., dissenting SUPREME COURT OF THE UNITED STATES _________________ Nos. 07–984 and 07–990 _________________ COEUR ALASKA, INC., PETITIONER 07–984 v. SOUTHEAST ALASKA CONSERVATION COUNCIL ET AL. ALASKA, PETITIONER 07–990 v. SOUTHEAST ALASKA CONSERVATION COUNCIL ET AL. ON WRITS OF CERTIORARI TO THE UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT [June 22, 2009] JUSTICE GINSBURG, with whom JUSTICE STEVENS and JUSTICE SOUTER join, dissenting. Petitioner Coeur Alaska, Inc., proposes to discharge 210,000 gallons per day of mining waste into Lower Slate Lake, a 23-acre subalpine lake in Tongass National For est. The “tailings slurry” would c",
+        "locator": "Whitespace-normalized extracted text, characters 73601–75400",
+        "original_id": "cl-145854:73600"
+      },
+      {
+        "case_id": "fr-2026-14633",
+        "name": "Endangered and Threatened Wildlife and Plants; Regulations Pertaining to Endangered and Threatened Wildlife and Plants",
+        "citation": "91 FR 45723",
+        "court": "Interior Department, Fish and Wildlife Service",
+        "decision_date": "2026-07-21",
+        "opinion_type": "Rule",
+        "source_url": "https://www.federalregister.gov/documents/2026/07/21/2026-14633/endangered-and-threatened-wildlife-and-plants-regulations-pertaining-to-endangered-and-threatened",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-21/pdf/2026-14633.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Rule; stated effective date 2026-08-20; verify operative status in the official edition",
+        "id": "S6",
+        "text": "rican Energy,'' issued January 20, 2025, directed all departments and agencies to review agency actions that impose an undue burden on the identification, development, or use of domestic energy resources, and, as appropriate and consistent with applicable law, consider suspending, revising, or rescinding agency actions that conflict with this national objective. To administer provisions of E.O. 14154, the Secretary subsequently issued Secretary's Order (S.O.) 3418 on February 3, 2025, which directed Assistant Secretaries to take steps, as appropriate, to suspend, revise, or rescind multiple actions that had been finalized under the prior Administration. The S.O. specifically referenced taking these steps with respect to the 2024 rule. E.O. 14219, ``Ensuring Lawful Governance and Implementing the President's `Department of Government Efficiency' Deregulatory Initiative,'' issued February 19, 2025, also directs all departments and agencies to review and rescind unlawful regulations that are ``based on anything other than the best reading of the underlying statutory authority'' (see also Loper Bright Enterprises v. Raimondo, 603 U.S. 369 (2024) (hereafter, ``Loper Bright'')). While E.O.s 14154 and 14219 initiated our review, our goal in revising these regulations was to determine how best to craft protective regulations for threatened species under section 4(d) of the Act while also considering our experience administering the Act and policy preferences. Based on our evaluation, and for reasons discussed in more detail below, we are revising 50 CFR part 17. The Secretaries of the Interior and Commerce share responsibilities for administering most of the provisions of the Act. Generally, marine species and some anadromous (sea-run) species are under the jurisdiction of the ",
+        "locator": "Whitespace-normalized extracted text, characters 6401–8200",
+        "original_id": "fr-2026-14633:6400"
+      },
+      {
+        "case_id": "cl-11266028",
+        "name": "Learning Resources, Inc. v. Trump Revisions: 2/23/26",
+        "citation": "",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2026-02-20",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/10799354/learning-resources-inc-v-trump-revisions-22326/",
+        "official_url": "https://www.supremecourt.gov/opinions/25pdf/24-1287_new_3135.pdf",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "recent-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S7",
+        "text": " Common sense means never “forgo[ing] the most natural reading of a stat- ute,” post, at 3, but it always means “expect[ing that] Con- gress [will] make the big-time policy calls,” post, at 2 (inter- nal quotation marks omitted). I am uncertain what to make of this, except that it seems to toggle between a clear-state- ment rule and nothing at all.2 —————— 2 To the extent JUSTICE BARRETT suggests any skepticism “com- monsense principles of communication” might (or might not) advise de- rives from a “ ‘practical understanding of legislative intent,’ ” rather than “external” and “substantive” Article I “values,” that poses still further (and familiar) problems. Nebraska, 600 U. S., at 508, 515 (concurring Cite as: 607 U. S. ____ (2026) 25 GORSUCH, J., concurring I am certain of one thing: Our cases hold a clear state- ment is required to support a claim to an extraordinary del- egated power. We required Congress to “speak clearly” in Utility Air, 573 U. S., at 324. We demanded “clear congres- sional authorization” in NFIB, 595 U. S., at 118. We did the same in Nebraska, 600 U. S., at 506, and in West Virginia, 597 U. S., at 732, and we do so again today, ante, at 13. Nor do I see cause for being quite so reluctant about acknowl- edging this. The common law recognized many clear-state- ment rules. See, e.g., Part I–B, supra. Our own cases have applied a host of Constitution-enforcing clear-statement rules as well. We just encountered the federalism clear- statement rule in Bond. Add to the list clear-statement rules against laws that might apply retroactively, waive or abrogate sovereign immunity, or create enforceable rights under the Taxing Clause—to name just a few. See, e.g., Landgraf v. USI Film Products, 511 U. S. 244, 265–268 (1994); Financial Oversight and Manageme",
+        "locator": "Whitespace-normalized extracted text, characters 104001–105800",
+        "original_id": "cl-11266028:104000"
+      },
+      {
+        "case_id": "fr-2026-19072",
+        "name": "Rescission of the Greenhouse Gas Findings for Fossil Fuel-Fired Power Plants and Repeal of Regulations for Power Plant Greenhouse Gas Emissions Under Clean Air Act Section 111",
+        "citation": "91 FR 59002",
+        "court": "Environmental Protection Agency",
+        "decision_date": "2026-09-17",
+        "opinion_type": "Proposed Rule",
+        "source_url": "https://www.federalregister.gov/documents/2026/09/17/2026-19072/rescission-of-the-greenhouse-gas-findings-for-fossil-fuel-fired-power-plants-and-repeal-of",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-09-17/pdf/2026-19072.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Proposed Rule; no effective date supplied; verify operative status in the official edition",
+        "id": "S8",
+        "text": "ytical approach we carried through to stationary sources in the 2015 NSPS and 2024 CPS. Recent legal developments have also compelled the EPA to take a harder look at the 2015 Findings. In particular, the Supreme Court's decision in West Virginia, which explained and applied the major questions doctrine, has particular bearing on the question whether the EPA has authority to regulate GHG emissions from fossil fuel-fired power plants under CAA section 111. The EPA discusses application of the major questions doctrine to this question in section V of this preamble. And in June 2024, the Supreme Court announced its decision in Loper Bright, which overruled Chevron deference to agency statutory interpretation and clarified that statutes have a single, best meaning, which is fixed at the time of enactment.\\117\\ As explained in section V of this preamble, the EPA's authority to regulate air pollutant emissions from a source category under CAA sections 111(b)(1)(B) and 111(a)(1) flows from the Administrator's listing of that category upon finding that it ``causes, or contributes significantly to, air pollution which may reasonably be anticipated to endanger public health or welfare.'' Regardless whether CAA section 111(b)(1)(A) requires the EPA to have only a rational basis for regulating air pollutants from an already listed source category or whether the Agency must make a pollutant-specific significant contribution finding, as a threshold matter, the EPA must demonstrate that the source category emissions satisfy the statutory prerequisite for regulation--that is, they must relate to qualifying ``air pollution'' within the meaning of the statute. And because the EPA is proposing to find that we lack authority under CAA section 111 to regulate GHG emissions from fossil fuel-",
+        "locator": "Whitespace-normalized extracted text, characters 142401–144200",
+        "original_id": "fr-2026-19072:142400"
+      }
+    ],
+    "searched": [
+      {
+        "id": "courtlistener",
+        "status": "ok",
+        "total": 6,
+        "note": "Principal opinion plus targeted and recent later-treatment searches; up to 4 full opinions. This is a limited search, not a complete good-law check.",
+        "warnings": [],
+        "searches": [
+          {
+            "phase": "original",
+            "query": "caseName:(Chevron AND U AND S AND A AND Inc AND Natural AND Resources AND Defense AND Council AND Inc)",
+            "court": "",
+            "after": "",
+            "before": "",
+            "order": "citeCount desc",
+            "status": "ok",
+            "matches": 6
+          },
+          {
+            "phase": "candidate-treatment",
+            "query": "caseName:(Loper AND Bright AND Enterprises AND Raimondo)",
+            "court": "scotus",
+            "after": "1984-06-25",
+            "before": "",
+            "order": "citeCount desc",
+            "status": "ok",
+            "matches": 2
+          },
+          {
+            "phase": "later-treatment",
+            "query": "\"Chevron U. S. A. Inc. v. Natural Resources Defense Council, Inc.\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+            "court": "scotus",
+            "after": "1984-06-25",
+            "before": "",
+            "order": "score desc",
+            "status": "ok",
+            "matches": 116
+          },
+          {
+            "phase": "recent-treatment",
+            "query": "\"Chevron U. S. A. Inc. v. Natural Resources Defense Council, Inc.\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+            "court": "scotus",
+            "after": "1984-06-25",
+            "before": "",
+            "order": "dateFiled desc",
+            "status": "ok",
+            "matches": 116
+          }
+        ],
+        "passages": 12
+      },
+      {
+        "id": "ecfr",
+        "status": "empty",
+        "total": 0,
+        "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+        "warnings": [],
+        "passages": 0
+      },
+      {
+        "id": "federal_register",
+        "status": "ok",
+        "total": 8,
+        "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+        "warnings": [],
+        "passages": 9
+      }
+    ],
+    "retrieved_at": "2026-10-05T06:24:46.440Z",
+    "query": "Chevron U.S.A. v. NRDC; Loper Bright",
+    "task": "research",
+    "databases": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "database_reason": "Searching the databases selected in Search settings.",
+    "research_focus": "case_status",
+    "document_coverage": [],
+    "filters": {
+      "court": "",
+      "after": "",
+      "before": ""
+    },
+    "automatic": true,
+    "model": "gpt-6-luna",
+    "inference": "api",
+    "propositions": [
+      {
+        "section": "Findings",
+        "claim": "Chevron U.S.A. Inc. v. NRDC’s deference framework was overruled by the Supreme Court in Loper Bright Enterprises v. Raimondo, decided June 28, 2024. The Court held that courts may not defer to an agency’s interpretation merely because a statute is ambiguous.",
+        "source_id": "S1",
+        "quote": "courts may not defer to an agency interpre- tation of the law simply because a statute is ambiguous; Chevron is overruled."
+      },
+      {
+        "section": "Findings",
+        "claim": "Loper Bright expressly preserved prior holdings that particular agency actions were lawful, including the Clean Air Act holding in Chevron itself; it overruled the interpretive methodology, not those holdings solely because they relied on Chevron.",
+        "source_id": "S3",
+        "quote": "The holdings of those cases that specifc agency actions are lawful—including the Clean Air Act holding of Chevron itself—are still subject to statutory stare decisis"
+      }
+    ],
+    "removed": 0,
+    "incomplete": false,
+    "abstained": false,
+    "missing_sections": [],
+    "model_used": true
+  }
+}

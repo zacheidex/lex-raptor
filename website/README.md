@@ -17,9 +17,10 @@ Both are account-free. The original Python/Next.js matter workspace is separate.
 - Look up case citations through CourtListener, including ambiguity and missing
   records. This is not a citator or a good-law determination.
 - Download the draft, quotations and sources as text or JSON.
+- Follow actual planning, database search, reading, drafting and quotation-check stages in the chat. The browser requests server-sent events; CLI and JSON clients retain the existing response format. A disconnect never triggers an automatic retry or refunds an uncertain cost.
 
-Chat is the homepage. Auto mode uses one bounded model call to select the task, search terms, databases and explicit court/date constraints, followed by at most one drafting call. Manual choices override the plan. Recent conversation context is kept only in browser memory and sent with follow-ups. Fully manual requests use one drafting call. These are structured, source-grounded
-workflows, not autonomous full-matter agents. Retrieval reads up to three public
+Chat is the homepage. All connected online databases are selected by default; the offline CAP starter library is optional. Users can narrow the selection or enable automatic database choice. The task remains automatic. Auto mode uses one bounded model call to select the task, search terms, databases and explicit court/date constraints, followed by at most one drafting call. Manual choices override the plan. Recent conversation context is kept only in browser memory and sent with follow-ups. Fully manual requests use one drafting call. These are structured, source-grounded
+workflows, not autonomous full-matter agents. Named-case searches resolve case names with citation-prominence ordering and prefer lead opinions over separate dissents. Case-status requests search the principal opinion, an independently retrieved later-case search lead, relevant later treatment and recent treatment (up to four searches/four opinions); other retrieval reads up to three public
 records per live database, ranks passages locally, interleaves the selected
 collections, and sends at most twelve passages within the existing token budget.
 Search terms may need refinement. A case brief based on excerpts can omit facts;
@@ -58,7 +59,7 @@ terms to those providers, even when inference is local. An optional
 
 The CourtListener connector is disabled until its token is configured. It uses
 the authenticated v4 API. No PACER purchase, RECAP Fetch/Pray-and-Pay request,
-commercial subscription, or automatic upgrade is made. One case search can use up to four requests (search plus three opinions).
+commercial subscription, or automatic upgrade is made. An ordinary case search can use up to four source requests (search plus three opinions); a case-status search can use up to eight (four searches plus four opinions). These are free data requests subject to provider quotas, not additional model calls.
 Existing public records are cached for 24 hours to reduce repeat downloads.
 Provider 429s are reported without automatic retries. Lex Raptor imposes no
 per-minute, hourly, daily or concurrency request-count cap during testing;
@@ -79,6 +80,8 @@ With the local workbench running, `node scripts/diagnose-workbench.mjs` runs
 the six public development prompts. It refuses API-model deployments and saves
 results in ignored `.local-data/`. See `../benchmark/workbench/RESULTS.md` for
 retained failures, iteration history and qualitative limitations.
+
+For the three case-status regression prompts, run `node scripts/diagnose-case-status.mjs` locally. Against a hosted URL, explicitly add `--allow-api-spend`; all three requests reserve at most $0.06 within the existing server cap, with no retries. Outputs go to ignored `.local-data/case-status/`. Review the actual holdings and qualifications manually; literal quotation counts are not accuracy scores.
 
 `db/schema.ts` is the schema source. Run `npm run db:generate` after schema
 changes and inspect the generated SQL. Preserve already applied migrations.
@@ -160,8 +163,7 @@ sanitize it. Source-service quotas still apply and return visible errors.
 `worker/corpus.json` retains the 979 passages from the original twelve CAP cases,
 with original URLs and hashes. Live-source adapters fetch selected public
 records and extract text with explicit source type and date. The model never
-gets provider credentials, tools, user-selectable endpoints, or private matter
-documents. Empty or unavailable selections are rejected before model use.
+gets provider credentials, tools, or user-selectable endpoints. Attached document excerpts are sent only for a user-submitted research request. Empty or unavailable selections are rejected before model use.
 
 Questions/search terms are sent only to selected data providers. CourtListener
 can log queries according to its account settings. Automatic settings use the model before source retrieval; drafting occurs only

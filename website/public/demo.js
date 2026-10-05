@@ -2,8 +2,18 @@ import {extractFiles} from '/documents.js';
 const $=id=>document.getElementById(id);
 const el=(tag,text,className)=>{const n=document.createElement(tag);if(text)n.textContent=text;if(className)n.className=className;return n;};
 let state={enabled:false,search_enabled:false,exhausted:false,databases:[]},busy=false,initialized=false,turnCount=0,readingFiles=false;
-const selected=new Set(['cap']),history=[],attachments=[];
+const selected=new Set(),history=[],attachments=[];
 async function api(path,body){const response=await fetch('/api/demo/'+path,{credentials:'same-origin',cache:'no-store',...(body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{})});const data=await response.json();if(!response.ok)throw new Error(data.error||'Research is unavailable.');return data;}
+async function researchApi(path,body,onProgress){
+ const response=await fetch('/api/demo/'+path,{method:'POST',credentials:'same-origin',cache:'no-store',headers:{'Content-Type':'application/json',Accept:'text/event-stream'},body:JSON.stringify(body)});
+ if(!response.headers.get('Content-Type')?.includes('text/event-stream')){const data=await response.json();if(!response.ok)throw new Error(data.error||'Research is unavailable.');return data;}
+ const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='',result;
+ try{for(;;){const {value,done}=await reader.read();buffer+=decoder.decode(value||new Uint8Array(),{stream:!done});let end;
+  while((end=buffer.indexOf('\n\n'))>=0){const frame=buffer.slice(0,end);buffer=buffer.slice(end+2);const event=frame.match(/^event: (.+)$/m)?.[1],raw=frame.match(/^data: (.+)$/m)?.[1];if(!raw)continue;const data=JSON.parse(raw);if(event==='error')throw new Error(data.error||'Research was interrupted.');if(event==='progress')onProgress(data);if(event==='result')result=data;}
+  if(done)break;
+ }}finally{reader.releaseLock();}
+ if(!result)throw new Error('The connection ended before the answer arrived. Your request was not automatically retried.');return result;
+}
 function render(){
  const hasSources=attachments.length||$('auto-databases').checked||selected.size>0;
  $('attach').disabled=busy||readingFiles;
@@ -16,18 +26,19 @@ function render(){
  $('check-citations').disabled=busy||!state.databases.some(d=>d.id==='courtlistener'&&d.available);
  $('ask').textContent=busy?'Working…':'Send';
  $('runtime-badge').textContent=state.inference==='local'?'Local · '+state.model:'Cloud AI';
- $('selection-note').textContent=$('auto-databases').checked?'Databases chosen from your message.':state.databases.filter(d=>selected.has(d.id)).map(d=>d.name).join(' · ')||'Select at least one connected database.';
- $('availability').textContent=!state.search_enabled?'Research is temporarily unavailable.':state.exhausted?'The shared $10 AI allowance is used. Source search and citation lookup are still available.':!state.enabled?'AI is unavailable. Source search and citation lookup are still available.':busy?'Searching and reading sources…':'';
+ $('selection-note').textContent=$('auto-databases').checked?'Only relevant databases will be chosen from your message.':state.databases.filter(d=>selected.has(d.id)).map(d=>d.name).join(' · ')||'Select at least one connected database.';
+ $('availability').textContent=!state.search_enabled?'Research is temporarily unavailable.':state.exhausted?'The shared $10 AI allowance is used. Source search and citation lookup are still available.':!state.enabled?'AI is unavailable. Source search and citation lookup are still available.':'';
  if(state.inference==='local')$('privacy-note').textContent='AI runs locally. Online searches go to the selected databases. Review sources before relying on an answer.';
  else $('privacy-note').textContent='Use public or hypothetical facts. Messages go to OpenAI; searches go to selected databases.';
  if(attachments.length)$('privacy-note').textContent=state.inference==='local'?'Document analysis runs locally. Enabling database research sends your question to those providers.':'On Send, extracted document text goes to OpenAI. Files stay in this tab; Lex Raptor does not save them.';
  $('manual-databases').disabled=$('auto-databases').checked;
+ $('open-options').textContent=$('auto-databases').checked?'Sources · Auto':'Sources · '+selected.size;
 }
 function renderDatabases(){
  $('database-options').replaceChildren();
  for(const d of state.databases){const label=el('label',null,'source-choice');const input=el('input');input.type='checkbox';input.value=d.id;input.id='database-'+d.id;input.checked=selected.has(d.id);input.disabled=!d.available;input.addEventListener('change',()=>{input.checked?selected.add(d.id):selected.delete(d.id);render();});const info=el('span');info.append(el('strong',d.name),el('small',d.description));label.append(input,info);$('database-options').append(label);}
 }
-async function refresh(){try{state=await api('status');if(!initialized){initialized=true;if(state.databases.some(d=>d.id==='courtlistener'&&d.available)){selected.clear();selected.add('courtlistener');}}for(const id of selected)if(!state.databases.some(d=>d.id===id&&d.available))selected.delete(id);renderDatabases();render();}catch(e){state.search_enabled=false;state.enabled=false;render();$('availability').textContent=e.message;}}
+async function refresh(){try{state=await api('status');if(!initialized){initialized=true;selected.clear();for(const d of state.databases)if(d.available&&d.id!=='cap')selected.add(d.id);if(!selected.size&&state.databases.some(d=>d.id==='cap'&&d.available))selected.add('cap');}for(const id of selected)if(!state.databases.some(d=>d.id===id&&d.available))selected.delete(id);renderDatabases();render();}catch(e){state.search_enabled=false;state.enabled=false;render();$('availability').textContent=e.message;}}
 $('auto-databases').addEventListener('change',render);
 $('search-with-documents').addEventListener('change',render);
 $('open-options').addEventListener('click',()=>$('options-dialog').showModal());
@@ -47,18 +58,19 @@ function showResult(container,data,draft,question,id){
  container.append(el('div',(draft?taskName:'Source search')+' · '+names.join(', ')+(data.automatic?' · Auto settings':''),'plan-summary'));
  if(data.document_coverage?.length)container.append(el('p','Analysis uses selected document excerpts. Review the full files for context and omissions.','document-note'));
  let section='';
- for(const p of data.propositions||[]){if(p.section!==section){section=p.section;if(section!=='Findings')container.append(el('h3',section));}container.append(el('p',p.claim));const s=data.sources.find(s=>s.id===p.source_id);const quote=el('details',null,'quote');quote.append(el('summary',s?.citation||s?.name||'Source quotation'),el('blockquote',p.quote));const a=el('a','Read source passage');a.href='#source-'+id+'-'+p.source_id;quote.append(a);container.append(quote);}
- if(draft&&!data.propositions?.length)container.append(el('p',data.no_evidence?'I couldn’t retrieve supporting text for this request. Try more focused search terms or another database.':data.incomplete?'The model did not return a complete draft. You can review the retrieved sources below.':'No findings passed the quotation check. Review the sources below or refine your question.'));
+ for(const p of data.propositions||[]){if(p.section!==section){section=p.section;if(section!=='Findings')container.append(el('h3',section));}container.append(el('p',p.claim));const s=data.sources.find(s=>s.id===p.source_id);const quote=el('details',null,'quote');quote.append(el('summary',s?.name? s.name+(s.citation&&s.citation!==s.name?' · '+s.citation:''):'Source quotation'),el('blockquote',p.quote));const a=el('a','Read source passage');a.href='#source-'+id+'-'+p.source_id;quote.append(a);container.append(quote);}
+ if(draft&&!data.propositions?.length)container.append(el('p',data.no_evidence?'I couldn’t retrieve supporting text for this request. Try more focused search terms or another database.':data.incomplete?'The model did not return a complete draft. You can review the retrieved sources below.':data.removed?'The draft’s quotations could not be verified, so those findings were removed. Review the source passages below.':'The retrieved passages did not support an answer to this question. No findings were generated. Review the search details or adjust the scope.'));
  const info=el('details',null,'result-details');info.append(el('summary','Sources & research details · '+data.sources.length+' passages'));
+ info.append(el('p',data.database_reason||'Searching your selected databases.','small'));
  info.append(el('p','Search: '+data.query,'small'));
  if(data.filters)info.append(el('p','Court: '+(data.filters.court||'Any')+' · Dates: '+(data.filters.after||'Any')+' to '+(data.filters.before||'Any'),'small'));
  info.append(el('p','Retrieved '+new Date(data.retrieved_at).toLocaleString()+' · '+(data.model_used?data.model:'No AI call'),'small'));
- for(const r of data.searched||[]){const name=r.id==='documents'?'Attached documents':state.databases.find(d=>d.id===r.id)?.name||r.id;info.append(el('p',name+': '+r.status+' · '+r.passages+' passages'+(r.total!==null?' · '+Number(r.total).toLocaleString()+' reported matches':'')+'. '+r.note,r.status==='unavailable'?'source-warning':'small'));for(const w of r.warnings||[])info.append(el('p',w,'source-warning'));}
+ for(const r of data.searched||[]){const name=r.id==='documents'?'Attached documents':state.databases.find(d=>d.id===r.id)?.name||r.id;info.append(el('p',name+': '+r.status+' · '+r.passages+' passages'+(r.total!==null?' · '+Number(r.total).toLocaleString()+' reported matches':'')+'. '+r.note,r.status==='unavailable'?'source-warning':'small'));for(const step of r.searches||[])info.append(el('p',step.phase+': '+step.query+' · '+step.status+(step.court?' · '+step.court:'')+(step.after?' · after '+step.after:'')+(step.before?' · before '+step.before:''),'small'));for(const w of r.warnings||[])info.append(el('p',w,'source-warning'));}
  for(const d of data.document_coverage||[]){info.append(el('p',d.name+': '+d.selected_passages+' selected passages from '+d.extracted_characters.toLocaleString()+' extracted characters'+(d.type==='PDF'?' across '+d.pages+' pages':'')+'.','small'));for(const w of d.warnings||[])info.append(el('p',w,'source-warning'));}
  for(const s of data.sources){const d=el('details',null,'source-detail');d.id='source-'+id+'-'+s.id;d.append(el('summary',s.name+' · '+s.citation),el('p',s.database_name+' · '+s.court+' · '+s.decision_date),el('p',s.source_status),el('p',s.opinion_type+' · '+s.locator),el('div',s.text,'passage'));if(s.source_url)d.append(link('Open source record',s.source_url));if(s.official_url)d.append(document.createTextNode(' · '),link('Official PDF',s.official_url));info.append(d);}
  container.append(info);
  const notes=[];if(data.removed)notes.push(data.removed+' finding(s) removed because quotations could not be verified.');if(data.missing_sections?.length)notes.push('No retained findings for: '+data.missing_sections.join(', ')+'.');if(draft&&data.task==='compare'&&new Set(data.sources.map(s=>s.case_id)).size<2)notes.push('Fewer than two authorities retrieved; comparison is incomplete.');if(notes.length)container.append(el('p',notes.join(' '),'validation-note'));
- if(draft)container.append(el('p','Check the cited sources and legal context. Later treatment and current validity have not been verified.','review-note'));
+ if(draft)container.append(el('p',data.research_focus==='case_status'?'This answer uses a limited search for later treatment, not a comprehensive citator check. Review the cited opinions and any jurisdiction-specific law.':'Check the cited sources and legal context. This search does not establish current validity.','review-note'));
  const actions=el('div',null,'export-actions');const txt=el('button','Download text'),json=el('button','Export JSON');txt.type=json.type='button';txt.addEventListener('click',()=>download(exportText(record),'lex-raptor-research.txt','text/plain;charset=utf-8'));json.addEventListener('click',()=>download(JSON.stringify(record,null,2),'lex-raptor-research.json','application/json'));actions.append(txt,json);container.append(actions);
 }
 async function research(draft){
@@ -66,8 +78,16 @@ async function research(draft){
  if(!$('research-form').reportValidity()){$('options-dialog').close();$('question').focus();return;}
  if(!['court','after','before','search-query'].every(id=>$(id).reportValidity())){$('options-dialog').showModal();return;}
  const submitted=requestBody();busy=true;render();$('options-dialog').close();document.body.classList.add('has-conversation');
- const id=++turnCount,turn=el('section',null,'turn'),user=el('p',submitted.question,'user-message'),heading=el('div',null,'answer-heading'),logo=el('img');logo.src='/logo.png';logo.alt='';heading.append(logo,document.createTextNode('Lex Raptor'));const answer=el('div',null,'answer');answer.append(el('p',draft?'Preparing your research…':'Searching sources…','muted'));if(submitted.documents.length)user.append(el('span',submitted.documents.map(d=>d.name).join(' · '),'user-attachments'));turn.append(user,heading,answer);$('conversation').append(turn);$('question').value='';user.scrollIntoView({block:'start',behavior:'auto'});
- try{const data=await api(draft?'research':'search',submitted);showResult(answer,data,draft,submitted.question,id);}catch(e){answer.replaceChildren(el('p',e.message,'error'));const retry=el('button','Edit request');retry.type='button';retry.addEventListener('click',()=>{$('question').value=submitted.question;$('question').focus();});answer.append(retry);}finally{busy=false;await refresh();}
+ const id=++turnCount,turn=el('section',null,'turn'),user=el('p',submitted.question,'user-message'),heading=el('div','Lex Raptor','answer-heading');
+ const answer=el('div',null,'answer'),waiting=el('div',null,'research-progress'),stage=el('p','Starting research…','progress-stage'),elapsed=el('span','','progress-elapsed'),activity=el('div',null,'progress-sources');
+ stage.setAttribute('role','status');elapsed.setAttribute('aria-hidden','true');waiting.append(stage,elapsed,activity);answer.append(waiting);answer.setAttribute('aria-busy','true');
+ if(submitted.documents.length)user.append(el('span',submitted.documents.map(d=>d.name).join(' · '),'user-attachments'));
+ turn.append(user,heading,answer);$('conversation').append(turn);$('question').value='';
+ const rect=user.getBoundingClientRect();if(rect.top<0||rect.bottom>innerHeight*.65)user.scrollIntoView({block:'nearest',behavior:'auto'});
+ const started=Date.now(),clock=setInterval(()=>{const seconds=Math.floor((Date.now()-started)/1000);elapsed.textContent=seconds+'s'+(seconds>=20?' · Still working. Database responses can take a little longer.':'');},1000),providers=new Map();
+ const progress=data=>{stage.textContent=data.message;if(data.database){const name=state.databases.find(d=>d.id===data.database)?.name||data.database;providers.set(data.database,data.stage==='source_complete'?data.message:name+' · Searching and reading');activity.replaceChildren(...[...providers.values()].map(text=>el('div',text)));}};
+ try{const data=await researchApi(draft?'research':'search',submitted,progress);showResult(answer,data,draft,submitted.question,id);}catch(e){answer.replaceChildren(el('p',e.message,'error'));const retry=el('button','Edit request');retry.type='button';retry.addEventListener('click',()=>{$('question').value=submitted.question;$('question').focus();});answer.append(retry);}finally{clearInterval(clock);answer.removeAttribute('aria-busy');busy=false;await refresh();}
+
 }
 $('research-form').addEventListener('submit',e=>{e.preventDefault();research(true);});
 $('question').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();research(true);}});

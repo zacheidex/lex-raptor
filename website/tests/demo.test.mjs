@@ -18,6 +18,7 @@ async function fixture(t,options={}) {
       }
       assert.equal(request.url,'https://api.openai.com/v1/responses');
       const body=await request.json();calls.push(body);
+      if(options.beforeDraft&&body.text.format.name==='legal_research')await options.beforeDraft();
       if(options.fail||(options.failDraft&&body.text.format.name==='legal_research'))return new Response('{}',{status:500});
       if(body.text.format.name==='research_plan')return Response.json({status:'completed',usage:{input_tokens:500,output_tokens:100},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}]}]});
       const {sources}=JSON.parse(body.input),s=sources[0];
@@ -187,6 +188,82 @@ test('automatic settings use the model and account for planning plus drafting to
   assert.equal(f.calls[0].max_output_tokens,1024);assert.match(f.calls[0].input,/Tell me about Celotex/);assert.match(f.calls[1].input,/conversation_context/);
   const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.charged,488);assert.equal(ledger.input_tokens,1500);assert.equal(ledger.output_tokens,300);
   assert.equal((await f.req('research',q)).status,429);assert.equal(f.calls.length,2);
+});
+
+test('case-status search resolves the named case, prefers lead opinions and retrieves later treatment',async t=>{
+  const seen=[],primary={cluster_id:1,caseName:'Atlas v. Beacon',citation:['100 U.S. 100'],court:'Supreme Court',court_id:'scotus',dateFiled:'1980-01-01',absolute_url:'/opinion/1/atlas/',opinions:[{id:11,type:'dissent'},{id:12,type:'lead-opinion'}]};
+  const later={cluster_id:2,caseName:'Nova v. Comet',citation:['200 U.S. 200'],court:'Supreme Court',court_id:'scotus',dateFiled:'2020-01-01',absolute_url:'/opinion/2/nova/',opinions:[{id:21,type:'dissent'},{id:22,type:'lead-opinion'}]};
+  const recent={...later,cluster_id:3,caseName:'Gamma v. Delta',dateFiled:'2026-01-01',absolute_url:'/opinion/3/gamma/',opinions:[{id:32,type:'combined-opinion'}]};
+  const f=await fixture(t,{bindings:{COURTLISTENER_API_TOKEN:'fake-court-token'},plan:{task:'research',search_query:'Atlas v. Beacon',case_name:'Atlas v. Beacon',research_focus:'case_status',database_reason:'Cases and later treatment.',database_ids:['courtlistener'],filters:{court:'',after:'',before:''}},source:async request=>{
+    if(!request.url.includes('courtlistener.com'))return;
+    const u=new URL(request.url);seen.push(u);
+    if(u.pathname.endsWith('/search/')){
+      if(u.searchParams.get('q').startsWith('caseName:'))return Response.json({count:10,results:[primary]});
+      assert.equal(u.searchParams.get('court'),'scotus');assert.equal(u.searchParams.get('filed_after'),'1980-01-01');
+      assert.match(u.searchParams.get('q'),/"Atlas v. Beacon" AND/);
+      return Response.json({count:20,results:u.searchParams.get('order_by')==='dateFiled desc'?[recent,later]:[later]});
+    }
+    assert.doesNotMatch(u.pathname,/opinions\/(11|21)\//,'Dissents must not displace available lead opinions');
+    return Response.json({plain_text:u.pathname.includes('/12/')?'The original Atlas v. Beacon decision held that the rule was required.':('Background material without any relevant decision. '.repeat(100)+'We hold that Atlas v. Beacon is overruled. The prior rule cannot stand. ').repeat(2)});
+  }});
+  const data=await (await f.req('research',f.question({question:'Is Atlas v. Beacon still good law?',task:'auto',database_ids:'auto'}))).json();
+  assert.equal(data.research_focus,'case_status');assert.equal(data.sources[0].research_role,'later-treatment');
+  assert.ok(data.sources.some(s=>s.text.includes('Atlas v. Beacon is overruled')));
+  assert.ok(data.sources.some(s=>s.research_role==='original'));assert.ok(data.sources.some(s=>s.research_role==='recent-treatment'));
+  assert.equal(data.searched[0].searches.length,3);assert.equal(seen[0].searchParams.get('q'),'caseName:(Atlas AND Beacon)');assert.equal(seen[0].searchParams.get('order_by'),'citeCount desc');
+  assert.equal(f.calls.length,2,'Improved retrieval must not add unbudgeted model calls');
+});
+
+test('later-case suggestions are fetched as search leads, never used as answer evidence by themselves',async t=>{
+  const seen=[],base=remoteFixture(seen);
+  const f=await fixture(t,{bindings:{COURTLISTENER_API_TOKEN:'fake-court-token'},plan:{task:'research',search_query:'Example v. Example',case_name:'Example v. Example',later_case_name:'Missing v. Nobody',research_focus:'case_status',database_ids:['courtlistener'],filters:{court:'',after:'',before:''}},source:async request=>{
+    if(request.url.includes('courtlistener.com')&&new URL(request.url).searchParams.get('q')?.includes('Missing'))return Response.json({count:0,results:[]});return base(request);
+  }});
+  const data=await (await f.req('research',f.question({task:'auto',database_ids:'auto'}))).json();
+  assert.equal(data.searched[0].searches.length,4);assert.equal(data.searched[0].searches[1].matches,0);assert.ok(data.sources.every(s=>!s.name.includes('Missing')));assert.ok(!f.calls[1].input.includes('Missing'));assert.equal(f.calls.length,2);
+});
+
+test('later-treatment failure preserves original evidence and discloses the gap',async t=>{
+  const seen=[],base=remoteFixture(seen);
+  const f=await fixture(t,{bindings:{COURTLISTENER_API_TOKEN:'fake-court-token'},plan:{task:'research',search_query:'Example v. Example',case_name:'Example v. Example',research_focus:'case_status',database_ids:['courtlistener'],filters:{court:'',after:'',before:''}},source:async request=>{
+    if(request.url.includes('courtlistener.com')&&new URL(request.url).searchParams.get('q')?.includes('overrul*'))return new Response('{}',{status:429});return base(request);
+  }});
+  const data=await (await f.req('research',f.question({task:'auto',database_ids:'auto'}))).json();
+  assert.ok(data.sources.length);assert.equal(data.searched[0].searches[1].status,'unavailable');assert.match(data.searched[0].warnings.join(' '),/No later-treatment full text/);
+  assert.equal(data.searched[0].searches.length,2,'Upstream rate limits must not trigger more requests');
+});
+
+test('a successful zero-match treatment search is empty, not a provider outage',async t=>{
+  const f=await fixture(t,{bindings:{COURTLISTENER_API_TOKEN:'fake-court-token'},plan:{task:'research',search_query:'Missing v. Nobody',case_name:'Missing v. Nobody',research_focus:'case_status',database_ids:['courtlistener'],filters:{court:'',after:'',before:''}},source:async request=>request.url.includes('courtlistener.com')?Response.json({count:0,results:[]}):undefined});
+  const data=await (await f.req('research',f.question({task:'auto',database_ids:'auto'}))).json();
+  assert.equal(data.no_evidence,true);assert.equal(data.searched[0].status,'empty');assert.equal(f.calls.length,1);assert.ok(data.searched[0].searches.every(s=>s.status==='ok'&&s.matches===0));
+});
+
+test('streaming research reports real stages and final results while keeping the same accounting',async t=>{
+  const f=await fixture(t);
+  const r=await f.req('research',f.question({task:'auto',database_ids:'auto'}),'',{Accept:'text/event-stream'});
+  assert.match(r.headers.get('Content-Type'),/text\/event-stream/);
+  const frames=(await r.text()).trim().split('\n\n').map(frame=>({event:frame.match(/^event: (.+)$/m)[1],data:JSON.parse(frame.match(/^data: (.+)$/m)[1])}));
+  const stages=frames.filter(f=>f.event==='progress').map(f=>f.data.stage);
+  for(const stage of ['accepted','planning','plan','searching','source_complete','drafting','checking'])assert.ok(stages.includes(stage),stage);
+  assert.equal(frames.at(-1).event,'result');assert.equal(frames.at(-1).data.propositions.length,1);assert.equal((await f.db.prepare('SELECT charged FROM demo_calls').first()).charged,488);
+  const bad=await f.req('research',f.question(),'',{Accept:'text/event-stream',Origin:'https://evil.test'});const error=await bad.text();assert.match(error,/event: error/);assert.match(error,/"status":403/);assert.equal(f.calls.length,2);
+});
+
+test('manual selections retain all connected databases even if the planner suggests just case law',async t=>{
+  const seen=[],f=await fixture(t,{bindings:{COURTLISTENER_API_TOKEN:'fake-court-token'},source:remoteFixture(seen)});
+  const data=await (await f.req('research',f.question({task:'auto',database_ids:['courtlistener','ecfr','federal_register']}))).json();
+  assert.deepEqual(data.databases,['courtlistener','ecfr','federal_register']);assert.equal(data.searched.length,3);assert.ok(data.sources.some(s=>s.database_id==='ecfr'));assert.match(data.database_reason,/selected in Search settings/);
+});
+
+test('disconnecting a progress stream does not skip model cost settlement',async t=>{
+  let release,started;const gate=new Promise(r=>release=r),drafting=new Promise(r=>started=r);
+  const f=await fixture(t,{beforeDraft:async()=>{started();await gate;}});
+  const r=await f.req('research',f.question(),'',{Accept:'text/event-stream'}),reader=r.body.getReader();
+  await reader.read();await drafting;const canceled=reader.cancel();release();await canceled;
+  let ledger;
+  for(let i=0;i<50;i++){ledger=await f.db.prepare('SELECT * FROM demo_calls').first();if(ledger?.state==='completed')break;await new Promise(r=>setTimeout(r,20));}
+  assert.equal(ledger.state,'completed');assert.equal(ledger.charged,325);assert.equal(f.calls.length,1);
 });
 
 test('manual task, database, query and filters override the automatic plan',async t=>{

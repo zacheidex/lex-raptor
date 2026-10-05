@@ -31,6 +31,7 @@ export function filters(input={}) {
   return out;
 }
 export function safeLink(value,host) {
+  if(typeof value!=='string'||!value.trim())return '';
   try{const u=new URL(value,'https://'+host);return u.protocol==='https:'&&u.hostname===host&&!u.username&&!u.password?u.href:'';}catch{return '';}
 }
 export async function sourceRequest(env,provider,url,{method='GET',body,cache=false,json=true}={}) {
@@ -56,34 +57,95 @@ export async function sourceRequest(env,provider,url,{method='GET',body,cache=fa
   return data;
 }
 const tokens=q=>[...new Set(q.toLowerCase().match(/[a-z0-9]{3,}/g)||[])].filter(t=>!['the','and','what','does','about','that','this','from','with','have','under','which'].includes(t)).slice(0,40);
-export function passages(text,meta,query) {
+export function passages(text,meta,query,{treatment=false}={}) {
   const terms=tokens(query),chunks=[];
   for(let offset=0;offset<text.length;offset+=1600){const part=text.slice(offset,offset+1800);if(part.trim().length<30)continue;
     const words=new Set(part.toLowerCase().match(/[a-z0-9]+/g)||[]);
-    const score=terms.reduce((n,t)=>n+(words.has(t)?1:0),0);
-    chunks.push({...meta,id:meta.case_id+':'+offset,text:part,locator:`Whitespace-normalized extracted text, characters ${offset+1}–${offset+part.length}`,score});
+    let score=terms.reduce((n,t)=>n+(words.has(t)?1:0),0);
+    if(treatment&&score){
+      if(/overrul\w*|abrogat\w*|supersed\w*|reaffirm\w*|no longer good law/i.test(part))score+=12;
+      if(/we (?:therefore )?(?:hold|overrule|reaffirm)|(?:is|are|must be|hereby) overruled/i.test(part))score+=16;
+      if(/do(?:es)? not call into question|still subject to.*stare decisis|does not (?:overrule|disturb)/i.test(part))score+=16;
+    }
+    chunks.push({...meta,id:meta.case_id+':'+offset,text:part,locator:`Whitespace-normalized extracted text, characters ${offset+1}–${offset+part.length}`,score,offset});
   }
-  return chunks.sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id)).slice(0,3).map(({score,...s})=>s);
+  return chunks.sort((a,b)=>b.score-a.score||a.offset-b.offset).slice(0,3).map(({score,offset,...s})=>s);
 }
 function starterSearch(query,f) {
   if(f.court&&f.court!=='scotus')return [];
   return starter(query,f).map(s=>({...s,database_id:'cap',database_name:'CAP starter library',kind:'case',source_status:'Historical opinion; later treatment not checked'}));
 }
-async function courtlistener(env,query,f) {
-  const u=new URL('https://www.courtlistener.com/api/rest/v4/search/');
-  u.search=new URLSearchParams({q:query,type:'o',order_by:'score desc',highlight:'off',...(f.court?{court:f.court}:{}),...(f.after?{filed_after:f.after}:{}),...(f.before?{filed_before:f.before}:{})});
-  const result=await sourceRequest(env,'courtlistener',u.href),hits=[],warnings=[];let downloaded=0;
-  for(const c of (result.results||[]).slice(0,5)){
-    for(const o of (c.opinions||[]).slice(0,1)){
-      if(downloaded>=3)break;if(!Number.isSafeInteger(o.id))continue;
-      downloaded++;
-      let full;try{full=await sourceRequest(env,'courtlistener',`https://www.courtlistener.com/api/rest/v4/opinions/${o.id}/`,{cache:true});}catch(e){warnings.push(`Opinion ${o.id}: ${e instanceof SourceError?e.message:'Retrieval failed.'}`);continue;}
-      const text=plain(full.plain_text||full.html_with_citations||full.html||full.html_lawbox||full.html_columbia||full.xml_harvard||'');
-      if(!text){warnings.push(`Opinion ${o.id}: no usable full text returned.`);continue;}
-      hits.push(...passages(text,{case_id:'cl-'+o.id,name:clean(plain(c.caseName)),citation:clean(plain((c.citation||[]).join('; '))),court:clean(c.court),decision_date:clean(c.dateFiled),opinion_type:clean(o.type||full.type||'not specified'),source_url:safeLink(c.absolute_url,'www.courtlistener.com'),database_id:'courtlistener',database_name:'CourtListener',kind:'case',source_status:'Citation existence and exact text only; later treatment not checked'},query));
-    }
+// These searches discover possible treatment, not a comprehensive citator.
+// Named cases are resolved by caseName + citation prominence, so a two-line
+// rehearing order does not displace the principal decision on name alone.
+export function caseNameQuery(name) {
+  const words=String(name).replace(/\b(?:v|vs|versus)\.?\b/gi,' ').match(/[\p{L}\p{N}]+/gu)||[];
+  return words.length?`caseName:(${words.slice(0,18).join(' AND ')})`:'';
+}
+async function courtlistener(env,query,f,progress=()=>{}) {
+  const warnings=[],searches=[],seen=new Set(),groups=[];
+  let downloaded=0;
+  const status=f.research_focus==='case_status';
+  const name=f.case_name||(!f.manual_query&&/\bv(?:s)?\.?\s/i.test(query)&&query.length<160?query:'');
+  async function search(q,scope,order,phase){
+    progress({stage:'searching',message:phase==='original'?'Finding the principal opinion…':'Searching for later treatment…',database:'courtlistener'});
+    const u=new URL('https://www.courtlistener.com/api/rest/v4/search/');
+    u.search=new URLSearchParams({q,type:'o',order_by:order,highlight:'off',...(scope.court?{court:scope.court}:{}),...(scope.after?{filed_after:scope.after}:{}),...(scope.before?{filed_before:scope.before}:{})});
+    const record={phase,query:q,court:scope.court||'',after:scope.after||'',before:scope.before||'',order,status:'pending',matches:null};searches.push(record);
+    try{const result=await sourceRequest(env,'courtlistener',u.href);record.status='ok';record.matches=result.count??null;return result;}catch(e){record.status='unavailable';throw e;}
   }
-  return {sources:hits,total:result.count??null,note:'Published opinions; up to 3 full opinion records per search. No search snippets are used as evidence.',warnings};
+  async function read(c,phase){
+    const priority=['lead-opinion','unanimous-opinion','combined-opinion','plurality-opinion','on-the-merits'];
+    const opinions=[...(c.opinions||[])].sort((a,b)=>{
+      const rank=o=>{const n=priority.indexOf(o.type);return n<0?20:n;};return rank(a)-rank(b);
+    });
+    const o=opinions.find(o=>Number.isSafeInteger(o.id));
+    if(!o||seen.has(c.cluster_id||c.absolute_url||o.id)||downloaded>=4)return;
+    seen.add(c.cluster_id||c.absolute_url||o.id);downloaded++;const rank=downloaded;
+    progress({stage:'reading',message:'Reading '+plain(c.caseName).slice(0,160)+'…',database:'courtlistener'});
+    try{
+      const full=await sourceRequest(env,'courtlistener',`https://www.courtlistener.com/api/rest/v4/opinions/${o.id}/`,{cache:true});
+      const text=plain(full.plain_text||full.html_with_citations||full.html||full.html_lawbox||full.html_columbia||full.xml_harvard||'');
+      if(!text){warnings.push(`Opinion ${o.id}: no usable full text returned.`);return;}
+      const record=passages(text,{case_id:'cl-'+o.id,name:clean(plain(c.caseName)),citation:clean(plain((c.citation||[]).join('; '))),court:clean(c.court),decision_date:clean(c.dateFiled),opinion_type:clean(o.type||full.type||'not specified'),source_url:safeLink(c.absolute_url,'www.courtlistener.com'),official_url:safeLink(o.download_url||full.download_url,'www.supremecourt.gov'),database_id:'courtlistener',database_name:'CourtListener',kind:'case',research_role:phase,source_status:phase==='original'?'Original search result; does not establish current validity':'Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.'},name||query,{treatment:status&&phase!=='original'});
+      groups.push({rank,passages:record});
+    }catch(e){warnings.push(`Opinion ${o.id}: ${e instanceof SourceError?e.message:'Retrieval failed.'}`);}
+  }
+  const original=await search(name?caseNameQuery(name):query,f,name?'citeCount desc':'score desc','original');
+  const primary=original.results?.[0];
+  await Promise.all((original.results||[]).slice(0,status&&name?1:3).map(c=>read(c,'original')));
+  if(status&&name){
+    const target=plain(primary?.caseName||name).replace(/["\\]/g,' ').slice(0,180);
+    const q=`"${target}" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)`;
+    // A Supreme Court precedent's controlling judicial treatment is sought in
+    // that court. For other courts leave scope broad enough for higher courts.
+    const scope={...f,court:f.court||(primary?.court_id==='scotus'?'scotus':''),after:[f.after,primary?.dateFiled].filter(Boolean).sort().at(-1)||''};
+    if(!scope.before||scope.after<=scope.before){
+      // A model-suggested later case is only a search lead. It is never supplied
+      // to the answer as a fact: only retrieved opinion text can support it.
+      let leadRead=false,blocked=false;
+      if(f.later_case_name&&f.later_case_name.toLowerCase()!==name.toLowerCase()){
+        try{const candidate=await search(caseNameQuery(f.later_case_name),scope,'citeCount desc','candidate-treatment');const before=groups.length;for(const c of (candidate.results||[]).slice(0,1))await read(c,'candidate-treatment');leadRead=groups.length>before;}
+        catch(e){warnings.push(e instanceof SourceError?e.message:'Later-decision search failed.');blocked=true;}
+      }
+      for(const [order,phase,count] of blocked?[]:[['score desc','later-treatment',leadRead?1:2],['dateFiled desc','recent-treatment',1]]){
+        try{const result=await search(q,scope,order,phase);const candidates=(result.results||[]).filter(c=>!seen.has(c.cluster_id||c.absolute_url||c.opinions?.[0]?.id));await Promise.all(candidates.slice(0,count).map(c=>read(c,phase)));}
+        catch(e){warnings.push(e instanceof SourceError?e.message:'Later-treatment search failed.');break;}
+      }
+    }
+    if(!groups.some(g=>g.passages[0]?.research_role!=='original'))warnings.push('No later-treatment full text was retrieved. The original decision alone cannot establish present validity.');
+  }
+  // Put later treatment before the original for status questions; interleave
+  // opinions so the source context contains more than one authority.
+  groups.sort((a,b)=>(status?Number(a.passages[0]?.research_role==='original')-Number(b.passages[0]?.research_role==='original'):0)||a.rank-b.rank);
+  const hits=[];
+  // Give a specifically retrieved later decision enough context to retain its
+  // qualifications, without letting it consume every authority slot.
+  const candidate=groups.find(g=>g.passages[0]?.research_role==='candidate-treatment');
+  if(candidate)hits.push(...candidate.passages.slice(0,2));
+  for(let i=0;i<3;i++)for(const group of groups)if(group.passages[i]&&!hits.includes(group.passages[i]))hits.push(group.passages[i]);
+  const availability=hits.length?'ok':warnings.length&&searches.some(s=>s.status!=='ok'||s.matches!==0)?'unavailable':'empty';
+  return {status:availability,sources:hits,total:original.count??null,note:status?'Principal opinion plus targeted and recent later-treatment searches; up to 4 full opinions. This is a limited search, not a complete good-law check.':'Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.',warnings,searches};
 }
 async function federalRegister(env,query,f) {
   const u=new URL('https://www.federalregister.gov/api/v1/documents.json');
@@ -117,11 +179,13 @@ async function ecfr(env,query) {
   }
   return {sources:hits,total:result.meta?.total_count??result.meta?.total_results??null,note:'Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.',warnings};
 }
-export async function searchSources(env,{query,database_ids,...f}) {
+export async function searchSources(env,{query,database_ids,...f},progress=()=>{}) {
   const outcomes=await Promise.all(database_ids.map(async id=>{
-    try{const result=id==='cap'?{sources:starterSearch(query,f),total:null,note:'Search of the 12 imported starter opinions.'}:await ({courtlistener,ecfr,federal_register:federalRegister}[id])(env,query,f);
+    progress({stage:'searching',database:id,message:'Searching '+(catalog(env).find(d=>d.id===id)?.name||id)+'…'});
+    try{const result=id==='cap'?{sources:starterSearch(query,f),total:null,note:'Search of the 12 imported starter opinions.'}:await ({courtlistener,ecfr,federal_register:federalRegister}[id])(env,query,f,progress);
+      progress({stage:'source_complete',database:id,message:(catalog(env).find(d=>d.id===id)?.name||id)+': '+result.sources.length+' passages retrieved.'});
       return {id,status:result.sources.length?'ok':(result.warnings?.length?'unavailable':'empty'),...result};
-    }catch(e){return {id,status:'unavailable',sources:[],total:null,note:e instanceof SourceError?e.message:'This database could not be searched.'};}
+    }catch(e){progress({stage:'source_complete',database:id,message:(catalog(env).find(d=>d.id===id)?.name||id)+': unavailable.'});return {id,status:'unavailable',sources:[],total:null,note:e instanceof SourceError?e.message:'This database could not be searched.'};}
   }));
   // Interleave databases so one selected collection cannot consume the entire
   // context. Full passages, not search snippets, enter citation validation.

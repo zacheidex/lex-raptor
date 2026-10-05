@@ -27,12 +27,12 @@ async function readBody(request) {
   const bytes=new Uint8Array(size);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.length;}
   try{return JSON.parse(new TextDecoder().decode(bytes));}catch{fail(400,'Invalid request.');}
 }
-async function api(request,env) {
+async function api(request,env,progress=()=>{}) {
   const path=new URL(request.url).pathname, now=Math.floor(Date.now()/1000);
   if(path==='/api/demo/status'&&request.method==='GET') {
     const enabled=!!ready(env);
     const state=await database(env).prepare('SELECT COALESCE(SUM(charged),0) total FROM demo_calls').first();
-    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
+    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,research_progress:true,case_treatment_search:true,research_revision:3,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
   }
   if(request.method!=='POST')fail(405,'Method not allowed.');
   if(request.headers.get('Origin')!==new URL(request.url).origin||request.headers.get('Sec-Fetch-Site')==='cross-site')fail(403,'Open research on this website to continue.');
@@ -83,33 +83,61 @@ async function api(request,env) {
   async function reconcile(){if(reserved&&usageKnown)await settle(db,body.request_id,usage);}
   let plan={query:body.search_query?.trim()||body.question.slice(0,300),task:requestedTask==='auto'?'research':requestedTask,database_ids:body.database_ids==='auto'?catalog(env).filter(d=>d.available&&d.id!=='cap').map(d=>d.id):body.database_ids,...selectedFilters};
   if(automatic){
+    progress({stage:'planning',message:'Planning the research…'});
     const planned=await callModel(planPayload(env,body));
     try{plan=readPlan(planned,env,body);}catch{await reconcile();fail(502,'Automatic settings could not be prepared. Choose task, databases and search terms manually, then try again.');}
   }
+  plan.manual_query=!!body.search_query?.trim();
+  if(plan.research_focus!=='case_status'&&/\b(current status|still (?:good|valid|binding)|good law|overruled|overturned|later treatment)\b/i.test(body.question))plan.research_focus='case_status';
   if(onlyDocuments)plan.database_ids=[];
-  const {query,task,database_ids,...searchFilters}=plan;
-  const found=onlyDocuments?{sources:[],searched:[],retrieved_at:new Date().toISOString()}:await searchSources(env,plan);
+  const {query,task,database_ids}=plan;
+  const searchFilters=filters(plan);
+  progress({stage:'plan',message:onlyDocuments?'Reading attached document excerpts…':'Searching selected databases…',task,databases:database_ids,reason:plan.database_reason||'Searching your selected databases.'});
+  const found=onlyDocuments?{sources:[],searched:[],retrieved_at:new Date().toISOString()}:await searchSources(env,plan,progress);
   const docPassages=documentPassages(documents,body.question);
   if(documents.length){
     const merged=[];for(let i=0;i<Math.max(docPassages.length,found.sources.length);i++){if(docPassages[i])merged.push(docPassages[i]);if(found.sources[i])merged.push(found.sources[i]);}found.sources=merged;
     found.searched.unshift({id:'documents',status:docPassages.length?'ok':'empty',passages:docPassages.length,total:documents.length,note:'Selected excerpts of attached documents; this is not an exhaustive review.'});
   }
-  const meta={...found,query,task,databases:[...(documents.length?['documents']:[]),...database_ids],document_coverage:documentCoverage(documents,found.sources),filters:searchFilters,automatic,model:modelName(env),inference:local(env)?'local':'api'};
+  const meta={...found,query,task,databases:[...(documents.length?['documents']:[]),...database_ids],database_reason:plan.database_reason||'Searching your selected databases.',research_focus:plan.research_focus||'general',document_coverage:documentCoverage(documents,found.sources),filters:searchFilters,automatic,model:modelName(env),inference:local(env)?'local':'api'};
   if(path==='/api/demo/search')return json({...meta,model_used:false});
   const sources=evidenceSubset(found.sources,body.context?18500:22000);
   meta.document_coverage=documentCoverage(documents,sources);
   if(!sources.length){await reconcile();return json({...meta,propositions:[],sources:[],removed:0,incomplete:false,no_evidence:true,model_used:automatic});}
-  const response=await callModel(payload(body.question,sources,task,body.context||''));
+  progress({stage:'drafting',message:'Writing an answer from '+sources.length+' source passages…'});
+  const response=await callModel(payload(body.question,sources,task,body.context||'',plan.research_focus));
   await reconcile();
   // Public-only cache cleanup never touches the lifetime spending ledger.
   await db.prepare('DELETE FROM source_cache WHERE expires<?').bind(now).run();
   await db.prepare('DELETE FROM source_requests WHERE created<?').bind(now-172800).run();
   await db.prepare('DELETE FROM demo_attempts WHERE expires<?').bind(now).run();
+  progress({stage:'checking',message:'Checking source quotations…'});
   return json({...meta,...validate(response,sources,task),sources,model_used:true});
 }
+function errorResponse(error){
+  // Never log prompts, provider response bodies, documents or keys.
+  if(!(error instanceof PublicError)&&!(error instanceof SourceError))console.error('Demo service failure');
+  return json({error:error instanceof PublicError||error instanceof SourceError?error.message:'Research is temporarily unavailable. Please try again later.'},error instanceof PublicError?error.status:error instanceof SourceError?400:503);
+}
+function streamResearch(request,env,context){
+  let closed=false;
+  const stream=new ReadableStream({start(controller){
+    const emit=(event,data)=>{if(!closed){try{controller.enqueue(encoder.encode(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`));}catch{closed=true;}}};
+    const work=(async()=>{
+      emit('progress',{stage:'accepted',message:'Starting research…'});
+      try{const response=await api(request,env,data=>emit('progress',data));emit(response.ok?'result':'error',{...await response.json(),status:response.status});}
+      catch(e){const response=errorResponse(e);emit('error',{...await response.json(),status:response.status});}
+      finally{if(!closed){closed=true;controller.close();}}
+    })();
+    // Finish accounting even if the browser disconnects. No automatic retries.
+    context?.waitUntil(work);
+  },cancel(){closed=true;}});
+  return new Response(stream,{headers:{'Content-Type':'text/event-stream','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
+}
 export default {
-  async fetch(request,env) {
+  async fetch(request,env,context) {
     try {
+      if(request.method==='POST'&&['/api/demo/research','/api/demo/search'].includes(new URL(request.url).pathname)&&request.headers.get('Accept')==='text/event-stream')return streamResearch(request,env,context);
       if(new URL(request.url).pathname.startsWith('/api/'))return await api(request,env);
       if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405});
       const url=new URL(request.url);
@@ -121,9 +149,7 @@ export default {
       headers.set('X-Content-Type-Options','nosniff');headers.set('Referrer-Policy','no-referrer');
       return new Response(result.body,{status:result.status,headers});
     } catch(error) {
-      // Never log prompts, cookies, provider response bodies or keys.
-      if(!(error instanceof PublicError)&&!(error instanceof SourceError))console.error('Demo service failure');
-      return json({error:error instanceof PublicError||error instanceof SourceError?error.message:'Research is temporarily unavailable. Please try again later.'},error instanceof PublicError?error.status:error instanceof SourceError?400:503);
+      return errorResponse(error);
     }
   }
 };

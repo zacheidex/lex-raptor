@@ -1,0 +1,389 @@
+{
+  "id": "chevron",
+  "request": {
+    "question": "Is Chevron U.S.A. Inc. v. Natural Resources Defense Council still good law?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "bac8a106-8cb1-47f9-a3b9-a74fb525fc4c"
+  },
+  "seconds": 9.511,
+  "events": [
+    {
+      "seconds": 0.748,
+      "stage": "accepted",
+      "message": "Starting research\u2026"
+    },
+    {
+      "seconds": 0.748,
+      "stage": "planning",
+      "message": "Planning the research\u2026"
+    },
+    {
+      "seconds": 4.469,
+      "stage": "plan",
+      "message": "Searching selected databases\u2026",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "reason": "Searching the databases selected in Search settings."
+    },
+    {
+      "seconds": 4.469,
+      "stage": "searching",
+      "database": "courtlistener",
+      "message": "Searching CourtListener\u2026"
+    },
+    {
+      "seconds": 4.469,
+      "stage": "searching",
+      "message": "Finding the principal opinion\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 4.469,
+      "stage": "searching",
+      "database": "ecfr",
+      "message": "Searching eCFR\u2026"
+    },
+    {
+      "seconds": 4.469,
+      "stage": "searching",
+      "database": "federal_register",
+      "message": "Searching Federal Register\u2026"
+    },
+    {
+      "seconds": 4.779,
+      "stage": "source_complete",
+      "database": "ecfr",
+      "message": "eCFR: 3 passages retrieved."
+    },
+    {
+      "seconds": 4.779,
+      "stage": "reading",
+      "message": "Reading Chevron U. S. A. Inc. v. Natural Resources Defense Council, Inc.\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 4.823,
+      "stage": "source_complete",
+      "database": "federal_register",
+      "message": "Federal Register: 9 passages retrieved."
+    },
+    {
+      "seconds": 5.083,
+      "stage": "searching",
+      "message": "Searching for later treatment\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 5.289,
+      "stage": "reading",
+      "message": "Reading Loper Bright Enterprises v. Raimondo\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 5.7,
+      "stage": "searching",
+      "message": "Searching for later treatment\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 5.836,
+      "stage": "reading",
+      "message": "Reading Coeur Alaska, Inc. v. Southeast Alaska Conservation Council\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 5.901,
+      "stage": "searching",
+      "message": "Searching for later treatment\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 6.336,
+      "stage": "reading",
+      "message": "Reading Learning Resources, Inc. v. Trump Revisions: 2/23/26\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 6.336,
+      "stage": "source_complete",
+      "database": "courtlistener",
+      "message": "CourtListener: 12 passages retrieved."
+    },
+    {
+      "seconds": 6.336,
+      "stage": "drafting",
+      "message": "Writing an answer from 8 source passages\u2026"
+    },
+    {
+      "seconds": 9.466,
+      "stage": "checking",
+      "message": "Checking source quotations\u2026"
+    }
+  ],
+  "retained": 2,
+  "literal_quotes": 2,
+  "response": {
+    "sources": [
+      {
+        "case_id": "cl-11066629",
+        "name": "Loper Bright Enterprises v. Raimondo",
+        "citation": "603 U.S. 369",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2024-06-28",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/10600041/loper-bright-enterprises-v-raimondo/",
+        "official_url": "https://www.supremecourt.gov/opinions/23pdf/603us1r54_o7jp.pdf",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "candidate-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S1",
+        "text": "ding whether an Publication agency has acted within its statutory authority, and courts may not defer to an agency interpre- tation of the law simply because a statute is ambiguous; Chevron is overruled. Pp. 384\u2013413. (a) Article III of the Constitution assigns to the Federal Judiciary the responsibility and power to adjudicate \u201cCases\u201d and \u201cControversies\u201d\u2014 concrete disputes with consequences for the parties involved. The Framers appreciated that the laws judges would necessarily apply in resolving those disputes would not always be clear, but envisioned that the fnal \u201cinterpretation of the laws\u201d would be \u201cthe proper and peculiar province of the courts.\u201d The Federalist No. 78, p. 525 (A. Hamilton). As Chief Justice Marshall declared in the foundational decision of Mar- bury v. Madison, \u201c[i]t is emphatically the province and duty of the judi- cial department to say what the law is.\u201d 1 Cranch 137, 177. In the decades following Marbury, when the meaning of a statute was at issue, the judicial role was to \u201cinterpret the act of Congress, in order to ascer- tain the rights of the parties.\u201d Decatur v. Paulding, 14 Pet. 497, 515. *Together with No. 22\u20131219, Relentless, Inc., et al. v. Department of Commerce et al., on certiorari to the United States Court of Appeals for the First Circuit. 370 LOPER BRIGHT ENTERPRISES v. RAIMONDO Syllabus The Court recognized from the outset, though, that exercising inde- pendent judgment often included according due respect to Executive Branch interpretations of federal statutes. Such respect was thought especially warranted when an Executive Branch interpretation was is- sued roughly contemporaneously with enactment of the statute and re- mained consistent over time. The Court also gave \u201cthe most respect- ful consideration\u201d to Executive Branch i",
+        "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+        "original_id": "cl-11066629:1600"
+      },
+      {
+        "case_id": "ecfr-40-52.2020-2026-10-01",
+        "name": "Identification of plan.",
+        "citation": "40 CFR 52.2020",
+        "court": "Environmental Protection Agency",
+        "decision_date": "2026-10-01",
+        "opinion_type": "Regulation",
+        "source_url": "https://www.ecfr.gov/on/2026-10-01/title-40/section-52.2020",
+        "database_id": "ecfr",
+        "database_name": "eCFR",
+        "kind": "regulation",
+        "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+        "id": "S2",
+        "text": "(c)(149)(i)(B)(9). Consolidated Rail Corp. (CONRAIL)\u2014Juniata OP-07-2003 Blair 8/29/95 8/6/01, 66 FR 40891 (c)(149)(i)(B)(10). Containment Solutions, Inc. (formerly called Fluid Containment\u2014Mt. Union) OP-31-02005 Huntingdon 4/9/99 8/6/01, 66 FR 40891 See also 52.2064(a)(12). Cooper Energy Systems, Grove City OP-43-003 Mercer 7/25/96 8/6/01, 66 FR 40891 (c)(149)(i)(B)(12). Cyprus Cumberland Resources Corp OP-30-000-040 Greene 3/26/99 8/6/01, 66 FR 40891 (c)(149)(i)(B)(13). Defense Distribution\u2014Susquehanna OP-67-02041 York 2/1/00 08/06/01, 66 FR 40891 (c)(149)(i)(B)(14). EMI Company OP-25-070 Erie 10/24/96 8/6/01, 66 FR 40891 (c)(149)(i)(B)(15). Empire Sanitary Landfill, Inc OP-35-0009 Lackawanna 10/17/96 8/6/01, 66 FR 40891 (c)(149)(i)(B)(16). Equitrans, Inc.\u2014Rogersville Station (OP)30-000-109 Greene 7/10/95 8/6/01, 66 FR 40891 (c)(149)(i)(B)(17). Equitrans, Inc.\u2014Pratt Station (OP)30-000-110 Greene 7/10/95 8/6/01, 66 FR 40891 (c)(149)(i)(B)(18). Erie Coke Corporation\u2014Erie OP-25-029 Erie 6/27/95 8/6/01, 66 FR 40891 (c)(149)(i)(B)(19). Fleetwood Folding Trailers, Inc.\u2014Somerset (OP)56-000-151 Somerset 2/28/96 8/6/01, 66 FR 40891 (c)(149)(i)(B)(20). Gichner Systems Group, Inc (OP)67-2033 York 8/5/97 8/6/01, 66 FR 40891 (c)(149)(i)(B)(21). Offset Paperback Manufacturers, Inc.\u2014Dallas (OP)40-0008 Luzerne 4/16/99 08/06/01, 66 FR 40891 (c)(149)(i)(B)(22). Overhead Door Corporation\u2014Mifflin County (OP)44-2011 Mifflin 6/4/97 8/6/01, 66 FR 40891 (c)(149)(i)(B)(23). SANYO Audio Manufacturing (USA) Corp (OP)44-2003 Mifflin 6/30/95 8/06/01, 66 FR 40891 (c)(149)(i)(B)(24). Stroehmann Bakeries OP\u2014Luzerne County (OP)40-0014A Luzerne 5/30/95 8/6/01, 66 FR 40891 (c)(149)(i)(B)(25). Merck and Co., Inc.\u2014West Point Facility OP-46-0005 Montgomery 1/13/97 6/23/00 4/18/01, 66 FR 19858 See also 52.2",
+        "locator": "Whitespace-normalized extracted text, characters 113601\u2013115400",
+        "original_id": "ecfr-40-52.2020-2026-10-01:113600"
+      },
+      {
+        "case_id": "fr-2026-14983",
+        "name": "Nondiscrimination in Federally Assisted Programs of the Department of Defense-Effectuation of Title VI of the Civil Rights Act of 1964; Amendment",
+        "citation": "91 FR 46724",
+        "court": "Defense Department",
+        "decision_date": "2026-07-24",
+        "opinion_type": "Rule",
+        "source_url": "https://www.federalregister.gov/documents/2026/07/24/2026-14983/nondiscrimination-in-federally-assisted-programs-of-the-department-of-defense-effectuation-of-title",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-24/pdf/2026-14983.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Rule; stated effective date 2026-07-24; verify operative status in the official edition",
+        "id": "S3",
+        "text": "f action to enforce Title VI's bar on intentional discrimination, id. at 279-80, that conclusion did not extend to enforcing DOJ's ``disparate-impact regulations,'' id. at 285. As the Supreme Court explained, it is ``clear'' that ``the disparate-impact regulations do not simply apply'' the statutory prohibition, as the regulations ``forbid conduct that [Title VI] permits,'' so it is equally ``clear that the private right of action to enforce [Title VI] does not include a private right to enforce these regulations.'' Id. And although the Supreme Court in Sandoval ``assume[d],'' without deciding, that DOJ's disparate-impact regulations were valid, the Court explained that the then-current version of the regulations were in ``considerable tension'' with the Supreme Court's Title VI precedents. Similarly, the regulations did not ``authoritatively'' construe Title VI because the regulations ``forbid conduct''--namely, policies that unintentionally result in a disparate impact--that Title VI ``permits.'' Id. at 281-82, 284-85; see also id. at 286 n.6 (``[Title VI] permits the very behavior that the regulations forbid.''). Finally, in 2024, the Supreme Court overruled Chevron U.S.A. Inc. v. Natural Resources Defense Council, Inc., 467 U.S. 837 (1984). See Loper Bright Enters. v. Raimondo, 603 U.S. 369, 409-12 (2024). In doing so, the Supreme Court made clear that ``statutes . . . have a single, best meaning'' that is `` `fixed at the time of enactment.' '' Id. at 400 (quoting Wis. Cent. Ltd. v. United States, 585 U.S. 274, 284 (2018)). Thus, Title VI's bar on discrimination can have only one meaning. And under Supreme Court precedent, the single, best meaning of Title VI is that it ``prohibits only intentional discrimination'' and ``permits'' facially neutral policies that res",
+        "locator": "Whitespace-normalized extracted text, characters 8001\u20139800",
+        "original_id": "fr-2026-14983:8000"
+      },
+      {
+        "case_id": "cl-11066629",
+        "name": "Loper Bright Enterprises v. Raimondo",
+        "citation": "603 U.S. 369",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2024-06-28",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/10600041/loper-bright-enterprises-v-raimondo/",
+        "official_url": "https://www.supremecourt.gov/opinions/23pdf/603us1r54_o7jp.pdf",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "candidate-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S4",
+        "text": "merely change errati- cally, but will develop in a principled and intelligible fashion,\u201d Vasquez v. Hillery, 474 U. S. 254, 265, is for the Court to leave Chevron behind. By overruling Chevron, though, the Court does not call into question prior cases that relied on the Chevron framework. The holdings of those cases that specifc agency actions are lawful\u2014including the Clean Air Act holding of Chevron itself\u2014are still subject to statutory stare decisis despite the Court's change in interpretive methodology. See CBOCS West, Inc. v. Humphries, 553 U. S. 442, 457. Mere reliance on Chevron cannot constitute a \u201c `special justifcation' \u201d for overruling such a holding. Halliburton Co. v. Erica P. John Fund, Inc., 573 U. S. 258, 266 (quoting Dickerson v. United States, 530 U. S. 428, 443). Pp. 407\u2013412. No. 22\u2013451, 45 F. 4th 359; and No. 22\u20131219, 62 F. 4th 621, vacated and remanded. Roberts, C. J., delivered the opinion of the Court, in which Thomas, Alito, Gorsuch, Kavanaugh, and Barrett, JJ., joined. Thomas, J., post, p. 413, and Gorsuch, J., post, p. 416, fled concurring opinions. Kagan, J., fled a dissenting opinion, in which Sotomayor, J., joined, and in which Jackson, J., joined as it applies to No. 22\u20131219, post, p. 448. Jackson, J., took no part in the consideration or decision of the case in Page Proof Pending Publication No. 22\u2013451. Paul D. Clement argued the cause for petitioners. With him on the briefs were Andrew C. Lawrence, Ryan P. Mul- vey, Eric R. Bolinder, and R. James Valvo III. Solicitor General Prelogar argued the cause for respond- ents. With her on the brief were Assistant Attorney Gen- eral Kim, Deputy Solicitor General Kneedler, Matthew Guarnieri, Rachel Heron, and Dina B. Mishra.\u2020 \u2020Briefs of amici curiae urging reversal were fled for the State of West Vi",
+        "locator": "Whitespace-normalized extracted text, characters 20801\u201322600",
+        "original_id": "cl-11066629:20800"
+      },
+      {
+        "case_id": "ecfr-40-52.2020-2026-10-01",
+        "name": "Identification of plan.",
+        "citation": "40 CFR 52.2020",
+        "court": "Environmental Protection Agency",
+        "decision_date": "2026-10-01",
+        "opinion_type": "Regulation",
+        "source_url": "https://www.ecfr.gov/on/2026-10-01/title-40/section-52.2020",
+        "database_id": "ecfr",
+        "database_name": "eCFR",
+        "kind": "regulation",
+        "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+        "id": "S5",
+        "text": "A-23-0017 Delaware 12/28/94 9/8/95, 60 FR 46768 (c)(102)(i)(B)(1). Gilberton Power Co.\u2014John Rich Memorial OP-54-0004 Schuylkill 12/20/94 9/8/95, 60 FR 46768 (c)(102)(i)(B)(2). Bethlehem Steel\u2014Coke and Chemical Production OP-48-0013 Northampton 12/20/94 09/8/95, 60 FR 46768 (c)(102)(i)(B)(3). Bethlehem Steel\u2014Foundry OP-48-0014 Northampton 12/20/94 9/8/95, 60 FR 46768 (c)(102)(i)(B)(3). Bethlehem Steel\u2014Structural Products OP-48-0010 Northampton 12/20/94 9/8/95, 60 FR 46768 (c)(102)(i)(B)(3). Bethlehem Steel\u2014Forging OP-48-0015 Northampton 12/20/94 9/8/95, 60 FR 46768 (c)(102)(i)(B)(3). Westwood Energy Properties, Inc. (CRS Sirrine, Inc.) OP-54-000-6 Schuylkill 12/27/94 09/8/95, 60 FR 46768 (c)(102)(i)(B)(4). PECO Energy Co.\u2014Front Street OP-46-0045 Montgomery 3/31/95 9/8/95, 60 FR 46768 (c)(102)(i)(B)(5). Crawford Furniture Manufacturing Corp.\u2014Clarion County OP-16-021 Clarion 3/27/95 9/8/95, 60 FR 46768 (c)(102)(i)(B)(6). Schuylkill Energy Resources OP-54-0003 Schuylkill 5/19/95 9/8/95, 60 FR 46768 (c)(102)(i)(B)(7). Columbia Gas Transmission Corp.\u2014Milford Compressor Station OP-52-0001 Pike 4/21/95 9/8/95, 60 FR 46768 (c)(102)(i)(B)(9). Texas Eastern Transmission Corp.\u2014Entriken Compressor Station OP-31-2003 Huntingdon 5/16/95 9/8/95, 60 FR 46768 (c)(102)(i)(B)(10). Columbia Gas Transmission Corp.\u2014Greencastle Compressor Station OP-28-2003 Franklin 4/21/95 9/8/95, 60 FR 46768 (c)(102)(i)(B)(11). Lord Corporation\u2014Aerospace Div OP-25-095 Erie 3/30/95 9/8/95, 60 FR 46768 (c)(102)(i)(B)(12). Tennessee Gas Pipeline Co. (TENNECO)\u2014Station 313 PA-53-0001 OP-53-0001 CP-53-0001 Potter 11/27/95 4/09/96, 61 FR 15709 (c)(103)(i)(B)(1). Corning Asahi Video Products\u2014State College OP-14-0003 Centre 12/27/94 4/09/96, 61 FR 15709 (c)(103)(i)(B)(2). Corning Asahi Video Products\u2014State College OP",
+        "locator": "Whitespace-normalized extracted text, characters 91201\u201393000",
+        "original_id": "ecfr-40-52.2020-2026-10-01:91200"
+      },
+      {
+        "case_id": "fr-2026-14983",
+        "name": "Nondiscrimination in Federally Assisted Programs of the Department of Defense-Effectuation of Title VI of the Civil Rights Act of 1964; Amendment",
+        "citation": "91 FR 46724",
+        "court": "Defense Department",
+        "decision_date": "2026-07-24",
+        "opinion_type": "Rule",
+        "source_url": "https://www.federalregister.gov/documents/2026/07/24/2026-14983/nondiscrimination-in-federally-assisted-programs-of-the-department-of-defense-effectuation-of-title",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-24/pdf/2026-14983.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Rule; stated effective date 2026-07-24; verify operative status in the official edition",
+        "id": "S6",
+        "text": "ory costs, such as conducting an impact analysis, and is coerced to proactively consider race, color, and national origin, and potentially use it to change unintended disparate outcomes. In short, disparate-impact liability encourages and, in some cases, requires covered entities to engage in the intentional use of race and racial balancing to eliminate those disparate outcomes by treating certain racial groups differently from others--the exact conduct the Equal Protection Clause forbids. See id. The serious constitutional concerns raised by these perverse incentives further confirm that the best reading of Title VI is that it prohibits only intentional discrimination and does not authorize DoD to impose disparate-impact liability. See Edward J. DeBartolo Corp. v. Fla. Gulf Coast Bldg. & Constr. Trades Council, 485 U.S. 568, 575 (1988) (``[W]here an otherwise acceptable construction of a statute would raise serious constitutional problems, the Court will construe the statute to avoid [[Page 46727]] such problems unless such construction is plainly contrary to the intent of Congress.'' (citing NLRB v. Catholic Bishop of Chi., 440 U.S. 490, 499-501, 504 (1979)). This encouraged or coerced use of race, color, or national origin violates the Equal Protection Clause unless it survives review under the ``daunting'' strict-scrutiny standard. SFFA, 600 U.S. at 206; see also Free Speech Coal., Inc. v. Paxton, 145 S. Ct. 2291, 2310 (2025) (``Strict scrutiny--which requires a restriction to be the least restrictive means of achieving a compelling governmental interest--is `the most demanding test known to constitutional law.' '' (quoting City of Boerne v. Flores, 521 U.S. 507, 534 (1997)). The use of race, color, or national origin necessitated by the disparate-impact provisions ",
+        "locator": "Whitespace-normalized extracted text, characters 17601\u201319400",
+        "original_id": "fr-2026-14983:17600"
+      },
+      {
+        "case_id": "cl-145854",
+        "name": "Coeur Alaska, Inc. v. Southeast Alaska Conservation Council",
+        "citation": "129 S. Ct. 2458; 557 U.S. 261; 2009 U.S. LEXIS 4730; 77 U.S.L.W. 4559; 21 Fla. L. Weekly Fed. S 973",
+        "court": "Supreme Court of the United States",
+        "decision_date": "2009-06-22",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/145854/coeur-alaska-inc-v-southeast-alaska-conservation-council/",
+        "official_url": "",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "later-treatment",
+        "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+        "id": "S7",
+        "text": "ed Judicial Review of Agency Action, 58 Vand. L. Rev. 1443, 1464 (2005). I favor overruling Mead. Failing that, I am pleased to join an opinion that effectively ignores it. \u2014\u2014\u2014\u2014\u2014\u2014 49, 61 (CA2 2004) (according Chevron deference to policy statements issued by Department of Housing and Urban Development) and Schu etz v. Banc One Mortgage Corp., 292 F. 3d 1004, 1012 (CA9 2002) (same), with Krzalic v. Republic Title Co., 314 F. 3d 875, 881 (CA7 2002) (denying Chevron deference to same policy statements). Compare American Federation of Govt. Employees, AFL\u2013CIO, Local 446 v. Nicholson, 475 F. 3d 341, 353\u2013354 (CADC 2007) (according Chevron deference to informal adjudication by Department of Veterans Affairs), with American Federation of Govt. Employees, AFL\u2013CIO, Local 2152 v. Principi, 464 F. 3d 1049, 1057 (CA9 2006) (denying Chevron deference to similar action). It is not even clear that notice-and-comment rule making will assure Chevron deference to agency interpretation of an ambiguous statute. See Rubie\u2019s Costume Co. v. United States, 337 F. 3d 1350, 1355 (CA Fed. 2003) (customs classification). Cite as: 557 U. S. ____ (2009) 1 GINSBURG, J., dissenting SUPREME COURT OF THE UNITED STATES _________________ Nos. 07\u2013984 and 07\u2013990 _________________ COEUR ALASKA, INC., PETITIONER 07\u2013984 v. SOUTHEAST ALASKA CONSERVATION COUNCIL ET AL. ALASKA, PETITIONER 07\u2013990 v. SOUTHEAST ALASKA CONSERVATION COUNCIL ET AL. ON WRITS OF CERTIORARI TO THE UNITED STATES COURT OF APPEALS FOR THE NINTH CIRCUIT [June 22, 2009] JUSTICE GINSBURG, with whom JUSTICE STEVENS and JUSTICE SOUTER join, dissenting. Petitioner Coeur Alaska, Inc., proposes to discharge 210,000 gallons per day of mining waste into Lower Slate Lake, a 23-acre subalpine lake in Tongass National For est. The \u201ctailings slurry\u201d would c",
+        "locator": "Whitespace-normalized extracted text, characters 73601\u201375400",
+        "original_id": "cl-145854:73600"
+      },
+      {
+        "case_id": "ecfr-40-52.2020-2026-10-01",
+        "name": "Identification of plan.",
+        "citation": "40 CFR 52.2020",
+        "court": "Environmental Protection Agency",
+        "decision_date": "2026-10-01",
+        "opinion_type": "Regulation",
+        "source_url": "https://www.ecfr.gov/on/2026-10-01/title-40/section-52.2020",
+        "database_id": "ecfr",
+        "database_name": "eCFR",
+        "kind": "regulation",
+        "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+        "id": "S8",
+        "text": ". Uniform Tubes Inc OP-46-0046A Montgomery 3/26/98 11/6/98, 63 FR 59884 (c)(136)(i)(B)(14). U.S. Air Force\u2014Willow Grove Air Reserve Station OP-46-0072 Montgomery 5/1/98 11/6/98, 63 FR 59884 (c)(136)(i)(B)(15). Naval Air Station, Joint Reserve Base\u2014Willow Grove OP-46-0079 Montgomery 5/4/98 11/6/98, 63 FR 59884 (c)(136)(i)(B)(16). Columbia Gas Transmission Corp.\u2014Artemas Compressor Station 05-2006 Bedford 4/19/95 12/03/98, 63 FR 66755 (c)(137)(i)B)(1). Columbia Gas Transmission Corp.\u2014Donegal Compressor Station 63-000-631 Washington 7/10/95 12/03/98, 63 FR 66755 (c)(137)(i)B)(2). Columbia Gas Transmission Corp.\u2014Gettysburg Compressor Station 01-2003 Adams 4/21/95 12/03/98, 63 FR 66755 (c)(137)(i)B)(3). Columbia Gas Transmission Corp.\u2014Eagle Compressor Station OP-15-0022 Chester 2/1/96 12/03/98, 63 FR 66755 (c)(137)(i)B)(4). Columbia Gas Transmission Corp.\u2014Downingtown CP-15-0020 Chester 9/15/95 12/03/98, 63 FR 66755 (c)(137)(i)B)(5). GKN Sinter Metals, Inc OP-12-0002 Cameron 10/30/98 4/16/99, 64 FR 18821 (c)(138)(i)(B)(1). Cabinet Industries, Inc.\u2014Water Street Plant OP-47-0005 Montour 9/21/98 4/16/99, 64 FR 18821 (c)(138)(i)(B)(2). Springs Window Fashions Division, Inc OP-41-0014 Lycoming 9/29/98 4/16/99, 64 FR 18821 (c)(138)(i)(B)(3). Centennial Printing Corp OP-46-0068 Montgomery 10/31/96 5/11/98 4/16/99, 64 FR 18821 (c)(138)(i)(B)(4). Strick Corp.\u2014Danville OP-47-0002 Montour 8/28/96 4/16/99, 64 FR 18821 (c)(138)(i)(B)(5). Handy and Harmon Tube Co.\u2014Norristown OP-46-0016 Montgomery 9/25/95 4/16/99, 64 FR 18821 (c)(138)(i)(B)(6). Boeing Defense & Space Group\u2014Helicopters Div CP-23-0009 Delaware 9/3/97 12/15/00, 65 FR 78418 See also 52.2064(a)(8). Delaware County Regional Authority's Western Regional Treatment Plant (DELCORA WRTP) OP-23-0032 Delaware 3/12/97 5/16/97 12/15/00, 65",
+        "locator": "Whitespace-normalized extracted text, characters 105601\u2013107400",
+        "original_id": "ecfr-40-52.2020-2026-10-01:105600"
+      }
+    ],
+    "searched": [
+      {
+        "id": "courtlistener",
+        "status": "ok",
+        "total": 6,
+        "note": "Principal opinion plus targeted and recent later-treatment searches; up to 4 full opinions. This is a limited search, not a complete good-law check.",
+        "warnings": [],
+        "searches": [
+          {
+            "phase": "original",
+            "query": "caseName:(Chevron AND U AND S AND A AND Inc AND Natural AND Resources AND Defense AND Council)",
+            "court": "",
+            "after": "",
+            "before": "",
+            "order": "citeCount desc",
+            "status": "ok",
+            "matches": 6
+          },
+          {
+            "phase": "candidate-treatment",
+            "query": "caseName:(Loper AND Bright AND Enterprises AND Raimondo)",
+            "court": "scotus",
+            "after": "1984-06-25",
+            "before": "",
+            "order": "citeCount desc",
+            "status": "ok",
+            "matches": 2
+          },
+          {
+            "phase": "later-treatment",
+            "query": "\"Chevron U. S. A. Inc. v. Natural Resources Defense Council, Inc.\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+            "court": "scotus",
+            "after": "1984-06-25",
+            "before": "",
+            "order": "score desc",
+            "status": "ok",
+            "matches": 116
+          },
+          {
+            "phase": "recent-treatment",
+            "query": "\"Chevron U. S. A. Inc. v. Natural Resources Defense Council, Inc.\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+            "court": "scotus",
+            "after": "1984-06-25",
+            "before": "",
+            "order": "dateFiled desc",
+            "status": "ok",
+            "matches": 116
+          }
+        ],
+        "passages": 12
+      },
+      {
+        "id": "ecfr",
+        "status": "ok",
+        "total": 94,
+        "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+        "warnings": [],
+        "passages": 3
+      },
+      {
+        "id": "federal_register",
+        "status": "ok",
+        "total": 320,
+        "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+        "warnings": [],
+        "passages": 9
+      }
+    ],
+    "retrieved_at": "2026-10-05T06:22:17.041Z",
+    "query": "Chevron U.S.A. Inc. v. Natural Resources Defense Council",
+    "task": "research",
+    "databases": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "database_reason": "Searching the databases selected in Search settings.",
+    "research_focus": "case_status",
+    "document_coverage": [],
+    "filters": {
+      "court": "",
+      "after": "",
+      "before": ""
+    },
+    "automatic": true,
+    "model": "gpt-6-luna",
+    "inference": "api",
+    "propositions": [
+      {
+        "section": "Findings",
+        "claim": "Yes. The Supreme Court expressly overruled Chevron in Loper Bright Enterprises v. Raimondo, decided June 28, 2024. That holding overruled Chevron\u2019s deference framework; it did not automatically unsettle earlier case-specific holdings that relied on the framework.",
+        "source_id": "S1",
+        "quote": "Chevron is overruled."
+      },
+      {
+        "section": "Findings",
+        "claim": "Loper Bright expressly preserved prior holdings that particular agency actions were lawful, including Chevron\u2019s Clean Air Act holding, subject to statutory stare decisis; the opinion says reliance on Chevron alone is not a special justification for overruling those holdings.",
+        "source_id": "S4",
+        "quote": "The holdings of those cases that specifc agency actions are lawful\u2014including the Clean Air Act holding of Chevron itself\u2014are still subject to statutory stare decisis despite the Court's change in interpretive methodology."
+      }
+    ],
+    "removed": 0,
+    "incomplete": false,
+    "abstained": false,
+    "missing_sections": [],
+    "model_used": true,
+    "status": 200
+  }
+}
