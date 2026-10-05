@@ -1,3 +1,4 @@
+import {conversationContext} from '/conversation.js';
 import {extractFiles} from '/documents.js';
 const $=id=>document.getElementById(id);
 const el=(tag,text,className)=>{const n=document.createElement(tag);if(text)n.textContent=text;if(className)n.className=className;return n;};
@@ -46,16 +47,26 @@ $('open-citations').addEventListener('click',()=>{if($('question').value.trim())
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));
 document.querySelectorAll('[data-question]').forEach(b=>b.addEventListener('click',()=>{$('question').value=b.dataset.question;$('question').focus();}));
 $('new-chat').addEventListener('click',()=>{history.length=0;attachments.length=0;renderAttachments();$('attachment-status').textContent='';$('conversation').replaceChildren();document.body.classList.remove('has-conversation');$('question').value='';$('question').focus();});
-function requestBody(){return {documents:attachments.map(d=>({...d})),document_mode:$('search-with-documents').checked?'with_sources':'only',question:$('question').value.trim(),search_query:$('search-query').value,task:$('task').value,auto_fields:$('task').value==='auto'||$('auto-databases').checked||!$('search-query').value.trim(),database_ids:$('auto-databases').checked?'auto':[...selected],filters:{court:$('court').value,after:$('after').value,before:$('before').value},context:history.slice(-3).map(r=>'User: '+r.question+'\nTask: '+r.task+'\nPrevious draft (unverified): '+(r.propositions||[]).map(p=>p.claim).join(' ').slice(0,650)).join('\n\n').slice(-3500),request_id:crypto.randomUUID()};}
+function requestBody(){return {documents:attachments.map(d=>({...d})),document_mode:$('search-with-documents').checked?'with_sources':'only',question:$('question').value.trim(),search_query:$('search-query').value,task:$('task').value,auto_fields:$('task').value==='auto'||$('auto-databases').checked||!$('search-query').value.trim(),database_ids:$('auto-databases').checked?'auto':[...selected],filters:{court:$('court').value,after:$('after').value,before:$('before').value},context:conversationContext(history),request_id:crypto.randomUUID()};}
 function link(text,url){const a=el('a',text);try{const u=new URL(url);if(u.protocol!=='https:')return el('span',text);a.href=u.href;}catch{return el('span',text);}a.target='_blank';a.rel='noopener noreferrer';return a;}
 function download(content,name,type){const u=URL.createObjectURL(new Blob([content],{type}));const a=el('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
-function exportText(r){const lines=['Lex Raptor',r.question,'Task: '+r.task,'Search terms: '+r.query,'Retrieved: '+r.retrieved_at,'Model: '+(r.model_used?r.model:'No AI call'),'Review required. Quote matching does not establish legal support or current validity.',''];for(const d of r.document_coverage||[])lines.push('DOCUMENT: '+d.name+' — '+d.selected_passages+' excerpt(s) from '+d.extracted_characters+' characters. Not a complete document review.');for(const s of r.searched||[])lines.push(s.id+': '+s.status+' — '+s.note);for(const p of r.propositions||[]){const s=r.sources.find(s=>s.id===p.source_id);lines.push('',p.section,p.claim,'“'+p.quote+'”',s?.citation||'',s?.source_url||'');}for(const s of r.sources)lines.push('','SOURCE: '+s.name+' · '+s.citation,s.source_status,s.source_url,s.locator,s.text);return lines.join('\n');}
+function exportText(r){const lines=['Lex Raptor',r.question,'Task: '+r.task,'Search terms: '+r.query,'Retrieved: '+r.retrieved_at,'Model: '+(r.model_used?r.model:'No AI call'),'Review required. Quote matching does not establish legal support or current validity.',...(r.coverage_notes||[]),''];for(const d of r.document_coverage||[])lines.push('DOCUMENT: '+d.name+' — '+d.selected_passages+' excerpt(s) from '+d.extracted_characters+' characters. Not a complete document review.');for(const s of r.searched||[])lines.push(s.id+': '+s.status+' — '+s.note);for(const p of r.propositions||[]){const s=r.sources.find(s=>s.id===p.source_id);lines.push('',p.section,p.claim,'“'+p.quote+'”',s?.citation||'',s?.source_url||'');}for(const s of r.sources)lines.push('','SOURCE: '+s.name+' · '+s.citation,s.source_status,s.source_url,s.locator,s.text);return lines.join('\n');}
 function showResult(container,data,draft,question,id){
  const record={...data,question};if(draft)history.push(record);
  container.replaceChildren();
+ if(data.follow_up){
+  container.append(el('p',data.follow_up.message,'follow-up-message'));
+  const choices=el('div',null,'follow-up-choices');
+  for(const text of data.follow_up.suggestions){const button=el('button',text);button.type='button';button.addEventListener('click',()=>{if(busy)return;$('question').value=text;$('question').focus();});choices.append(button);}
+  if(choices.childElementCount)container.append(choices);
+  container.append(el('p','Reply below'+(choices.childElementCount?' or choose a suggestion to edit.':'.'),'review-note'));
+  for(const note of data.coverage_notes||[])container.append(el('p',note,'coverage-note'));
+  return;
+ }
  const taskName=state.tasks?.[data.task]?.name||'Research';
  const names=(data.databases||[]).map(id=>(id==='documents'?'Attached documents':state.databases.find(d=>d.id===id)?.name||id));
  container.append(el('div',(draft?taskName:'Source search')+' · '+names.join(', ')+(data.automatic?' · Auto settings':''),'plan-summary'));
+ for(const note of data.coverage_notes||[])container.append(el('p',note,'coverage-note'));
  if(data.document_coverage?.length)container.append(el('p','Analysis uses selected document excerpts. Review the full files for context and omissions.','document-note'));
  let section='';
  for(const p of data.propositions||[]){if(p.section!==section){section=p.section;if(section!=='Findings')container.append(el('h3',section));}container.append(el('p',p.claim));const s=data.sources.find(s=>s.id===p.source_id);const quote=el('details',null,'quote');quote.append(el('summary',s?.name? s.name+(s.citation&&s.citation!==s.name?' · '+s.citation:''):'Source quotation'),el('blockquote',p.quote));const a=el('a','Read source passage');a.href='#source-'+id+'-'+p.source_id;quote.append(a);container.append(quote);}
@@ -63,9 +74,10 @@ function showResult(container,data,draft,question,id){
  const info=el('details',null,'result-details');info.append(el('summary','Sources & research details · '+data.sources.length+' passages'));
  info.append(el('p',data.database_reason||'Searching your selected databases.','small'));
  info.append(el('p','Search: '+data.query,'small'));
+ if(data.jurisdiction_note)info.append(el('p',data.jurisdiction_note,'small'));
  if(data.filters)info.append(el('p','Court: '+(data.filters.court||'Any')+' · Dates: '+(data.filters.after||'Any')+' to '+(data.filters.before||'Any'),'small'));
  info.append(el('p','Retrieved '+new Date(data.retrieved_at).toLocaleString()+' · '+(data.model_used?data.model:'No AI call'),'small'));
- for(const r of data.searched||[]){const name=r.id==='documents'?'Attached documents':state.databases.find(d=>d.id===r.id)?.name||r.id;info.append(el('p',name+': '+r.status+' · '+r.passages+' passages'+(r.total!==null?' · '+Number(r.total).toLocaleString()+' reported matches':'')+'. '+r.note,r.status==='unavailable'?'source-warning':'small'));for(const step of r.searches||[])info.append(el('p',step.phase+': '+step.query+' · '+step.status+(step.court?' · '+step.court:'')+(step.after?' · after '+step.after:'')+(step.before?' · before '+step.before:''),'small'));for(const w of r.warnings||[])info.append(el('p',w,'source-warning'));}
+ for(const r of data.searched||[]){const name=r.id==='documents'?'Attached documents':state.databases.find(d=>d.id===r.id)?.name||r.id;info.append(el('p',name+': '+r.status+' · '+r.passages+' passages'+(r.total!==null?' · '+Number(r.total).toLocaleString()+' reported matches':'')+'. '+r.note,r.status==='unavailable'?'source-warning':'small'));for(const step of r.searches||[])info.append(el('p',step.phase+': '+step.query+' · '+(step.mode?step.mode+' · ':'')+step.status+(step.court?' · '+step.court:'')+(step.after?' · after '+step.after:'')+(step.before?' · before '+step.before:''),'small'));for(const w of r.warnings||[])info.append(el('p',w,'source-warning'));}
  for(const d of data.document_coverage||[]){info.append(el('p',d.name+': '+d.selected_passages+' selected passages from '+d.extracted_characters.toLocaleString()+' extracted characters'+(d.type==='PDF'?' across '+d.pages+' pages':'')+'.','small'));for(const w of d.warnings||[])info.append(el('p',w,'source-warning'));}
  for(const s of data.sources){const d=el('details',null,'source-detail');d.id='source-'+id+'-'+s.id;d.append(el('summary',s.name+' · '+s.citation),el('p',s.database_name+' · '+s.court+' · '+s.decision_date),el('p',s.source_status),el('p',s.opinion_type+' · '+s.locator),el('div',s.text,'passage'));if(s.source_url)d.append(link('Open source record',s.source_url));if(s.official_url)d.append(document.createTextNode(' · '),link('Official PDF',s.official_url));info.append(d);}
  container.append(info);
@@ -80,9 +92,9 @@ async function research(draft){
  const submitted=requestBody();busy=true;render();$('options-dialog').close();document.body.classList.add('has-conversation');
  const id=++turnCount,turn=el('section',null,'turn'),user=el('p',submitted.question,'user-message');
  const answer=el('div',null,'answer'),waiting=el('div',null,'research-progress'),stage=el('p','Starting research','progress-stage'),elapsed=el('span','','progress-elapsed'),activity=el('div',null,'progress-sources');
- const scene=el('div',null,'meteor-scene'),earth=el('img',null,'research-earth'),raptor=el('span','🦖','research-raptor'),meteor=el('span',null,'research-meteor');
- scene.setAttribute('aria-hidden','true');earth.src='/research-earth.svg';earth.alt='';earth.width=earth.height=58;scene.append(earth,raptor,meteor);
- stage.setAttribute('role','status');elapsed.setAttribute('aria-hidden','true');waiting.append(scene,stage,elapsed,activity);answer.append(waiting);answer.setAttribute('aria-busy','true');
+ const scene=el('div',null,'meteor-scene'),earth=el('img',null,'research-earth'),meteor=el('span',null,'research-meteor');
+ scene.setAttribute('aria-hidden','true');earth.src='/research-earth.svg';earth.alt='';earth.width=earth.height=18;scene.append(earth,meteor);
+ stage.setAttribute('role','status');elapsed.setAttribute('aria-hidden','true');const line=el('div',null,'progress-line');line.append(scene,stage);waiting.append(line,elapsed,activity);answer.append(waiting);answer.setAttribute('aria-busy','true');
  if(submitted.documents.length)user.append(el('span',submitted.documents.map(d=>d.name).join(' · '),'user-attachments'));
  turn.append(user,answer);$('conversation').append(turn);$('question').value='';
  const rect=user.getBoundingClientRect();if(rect.top<0||rect.bottom>innerHeight*.65)user.scrollIntoView({block:'nearest',behavior:'auto'});

@@ -3,7 +3,7 @@
 import {mkdir,writeFile} from 'node:fs/promises';
 const args=process.argv.slice(2),base=(args.find(a=>a.startsWith('http'))||'http://127.0.0.1:8787').replace(/\/$/,'');
 const status=await (await fetch(base+'/api/demo/status')).json();
-if(!status.case_treatment_search||status.research_revision!==3)throw new Error('The expected research revision is not live; no test sent.');
+if(!status.case_treatment_search||status.research_revision<3)throw new Error('The expected research revision is not live; no test sent.');
 if(status.inference!=='local'&&!args.includes('--allow-api-spend'))throw new Error('Hosted checks require --allow-api-spend. Three requests reserve at most $0.06 within the server budget. No retries.');
 const tests=[
  {id:'roe',question:'What is the current status of Roe vs Wade?',review:'Should identify Dobbs (2022) and the overruling of Roe using the retrieved decision.'},

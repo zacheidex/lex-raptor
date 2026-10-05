@@ -1,0 +1,42 @@
+{
+  "id": "recording",
+  "request": {
+    "question": "Can I secretly record my boss at work?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "dec6f621-3dc5-4da3-ae29-ec7c78e5ecb4"
+  },
+  "expected_action": "clarify",
+  "actual_action": "clarify",
+  "routing_pass": true,
+  "review_criteria": "Ask the relevant jurisdiction before giving a rule.",
+  "http_status": 200,
+  "seconds": 2.965,
+  "retained": 0,
+  "literal_quotes": 0,
+  "response": {
+    "follow_up": {
+      "kind": "clarify",
+      "message": "Where would the recording take place (state or country)?",
+      "suggestions": []
+    },
+    "needs_clarification": true,
+    "coverage_notes": [
+      "State statutes and local ordinances are not directly connected. CourtListener may provide cases discussing them; check the current official code before relying on a statutory rule."
+    ],
+    "query": "secretly record boss at work recording consent law",
+    "task": "research",
+    "databases": [],
+    "searched": [],
+    "sources": [],
+    "propositions": [],
+    "automatic": true,
+    "model_used": true,
+    "model": "gpt-6-luna",
+    "inference": "api"
+  }
+}

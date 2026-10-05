@@ -1,0 +1,40 @@
+{
+  "id": "greeting",
+  "request": {
+    "question": "Hello there!",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "2cfd09a4-11b4-46b7-9893-6479b71da14f"
+  },
+  "expected_action": "scope",
+  "actual_action": "scope",
+  "routing_pass": true,
+  "review_criteria": "Friendly invitation, no legal database retrieval.",
+  "http_status": 200,
+  "seconds": 1.534,
+  "retained": 0,
+  "literal_quotes": 0,
+  "response": {
+    "follow_up": {
+      "kind": "scope",
+      "message": "Hello! What legal question can I help you research?",
+      "suggestions": []
+    },
+    "needs_clarification": false,
+    "coverage_notes": [],
+    "query": "Hello there!",
+    "task": "research",
+    "databases": [],
+    "searched": [],
+    "sources": [],
+    "propositions": [],
+    "automatic": true,
+    "model_used": true,
+    "model": "gpt-6-luna",
+    "inference": "api"
+  }
+}

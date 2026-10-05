@@ -1,0 +1,44 @@
+{
+  "id": "appeal",
+  "request": {
+    "question": "How long do I have to appeal?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "7fea4768-d446-4859-a3e4-75e43e7e2b56"
+  },
+  "expected_action": "clarify",
+  "actual_action": "clarify",
+  "routing_pass": true,
+  "review_criteria": "Ask decision/court/jurisdiction, not one guessed deadline.",
+  "http_status": 200,
+  "seconds": 3.944,
+  "retained": 0,
+  "literal_quotes": 0,
+  "response": {
+    "follow_up": {
+      "kind": "clarify",
+      "message": "What court issued the decision, and was the case civil or criminal?",
+      "suggestions": [
+        "Federal court",
+        "State court",
+        "Immigration or administrative case"
+      ]
+    },
+    "needs_clarification": true,
+    "coverage_notes": [],
+    "query": "appeal deadline civil criminal court decision",
+    "task": "research",
+    "databases": [],
+    "searched": [],
+    "sources": [],
+    "propositions": [],
+    "automatic": true,
+    "model_used": true,
+    "model": "gpt-6-luna",
+    "inference": "api"
+  }
+}

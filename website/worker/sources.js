@@ -25,7 +25,7 @@ export function validateSelection(ids,env) {
 export function filters(input={}) {
   if(!input||typeof input!=='object'||Array.isArray(input))throw new SourceError('Use valid search filters.');
   const out={court:input.court||'',after:input.after||'',before:input.before||''};
-  if(typeof out.court!=='string'||!/^([a-z0-9]{2,20})?$/.test(out.court))throw new SourceError('Use a CourtListener court ID, such as scotus or ca9.');
+  if(typeof out.court!=='string'||!/^([a-z0-9]{2,20}( [a-z0-9]{2,20}){0,39})?$/.test(out.court))throw new SourceError('Use a CourtListener court ID, such as scotus or ca9.');
   for(const k of ['after','before'])if(out[k]&&(typeof out[k]!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(out[k])||!Number.isFinite(Date.parse(out[k]))||new Date(out[k]).toISOString().slice(0,10)!==out[k]))throw new SourceError('Use valid dates for the search range.');
   if(out.after&&out.before&&out.after>out.before)throw new SourceError('The start date must come before the end date.');
   return out;
@@ -88,10 +88,11 @@ async function courtlistener(env,query,f,progress=()=>{}) {
   const status=f.research_focus==='case_status';
   const name=f.case_name||(!f.manual_query&&/\bv(?:s)?\.?\s/i.test(query)&&query.length<160?query:'');
   async function search(q,scope,order,phase){
-    progress({stage:'searching',message:phase==='original'?'Finding the principal opinion…':'Searching for later treatment…',database:'courtlistener'});
+    const semantic=phase==='original'&&!name&&f.topic_search==='semantic';
+    progress({stage:'searching',message:phase==='original'?(name?'Finding the principal opinion…':'Finding opinions about your question…'):'Searching for later treatment…',database:'courtlistener'});
     const u=new URL('https://www.courtlistener.com/api/rest/v4/search/');
-    u.search=new URLSearchParams({q,type:'o',order_by:order,highlight:'off',...(scope.court?{court:scope.court}:{}),...(scope.after?{filed_after:scope.after}:{}),...(scope.before?{filed_before:scope.before}:{})});
-    const record={phase,query:q,court:scope.court||'',after:scope.after||'',before:scope.before||'',order,status:'pending',matches:null};searches.push(record);
+    u.search=new URLSearchParams({q,type:'o',order_by:order,highlight:'off',...(semantic?{semantic:'true'}:{}),...(scope.court?{court:scope.court}:{}),...(scope.after?{filed_after:scope.after}:{}),...(scope.before?{filed_before:scope.before}:{})});
+    const record={phase,query:q,mode:semantic?'semantic':'keyword',court:scope.court||'',after:scope.after||'',before:scope.before||'',order,status:'pending',matches:null};searches.push(record);
     try{const result=await sourceRequest(env,'courtlistener',u.href);record.status='ok';record.matches=result.count??null;return result;}catch(e){record.status='unavailable';throw e;}
   }
   async function read(c,phase){

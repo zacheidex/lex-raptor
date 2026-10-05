@@ -1,0 +1,366 @@
+{
+  "AL": {
+    "name": "Alabama",
+    "courts": [
+      "ala",
+      "alacrimapp",
+      "alacivapp"
+    ]
+  },
+  "AK": {
+    "name": "Alaska",
+    "courts": [
+      "alaska",
+      "alaskactapp"
+    ]
+  },
+  "AZ": {
+    "name": "Arizona",
+    "courts": [
+      "ariz",
+      "arizctapp"
+    ]
+  },
+  "AR": {
+    "name": "Arkansas",
+    "courts": [
+      "ark",
+      "arkctapp"
+    ]
+  },
+  "CA": {
+    "name": "California",
+    "courts": [
+      "cal",
+      "calctapp",
+      "calappdeptsuper"
+    ]
+  },
+  "CO": {
+    "name": "Colorado",
+    "courts": [
+      "colo",
+      "coloctapp"
+    ]
+  },
+  "CT": {
+    "name": "Connecticut",
+    "courts": [
+      "conn",
+      "connappct",
+      "connsuperct"
+    ]
+  },
+  "DE": {
+    "name": "Delaware",
+    "courts": [
+      "del",
+      "delch",
+      "delsuperct"
+    ]
+  },
+  "DC": {
+    "name": "District of Columbia",
+    "courts": [
+      "dc"
+    ]
+  },
+  "FL": {
+    "name": "Florida",
+    "courts": [
+      "fla",
+      "fladistctapp"
+    ]
+  },
+  "GA": {
+    "name": "Georgia",
+    "courts": [
+      "ga",
+      "gactapp"
+    ]
+  },
+  "HI": {
+    "name": "Hawaii",
+    "courts": [
+      "haw",
+      "hawapp"
+    ]
+  },
+  "ID": {
+    "name": "Idaho",
+    "courts": [
+      "idaho",
+      "idahoctapp"
+    ]
+  },
+  "IL": {
+    "name": "Illinois",
+    "courts": [
+      "ill",
+      "illappct"
+    ]
+  },
+  "IN": {
+    "name": "Indiana",
+    "courts": [
+      "ind",
+      "indctapp"
+    ]
+  },
+  "IA": {
+    "name": "Iowa",
+    "courts": [
+      "iowa",
+      "iowactapp"
+    ]
+  },
+  "KS": {
+    "name": "Kansas",
+    "courts": [
+      "kan",
+      "kanctapp"
+    ]
+  },
+  "KY": {
+    "name": "Kentucky",
+    "courts": [
+      "ky",
+      "kyctapp"
+    ]
+  },
+  "LA": {
+    "name": "Louisiana",
+    "courts": [
+      "la",
+      "lactapp"
+    ]
+  },
+  "ME": {
+    "name": "Maine",
+    "courts": [
+      "me"
+    ]
+  },
+  "MD": {
+    "name": "Maryland",
+    "courts": [
+      "md",
+      "mdctspecapp"
+    ]
+  },
+  "MA": {
+    "name": "Massachusetts",
+    "courts": [
+      "mass",
+      "massappct",
+      "masssuperct",
+      "massdistct"
+    ]
+  },
+  "MI": {
+    "name": "Michigan",
+    "courts": [
+      "mich",
+      "michctapp"
+    ]
+  },
+  "MN": {
+    "name": "Minnesota",
+    "courts": [
+      "minn",
+      "minnctapp"
+    ]
+  },
+  "MS": {
+    "name": "Mississippi",
+    "courts": [
+      "miss",
+      "missctapp"
+    ]
+  },
+  "MO": {
+    "name": "Missouri",
+    "courts": [
+      "mo",
+      "moctapp"
+    ]
+  },
+  "MT": {
+    "name": "Montana",
+    "courts": [
+      "mont"
+    ]
+  },
+  "NE": {
+    "name": "Nebraska",
+    "courts": [
+      "neb",
+      "nebctapp"
+    ]
+  },
+  "NV": {
+    "name": "Nevada",
+    "courts": [
+      "nev",
+      "nevapp"
+    ]
+  },
+  "NH": {
+    "name": "New Hampshire",
+    "courts": [
+      "nh"
+    ]
+  },
+  "NJ": {
+    "name": "New Jersey",
+    "courts": [
+      "nj",
+      "njsuperctappdiv"
+    ]
+  },
+  "NM": {
+    "name": "New Mexico",
+    "courts": [
+      "nm",
+      "nmctapp"
+    ]
+  },
+  "NY": {
+    "name": "New York",
+    "courts": [
+      "ny",
+      "nyappdiv",
+      "nyappterm"
+    ]
+  },
+  "NC": {
+    "name": "North Carolina",
+    "courts": [
+      "nc",
+      "ncctapp",
+      "ncsuperct"
+    ]
+  },
+  "ND": {
+    "name": "North Dakota",
+    "courts": [
+      "nd",
+      "ndctapp"
+    ]
+  },
+  "OH": {
+    "name": "Ohio",
+    "courts": [
+      "ohio",
+      "ohioctapp"
+    ]
+  },
+  "OK": {
+    "name": "Oklahoma",
+    "courts": [
+      "okla",
+      "oklacivapp",
+      "oklacrimapp"
+    ]
+  },
+  "OR": {
+    "name": "Oregon",
+    "courts": [
+      "or",
+      "orctapp"
+    ]
+  },
+  "PA": {
+    "name": "Pennsylvania",
+    "courts": [
+      "pa",
+      "pasuperct",
+      "pacommwct"
+    ]
+  },
+  "RI": {
+    "name": "Rhode Island",
+    "courts": [
+      "ri",
+      "risuperct"
+    ]
+  },
+  "SC": {
+    "name": "South Carolina",
+    "courts": [
+      "sc",
+      "scctapp"
+    ]
+  },
+  "SD": {
+    "name": "South Dakota",
+    "courts": [
+      "sd"
+    ]
+  },
+  "TN": {
+    "name": "Tennessee",
+    "courts": [
+      "tenn",
+      "tennctapp",
+      "tenncrimapp"
+    ]
+  },
+  "TX": {
+    "name": "Texas",
+    "courts": [
+      "tex",
+      "texcrimapp",
+      "texapp",
+      "texjpml"
+    ]
+  },
+  "UT": {
+    "name": "Utah",
+    "courts": [
+      "utah",
+      "utahctapp"
+    ]
+  },
+  "VT": {
+    "name": "Vermont",
+    "courts": [
+      "vt",
+      "vtsuperct"
+    ]
+  },
+  "VA": {
+    "name": "Virginia",
+    "courts": [
+      "va",
+      "vactapp"
+    ]
+  },
+  "WA": {
+    "name": "Washington",
+    "courts": [
+      "wash",
+      "washctapp"
+    ]
+  },
+  "WV": {
+    "name": "West Virginia",
+    "courts": [
+      "wva",
+      "wvactapp"
+    ]
+  },
+  "WI": {
+    "name": "Wisconsin",
+    "courts": [
+      "wis",
+      "wisctapp"
+    ]
+  },
+  "WY": {
+    "name": "Wyoming",
+    "courts": [
+      "wyo"
+    ]
+  }
+}

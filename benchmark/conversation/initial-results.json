@@ -1,0 +1,960 @@
+[
+  {
+    "id": "georgia",
+    "request": {
+      "question": "What is the statute of limitations in Georgia?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "request_id": "0eb9ba43-306e-48b9-8e29-27c2d20d5f6d"
+    },
+    "expected_action": "clarify",
+    "actual_action": "clarify",
+    "routing_pass": true,
+    "seconds": 4.198,
+    "events": [
+      {
+        "seconds": 0.298,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.298,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      }
+    ],
+    "retained": 0,
+    "literal_quotes": 0,
+    "response": {
+      "follow_up": {
+        "kind": "clarify",
+        "message": "What type of claim or offense do you mean? Georgia\u2019s time limit depends on the legal issue.",
+        "suggestions": [
+          "Personal injury",
+          "Breach of contract",
+          "Criminal offense",
+          "Other"
+        ]
+      },
+      "needs_clarification": true,
+      "coverage_notes": [
+        "State statutes and local ordinances are not directly connected. CourtListener may provide cases discussing them; check the current official code before relying on a statutory rule."
+      ],
+      "query": "Georgia statute of limitations",
+      "task": "research",
+      "databases": [],
+      "searched": [],
+      "sources": [],
+      "propositions": [],
+      "automatic": true,
+      "model_used": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "status": 200
+    }
+  },
+  {
+    "id": "landlord",
+    "request": {
+      "question": "Can my landlord do that?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "request_id": "3e46fdce-fbff-4f2a-b769-5093e3c55fd2"
+    },
+    "expected_action": "clarify",
+    "actual_action": "clarify",
+    "routing_pass": true,
+    "seconds": 4.404,
+    "events": [
+      {
+        "seconds": 0.409,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.409,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      }
+    ],
+    "retained": 0,
+    "literal_quotes": 0,
+    "response": {
+      "follow_up": {
+        "kind": "clarify",
+        "message": "What did your landlord do, and where is the rental located (state or country)?",
+        "suggestions": [
+          "Entered without notice",
+          "Raised the rent",
+          "Started an eviction",
+          "Withheld a deposit"
+        ]
+      },
+      "needs_clarification": true,
+      "coverage_notes": [
+        "State statutes and local ordinances are not directly connected. CourtListener may provide cases discussing them; check the current official code before relying on a statutory rule."
+      ],
+      "query": "landlord tenant dispute",
+      "task": "research",
+      "databases": [],
+      "searched": [],
+      "sources": [],
+      "propositions": [],
+      "automatic": true,
+      "model_used": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "status": 200
+    }
+  },
+  {
+    "id": "recording",
+    "request": {
+      "question": "Can I secretly record my boss at work?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "request_id": "73f674a2-dc45-4cd8-bf24-5c104fb506cc"
+    },
+    "expected_action": "clarify",
+    "actual_action": "clarify",
+    "routing_pass": true,
+    "seconds": 3.18,
+    "events": [
+      {
+        "seconds": 0.524,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.524,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      }
+    ],
+    "retained": 0,
+    "literal_quotes": 0,
+    "response": {
+      "follow_up": {
+        "kind": "clarify",
+        "message": "What state or country are you in, and where would the recording take place?",
+        "suggestions": [
+          "U.S. state",
+          "Outside the U.S."
+        ]
+      },
+      "needs_clarification": true,
+      "coverage_notes": [
+        "State statutes and local ordinances are not directly connected. CourtListener may provide cases discussing them; check the current official code before relying on a statutory rule."
+      ],
+      "query": "secret recording boss workplace consent law",
+      "task": "research",
+      "databases": [],
+      "searched": [],
+      "sources": [],
+      "propositions": [],
+      "automatic": true,
+      "model_used": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "status": 200
+    }
+  },
+  {
+    "id": "appeal",
+    "request": {
+      "question": "How long do I have to appeal?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "request_id": "6d60e0cc-2a9f-4745-adc6-def64f5ff231"
+    },
+    "expected_action": "clarify",
+    "actual_action": "clarify",
+    "routing_pass": true,
+    "seconds": 2.347,
+    "events": [
+      {
+        "seconds": 0.134,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.134,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      }
+    ],
+    "retained": 0,
+    "literal_quotes": 0,
+    "response": {
+      "follow_up": {
+        "kind": "clarify",
+        "message": "What kind of decision are you appealing, and in which court or jurisdiction?",
+        "suggestions": [
+          "Federal civil case",
+          "Federal criminal case",
+          "State court case",
+          "Agency decision"
+        ]
+      },
+      "needs_clarification": true,
+      "coverage_notes": [],
+      "query": "appeal deadline decision court jurisdiction",
+      "task": "research",
+      "databases": [],
+      "searched": [],
+      "sources": [],
+      "propositions": [],
+      "automatic": true,
+      "model_used": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "status": 200
+    }
+  },
+  {
+    "id": "noncompete",
+    "request": {
+      "question": "Is my noncompete enforceable?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "request_id": "f152fbcf-634a-4498-a25b-5ae5be9e2ff8"
+    },
+    "expected_action": "clarify",
+    "actual_action": "clarify",
+    "routing_pass": true,
+    "seconds": 3.001,
+    "events": [
+      {
+        "seconds": 0.333,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.333,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      }
+    ],
+    "retained": 0,
+    "literal_quotes": 0,
+    "response": {
+      "follow_up": {
+        "kind": "clarify",
+        "message": "What state\u2019s law governs the noncompete?",
+        "suggestions": [
+          "California",
+          "New York",
+          "Texas",
+          "Other state"
+        ]
+      },
+      "needs_clarification": true,
+      "coverage_notes": [
+        "State statutes and local ordinances are not directly connected. CourtListener may provide cases discussing them; check the current official code before relying on a statutory rule."
+      ],
+      "query": "noncompete enforceability governing state law",
+      "task": "analyze",
+      "databases": [],
+      "searched": [],
+      "sources": [],
+      "propositions": [],
+      "automatic": true,
+      "model_used": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "status": 200
+    }
+  },
+  {
+    "id": "greeting",
+    "request": {
+      "question": "Hello there!",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "request_id": "78e22c26-2607-45d9-b887-6bd287666c63"
+    },
+    "expected_action": "scope",
+    "actual_action": "scope",
+    "routing_pass": true,
+    "seconds": 2.835,
+    "events": [
+      {
+        "seconds": 0.288,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.288,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      }
+    ],
+    "retained": 0,
+    "literal_quotes": 0,
+    "response": {
+      "follow_up": {
+        "kind": "scope",
+        "message": "Hello! What legal question can I help you research?",
+        "suggestions": []
+      },
+      "needs_clarification": false,
+      "coverage_notes": [],
+      "query": "legal research question",
+      "task": "research",
+      "databases": [],
+      "searched": [],
+      "sources": [],
+      "propositions": [],
+      "automatic": true,
+      "model_used": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "status": 200
+    }
+  },
+  {
+    "id": "foreign",
+    "request": {
+      "question": "What is the current inheritance law in Japan?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "request_id": "e92b2722-ec0e-4c1f-8ad2-2aa3a9e06008"
+    },
+    "expected_action": "scope",
+    "actual_action": "scope",
+    "routing_pass": true,
+    "seconds": 4.711,
+    "events": [
+      {
+        "seconds": 0.274,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.274,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      }
+    ],
+    "retained": 0,
+    "literal_quotes": 0,
+    "response": {
+      "follow_up": {
+        "kind": "scope",
+        "message": "Japan\u2019s inheritance law requires current Japanese legal sources, which aren\u2019t available in this research setup. For a reliable answer, consult a Japan-qualified inheritance lawyer or official Japanese Civil Code materials; I can help identify the issues if you share whether this concerns intestate succession, a will, or cross-border assets.",
+        "suggestions": []
+      },
+      "needs_clarification": false,
+      "coverage_notes": [
+        "The connected databases focus on U.S. law and do not provide comprehensive foreign law coverage."
+      ],
+      "query": "Japan current inheritance law succession",
+      "task": "research",
+      "databases": [],
+      "searched": [],
+      "sources": [],
+      "propositions": [],
+      "automatic": true,
+      "model_used": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "status": 200
+    }
+  },
+  {
+    "id": "clear",
+    "request": {
+      "question": "What does Celotex Corp. v. Catrett say about the summary judgment burden?",
+      "task": "auto",
+      "database_ids": [
+        "cap"
+      ],
+      "request_id": "0cf5f477-50ad-4010-b97f-a19d8c4cd31b"
+    },
+    "expected_action": "research",
+    "actual_action": "research",
+    "routing_pass": true,
+    "seconds": 5.941,
+    "events": [
+      {
+        "seconds": 0.16,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.16,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 2.455,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "cap"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 2.455,
+        "stage": "searching",
+        "database": "cap",
+        "message": "Searching CAP starter library\u2026"
+      },
+      {
+        "seconds": 2.455,
+        "stage": "source_complete",
+        "database": "cap",
+        "message": "CAP starter library: 8 passages retrieved."
+      },
+      {
+        "seconds": 2.455,
+        "stage": "drafting",
+        "message": "Writing an answer from 8 source passages\u2026"
+      },
+      {
+        "seconds": 5.941,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 1,
+    "literal_quotes": 1,
+    "response": {
+      "sources": [
+        {
+          "id": "S1",
+          "case_id": "cap-6207800",
+          "ordinal": 2,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 3, characters 1\u20131042",
+          "opinion_type": "majority",
+          "text": "The United States District Court for the District of Columbia granted the motion of petitioner Celotex Corporation for summary judgment against respondent Catrett because the latter was unable to produce evidence in support of her allegation in her wrongful-death complaint that the decedent had been exposed to petitioner\u2019s asbestos products. A divided panel of the Court of Appeals for the District of Columbia Circuit reversed, however, holding that petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor. Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 756 F. 2d 181 (1985). This view conflicted with that of the Third Circuit in In re Japanese Electronic Products, 723 F. 2d 238 (1983), rev\u2019d on other grounds sub nom. Matsushita Electric Industrial Co. v. Zenith Radio Corp., 475 U. S. 574 (1986). We granted certiorari to resolve the conflict, 474 U. S. 944 (1985), and now reverse the decision of the District of Columbia Circuit.",
+          "name": "Celotex Corp. v. Catrett",
+          "citation": "477 U.S. 317",
+          "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+          "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6207800:070684a85533:1:3:0"
+        },
+        {
+          "id": "S2",
+          "case_id": "cap-6207800",
+          "ordinal": 21,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 20, characters 1\u2013927",
+          "opinion_type": "majority",
+          "text": "Justice Stevens\u2019 position is factually incorrect. The District Court expressly stated that respondent had made no showing of exposure to Celotex asbestos products \u201cin the District of Columbia or elsewhere.\u201d App. 217 (emphasis added). Unlike Justice Stevens, we assume that the District Court meant what it said. The majority of the Court of Appeals addressed the very issue raised by Justice Stevens, and decided that \u201c[t]he District Court\u2019s grant of summary judgment must therefore have been based on its conclusion that there was \u2018no showing that the plaintiff was exposed to defendant Celotex\u2019s product in the District of Columbia or elsewhere within the statutory period.\u2019\u201d Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 162, n. 3, 756 F. 2d 181, 183, n. 3 (1985) (emphasis in original). In other words, no judge involved in this case to date shares Justice Stevens\u2019 view of the District Court\u2019s decision.",
+          "name": "Celotex Corp. v. Catrett",
+          "citation": "477 U.S. 317",
+          "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+          "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6207800:070684a85533:1:20:0"
+        },
+        {
+          "id": "S3",
+          "case_id": "cap-6207800",
+          "ordinal": 3,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 4, characters 1\u20131800",
+          "opinion_type": "majority",
+          "text": "Respondent commenced this lawsuit in September 1980, alleging that the death in 1979 of her husband, Louis H. Catrett, resulted from his exposure to products containing asbestos manufactured or distributed by 15 named corporations. Respondent\u2019s complaint sounded in negligence, breach of warranty, and strict liability. Two of the defendants filed motions challenging the District Court\u2019s in perso-nam jurisdiction, and the remaining 13, including petitioner, filed motions for summary judgment. Petitioner\u2019s motion, which was first filed in September 1981, argued that summary judgment was proper because respondent had \u201cfailed to produce evidence that any [Celotex] product . . . was the proximate cause of the injuries alleged within the jurisdictional limits of [the District] Court. \u201d In particular, petitioner noted that respondent had failed to identify, in answering interrogatories specifically requesting such information, any witnesses who could testify about the decedent\u2019s exposure to petitioner\u2019s asbestos products. In response to petitioner\u2019s summary judgment motion, respondent then produced three documents which she claimed \u201cdemonstrate that there is a genuine material factual dispute\u201d as to whether the decedent had ever been exposed to petitioner\u2019s asbestos products. The three documents included a transcript of a deposition of the decedent, a letter from an official of one of the decedent\u2019s former employers whom petitioner planned to call as a trial witness, and a letter from an insurance company to respondent\u2019s attorney, all tending to establish that the decedent had been exposed to petitioner\u2019s asbestos products in Chicago during 1970-1971. Petitioner, in turn, argued that the three documents were inadmissible hearsay and thus could not be considered in opposition to",
+          "name": "Celotex Corp. v. Catrett",
+          "citation": "477 U.S. 317",
+          "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+          "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6207800:070684a85533:1:4:0"
+        },
+        {
+          "id": "S4",
+          "case_id": "cap-6206897",
+          "ordinal": 46,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 46, characters 1\u2013367",
+          "opinion_type": "majority",
+          "text": "Our analysis here does not address the question of the initial burden of production of evidence placed by Rule 56 on the party moving for summary judgment. See Celotex Corp. v. Catrett, post, p. 317. Respondents have not raised this issue here, and for the purposes of our discussion we assume that the moving party has met initially the requisite evidentiary burden.",
+          "name": "Anderson v. Liberty Lobby, Inc.",
+          "citation": "477 U.S. 242",
+          "source_url": "https://static.case.law/us/477/cases/0242-01.json",
+          "source_sha256": "60437e85b0c28cae977aef33e855f15dca5cce20539922aa04d234bb2154ab07",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6206897:60437e85b0c2:1:46:0"
+        },
+        {
+          "id": "S5",
+          "case_id": "cap-6205783",
+          "ordinal": 65,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 66, characters 1\u2013463",
+          "opinion_type": "majority",
+          "text": "Respondents argued before the District Court that petitioners had failed to carry their initial burden under Federal Rule of Civil Procedure 56(c) of demonstrating the absence of a genuine issue of material fact. See Adickes v. S. H. Kress & Co., 398 U. S. 144, 157 (1970). Cf. Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 756 F. 2d 181, cert. granted, 474 U. S. 944 (1985). That issue was resolved in petitioners\u2019 favor, and is not before us.",
+          "name": "Matsushita Electric Industrial Co. v. Zenith Radio Corp.",
+          "citation": "475 U.S. 574",
+          "source_url": "https://static.case.law/us/475/cases/0574-01.json",
+          "source_sha256": "c76dd48b76982e03156c35e3a543542ee9ff143b3f55df4e8d067e709c9c062a",
+          "decision_date": "1986-03-26",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6205783:c76dd48b7698:1:66:0"
+        },
+        {
+          "id": "S6",
+          "case_id": "cap-6205783",
+          "ordinal": 28,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 29, characters 1\u20131245",
+          "opinion_type": "majority",
+          "text": "Second, the issue of fact must be \u201cgenuine.\u201d Fed. Rules Civ. Proc. 56(c), (e). When the moving party has carried its burden under Rule 56(c), its opponent must do more than simply show that there is some metaphysical doubt as to the material facts. See DeLuca v. Atlantic Refining Co., 176 F. 2d 421, 423 (CA2 1949) (L. Hand, J.), cert. denied, 338 U. S. 943 (1950); 10A C. Wright, A. Miller, & M. Kane, Federal Practice and Procedure \u00a72727 (1983); Clark, Special Problems in Drafting and Interpreting Procedural Codes and Rules, 3 Vand. L. Rev. 493, 504-505 (1950). Cf. Sartor v. Arkansas Natural Gas Corp., 321 U. S. 620, 627 (1944). In the language of the Rule, the nonmoving party must come forward with \u201cspecific facts showing that there is a genuine issue for trial.\u201d Fed. Rule Civ. Proc. 56(e) (emphasis added). See also Advisory Committee Note to 1963 Amendment of Fed. Rule Civ. Proc. 56(e), 28 U. S. C. App., p. 626 (purpose of summary judgment is to \u201cpierce the pleadings and to assess the proof in order to see whether there is a genuine need for trial\u201d). Where the record taken as a whole could not lead a rational trier of fact to find for the non-moving party, there is no \u201cgenuine issue for trial.\u201d Cities Service, supra, at 289.",
+          "name": "Matsushita Electric Industrial Co. v. Zenith Radio Corp.",
+          "citation": "475 U.S. 574",
+          "source_url": "https://static.case.law/us/475/cases/0574-01.json",
+          "source_sha256": "c76dd48b76982e03156c35e3a543542ee9ff143b3f55df4e8d067e709c9c062a",
+          "decision_date": "1986-03-26",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6205783:c76dd48b7698:1:29:0"
+        },
+        {
+          "id": "S7",
+          "case_id": "cap-3556136",
+          "ordinal": 17,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 18, characters 1\u20131240",
+          "opinion_type": "majority",
+          "text": "The inadequacy of showing parallel conduct or interdependence, without more, mirrors the ambiguity of the behavior: consistent with conspiracy, but just as much in line with a wide swath of rational and competitive business strategy unilaterally prompted by common perceptions of the market. See, e. g., AEI-Brookings Joint Center for Regulatory Studies, Epstein, Motions to Dismiss Antitrust Cases: Separating Fact from Fantasy, Related Publication 06-08, pp. 3-4 (2006) (discussing problem of \u201cfalse positives\u201d in \u00a7 1 suits). Accordingly, we have previously hedged against false inferences from identical behavior at a number of points in the trial sequence. An antitrust conspiracy plaintiff with evidence showing nothing beyond parallel conduct is not entitled to a directed verdict, see Theatre Enterprises, supra; proof of a \u00a7 1 conspiracy must include evidence tending to exclude the possibility of independent action, see Monsanto Co. v. Spray-Rite Service Corp., 465 U. S. 752 (1984); and at the summary judgment stage a \u00a7 1 plaintiff\u2019s offer of conspiracy evidence must tend to rule out the possibility that the defendants were acting independently, see Matsushita Elec. Industrial Co. v. Zenith Radio Corp., 475 U. S. 574 (1986).",
+          "name": "Bell Atlantic Corp. v. Twombly",
+          "citation": "550 U.S. 544",
+          "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+          "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+          "decision_date": "2007-05-21",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3556136:d5accdbe495b:1:18:0"
+        },
+        {
+          "id": "S8",
+          "case_id": "cap-3556136",
+          "ordinal": 38,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 37, characters 1\u20131796",
+          "opinion_type": "majority",
+          "text": "Plaintiffs say that our analysis runs counter to Swierkiewicz, 534 U. S., at 508, which held that \u201ca complaint in an employment discrimination lawsuit [need] not contain specific facts establishing a prima facie case of discrimination under the framework set forth in McDonnell Douglas Corp. v. Green, 411 U. S. 792 (1973).\u201d They argue that just as the prima facie case is a \u201cflexible evidentiary standard\u201d that \u201cshould not be transposed into a rigid pleading standard for discrimination cases,\u201d Swierkiewicz, supra, at 512, \u201ctrans-posting] 'plus factor\u2019 summary judgment analysis woodenly into a rigid Rule 12(b)(6) pleading standard . . . would be unwise,\u201d Brief for Respondents 39. As the District Court correctly understood, however, \u201cSwierkiewicz did not change the law of pleading, but simply re-emphasized . . . that the Second Circuit\u2019s use of a heightened pleading standard for Title VII cases was contrary to the Federal Rules\u2019 structure of liberal pleading requirements.\u201d 313 F. Supp. 2d, at 181 (citation and footnote omitted). Even though Swierkiewicz\u2019s pleadings \u201cdetailed the events leading to his termination, provided relevant dates, and included the ages and nationalities of at least some of the relevant persons involved with his termination,\u201d the Court of Appeals dismissed his complaint for failing to allege certain additional facts that Swierkiewicz would need at the trial stage to support his claim in the absence of direct evidence of discrimination. Swierkiewicz, 534 U. S., at 514. We reversed on the ground that the Court of Appeals had impermissibly applied what amounted to a heightened pleading requirement by insisting that Swierkiewicz allege \u201cspecific facts\u201d beyond those necessary to state his claim and the grounds showing entitlement to relief. Id., at 508.",
+          "name": "Bell Atlantic Corp. v. Twombly",
+          "citation": "550 U.S. 544",
+          "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+          "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+          "decision_date": "2007-05-21",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3556136:d5accdbe495b:1:37:0"
+        }
+      ],
+      "searched": [
+        {
+          "id": "cap",
+          "status": "ok",
+          "total": null,
+          "note": "Search of the 12 imported starter opinions.",
+          "passages": 8
+        }
+      ],
+      "retrieved_at": "2026-10-05T06:45:57.058Z",
+      "coverage_notes": [],
+      "query": "Celotex Corp. v. Catrett summary judgment burden",
+      "task": "research",
+      "databases": [
+        "cap"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "document_coverage": [],
+      "filters": {
+        "court": "",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "section": "Findings",
+          "claim": "The supplied excerpt states that the Supreme Court reversed the appellate decision that had required Celotex to support its motion with evidence tending to negate exposure. It does not include the Court\u2019s full explanation of the moving party\u2019s summary-judgment burden.",
+          "source_id": "S1",
+          "quote": "holding that petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor. Catrett v. Johns-Manville Sales Corp."
+        }
+      ],
+      "removed": 0,
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    }
+  },
+  {
+    "id": "followup",
+    "request": {
+      "question": "Personal injury",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "request_id": "3750d2f5-e0de-44a7-a810-9321a56e3118",
+      "context": "User: What is the statute of limitations in Georgia?\nResolved topic: Georgia statute of limitations\nAssistant follow-up: What type of claim or offense do you mean? Georgia\u2019s time limit depends on the legal issue."
+    },
+    "expected_action": "research",
+    "actual_action": "research",
+    "routing_pass": true,
+    "seconds": 10.53,
+    "events": [
+      {
+        "seconds": 0.321,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.321,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 7.493,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 7.493,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 7.493,
+        "stage": "searching",
+        "message": "Finding the principal opinion\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 7.493,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 7.493,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 7.758,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 3 passages retrieved."
+      },
+      {
+        "seconds": 8.173,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 0 passages retrieved."
+      },
+      {
+        "seconds": 8.392,
+        "stage": "reading",
+        "message": "Reading Personal v. Personal\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 8.392,
+        "stage": "reading",
+        "message": "Reading Knox v. State of Georgia\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 8.392,
+        "stage": "reading",
+        "message": "Reading GEORGIA ASSOCIATION OF CLUB EXECUTIVES, INC. v. STATE OF GEORGIA (Two Cases)\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 8.803,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 8.803,
+        "stage": "drafting",
+        "message": "Writing an answer from 7 source passages\u2026"
+      },
+      {
+        "seconds": 10.529,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 0,
+    "literal_quotes": 0,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-7604834",
+          "name": "Personal v. Personal",
+          "citation": "236 So. 3d 90",
+          "court": "Court of Civil Appeals of Alabama",
+          "decision_date": "2017-04-07",
+          "opinion_type": "lead-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/7670116/personal-v-personal/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "odification action. The mother violated the restraining order by removing the child to Georgia, and the trial court entered orders finding the mother in contempt of court, returning custody to the father, and denying the mother all visitation rights. After this court affirmed that judgment, Williams v. Williams, 474 So.2d 705, 707 (Ala. Civ. App. 1984), our supreme court issued a writ of certiorari to review the validity of the ex parte restraining order. 474 So.2d at 708-09. The supreme court held that the trial court could not deprive the mother of her custody rights without due process, which, in the absence of danger to the actual health and physical well-being of the child, required notice of the petition for a pendente lite change of custody and an opportunity to be heard on the petition. 474 So.2d at 709-11. The supreme court further held that the trial court had violated Rule 65(b), Ala. R. Civ. P., by awarding the father ex parte relief because the father had not verified facts showing a clear threat of irreparable and immediate injury as required by the rule. 474 So.2d at 711-12. The supreme court determined that, because the restraining order was due to be reversed, the judgment finding the mother in contempt and the final judgment modifying custody and denying the mother visitation rights were also due to be reversed. 474 So.2d at 712. In both Nichols and Ex parte Williams, the trial court had based its final judgment on the violation of an ex parte pendente lite order. In the present case, the final judgment awarding the wife an arrearage of $320,000 is based on the September 2013 ex parte pendente lite order. The husband in Nichols and the mother in Ex parte Williams challenged the validity of the pendente lite orders on appeal from the final judgments ent",
+          "locator": "Whitespace-normalized extracted text, characters 11201\u201313000",
+          "original_id": "cl-7604834:11200"
+        },
+        {
+          "case_id": "ecfr-26-601.702-2026-10-01",
+          "name": "Publication, public inspection, and specific requests for records.",
+          "citation": "26 CFR 601.702",
+          "court": "Internal Revenue Service, Department of the Treasury",
+          "decision_date": "2026-10-01",
+          "opinion_type": "Regulation",
+          "source_url": "https://www.ecfr.gov/on/2026-10-01/title-26/section-601.702",
+          "database_id": "ecfr",
+          "database_name": "eCFR",
+          "kind": "regulation",
+          "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+          "id": "S2",
+          "text": "\u00a7 601.702 Publication, public inspection, and specific requests for records. (a) Publication in the Federal Register\u2014(1) Requirement. (i) Subject to the application of the exemptions and exclusions described in the Freedom of Information Act, 5 U.S.C. 552(b) and (c), and subject to the limitations provided in paragraph (a)(2) of this section, the IRS is required under 5 U.S.C. 552(a)(1), to state separately and publish currently in the Federal Register for the guidance of the public the following information\u2014 (A) Descriptions of its central and field organization and the established places at which, the persons from whom, and the methods whereby, the public may obtain information, make submittals or requests, or obtain decisions, from the IRS; (B) Statement of the general course and method by which its functions are channeled and determined, including the nature and requirements of all formal and informal procedures which are available; (C) Rules of procedure, descriptions of forms available or the places at which forms may be obtained, and instructions as to the scope and contents of all papers, reports, or examinations; (D) Substantive rules of general applicability adopted as authorized by law, and statements of general policy or interpretations of general applicability formulated and adopted by the IRS; and (E) Each amendment, revision, or repeal of matters referred to in paragraphs (a)(1)(i)(A) through (D) of this section. (ii) Pursuant to the foregoing requirements, the Commissioner publishes in the Federal Register from time to time a statement, which is not codified in this chapter, on the organization and functions of the IRS, and such amendments as are needed to keep the statement on a current basis. In addition, there are published in the Federal Register the",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "ecfr-26-601.702-2026-10-01:0"
+        },
+        {
+          "case_id": "cl-9398417",
+          "name": "Knox v. State of Georgia",
+          "citation": "316 Ga. 426",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2023-05-31",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10680093/knox-v-state-of-georgia/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": "rom uncertainty and insecurity with respect to rights, status, and other legal relations.\u201d OCGA \u00a7 9-4-1. See Gwinnett County v. Blaney, 275 Ga. 696, 703 (1) (572 SE2d 553) (2002). \u201c[T]he proper scope of declaratory judgment is to adjudge those 2 We note that the professors name the State of Georgia as the only defendant, and they claim that the State has waived sovereign immunity as to their constitutional challenge, based on an amendment to the judicial review paragraph, adding Art. I, \u00a7 II, Par. V (b), that the people of Georgia ratified in 2020. Because we affirm the trial court\u2019s dismissal on jurisdictional grounds, we do not reach the parties\u2019 arguments about whether Art. I, \u00a7 II, Par. V (b) applies to the professors\u2019 claims. Likewise, we do not reach the issue of standing. 3 rights among parties upon which their future conduct depends.\u201d Sexual Offender Registration Review Bd. v. Berzett, 301 Ga. 391, 393 (801 SE2d 821) (2017) (citation and punctuation omitted). There can be no actual or justiciable controversy if the questions in the case have become moot. See id. \u201cA petition for declaratory judgment is moot when the relief, if granted, would have no practical effect on the underlying controversy.\u201d Id. In particular, a court \u201chas no province to determine whether or not a statute, in the abstract, is valid[.]\u201d Fourth St. Baptist Church of Columbus v. Bd. of Registrars, 253 Ga. 368, 369 (1) (320 SE2d 543) (1984). See also Berzett, 301 Ga. at 396 (\u201c[I]t is a settled principle of Georgia law that the jurisdiction of the courts is confined to justiciable controversies, and we will not decide the constitutionality of a law where no justiciable case or controversy is presented.\u201d (citation and punctuation omitted)). When a petition for declaratory judgment is moot, the tr",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "cl-9398417:3200"
+        },
+        {
+          "case_id": "ecfr-26-601.702-2026-10-01",
+          "name": "Publication, public inspection, and specific requests for records.",
+          "citation": "26 CFR 601.702",
+          "court": "Internal Revenue Service, Department of the Treasury",
+          "decision_date": "2026-10-01",
+          "opinion_type": "Regulation",
+          "source_url": "https://www.ecfr.gov/on/2026-10-01/title-26/section-601.702",
+          "database_id": "ecfr",
+          "database_name": "eCFR",
+          "kind": "regulation",
+          "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+          "id": "S4",
+          "text": " in this chapter, on the organization and functions of the IRS, and such amendments as are needed to keep the statement on a current basis. In addition, there are published in the Federal Register the rules set forth in this part 601 (Statement of Procedural Rules), such as those in paragraph E of this section, relating to conference and practice requirements of the IRS; the regulations in part 301 of this chapter (Procedure and Administration Regulations); and the various substantive regulations under the Internal Revenue Code of 1986, such as the regulations in part 1 of this chapter (Income Tax Regulations), in part 20 of this chapter (Estate Tax Regulations), and in part 31 of this chapter (Employment Tax Regulations). (2) Limitations\u2014(i) Incorporation by reference in the Federal Register. Matter which is reasonably available to the class of persons affected thereby, whether in a private or public publication, shall be deemed published in the Federal Register for purposes of paragraph (a)(1) of this section when it is incorporated by reference therein with the approval of the Director of the Office of the Federal Register. The matter which is incorporated by reference must be set forth in the private or public publication substantially in its entirety and not merely summarized or printed as a synopsis. Matter, the location and scope of which are familiar to only a few persons having a special working knowledge of the activities of the IRS, may not be incorporated in the Federal Register by reference. Matter may be incorporated by reference in the Federal Register only pursuant to the provisions of 5 U.S.C. 552(a)(1) and 1 CFR part 20. (ii) Effect of failure to publish. Except to the extent that a person has actual and timely notice of the terms of any matter referre",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "ecfr-26-601.702-2026-10-01:1600"
+        },
+        {
+          "case_id": "cl-11146814",
+          "name": "GEORGIA ASSOCIATION OF CLUB EXECUTIVES, INC. v. STATE OF GEORGIA (Two Cases)",
+          "citation": "320 Ga. 381",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2024-10-31",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10680227/georgia-association-of-club-executives-inc-v-state-of-georgia-two/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": "nue a state operation assessment equal to the greater of 1 percent of the previous calendar year\u2019s gross revenue or $5,000.00. This state assessment 1 No individual member joined the suit, so GACE\u2019s only basis for standing is under the doctrine of \u201cassociational standing.\u201d See Sawnee Elec. Membership Corp. v. Ga. Dept. of Revenue, 279 Ga. 22, 24 (3) (608 SE2d 611) (2005) (\u201cAssociational standing permits an association that has suffered no injury to sue on behalf of its members when the members would otherwise have standing to sue in their own right; the interests the association seeks to protect are germane to the association\u2019s purpose; and neither the claim asserted nor the relief requested requires the participation in the lawsuit of the individual members.\u201d). We adopted this federal doctrine in Aldridge v. Ga. Hospitality & Travel Assn., 251 Ga. 234 (304 SE2d 708) (1983), without any analysis, see id. at 236 (1), and have since noted that we have never meaningfully addressed whether this doctrine is viable under Georgia law. See Sons of Confederate Veterans v. Henry County Bd. of Commrs., 315 Ga. 39, 66 (2) (d) (ii) n.24 (880 SE2d 168) (2022). The viability of that doctrine has not been raised by the parties, and we decline to reconsider sua sponte the doctrine in this case. 2 OCGA \u00a7 15-21-209 was passed in 2015. In November 2016, Georgia voters voted to amend the Georgia Constitution to allow for the Assessment. See Ga. Const. of 1983, Art. III, Sec. IX, Par. VI (o) (\u201cThe General Assembly . . . may impose assessments on adult entertainment establishments as defined by law; and . . . may provide by general law for the allocation of such assessments . . . to the Safe Harbor for Sexually Exploited Children Fund for the specified purpose of meeting any and all costs, or",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "cl-11146814:3200"
+        },
+        {
+          "case_id": "ecfr-26-601.702-2026-10-01",
+          "name": "Publication, public inspection, and specific requests for records.",
+          "citation": "26 CFR 601.702",
+          "court": "Internal Revenue Service, Department of the Treasury",
+          "decision_date": "2026-10-01",
+          "opinion_type": "Regulation",
+          "source_url": "https://www.ecfr.gov/on/2026-10-01/title-26/section-601.702",
+          "database_id": "ecfr",
+          "database_name": "eCFR",
+          "kind": "regulation",
+          "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+          "id": "S6",
+          "text": "y has actual and timely notice of the terms of such matter or unless the matter has been indexed and either made available for inspection or published, as provided by this paragraph (b). This paragraph (b) applies only to matters which have precedential significance. It does not apply, for example, to any ruling or advisory interpretation issued to a taxpayer or to a particular transaction or set of facts which applies only to that transaction or set of facts. Rulings, determination letters, technical advice memorandums, and Chief Counsel advice are open to public inspection and copying pursuant to 26 U.S.C. 6110. This paragraph (b) does not apply to matters which have been made available pursuant to paragraph (a) of this section. (iii) For records required to be made available for public inspection and copying pursuant to 5 U.S.C. 552(a)(2) and paragraphs (b)(1)(i)(A) through (D) of this section, which are created on or after November 1, 1996, the IRS shall make such records available on the Internet within one year after such records are created. (iv) The IRS shall make the index referred to in paragraph (b)(1)(ii) of this section available on the Internet. (2) Deletion of identifying details. To prevent a clearly unwarranted invasion of personal privacy, the IRS shall, in accordance with 5 U.S.C. 552(a)(2), delete identifying details contained in any matter described in paragraphs (b)(1)(i)(A) through (D) of this section before making such matter available for inspection or publication. Such matters shall also be subject to any applicable exemption set forth in 5 U.S.C. 552(b). In every case where identifying details or other matters are so deleted, the justification for the deletion shall be explained in writing. The extent of such deletion shall be indicated on the",
+          "locator": "Whitespace-normalized extracted text, characters 6401\u20138200",
+          "original_id": "ecfr-26-601.702-2026-10-01:6400"
+        },
+        {
+          "case_id": "cl-7604834",
+          "name": "Personal v. Personal",
+          "citation": "236 So. 3d 90",
+          "court": "Court of Civil Appeals of Alabama",
+          "decision_date": "2017-04-07",
+          "opinion_type": "lead-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/7670116/personal-v-personal/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "$150 per month in pendente lite alimony and child support. When the husband filed a motion objecting to the pendente lite order and the manner in which it had been entered, the trial court struck the motion and cited the husband for contempt. The case proceeded to trial, at which the trial court denied the husband the right to present his case based on its determination that the husband had been in contempt of court. The trial court entered a final judgment finding that the husband was in contempt of the pendente lite order and awarding the wife an arrearage of $2,250. The husband appealed, arguing that he had been denied due process of law. This court recognized that mandamus review ordinarily serves as the means to correct erroneous pendente lite orders but concluded that it could review the pendente lite order because \"the trial judge included the judgment of temporary alimony and child support arrears in his final decree ... and in that same decree adjudged the [husband] in contempt of court ....\" 46 Ala.App. at 70, 238 So.2d at 188. This court ultimately concluded that the pendente lite order, the citation for contempt, and the final judgment all had been entered without due process and, thus, reversed the judgment. *96In Ex parte Williams, supra, a mother had obtained a default judgment divorcing her from the father and awarding her custody of their minor child. Six months later, the father obtained an ex parte restraining order preventing the mother from taking the child out of Alabama and awarding him temporary custody of the child during the pendency of a custody-modification action. The mother violated the restraining order by removing the child to Georgia, and the trial court entered orders finding the mother in contempt of court, returning custody to the fat",
+          "locator": "Whitespace-normalized extracted text, characters 9601\u201311400",
+          "original_id": "cl-7604834:9600"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 101884,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "Georgia personal injury statute of limitations",
+              "court": "",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 101884
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "ok",
+          "total": 2,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 3
+        },
+        {
+          "id": "federal_register",
+          "status": "unavailable",
+          "total": 793,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [
+            "2024-14824: The source service is rate limited. Try again later.",
+            "2025-14780: The source service is rate limited. Try again later.",
+            "2024-25486: The source service is rate limited. Try again later."
+          ],
+          "passages": 0
+        }
+      ],
+      "retrieved_at": "2026-10-05T06:46:09.245Z",
+      "coverage_notes": [
+        "State statutes and local ordinances are not directly connected. CourtListener may provide cases discussing them; check the current official code before relying on a statutory rule."
+      ],
+      "query": "Georgia personal injury statute of limitations",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "document_coverage": [],
+      "filters": {
+        "court": "",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [],
+      "removed": 0,
+      "incomplete": false,
+      "abstained": true,
+      "missing_sections": [
+        "Findings"
+      ],
+      "model_used": true,
+      "status": 200
+    }
+  }
+]

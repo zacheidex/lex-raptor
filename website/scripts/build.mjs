@@ -14,3 +14,5 @@ await build({entryPoints:['client/documents.js'],bundle:true,format:'esm',platfo
 await cp('node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs','dist/client/pdf.worker.mjs');
 await mkdir('dist/client/pdf',{recursive:true});
 for(const folder of ['cmaps','standard_fonts'])await cp('node_modules/pdfjs-dist/'+folder,'dist/client/pdf/'+folder,{recursive:true});
+
+await cp('shared/conversation.js','dist/client/conversation.js');

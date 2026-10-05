@@ -245,3 +245,9 @@ Parsing uses [PDF.js](https://mozilla.github.io/pdf.js/),
 [xmldom](https://github.com/xmldom/xmldom). DOCX extraction rejects DTD/entity
 declarations and bounds expanded XML before decompression. Model output remains
 subject to quote validation and the hosted lifetime spending ledger.
+
+Chat can ask a focused clarification before retrieval when a missing fact materially changes the research. Short replies retain the prior question and clarification in the browser and CLI. Clear questions and requested general overviews proceed directly. This uses the existing bounded planning call, with no draft call or source search for a clarification. State codes and the U.S. Code are not directly connected; coverage notes distinguish case discussions from current statutory text.
+
+Automatic topic queries use CourtListener semantic search. Named cases and explicit manual queries retain keyword search; court/date filters still apply. Only retrieved full opinion text is answer evidence, never search snippets.
+
+For an explicit single-state law question, automatic court scope uses state appellate IDs from CourtListener’s [court API](https://www.courtlistener.com/help/api/jurisdictions/) (snapshot 2026-10-05, `jurisdiction=S` and `jurisdiction=SA`, active courts without an end date). `worker/state-courts.json` maps all 50 states and DC. The result discloses that this scope may omit federal interpretations and trial decisions; manual court/query overrides take precedence. This is a court filter, not a state-code database.

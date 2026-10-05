@@ -1,0 +1,58 @@
+{
+  "id": "georgia",
+  "request": {
+    "question": "What is the statute of limitations in Georgia?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "4643a1b4-b11e-46c8-8616-8b29282a34aa"
+  },
+  "expected_action": "clarify",
+  "actual_action": "clarify",
+  "routing_pass": true,
+  "seconds": 3.94,
+  "events": [
+    {
+      "seconds": 0.332,
+      "stage": "accepted",
+      "message": "Starting research\u2026"
+    },
+    {
+      "seconds": 0.332,
+      "stage": "planning",
+      "message": "Planning the research\u2026"
+    }
+  ],
+  "retained": 0,
+  "literal_quotes": 0,
+  "response": {
+    "follow_up": {
+      "kind": "clarify",
+      "message": "What type of claim or legal matter is this about? Georgia limitations periods vary substantially by claim type.",
+      "suggestions": [
+        "Personal injury",
+        "Breach of contract",
+        "Property or real estate",
+        "Criminal charge"
+      ]
+    },
+    "needs_clarification": true,
+    "coverage_notes": [
+      "State statutes and local ordinances are not directly connected. CourtListener may provide cases discussing them; check the current official code before relying on a statutory rule."
+    ],
+    "query": "Georgia statute of limitations claim type",
+    "task": "research",
+    "databases": [],
+    "searched": [],
+    "sources": [],
+    "propositions": [],
+    "automatic": true,
+    "model_used": true,
+    "model": "gpt-6-luna",
+    "inference": "api",
+    "status": 200
+  }
+}

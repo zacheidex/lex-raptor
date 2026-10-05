@@ -1,0 +1,48 @@
+{
+  "id": "followup",
+  "request": {
+    "question": "Personal injury",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "92ec6adf-52df-48c5-ac30-197005fa1851",
+    "context": "User: What is the statute of limitations in Georgia?\nResolved topic: Georgia statute of limitations claim type\nAssistant follow-up: What type of claim or legal matter do you mean? Georgia’s limitation period depends on the claim."
+  },
+  "expected_action": "research",
+  "actual_action": "clarify",
+  "routing_pass": false,
+  "review_criteria": "Retain Georgia and limitations from the first turn; inspect retrieved Georgia opinions and limitations/exceptions.",
+  "http_status": 200,
+  "seconds": 4.222,
+  "retained": 0,
+  "literal_quotes": 0,
+  "response": {
+    "follow_up": {
+      "kind": "clarify",
+      "message": "Is this an ordinary negligence injury (such as a car accident), or a different type of personal-injury claim, such as medical malpractice or an intentional tort?",
+      "suggestions": [
+        "Ordinary negligence",
+        "Medical malpractice",
+        "Intentional tort",
+        "Other"
+      ]
+    },
+    "needs_clarification": true,
+    "coverage_notes": [
+      "State statutes and local ordinances are not directly connected. CourtListener may provide cases discussing them; check the current official code before relying on a statutory rule."
+    ],
+    "query": "Georgia personal injury statute of limitations claim type",
+    "task": "research",
+    "databases": [],
+    "searched": [],
+    "sources": [],
+    "propositions": [],
+    "automatic": true,
+    "model_used": true,
+    "model": "gpt-6-luna",
+    "inference": "api"
+  }
+}

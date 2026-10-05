@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {conversationContext} from '../shared/conversation.js';
 import {parseArgs} from 'node:util';
 import {readFile,stat,readdir,writeFile,access} from 'node:fs/promises';
 import {resolve,dirname,basename,extname} from 'node:path';
@@ -43,7 +44,9 @@ Interactive commands: /attach PATH, /files, /clear, /new, /task NAME,
 let runtime;
 const history=[],documents=[];
 function markdown(r,question){
+ if(r.follow_up)return [question,'',r.follow_up.message,...r.follow_up.suggestions.map(s=>'• '+s),'',...(r.coverage_notes||[]),'Reply in chat, or include the original question and your clarification in a new ask command.',''].join('\n');
  const lines=['# Lex Raptor',question,'',`Task: ${r.task} | Sources: ${r.databases.join(', ')} | Model: ${r.model_used?r.model:'No model call'}`,''];
+ lines.push(...(r.coverage_notes||[]));if(r.jurisdiction_note)lines.push(r.jurisdiction_note);
  for(const d of r.document_coverage||[])lines.push(`Document: ${d.name} — ${d.selected_passages} excerpt(s) from ${d.extracted_characters} extracted characters.`,...(d.warnings||[]));
  let section='';for(const p of r.propositions||[]){if(p.section!==section){section=p.section;lines.push('',`## ${section}`);}const s=r.sources.find(s=>s.id===p.source_id);lines.push('',p.claim,'',`> ${p.quote}`,'',`${s?.citation||p.source_id} · ${s?.locator||''}`,s?.source_url||'');}
  if(r.model_used&&!r.propositions?.length)lines.push('No supported findings were returned. Inspect the source results or refine the request.');
@@ -72,7 +75,7 @@ async function ensureRuntime(){
 async function research(question,settings,search=false){
  const {mf}=await ensureRuntime();const source=settings.sources||(documents.length?'documents':'cap');
  if(source==='documents'&&!documents.length)throw new Error('Attach a document before using --sources documents.');
- const body={question,documents,document_mode:source==='documents'?'only':'with_sources',task:settings.task||'auto',auto_fields:true,database_ids:source==='auto'?'auto':source==='documents'?[]:source.split(','),search_query:settings.query||'',filters:{court:settings.court||'',after:settings.after||'',before:settings.before||''},context:history.slice(-3).map(r=>'User: '+r.question+'\nPrevious draft (unverified): '+(r.propositions||[]).map(p=>p.claim).join(' ').slice(0,600)).join('\n').slice(-3500),request_id:crypto.randomUUID()};
+ const body={question,documents,document_mode:source==='documents'?'only':'with_sources',task:settings.task||'auto',auto_fields:true,database_ids:source==='auto'?'auto':source==='documents'?[]:source.split(','),search_query:settings.query||'',filters:{court:settings.court||'',after:settings.after||'',before:settings.before||''},context:conversationContext(history),request_id:crypto.randomUUID()};
  const response=await mf.dispatchFetch('http://localhost/api/demo/'+(search?'search':'research'),{method:'POST',headers:{'Content-Type':'application/json',Origin:'http://localhost','CF-Connecting-IP':'127.0.0.1'},body:JSON.stringify(body)});
  const result=await response.json();if(!response.ok)throw new Error(result.error||'Research failed.');if(!search)history.push({...result,question});return result;
 }

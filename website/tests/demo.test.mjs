@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {Miniflare} from 'miniflare';
 import {reserve,settle,CAP,RESERVE,cost} from '../worker/budget.js';
+import {conversationContext} from '../shared/conversation.js';
 
 async function fixture(t,options={}) {
   const calls=[];
@@ -188,6 +189,51 @@ test('automatic settings use the model and account for planning plus drafting to
   assert.equal(f.calls[0].max_output_tokens,1024);assert.match(f.calls[0].input,/Tell me about Celotex/);assert.match(f.calls[1].input,/conversation_context/);
   const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.charged,488);assert.equal(ledger.input_tokens,1500);assert.equal(ledger.output_tokens,300);
   assert.equal((await f.req('research',q)).status,429);assert.equal(f.calls.length,2);
+});
+
+test('clarification settles only planning, searches no providers and retains idempotency',async t=>{
+  const f=await fixture(t,{plan:{action:'clarify',message:'What type of matter do you mean?',suggestions:['Personal injury','Contract dispute'],coverage_gaps:['state_codes'],task:'research',search_query:'Georgia statute of limitations',database_ids:[],filters:{court:'',after:'',before:''}}});
+  const q=f.question({question:'What is the statute of limitations in Georgia?',task:'auto',database_ids:'auto'});
+  const response=await f.req('research',q);assert.equal(response.status,200);const data=await response.json();
+  assert.equal(data.needs_clarification,true);assert.equal(data.follow_up.kind,'clarify');assert.deepEqual(data.sources,[]);assert.deepEqual(data.searched,[]);assert.deepEqual(data.databases,[]);assert.match(data.coverage_notes[0],/not directly connected/);assert.equal(f.calls.length,1);
+  assert.equal((await f.db.prepare('SELECT charged FROM demo_calls').first()).charged,163);
+  assert.equal((await f.req('research',q)).status,429);assert.equal(f.calls.length,1);
+});
+
+test('short follow-up includes prior user topic and clarification in both planning and drafting',async t=>{
+  const f=await fixture(t);
+  const context=conversationContext([{question:'Tell me about Celotex.',query:'Celotex',follow_up:{kind:'clarify',message:'Which issue?',suggestions:['Summary judgment burden']}}]);
+  const result=await (await f.req('research',f.question({question:'Summary judgment burden',task:'auto',context}))).json();
+  assert.ok(result.propositions.length);assert.equal(f.calls.length,2);
+  for(const call of f.calls){const input=JSON.parse(call.input);assert.match(input.conversation_context,/Tell me about Celotex/);assert.match(input.conversation_context,/Assistant follow-up: Which issue/);}
+  assert.ok(conversationContext(Array.from({length:10},()=>({question:'x'.repeat(2000),query:'topic',propositions:[]}))).length<=3500);
+});
+
+test('out-of-scope turn returns a next step without retrieving unrelated law',async t=>{
+  const f=await fixture(t,{plan:{action:'scope',message:'I can help with legal research. What would you like to explore?',suggestions:[],coverage_gaps:[],task:'research',search_query:'',database_ids:[],filters:{court:'',after:'',before:''}}});
+  const r=await (await f.req('research',f.question({question:'Hello',task:'auto',database_ids:'auto'}))).json();
+  assert.equal(r.follow_up.kind,'scope');assert.equal(r.needs_clarification,false);assert.equal(r.sources.length,0);assert.equal(f.calls.length,1);
+});
+
+test('automatic topics use semantic case search while manual queries keep keyword syntax and filters',async t=>{
+  const seen=[],f=await fixture(t,{bindings:{COURTLISTENER_API_TOKEN:'fake-court-token'},source:remoteFixture(seen),plan:{action:'research',task:'research',search_query:'California security deposit return deadline',case_name:'',state_jurisdiction:'CA',database_ids:['courtlistener'],filters:{court:'',after:'',before:''}}});
+  const body=f.question({question:'When must a California landlord return a security deposit?',task:'auto',database_ids:['courtlistener'],filters:{after:'2020-01-01'}});
+  const data=await (await f.req('research',body)).json();const search=seen.find(s=>s.url.includes('/search/'));assert.equal(new URL(search.url).searchParams.get('semantic'),'true');assert.equal(new URL(search.url).searchParams.get('court'),'cal calctapp calappdeptsuper');assert.equal(new URL(search.url).searchParams.get('filed_after'),'2020-01-01');assert.equal(data.searched[0].searches[0].mode,'semantic');
+  seen.length=0;
+  await f.req('research',{...body,filters:{court:'scotus'},search_query:'"security deposit" AND refund',request_id:crypto.randomUUID()});const manual=new URL(seen.find(s=>s.url.includes('/search/')).url);assert.equal(manual.searchParams.get('court'),'scotus');assert.equal(manual.searchParams.has('semantic'),false);assert.equal(manual.searchParams.get('q'),'"security deposit" AND refund');
+});
+
+test('invalid follow-up fails closed and local clarification uses no paid calls',async t=>{
+  const plan={action:'clarify',message:'Which jurisdiction?',suggestions:['x'.repeat(121)],task:'research',database_ids:[],filters:{court:'',after:'',before:''}};
+  const bad=await fixture(t,{plan});assert.equal((await bad.req('research',bad.question({task:'auto',database_ids:'auto'}))).status,502);assert.equal(bad.calls.length,1);
+  const local=await fixture(t,{plan:{...plan,suggestions:[]},local:true,bindings:{LOCAL_RESEARCH:'true',OPENAI_API_KEY:''}});
+  const result=await (await local.req('research',local.question({task:'auto',database_ids:'auto'}))).json();assert.equal(result.needs_clarification,true);assert.equal(local.calls.length,1);assert.equal((await local.db.prepare('SELECT COUNT(*) n FROM demo_calls').first()).n,0);
+});
+
+test('clarification preserves manual settings and bounds full conversation input',async t=>{
+  const f=await fixture(t,{plan:{action:'clarify',message:'What issue?',suggestions:[],task:'memo',database_ids:[],filters:{court:'',after:'',before:''}}});
+  const response=await f.req('research',f.question({question:'q'.repeat(2000),context:'c'.repeat(3500),auto_fields:true,task:'compare',search_query:'manual terms',filters:{court:'scotus'}}));
+  assert.equal(response.status,200);const p=await response.json();assert.equal(p.task,'compare');assert.equal(p.query,'manual terms');assert.equal(p.needs_clarification,true);assert.ok(new TextEncoder().encode(JSON.stringify(f.calls[0])).length<=14000);
 });
 
 test('case-status search resolves the named case, prefers lead opinions and retrieves later treatment',async t=>{

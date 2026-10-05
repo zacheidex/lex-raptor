@@ -4,12 +4,12 @@
 
 
 
-.research-progress{min-height:180px;padding:.1rem 0 1rem;color:var(--muted)}
-.progress-stage{color:var(--ink)}.progress-elapsed,.progress-sources{font-size:.8rem;line-height:1.8}.progress-sources{margin-top:.6rem}
-.meteor-scene{position:relative;width:190px;height:112px;margin:0 0 .5rem;overflow:hidden;user-select:none;background:radial-gradient(circle at 89px 16px,#b2c7b380 1px,transparent 1.5px),radial-gradient(circle at 172px 76px,#b2c7b355 1px,transparent 1.5px),radial-gradient(circle at 115px 92px,#b2c7b344 1px,transparent 1.5px)}
-.research-earth{position:absolute;left:8px;bottom:4px;width:58px;height:58px}
-.research-raptor{position:absolute;left:17px;bottom:54px;font-size:30px;line-height:1.2;transform:scaleX(-1)}
-.research-meteor{position:absolute;left:140px;top:15px;width:12px;height:12px;transform:translate(-30px,16px)}
-.research-meteor::before{content:"";position:absolute;left:5px;top:1px;width:48px;height:8px;border-radius:50%;transform:rotate(-29deg);transform-origin:0 50%;background:linear-gradient(90deg,#e8bc75b3,#e8bc7500)}
-.research-meteor::after{content:"";position:absolute;inset:0;border-radius:48% 55% 45% 50%;background:radial-gradient(circle at 35% 68%,#fff0b8 0 15%,#e8bc75 40%,#b97e48 85%);box-shadow:0 0 10px #e8bc7533}
-@media(prefers-reduced-motion:no-preference){.research-meteor{animation:meteor-approach 6s linear infinite}@keyframes meteor-approach{0%{opacity:0;transform:translate(5px,-2px) scale(.55)}12%{opacity:1}82%{opacity:1;transform:translate(-70px,39px) scale(1)}94%,100%{opacity:0;transform:translate(-75px,42px) scale(1.06)}}}
+.research-progress{padding:.1rem 0 1rem;color:var(--muted)}
+.progress-line{display:flex;align-items:center;gap:.7rem;min-height:28px}.answer .progress-stage{margin:0;color:var(--muted);font-size:.9rem}.progress-elapsed,.progress-sources{font-size:.8rem;line-height:1.8}.progress-sources{margin-top:.5rem}
+.meteor-scene{position:relative;flex:0 0 60px;width:60px;height:24px;overflow:hidden;user-select:none;opacity:.85;background:radial-gradient(circle at 30px 15px,#b2c7b344 1px,transparent 1.5px),radial-gradient(circle at 41px 11px,#b2c7b344 1px,transparent 1.5px)}
+.research-earth{position:absolute;left:1px;bottom:1px;width:18px;height:18px}
+.research-meteor{position:absolute;left:48px;top:4px;width:5px;height:5px;transform:translate(-12px,4px)}
+.research-meteor::before{content:"";position:absolute;left:2px;top:1px;width:13px;height:3px;border-radius:50%;transform:rotate(-22deg);transform-origin:0 50%;background:linear-gradient(90deg,#e8bc7580,#e8bc7500)}
+.research-meteor::after{content:"";position:absolute;inset:0;border-radius:50%;background:#dfba7d}
+@media(prefers-reduced-motion:no-preference){.research-meteor{animation:meteor-approach 3.8s linear infinite}@keyframes meteor-approach{0%{opacity:0;transform:translate(0,0)}15%{opacity:1}80%{opacity:1;transform:translate(-27px,9px)}96%,100%{opacity:0;transform:translate(-30px,10px)}}}
+.follow-up-choices{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0}.follow-up-choices button{font-size:.85rem;border-radius:18px;padding:.5rem .85rem;color:var(--accent)}.coverage-note{font-size:.85rem;line-height:1.7;color:var(--muted)}

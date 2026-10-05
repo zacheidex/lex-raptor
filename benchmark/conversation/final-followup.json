@@ -1,0 +1,332 @@
+{
+  "id": "followup",
+  "request": {
+    "question": "Personal injury",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "96f1d077-4c1a-4877-8349-9b6b86e68250",
+    "context": "User: What is the statute of limitations in Georgia?\nResolved topic: Georgia statute of limitations claim type\nAssistant follow-up: What type of claim or legal matter is this about? Georgia limitations periods vary substantially by claim type."
+  },
+  "expected_action": "research",
+  "actual_action": "research",
+  "routing_pass": true,
+  "seconds": 19.816,
+  "events": [
+    {
+      "seconds": 0.162,
+      "stage": "accepted",
+      "message": "Starting research\u2026"
+    },
+    {
+      "seconds": 0.162,
+      "stage": "planning",
+      "message": "Planning the research\u2026"
+    },
+    {
+      "seconds": 3.937,
+      "stage": "plan",
+      "message": "Searching selected databases\u2026",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register"
+      ],
+      "reason": "Searching the databases selected in Search settings."
+    },
+    {
+      "seconds": 3.937,
+      "stage": "searching",
+      "database": "courtlistener",
+      "message": "Searching CourtListener\u2026"
+    },
+    {
+      "seconds": 3.937,
+      "stage": "searching",
+      "message": "Finding opinions about your question\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 3.937,
+      "stage": "searching",
+      "database": "ecfr",
+      "message": "Searching eCFR\u2026"
+    },
+    {
+      "seconds": 3.937,
+      "stage": "searching",
+      "database": "federal_register",
+      "message": "Searching Federal Register\u2026"
+    },
+    {
+      "seconds": 4.146,
+      "stage": "source_complete",
+      "database": "ecfr",
+      "message": "eCFR: 0 passages retrieved."
+    },
+    {
+      "seconds": 5.261,
+      "stage": "source_complete",
+      "database": "federal_register",
+      "message": "Federal Register: 6 passages retrieved."
+    },
+    {
+      "seconds": 14.475,
+      "stage": "reading",
+      "message": "Reading JOHN MOHAR v. JORGE P. LEGUIZAMO\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 14.475,
+      "stage": "reading",
+      "message": "Reading KIERRA DATES v. CITY OF ATLANTA\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 14.475,
+      "stage": "reading",
+      "message": "Reading Robyn Leah Cummings v. First Transit, Inc.\u2026",
+      "database": "courtlistener"
+    },
+    {
+      "seconds": 16.503,
+      "stage": "source_complete",
+      "database": "courtlistener",
+      "message": "CourtListener: 9 passages retrieved."
+    },
+    {
+      "seconds": 16.506,
+      "stage": "drafting",
+      "message": "Writing an answer from 7 source passages\u2026"
+    },
+    {
+      "seconds": 19.814,
+      "stage": "checking",
+      "message": "Checking source quotations\u2026"
+    }
+  ],
+  "retained": 2,
+  "literal_quotes": 2,
+  "response": {
+    "sources": [
+      {
+        "case_id": "cl-10618035",
+        "name": "JOHN MOHAR v. JORGE P. LEGUIZAMO",
+        "citation": "",
+        "court": "Court of Appeals of Georgia",
+        "decision_date": "2024-10-22",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/10151437/john-mohar-v-jorge-p-leguizamo/",
+        "official_url": "",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "original",
+        "source_status": "Original search result; does not establish current validity",
+        "id": "S1",
+        "text": "o what the legislature has enacted.\u201d). 10 doctrine.17 Accordingly, Mohar\u2019s argument based on the continuous treatment doctrine fails. Mohar also argues that the trial court erred by failing to give effect to the weekend rule in OCGA \u00a7 1-3-1 (d) (3)18 when calculating the statute of limitation. But this argument relies on application of the continuous treatment doctrine, under which the statute of limitation for Mohar\u2019s negligent misdiagnosis claim would have run from September 24, 2020, to Saturday, September 24, 2022. Application of the weekend rule would give Mohar until Monday, September 26, 2022, to timely file his 17 See, e.g., Kaminer v. Canas, 282 Ga. 830, 832 (1) (653 SE2d 691) (2007) (\u201cPrescribing periods of limitation is a legislative, not a judicial, function. Because OCGA \u00a7 9-3-71 (a) provides that the period of limitation begins to run at the time of injury, initiating the period of limitation in a medical malpractice action at some other point . . . would be contrary to the plain language of the statute. That is why the continuing treatment doctrine cannot apply in Georgia. It is inconsistent with OCGA \u00a7 9-3-71 (a), since its focus is not on the date that the patient was injured by the allegedly negligent misdiagnosis.\u201d) (citations and punctuation omitted). See also Goodman v. Satilla Health Servs., 290 Ga. App. 6, 7 (658 SE2d 792) (2008) (\u201c[T]he continuous treatment theory has been resoundingly rejected in this [S]tate.\u201d) (citation and punctuation omitted). 18 OCGA \u00a7 1-3-1 (d) (3) provides that \u201cwhen a period of time measured in days, weeks, months, years, or other measurements of time except hours is prescribed for the exercise of any privilege or the discharge of any duty, the first day shall not be counted but the last day shall be counted; and if the ",
+        "locator": "Whitespace-normalized extracted text, characters 12801\u201314600",
+        "original_id": "cl-10618035:12800"
+      },
+      {
+        "case_id": "fr-2024-30293",
+        "name": "Trade Regulation Rule on Unfair or Deceptive Fees",
+        "citation": "90 FR 2066",
+        "court": "Federal Trade Commission",
+        "decision_date": "2025-01-10",
+        "opinion_type": "Rule",
+        "source_url": "https://www.federalregister.gov/documents/2025/01/10/2024-30293/trade-regulation-rule-on-unfair-or-deceptive-fees",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-01-10/pdf/2024-30293.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Rule; stated effective date 2025-05-12; verify operative status in the official edition",
+        "id": "S2",
+        "text": "el operator and just six States defining hotel occupancy taxes as imposed on the consumer. Under the proposed definition of ``government charges,'' the commenter stated, hotel operators in all but six States would be required to include occupancy taxes in total price.\\235\\ As such, these commenters argued that the proposed definition is unworkable and noted that businesses will spend considerable time and resources in understanding the legal incidence of Federal, State, and local taxes.\\236\\ --------------------------------------------------------------------------- \\233\\ FTC-2023-0064-3126 (Tax Foundation stated: ``In several states, at least including Alabama, Arizona, Hawaii, and New Mexico, and possibly California, the state sales tax would not meet the Rule's definition of a government charge, since its legal incidence (per statute, regulation, or court determination) is on the seller.''); FTC-2023-0064-3258 (National Taxpayers Union Foundation commented: ``Arizona, California, Hawaii, and New Mexico structure their sales taxes as taxes on the business, as measured by its gross receipts.''). \\234\\ See, e.g., FTC-2023-0064-3127 (U.S. Chamber of Commerce); FTC-2023-0064-3258 (National Taxpayers Union Foundation stated, ``[n]early all states with sales tax prohibit retailers from including sales taxes, including taxes collected from both suppliers and consumers, in the sales price,'' and cited to states including Alabama, Florida, Georgia, Indiana, Maryland, Massachusetts, Oklahoma, Pennsylvania, and others.); FTC-2023-0064-3126 (Tax Foundation stated, ``many states prohibit sales tax-inclusive pricing,'' highlighting Alabama as a State in which the legal incidence of sales tax on the seller may ``obligate a vendor, per the proposed Rule, to list the sales tax-inclusi",
+        "locator": "Whitespace-normalized extracted text, characters 225601\u2013227400",
+        "original_id": "fr-2024-30293:225600"
+      },
+      {
+        "case_id": "cl-10012773",
+        "name": "KIERRA DATES v. CITY OF ATLANTA",
+        "citation": "",
+        "court": "Court of Appeals of Georgia",
+        "decision_date": "2024-06-13",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/9546160/kierra-dates-v-city-of-atlanta/",
+        "official_url": "",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "original",
+        "source_status": "Original search result; does not establish current validity",
+        "id": "S3",
+        "text": " see generally Cook v. State, 313 Ga. 471, 485 (3) (a) (870 SE2d 758) (2022), we conclude that Barrett and its progeny6 must be disapproved because the time for filing an ante litem notice under OCGA \u00a7 36-33-5 is not subject to tolling under OCGA \u00a7 9-3-90 (b). The Supreme Court of Georgia made clear in Ragsdale that an ante litem notice is not a statute of limitation and that Barrett\u2019s holding to the contrary was implicitly overruled long ago 6 The following cases recognize that the tolling provision of OCGA \u00a7 9-3-90, or one of its predecessor statutes, applies to the ante litem notice provision for municipalities and are therefore disapproved on that basis: Carter v. Glenn, 243 Ga. App. 544, 548 (2) (533 SE2d 109) (2000); Jacobs v. Littleton, 241 Ga. App. 403, 406 (3) (b) (525 SE2d 433) (1999); Lowe v. Pue, 150 Ga. App. 234, 236 (257 SE2d 209) (1979); Barnum v. Martin, 135 Ga. App. 712, 715 (2) (219 SE2d 341) (1975); and City of Barnesville v. Powell, 124 Ga. App. 132, 132-133 (1) (183 SE2d 55) (1971). 6 by its decision in City of Chamblee v. Maxwell, 264 Ga. 635 (452 SE2d 488) (1994). Ragsdale, 308 Ga. at 215. As it observed, \u201cit is for the General Assembly to waive [the ante litem notice] requirement as it deems appropriate.\u201d Ragsdale, 308 Ga. at 216.7 2. The plaintiff contends that the trial court erred by concluding that her ante litem notice failed to comply with OCGA \u00a7 36-33-5 (e). We disagree. A person seeking damages against a municipal corporation must give ante litem notice to the corporation \u201c[w]ithin six months of the happening of the event upon which a claim . . . is predicated[,]\u201d that includes \u201cthe time, place, and extent of the injury, as nearly as practicable, and the negligence which caused the injury.\u201d OCGA \u00a7 36-33-5 (b). In 2014, the General Assembl",
+        "locator": "Whitespace-normalized extracted text, characters 8001\u20139800",
+        "original_id": "cl-10012773:8000"
+      },
+      {
+        "case_id": "fr-2024-30293",
+        "name": "Trade Regulation Rule on Unfair or Deceptive Fees",
+        "citation": "90 FR 2066",
+        "court": "Federal Trade Commission",
+        "decision_date": "2025-01-10",
+        "opinion_type": "Rule",
+        "source_url": "https://www.federalregister.gov/documents/2025/01/10/2024-30293/trade-regulation-rule-on-unfair-or-deceptive-fees",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-01-10/pdf/2024-30293.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Rule; stated effective date 2025-05-12; verify operative status in the official edition",
+        "id": "S4",
+        "text": "856 (National Football League); FTC-2023-0064-3108 (Christian L. Castle, Esq.; Mala Sharma, President, Georgia Music Partners; and Dr. David C. Lowery, founder of musical groups Cracker and Camper Van Beethoven, and a lecturer at the University of Georgia Terry College of Business); FTC-2023- 0064-3122 (Vivid Seats); FTC-2023-0064-3195 (League of American Orchestras on behalf of itself and Association of Performing Arts Professionals, Carnegie Hall, Dance/USA, Folk Alliance International, Future of Music Coalition, National Performance Network, OPERA America, PAVA--Performing Arts Venues Alliance, Performing Arts Alliance, and Theatre Communications Group); FTC- 2023-0064-3212 (TickPick, LLC); FTC-2023-0064-3230 (Future of Music Coalition); FTC-2023-0064-3250 (National Independent Talent Organization); FTC-2023-0064-3266 (StubHub, Inc.); FTC-2023-0064- 3292 (National Association of Theatre Owners); FTC-2023-0064-3304 (Recording Academy); FTC-2023-0064-3306 (Live Nation Entertainment and its subsidiary Ticketmaster North America); FTC-2023-0064-3105 (Charleston Symphony); FTC-2023-0064-3241 (National Association of Ticket Brokers). \\24\\ See, e.g., FTC-2023-0064-3077 (Far Horizons Travel); FTC- 2023-0064-3094 (American Hotel & Lodging Association); FTC-2023- 0064-3106 (American Society of Travel Advisors, Inc.); FTC-2023- 0064-3204 (Expedia Group); FTC-2023-0064-3244 (Vacation Rental Management Association). --------------------------------------------------------------------------- Individual consumers overwhelmingly supported the rule. Out of 60,853 total comments received, a mass mailing of close to 48,186 consumer commenters stated that they supported ``the FTC's efforts to protect American consumers and crack down on unscrupulous businesses that tack on junk fees at ",
+        "locator": "Whitespace-normalized extracted text, characters 32001\u201333800",
+        "original_id": "fr-2024-30293:32000"
+      },
+      {
+        "case_id": "cl-11111900",
+        "name": "Robyn Leah Cummings v. First Transit, Inc.",
+        "citation": "",
+        "court": "Court of Appeals of Georgia",
+        "decision_date": "2025-07-31",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/10645313/robyn-leah-cummings-v-first-transit-inc/",
+        "official_url": "",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "original",
+        "source_status": "Original search result; does not establish current validity",
+        "id": "S5",
+        "text": "l, whichever is later . . . ; provided, however, if the dismissal or discontinuance occurs after the expiration of the applicable period of limitation, this privilege of renewal shall be exercised only once. On appeal, Cummings argues that her original action was filed within the statute of limitations because the two-year statute of limitations would have expired on a Saturday, and under OCGA \u00a7 1-3-1 (d) (3), she had until the following Monday to file her lawsuit. We agree. OCGA \u00a7 9-3-33 provides that actions for personal injury must be brought within two years after the right of action accrues. Under OCGA \u00a7 1-3-1 (d) (3), when a period of time prescribed for \u201cthe exercise of any privilege\u201d is measured in years, \u201cthe first day shall not be counted but the last day shall be counted; and, if the last day falls on 2 Saturday or Sunday, the party having such privilege . . . shall have through the following Monday to exercise the privilege[.]\u201d OCGA \u00a7 1-3-1 (d) (3) applies to personal injury actions governed by the two-year statute of limitation in OCGA \u00a7 9-3- 33. Infinite Energy, Inc. v. Pardue, 310 Ga. App. 355, 362 (4) (713 SE2d 456) (2011); see generally Gardner v. Hyster Co., 785 FSupp. 161, 162-163 (MDGa. 1992) (discussing this Court\u2019s history of applying amended OCGA \u00a7 1-3-1 (d) (3) to OCGA \u00a7 9-3-33); Mohar v. Leguizamo, 373 Ga. App. 230, 235-236 (1) (b) n.19 (907 SE2d 923) (2024) (where the two-year statute of limitation began running on February 8, 2018, it expired on February 10, 2020, since February 8, 2020, fell on a Saturday). Here, Cummings was injured on August 12, 2021, and because August 12, 2023, fell on a Saturday, her complaint was timely filed on Monday, August 14, 2023. Gullatt v. Omega Psi Phi Fraternity, 248 Ga. App. 779, 779 (1) (546 SE2d 927) (2001)",
+        "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+        "original_id": "cl-11111900:1600"
+      },
+      {
+        "case_id": "fr-2024-30293",
+        "name": "Trade Regulation Rule on Unfair or Deceptive Fees",
+        "citation": "90 FR 2066",
+        "court": "Federal Trade Commission",
+        "decision_date": "2025-01-10",
+        "opinion_type": "Rule",
+        "source_url": "https://www.federalregister.gov/documents/2025/01/10/2024-30293/trade-regulation-rule-on-unfair-or-deceptive-fees",
+        "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-01-10/pdf/2024-30293.pdf",
+        "database_id": "federal_register",
+        "database_name": "Federal Register",
+        "kind": "regulatory document",
+        "source_status": "Rule; stated effective date 2025-05-12; verify operative status in the official edition",
+        "id": "S6",
+        "text": " business (Mail Order Rule); or that every industry used negative options (Negative Option Rule), had an issue with impersonating government agencies or businesses (Impersonator Rule), or used and abused reviews (Rule on the Use of Consumer Reviews and Testimonials). Imposing such a standard would artificially limit the Commission's rulemaking authority under section 18 in a way that does not align with the Commission's mandate or the text of the statute, which focuses on acts or practices generally and never mentions the need to define markets or industries. As explained herein and in the NPRM, the information evidencing prevalence of bait-and-switch pricing and misleading fees more than meets section 18's standard for prevalence for the economy generally, and for the live-event ticketing and short-term lodging industries, specifically, by demonstrating that the practices are widespread and, further, that such practices are occurring across a wide range of industries. --------------------------------------------------------------------------- \\102\\ Pa. Funeral Dirs. Ass'n. v. FTC, 41 F.3d 81, 87 (3d Cir. 1994). \\103\\ 16 CFR part 429; 16 CFR part 433; 16 CFR part 424; 16 CFR part 435; 16 CFR part 425; 16 CFR part 461; 16 CFR part 465. --------------------------------------------------------------------------- Second, the Commission notes that, even when commenters challenged the application of the rule to specific pricing scenarios or to their own industries, they also appeared to concede that advertising a base price to which mandatory fees are added later is a frequent practice even in their own industries. While some commenters raised genuine challenges or questions about the application of the rule, others attempted to conflate such genuine challenges with their des",
+        "locator": "Whitespace-normalized extracted text, characters 105601\u2013107400",
+        "original_id": "fr-2024-30293:105600"
+      },
+      {
+        "case_id": "cl-10618035",
+        "name": "JOHN MOHAR v. JORGE P. LEGUIZAMO",
+        "citation": "",
+        "court": "Court of Appeals of Georgia",
+        "decision_date": "2024-10-22",
+        "opinion_type": "combined-opinion",
+        "source_url": "https://www.courtlistener.com/opinion/10151437/john-mohar-v-jorge-p-leguizamo/",
+        "official_url": "",
+        "database_id": "courtlistener",
+        "database_name": "CourtListener",
+        "kind": "case",
+        "research_role": "original",
+        "source_status": "Original search result; does not establish current validity",
+        "id": "S7",
+        "text": ".7 On October 14, 2020, Mohar filled a steroid prescription previously written by Dr. Leguizamo.8 On October 15, 2020, neuro-oncologist Alfredo Voloschin initiated a steroid taper that eventually was successful and advised Mohar that Dr. Leguizamo had kept him on steroids for too long. Mohar deposed that he took his last dose of steroids in November 2020. Between November 2020, and August 2021, Mohar experienced or was diagnosed with a pulmonary embolism; avascular necrosis of his shoulders, ankles, and hips; osteoporosis, osteopenia, and osteoarthritis; hyperlipidemia and elevated liver enzymes; Cushing\u2019s syndrome; deep vein thrombosis; and fatigue \u2014 all symptoms and complications of long-term steroid use. The trial court found that, at the latest, the statute of limitation applicable to Mohar\u2019s action began to run on September 21, 2020, when Mohar was diagnosed with epidural lipomatosis. The trial court ruled that, because Mohar did not file his 7 Mohar deposed that Dr. Leguizamo told him that he would be on steroids for the rest of his life. 8 Mohar deposed that he ignored some of his symptoms because Dr. Leguizamo told him that he needed steroids to keep his brain tumor from growing. 6 complaint until September 26, 2022, the action was not filed within two years of his injury as required by OCGA \u00a7 9-3-71 (a). Thus, the trial court granted the Defendants\u2019 motion for summary judgment, ruling that Mohar\u2019s claim was time- barred. Mohar now appeals. 1. Mohar argues that under the continuous treatment doctrine and the weekend rule, he had until September 26, 2022, to file this action, and the trial court erred by granting the motion for summary judgment on the basis that his claims were time- barred. Under OCGA \u00a7 9-3-71 (a), a medical malpractice action must be brought \u201cw",
+        "locator": "Whitespace-normalized extracted text, characters 6401\u20138200",
+        "original_id": "cl-10618035:6400"
+      }
+    ],
+    "searched": [
+      {
+        "id": "courtlistener",
+        "status": "ok",
+        "total": 541,
+        "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+        "warnings": [],
+        "searches": [
+          {
+            "phase": "original",
+            "query": "Georgia personal injury statute of limitations accrual tolling discovery rule",
+            "mode": "semantic",
+            "court": "ga gactapp",
+            "after": "",
+            "before": "",
+            "order": "score desc",
+            "status": "ok",
+            "matches": 541
+          }
+        ],
+        "passages": 9
+      },
+      {
+        "id": "ecfr",
+        "status": "empty",
+        "total": 0,
+        "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+        "warnings": [],
+        "passages": 0
+      },
+      {
+        "id": "federal_register",
+        "status": "ok",
+        "total": 53,
+        "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+        "warnings": [
+          "2026-10050: A source document exceeds the source size limit. Open the original record."
+        ],
+        "passages": 6
+      }
+    ],
+    "retrieved_at": "2026-10-05T06:56:11.574Z",
+    "jurisdiction_note": "Court search is limited to Georgia appellate courts. Federal interpretations and trial-court decisions may be missed.",
+    "coverage_notes": [
+      "State statutes and local ordinances are not directly connected. CourtListener may provide cases discussing them; check the current official code before relying on a statutory rule."
+    ],
+    "query": "Georgia personal injury statute of limitations accrual tolling discovery rule",
+    "task": "research",
+    "databases": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "database_reason": "Searching the databases selected in Search settings.",
+    "research_focus": "general",
+    "document_coverage": [],
+    "filters": {
+      "court": "ga gactapp",
+      "after": "",
+      "before": ""
+    },
+    "automatic": true,
+    "model": "gpt-6-luna",
+    "inference": "api",
+    "propositions": [
+      {
+        "section": "Findings",
+        "claim": "For a Georgia personal-injury action, the supplied 2025 Court of Appeals excerpt states that the claim must be brought within two years after the right of action accrues. It also holds that when the two-year deadline falls on a Saturday or Sunday, the statutory weekend rule extends the filing deadline through the following Monday. This is general information; the excerpt does not address other claim-specific rules or exceptions.",
+        "source_id": "S5",
+        "quote": "actions for personal injury must be brought within two years after the right of action accrues"
+      },
+      {
+        "section": "Findings",
+        "claim": "The same opinion applies that weekend extension to the case before it: the injury occurred August 12, 2021, the two-year anniversary fell on Saturday, August 12, 2023, and a complaint filed Monday, August 14, 2023, was timely.",
+        "source_id": "S5",
+        "quote": "because August 12, 2023, fell on a Saturday, her complaint was timely filed on Monday, August 14, 2023."
+      }
+    ],
+    "removed": 0,
+    "incomplete": false,
+    "abstained": false,
+    "missing_sections": [],
+    "model_used": true,
+    "status": 200
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "foreign",
+  "request": {
+    "question": "What is the current inheritance law in Japan?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "0731654c-cfae-441a-bf72-3f52c4cf974c"
+  },
+  "expected_action": "scope",
+  "actual_action": "scope",
+  "routing_pass": true,
+  "review_criteria": "Disclose unavailable foreign law coverage, not U.S. opinions.",
+  "http_status": 200,
+  "seconds": 3.382,
+  "retained": 0,
+  "literal_quotes": 0,
+  "response": {
+    "follow_up": {
+      "kind": "scope",
+      "message": "I can’t verify current Japanese inheritance law with the available sources, which cover U.S. law. For reliable guidance, consult a Japanese inheritance lawyer or official Japanese legal source. If you share a Japanese source or document, I can help analyze or summarize it.",
+      "suggestions": []
+    },
+    "needs_clarification": false,
+    "coverage_notes": [
+      "The connected databases focus on U.S. law and do not provide comprehensive foreign law coverage."
+    ],
+    "query": "Current inheritance law in Japan",
+    "task": "research",
+    "databases": [],
+    "searched": [],
+    "sources": [],
+    "propositions": [],
+    "automatic": true,
+    "model_used": true,
+    "model": "gpt-6-luna",
+    "inference": "api"
+  }
+}

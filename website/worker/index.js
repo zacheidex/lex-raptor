@@ -32,7 +32,7 @@ async function api(request,env,progress=()=>{}) {
   if(path==='/api/demo/status'&&request.method==='GET') {
     const enabled=!!ready(env);
     const state=await database(env).prepare('SELECT COALESCE(SUM(charged),0) total FROM demo_calls').first();
-    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,research_progress:true,case_treatment_search:true,research_revision:3,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
+    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,research_progress:true,case_treatment_search:true,clarifying_questions:true,research_revision:6,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
   }
   if(request.method!=='POST')fail(405,'Method not allowed.');
   if(request.headers.get('Origin')!==new URL(request.url).origin||request.headers.get('Sec-Fetch-Site')==='cross-site')fail(403,'Open research on this website to continue.');
@@ -87,7 +87,12 @@ async function api(request,env,progress=()=>{}) {
     const planned=await callModel(planPayload(env,body));
     try{plan=readPlan(planned,env,body);}catch{await reconcile();fail(502,'Automatic settings could not be prepared. Choose task, databases and search terms manually, then try again.');}
   }
+  if(plan.follow_up){
+    await reconcile();
+    return json({follow_up:plan.follow_up,needs_clarification:plan.follow_up.kind==='clarify',coverage_notes:plan.coverage_notes,query:plan.query,task:plan.task,databases:[],searched:[],sources:[],propositions:[],automatic:true,model_used:true,model:modelName(env),inference:local(env)?'local':'api'});
+  }
   plan.manual_query=!!body.search_query?.trim();
+  plan.topic_search=automatic&&!plan.manual_query?'semantic':'keyword';
   if(plan.research_focus!=='case_status'&&/\b(current status|still (?:good|valid|binding)|good law|overruled|overturned|later treatment)\b/i.test(body.question))plan.research_focus='case_status';
   if(onlyDocuments)plan.database_ids=[];
   const {query,task,database_ids}=plan;
@@ -99,7 +104,7 @@ async function api(request,env,progress=()=>{}) {
     const merged=[];for(let i=0;i<Math.max(docPassages.length,found.sources.length);i++){if(docPassages[i])merged.push(docPassages[i]);if(found.sources[i])merged.push(found.sources[i]);}found.sources=merged;
     found.searched.unshift({id:'documents',status:docPassages.length?'ok':'empty',passages:docPassages.length,total:documents.length,note:'Selected excerpts of attached documents; this is not an exhaustive review.'});
   }
-  const meta={...found,query,task,databases:[...(documents.length?['documents']:[]),...database_ids],database_reason:plan.database_reason||'Searching your selected databases.',research_focus:plan.research_focus||'general',document_coverage:documentCoverage(documents,found.sources),filters:searchFilters,automatic,model:modelName(env),inference:local(env)?'local':'api'};
+  const meta={...found,jurisdiction_note:plan.jurisdiction_note||'',coverage_notes:plan.coverage_notes||[],query,task,databases:[...(documents.length?['documents']:[]),...database_ids],database_reason:plan.database_reason||'Searching your selected databases.',research_focus:plan.research_focus||'general',document_coverage:documentCoverage(documents,found.sources),filters:searchFilters,automatic,model:modelName(env),inference:local(env)?'local':'api'};
   if(path==='/api/demo/search')return json({...meta,model_used:false});
   const sources=evidenceSubset(found.sources,body.context?18500:22000);
   meta.document_coverage=documentCoverage(documents,sources);

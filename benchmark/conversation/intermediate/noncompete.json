@@ -1,0 +1,42 @@
+{
+  "id": "noncompete",
+  "request": {
+    "question": "Is my noncompete enforceable?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "8c9f8741-e631-47e0-a55f-d6245a089fdd"
+  },
+  "expected_action": "clarify",
+  "actual_action": "clarify",
+  "routing_pass": true,
+  "review_criteria": "Ask governing law or material context.",
+  "http_status": 200,
+  "seconds": 3.633,
+  "retained": 0,
+  "literal_quotes": 0,
+  "response": {
+    "follow_up": {
+      "kind": "clarify",
+      "message": "What state do you primarily work in, or what state’s law governs the noncompete?",
+      "suggestions": []
+    },
+    "needs_clarification": true,
+    "coverage_notes": [
+      "State statutes and local ordinances are not directly connected. CourtListener may provide cases discussing them; check the current official code before relying on a statutory rule."
+    ],
+    "query": "noncompete agreement enforceability state law",
+    "task": "research",
+    "databases": [],
+    "searched": [],
+    "sources": [],
+    "propositions": [],
+    "automatic": true,
+    "model_used": true,
+    "model": "gpt-6-luna",
+    "inference": "api"
+  }
+}

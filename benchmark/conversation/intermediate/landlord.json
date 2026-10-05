@@ -1,0 +1,40 @@
+{
+  "id": "landlord",
+  "request": {
+    "question": "Can my landlord do that?",
+    "task": "auto",
+    "database_ids": [
+      "courtlistener",
+      "ecfr",
+      "federal_register"
+    ],
+    "request_id": "44ff81ed-649f-40f5-bfe4-42d4bbcd672a"
+  },
+  "expected_action": "clarify",
+  "actual_action": "clarify",
+  "routing_pass": true,
+  "review_criteria": "Ask what happened and/or the jurisdiction.",
+  "http_status": 200,
+  "seconds": 2.868,
+  "retained": 0,
+  "literal_quotes": 0,
+  "response": {
+    "follow_up": {
+      "kind": "clarify",
+      "message": "What did your landlord do, and where is the rental located (state and, if relevant, city)?",
+      "suggestions": []
+    },
+    "needs_clarification": true,
+    "coverage_notes": [],
+    "query": "landlord tenant conduct",
+    "task": "research",
+    "databases": [],
+    "searched": [],
+    "sources": [],
+    "propositions": [],
+    "automatic": true,
+    "model_used": true,
+    "model": "gpt-6-luna",
+    "inference": "api"
+  }
+}
