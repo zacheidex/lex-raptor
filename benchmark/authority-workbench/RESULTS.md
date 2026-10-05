@@ -1,0 +1,15 @@
+# Authority-workbench release audit
+
+Published v0.10.0 on 2026-10-05. Application source: `96ab74b`; Site source: `166e96dcdc5387c87a95afece12a321b0dfb008b`.
+
+The final hosted Celotex run resolved cluster **111722**, used **CourtListener only**, and returned all seven principal-brief sections plus three separately attributed concurrence/dissent findings, with no missing sections. It took **27.397 seconds**, with **one model request, five public-cache hits, and zero uncached provider requests**. This follows a reproduced 37.37-second baseline that retrieved unrelated Federal Register material. Earlier iterations took 21.12 and 13.10 seconds with different cache/output conditions; these individual runs do not establish a general speed improvement.
+
+The final local Qwen3:14b run returned the same section coverage in **14.63 seconds** with no paid model calls. Local drafts still require support review: an earlier draft misstated the disposition despite matching a literal quotation. Retrieval now retains the operative disposition before footnotes and ensures separate-opinion excerpts survive the context budget. Correct section counts alone are not accuracy scores.
+
+Direct live Celotex and Erie lookups resolved correctly without a model in 1.07 and 0.86 seconds respectively (one CourtListener request each). Collection took 1.54 seconds (one provider request, two cache hits) and preserved repeated/parallel, ambiguous, nonexistent, malformed and short-form entries. Erie’s principal opinion was identified separately from its concurrence. A 472-court dated directory snapshot avoids cold-start bursts; live refresh failures have an explicit fallback notice.
+
+An independent model call reviewing an earlier hosted brief labeled seven findings supported and one unverified because its evidence references were not traceable. That failed review stayed unverified. These are AI labels, not attorney grading or comprehensive later-treatment analysis. The live insurance-defense example asked for jurisdiction before retrieval. A live statute example displayed `Alabama Code § 13A-3-23 (2024 edition)` and the exact consulted edition URL.
+
+**Automated:** 82 backend/unit tests and 52 desktop/mobile workflow checks passed. Those suites mock providers. They cover exact case identity and principal opinions, scope, evidence, review states, collection/export/packets, browser-local save/reload/import, cancellation, access JWTs and local operation. DOCX packages were parsed as OpenXML; native Word rendering was unavailable. No live Access tenant is configured; invite mode was tested with signed fixture JWTs. No client files were used.
+
+See [structured metrics](metrics.json), [detailed validation](../../website/docs/WORKBENCH_VALIDATION.md), [walkthrough](../../website/docs/WORKFLOWS.md), and [setup/deployment](../../website/README.md). Run `npm run build && npm test` from `website`; start the local workbench and run `npm run test:browser` for browser fixtures. `node scripts/diagnose-authorities.mjs --brief` performs the bounded live check; hosted inference additionally requires `--allow-api-spend` and uses the existing $10 cap.

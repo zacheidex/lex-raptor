@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-05",
+  "application_commit": "96ab74b",
+  "site_commit": "166e96dcdc5387c87a95afece12a321b0dfb008b",
+  "live": {
+    "final_celotex_brief": {
+      "seconds": 27.397,
+      "http_status": 200,
+      "case_id": 111722,
+      "metrics": {
+        "provider_requests": {},
+        "cache_hits": 5,
+        "model_requests": 1,
+        "elapsed_ms": 25831
+      },
+      "sections": [
+        "Facts",
+        "Procedural history",
+        "Issue",
+        "Rule",
+        "Holding",
+        "Reasoning",
+        "Disposition",
+        "Separate opinions",
+        "Separate opinions",
+        "Separate opinions"
+      ],
+      "missing_sections": []
+    },
+    "prior_hosted_baseline_seconds": 37.37,
+    "cold_celotex_lookup_seconds": 1.07,
+    "cold_erie_lookup_seconds": 0.86,
+    "collection_seconds": 1.54,
+    "final_local_brief_seconds": 14.63
+  },
+  "mocked": {
+    "backend_tests_passed": 82,
+    "browser_workflow_checks": 52,
+    "viewports": [
+      1440,
+      390
+    ]
+  },
+  "notes": [
+    "Individual observed runs; no percentile or general speed claim.",
+    "AI support review labels are not independent legal accuracy scores.",
+    "No private client documents were used.",
+    "Native Microsoft Word rendering and a live Access tenant were not tested."
+  ]
+}
