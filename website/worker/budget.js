@@ -4,7 +4,7 @@ export const CAP = 10_000_000;
 export const RESERVE = 20_000;
 export const MAX_OUTPUT = 4096;
 export const MAX_INPUT_BYTES = 32768;
-export const MODEL = 'gpt-5.1-codex-mini';
+export const MODEL = 'gpt-6-luna';
 
 export function database(env) {
   if (!env.DB) throw new Error('Database unavailable');
@@ -32,9 +32,10 @@ export async function reserve(db, id, visitor, session, now) {
 export function cost(usage) {
   if (!Number.isSafeInteger(usage?.input_tokens) || usage.input_tokens < 0 ||
       !Number.isSafeInteger(usage?.output_tokens) || usage.output_tokens < 0) return null;
-  // Standard service, full uncached input price; reasoning included in output.
-  // Rates verified 2026-10-05. Provider discounts are deliberately ignored.
-  return Math.ceil(usage.input_tokens * .25 + usage.output_tokens * 2);
+  // Standard service, reasoning included in output. Rates verified 2026-10-05.
+  // Conservatively allow BOTH the $0.10/M input rate and $0.125/M cache-write
+  // rate on every input token. Cache discounts are deliberately ignored.
+  return Math.ceil(usage.input_tokens * .225 + usage.output_tokens * .5);
 }
 
 export async function settle(db,id,usage) {

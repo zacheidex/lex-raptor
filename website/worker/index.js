@@ -72,7 +72,13 @@ async function api(request,env) {
   let response;
   try {
     const result=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+env.OPENAI_API_KEY},body:input,redirect:'manual',signal:AbortSignal.timeout(90000)});
-    if(!result.ok)fail(502,'The model provider could not complete the request. Its cost reservation is held; there is no automatic retry.');
+    if(!result.ok) {
+      const error=await result.json().catch(()=>({}));
+      const field=value=>typeof value==='string'&&/^[a-zA-Z0-9_.-]{1,100}$/.test(value)?value:null;
+      console.error(JSON.stringify({event:'demo_provider_rejection',status:result.status,model:MODEL,
+        code:field(error.error?.code),type:field(error.error?.type),param:field(error.error?.param)}));
+      fail(502,'The model provider could not complete the request. Its cost reservation is held; there is no automatic retry.');
+    }
     response=await result.json();
   } catch(error) {
     if(error instanceof PublicError)throw error;

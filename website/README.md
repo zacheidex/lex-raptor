@@ -52,23 +52,28 @@ Before each model call, one atomic `INSERT ... SELECT` reserves **$0.02**, only
 if the total ledger charge plus that reservation fits under the cap. Input is
 bounded at 32,768 UTF-8 bytes including instructions/schema, with a 4,096-token
 framing allowance, and output (including reasoning) at 4,096 tokens. At the
-verified standard prices this is below $0.018. No paid tools, loops, automatic
+verified standard prices this is below $0.011. No paid tools, loops, automatic
 retries, user-selected models, or user-selected endpoints are allowed.
 
-Successful calls settle against reported input/output tokens at the full
-uncached rate, rounded up. Timeouts, rejected requests, missing usage, and
+Successful calls settle conservatively against reported input/output tokens,
+rounded up. The ledger allows $0.225/million input tokens (both the standard
+$0.10 input rate and the $0.125 cache-write rate) and $0.50/million output tokens;
+this intentionally overestimates ordinary input cost. Timeouts, rejected requests, missing usage, and
 interrupted workers retain the full reservation. The owner must reconcile
 unknown charges against provider usage before changing those rows; automatic
 expiry never refunds money. Duplicate request IDs cannot make another call.
 
-The pinned model is `gpt-5.1-codex-mini`, Responses API, standard service, low
-reasoning. This reduces both token rates by about 86% from the original
-GPT-5.3-Codex demo. Historical charges stay in the same lifetime ledger. Rates verified 2026-10-05: $0.25/million input and $2/million output
-tokens. The model page marks this model deprecated; availability must be
-checked with the owner's project. There is no silent model fallback. Recheck
-prices and revise the reservation before changing models or extending access.
+The pinned model is `gpt-6-luna`, a current low-cost model available in Codex,
+using the Responses API, standard service, and low reasoning. Rates verified
+2026-10-05: $0.10/million input and $0.50/million output tokens, with cache writes
+listed at $0.125/million. Historical charges stay in the same lifetime ledger.
+There is no silent model fallback. Recheck prices and revise the reservation
+before changing models or extending access. The initially attempted
+`gpt-5.1-codex-mini` had been retired and returned `model_not_found`; its failed
+requests retain their reservations rather than assuming they were unbilled.
 
-- [Official model documentation](https://developers.openai.com/api/docs/models/gpt-5.1-codex-mini)
+- [Official model documentation](https://developers.openai.com/api/docs/models/gpt-6-luna)
+- [Codex model availability](https://learn.chatgpt.com/docs/models)
 - [Official pricing](https://developers.openai.com/api/docs/pricing)
 
 Additional limits: 10 questions per rolling 24 hours per IP hash and session,

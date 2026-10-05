@@ -48,8 +48,8 @@ test('research settles actual tokens, removes fabricated evidence and refuses du
   const f=await fixture(t),cookie=await f.unlock(),q=f.question();
   const r=await f.req('research',q,cookie);assert.equal(r.status,200);
   const result=await r.json();assert.equal(result.propositions.length,1);assert.equal(result.removed,1);assert.ok(result.sources.length);
-  assert.equal(f.calls[0].store,false);assert.equal(f.calls[0].service_tier,'default');assert.equal(f.calls[0].max_output_tokens,4096);assert.equal(f.calls[0].model,'gpt-5.1-codex-mini');assert.equal(f.calls[0].tools,undefined);
-  const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.charged,650);assert.equal(ledger.state,'completed');assert.equal(ledger.model,'gpt-5.1-codex-mini');
+  assert.equal(f.calls[0].store,false);assert.equal(f.calls[0].service_tier,'default');assert.equal(f.calls[0].max_output_tokens,4096);assert.equal(f.calls[0].model,'gpt-6-luna');assert.equal(f.calls[0].tools,undefined);
+  const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.charged,325);assert.equal(ledger.state,'completed');assert.equal(ledger.model,'gpt-6-luna');
   assert.equal((await f.req('research',q,cookie)).status,429);assert.equal(f.calls.length,1);
   const serialized=JSON.stringify(result);assert.ok(!serialized.includes('fake-test-key'));
 });
