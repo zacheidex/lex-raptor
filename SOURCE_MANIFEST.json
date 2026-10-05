@@ -33,6 +33,12 @@
   "benchmark/case-status/intermediate-chevron.json",
   "benchmark/case-status/intermediate-fictional.json",
   "benchmark/case-status/intermediate-roe.json",
+  "benchmark/citations/RESULTS.md",
+  "benchmark/citations/iteration-batched-reader.json",
+  "benchmark/citations/live-check.py",
+  "benchmark/citations/live-results.json",
+  "benchmark/citations/metrics.json",
+  "benchmark/citations/verification-ui-check.mjs",
   "benchmark/conversation/RESULTS.md",
   "benchmark/conversation/final-followup.json",
   "benchmark/conversation/final-georgia.json",
@@ -184,6 +190,8 @@
   "website/public/demo.js",
   "website/public/index.html",
   "website/public/logo.png",
+  "website/public/mascot-license.txt",
+  "website/public/raptor-cyan.svg",
   "website/public/research-earth.svg",
   "website/public/run-locally.html",
   "website/public/site.js",
@@ -218,5 +226,6 @@
   "website/worker/research.js",
   "website/worker/sources.js",
   "website/worker/state-courts.json",
+  "website/worker/verification.js",
   "website/worker/web.js"
 ]

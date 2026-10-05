@@ -15,11 +15,12 @@ async function fixture(t,options={}) {
     outboundService:async request=>{
       if(options.source){const response=await options.source(request);if(response)return response;}
       if(options.local&&request.url==='http://127.0.0.1:11434/api/chat'){
-        const body=await request.json();calls.push(body);if(body.format.properties.search_query)return Response.json({done:true,done_reason:'stop',prompt_eval_count:500,eval_count:100,message:{content:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}});const {sources}=JSON.parse(body.messages[1].content);
+        const body=await request.json();calls.push(body);if(body.format.properties.search_query)return Response.json({done:true,done_reason:'stop',prompt_eval_count:500,eval_count:100,message:{content:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}});if(options.verify&&body.format.properties.findings)return Response.json({done:true,done_reason:'stop',prompt_eval_count:500,eval_count:100,message:{content:JSON.stringify({findings:[]})}});const {sources}=JSON.parse(body.messages[1].content);
         return Response.json({done:true,done_reason:'stop',prompt_eval_count:1000,eval_count:200,message:{content:JSON.stringify({propositions:[{section:body.format.properties.propositions.items.properties.section.enum[0],claim:'Local fixture finding.',source_id:sources[0].id,quote_id:sources[0].text.match(/\[(S\d+Q\d+)\]/)[1],web_source_url:''}]})}});
       }
       assert.equal(request.url,'https://api.openai.com/v1/responses');
       const body=await request.json();calls.push(body);
+      if(options.verify&&['citation_page_reader','citation_support_review'].includes(body.text.format.name))return Response.json(await options.verify(body));
       if(options.beforeDraft&&body.text.format.name==='legal_research')await options.beforeDraft();
       if(options.fail||(options.failDraft&&body.text.format.name==='legal_research'))return new Response('{}',{status:500});
       if(body.text.format.name==='research_plan')return Response.json({status:'completed',usage:{input_tokens:500,output_tokens:100},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}]}]});
@@ -47,7 +48,7 @@ test('public legal web uses bounded tool calls, checks provenance and accounts f
   assert.equal(r.status,200);assert.equal(f.calls.length,2);assert.equal(f.calls[1].max_tool_calls,4);assert.equal(f.calls[1].tools[0].type,'web_search');
   assert.equal(data.propositions.length,1);assert.equal(data.removed,1);assert.equal(data.propositions[0].evidence_method,'web_citation');assert.equal(data.propositions[0].quote,'');
   assert.equal(data.sources.length,1);assert.equal(data.sources[0].text,'');assert.equal(data.sources[0].source_url,webUrl);assert.equal(data.searched[0].pages,1);
-  assert.match(data.coverage_notes.join(' '),/selective/);
+  assert.ok(!data.coverage_notes.some(note=>/selective|not directly connected/.test(note)));
   const row=await f.db.prepare('SELECT * FROM demo_calls WHERE id=?').bind(q.request_id).first();assert.equal(row.web_search_calls,1);assert.equal(row.charged,10763);assert.equal(row.state,'completed');
 });
 test('source-only and local research never invoke the paid web tool',async t=>{
@@ -529,4 +530,57 @@ test('case briefs retain opening facts and a distant operative holding within th
 test('planning and drafting ceilings remain below their conservative reservations',()=>{
  assert.ok(Math.ceil((14000+32768+8192)*.225+(1536+6144)*.5)<RESERVE);
  assert.ok(Math.ceil((14000+4096+5*(32768+4096)+10*128000)*.225+(1536+6144)*.5)+4*10000<WEB_RESERVE);
+});
+
+const verifyPage='A hypothetical public legal source. Actions concerning property must be filed within four years. This provision is subject to the exceptions in the following section.';
+const verifiedResponse=data=>({status:'completed',usage:{input_tokens:1000,output_tokens:200},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify(data)}]}]});
+const verificationBody=(urls=[webUrl])=>({request_id:crypto.randomUUID(),findings:[{claim:'Property actions have a four-year period, subject to statutory exceptions.',urls}]});
+test('citation recheck reads fresh text and grounds its support review in fresh evidence',async t=>{
+ const f=await fixture(t,{source:request=>{if(request.url===webUrl){assert.equal(request.headers.get('Authorization'),null);assert.equal(request.headers.get('Cache-Control'),'no-cache');return new Response('<main>'+verifyPage+'</main>',{headers:{'Content-Type':'text/html'}});}},verify:body=>{
+  assert.equal(body.text.format.name,'citation_support_review');assert.equal(body.tools,undefined);const {sources}=JSON.parse(body.input);assert.ok(sources[0].segments[0].text.includes('four years'));
+  return verifiedResponse({findings:[{finding_id:'F1',verdict:'supported',reason:'The period and exception match the fresh source.',evidence_ids:[sources[0].segments[0].id]}]});
+ }});
+ const body=verificationBody(),response=await f.req('verify',body),result=await response.json();assert.equal(response.status,200);assert.equal(result.findings[0].verdict,'supported');assert.equal(result.pages[0].method,'direct');assert.equal(result.pages[0].text,undefined);assert.equal(result.findings[0].evidence[0].text,verifyPage);
+ const row=await f.db.prepare('SELECT * FROM demo_calls WHERE id=?').bind(body.request_id).first();assert.equal(row.charged,325);assert.equal(row.web_search_calls,0);assert.equal(row.state,'completed');assert.equal((await f.req('verify',body)).status,429);
+});
+test('citation review rejects invented evidence and cannot endorse unreadable companion sources',async t=>{
+ let round=0;
+ const f=await fixture(t,{source:request=>request.url.startsWith('https://example.gov/')?new Response(request.url===webUrl?verifyPage:'denied',{status:request.url===webUrl?200:403,headers:{'Content-Type':'text/plain'}}):null,verify:body=>{
+  if(body.text.format.name==='citation_page_reader')return {...verifiedResponse({pages:[]}),output:[{type:'web_search_call',status:'completed',action:{type:'open_page',url:'https://example.gov/missing'}},...verifiedResponse({pages:[]}).output]};
+  return verifiedResponse({findings:[{finding_id:'F1',verdict:'supported',reason:'A purported match.',evidence_ids:++round===1?['invented']:['V1E1']}]});
+ }});
+ let result=await (await f.req('verify',verificationBody())).json();assert.equal(result.findings[0].verdict,'unverified');assert.equal(result.findings[0].evidence.length,0);
+ result=await (await f.req('verify',verificationBody([webUrl,'https://example.gov/missing']))).json();assert.equal(result.findings[0].verdict,'partial');assert.equal(result.pages[1].status,'unavailable');
+});
+test('PDF fallback requires an actual completed open of the same URL and preserves its provenance',async t=>{
+ let hasOpen=false;
+ const pdf='https://example.gov/opinion.pdf';
+ const f=await fixture(t,{source:r=>r.url===pdf?new Response('%PDF',{headers:{'Content-Type':'application/pdf'}}):null,verify:body=>{
+  if(body.text.format.name==='citation_page_reader'){
+   assert.equal(body.max_tool_calls,1);assert.doesNotMatch(body.input,/Property actions/);assert.equal(body.tools[0].external_web_access,true);
+   return {...verifiedResponse({pages:[{source_id:'V1',status:'readable',text:verifyPage}]}),output:[{type:'web_search_call',status:'completed',action:hasOpen?{type:'open_page',url:pdf}:{type:'search',sources:[{url:pdf}]}},...verifiedResponse({pages:[{source_id:'V1',status:'readable',text:verifyPage}]}).output]};
+  }
+  return verifiedResponse({findings:[{finding_id:'F1',verdict:'partial',reason:'An excerpt supports only part of this claim.',evidence_ids:['V1E1']}]});
+ }});
+ let result=await (await f.req('verify',verificationBody([pdf]))).json();assert.equal(result.findings[0].verdict,'unverified');assert.equal(f.calls.length,1);
+ hasOpen=true;const body=verificationBody([pdf]);result=await (await f.req('verify',body)).json();assert.equal(result.findings[0].verdict,'partial');assert.equal(result.pages[0].method,'web_reader');assert.equal(result.findings[0].evidence[0].method,'web_reader');
+ const row=await f.db.prepare('SELECT * FROM demo_calls WHERE id=?').bind(body.request_id).first();assert.equal(row.charged,10650);assert.equal(row.web_search_calls,1);
+});
+test('citation recheck rejects unsafe URLs and does not follow a publisher redirect to private hosts',async t=>{
+ const fetched=[];
+ const f=await fixture(t,{source:r=>{if(!r.url.startsWith('https://api.openai.com/')){fetched.push(r.url);return new Response(null,{status:302,headers:{Location:'http://127.0.0.1/private'}});}},verify:()=>({...verifiedResponse({pages:[]}),output:[{type:'web_search_call',status:'completed',action:{type:'search',sources:[]}},...verifiedResponse({pages:[]}).output]})});
+ for(const url of ['http://example.gov/','https://example.gov.evil.test/','https://127.0.0.1/','https://example.gov:444/','https://user:secret@example.gov/'])assert.equal((await f.req('verify',verificationBody([url]))).status,400);
+ assert.equal(f.calls.length,0);assert.equal(fetched.length,0);
+ const result=await (await f.req('verify',verificationBody())).json();assert.deepEqual(fetched,[webUrl]);assert.equal(result.pages[0].status,'unavailable');assert.equal(result.findings[0].verdict,'unverified');
+});
+test('citation recheck respects the lifetime cap and holds uncertain provider spending',async t=>{
+ const f=await fixture(t,{source:r=>r.url===webUrl?new Response(verifyPage,{headers:{'Content-Type':'text/plain'}}):null,fail:true});
+ let body=verificationBody();assert.equal((await f.req('verify',body)).status,502);
+ const row=await f.db.prepare('SELECT * FROM demo_calls WHERE id=?').bind(body.request_id).first();assert.equal(row.state,'reserved');assert.equal(row.charged,RESERVE);
+ await f.db.prepare("INSERT INTO demo_calls (id,visitor,session,created,state,charged) VALUES ('prior','v','s',0,'completed',?)").bind(CAP-RESERVE).run();
+ assert.equal((await f.req('verify',verificationBody())).status,429);assert.equal(f.calls.length,1);
+});
+test('local citation recheck never sends claims to OpenAI or invokes the paid web reader',async t=>{
+ const f=await fixture(t,{local:true,bindings:{LOCAL_RESEARCH:'true'},source:r=>r.url===webUrl?new Response(verifyPage,{headers:{'Content-Type':'text/plain'}}):null,verify:true});
+ const result=await (await f.req('verify',verificationBody())).json();assert.equal(result.findings[0].verdict,'unverified');assert.equal(f.calls.length,1);assert.equal(f.calls[0].model,'qwen3:14b');assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM demo_calls').first()).n,0);
 });

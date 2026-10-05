@@ -6,6 +6,7 @@ import {local,modelName,modelReady,generate} from './model.js';
 import {planPayload,readPlan} from './planner.js';
 import {validateDocuments,documentPassages,documentCoverage} from './documents.js';
 import {saveFeedback} from './feedback.js';
+import {verificationInput,verifyCitations} from './verification.js';
 const encoder=new TextEncoder();
 const json=(data,status=200,extra={})=>new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...extra}});
 class PublicError extends Error {constructor(status,message){super(message);this.status=status;}}
@@ -34,13 +35,13 @@ async function api(request,env,progress=()=>{}) {
   if(path==='/api/demo/status'&&request.method==='GET') {
     const enabled=!!ready(env);
     const state=await database(env).prepare('SELECT COALESCE(SUM(charged),0) total FROM demo_calls').first();
-    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,research_progress:true,case_treatment_search:true,clarifying_questions:true,research_revision:13,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
+    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,research_progress:true,case_treatment_search:true,clarifying_questions:true,research_revision:14,citation_recheck:true,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
   }
   if(request.method!=='POST')fail(405,'Method not allowed.');
   if(request.headers.get('Origin')!==new URL(request.url).origin||request.headers.get('Sec-Fetch-Site')==='cross-site')fail(403,'Open research on this website to continue.');
-  if(!['/api/demo/research','/api/demo/search','/api/demo/citations','/api/demo/feedback'].includes(path))fail(404,'Not found.');
+  if(!['/api/demo/research','/api/demo/search','/api/demo/citations','/api/demo/feedback','/api/demo/verify'].includes(path))fail(404,'Not found.');
   if(env.DEMO_SESSION_SECRET?.length<32||!env.DEMO_SESSION_SECRET)fail(503,'Research access is temporarily unavailable.');
-  if(path==='/api/demo/research'&&!ready(env))fail(503,'Online AI is currently unavailable. You can run Lex Raptor locally.');
+  if(['/api/demo/research','/api/demo/verify'].includes(path)&&!ready(env))fail(503,'Online AI is currently unavailable. You can run Lex Raptor locally.');
   const db=database(env),ip=await visitor(request,env);
   // Keep the existing ledger schema and visitor hash so opening public access
   // cannot reset historical spending. No cookie needed.
@@ -56,18 +57,6 @@ async function api(request,env,progress=()=>{}) {
     if(typeof body.text!=='string'||body.text.length<3||body.text.length>6000)fail(400,'Enter 3 to 6,000 characters of public citation text.');
     return json({citations:await auditCitations(env,body.text),limitation:'Checks case-citation existence and ambiguity only. No treatment, good-law status, or proposition support determination.',model_used:false});
   }
-  if(typeof body.question!=='string'||body.question.trim().length<1||body.question.length>2000)fail(400,'Enter a message between 1 and 2,000 characters.');
-  const documents=validateDocuments(body.documents);
-  if(body.document_mode!==undefined&&!['only','with_sources'].includes(body.document_mode))fail(400,'Choose a valid document research scope.');
-  const onlyDocuments=documents.length>0&&body.document_mode!=='with_sources';
-  const automatic=path==='/api/demo/research'&&(body.task==='auto'||body.database_ids==='auto'||body.auto_fields===true);
-  if(!onlyDocuments&&body.database_ids!=='auto')validateSelection(body.database_ids,env);
-  if(body.database_ids==='auto'&&!automatic&&path!=='/api/demo/search')fail(400,'Choose databases.');
-  const selectedFilters=filters(body.filters),requestedTask=body.task||'research';
-  if(requestedTask!=='auto'&&!Object.hasOwn(tasks,requestedTask))fail(400,'Choose an available research workflow.');
-  if(body.search_query!==undefined&&(typeof body.search_query!=='string'||body.search_query.length>300))fail(400,'Keep search terms within 300 characters.');
-  if(body.context!==undefined&&(typeof body.context!=='string'||body.context.length>3500))fail(400,'Conversation context is too long. Start a new chat.');
-  if(path==='/api/demo/research'&&!/^[a-f0-9-]{36}$/.test(body.request_id||''))fail(400,'Missing request identifier.');
   let reserved=0,usage={input_tokens:0,output_tokens:0,web_search_calls:0},usageKnown=true;
   async function admission(amount){
     if(local(env)||reserved>=amount)return;
@@ -90,11 +79,28 @@ async function api(request,env,progress=()=>{}) {
       const calls=Array.isArray(result.data.output)?result.data.output.filter(o=>o.type==='web_search_call').length:null;
       // The API may return an extra ignored attempt after max_tool_calls.
       // Charge every reported attempt up to the provider-enforced execution cap.
-      if(calls===null||calls<1)usageKnown=false;else usage.web_search_calls+=Math.min(calls,WEB_CALL_LIMIT);
+      if(calls===null||calls<1)usageKnown=false;else usage.web_search_calls+=Math.min(calls,JSON.parse(input).max_tool_calls||WEB_CALL_LIMIT);
     }
     return result.data;
   }
   async function reconcile(){if(reserved&&usageKnown)await settle(db,body.request_id,usage);}
+  if(path==='/api/demo/verify'){
+    const input=verificationInput(body);
+    const checked=await verifyCitations(env,input,callModel,progress);
+    await reconcile();return json(checked);
+  }
+  if(typeof body.question!=='string'||body.question.trim().length<1||body.question.length>2000)fail(400,'Enter a message between 1 and 2,000 characters.');
+  const documents=validateDocuments(body.documents);
+  if(body.document_mode!==undefined&&!['only','with_sources'].includes(body.document_mode))fail(400,'Choose a valid document research scope.');
+  const onlyDocuments=documents.length>0&&body.document_mode!=='with_sources';
+  const automatic=path==='/api/demo/research'&&(body.task==='auto'||body.database_ids==='auto'||body.auto_fields===true);
+  if(!onlyDocuments&&body.database_ids!=='auto')validateSelection(body.database_ids,env);
+  if(body.database_ids==='auto'&&!automatic&&path!=='/api/demo/search')fail(400,'Choose databases.');
+  const selectedFilters=filters(body.filters),requestedTask=body.task||'research';
+  if(requestedTask!=='auto'&&!Object.hasOwn(tasks,requestedTask))fail(400,'Choose an available research workflow.');
+  if(body.search_query!==undefined&&(typeof body.search_query!=='string'||body.search_query.length>300))fail(400,'Keep search terms within 300 characters.');
+  if(body.context!==undefined&&(typeof body.context!=='string'||body.context.length>3500))fail(400,'Conversation context is too long. Start a new chat.');
+  if(path==='/api/demo/research'&&!/^[a-f0-9-]{36}$/.test(body.request_id||''))fail(400,'Missing request identifier.');
   let plan={query:body.search_query?.trim()||body.question.slice(0,300),task:requestedTask==='auto'?'research':requestedTask,database_ids:body.database_ids==='auto'?catalog(env).filter(d=>d.available&&d.id!=='cap').map(d=>d.id):body.database_ids,...selectedFilters};
   if(automatic){
     progress({stage:'planning',message:'Planning the research…'});
@@ -171,7 +177,7 @@ function streamResearch(request,env,context){
 export default {
   async fetch(request,env,context) {
     try {
-      if(request.method==='POST'&&['/api/demo/research','/api/demo/search'].includes(new URL(request.url).pathname)&&request.headers.get('Accept')==='text/event-stream')return streamResearch(request,env,context);
+      if(request.method==='POST'&&['/api/demo/research','/api/demo/search','/api/demo/verify'].includes(new URL(request.url).pathname)&&request.headers.get('Accept')==='text/event-stream')return streamResearch(request,env,context);
       if(new URL(request.url).pathname.startsWith('/api/'))return await api(request,env);
       if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405});
       const url=new URL(request.url);
@@ -180,6 +186,7 @@ export default {
       const result=await env.ASSETS.fetch(new Request(url,request));
       const headers=new Headers(result.headers);
       headers.set('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; worker-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+      headers.set('Cache-Control','no-cache');
       headers.set('X-Content-Type-Options','nosniff');headers.set('Referrer-Policy','no-referrer');
       return new Response(result.body,{status:result.status,headers});
     } catch(error) {

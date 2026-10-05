@@ -6,4 +6,4 @@ const gaps={
   live_facts:'These databases do not verify live news, personal records, or case-specific docket status.'
 };
 export const coverageKinds=Object.keys(gaps);
-export function coverageNotes(kinds=[],useWeb=false) {return [...new Set([...new Set(kinds)].filter(k=>Object.hasOwn(gaps,k)).map(k=>useWeb&&['state_codes','federal_statutes'].includes(k)?'Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database.':gaps[k]))];}
+export function coverageNotes(kinds=[],useWeb=false) {return [...new Set(kinds)].filter(k=>Object.hasOwn(gaps,k)&&!(useWeb&&['state_codes','federal_statutes'].includes(k))).map(k=>gaps[k]);}

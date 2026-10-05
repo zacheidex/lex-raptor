@@ -1,0 +1,339 @@
+{
+  "request_id": "e7bbecb7-dde2-4b85-87dd-52c84da2f74a",
+  "duration_seconds": 18.48,
+  "cases": [
+    {
+      "name": "accurate_html",
+      "claim": "The text of the First Amendment prohibits Congress from making laws abridging freedom of speech.",
+      "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+      "expected": "supported"
+    },
+    {
+      "name": "wrong_html",
+      "claim": "The First Amendment requires Congress to license every newspaper before publication.",
+      "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+      "expected": "contradicted"
+    },
+    {
+      "name": "accurate_pdf",
+      "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court overruled Roe v. Wade and Planned Parenthood v. Casey.",
+      "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+      "expected": "supported"
+    },
+    {
+      "name": "wrong_pdf",
+      "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court reaffirmed Roe and Casey and preserved their constitutional abortion right.",
+      "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+      "expected": "contradicted"
+    },
+    {
+      "name": "accurate_mirror",
+      "claim": "The 2024 edition of Georgia Code section 9-3-32 states a four-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+      "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+      "expected": "supported"
+    },
+    {
+      "name": "wrong_mirror",
+      "claim": "The 2024 edition of Georgia Code section 9-3-32 states a one-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+      "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+      "expected": "contradicted"
+    },
+    {
+      "name": "missing_page",
+      "claim": "This nonexistent test page establishes a three-day filing deadline.",
+      "url": "https://www.archives.gov/lexraptor-nonexistent-test-20261005",
+      "expected": "unverified"
+    }
+  ],
+  "events": [
+    {
+      "event": "progress",
+      "data": {
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      }
+    },
+    {
+      "event": "progress",
+      "data": {
+        "stage": "opening",
+        "message": "Reopening cited sources\u2026"
+      }
+    },
+    {
+      "event": "progress",
+      "data": {
+        "stage": "reading",
+        "message": "Reading PDF and unavailable sources with the web reader\u2026"
+      }
+    },
+    {
+      "event": "progress",
+      "data": {
+        "stage": "reviewing",
+        "message": "Comparing findings with the fresh source text\u2026"
+      }
+    },
+    {
+      "event": "result",
+      "data": {
+        "checked_at": "2026-10-05T08:37:19.814Z",
+        "findings": [
+          {
+            "id": "F1",
+            "claim": "The text of the First Amendment prohibits Congress from making laws abridging freedom of speech.",
+            "source_ids": [
+              "V1"
+            ],
+            "verdict": "supported",
+            "reason": "The excerpt quotes Amendment I as stating that Congress shall make no law abridging freedom of speech.",
+            "evidence": [
+              {
+                "source_id": "V1",
+                "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+                "text": "The National Archives identifies this as a transcription of the enrolled original; its spelling and punctuation reflect the original. Congress proposed 12 amendments on September 25, 1789; ten were ratified on December 15, 1791, forming the Bill of Rights. Article 2 was ratified in 1992 as the 27th Amendment; Article 1 was never ratified. The page was last reviewed August 7, 2025.\n\nAmendment I: Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.\n\nAmendment II: A well regulat",
+                "method": "web_reader"
+              }
+            ]
+          },
+          {
+            "id": "F2",
+            "claim": "The First Amendment requires Congress to license every newspaper before publication.",
+            "source_ids": [
+              "V1"
+            ],
+            "verdict": "contradicted",
+            "reason": "The quoted text says Congress shall make no law abridging freedom of speech or of the press; it does not require Congress to license newspapers, and that claimed mandate conflicts with the quoted prohibition.",
+            "evidence": [
+              {
+                "source_id": "V1",
+                "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+                "text": "The National Archives identifies this as a transcription of the enrolled original; its spelling and punctuation reflect the original. Congress proposed 12 amendments on September 25, 1789; ten were ratified on December 15, 1791, forming the Bill of Rights. Article 2 was ratified in 1992 as the 27th Amendment; Article 1 was never ratified. The page was last reviewed August 7, 2025.\n\nAmendment I: Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.\n\nAmendment II: A well regulat",
+                "method": "web_reader"
+              }
+            ]
+          },
+          {
+            "id": "F3",
+            "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court overruled Roe v. Wade and Planned Parenthood v. Casey.",
+            "source_ids": [
+              "V2"
+            ],
+            "verdict": "unverified",
+            "reason": "The cited Dobbs opinion was unavailable, so the excerpt provides no evidence about its holding or date.",
+            "evidence": []
+          },
+          {
+            "id": "F4",
+            "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court reaffirmed Roe and Casey and preserved their constitutional abortion right.",
+            "source_ids": [
+              "V2"
+            ],
+            "verdict": "unverified",
+            "reason": "The cited Dobbs opinion was unavailable, so the excerpt provides no evidence about its holding or date.",
+            "evidence": []
+          },
+          {
+            "id": "F5",
+            "claim": "The 2024 edition of Georgia Code section 9-3-32 states a four-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+            "source_ids": [
+              "V3"
+            ],
+            "verdict": "unverified",
+            "reason": "The cited 2024 Georgia Code section was unavailable; no statutory text or period is provided.",
+            "evidence": []
+          },
+          {
+            "id": "F6",
+            "claim": "The 2024 edition of Georgia Code section 9-3-32 states a one-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+            "source_ids": [
+              "V3"
+            ],
+            "verdict": "unverified",
+            "reason": "The cited 2024 Georgia Code section was unavailable; no statutory text or period is provided.",
+            "evidence": []
+          },
+          {
+            "id": "F7",
+            "claim": "This nonexistent test page establishes a three-day filing deadline.",
+            "source_ids": [
+              "V4"
+            ],
+            "verdict": "unverified",
+            "reason": "The cited test page was unavailable, so the excerpt provides no evidence about any filing deadline.",
+            "evidence": []
+          }
+        ],
+        "pages": [
+          {
+            "id": "V1",
+            "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+            "checked_at": "2026-10-05T08:37:01.644Z",
+            "status": "read",
+            "method": "web_reader",
+            "detail": "Fresh web-reader excerpt; transcription is provider-reported.",
+            "http_status": 404
+          },
+          {
+            "id": "V2",
+            "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+            "checked_at": "2026-10-05T08:37:01.644Z",
+            "status": "unavailable",
+            "method": "direct",
+            "detail": "The publisher returned HTTP 406.",
+            "http_status": 406
+          },
+          {
+            "id": "V3",
+            "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+            "checked_at": "2026-10-05T08:37:01.644Z",
+            "status": "unavailable",
+            "method": "direct",
+            "detail": "The publisher returned HTTP 403.",
+            "http_status": 403
+          },
+          {
+            "id": "V4",
+            "url": "https://www.archives.gov/lexraptor-nonexistent-test-20261005",
+            "checked_at": "2026-10-05T08:37:01.644Z",
+            "status": "unavailable",
+            "method": "direct",
+            "detail": "The publisher returned HTTP 404.",
+            "http_status": 404
+          }
+        ],
+        "limitation": "AI review of retrieved excerpts. Later treatment and current validity are not comprehensively checked.",
+        "status": 200
+      }
+    }
+  ],
+  "result": {
+    "checked_at": "2026-10-05T08:37:19.814Z",
+    "findings": [
+      {
+        "id": "F1",
+        "claim": "The text of the First Amendment prohibits Congress from making laws abridging freedom of speech.",
+        "source_ids": [
+          "V1"
+        ],
+        "verdict": "supported",
+        "reason": "The excerpt quotes Amendment I as stating that Congress shall make no law abridging freedom of speech.",
+        "evidence": [
+          {
+            "source_id": "V1",
+            "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+            "text": "The National Archives identifies this as a transcription of the enrolled original; its spelling and punctuation reflect the original. Congress proposed 12 amendments on September 25, 1789; ten were ratified on December 15, 1791, forming the Bill of Rights. Article 2 was ratified in 1992 as the 27th Amendment; Article 1 was never ratified. The page was last reviewed August 7, 2025.\n\nAmendment I: Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.\n\nAmendment II: A well regulat",
+            "method": "web_reader"
+          }
+        ]
+      },
+      {
+        "id": "F2",
+        "claim": "The First Amendment requires Congress to license every newspaper before publication.",
+        "source_ids": [
+          "V1"
+        ],
+        "verdict": "contradicted",
+        "reason": "The quoted text says Congress shall make no law abridging freedom of speech or of the press; it does not require Congress to license newspapers, and that claimed mandate conflicts with the quoted prohibition.",
+        "evidence": [
+          {
+            "source_id": "V1",
+            "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+            "text": "The National Archives identifies this as a transcription of the enrolled original; its spelling and punctuation reflect the original. Congress proposed 12 amendments on September 25, 1789; ten were ratified on December 15, 1791, forming the Bill of Rights. Article 2 was ratified in 1992 as the 27th Amendment; Article 1 was never ratified. The page was last reviewed August 7, 2025.\n\nAmendment I: Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.\n\nAmendment II: A well regulat",
+            "method": "web_reader"
+          }
+        ]
+      },
+      {
+        "id": "F3",
+        "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court overruled Roe v. Wade and Planned Parenthood v. Casey.",
+        "source_ids": [
+          "V2"
+        ],
+        "verdict": "unverified",
+        "reason": "The cited Dobbs opinion was unavailable, so the excerpt provides no evidence about its holding or date.",
+        "evidence": []
+      },
+      {
+        "id": "F4",
+        "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court reaffirmed Roe and Casey and preserved their constitutional abortion right.",
+        "source_ids": [
+          "V2"
+        ],
+        "verdict": "unverified",
+        "reason": "The cited Dobbs opinion was unavailable, so the excerpt provides no evidence about its holding or date.",
+        "evidence": []
+      },
+      {
+        "id": "F5",
+        "claim": "The 2024 edition of Georgia Code section 9-3-32 states a four-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+        "source_ids": [
+          "V3"
+        ],
+        "verdict": "unverified",
+        "reason": "The cited 2024 Georgia Code section was unavailable; no statutory text or period is provided.",
+        "evidence": []
+      },
+      {
+        "id": "F6",
+        "claim": "The 2024 edition of Georgia Code section 9-3-32 states a one-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+        "source_ids": [
+          "V3"
+        ],
+        "verdict": "unverified",
+        "reason": "The cited 2024 Georgia Code section was unavailable; no statutory text or period is provided.",
+        "evidence": []
+      },
+      {
+        "id": "F7",
+        "claim": "This nonexistent test page establishes a three-day filing deadline.",
+        "source_ids": [
+          "V4"
+        ],
+        "verdict": "unverified",
+        "reason": "The cited test page was unavailable, so the excerpt provides no evidence about any filing deadline.",
+        "evidence": []
+      }
+    ],
+    "pages": [
+      {
+        "id": "V1",
+        "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+        "checked_at": "2026-10-05T08:37:01.644Z",
+        "status": "read",
+        "method": "web_reader",
+        "detail": "Fresh web-reader excerpt; transcription is provider-reported.",
+        "http_status": 404
+      },
+      {
+        "id": "V2",
+        "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+        "checked_at": "2026-10-05T08:37:01.644Z",
+        "status": "unavailable",
+        "method": "direct",
+        "detail": "The publisher returned HTTP 406.",
+        "http_status": 406
+      },
+      {
+        "id": "V3",
+        "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+        "checked_at": "2026-10-05T08:37:01.644Z",
+        "status": "unavailable",
+        "method": "direct",
+        "detail": "The publisher returned HTTP 403.",
+        "http_status": 403
+      },
+      {
+        "id": "V4",
+        "url": "https://www.archives.gov/lexraptor-nonexistent-test-20261005",
+        "checked_at": "2026-10-05T08:37:01.644Z",
+        "status": "unavailable",
+        "method": "direct",
+        "detail": "The publisher returned HTTP 404.",
+        "http_status": 404
+      }
+    ],
+    "limitation": "AI review of retrieved excerpts. Later treatment and current validity are not comprehensively checked.",
+    "status": 200
+  }
+}

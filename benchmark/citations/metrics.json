@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-05",
+  "unit_tests_passed": 67,
+  "browser_widths": [
+    390,
+    1440
+  ],
+  "live_final_expected_verdicts": 7,
+  "live_final_cases": 7,
+  "live_initial_expected_verdicts": 3,
+  "live_initial_cases": 7,
+  "benchmark_charge_usd": 0.063953,
+  "lifetime_charged_or_held_usd": 1.741141,
+  "lifetime_held_usd": 0.38,
+  "calls": [
+    {
+      "id": "a535d938-8189-425c-a8c5-905b6a4c1fee",
+      "charged_microdollars": 49514,
+      "state": "completed",
+      "web_search_calls": 4,
+      "input_tokens": 37565,
+      "output_tokens": 2123
+    },
+    {
+      "id": "e7bbecb7-dde2-4b85-87dd-52c84da2f74a",
+      "charged_microdollars": 14439,
+      "state": "completed",
+      "web_search_calls": 1,
+      "input_tokens": 15205,
+      "output_tokens": 2034
+    }
+  ]
+}

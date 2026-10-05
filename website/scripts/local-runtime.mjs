@@ -3,6 +3,7 @@ import {resolve,dirname,extname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {randomBytes} from 'node:crypto';
 import {Miniflare} from 'miniflare';
+import {legalUrl} from '../worker/web.js';
 
 export async function createLocalRuntime(){
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
@@ -23,7 +24,7 @@ const mf=new Miniflare({modules:true,scriptPath:resolve(root,'dist/server/index.
   outboundService:async request=>{
     const u=new URL(request.url);
     const local=u.origin==='http://127.0.0.1:11434'&&u.pathname==='/api/chat';
-    if(!local&&!(u.protocol==='https:'&&['www.courtlistener.com','www.ecfr.gov','www.federalregister.gov'].includes(u.hostname)))return new Response('Outbound destination not allowed',{status:403});
+    if(!local&&!legalUrl(request.url))return new Response('Outbound destination not allowed',{status:403});
     const response=await fetch(request.url,{method:request.method,headers:Object.fromEntries(request.headers),...(request.method==='POST'?{body:await request.arrayBuffer()}:{}),redirect:'manual',signal:AbortSignal.timeout(local?180000:50000)});
     const headers=new Headers(response.headers);headers.delete('content-encoding');headers.delete('content-length');
     return new Response(response.body,{status:response.status,headers});

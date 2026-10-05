@@ -1,0 +1,468 @@
+{
+  "request_id": "a535d938-8189-425c-a8c5-905b6a4c1fee",
+  "duration_seconds": 29.51,
+  "cases": [
+    {
+      "name": "accurate_html",
+      "claim": "The text of the First Amendment prohibits Congress from making laws abridging freedom of speech.",
+      "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+      "expected": "supported"
+    },
+    {
+      "name": "wrong_html",
+      "claim": "The First Amendment requires Congress to license every newspaper before publication.",
+      "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+      "expected": "contradicted"
+    },
+    {
+      "name": "accurate_pdf",
+      "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court overruled Roe v. Wade and Planned Parenthood v. Casey.",
+      "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+      "expected": "supported"
+    },
+    {
+      "name": "wrong_pdf",
+      "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court reaffirmed Roe and Casey and preserved their constitutional abortion right.",
+      "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+      "expected": "contradicted"
+    },
+    {
+      "name": "accurate_mirror",
+      "claim": "The 2024 edition of Georgia Code section 9-3-32 states a four-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+      "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+      "expected": "supported"
+    },
+    {
+      "name": "wrong_mirror",
+      "claim": "The 2024 edition of Georgia Code section 9-3-32 states a one-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+      "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+      "expected": "contradicted"
+    },
+    {
+      "name": "missing_page",
+      "claim": "This nonexistent test page establishes a three-day filing deadline.",
+      "url": "https://www.archives.gov/lexraptor-nonexistent-test-20261005",
+      "expected": "unverified"
+    }
+  ],
+  "events": [
+    {
+      "event": "progress",
+      "data": {
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      }
+    },
+    {
+      "event": "progress",
+      "data": {
+        "stage": "opening",
+        "message": "Reopening cited sources\u2026"
+      }
+    },
+    {
+      "event": "progress",
+      "data": {
+        "stage": "reading",
+        "message": "Opening source 1 of 4 with the web reader\u2026"
+      }
+    },
+    {
+      "event": "progress",
+      "data": {
+        "stage": "reading",
+        "message": "Opening source 2 of 4 with the web reader\u2026"
+      }
+    },
+    {
+      "event": "progress",
+      "data": {
+        "stage": "reading",
+        "message": "Opening source 3 of 4 with the web reader\u2026"
+      }
+    },
+    {
+      "event": "progress",
+      "data": {
+        "stage": "reading",
+        "message": "Opening source 4 of 4 with the web reader\u2026"
+      }
+    },
+    {
+      "event": "progress",
+      "data": {
+        "stage": "reviewing",
+        "message": "Comparing findings with the fresh source text\u2026"
+      }
+    },
+    {
+      "event": "result",
+      "data": {
+        "checked_at": "2026-10-05T08:40:52.744Z",
+        "reader_actions": [
+          {
+            "phase": "web open_page",
+            "status": "completed",
+            "query": "https://www.archives.gov/founding-docs/bill-of-rights-transcript"
+          },
+          {
+            "phase": "web open_page",
+            "status": "completed",
+            "query": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf"
+          },
+          {
+            "phase": "web open_page",
+            "status": "completed",
+            "query": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/"
+          },
+          {
+            "phase": "web open_page",
+            "status": "completed",
+            "query": "https://www.archives.gov/lexraptor-nonexistent-test-20261005"
+          }
+        ],
+        "findings": [
+          {
+            "id": "F1",
+            "claim": "The text of the First Amendment prohibits Congress from making laws abridging freedom of speech.",
+            "source_ids": [
+              "V1"
+            ],
+            "verdict": "supported",
+            "reason": "The excerpt transcribes the First Amendment as saying Congress shall make no law abridging freedom of speech.",
+            "evidence": [
+              {
+                "source_id": "V1",
+                "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+                "text": "Note: This is a transcription of the enrolled original of Congress\u2019s joint resolution proposing the Bill of Rights; spelling and punctuation reflect the original. On September 25, 1789, the First Congress proposed 12 amendments. Ten were ratified on December 15, 1791, as the first ten amendments. The proposed Article 2 was ratified in 1992 as the 27th Amendment; Article 1 was never ratified.\n\nAmendment I: Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.\n\nAmendment II: A well ",
+                "method": "web_reader"
+              }
+            ]
+          },
+          {
+            "id": "F2",
+            "claim": "The First Amendment requires Congress to license every newspaper before publication.",
+            "source_ids": [
+              "V1"
+            ],
+            "verdict": "contradicted",
+            "reason": "The excerpt says Congress shall make no law abridging freedom of speech or of the press; it does not require licensing newspapers before publication.",
+            "evidence": [
+              {
+                "source_id": "V1",
+                "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+                "text": "Note: This is a transcription of the enrolled original of Congress\u2019s joint resolution proposing the Bill of Rights; spelling and punctuation reflect the original. On September 25, 1789, the First Congress proposed 12 amendments. Ten were ratified on December 15, 1791, as the first ten amendments. The proposed Article 2 was ratified in 1992 as the 27th Amendment; Article 1 was never ratified.\n\nAmendment I: Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.\n\nAmendment II: A well ",
+                "method": "web_reader"
+              }
+            ]
+          },
+          {
+            "id": "F3",
+            "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court overruled Roe v. Wade and Planned Parenthood v. Casey.",
+            "source_ids": [
+              "V2"
+            ],
+            "verdict": "supported",
+            "reason": "The Supreme Court opinion\u2019s syllabus gives the decision date as June 24, 2022, and states that Roe and Casey are overruled.",
+            "evidence": [
+              {
+                "source_id": "V2",
+                "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+                "text": "DOBBS v. JACKSON WOMEN\u2019S HEALTH ORGANIZATION, No. 19\u20131392. Decided June 24, 2022. (Slip Opinion, syllabus; the syllabus is prepared for the reader\u2019s convenience and is not part of the Court\u2019s opinion.)\n\n\u201cHeld: The Constitution does not confer a right to abortion; Roe and Casey are overruled; and the authority to regulate abortion is returned to the people and their elected representatives.\u201d\n\nThe Court held that \u201crational-basis review is the appropriate standard to apply when state abortion regulations undergo constitutional challenge.\u201d Because abortion is not a fundamental constitutional right, States may regulate it for legitimate reasons. A challenged law is entitled to a \u201cstrong presumpti",
+                "method": "web_reader"
+              }
+            ]
+          },
+          {
+            "id": "F4",
+            "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court reaffirmed Roe and Casey and preserved their constitutional abortion right.",
+            "source_ids": [
+              "V2"
+            ],
+            "verdict": "contradicted",
+            "reason": "The syllabus states that Roe and Casey are overruled and that the Constitution does not confer a right to abortion.",
+            "evidence": [
+              {
+                "source_id": "V2",
+                "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+                "text": "DOBBS v. JACKSON WOMEN\u2019S HEALTH ORGANIZATION, No. 19\u20131392. Decided June 24, 2022. (Slip Opinion, syllabus; the syllabus is prepared for the reader\u2019s convenience and is not part of the Court\u2019s opinion.)\n\n\u201cHeld: The Constitution does not confer a right to abortion; Roe and Casey are overruled; and the authority to regulate abortion is returned to the people and their elected representatives.\u201d\n\nThe Court held that \u201crational-basis review is the appropriate standard to apply when state abortion regulations undergo constitutional challenge.\u201d Because abortion is not a fundamental constitutional right, States may regulate it for legitimate reasons. A challenged law is entitled to a \u201cstrong presumpti",
+                "method": "web_reader"
+              }
+            ]
+          },
+          {
+            "id": "F5",
+            "claim": "The 2024 edition of Georgia Code section 9-3-32 states a four-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+            "source_ids": [
+              "V3"
+            ],
+            "verdict": "supported",
+            "reason": "The excerpt identifies the 2024 Georgia Code and states that the covered actions must be brought within four years after the right of action accrues.",
+            "evidence": [
+              {
+                "source_id": "V3",
+                "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+                "text": "2024 Georgia Code \u00a7 9-3-32 \u2014 Accrual of actions for recovery of personal property or loss of timber; damages for conversion or destruction\n\nActions to recover personal property, or for damages for its conversion or destruction, must be brought within four years after the right of action accrues. Actions involving unauthorized cutting, or cutting and carrying away, of timber from another\u2019s property must be brought within four years after the cutting or cutting and carrying away.\n\nThe section states it was amended by 2014 Ga. Laws 619, \u00a7 1, effective July 1, 2014. The page identifies itself as the 2024 Code and notes that a newer version is available.",
+                "method": "web_reader"
+              }
+            ]
+          },
+          {
+            "id": "F6",
+            "claim": "The 2024 edition of Georgia Code section 9-3-32 states a one-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+            "source_ids": [
+              "V3"
+            ],
+            "verdict": "contradicted",
+            "reason": "The 2024 Code excerpt states a four-year period after accrual, not a one-year period.",
+            "evidence": [
+              {
+                "source_id": "V3",
+                "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+                "text": "2024 Georgia Code \u00a7 9-3-32 \u2014 Accrual of actions for recovery of personal property or loss of timber; damages for conversion or destruction\n\nActions to recover personal property, or for damages for its conversion or destruction, must be brought within four years after the right of action accrues. Actions involving unauthorized cutting, or cutting and carrying away, of timber from another\u2019s property must be brought within four years after the cutting or cutting and carrying away.\n\nThe section states it was amended by 2014 Ga. Laws 619, \u00a7 1, effective July 1, 2014. The page identifies itself as the 2024 Code and notes that a newer version is available.",
+                "method": "web_reader"
+              }
+            ]
+          },
+          {
+            "id": "F7",
+            "claim": "This nonexistent test page establishes a three-day filing deadline.",
+            "source_ids": [
+              "V4"
+            ],
+            "verdict": "unverified",
+            "reason": "The cited page is unavailable and supplies no excerpt establishing a filing deadline.",
+            "evidence": []
+          }
+        ],
+        "pages": [
+          {
+            "id": "V1",
+            "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+            "checked_at": "2026-10-05T08:40:24.708Z",
+            "status": "read",
+            "method": "web_reader",
+            "detail": "Fresh web-reader excerpt; transcription is provider-reported.",
+            "http_status": 404,
+            "reader_status": "excerpt_returned"
+          },
+          {
+            "id": "V2",
+            "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+            "checked_at": "2026-10-05T08:40:24.708Z",
+            "status": "read",
+            "method": "web_reader",
+            "detail": "Fresh web-reader excerpt; transcription is provider-reported.",
+            "http_status": 406,
+            "reader_status": "excerpt_returned"
+          },
+          {
+            "id": "V3",
+            "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+            "checked_at": "2026-10-05T08:40:24.708Z",
+            "status": "read",
+            "method": "web_reader",
+            "detail": "Fresh web-reader excerpt; transcription is provider-reported.",
+            "http_status": 403,
+            "reader_status": "excerpt_returned"
+          },
+          {
+            "id": "V4",
+            "url": "https://www.archives.gov/lexraptor-nonexistent-test-20261005",
+            "checked_at": "2026-10-05T08:40:24.708Z",
+            "status": "unavailable",
+            "method": "direct",
+            "detail": "The publisher returned HTTP 404.",
+            "http_status": 404,
+            "reader_status": "unreadable"
+          }
+        ],
+        "limitation": "AI review of retrieved excerpts. Later treatment and current validity are not comprehensively checked.",
+        "status": 200
+      }
+    }
+  ],
+  "result": {
+    "checked_at": "2026-10-05T08:40:52.744Z",
+    "reader_actions": [
+      {
+        "phase": "web open_page",
+        "status": "completed",
+        "query": "https://www.archives.gov/founding-docs/bill-of-rights-transcript"
+      },
+      {
+        "phase": "web open_page",
+        "status": "completed",
+        "query": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf"
+      },
+      {
+        "phase": "web open_page",
+        "status": "completed",
+        "query": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/"
+      },
+      {
+        "phase": "web open_page",
+        "status": "completed",
+        "query": "https://www.archives.gov/lexraptor-nonexistent-test-20261005"
+      }
+    ],
+    "findings": [
+      {
+        "id": "F1",
+        "claim": "The text of the First Amendment prohibits Congress from making laws abridging freedom of speech.",
+        "source_ids": [
+          "V1"
+        ],
+        "verdict": "supported",
+        "reason": "The excerpt transcribes the First Amendment as saying Congress shall make no law abridging freedom of speech.",
+        "evidence": [
+          {
+            "source_id": "V1",
+            "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+            "text": "Note: This is a transcription of the enrolled original of Congress\u2019s joint resolution proposing the Bill of Rights; spelling and punctuation reflect the original. On September 25, 1789, the First Congress proposed 12 amendments. Ten were ratified on December 15, 1791, as the first ten amendments. The proposed Article 2 was ratified in 1992 as the 27th Amendment; Article 1 was never ratified.\n\nAmendment I: Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.\n\nAmendment II: A well ",
+            "method": "web_reader"
+          }
+        ]
+      },
+      {
+        "id": "F2",
+        "claim": "The First Amendment requires Congress to license every newspaper before publication.",
+        "source_ids": [
+          "V1"
+        ],
+        "verdict": "contradicted",
+        "reason": "The excerpt says Congress shall make no law abridging freedom of speech or of the press; it does not require licensing newspapers before publication.",
+        "evidence": [
+          {
+            "source_id": "V1",
+            "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+            "text": "Note: This is a transcription of the enrolled original of Congress\u2019s joint resolution proposing the Bill of Rights; spelling and punctuation reflect the original. On September 25, 1789, the First Congress proposed 12 amendments. Ten were ratified on December 15, 1791, as the first ten amendments. The proposed Article 2 was ratified in 1992 as the 27th Amendment; Article 1 was never ratified.\n\nAmendment I: Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.\n\nAmendment II: A well ",
+            "method": "web_reader"
+          }
+        ]
+      },
+      {
+        "id": "F3",
+        "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court overruled Roe v. Wade and Planned Parenthood v. Casey.",
+        "source_ids": [
+          "V2"
+        ],
+        "verdict": "supported",
+        "reason": "The Supreme Court opinion\u2019s syllabus gives the decision date as June 24, 2022, and states that Roe and Casey are overruled.",
+        "evidence": [
+          {
+            "source_id": "V2",
+            "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+            "text": "DOBBS v. JACKSON WOMEN\u2019S HEALTH ORGANIZATION, No. 19\u20131392. Decided June 24, 2022. (Slip Opinion, syllabus; the syllabus is prepared for the reader\u2019s convenience and is not part of the Court\u2019s opinion.)\n\n\u201cHeld: The Constitution does not confer a right to abortion; Roe and Casey are overruled; and the authority to regulate abortion is returned to the people and their elected representatives.\u201d\n\nThe Court held that \u201crational-basis review is the appropriate standard to apply when state abortion regulations undergo constitutional challenge.\u201d Because abortion is not a fundamental constitutional right, States may regulate it for legitimate reasons. A challenged law is entitled to a \u201cstrong presumpti",
+            "method": "web_reader"
+          }
+        ]
+      },
+      {
+        "id": "F4",
+        "claim": "In its June 24, 2022 Dobbs decision, the Supreme Court reaffirmed Roe and Casey and preserved their constitutional abortion right.",
+        "source_ids": [
+          "V2"
+        ],
+        "verdict": "contradicted",
+        "reason": "The syllabus states that Roe and Casey are overruled and that the Constitution does not confer a right to abortion.",
+        "evidence": [
+          {
+            "source_id": "V2",
+            "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+            "text": "DOBBS v. JACKSON WOMEN\u2019S HEALTH ORGANIZATION, No. 19\u20131392. Decided June 24, 2022. (Slip Opinion, syllabus; the syllabus is prepared for the reader\u2019s convenience and is not part of the Court\u2019s opinion.)\n\n\u201cHeld: The Constitution does not confer a right to abortion; Roe and Casey are overruled; and the authority to regulate abortion is returned to the people and their elected representatives.\u201d\n\nThe Court held that \u201crational-basis review is the appropriate standard to apply when state abortion regulations undergo constitutional challenge.\u201d Because abortion is not a fundamental constitutional right, States may regulate it for legitimate reasons. A challenged law is entitled to a \u201cstrong presumpti",
+            "method": "web_reader"
+          }
+        ]
+      },
+      {
+        "id": "F5",
+        "claim": "The 2024 edition of Georgia Code section 9-3-32 states a four-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+        "source_ids": [
+          "V3"
+        ],
+        "verdict": "supported",
+        "reason": "The excerpt identifies the 2024 Georgia Code and states that the covered actions must be brought within four years after the right of action accrues.",
+        "evidence": [
+          {
+            "source_id": "V3",
+            "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+            "text": "2024 Georgia Code \u00a7 9-3-32 \u2014 Accrual of actions for recovery of personal property or loss of timber; damages for conversion or destruction\n\nActions to recover personal property, or for damages for its conversion or destruction, must be brought within four years after the right of action accrues. Actions involving unauthorized cutting, or cutting and carrying away, of timber from another\u2019s property must be brought within four years after the cutting or cutting and carrying away.\n\nThe section states it was amended by 2014 Ga. Laws 619, \u00a7 1, effective July 1, 2014. The page identifies itself as the 2024 Code and notes that a newer version is available.",
+            "method": "web_reader"
+          }
+        ]
+      },
+      {
+        "id": "F6",
+        "claim": "The 2024 edition of Georgia Code section 9-3-32 states a one-year period after accrual for recovery of personal property or damages for its conversion or destruction.",
+        "source_ids": [
+          "V3"
+        ],
+        "verdict": "contradicted",
+        "reason": "The 2024 Code excerpt states a four-year period after accrual, not a one-year period.",
+        "evidence": [
+          {
+            "source_id": "V3",
+            "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+            "text": "2024 Georgia Code \u00a7 9-3-32 \u2014 Accrual of actions for recovery of personal property or loss of timber; damages for conversion or destruction\n\nActions to recover personal property, or for damages for its conversion or destruction, must be brought within four years after the right of action accrues. Actions involving unauthorized cutting, or cutting and carrying away, of timber from another\u2019s property must be brought within four years after the cutting or cutting and carrying away.\n\nThe section states it was amended by 2014 Ga. Laws 619, \u00a7 1, effective July 1, 2014. The page identifies itself as the 2024 Code and notes that a newer version is available.",
+            "method": "web_reader"
+          }
+        ]
+      },
+      {
+        "id": "F7",
+        "claim": "This nonexistent test page establishes a three-day filing deadline.",
+        "source_ids": [
+          "V4"
+        ],
+        "verdict": "unverified",
+        "reason": "The cited page is unavailable and supplies no excerpt establishing a filing deadline.",
+        "evidence": []
+      }
+    ],
+    "pages": [
+      {
+        "id": "V1",
+        "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+        "checked_at": "2026-10-05T08:40:24.708Z",
+        "status": "read",
+        "method": "web_reader",
+        "detail": "Fresh web-reader excerpt; transcription is provider-reported.",
+        "http_status": 404,
+        "reader_status": "excerpt_returned"
+      },
+      {
+        "id": "V2",
+        "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+        "checked_at": "2026-10-05T08:40:24.708Z",
+        "status": "read",
+        "method": "web_reader",
+        "detail": "Fresh web-reader excerpt; transcription is provider-reported.",
+        "http_status": 406,
+        "reader_status": "excerpt_returned"
+      },
+      {
+        "id": "V3",
+        "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-32/",
+        "checked_at": "2026-10-05T08:40:24.708Z",
+        "status": "read",
+        "method": "web_reader",
+        "detail": "Fresh web-reader excerpt; transcription is provider-reported.",
+        "http_status": 403,
+        "reader_status": "excerpt_returned"
+      },
+      {
+        "id": "V4",
+        "url": "https://www.archives.gov/lexraptor-nonexistent-test-20261005",
+        "checked_at": "2026-10-05T08:40:24.708Z",
+        "status": "unavailable",
+        "method": "direct",
+        "detail": "The publisher returned HTTP 404.",
+        "http_status": 404,
+        "reader_status": "unreadable"
+      }
+    ],
+    "limitation": "AI review of retrieved excerpts. Later treatment and current validity are not comprehensively checked.",
+    "status": 200
+  }
+}

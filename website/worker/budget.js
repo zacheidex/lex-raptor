@@ -4,6 +4,8 @@ export const CAP = 10_000_000;
 export const RESERVE = 20_000;
 // Up to four $0.01 web calls. Allow cumulative 128k tool contexts on each
 // model turn (10 * 128k), five input/framing copies, planning and output.
+// Citation rechecks use at most four separate one-tool reader calls plus one
+// bounded review call (4096 output tokens each), also below this reservation.
 // At conservative pinned rates this is below $0.40, including tool fees.
 export const WEB_RESERVE = 400_000;
 export const WEB_CALL_COST = 10_000;

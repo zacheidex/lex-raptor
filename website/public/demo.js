@@ -28,7 +28,6 @@ function render(){
  document.querySelectorAll('.answer-citation-check').forEach(b=>b.disabled=busy);
  document.querySelectorAll('.follow-up-choices button').forEach(b=>b.disabled=busy||readingFiles||!state.enabled||state.exhausted);
  $('ask').textContent=busy?'Working':'Send';
- $('runtime-badge').textContent=state.inference==='local'?'Local · '+state.model:'Cloud AI';
  $('selection-note').textContent=$('auto-databases').checked?'Only relevant databases will be chosen from your message.':state.databases.filter(d=>selected.has(d.id)).map(d=>d.name).join(' · ')||'Select at least one connected database.';
  $('availability').textContent=!state.search_enabled?'Research is temporarily unavailable.':state.exhausted?'The shared $10 AI allowance is used. Source search and citation lookup are still available.':!state.enabled?'AI is unavailable. Source search and citation lookup are still available.':'';
  $('manual-databases').disabled=$('auto-databases').checked;
@@ -42,7 +41,7 @@ async function refresh(){try{state=await api('status');if(!initialized){initiali
 $('auto-databases').addEventListener('change',render);
 $('search-with-documents').addEventListener('change',render);
 $('open-options').addEventListener('click',()=>$('options-dialog').showModal());
-$('open-citations').addEventListener('click',()=>{const text=$('question').value.trim();if(text){openCitationCheck();$('citation-text').value=text;lookupCitations(text);}else if(history.some(r=>r.propositions?.length)){checkAnswerCitations(history.findLast(r=>r.propositions?.length));}else openCitationCheck();});
+$('open-citations').addEventListener('click',()=>{if(busy)return;const text=$('question').value.trim();if(text){openCitationCheck();$('citation-text').value=text;lookupCitations(text);}else if(history.some(r=>r.propositions?.length)){checkAnswerCitations(history.findLast(r=>r.propositions?.length));}else openCitationCheck();});
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));
 document.querySelectorAll('[data-question]').forEach(b=>b.addEventListener('click',()=>{$('question').value=b.dataset.question;$('question').focus();}));
 $('new-chat').addEventListener('click',()=>{history.length=0;attachments.length=0;renderAttachments();$('attachment-status').textContent='';$('conversation').replaceChildren();document.body.classList.remove('has-conversation');$('question').value='';$('question').focus();});
@@ -150,16 +149,32 @@ async function lookupCitations(text,{append=false,expected=[]}={}){
   $('citation-status').textContent=(data.citations.length?'':'No case citations were identified. ')+data.limitation;
  }catch(e){$('citation-status').textContent=e.message;}finally{busy=false;render();}
 }
-function checkAnswerCitations(record){
+async function checkAnswerCitations(record){
  if(busy)return;openCitationCheck();$('citation-form').hidden=true;
  const used=new Set((record.propositions||[]).flatMap(p=>p.source_ids||[p.source_id])),sources=(record.sources||[]).filter(s=>used.has(s.id));
- let exact=0,bad=0,web=0;
- for(const p of record.propositions||[]){const s=sources.find(s=>s.id===p.source_id);if(p.evidence_method==='web_citation'){web++;continue;}if(p.quote&&s?.text?.includes(p.quote))exact++;else bad++;}
+ let exact=0,bad=0;
+ for(const p of record.propositions||[]){const s=sources.find(s=>s.id===p.source_id);if(p.evidence_method==='web_citation')continue;if(p.quote&&s?.text?.includes(p.quote))exact++;else bad++;}
  if(exact||bad)$('citation-results').append(el('p',exact+' quotation(s) match the saved source passages.'+(bad?' '+bad+' quotation(s) could not be matched.':'')));
- if(web)$('citation-results').append(el('p',web+' finding(s) use recorded web citations. Page contents and legal support have not been independently rechecked.'));
+ const findings=(record.propositions||[]).filter(p=>p.evidence_method==='web_citation').map(p=>({claim:p.claim,urls:(p.source_ids||[p.source_id]).map(id=>sources.find(s=>s.id===id)?.source_url).filter(Boolean)}));
+ if(findings.length){
+  busy=true;render();$('citation-status').textContent='Reopening cited sources…';
+  try{
+   const checked=await researchApi('verify',{findings,request_id:crypto.randomUUID()},p=>{$('citation-status').textContent=p.message;});
+   for(const finding of checked.findings){
+    const item=el('article',null,'citation-result'),label={supported:'Supported by the retrieved text',partial:'Partially supported · review needed',contradicted:'Source conflicts with this finding',unverified:'Could not verify'}[finding.verdict]||'Could not verify';
+    item.append(el('strong',finding.claim),el('p',label,'verification-verdict '+finding.verdict),el('p',finding.reason));
+    for(const sourceId of finding.source_ids){const p=checked.pages.find(p=>p.id===sourceId);if(!p)continue;const row=el('p',null,'small');row.append(link(new URL(p.url).hostname,p.url),document.createTextNode(' · '+(p.status==='read'?(p.method==='web_reader'?'Opened with web reader':'Page retrieved'):p.detail)));item.append(row);}
+    if(finding.evidence.length){const details=el('details',null,'verification-evidence');details.append(el('summary','Text reviewed'));for(const evidence of finding.evidence){details.append(el('blockquote',evidence.text));if(evidence.method==='web_reader')details.append(el('p','Web-reader excerpt; transcription is provider-reported.'));}item.append(details);}
+    $('citation-results').append(item);
+   }
+   $('citation-results').append(el('p','Rechecked '+new Date(checked.checked_at).toLocaleString()+'. '+checked.limitation,'small muted'));
+   $('citation-status').textContent='Source review complete.';
+  }catch(e){$('citation-results').append(el('p','Web source review could not finish: '+e.message,'error'));$('citation-status').textContent='Some citations could not be checked.';}
+  finally{busy=false;await refresh();}
+ }
  const cases=sources.filter(s=>s.citation&&(s.kind==='case'||['cap','courtlistener'].includes(s.database_id)));
- if(cases.length){const text=[...new Set(cases.map(s=>s.name+' · '+s.citation))].join('\n').slice(0,6000);$('citation-text').value=text;lookupCitations(text,{append:true,expected:cases});}
- else $('citation-status').textContent='No case citations to look up. Statutes, regulations, web pages and document assertions still require source review.';
+ if(cases.length){const text=[...new Set(cases.map(s=>s.name+' · '+s.citation))].join('\n').slice(0,6000);$('citation-text').value=text;await lookupCitations(text,{append:true,expected:cases});}
+ else if(!findings.length)$('citation-status').textContent=exact||bad?'Quotation review complete. Saved passages do not establish later treatment or legal support.':'There are no citations in this answer to check.';
 }
 $('citation-form').addEventListener('submit',e=>{e.preventDefault();lookupCitations($('citation-text').value);});
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#source-"]');if(a){const target=document.getElementById(a.hash.slice(1));if(target){target.open=true;let parent=target.parentElement;while(parent){if(parent.tagName==='DETAILS')parent.open=true;parent=parent.parentElement;}}}});
