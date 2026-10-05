@@ -24,7 +24,7 @@ function render(){
  $('search').disabled=busy||readingFiles||!state.search_enabled||!hasSources;
  $('new-chat').disabled=busy||readingFiles;
  $('check-citations').disabled=busy||!state.databases.some(d=>d.id==='courtlistener'&&d.available);
- $('ask').textContent=busy?'Working…':'Send';
+ $('ask').textContent=busy?'Working':'Send';
  $('runtime-badge').textContent=state.inference==='local'?'Local · '+state.model:'Cloud AI';
  $('selection-note').textContent=$('auto-databases').checked?'Only relevant databases will be chosen from your message.':state.databases.filter(d=>selected.has(d.id)).map(d=>d.name).join(' · ')||'Select at least one connected database.';
  $('availability').textContent=!state.search_enabled?'Research is temporarily unavailable.':state.exhausted?'The shared $10 AI allowance is used. Source search and citation lookup are still available.':!state.enabled?'AI is unavailable. Source search and citation lookup are still available.':'';
@@ -78,14 +78,16 @@ async function research(draft){
  if(!$('research-form').reportValidity()){$('options-dialog').close();$('question').focus();return;}
  if(!['court','after','before','search-query'].every(id=>$(id).reportValidity())){$('options-dialog').showModal();return;}
  const submitted=requestBody();busy=true;render();$('options-dialog').close();document.body.classList.add('has-conversation');
- const id=++turnCount,turn=el('section',null,'turn'),user=el('p',submitted.question,'user-message'),heading=el('div','Lex Raptor','answer-heading');
- const answer=el('div',null,'answer'),waiting=el('div',null,'research-progress'),stage=el('p','Starting research…','progress-stage'),elapsed=el('span','','progress-elapsed'),activity=el('div',null,'progress-sources');
- stage.setAttribute('role','status');elapsed.setAttribute('aria-hidden','true');waiting.append(stage,elapsed,activity);answer.append(waiting);answer.setAttribute('aria-busy','true');
+ const id=++turnCount,turn=el('section',null,'turn'),user=el('p',submitted.question,'user-message');
+ const answer=el('div',null,'answer'),waiting=el('div',null,'research-progress'),stage=el('p','Starting research','progress-stage'),elapsed=el('span','','progress-elapsed'),activity=el('div',null,'progress-sources');
+ const scene=el('div',null,'meteor-scene'),earth=el('img',null,'research-earth'),raptor=el('span','🦖','research-raptor'),meteor=el('span',null,'research-meteor');
+ scene.setAttribute('aria-hidden','true');earth.src='/research-earth.svg';earth.alt='';earth.width=earth.height=58;scene.append(earth,raptor,meteor);
+ stage.setAttribute('role','status');elapsed.setAttribute('aria-hidden','true');waiting.append(scene,stage,elapsed,activity);answer.append(waiting);answer.setAttribute('aria-busy','true');
  if(submitted.documents.length)user.append(el('span',submitted.documents.map(d=>d.name).join(' · '),'user-attachments'));
- turn.append(user,heading,answer);$('conversation').append(turn);$('question').value='';
+ turn.append(user,answer);$('conversation').append(turn);$('question').value='';
  const rect=user.getBoundingClientRect();if(rect.top<0||rect.bottom>innerHeight*.65)user.scrollIntoView({block:'nearest',behavior:'auto'});
  const started=Date.now(),clock=setInterval(()=>{const seconds=Math.floor((Date.now()-started)/1000);elapsed.textContent=seconds+'s'+(seconds>=20?' · Still working. Database responses can take a little longer.':'');},1000),providers=new Map();
- const progress=data=>{stage.textContent=data.message;if(data.database){const name=state.databases.find(d=>d.id===data.database)?.name||data.database;providers.set(data.database,data.stage==='source_complete'?data.message:name+' · Searching and reading');activity.replaceChildren(...[...providers.values()].map(text=>el('div',text)));}};
+ const progress=data=>{stage.textContent=data.message.replace(/[.…]+$/u,'');if(data.database){const name=state.databases.find(d=>d.id===data.database)?.name||data.database;providers.set(data.database,data.stage==='source_complete'?data.message:name+' · Searching and reading');activity.replaceChildren(...[...providers.values()].map(text=>el('div',text)));}};
  try{const data=await researchApi(draft?'research':'search',submitted,progress);showResult(answer,data,draft,submitted.question,id);}catch(e){answer.replaceChildren(el('p',e.message,'error'));const retry=el('button','Edit request');retry.type='button';retry.addEventListener('click',()=>{$('question').value=submitted.question;$('question').focus();});answer.append(retry);}finally{clearInterval(clock);answer.removeAttribute('aria-busy');busy=false;await refresh();}
 
 }

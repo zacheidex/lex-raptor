@@ -18,7 +18,7 @@ const mf=new Miniflare({modules:true,scriptPath:resolve(root,'dist/server/index.
   serviceBindings:{ASSETS:async request=>{
     let path;try{path=resolve(publicDir,'.'+decodeURIComponent(new URL(request.url).pathname));}catch{return new Response('Not found',{status:404});}
     if(!path.startsWith(publicDir+'/'))return new Response('Not found',{status:404});
-    try{return new Response(await readFile(path),{headers:{'Content-Type':({'.html':'text/html; charset=utf-8','.js':'application/javascript','.mjs':'application/javascript','.css':'text/css','.png':'image/png','.gz':'application/gzip'})[extname(path)]||'application/octet-stream'}});}catch{return new Response('Not found',{status:404});}
+    try{return new Response(await readFile(path),{headers:{'Content-Type':({'.html':'text/html; charset=utf-8','.js':'application/javascript','.mjs':'application/javascript','.css':'text/css','.png':'image/png','.svg':'image/svg+xml','.gz':'application/gzip'})[extname(path)]||'application/octet-stream'}});}catch{return new Response('Not found',{status:404});}
   }},
   outboundService:async request=>{
     const u=new URL(request.url);
