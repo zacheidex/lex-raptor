@@ -96,3 +96,7 @@ The managed connection business model is described in [docs/BUSINESS_MODEL.md](d
 Copyright 2026 Lex Raptor contributors. Distributed under GNU AGPL version 3 only, without warranty. See [LICENSE](LICENSE), [NOTICE](NOTICE), [CONTRIBUTING.md](CONTRIBUTING.md), and [GOVERNANCE.md](GOVERNANCE.md). Third-party software, model weights and source data retain their own licenses.
 
 AGPL does not prohibit acquisition or commercial hosting. It preserves compliant recipients' rights to released versions and requires qualifying modified network versions to offer their corresponding source. Community forks remain possible. There is no copyright assignment requirement for contributions and no promise that a company, trademark or future development can never change hands.
+
+## Hosted demo
+
+The [public website](https://lexraptor.com) also contains a [passcode-protected research preview](https://lexraptor.com/demo). It searches the 12-case public starter collection using a server-side OpenAI connection when enabled. A durable $10 total demo budget, visitor limits, and per-request reservations control model spending. Private documents and local inference stay in the separate local app. See [website/README.md](website/README.md) for configuration, security boundaries, and the full hosted source.
