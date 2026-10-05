@@ -23,6 +23,8 @@
   "apps/web/research-check.mjs",
   "apps/web/tsconfig.json",
   "benchmark/RESULTS.md",
+  "benchmark/authority-workbench/RESULTS.md",
+  "benchmark/authority-workbench/metrics.json",
   "benchmark/case-status/RESULTS.md",
   "benchmark/case-status/chevron-polarity-error.json",
   "benchmark/case-status/final-chevron.json",
