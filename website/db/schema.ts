@@ -21,3 +21,8 @@ export const sourceRequests = sqliteTable('source_requests', {
 export const sourceCache = sqliteTable('source_cache', {
   id:text('id').primaryKey(),body:text('body').notNull(),expires:integer('expires').notNull()
 },t=>[index('source_cache_expiry').on(t.expires)]);
+export const researchFeedback = sqliteTable('research_feedback', {
+  id:text('id').primaryKey(),visitor:text('visitor').notNull(),created:integer('created').notNull(),updated:integer('updated').notNull(),
+  requestId:text('request_id').notNull(),rating:text('rating').notNull(),issue:text('issue').notNull(),comment:text('comment').notNull(),
+  model:text('model').notNull(),sharedContext:text('shared_context')
+},t=>[index('feedback_visitor_time').on(t.visitor,t.created)]);

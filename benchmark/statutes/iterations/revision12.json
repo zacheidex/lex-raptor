@@ -1,0 +1,1144 @@
+[
+  {
+    "id": "ga_property",
+    "request": {
+      "question": "Property damage",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "4f6c7377-6996-4f9b-860b-785a750bdff9",
+      "context": "User: What are the statute of limitations in Georgia?\nAssistant follow-up: Which type of claim do you mean? Georgia\u2019s limitation period depends on the claim."
+    },
+    "review_criteria": "Real and personal property periods; current text or explicit edition limit. Do not substitute product repose.",
+    "expected_action": "research",
+    "seconds": 52.151,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-11147007",
+          "name": "Walmart Stores East, Lp v. Leverette",
+          "citation": "321 Ga. 854",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2025-06-24",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10680420/walmart-stores-east-lp-v-leverette/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "ards \u201ca sum under $50.00\u201d in an \u201caction ex contractu.\u201d The other, OCGA \u00a7 9-15-10, allows the plain- tiff to recover \u201cno more costs than damages\u201d in actions for slander, assault and \u201call other personal actions\u201d if the jury awards \u201cless than $10.00\u201d in damages (with an exception for aggravated assault and battery). And, Leverette notes, a statute in a different title of the Code, OCGA \u00a7 13-6-6, says that \u201c[i]n every case of breach of contract the injured party has a right to damages, but if there has been no actual damage, the injured party may recover nominal damages suf- ficient to cover the costs of bringing the action.\u201d Read together, Lev- erette asserts, these statutes set a \u201cfloor\u201d for nominal damages of \u201cat least $10\u201d for many claims. These statutes do not help Leverette here. Even assuming they 24 could be read together to set an effective \u201cfloor\u201d for nominal dam- ages,5 we do not see how they could be reasonably understood to sub- stantially modify or displace the common law rule that nominal damages are only a trivial sum, important for the fact of the award but not meaningful as an amount. At most, OCGA \u00a7 9-15-9\u2019s $50 threshold for obtaining costs may stretch that limit slightly to the extent that it suggests that nominal damages for that amount are permissible. But that threshold applies only in contract cases, and the $10 threshold of OCGA \u00a7 9-15-10 applies to only a subset of 5 This reading is at least unusual. It appears that the two cost-recovery statutes, the language of which entered Georgia law in the late 1700s and early 1800s, are based on English statutes that were meant to keep especially minor (but actionable) suits out of the courts by precluding plaintiffs from getting the full costs even if they won small or nominal damages. See Saunders v. Park",
+          "locator": "Whitespace-normalized extracted text, characters 28801\u201330600",
+          "original_id": "cl-11147007:28800"
+        },
+        {
+          "case_id": "fr-2024-30628",
+          "name": "Residential Property Assessed Clean Energy Financing (Regulation Z)",
+          "citation": "90 FR 2434",
+          "court": "Consumer Financial Protection Bureau",
+          "decision_date": "2025-01-10",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2025/01/10/2024-30628/residential-property-assessed-clean-energy-financing-regulation-z",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-01-10/pdf/2024-30628.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2026-03-01; verify operative status in the official edition",
+          "id": "S2",
+          "text": " with the FTC's assertion of claims against a PACE company under the CFPB's Regulation N, 12 CFR part 1014, which the parties settled pursuant to a proposed court order. See Stipulation as to Entry of Order for Permanent Injunction, Monetary Judgement, and Other Relief (Oct. 28, 2022), https://www.ftc.gov/system/files/ftc_gov/pdf/Stipulation%20-%20Dkt.%202%20-%2022-cv-07864.pdf; see also part II.A (describing the settlement). Regulation N, also known as the Mortgage Acts and Practices--Advertising Rule, implements section 626 of the Omnibus Appropriations Act, 2009, as amended. 12 U.S.C. 5538. Regulation N applies to the advertising, marketing, and sale of a ``mortgage credit product,'' defined as ``any form of credit that is secured by real property or a dwelling and that is offered or extended to a consumer primarily for personal, family, or household purposes.'' 12 CFR 1014.2. Regulation N defines ``credit'' identically to Regulation Z but does not include any commentary analogous to comment 2(a)(14)-1.ii to Regulation Z. \\105\\ See also, 89 FR 68086, 68087 (Aug. 23, 2024); 89 FR 61358, 61360 (July 31, 2024). --------------------------------------------------------------------------- That PACE transactions are repaid alongside property tax payments, do not accelerate, are nonrecourse, or can remain with the property after the consumer sells the home does not change the fundamental nature of the transaction. Nor do other reasons commenters asserted for why PACE transactions should not be treated as TILA credit--including that PACE financing is authorized for important public policy purposes under State law, may have characteristics that differ from other types of mortgage obligations, or has produced benefits for industry participants and communities. That States may a",
+          "locator": "Whitespace-normalized extracted text, characters 110401\u2013112200",
+          "original_id": "fr-2024-30628:110400"
+        },
+        {
+          "case_id": "cl-11082729",
+          "name": "ECBI WARNER, LLC v. LARHONDA PATRICK IN HER OFFICIAL CAPACITY AS MAYOR OF THE CITY OF WARNER ROBINS",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2025-06-24",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10616141/ecbi-warner-llc-v-larhonda-patrick-in-her-official-capacity-as-mayor-of/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": " not issued, Plaintiffs filed a petition for a writ of mandamus against the City defendants in the Superior Court of Houston County in October 2020. According to Plaintiffs\u2019 petition, they have to \u201cobtain right of way access permits from . . . [the] City\u201d in order to \u201caccess their fiber and conduit assets in the public [right of way]\u201d and \u201cinstall new fiber and conduit assets in the public [right of way] to end-user customers.\u201d4 In April 2021, Plaintiffs filed a second lawsuit against the City defendants in federal court, alleging that they violated Plaintiffs\u2019 rights under the First, Fifth, and Fourteenth Amendments of the United States Constitution and their rights secured by Georgia law . . . by unjustly, arbitrarily, 3 eCBI I, 370 Ga. App. at 1-2 4 Id. at 2. 3 and capriciously refusing to issue right-of-way permits to Plaintiffs on city property so that Plaintiffs could access and utilize the personal property owned by eCBI consisting of in-ground conduit containing forty-eight (48) fiber optic fibers . . . [and] by publishing unequivocally untrue . . . and willfully misleading statements with the specific intent to damage [Plaintiffs\u2019] reputations solely predicated upon racial prejudice and animus[.]5 Plaintiffs alleged, inter alia, property rights violations based on the taking of the fiber optic lines and conduit without due process by \u201carbitrarily and capriciously refusing to issue permits to Plaintiffs\u201d; economic rights violations based on the frustration of Plaintiffs\u2019 ability to enter contracts to use the fiber optic lines and conduit by advising others \u201cnot to do business with [Plaintiffs]\u201d; a state law conversion claim based on Plaintiffs\u2019 statutorily protected right to use and access the fibers and conduit and the City defendants\u2019 intent to deprive Plainti",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "cl-11082729:3200"
+        },
+        {
+          "case_id": "fr-2024-30628",
+          "name": "Residential Property Assessed Clean Energy Financing (Regulation Z)",
+          "citation": "90 FR 2434",
+          "court": "Consumer Financial Protection Bureau",
+          "decision_date": "2025-01-10",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2025/01/10/2024-30628/residential-property-assessed-clean-energy-financing-regulation-z",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-01-10/pdf/2024-30628.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2026-03-01; verify operative status in the official edition",
+          "id": "S4",
+          "text": "times collateralized and sold as securitized obligations. --------------------------------------------------------------------------- \\2\\ Some States authorize PACE financing for residential and commercial property. In this final rule, the term PACE financing refers only to residential PACE financing unless otherwise indicated. \\3\\ Although PACE financing programs may be sponsored by individual local governments, many are sponsored by intergovernmental organizations whose membership consists of multiple local governments. \\4\\ See, e.g., Cal. Sts. & Hwys. Code sec. 5898.30; Fla. Stat. sec. 163.081(1)(e); Fla. Stat. sec. 197.3632(8)(a); Mo. Stat. sec. 67.2815(5). --------------------------------------------------------------------------- PACE loans are secured by a lien on the consumer's real property. The liens securing PACE loans typically have priority under State law similar to that of other real property tax liens, which are superior to other mortgage liens on the property, including those that predated the PACE lien.\\5\\ In a foreclosure sale, this super-priority lien position means that any amount due on the PACE loan is paid with the foreclosure sale proceeds before any proceeds will flow to other liens. The PACE loan is tied to the property, not the property owner. As such, the repayment obligation remains with the property when property ownership transfers unless paid off at the time of sale. --------------------------------------------------------------------------- \\5\\ See, e.g., Cal. Sts. & Hwys. Code sec. 5898.30 (providing for ``the collection of assessments in the same manner and at the same time as the general taxes of the city or county on real property, unless another procedure has been authorized by the legislative body or by statute . . . .''); Fla. St",
+          "locator": "Whitespace-normalized extracted text, characters 8001\u20139800",
+          "original_id": "fr-2024-30628:8000"
+        },
+        {
+          "case_id": "cl-9840541",
+          "name": "WISE BUSINESS FORMS INCORPORATED v. FORSYTH COUNTY",
+          "citation": "",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2023-09-19",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9426916/wise-business-forms-incorporated-v-forsyth-county/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": " one of two ways. The first option would be to treat the nuisance as \u201ctemporary\u201d and file a lawsuit to recover for \u201call those damages [or harms] which have \u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014 landowner\u2019s complaint, concluding that the \u201cclaims were barred by the four year statute of limitation applicable to damage to realty.\u201d Id. at 127. On appeal, this Court reversed the trial court\u2019s ruling, concluding that \u201cit was error to dismiss the suit\u201d because the statute of limitations had not run on the landowner\u2019s claims. Cox, 239 Ga. at 128. 16 occurred [to the plaintiff\u2019s property] within the past four years.\u201d Cox, 239 Ga. at 127-128. And, by implication, when the plaintiff elects to proceed in this manner and treats the nuisance as \u201ctemporary,\u201d if the continuing nuisance causes additional harms to the plaintiff\u2019s property in the future, the plaintiff can file another lawsuit seeking recovery for these additional harms, as long as the plaintiff initiates the lawsuit within four years from the occurrence of that future harm. See Lombard, 101 Ga. at 727 (in these cases, \u201cevery continuance of the nuisance is a fresh nuisance, for which a fresh action will lie,\u201d and the cause of action \u201caccrues at the time of such continuance\u201d and \u201cthe statute of limitations runs only from the time of such accrual\u201d). Alternatively, the plaintiff can elect to file a single lawsuit to recover for harms that occurred to the plaintiff\u2019s property within the past four years and for all prospective harms that might occur to the plaintiff\u2019s property in the future. See Cox, 239 Ga. at 127-128. And, if the plaintiff elects to proceed in this 17 manner, the plaintiff is limited to seeking those damages in one lawsuit. See id. In the present case, the nuisance complained of is the expansion of McFarland Parkway, the drai",
+          "locator": "Whitespace-normalized extracted text, characters 19201\u201321000",
+          "original_id": "cl-9840541:19200"
+        },
+        {
+          "case_id": "fr-2024-30628",
+          "name": "Residential Property Assessed Clean Energy Financing (Regulation Z)",
+          "citation": "90 FR 2434",
+          "court": "Consumer Financial Protection Bureau",
+          "decision_date": "2025-01-10",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2025/01/10/2024-30628/residential-property-assessed-clean-energy-financing-regulation-z",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-01-10/pdf/2024-30628.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2026-03-01; verify operative status in the official edition",
+          "id": "S6",
+          "text": "the same manner and at the same time as the general taxes of the city or county on real property, unless another procedure has been authorized by the legislative body or by statute . . . .''); Fla. Stat. sec. 163.081(7) (``The recorded agreement must provide constructive notice that the non-ad valorem assessment to be levied on the property constitutes a lien of equal dignity to county taxes and assessments from the date of recordation.''). However, authorizing statutes in some States provide for subordinated-lien status for PACE financing. See, e.g., Minn. Stat. sec. 216C.437(4); Me. Stat. tit. 35A sec. 10156(3), (4); 24 V.S.A. sec. 3255(b). The CFPB understands that there has been little to no loan volume in these programs. See, e.g., Efficiency Maine, FY2024 Annual Report, at 40, https://www.efficiencymaine.com/docs/FY2024-Annual-Report.pdf. --------------------------------------------------------------------------- Although some local governments operate PACE financing programs directly, most contract with private PACE companies to operate the programs. These private companies generally handle the day-to-day operations, including tasks such as marketing PACE financing to consumers, training home improvement contractors to sell PACE financing to consumers, overseeing originations, performing underwriting, and making decisions about whether to extend the loan. The PACE companies may also contract with third-party companies to administer different aspects of the loans after origination. Often, PACE companies purchase PACE bonds that are issued by local governments to fund the programs, which generate revenue for the PACE companies from interest on consumer payments. PACE companies are also sometimes involved in securitizing the bond obligations for sale as asset-backed",
+          "locator": "Whitespace-normalized extracted text, characters 9601\u201311400",
+          "original_id": "fr-2024-30628:9600"
+        },
+        {
+          "case_id": "cl-11147007",
+          "name": "Walmart Stores East, Lp v. Leverette",
+          "citation": "321 Ga. 854",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2025-06-24",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10680420/walmart-stores-east-lp-v-leverette/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "hree years after this Court was created in 1845, we applied the bedrock principle that \u201c[w]henever the Com- mon Law gives a right or prohibits an injury, it also gives a remedy, by action.\u201d 4 Ga. 241, 261 (1848). See also id. at 260 (\u201c[T]he overflow- ing of the land of a riparian proprietor, within the banks of the stream, is an injury to the rights of the party whose property is so overflowed, for which the law will imply damage.\u201d). And we applied the normal rule for when nominal damages were appropriate, hold- ing that the plaintiff was \u201centitled to maintain an action against [the 21 defendants], and to recover nominal damages for the protection of that right, if no perceptible damage shall be proved on the trial.\u201d Id. at 265. See also id. at 264 (\u201c[T]he party injured is entitled to main- tain his action for nominal damages, in vindication of his right, if no other damages are fit and proper, to remunerate him.\u201d (quoting Webb v. Portland Mfg. Co., 29 F. Cas. 506, 508 (C.C. Me. 1838) (Story, J.))). And another decision issued just a few years later, Jones v. Water Lot Co. of Columbus, recognized two more of the settled characteristics of nominal damages: that they are for the jury to award, and that they are for a trivial sum. 18 Ga. 539, 541 (1855) (disapproving trial court\u2019s offer to defendants after a defense verdict to deny a new trial if the defendants would \u201cpay nominal damages and cost,\u201d asking \u201c[w]hat right has the [c]ourt to determine what the nominal damages shall be? Whether one dollar or five dollars?\u201d). See also Powell v. Augusta & Summerville R. Co., 77 Ga. 192, 197, 201 (3 SE 757) (1887) (describing verdicts for $7,500 and around half that amount as not \u201cnominal, or anything like it\u201d). 22 B. Nominal Damages in Georgia Law So, the nominal damages that ent",
+          "locator": "Whitespace-normalized extracted text, characters 25601\u201327400",
+          "original_id": "cl-11147007:25600"
+        },
+        {
+          "id": "W1",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "law.justia.com",
+          "citation": "",
+          "source_url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-32/",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Unofficial statute mirror; check edition and subsequent amendments.",
+          "decision_date": "",
+          "court": "law.justia.com",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W2",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "law.justia.com",
+          "citation": "",
+          "source_url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Unofficial statute mirror; check edition and subsequent amendments.",
+          "decision_date": "",
+          "court": "law.justia.com",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W22",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "law.justia.com",
+          "citation": "",
+          "source_url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-31/",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Unofficial statute mirror; check edition and subsequent amendments.",
+          "decision_date": "",
+          "court": "law.justia.com",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 558,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "Georgia statute of limitations property damage claims real personal property",
+              "mode": "semantic",
+              "court": "ga gactapp",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 558
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 2,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "ok",
+          "total": 443,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 9
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 3,
+          "consulted_urls": 36,
+          "consulted_sources": [
+            {
+              "url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-32/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-33/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2020/title-9/chapter-3/article-2/section-9-3-30/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2021/title-9/chapter-3/article-2/section-9-3-32/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://www.legis.ga.gov/Legislation/20192020/191883.pdf",
+              "title": "www.legis.ga.gov"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2020/title-9/chapter-3/article-2/section-9-3-31/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://gov.georgia.gov/document/2020-signed-legislation/hb-865/download",
+              "title": "gov.georgia.gov"
+            },
+            {
+              "url": "https://www.legis.ga.gov/api/document/docs/default-source/general-statutes/15sumdoc.pdf?sfvrsn=98a6ebc3_2",
+              "title": "www.legis.ga.gov"
+            },
+            {
+              "url": "https://www.legis.ga.gov/legislation/20132014/132942.pdf",
+              "title": "www.legis.ga.gov"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2022/title-9/chapter-3/article-2/section-9-3-30/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/1998/a97a2178-0.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/2008/a07a2160.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/2008/a08a1368.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/federal/district-courts/georgia/gandce/4%3A2021cv00040/287156/1129/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/2014/a14a1307.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/2015/a14a1887.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/2017/a16a1979.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/supreme-court/2009/s08g1417.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/north-dakota/2009/t261/pdf/t261c41.pdf",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-31/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-25/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/1992/a91a1635.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/2002/a01a2361.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/2018/a18a0668.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://www.supremecourt.gov/DocketPDF/24/24-633/334755/20241211104947100_20241211-104058-95763587-00003363.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.govinfo.gov/content/pkg/USCOURTS-ca11-22-12041/pdf/USCOURTS-ca11-22-12041-0.pdf",
+              "title": "www.govinfo.gov"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2020/title-51/chapter-1/section-51-1-9/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/supreme-court/2019/s18q1233.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/1950/33134.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://media.ca11.uscourts.gov/opinions/pub/files/202212041.pdf",
+              "title": "media.ca11.uscourts.gov"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/1994/a94a0582.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/georgia/court-of-appeals/1976/51635.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://www.mow.uscourts.gov/sites/mow/files/mdl/MDL-20-2936-1154.pdf",
+              "title": "www.mow.uscourts.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/DocketPDF/24/24-7064/357380/20250429113559995_20250429-112343-06833899-00009162.pdf",
+              "title": "www.supremecourt.gov"
+            }
+          ],
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:legis.ga.gov OCGA 9-3-30 injury to realty 9-3-32 personalty \u00b7 Georgia code 9-3-30 damage to realty statute limitations official \u00b7 Georgia Code 9-3-32 damage to personalty statute limitations official"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-31/ \"2025 Georgia Code\" \u00b7 site:law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/ \"All actions\" \"four years\" \u00b7 site:law.justia.com/cases/georgia \"continuing nuisance\" \"fresh action\" four years property damage accrues"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:law.justia.com/codes/georgia/2025/title-9/chapter-3/article-2/section-9-3-31 \"Injuries to personalty\" \u00b7 site:law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-31 \"All actions for injuries to personalty\" \u00b7 Georgia Code \u00a7 9-3-31 2025 four years Justia"
+            },
+            {
+              "phase": "web open_page",
+              "status": "completed",
+              "query": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/"
+            },
+            {
+              "phase": "web open_page",
+              "status": "searching",
+              "query": ""
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T08:06:45.858Z",
+      "jurisdiction_note": "Court search is limited to Georgia appellate courts. Federal interpretations and trial-court decisions may be missed.",
+      "coverage_notes": [
+        "Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database.",
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Georgia statute of limitations property damage claims real personal property",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "research_issues": [
+        {
+          "id": "I1",
+          "question": "What limitation period applies under Georgia law to property damage claims, including damage to real property and personal property, and what rules may affect when the period begins or applies?"
+        }
+      ],
+      "document_coverage": [],
+      "filters": {
+        "court": "ga gactapp",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "issue_id": "I1",
+          "section": "Findings",
+          "claim": "For trespass upon or damage to real property, O.C.G.A. \u00a7 9-3-30 provides a four-year period after the right of action accrues.",
+          "source_id": "W2",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/"
+          ],
+          "source_ids": [
+            "W2"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Findings",
+          "claim": "For injuries to personal property, the 2024 Georgia Code text of O.C.G.A. \u00a7 9-3-31 provides four years after accrual; the 2025 text of \u00a7 9-3-32 likewise provides four years for recovery of personal property or damages for its conversion or destruction. The \u00a7 9-3-31 source is the 2024 edition.",
+          "source_id": "W22",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-31/",
+            "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-32/"
+          ],
+          "source_ids": [
+            "W22",
+            "W1"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Findings",
+          "claim": "For ordinary real-property damage, Georgia generally does not delay accrual until the damage is discovered. For a continuing nuisance treated as temporary, each continuation causing additional harm may give rise to a fresh action, with the limitations period running from that continuation.",
+          "source_id": "S5",
+          "quote_id": "S5Q7",
+          "web_source_urls": [],
+          "quote": " at 727 (in these cases, \u201cevery continuance of the nuisance is a fresh nuisance, for which a fresh action will lie,\u201d and the cause of action \u201caccrues at the time of such continuance\u201d and \u201cthe statute of limitations runs only from the time",
+          "evidence_method": "exact_passage"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "unanswered_issues": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    },
+    "events": [
+      {
+        "seconds": 0.547,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.547,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 5.427,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 5.427,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 5.427,
+        "stage": "searching",
+        "message": "Finding opinions about your question\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 5.427,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 5.427,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 5.502,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 5.938,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 9 passages retrieved."
+      },
+      {
+        "seconds": 19.147,
+        "stage": "reading",
+        "message": "Reading Walmart Stores East, Lp v. Leverette\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 19.15,
+        "stage": "reading",
+        "message": "Reading ECBI WARNER, LLC v. LARHONDA PATRICK IN HER OFFICIAL CAPACITY AS MAYOR OF THE CITY OF WARNER ROBINS\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 19.15,
+        "stage": "reading",
+        "message": "Reading WISE BUSINESS FORMS INCORPORATED v. FORSYTH COUNTY\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 19.21,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 19.212,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 52.135,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 3,
+    "exact_passages": 1,
+    "web_citations": 2
+  },
+  {
+    "id": "gideon_brief",
+    "request": {
+      "question": "Brief Gideon v. Wainwright, including facts, issue, holding and reasoning.",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "8303a09c-050f-4250-993b-cadb4ad1a41d"
+    },
+    "review_criteria": "Accurate counsel right for indigent felony defendant; overruled Betts; procedural posture, holding and reasoning supported.",
+    "expected_action": "research",
+    "seconds": 25.861,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-8945501",
+          "name": "Gideon v. Wainwright",
+          "citation": "372 U.S. 335",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1963-03-18",
+          "opinion_type": "lead-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/8954562/gideon-v-wainwright/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "Mr. Justice Black delivered the opinion of the Court. Petitioner was charged in a Florida state court with having broken and entered a poolroom with intent to commit a misdemeanor. This offense is a felony under *337Florida law. Appearing in court without funds and without a lawyer, petitioner asked the court to appoint counsel for him, whereupon the following colloquy took place: \u201cThe Court: Mr. Gideon, I am sorry, but I cannot appoint Counsel to represent you in this case. Under the laws of the State of Florida, the only time the Court can appoint Counsel to represent a Defendant is when that person is charged with a capital offense. I am sorry, but I will have to deny your request to appoint Counsel to defend you in this case. \u201cThe Dependant: The United States Supreme Court says I am entitled to be represented by Counsel.\u201d Put to trial before a jury, Gideon conducted his defense about as well as could be expected from a layman. He made an opening statement to the jury, cross-examined the State\u2019s witnesses, presented witnesses in his own defense, declined to testify himself, and made a short argument \u201cemphasizing his innocence to the charge contained in the Information filed in this case.\u201d The jury returned a verdict of guilty, and petitioner was sentenced to serve five years in the state prison. Later, petitioner filed in the Florida Supreme Court this habeas corpus petition attacking his conviction and sentence on the ground that the trial court\u2019s refusal to appoint counsel for him denied him rights \u201cguaranteed by the Constitution and the Bill of Rights by the United States Government.\u201d 1 Treating the petition for habeas corpus as properly before it, the State Supreme Court, \u201cupon consideration thereof\u201d but without an opinion, denied all relief. Since 1942, when Bet",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-8945501:0"
+        },
+        {
+          "case_id": "fr-2025-19980",
+          "name": "Quarterly Publication of Individuals, Who Have Chosen To Expatriate",
+          "citation": "90 FR 51443",
+          "court": "Treasury Department, Internal Revenue Service",
+          "decision_date": "2025-11-17",
+          "opinion_type": "Notice",
+          "source_url": "https://www.federalregister.gov/documents/2025/11/17/2025-19980/quarterly-publication-of-individuals-who-have-chosen-to-expatriate",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-11-17/pdf/2025-19980.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Notice; no effective date supplied; verify operative status in the official edition",
+          "id": "S2",
+          "text": "Federal Register, Volume 90 Issue 219 (Monday, November 17, 2025) [Federal Register Volume 90, Number 219 (Monday, November 17, 2025)] [Notices] [Pages 51443-51465] From the Federal Register Online via the Government Publishing Office [www.gpo.gov] [FR Doc No: 2025-19980] ----------------------------------------------------------------------- DEPARTMENT OF THE TREASURY Internal Revenue Service Quarterly Publication of Individuals, Who Have Chosen To Expatriate AGENCY: Internal Revenue Service (IRS), Treasury. ACTION: Notice. ----------------------------------------------------------------------- This notice is provided in accordance with IRC section 6039G of the Health Insurance Portability and Accountability Act (HIPAA) of 1996, as amended. This listing contains the name of each individual losing United States citizenship (within the meaning of section 877(a) or 877A) with respect to whom the Secretary received information during the quarter ending September 30, 2025. For purposes of this listing, long-term residents, as defined in section 877(e)(2), are treated as if they were citizens of the United States who lost citizenship. [[Page 51444]] ------------------------------------------------------------------------ Last name First name Middle name/initials ------------------------------------------------------------------------ ABAJOLI..................... SEBASTIEN........... GEORGES THIERRY ABRAMI OSHIN .................... ADAIR....................... HELEN............... MARY ADAIR....................... JANNA............... LEE ADAIR....................... THOMAS.............. JAMES ADAIR....................... WILLIAM............. KIRKWOOD ADAMS....................... CHARLES............. GIDEON ADAMS....................... SUSAN............... LYNN ADAMSON......",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "fr-2025-19980:0"
+        },
+        {
+          "case_id": "cl-106545",
+          "name": "Gideon v. Wainwright",
+          "citation": "9 L. Ed. 2d 799; 83 S. Ct. 792; 372 U.S. 335; 1963 U.S. LEXIS 1942; 93 A.L.R. 2d 733; 23 Ohio Op. 2d 258",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1963-03-18",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/106545/gideon-v-wainwright/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": "372 U.S. 335 (1963) GIDEON v. WAINWRIGHT, CORRECTIONS DIRECTOR. No. 155. Supreme Court of United States. Argued January 15, 1963. Decided March 18, 1963. CERTIORARI TO THE SUPREME COURT OF FLORIDA. Abe Fortas, by appointment of the Court, 370 U. S. 932, argued the cause for petitioner. With him on the brief were Abe Krash and Ralph Temple. Bruce R. Jacob, Assistant Attorney General of Florida, argued the cause for respondent. With him on the brief were Richard W. Ervin, Attorney General, and A. G. Spicola, Jr., Assistant Attorney General. J. Lee Rankin, by special leave of Court, argued the cause for the American Civil Liberties Union et al., as amici curiae, urging reversal. With him on the brief were Norman Dorsen, John Dwight Evans, Jr., Melvin L. Wulf, Richard J. Medalie, Howard W. Dixon and Richard Yale Feder. George D. Mentz, Assistant Attorney General of Alabama, argued the cause for the State of Alabama, as *336 amicus curiae, urging affirmance. With him on the brief were MacDonald Gallion, Attorney General of Alabama, T. W. Bruton, Attorney General of North Carolina, and Ralph Moody, Assistant Attorney General of North Carolina. A brief for the state governments of twenty-two States and Commonwealths, as amici curiae, urging reversal, was filed by Edward J. McCormack, Jr., Attorney General of Massachusetts, Walter F. Mondale, Attorney General of Minnesota, Duke W. Dunbar, Attorney General of Colorado, Albert L. Coles, Attorney General of Connecticut, Eugene Cook, Attorney General of Georgia, Shiro Kashiwa, Attorney General of Hawaii, Frank Benson, Attorney General of Idaho, William G. Clark, Attorney General of Illinois, Evan L. Hultman, Attorney General of Iowa, John B. Breckinridge, Attorney General of Kentucky, Frank E. Hancock, Attorney General of Maine, Fr",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-106545:0"
+        },
+        {
+          "case_id": "fr-2025-19980",
+          "name": "Quarterly Publication of Individuals, Who Have Chosen To Expatriate",
+          "citation": "90 FR 51443",
+          "court": "Treasury Department, Internal Revenue Service",
+          "decision_date": "2025-11-17",
+          "opinion_type": "Notice",
+          "source_url": "https://www.federalregister.gov/documents/2025/11/17/2025-19980/quarterly-publication-of-individuals-who-have-chosen-to-expatriate",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-11-17/pdf/2025-19980.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Notice; no effective date supplied; verify operative status in the official edition",
+          "id": "S4",
+          "text": "......... JAMES ADAIR....................... WILLIAM............. KIRKWOOD ADAMS....................... CHARLES............. GIDEON ADAMS....................... SUSAN............... LYNN ADAMSON..................... AMY .................... ADDAWOOD.................... IYAD................ ABDULMOHSIN ADDERLEY.................... AMY................. STONE AHMED....................... ZUMAR .................... AHO......................... LAURA............... MARIA AKAE........................ MEGUMI .................... AKITT-PATTERSON............. BETH................ ALAINE AKOMAH...................... JEFFREY............. KWAFO ALBERT...................... ANATHEA............. MICHELLE ALBERTI..................... ANGELE.............. ALEXANDRA MARIE ALBERTI..................... MARTHA.............. LYNN ALBINO...................... WILLIAM............. MICHAEL ALDEKHAYYIL................. FAISAL.............. ABDULLAH AL-JABI..................... WAEL .................... ALLEN....................... BENJAMIN............ NORMAN ALLEN....................... EWAN................ ARTHUR ALLEN....................... FABIAN.............. HORATIO ALLEVATO.................... JOSEPH.............. JAMES ALMAHMEED................... TAGHREED .................... ALMUSA...................... LORRAINE............ ESTHER ALPERT...................... ALAN................ JAMES AL-RASHED................... RASHED.............. ABDULAZEEZ ALT......................... SHARNA.............. CRICKET AMALIKSEN................... INGVID .................... AMANN....................... MARKUS .................... AMAR........................ MAYA .................... AMIRZAI..................... ARYUB .................... ANDERBERG................... RUTH................ INGA ANDERSON",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "fr-2025-19980:1600"
+        },
+        {
+          "case_id": "cl-8945501",
+          "name": "Gideon v. Wainwright",
+          "citation": "372 U.S. 335",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1963-03-18",
+          "opinion_type": "lead-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/8954562/gideon-v-wainwright/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": "abeas corpus, alleging that he had been denied the right to assistance of counsel in violation of the Fourteenth Amendment. Betts was denied any relief, and on review this Court affirmed. It was held that a refusal to appoint counsel for an indigent defendant charged with a felony did not necessarily violate the Due Process Clause of the Fourteenth Amendment, which for reasons given the Court deemed to be the only applicable federal constitutional provision. The Court said: \u201cAsserted denial [of due process] is to be tested by an appraisal of the totality of facts in a given case. That which may, in one setting, constitute a denial of fundamental fairness, shocking to the universal sense of justice, may, in other circumstances, and in the light of other considerations, fall short of such denial.\u201d 316 U. S., at 462. Treating due process as \u201ca concept less rigid and more fluid than those envisaged in other specific and particular provisions of the Bill of Rights,\u201d the Court held that refusal to appoint counsel under the particular facts and circumstances in the Betts case was not so \u201coffensive to the common and fundamental ideas of fairness\u201d as to amount to a denial of due process. Since the facts and circumstances of the two cases are so nearly indistinguishable, we think the Betts v. Brady holding if left standing would require us to reject Gideon\u2019s claim that the Constitution guarantees him the assistance of counsel. Upon full reconsideration we conclude that Betts v. Brady should be overruled. II. The Sixth Amendment provides, \u201cIn all criminal prosecutions, the accused shall enjoy the right . . . to have the Assistance of Counsel for his defence.\u201d We have con*340strued this to mean that in federal courts counsel must be provided for defendants unable to. employ counsel",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "cl-8945501:3200"
+        },
+        {
+          "case_id": "fr-2025-19980",
+          "name": "Quarterly Publication of Individuals, Who Have Chosen To Expatriate",
+          "citation": "90 FR 51443",
+          "court": "Treasury Department, Internal Revenue Service",
+          "decision_date": "2025-11-17",
+          "opinion_type": "Notice",
+          "source_url": "https://www.federalregister.gov/documents/2025/11/17/2025-19980/quarterly-publication-of-individuals-who-have-chosen-to-expatriate",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-11-17/pdf/2025-19980.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Notice; no effective date supplied; verify operative status in the official edition",
+          "id": "S6",
+          "text": ".................. SHELDON............. SUI TUNG VERMONT..................... MARIA............... JOHANNA VERREAULT................... ANDREA.............. TIFFANY VERVEER..................... SABINE.............. MARIE PAULE VEYSEY...................... ALLISON............. NICOLE VIDLER...................... TIMOTHY............. EMERSON VIOLA....................... PHILIPPE............ ADRIEN VIOLETTE.................... GAYLE .................... VISCHER..................... ANTHONY............. GUY VISCOMI..................... KAREN............... TIZIANA VISSER...................... HEATHER............. EMILY VISSER...................... ODD................. MAARTEN VOEGELI..................... TRACY............... SUSAN VON ESCHEN.................. MARK................ WOLFORD VON RETTIG II............... MICHAEL............. GABRIEL PAUL VUJICA...................... SRDJAN .................... WACKWITZ.................... ELEANOR............. GWENDOLYN HENRIETTE WAGNER...................... RICHARD............. MARTIN WAGSTAFF.................... SHEENA.............. VANESSA WAHL........................ NIKOLAUS............ AUGUST WAINWRIGHT.................. JANE................ MYLANDER WAKELEY..................... SUSAN............... ELIZABETH WAKEMAN..................... CLAUDIA............. MARIE WALKER...................... BRYAN............... MARK WALKER...................... JAMES............... BRANNAN [[Page 51464]] WALKER...................... STEPHEN............. RICHARD WALLACE..................... CHRISTINA........... LYNN WALLACE..................... KIRI................ JOY WALLEN...................... DAVID............... PETER WALLIS...................... KAAREN.............. EKWURZEL WALTER...................... CHRISTOPHER......... JOHN WAL",
+          "locator": "Whitespace-normalized extracted text, characters 84801\u201386600",
+          "original_id": "fr-2025-19980:84800"
+        },
+        {
+          "case_id": "cl-106545",
+          "name": "Gideon v. Wainwright",
+          "citation": "9 L. Ed. 2d 799; 83 S. Ct. 792; 372 U.S. 335; 1963 U.S. LEXIS 1942; 93 A.L.R. 2d 733; 23 Ohio Op. 2d 258",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1963-03-18",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/106545/gideon-v-wainwright/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "sense of justice, may, in other circumstances, and in the light of other considerations, fall short of such denial.\" 316 U. S., at 462. Treating due process as \"a concept less rigid and more fluid than those envisaged in other specific and particular provisions of the Bill of Rights,\" the Court held that refusal to appoint counsel under the particular facts and circumstances in the Betts case was not so \"offensive to the common and fundamental ideas of fairness\" as to amount to a denial of due process. Since the facts and circumstances of the two cases are so nearly indistinguishable, we think the Betts v. Brady holding if left standing would require us to reject Gideon's claim that the Constitution guarantees him the assistance of counsel. Upon full reconsideration we conclude that Betts v. Brady should be overruled. II. The Sixth Amendment provides, \"In all criminal prosecutions, the accused shall enjoy the right . . . to have the Assistance of Counsel for his defence.\" We have construed *340 this to mean that in federal courts counsel must be provided for defendants unable to employ counsel unless the right is competently and intelligently waived.[3] Betts argued that this right is extended to indigent defendants in state courts by the Fourteenth Amendment. In response the Court stated that, while the Sixth Amendment laid down \"no rule for the conduct of the States, the question recurs whether the constraint laid by the Amendment upon the national courts expresses a rule so fundamental and essential to a fair trial, and so, to due process of law, that it is made obligatory upon the States by the Fourteenth Amendment.\" 316 U. S., at 465. In order to decide whether the Sixth Amendment's guarantee of counsel is of this fundamental nature, the Court in Betts set out and ",
+          "locator": "Whitespace-normalized extracted text, characters 6401\u20138200",
+          "original_id": "cl-106545:6400"
+        },
+        {
+          "case_id": "fr-2025-08516",
+          "name": "Distribution of Continued Dumping and Subsidy Offset to Affected Domestic Producers",
+          "citation": "90 FR 23112",
+          "court": "Homeland Security Department, U.S. Customs and Border Protection",
+          "decision_date": "2025-05-30",
+          "opinion_type": "Notice",
+          "source_url": "https://www.federalregister.gov/documents/2025/05/30/2025-08516/distribution-of-continued-dumping-and-subsidy-offset-to-affected-domestic-producers",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-05-30/pdf/2025-08516.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Notice; no effective date supplied; verify operative status in the official edition",
+          "id": "S8",
+          "text": ", Paul L Verret, Preston Verret, Quincy Verret, Ronald Paul Sr Versaggi, Joseph A Versaggi, Salvatore J Vicknair, Brent J Sr Vicknair, Duane P Vicknair, Henry Dale Vicknair, Ricky A Vidrine, Bill and Kathi Vidrine, Corey Vidrine, Richard Vila, William F Villers, Joseph A Vincent, Gage Tyler Vincent, Gene Vincent, Gene B Vincent, Robert N Vise, Charles E III Vizier, Barry A Vizier, Christopher Vizier, Clovis J III Vizier, Douglas M Vizier, Tommie Jr Vo, Anh M Vo, Chin Van Vo, Dam Vo, Dan M Vo, Dany Vo, Day V Vo, Duong V Vo, Dustin Vo, Hai Van Vo, Hanh Xuan Vo, Hien Van Vo, Hoang The Vo, Hong Vo, Hung Thanh Vo, Huy K Vo, Johnny [[Page 23238]] Vo, Kent Vo, Lien Van Vo, Man Vo, Mark Van Vo, Minh Hung Vo, Minh Ngoc Vo, Minh Ray Vo, Mong V Vo, My Dung Thi Vo, My Lynn Vo, Nga Vo, Nhon Tai Vo, Nhu Thanh Vo, Quang Minh Vo, Sang M Vo, Sanh M Vo, Song V Vo, Tan Thanh Vo, Tan Thanh Vo, Thanh Van Vo, Thao Vo, Thuan Van Vo, Tien Van Vo, Tom Vo, Tong Ba Vo, Trao Van Vo, Truong Vo, Van Van Vo, Vi Viet Vodopija, Benjamin S Vogt, James L Voisin, Eddie James Voisin, Joyce Voison, Jamie Von Harten, Harold L Vona, Michael A Vongrith, Richard Vossler, Kirk Vu, Hung Vu, John H Vu, Khanh Vu, Khoi Van Vu, Quan Quoc Vu, Ruyen Viet Vu, Sac Vu, Sean Vu, Tam Vu, Thiem Ngoc Vu, Thuy Vu, Tom Vu, Tu Viet Vu, Tuyen Jack Vu, Tuyen Viet Wade, Calvin J Jr Wade, Gerard Waguespack, David M Sr Waguespack, Randy P II Wainwright, Vernon Walker, Jerry Walker, Rogers H Wallace, Dennis Wallace, Edward Wallace, John A Wallace, John K Wallace, Trevis L Waller, Jack Jr Waller, John M Waller, Mike Wallis, Craig A Wallis, Keith Walters, Samuel G Walton, Marion M Wannage, Edward Joseph [[Page 23239]] Wannage, Fred Jr Wannage, Frederick W Sr Ward, Clarence Jr Ward, Olan B Ward, Walter M Washington, Clifford Washington, ",
+          "locator": "Whitespace-normalized extracted text, characters 252801\u2013254600",
+          "original_id": "fr-2025-08516:252800"
+        },
+        {
+          "id": "W5",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "law.justia.com",
+          "citation": "",
+          "source_url": "https://law.justia.com/cases/federal/appellate-courts/F2/440/835/352755/",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Unofficial opinion mirror; distinguish the court opinion from editorial summaries.",
+          "decision_date": "",
+          "court": "law.justia.com",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 2,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "caseName:(Gideon AND Wainwright)",
+              "mode": "keyword",
+              "court": "scotus",
+              "after": "",
+              "before": "",
+              "order": "citeCount desc",
+              "status": "ok",
+              "matches": 2
+            }
+          ],
+          "passages": 6
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "ok",
+          "total": 23,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 9
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 1,
+          "consulted_urls": 18,
+          "consulted_sources": [
+            {
+              "url": "https://www.courtlistener.com/opinion/8954562/gideon-v-wainwright/",
+              "title": "www.courtlistener.com"
+            },
+            {
+              "url": "https://www.education.ne.gov/wp-content/uploads/2017/07/court-procedure-8-07.pdf",
+              "title": "www.education.ne.gov"
+            },
+            {
+              "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/pccd/documents/aboutus/documents/indigent-defense/idac%20webinar%202%20-michigan%20indigent%20defense%20commission.pdf",
+              "title": "www.pa.gov"
+            },
+            {
+              "url": "https://www.house.mi.gov/hfa/Archives/PDF/Judiciary/Judiciary_Subcmte_Testimony_SADO_Presentation_3-6-24.pdf",
+              "title": "www.house.mi.gov"
+            },
+            {
+              "url": "https://law.justia.com/cases/federal/appellate-courts/F2/440/835/352755/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/federal/appellate-courts/ca10/19-1002/19-1002-2020-03-18.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/federal/appellate-courts/F2/465/675/290393/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/michigan/supreme-court/1963/371-mich-656-2.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/massachusetts/supreme-court/1967/352-mass-719-2.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/oregon/supreme-court/1967/247-or-629-4.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/iowa/supreme-court/2015/130983.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/federal/appellate-courts/ca6/03-2609/07a0038p-06-2011-02-25.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/federal/appellate-courts/F2/319/1/315942/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/michigan/supreme-court/1966/377-mich-666-2.html",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/cases/federal/appellate-courts/F2/423/1108/439704/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://www.govinfo.gov/content/pkg/GPO-CONAN-2022/pdf/GPO-CONAN-2022-28.pdf",
+              "title": "www.govinfo.gov"
+            },
+            {
+              "url": "https://law.justia.com/codes/florida/digest/2003/pdf/DigestTT.pdf",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/florida/digest/2008/pdf/DigIndex.pdf",
+              "title": "law.justia.com"
+            }
+          ],
+          "searches": [
+            {
+              "phase": "web open_page",
+              "status": "completed",
+              "query": "https://www.courtlistener.com/opinion/8954562/gideon-v-wainwright/"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:courtlistener.com/opinion/8954562/gideon-v-wainwright Gideon assistance counsel fundamental fair trial reasoning"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "\"Gideon v. Wainwright\" \"lawyers in criminal courts are necessities\" CourtListener \u00b7 site:courtlistener.com/opinion/ \"372 U.S. 335\" \"necessities, not luxuries\""
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:govinfo.gov \"Gideon v. Wainwright\" \"372 U.S. 335\" PDF \u00b7 site:law.justia.com/cases/federal/us/372/335 Gideon Wainwright"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T08:07:24.711Z",
+      "jurisdiction_note": "",
+      "coverage_notes": [
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Gideon v. Wainwright",
+      "task": "brief",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "research_issues": [
+        {
+          "id": "I1",
+          "question": "What were the facts, issue, holding, and reasoning in Gideon v. Wainwright, under U.S. constitutional law?"
+        }
+      ],
+      "document_coverage": [],
+      "filters": {
+        "court": "scotus",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "issue_id": "I1",
+          "section": "Facts and procedure",
+          "claim": "Clarence Earl Gideon was charged in Florida with breaking and entering a poolroom with intent to commit a misdemeanor, a felony under Florida law. Unable to afford a lawyer, he asked the trial court to appoint counsel; the court denied the request because Florida appointed counsel only in capital cases. Gideon represented himself, was convicted by a jury, and sentenced to five years in prison. He then sought habeas relief in the Florida Supreme Court, which denied his petition without an opinion.",
+          "source_id": "S1",
+          "quote_id": "S1Q1",
+          "web_source_urls": [],
+          "quote": "Mr. Justice Black delivered the opinion of the Court. Petitioner was charged in a Florida state court with having broken and entered a poolroom with intent to commit a misdemeanor. This offense is a felony under *337Florida law.",
+          "evidence_method": "exact_passage"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Issue",
+          "claim": "The issue was whether the Sixth Amendment right to counsel is a fundamental right that the Fourteenth Amendment makes obligatory on the states, requiring counsel for an indigent defendant in a state felony prosecution.",
+          "source_id": "S7",
+          "quote_id": "S7Q9",
+          "web_source_urls": [],
+          "quote": " In response the Court stated that, while the Sixth Amendment laid down \"no rule for the conduct of the States, the question recurs whether the constraint laid by the Amendment upon the national courts expresses a rule so fundamental and",
+          "evidence_method": "exact_passage"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Holding",
+          "claim": "The Court held that an indigent defendant in a criminal trial has a fundamental right to the assistance of counsel, essential to a fair trial, and that Gideon\u2019s uncounseled trial and conviction violated the Fourteenth Amendment.",
+          "source_id": "W5",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://law.justia.com/cases/federal/appellate-courts/F2/440/835/352755/"
+          ],
+          "source_ids": [
+            "W5"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Reasoning",
+          "claim": "The Court concluded that Betts v. Brady could not stand: the facts and circumstances of Betts and Gideon were nearly indistinguishable, yet applying Betts would require rejection of Gideon\u2019s claim to constitutionally guaranteed counsel. On reconsideration, the Court overruled Betts.",
+          "source_id": "S5",
+          "quote_id": "S5Q7",
+          "web_source_urls": [],
+          "quote": " Since the facts and circumstances of the two cases are so nearly indistinguishable, we think the Betts v.",
+          "evidence_method": "exact_passage"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "unanswered_issues": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    },
+    "events": [
+      {
+        "seconds": 1.672,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 1.672,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 4.785,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "brief",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 4.785,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 4.785,
+        "stage": "searching",
+        "message": "Finding the principal opinion\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.785,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 4.785,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 4.83,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 4.967,
+        "stage": "reading",
+        "message": "Reading Gideon v. Wainwright\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.967,
+        "stage": "reading",
+        "message": "Reading Gideon v. Wainwright\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 5.257,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 6 passages retrieved."
+      },
+      {
+        "seconds": 6.026,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 9 passages retrieved."
+      },
+      {
+        "seconds": 6.026,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 25.848,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 4,
+    "exact_passages": 3,
+    "web_citations": 1
+  },
+  {
+    "id": "miranda_arguments",
+    "request": {
+      "question": "Give arguments on both sides of suppressing a voluntary but unwarned custodial statement when a US state prosecutor wants to use it only to impeach the defendant who testifies inconsistently.",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "51fe0a28-bdea-4dd4-90c1-3c17f92b1432"
+    },
+    "review_criteria": "Distinguish prosecution case-in-chief from impeachment; Harris exception voluntary/trustworthy, do not say every Miranda violation bars all uses.",
+    "expected_action": "research",
+    "seconds": 6.986,
+    "response": {
+      "error": "Automatic settings could not be prepared. Choose task, databases and search terms manually, then try again.",
+      "status": 502
+    },
+    "events": [
+      {
+        "seconds": 0.339,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.339,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      }
+    ],
+    "retained": 0,
+    "exact_passages": 0,
+    "web_citations": 0
+  }
+]

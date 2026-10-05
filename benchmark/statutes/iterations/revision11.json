@@ -1,0 +1,2785 @@
+[
+  {
+    "id": "ga_property",
+    "request": {
+      "question": "Property damage",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "539fa0e7-e3c3-49ed-9830-fbca9229ee7c",
+      "context": "User: What are the statute of limitations in Georgia?\nAssistant follow-up: Which type of claim do you mean? Georgia\u2019s limitation period depends on the claim."
+    },
+    "review_criteria": "Real and personal property periods; current text or explicit edition limit. Do not substitute product repose.",
+    "expected_action": "research",
+    "seconds": 35.106,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-9840541",
+          "name": "WISE BUSINESS FORMS INCORPORATED v. FORSYTH COUNTY",
+          "citation": "",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2023-09-19",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9426916/wise-business-forms-incorporated-v-forsyth-county/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": " one of two ways. The first option would be to treat the nuisance as \u201ctemporary\u201d and file a lawsuit to recover for \u201call those damages [or harms] which have \u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014 landowner\u2019s complaint, concluding that the \u201cclaims were barred by the four year statute of limitation applicable to damage to realty.\u201d Id. at 127. On appeal, this Court reversed the trial court\u2019s ruling, concluding that \u201cit was error to dismiss the suit\u201d because the statute of limitations had not run on the landowner\u2019s claims. Cox, 239 Ga. at 128. 16 occurred [to the plaintiff\u2019s property] within the past four years.\u201d Cox, 239 Ga. at 127-128. And, by implication, when the plaintiff elects to proceed in this manner and treats the nuisance as \u201ctemporary,\u201d if the continuing nuisance causes additional harms to the plaintiff\u2019s property in the future, the plaintiff can file another lawsuit seeking recovery for these additional harms, as long as the plaintiff initiates the lawsuit within four years from the occurrence of that future harm. See Lombard, 101 Ga. at 727 (in these cases, \u201cevery continuance of the nuisance is a fresh nuisance, for which a fresh action will lie,\u201d and the cause of action \u201caccrues at the time of such continuance\u201d and \u201cthe statute of limitations runs only from the time of such accrual\u201d). Alternatively, the plaintiff can elect to file a single lawsuit to recover for harms that occurred to the plaintiff\u2019s property within the past four years and for all prospective harms that might occur to the plaintiff\u2019s property in the future. See Cox, 239 Ga. at 127-128. And, if the plaintiff elects to proceed in this 17 manner, the plaintiff is limited to seeking those damages in one lawsuit. See id. In the present case, the nuisance complained of is the expansion of McFarland Parkway, the drai",
+          "locator": "Whitespace-normalized extracted text, characters 19201\u201321000",
+          "original_id": "cl-9840541:19200"
+        },
+        {
+          "case_id": "fr-2024-26977",
+          "name": "Air Plan Approval; Georgia; Second Period Regional Haze Plan",
+          "citation": "89 FR 92038",
+          "court": "Environmental Protection Agency",
+          "decision_date": "2024-11-21",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2024/11/21/2024-26977/air-plan-approval-georgia-second-period-regional-haze-plan",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-11-21/pdf/2024-26977.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2024-12-23; verify operative status in the official edition",
+          "id": "S2",
+          "text": "irements for the second planning period of the regional haze program. EPA is taking this action pursuant to sections 110 and 169A of the Act. DATES: This rule is effective December 23, 2024. ADDRESSES: EPA has established a docket for this action under Docket Identification No. EPA-R04-OAR-2023-0220. All documents in the docket are listed on the regulations.gov website. Although listed in the index, some information may not be publicly available, i.e., Confidential Business Information (CBI) or other information whose disclosure is restricted by statute. Certain other material, such as copyrighted material, is not placed on the internet and will be publicly available only in hard copy form. Publicly available docket materials are available either electronically through www.regulations.gov or in hard copy at the Air Regulatory Management Section, Air Planning and Implementation Branch, Air and Radiation Division, U.S. Environmental Protection Agency, Region 4, 61 Forsyth Street SW, Atlanta, Georgia 30303-8960. EPA requests that, if at all possible, you contact the person listed in the FOR FURTHER INFORMATION CONTACT section to schedule your inspection. The Regional Office's official hours of business are Monday through Friday, 8:30 a.m. to 4:30 p.m., excluding Federal holidays. FOR FURTHER INFORMATION CONTACT: Estelle Bae, Air Permitting Section, Air Planning and Implementation Branch, Air and Radiation Division, Region 4, U.S. Environmental Protection Agency, 61 Forsyth Street SW, Atlanta, Georgia 30303-8960. The telephone number is (404) 562-9143. Ms. Bae can also be reached via electronic mail at [email protected]. SUPPLEMENTARY INFORMATION: I. Background On August 11, 2022, GA EPD submitted a revision to its SIP to address regional haze for the second planning period",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "fr-2024-26977:1600"
+        },
+        {
+          "case_id": "cl-9964706",
+          "name": "JOHN REEVES v. ALLSTATE INSURANCE COMPANY",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2024-04-30",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9498093/john-reeves-v-allstate-insurance-company/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": "y endorsement was clear and unambiguous when it provided that \u201c[a]ny action must be started within two years after the date of loss for the peril of fire\u201d and that \u201c[f]or all other perils, any action must be started within one year after the date of loss\u201d). 24 291 Ga. 306 (728 SE2d 685) (2012). 25 See Ga. Comp. R. & Regs. 120-2-19-.01 (providing, in the Standard Fire Policy of Georgia, that \u201c[n]o suit or action on this policy for the recovery of any claim shall be sustainable in any court of law or equity unless all the requirements of this policy shall have been complied with, and unless commenced within two (2) years next after inception of the loss\u201d). 26 White, 291 Ga. at 308-09 (1) (construing Ga. Comp. R. & Regs. 120-2-20-.02 and OCGA \u00a7 33-32-1 (a) to conclude that the regulation \u201cimposes the Standard Fire 11 our Supreme Court invalidated Georgia Regulation 120-2-20-.02 as having exceeded the insurance commissioner\u2019s authority.27 And although White concerned application Policy\u2019s two-year statute of limitations on all property insurance policies providing first-party insurance coverage for loss or damage to any type of real or personal property\u201d with the effect that \u201call property loss coverage contained in multiple line insurance contracts, whether the loss is occasioned by fire or otherwise, must conform to the requirements of the Standard Fire Policy\u201d when the Code Section instead \u201cindicates that the required terms of the Standard Fire Policy, which would include the two-year statute of limitations, must be incorporated only into the fire coverage provisions of a multiple line policy\u201d); see OCGA \u00a7 33-32-1 (a) (\u201cNo policy of fire insurance covering property located in this state shall be made, issued, or delivered unless it conforms as to all provisions and the seq",
+          "locator": "Whitespace-normalized extracted text, characters 16001\u201317800",
+          "original_id": "cl-9964706:16000"
+        },
+        {
+          "case_id": "fr-2024-26977",
+          "name": "Air Plan Approval; Georgia; Second Period Regional Haze Plan",
+          "citation": "89 FR 92038",
+          "court": "Environmental Protection Agency",
+          "decision_date": "2024-11-21",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2024/11/21/2024-26977/air-plan-approval-georgia-second-period-regional-haze-plan",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-11-21/pdf/2024-26977.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2024-12-23; verify operative status in the official edition",
+          "id": "S4",
+          "text": "ed via electronic mail at [email protected]. SUPPLEMENTARY INFORMATION: I. Background On August 11, 2022, GA EPD submitted a revision to its SIP to address regional haze for the second planning period.1 2 GA EPD made this SIP submission to satisfy the requirements of the CAA's regional haze program pursuant to CAA sections 169A and 169B and 40 Code of Federal Regulations (CFR) 51.308. EPA has determined that the Georgia regional haze SIP submission for the second planning period meets the applicable statutory and regulatory requirements and is thus approving Georgia's submission into its SIP. --------------------------------------------------------------------------- \\1\\ The August 11, 2022, SIP submission, with exception of the supporting modeling files and CBI, is included in the docket for this rulemaking. Due to size and compatibility limitations of the Federal Docket Management System, the supporting modeling files for Georgia's Regional Haze Plan are instead available at the EPA Region 4 office. To request these files, please contact the person listed in this rulemaking under the section titled FOR FURTHER INFORMATION CONTACT. \\2\\ On November 1, 2023, Georgia supplemented its August 11, 2022, Haze Plan by submitting the final permits for each of the three sources selected for an emissions control analysis. This supplemental submission, received November 1, 2023, along with GA EPD's November 17, 2023, clarification email, is included in the docket for this action. --------------------------------------------------------------------------- Through a notice of proposed rulemaking (NPRM), published on June 3, 2024 (89 FR 47481), EPA proposed to approve Georgia's Haze Plan as satisfying the regional haze requirements for the second planning period contained in the CAA ",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "fr-2024-26977:3200"
+        },
+        {
+          "case_id": "cl-11146611",
+          "name": "WISE BUSINESS FORMS INCORPORATED v. FORSYTH COUNTY",
+          "citation": "317 Ga. 636",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2023-09-19",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10680024/wise-business-forms-incorporated-v-forsyth-county/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": "umably will continue indefinitely.\u201d Id. at 333 (2) (citation and punctuation omitted). Determining whether a nuisance is abatable or permanent will typically dictate \u201cthe manner in which the statute of limitations will be applied.\u201d Id. (citation and punctuation omitted). Here, Wise asserted claims against Appellees for both inverse condemnation by abatable nuisance and inverse condemnation by permanent nuisance. However, as noted above, this appeal concerns only Wise\u2019s claim for inverse condemnation by permanent nuisance, so we will limit our analysis to when the statute of limitation starts to run on the permanent nuisance claim. See OCGA \u00a7 9-3-30 (a) (\u201c[a]ll actions for trespass upon or damage to realty shall be brought within four years after the right of action accrues\u201d). 11 In concluding that Wise\u2019s permanent nuisance claim was barred by OCGA \u00a7 9-3-30 (a), the Court of Appeals relied on a 2011 case from this Court, in which we explained that, when a nuisance is \u201cconsidered permanent,\u201d a \u201cplaintiff is allowed only one cause of action to recover damages for past and future harm,\u201d and \u201c[t]he statute of limitation begins to run against such a claim upon the creation of the nuisance once some portion of the harm becomes observable.\u201d Forrister, 289 Ga. at 333 (2). However, this language from Forrister is imprecise because it does not explain that this standard will not apply in all permanent nuisance cases. Permanent nuisance cases vary in relation to when the alleged harm to a plaintiff\u2019s property caused by the nuisance becomes \u201cobservable\u201d to the plaintiff. Forrister, 289 Ga. at 333 (2). In some cases, the harm to the plaintiff\u2019s property is immediately observable \u201cupon the creation of the nuisance.\u201d Id. For example, where a landowner or governmental agency \u201cerects a h",
+          "locator": "Whitespace-normalized extracted text, characters 12801\u201314600",
+          "original_id": "cl-11146611:12800"
+        },
+        {
+          "case_id": "fr-2024-26977",
+          "name": "Air Plan Approval; Georgia; Second Period Regional Haze Plan",
+          "citation": "89 FR 92038",
+          "court": "Environmental Protection Agency",
+          "decision_date": "2024-11-21",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2024/11/21/2024-26977/air-plan-approval-georgia-second-period-regional-haze-plan",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-11-21/pdf/2024-26977.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2024-12-23; verify operative status in the official edition",
+          "id": "S6",
+          "text": "uding Georgia-- and that EPA did not acknowledge these errors in the NPRM. These alleged errors are addressed in Comments 1.a through 1.c below. Comment 1a: The Commenters contend that the VISTAS modeling significantly underpredicted the contribution of sulfates to visibility impairment at Class I areas on the 20 percent most impaired days and that this underprediction, while prevalent across all seasons, was largest during the summer months.\\3\\ The Commenters also assert that these errors resulted in the modeling not meeting VISTAS' model performance goals and modeling acceptance criteria for a number of Class I areas. The Commenters further assert that although Georgia claims that it corrected for this underprediction through the use of relative response factors (RRFs), neither Georgia nor EPA assessed whether use of RRFs adequately corrected for errors in the modeling. --------------------------------------------------------------------------- \\3\\ Areas statutorily designated as mandatory Class I Federal areas consist of national parks exceeding 6,000 acres, wilderness areas and national memorial parks exceeding 5,000 acres, and all international parks that were in existence on August 7, 1977. CAA 162(a). There are 156 mandatory Class I areas. The list of areas to which the requirements of the visibility protection program apply is in 40 CFR part 81, subpart D. --------------------------------------------------------------------------- Response 1.a: Regarding the 2021 letter described by the Commenters,\\4\\ EPA disagrees with the Commenters that there are significant flaws in Georgia's 2028 visibility modeling that resulted in excluding major sources of haze-forming pollution from evaluation via Four-Factor Analyses (FFAs) for the second planning period. As the Commen",
+          "locator": "Whitespace-normalized extracted text, characters 6401\u20138200",
+          "original_id": "fr-2024-26977:6400"
+        },
+        {
+          "case_id": "cl-9840541",
+          "name": "WISE BUSINESS FORMS INCORPORATED v. FORSYTH COUNTY",
+          "citation": "",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2023-09-19",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9426916/wise-business-forms-incorporated-v-forsyth-county/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "ion or management\u201d or \u201cfrom an improper and unnecessary method of operation,\u201d which can \u201cbe averted at slight expense\u201d or readily enjoined. Forrister, 289 Ga. at 333-334 (2) (citations and punctuation omitted). A \u201cpermanent\u201d nuisance is \u201cone whose character is such that, from its nature and under the circumstances of its existence, it presumably will continue indefinitely.\u201d Id. at 333 (2). Determining whether a nuisance is abatable or permanent will typically dictate \u201cthe manner in which the statute of limitations will be applied.\u201d Id. Here, Wise asserted claims against Appellees for both inverse condemnation by abatable nuisance and inverse condemnation by permanent nuisance. However, as noted above, this appeal concerns \u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014 customers demand[ed] high amounts of electricity\u201d and which caused \u201cexcessive noise\u201d and \u201cvibrations,\u201d constituted a nuisance). 11 only Wise\u2019s claim for inverse condemnation by permanent nuisance, so we will limit our analysis to when the statute of limitation starts to run on the permanent nuisance claim. See OCGA \u00a7 9-3-30 (a) (\u201c[a]ll actions for trespass upon or damage to realty shall be brought within four years after the right of action accrues\u201d). In concluding that Wise\u2019s permanent nuisance claim was barred by OCGA \u00a7 9-3-30 (a), the Court of Appeals relied on a 2011 case from this Court, in which we explained that, when a nuisance is \u201cconsidered permanent,\u201d a \u201cplaintiff is allowed only one cause of action to recover damages for past and future harm,\u201d and \u201cthe statute of limitation begins to run against such a claim upon the creation of the nuisance once some portion of the harm becomes observable.\u201d Forrister, 289 Ga. at 333 (2). However, this language from Forrister is imprecise because it does not explain that this standard ",
+          "locator": "Whitespace-normalized extracted text, characters 12801\u201314600",
+          "original_id": "cl-9840541:12800"
+        },
+        {
+          "id": "W1",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "law.justia.com",
+          "citation": "",
+          "source_url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Unofficial statute mirror; check edition and subsequent amendments.",
+          "decision_date": "",
+          "court": "law.justia.com",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 563,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "Georgia statute of limitations property damage claims",
+              "mode": "semantic",
+              "court": "ga gactapp",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 563
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 64,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "ok",
+          "total": 739,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 9
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 1,
+          "consulted_urls": 14,
+          "consulted_sources": [
+            {
+              "url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2020/title-9/chapter-3/article-2/section-9-3-30/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://media.ca11.uscourts.gov/opinions/pub/files/19978039.OPN.pdf",
+              "title": "media.ca11.uscourts.gov"
+            },
+            {
+              "url": "https://www.mow.uscourts.gov/sites/mow/files/mdl/MDL-20-2936-1154.pdf",
+              "title": "www.mow.uscourts.gov"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-31/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2023/title-9/chapter-3/article-2/section-9-3-31/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2022/title-9/chapter-3/article-2/section-9-3-31/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2021/title-9/chapter-3/article-2/section-9-3-31/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2020/title-9/chapter-3/article-2/section-9-3-31/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-33/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2021/title-9/chapter-3/article-2/section-9-3-33/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://law.justia.com/codes/georgia/2020/title-9/chapter-3/article-2/section-9-3-33/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://www.legis.ga.gov/api/document/docs/default-source/general-statutes/15sumdoc.pdf",
+              "title": "www.legis.ga.gov"
+            },
+            {
+              "url": "https://www.legis.ga.gov/Legislation/20152016/147987.pdf",
+              "title": "www.legis.ga.gov"
+            }
+          ],
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:legis.ga.gov OCGA 9-3-30 damage to realty four years \u00b7 site:legis.ga.gov OCGA 9-3-32 personal property damages four years \u00b7 Georgia Supreme Court property damage statute limitations accrues discovery rule OCGA 9-3-30"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "Georgia General Assembly OCGA 9-3-31 actions injury personalty statute four years official \u00b7 site:legis.ga.gov \"All actions for trespass upon or damage to realty\" \u00b7 site:legis.ga.gov \"Injury to personalty\" \"9-3-31\""
+            },
+            {
+              "phase": "web open_page",
+              "status": "completed",
+              "query": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/"
+            },
+            {
+              "phase": "web open_page",
+              "status": "completed",
+              "query": "https://law.justia.com/codes/georgia/2024/title-9/chapter-3/article-2/section-9-3-31/"
+            },
+            {
+              "phase": "web open_page",
+              "status": "searching",
+              "query": ""
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T08:01:11.354Z",
+      "jurisdiction_note": "Court search is limited to Georgia appellate courts. Federal interpretations and trial-court decisions may be missed.",
+      "coverage_notes": [
+        "Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database.",
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Georgia statute of limitations property damage claims",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "research_issues": [
+        {
+          "id": "I1",
+          "question": "What is the statute of limitations in Georgia for a claim seeking recovery for property damage, and what rules affect when the limitations period begins or may be extended?"
+        }
+      ],
+      "document_coverage": [],
+      "filters": {
+        "court": "ga gactapp",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "issue_id": "I1",
+          "section": "Findings",
+          "claim": "For ordinary property-damage claims, delayed discovery generally does not postpone accrual. Section 9-3-30(b)(1) provides a specific discovery-based accrual rule for specified damage to a dwelling from synthetic exterior siding.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/"
+          ],
+          "source_ids": [
+            "W1"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Findings",
+          "claim": "For a temporary continuing nuisance causing property harm, each continuance may create a fresh cause of action; the supplied excerpt states that the claim accrues at the continuance, with later harms subject to suit within four years of their occurrence.",
+          "source_id": "S1",
+          "quote_id": "S1Q7",
+          "web_source_urls": [],
+          "quote": " at 727 (in these cases, \u201cevery continuance of the nuisance is a fresh nuisance, for which a fresh action will lie,\u201d and the cause of action \u201caccrues at the time of such continuance\u201d and \u201cthe statute of limitations runs only from the time",
+          "evidence_method": "exact_passage"
+        }
+      ],
+      "removed": 1,
+      "removed_references": [
+        {
+          "reason": "Web reference was not an eligible tool-reported URL, or mixed evidence types.",
+          "mixed_evidence": false,
+          "unmatched_urls": [
+            "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-31/"
+          ],
+          "urls": [
+            "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/",
+            "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-31/"
+          ]
+        }
+      ],
+      "unanswered_issues": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    },
+    "events": [
+      {
+        "seconds": 0.307,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.307,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 4.077,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 4.078,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 4.078,
+        "stage": "searching",
+        "message": "Finding opinions about your question\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.078,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 4.078,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 4.155,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 4.591,
+        "stage": "reading",
+        "message": "Reading WISE BUSINESS FORMS INCORPORATED v. FORSYTH COUNTY\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.591,
+        "stage": "reading",
+        "message": "Reading JOHN REEVES v. ALLSTATE INSURANCE COMPANY\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.591,
+        "stage": "reading",
+        "message": "Reading WISE BUSINESS FORMS INCORPORATED v. FORSYTH COUNTY\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.591,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 5.277,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 9 passages retrieved."
+      },
+      {
+        "seconds": 5.277,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 35.106,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 2,
+    "exact_passages": 1,
+    "web_citations": 1
+  },
+  {
+    "id": "spanish",
+    "request": {
+      "question": "\u00bfCu\u00e1nto tiempo tiene un arrendador de California para devolver el dep\u00f3sito de seguridad de una vivienda?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "a633171c-d34a-48f4-9076-926d03440d2d"
+    },
+    "review_criteria": "Understand Spanish, answer the same California issue with relevant sources.",
+    "expected_action": "research",
+    "seconds": 50.813,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-11084399",
+          "name": "Eshagian v. Cepeda",
+          "citation": "",
+          "court": "California Court of Appeal",
+          "decision_date": "2025-06-26",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10617811/eshagian-v-cepeda/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "Filed 6/26/25 CERTIFIED FOR PUBLICATION IN THE COURT OF APPEAL OF THE STATE OF CALIFORNIA SECOND APPELLATE DISTRICT DIVISION SEVEN JOSEPH ESHAGIAN, B340941 Plaintiff and Respondent, (Los Angeles County Super. Ct. No. v. 22VEUD02771 [Super. Ct. App. Div. No. MANUEL CEPEDA, 23APLC001479]) Defendant and Appellant. APPEAL from a judgment and an order of the Superior Court of Los Angeles County, Michael R. Amerian, Judge. Appeal dismissed; petition granted. Basta, Eric Post and Daniel J. Bramzon for Defendant and Appellant. Grant Shenon, David M. Almaraz and Nicholas Koo for Plaintiff and Respondent. _________________________________ We transferred this case from the appellate division of the superior court to decide whether a tenant can appeal a judgment for possession in an unlawful detainer proceeding if the landlord has outstanding damages claims that have not been adjudicated. The answer is no. If the landlord\u2019s complaint seeks damages, the possession-only judgment is not appealable because it does not resolve all rights of the parties. Where, as here, the tenant has defaulted on the complaint, the tenant\u2019s options are limited. But the tenant does have recourse. The tenant can file a petition for writ of mandate under Code of Civil Procedure section 1086, 1 which requires a showing that there is no adequate remedy in the ordinary course of law or that the petitioner would otherwise suffer irreparable injury. Because a defaulted tenant has no right to appeal a possession- only judgment and no ability to obtain a final judgment, the tenant will be able to show there is no other adequate remedy in the ordinary course of law, entitling the tenant to a determination of the writ petition on the merits as a matter of right. In this case, the possession-only judgment entered ag",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-11084399:0"
+        },
+        {
+          "case_id": "fr-2024-04736",
+          "name": "Energy Conservation Program: Energy Conservation Standards for Residential Clothes Washers",
+          "citation": "89 FR 19026",
+          "court": "Energy Department",
+          "decision_date": "2024-03-15",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2024/03/15/2024-04736/energy-conservation-program-energy-conservation-standards-for-residential-clothes-washers",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-03-15/pdf/2024-04736.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2024-07-15; verify operative status in the official edition",
+          "id": "S2",
+          "text": "de, Part B was redesignated Part A. \\3\\ DOE uses the ``residential'' nomenclature and ``RCW'' abbreviation for consumer clothes washers in order to distinguish from the ``CCW'' abbreviation used for commercial clothes washers, which are also regulated equipment under EPCA. --------------------------------------------------------------------------- Pursuant to EPCA, any new or amended energy conservation standard must, among other things, be designed to achieve the maximum improvement in energy efficiency that DOE determines is technologically feasible and economically justified. (42 U.S.C. 6295(o)(2)(A)) Furthermore, the new or amended standard must result in significant conservation of energy. (42 U.S.C. 6295(o)(3)(B)) In light of the above and under the authority provided by 42 U.S.C. 6295(p)(4), DOE is issuing this direct final rule amending energy conservation standards for RCWs. The adopted standard levels in this direct final rule were proposed in a letter submitted to DOE jointly by groups representing manufacturers, energy and environmental advocates, consumer groups, and a utility. This letter, titled ``Energy Efficiency Agreement of 2023'' (hereafter, the ``Joint Agreement'' \\4\\), recommends specific energy conservation standards for RCWs that, in the commenters' view, would satisfy the EPCA requirements in 42 U.S.C. 6295(o). DOE subsequently received letters of support for the Joint Agreement from States including New York, California, and Massachusetts \\5\\ and utilities including San Diego Gas and Electric (``SDG&E'') and Southern California Edison (``SCE'') \\6\\ advocating for the adoption of the recommended standards. --------------------------------------------------------------------------- \\4\\ This document is available in the docket at: www.regulations.",
+          "locator": "Whitespace-normalized extracted text, characters 9601\u201311400",
+          "original_id": "fr-2024-04736:9600"
+        },
+        {
+          "case_id": "cl-11128355",
+          "name": "Emmons v. Jesso",
+          "citation": "",
+          "court": "California Court of Appeal",
+          "decision_date": "2025-08-27",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10661768/emmons-v-jesso/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": "Filed 8/27/25 CERTIFIED FOR PUBLICATION IN THE COURT OF APPEAL OF THE STATE OF CALIFORNIA SECOND APPELLATE DISTRICT DIVISION TWO RICHARD FOX EMMONS, JR., B332538 Plaintiff, Cross-defendant (Los Angeles County and Appellant, Super. Ct. No. 19STCV21378) v. TOBIAS JESSO, JR., Defendant, Cross- complainant and Respondent. APPEAL from a judgment of the Superior Court of Los Angeles County, Malcolm H. Mackey, Judge. Affirmed. Law Offices of Raymond Hovsepian, Raymond Hovsepian and Gary Simonian for Plaintiff, Cross-defendant and Appellant. Citron & Citron, Thomas H. Citron and Katherine A. Tatikian for Defendant, Cross-complainant and Respondent. ****** Richard Fox Emmons, Jr. (tenant), appeals from a judgment following a jury trial in this action tenant filed against Tobias Jesso, Jr. (landlord), to recover rent payments on a unit tenant claimed was illegal. The jury found against tenant and in favor of landlord in the amount of $14,700 plus interest and costs on landlord\u2019s cross-complaint for rent not paid. We find no error and affirm the judgment. FACTUAL BACKGROUND In April 2015, tenant entered into a written lease agreement for the lower level of 2500 Lake View Avenue for $1,000 per month. In 2016, landlord purchased the property. Landlord inspected the property prior to the purchase. The property consisted of two structures. The unit on the top two floors of the main building was occupied by a renter who was moving out. Tenant was renting the main building\u2019s bottom floor unit. Another renter resided in the separate cottage with the address 2502 Lake View Avenue. Landlord\u2019s real estate agent assured him \u201ceverything was legal,\u201d and the two renters were legally on the property. Following some renovations, landlord moved into the unit on the top two stories of the main buil",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-11128355:0"
+        },
+        {
+          "case_id": "fr-2024-04736",
+          "name": "Energy Conservation Program: Energy Conservation Standards for Residential Clothes Washers",
+          "citation": "89 FR 19026",
+          "court": "Energy Department",
+          "decision_date": "2024-03-15",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2024/03/15/2024-04736/energy-conservation-program-energy-conservation-standards-for-residential-clothes-washers",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-03-15/pdf/2024-04736.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2024-07-15; verify operative status in the official edition",
+          "id": "S4",
+          "text": " two precursors (SO2 and NOX), and from changes in ambient ozone from one precursor (for NOX), but will continue to assess the ability to monetize other effects such as health benefits from reductions in direct PM2.5 emissions. --------------------------------------------------------------------------- \\16\\ U.S. Environmental Protection Agency (``EPA''). Estimating the Benefit per Ton of Reducing Directly Emitted PM2.5, PM2.5 Precursors and Ozone Precursors from 21 Sectors. Available at www.epa.gov/benmap/estimating-benefit-ton-reducing-pm25-precursors-21-sectors. \\17\\ DOE estimates the economic value of these emissions reductions resulting from the considered TSLs for the purpose of complying with the requirements of Executive Order 12866. --------------------------------------------------------------------------- Table I.3 summarizes the monetized benefits and costs expected to result from the amended standards for RCWs. There are other important unquantified effects, including certain unquantified climate benefits, unquantified public health benefits from the reduction of toxic air pollutants and other emissions, unquantified energy security benefits, and distributional effects, among others. Table I.3--Summary of Monetized Benefits and Costs of Adopted Energy Conservation Standards for Residential Clothes Washers ------------------------------------------------------------------------ Billion $2022 ------------------------------------------------------------------------ 3% discount rate ------------------------------------------------------------------------ Consumer Operating Cost Savings...................... 17.92 Climate Benefits *................................... 0.84 Health Benefits **................................... 1.62 ------------------ Total Benefits",
+          "locator": "Whitespace-normalized extracted text, characters 24001\u201325800",
+          "original_id": "fr-2024-04736:24000"
+        },
+        {
+          "case_id": "cl-10581114",
+          "name": "S.F. Apartment Assn. v. City & County of S.F.",
+          "citation": "",
+          "court": "California Court of Appeal",
+          "decision_date": "2024-09-11",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10114513/sf-apartment-assn-v-city-county-of-sf/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": " Legislature has seen fit to adopt a general scheme for the regulation of a particular subject, the entire control over whatever phases of the subject are covered by state legislation ceases as far as local legislation is concerned.\u201d \u2019 \u201d (Ibid.) \u201c \u2018 \u201cState regulation of a subject may be so complete and detailed as to indicate an intent to preclude local regulation.\u201d \u2019 \u201d (Ibid.) Examination to infer legislative intent to occupy the field is \u201cmade with the goal of \u2018 \u201cdetect[ing] a patterned approach to the subject.\u201d \u2019 \u201d (Sequoia Park Associates v. County of Sonoma, supra, 176 Cal.App.4th at p. 1279, quoting Fisher v. City of Berkeley (1984) 37 Cal.3d 644, 708 (Fisher).) With these general principles in mind, we turn to the parties\u2019 preemption arguments. II. Preemption Arguments Plaintiffs argue that Ordinance No. 18-22 is preempted by state law based on either (1) direct contradiction of Code of Civil Procedure section 1161, or (2) implied field preemption. As for direct contradiction, plaintiffs explain that section 1161 sets out a procedural timeline for unlawful detainer. This timeline provides tenants with three days\u2019 notice to pay rent/perform or quit. (\u00a7 1161, subds. (2)\u2013(4).) Ordinance No. 18-22, however, extends that timeline by requiring a written warning with 10 days to cure prior to serving any notice under section 1161. In other words, tenants have a minimum of 13 days to cure under Ordinance No. 18-22 instead of three 8 days under section 1161. As for implied field preemption, plaintiffs argue that state statutes regarding landlord-tenant notification show the Legislature\u2019s intent to fully occupy the field. To oppose these arguments, defendant relies on the framework set forth by the California Supreme Court in Birkenfeld v. City of Berkeley (1976) 17 Cal.3d ",
+          "locator": "Whitespace-normalized extracted text, characters 12801\u201314600",
+          "original_id": "cl-10581114:12800"
+        },
+        {
+          "case_id": "fr-2024-04736",
+          "name": "Energy Conservation Program: Energy Conservation Standards for Residential Clothes Washers",
+          "citation": "89 FR 19026",
+          "court": "Energy Department",
+          "decision_date": "2024-03-15",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2024/03/15/2024-04736/energy-conservation-program-energy-conservation-standards-for-residential-clothes-washers",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-03-15/pdf/2024-04736.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2024-07-15; verify operative status in the official edition",
+          "id": "S6",
+          "text": "ficant market share--as the adopted standard represents the ENERGY STAR level--and manufacturers have not indicated consumer dissatisfaction with the clothes washers commercially available today. --------------------------------------------------------------------------- \\50\\ See, for example, discussion of variable-speed motors in chapter 5 of the TSD accompanying the energy conservation standards May 2012 Direct Final Rule. Available at www.regulations.gov/document/EERE-2008-BT-STD-0019-0047. --------------------------------------------------------------------------- 2. Remaining Technologies Through a review of each technology, DOE concludes that all of the other identified technologies listed in Table IV.3 meet all screening criteria to be examined further as design options in DOE's direct final rule analysis. In summary, DOE did not screen out the following technology options: Table IV.3--Retained Design Options for Residential Clothes Washers ------------------------------------------------------------------------ ------------------------------------------------------------------------- Methods for Decreasing Water Use * Adaptive water fill controls. Hardware features enabling lower water levels. Spray rinse. Methods for Decreasing Machine Energy More efficient motor. Direct drive motor. Methods for Decreasing Water Heating Energy Wash temperature decrease. Methods for Decreasing Drying Energy Hardware features enabling spin speed increase. Spin time increase. Methods for Decreasing Standby Energy Lower standby power components. Methods for Increasing Overall Efficiency Capacity increase (without requiring a cabinet width increase). ------------------------------------------------------------------------ * Most of the methods for decreasing water use are also meth",
+          "locator": "Whitespace-normalized extracted text, characters 132801\u2013134600",
+          "original_id": "fr-2024-04736:132800"
+        },
+        {
+          "case_id": "cl-11084399",
+          "name": "Eshagian v. Cepeda",
+          "citation": "",
+          "court": "California Court of Appeal",
+          "decision_date": "2025-06-26",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10617811/eshagian-v-cepeda/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "er adequate remedy in the ordinary course of law, entitling the tenant to a determination of the writ petition on the merits as a matter of right. In this case, the possession-only judgment entered against the defaulted tenant, Manuel Cepeda, is not appealable. However, given the uncertainty of the law on appealability at the time Cepeda filed his appeal, we treat the appeal as a petition for writ of mandate to avoid any further delay. We conclude the three-day notice to pay rent or quit served by the landlord, Joseph Eshagian, pursuant to section 1161, subdivision (2) (section 1161(2)), is invalid for failure to make clear by when and how Cepeda had to pay the rent, and that Cepeda would lose possession of the premises if he did not timely cure the default. Accordingly, Eshagian\u2019s complaint incorporating the three-day notice failed to state a cause of action for unlawful detainer. We 1 Further undesignated statutory references are to the Code of Civil Procedure. 2 dismiss the appeal and grant the petition. We direct the trial court to vacate the judgment in favor of Eshagian and to enter a new judgment in favor of Cepeda. FACTUAL AND PROCEDURAL BACKGROUND A. The Tenancy, Three-day Notice, and Complaint Eshagian leased to Cepeda a residential unit in Van Nuys (the premises). Pursuant to the lease agreement, Cepeda was required to pay $1,000 a month in rent. On December 20, 2022 Eshagian served Cepeda with a \u201c3 Day Notice To Pay or Quit.\u201d The notice stated Cepeda owed a total of $8,000 in unpaid rent due from April 1 to November 1, 2022. The notice specified the rent was to be paid to Eshagian by check, cashier\u2019s check, or money order; it listed the address of Cepeda\u2019s unit as the \u201c[a]ddress to where rent may be delivered\u201d; and it stated the rent could be delivered any d",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "cl-11084399:1600"
+        },
+        {
+          "case_id": "fr-2024-29824",
+          "name": "HOME Investment Partnerships Program: Program Updates and Streamlining",
+          "citation": "90 FR 746",
+          "court": "Housing and Urban Development Department",
+          "decision_date": "2025-01-06",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2025/01/06/2024-29824/home-investment-partnerships-program-program-updates-and-streamlining",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-01-06/pdf/2024-29824.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2025-02-05; verify operative status in the official edition",
+          "id": "S8",
+          "text": "ed rental assistance is provided. The Department is doing this because it does not wish to create unnecessary barriers to obtaining tenant-based rental assistance, especially when a tenant has already fulfilled whatever security deposit requirements the owner had set forth under the lease, before the participating jurisdiction provided the tenant- based rental assistance. As a result of the above, the Department will be moving forward with language barring the use of surety bonds and security deposit insurance in Sec. 92.253(b)(9) and (c)(9). The Department considered tenants that would be receiving tenant-based rental assistance after the beginning of their lease and has revised Sec. 92.253(c)(9) to address the commenter's concerns. U. Charges Against Security Deposit One commenter supported the proposed changes to the HOME rule requiring that if charges are made against the tenant's security deposit, owners must list all items charged and their cost, and promptly refund the security deposit to the tenant at move-out, less any documented charges made. Another commenter recommended that HUD's final rule should enable a tenant to bring to a participating jurisdiction a challenge to any damage claims made by an owner and/or amounts charged against a tenant's security deposit refund. The commenter suggested that a tenant could use this challenge process if an owner does not refund all or a portion of a security deposit within two weeks. The commenter noted that sub-regulatory guidance regarding any such proceedings would be helpful. HUD Response: The Department is maintaining its proposed language on charges against the security deposit and embedding the language in both the HOME rental housing tenancy addendum (Sec. 92.253(b)(9)) and HOME tenant-based rental assistance te",
+          "locator": "Whitespace-normalized extracted text, characters 656001\u2013657800",
+          "original_id": "fr-2024-29824:656000"
+        },
+        {
+          "id": "W13",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "selfhelp.courts.ca.gov",
+          "citation": "",
+          "source_url": "https://selfhelp.courts.ca.gov/fa/node/1268",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "selfhelp.courts.ca.gov",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W18",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "selfhelp.courts.ca.gov",
+          "citation": "",
+          "source_url": "https://selfhelp.courts.ca.gov/es/guia-sobre-depositos-de-seguridad-en-california",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "selfhelp.courts.ca.gov",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 575,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "California residential landlord return security deposit deadline move out",
+              "mode": "semantic",
+              "court": "cal calctapp calappdeptsuper",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 575
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "ok",
+          "total": 49,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 9
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 2,
+          "consulted_urls": 26,
+          "consulted_sources": [
+            {
+              "url": "https://santaclara.courts.ca.gov/system/files/general/cacivilcode19505.pdf",
+              "title": "santaclara.courts.ca.gov"
+            },
+            {
+              "url": "https://courts.ca.gov/documents/California-Tenants-Guide.pdf",
+              "title": "courts.ca.gov"
+            },
+            {
+              "url": "https://www.oag.ca.gov/news/press-releases/attorney-general-bonta-issues-consumer-alert-tenants-rights-24-languages",
+              "title": "www.oag.ca.gov"
+            },
+            {
+              "url": "https://oag.ca.gov/system/files/media/Know-Your-Rights-Security-Deposits-English.pdf",
+              "title": "oag.ca.gov"
+            },
+            {
+              "url": "https://www.siskiyou.courts.ca.gov/famlawfacilitator/PublicInfo/Tenant-Landlord.pdf",
+              "title": "www.siskiyou.courts.ca.gov"
+            },
+            {
+              "url": "https://oag.ca.gov/system/files/media/Know-Your-Rights-Tenants-English.pdf",
+              "title": "oag.ca.gov"
+            },
+            {
+              "url": "https://www.sucorte.ca.gov/guide-security-deposits-california",
+              "title": "www.sucorte.ca.gov"
+            },
+            {
+              "url": "https://www.oag.ca.gov/news/press-releases/during-veterans-and-military-families-month-attorney-general-rob-bonta",
+              "title": "www.oag.ca.gov"
+            },
+            {
+              "url": "https://www.oag.ca.gov/news/press-releases/california-attorney-general-rob-bonta-announces-settlement-arnel-management",
+              "title": "www.oag.ca.gov"
+            },
+            {
+              "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PCC&sectionNum=10263",
+              "title": "leginfo.legislature.ca.gov"
+            },
+            {
+              "url": "https://www.oag.ca.gov/housing",
+              "title": "www.oag.ca.gov"
+            },
+            {
+              "url": "https://www.dre.ca.gov/publications/ResourceGuidebook/gb10_movingout.html",
+              "title": "www.dre.ca.gov"
+            },
+            {
+              "url": "https://selfhelp.courts.ca.gov/fa/node/1268",
+              "title": "selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://selfhelp.courts.ca.gov/ar/node/1264",
+              "title": "selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://selfhelp.courts.ca.gov/form/demand-letter-for-security-depos",
+              "title": "selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://law.justia.com/codes/california/code-civ/division-3/part-4/title-5/chapter-2/section-1950-5/",
+              "title": "law.justia.com"
+            },
+            {
+              "url": "https://www.leginfo.ca.gov/pub/11-12/bill/asm/ab_1651-1700/ab_1679_bill_20120925_chaptered.pdf",
+              "title": "www.leginfo.ca.gov"
+            },
+            {
+              "url": "https://selfhelp.courts.ca.gov/es/guia-sobre-depositos-de-seguridad-en-california",
+              "title": "selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://selfhelp.courts.ca.gov/find-forms/all-by-category",
+              "title": "selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://selfhelp.courts.ca.gov/small-claims/ask-for-money",
+              "title": "selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://selfhelp.courts.ca.gov/landlords-and-tenants",
+              "title": "selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://www.selfhelp.courts.ca.gov/find-forms",
+              "title": "www.selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://www.selfhelp.courts.ca.gov/pa/node/695",
+              "title": "www.selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://www.selfhelp.courts.ca.gov/small-claims/after-trial/collect-money/bank-levy",
+              "title": "www.selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://www.selfhelp.courts.ca.gov/self-help-guide-index-pages",
+              "title": "www.selfhelp.courts.ca.gov"
+            },
+            {
+              "url": "https://dre.ca.gov/files/pdf/2025_Landlord_Tenant_Guide.pdf",
+              "title": "dre.ca.gov"
+            }
+          ],
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:leginfo.legislature.ca.gov Civil Code 1950.5 21 calendar days security deposit California \u00b7 site: courts.ca.gov California security deposit 21 days itemized statement landlord 1950.5 \u00b7 site:oag.ca.gov California tenant security deposit 21 days deductions receipts"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml \"1950.5\" \"21 calendar days\" \u00b7 California Civil Code 1950.5 2026 official code legislature 21 calendar days move out \u00b7 site:selfhelp.courts.ca.gov/guide-security-deposits-california itemized statement $125"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T08:02:18.201Z",
+      "jurisdiction_note": "Court search is limited to California appellate courts. Federal interpretations and trial-court decisions may be missed.",
+      "coverage_notes": [
+        "Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database.",
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "California residential landlord return security deposit deadline move out",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "research_issues": [
+        {
+          "id": "I1",
+          "question": "En California, \u00bfcu\u00e1nto tiempo tiene el arrendador de una vivienda para devolver el dep\u00f3sito de seguridad despu\u00e9s de que el inquilino se muda, y qu\u00e9 reglas se aplican a las deducciones y al desglose de gastos?"
+        }
+      ],
+      "document_coverage": [],
+      "filters": {
+        "court": "cal calctapp calappdeptsuper",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "issue_id": "I1",
+          "section": "Findings",
+          "claim": "En California, dentro de los 21 d\u00edas despu\u00e9s de que el inquilino se muda, el arrendador debe devolver todo el dep\u00f3sito o devolver el saldo y entregar una declaraci\u00f3n detallada que indique las deducciones y sus motivos.",
+          "source_id": "W18",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://selfhelp.courts.ca.gov/es/guia-sobre-depositos-de-seguridad-en-california"
+          ],
+          "source_ids": [
+            "W18"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Findings",
+          "claim": "Las deducciones permitidas incluyen, entre otras, renta impaga, limpieza para dejar la vivienda tan limpia como al inicio del alquiler y reparaci\u00f3n de da\u00f1os que excedan el desgaste normal. Si las deducciones superan $125, deben acompa\u00f1arse de facturas o recibos; si el arrendador o su empleado hizo el trabajo, debe describirlo e indicar el tiempo empleado y la tarifa por hora razonable.",
+          "source_id": "W13",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://selfhelp.courts.ca.gov/fa/node/1268"
+          ],
+          "source_ids": [
+            "W13"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Findings",
+          "claim": "Si por una raz\u00f3n v\u00e1lida las reparaciones o la limpieza no se terminan dentro de esos 21 d\u00edas, el arrendador puede enviar una estimaci\u00f3n razonable de buena fe; una vez terminado el trabajo, debe enviar los recibos dentro de 14 d\u00edas.",
+          "source_id": "W18",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://selfhelp.courts.ca.gov/es/guia-sobre-depositos-de-seguridad-en-california"
+          ],
+          "source_ids": [
+            "W18"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "unanswered_issues": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    },
+    "events": [
+      {
+        "seconds": 0.968,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.968,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 4.143,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 4.143,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 4.143,
+        "stage": "searching",
+        "message": "Finding opinions about your question\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.143,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 4.143,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 4.299,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 4.971,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 9 passages retrieved."
+      },
+      {
+        "seconds": 36.779,
+        "stage": "reading",
+        "message": "Reading Eshagian v. Cepeda\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 36.779,
+        "stage": "reading",
+        "message": "Reading Emmons v. Jesso\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 36.779,
+        "stage": "reading",
+        "message": "Reading S.F. Apartment Assn. v. City & County of S.F.\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 36.838,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 36.838,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 50.812,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 3,
+    "exact_passages": 0,
+    "web_citations": 3
+  },
+  {
+    "id": "gideon_brief",
+    "request": {
+      "question": "Brief Gideon v. Wainwright, including facts, issue, holding and reasoning.",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "18848d6d-36df-4c39-a0e4-41dc7bd8ce24"
+    },
+    "review_criteria": "Accurate counsel right for indigent felony defendant; overruled Betts; procedural posture, holding and reasoning supported.",
+    "expected_action": "research",
+    "seconds": 15.547,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-8945501",
+          "name": "Gideon v. Wainwright",
+          "citation": "372 U.S. 335",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1963-03-18",
+          "opinion_type": "lead-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/8954562/gideon-v-wainwright/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "Mr. Justice Black delivered the opinion of the Court. Petitioner was charged in a Florida state court with having broken and entered a poolroom with intent to commit a misdemeanor. This offense is a felony under *337Florida law. Appearing in court without funds and without a lawyer, petitioner asked the court to appoint counsel for him, whereupon the following colloquy took place: \u201cThe Court: Mr. Gideon, I am sorry, but I cannot appoint Counsel to represent you in this case. Under the laws of the State of Florida, the only time the Court can appoint Counsel to represent a Defendant is when that person is charged with a capital offense. I am sorry, but I will have to deny your request to appoint Counsel to defend you in this case. \u201cThe Dependant: The United States Supreme Court says I am entitled to be represented by Counsel.\u201d Put to trial before a jury, Gideon conducted his defense about as well as could be expected from a layman. He made an opening statement to the jury, cross-examined the State\u2019s witnesses, presented witnesses in his own defense, declined to testify himself, and made a short argument \u201cemphasizing his innocence to the charge contained in the Information filed in this case.\u201d The jury returned a verdict of guilty, and petitioner was sentenced to serve five years in the state prison. Later, petitioner filed in the Florida Supreme Court this habeas corpus petition attacking his conviction and sentence on the ground that the trial court\u2019s refusal to appoint counsel for him denied him rights \u201cguaranteed by the Constitution and the Bill of Rights by the United States Government.\u201d 1 Treating the petition for habeas corpus as properly before it, the State Supreme Court, \u201cupon consideration thereof\u201d but without an opinion, denied all relief. Since 1942, when Bet",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-8945501:0"
+        },
+        {
+          "case_id": "cl-106545",
+          "name": "Gideon v. Wainwright",
+          "citation": "9 L. Ed. 2d 799; 83 S. Ct. 792; 372 U.S. 335; 1963 U.S. LEXIS 1942; 93 A.L.R. 2d 733; 23 Ohio Op. 2d 258",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1963-03-18",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/106545/gideon-v-wainwright/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S2",
+          "text": "372 U.S. 335 (1963) GIDEON v. WAINWRIGHT, CORRECTIONS DIRECTOR. No. 155. Supreme Court of United States. Argued January 15, 1963. Decided March 18, 1963. CERTIORARI TO THE SUPREME COURT OF FLORIDA. Abe Fortas, by appointment of the Court, 370 U. S. 932, argued the cause for petitioner. With him on the brief were Abe Krash and Ralph Temple. Bruce R. Jacob, Assistant Attorney General of Florida, argued the cause for respondent. With him on the brief were Richard W. Ervin, Attorney General, and A. G. Spicola, Jr., Assistant Attorney General. J. Lee Rankin, by special leave of Court, argued the cause for the American Civil Liberties Union et al., as amici curiae, urging reversal. With him on the brief were Norman Dorsen, John Dwight Evans, Jr., Melvin L. Wulf, Richard J. Medalie, Howard W. Dixon and Richard Yale Feder. George D. Mentz, Assistant Attorney General of Alabama, argued the cause for the State of Alabama, as *336 amicus curiae, urging affirmance. With him on the brief were MacDonald Gallion, Attorney General of Alabama, T. W. Bruton, Attorney General of North Carolina, and Ralph Moody, Assistant Attorney General of North Carolina. A brief for the state governments of twenty-two States and Commonwealths, as amici curiae, urging reversal, was filed by Edward J. McCormack, Jr., Attorney General of Massachusetts, Walter F. Mondale, Attorney General of Minnesota, Duke W. Dunbar, Attorney General of Colorado, Albert L. Coles, Attorney General of Connecticut, Eugene Cook, Attorney General of Georgia, Shiro Kashiwa, Attorney General of Hawaii, Frank Benson, Attorney General of Idaho, William G. Clark, Attorney General of Illinois, Evan L. Hultman, Attorney General of Iowa, John B. Breckinridge, Attorney General of Kentucky, Frank E. Hancock, Attorney General of Maine, Fr",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-106545:0"
+        },
+        {
+          "case_id": "cl-8945501",
+          "name": "Gideon v. Wainwright",
+          "citation": "372 U.S. 335",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1963-03-18",
+          "opinion_type": "lead-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/8954562/gideon-v-wainwright/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": "ates Government.\u201d 1 Treating the petition for habeas corpus as properly before it, the State Supreme Court, \u201cupon consideration thereof\u201d but without an opinion, denied all relief. Since 1942, when Betts v. Brady, 316 U. S. 455, was decided by a divided *338Court, the problem of a defendant\u2019s federal constitutional right to counsel in a state court has been a continuing source of controversy and litigation in both state and federal courts.2 To give this problem another review here, we granted certiorari. 370 U. S. 908. Since Gideon was proceeding in forma pauperis, we appointed counsel to represent him and requested both sides to discuss in their briefs and oral arguments the following: \u201cShould this Court\u2019s holding in Betts v. Brady, 316 U. S. 455, be reconsidered?\u201d I. The facts upon which Betts claimed that he had been unconstitutionally denied the right to have counsel appointed to assist him are strikingly like the facts upon which Gideon here bases his federal constitutional claim. Betts was indicted for robbery in a Maryland state court. On arraignment, he told the trial judge of his lack of funds to hire a lawyer and asked the court to appoint one for him. Betts was advised that it was not the practice in that county to appoint counsel for indigent defendants except in murder and rape cases. He then pleaded not guilty, had witnesses summoned, cross-examined the State\u2019s witnesses, examined his own, and chose not to testify himself. He was found guilty by the judge, sitting without a jury, and sentenced to eight years in prison. *339Like Gideon, Betts sought release by habeas corpus, alleging that he had been denied the right to assistance of counsel in violation of the Fourteenth Amendment. Betts was denied any relief, and on review this Court affirmed. It was held ",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "cl-8945501:1600"
+        },
+        {
+          "case_id": "cl-106545",
+          "name": "Gideon v. Wainwright",
+          "citation": "9 L. Ed. 2d 799; 83 S. Ct. 792; 372 U.S. 335; 1963 U.S. LEXIS 1942; 93 A.L.R. 2d 733; 23 Ohio Op. 2d 258",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1963-03-18",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/106545/gideon-v-wainwright/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S4",
+          "text": "of Idaho, William G. Clark, Attorney General of Illinois, Evan L. Hultman, Attorney General of Iowa, John B. Breckinridge, Attorney General of Kentucky, Frank E. Hancock, Attorney General of Maine, Frank J. Kelley, Attorney General of Michigan, Thomas F. Eagleton, Attorney General of Missouri, Charles E. Springer, Attorney General of Nevada, Mark McElroy, Attorney General of Ohio, Leslie R. Burgum, Attorney General of North Dakota, Robert Y. Thornton, Attorney General of Oregon, J. Joseph Nugent, Attorney General of Rhode Island, A. C. Miller, Attorney General of South Dakota, John J. O'Connell, Attorney General of Washington, C. Donald Robertson, Attorney General of West Virginia, and George N. Hayes, Attorney General of Alaska. Robert Y. Thornton, Attorney General of Oregon, and Harold W. Adams, Assistant Attorney General, filed a separate brief for the State of Oregon, as amicus curiae. MR. JUSTICE BLACK delivered the opinion of the Court. Petitioner was charged in a Florida state court with having broken and entered a poolroom with intent to commit a misdemeanor. This offense is a felony under *337 Florida law. Appearing in court without funds and without a lawyer, petitioner asked the court to appoint counsel for him, whereupon the following colloquy took place: \"The COURT: Mr. Gideon, I am sorry, but I cannot appoint Counsel to represent you in this case. Under the laws of the State of Florida, the only time the Court can appoint Counsel to represent a Defendant is when that person is charged with a capital offense. I am sorry, but I will have to deny your request to appoint Counsel to defend you in this case. \"The DEFENDANT: The United States Supreme Court says I am entitled to be represented by Counsel.\" Put to trial before a jury, Gideon conducted his defense a",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "cl-106545:1600"
+        },
+        {
+          "case_id": "cl-8945501",
+          "name": "Gideon v. Wainwright",
+          "citation": "372 U.S. 335",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1963-03-18",
+          "opinion_type": "lead-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/8954562/gideon-v-wainwright/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": "abeas corpus, alleging that he had been denied the right to assistance of counsel in violation of the Fourteenth Amendment. Betts was denied any relief, and on review this Court affirmed. It was held that a refusal to appoint counsel for an indigent defendant charged with a felony did not necessarily violate the Due Process Clause of the Fourteenth Amendment, which for reasons given the Court deemed to be the only applicable federal constitutional provision. The Court said: \u201cAsserted denial [of due process] is to be tested by an appraisal of the totality of facts in a given case. That which may, in one setting, constitute a denial of fundamental fairness, shocking to the universal sense of justice, may, in other circumstances, and in the light of other considerations, fall short of such denial.\u201d 316 U. S., at 462. Treating due process as \u201ca concept less rigid and more fluid than those envisaged in other specific and particular provisions of the Bill of Rights,\u201d the Court held that refusal to appoint counsel under the particular facts and circumstances in the Betts case was not so \u201coffensive to the common and fundamental ideas of fairness\u201d as to amount to a denial of due process. Since the facts and circumstances of the two cases are so nearly indistinguishable, we think the Betts v. Brady holding if left standing would require us to reject Gideon\u2019s claim that the Constitution guarantees him the assistance of counsel. Upon full reconsideration we conclude that Betts v. Brady should be overruled. II. The Sixth Amendment provides, \u201cIn all criminal prosecutions, the accused shall enjoy the right . . . to have the Assistance of Counsel for his defence.\u201d We have con*340strued this to mean that in federal courts counsel must be provided for defendants unable to. employ counsel",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "cl-8945501:3200"
+        },
+        {
+          "case_id": "cl-106545",
+          "name": "Gideon v. Wainwright",
+          "citation": "9 L. Ed. 2d 799; 83 S. Ct. 792; 372 U.S. 335; 1963 U.S. LEXIS 1942; 93 A.L.R. 2d 733; 23 Ohio Op. 2d 258",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1963-03-18",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/106545/gideon-v-wainwright/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S6",
+          "text": "appoint Counsel to defend you in this case. \"The DEFENDANT: The United States Supreme Court says I am entitled to be represented by Counsel.\" Put to trial before a jury, Gideon conducted his defense about as well as could be expected from a layman. He made an opening statement to the jury, cross-examined the State's witnesses, presented witnesses in his own defense, declined to testify himself, and made a short argument \"emphasizing his innocence to the charge contained in the Information filed in this case.\" The jury returned a verdict of guilty, and petitioner was sentenced to serve five years in the state prison. Later, petitioner filed in the Florida Supreme Court this habeas corpus petition attacking his conviction and sentence on the ground that the trial court's refusal to appoint counsel for him denied him rights \"guaranteed by the Constitution and the Bill of Rights by the United States Government.\"[1] Treating the petition for habeas corpus as properly before it, the State Supreme Court, \"upon consideration thereof\" but without an opinion, denied all relief. Since 1942, when Betts v. Brady, 316 U. S. 455, was decided by a divided *338 Court, the problem of a defendant's federal constitutional right to counsel in a state court has been a continuing source of controversy and litigation in both state and federal courts.[2] To give this problem another review here, we granted certiorari. 370 U. S. 908. Since Gideon was proceeding in forma pauperis, we appointed counsel to represent him and requested both sides to discuss in their briefs and oral arguments the following: \"Should this Court's holding in Betts v. Brady, 316 U. S. 455, be reconsidered?\" I. The facts upon which Betts claimed that he had been unconstitutionally denied the right to have counsel appointed",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "cl-106545:3200"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 2,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "caseName:(Gideon AND Wainwright)",
+              "mode": "keyword",
+              "court": "scotus",
+              "after": "",
+              "before": "",
+              "order": "citeCount desc",
+              "status": "ok",
+              "matches": 2
+            }
+          ],
+          "passages": 6
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 0,
+          "consulted_urls": 5,
+          "consulted_sources": [
+            {
+              "url": "https://www.govinfo.gov/app/details/USREPORTS-372/USREPORTS-372-335/context",
+              "title": "www.govinfo.gov"
+            },
+            {
+              "url": "https://www.loc.gov/item/usrep372335/",
+              "title": "www.loc.gov"
+            },
+            {
+              "url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep372/usrep372335/usrep372335.pdf",
+              "title": "tile.loc.gov"
+            },
+            {
+              "url": "https://csm.ca.gov/matters/22-TC-02/doc1.pdf",
+              "title": "csm.ca.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/DocketPDF/20/20-437/175908/20210416105240876_20-437rbUnitedStates.pdf",
+              "title": "www.supremecourt.gov"
+            }
+          ],
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:law.justia.com/cases/federal/us/372/335 Gideon v Wainwright 372 U.S. 335 opinion \u00b7 Gideon v. Wainwright 372 U.S. 335 opinion Supreme Court full text reasoning"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T08:02:37.834Z",
+      "jurisdiction_note": "",
+      "coverage_notes": [
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Gideon v. Wainwright facts issue holding reasoning right to appointed counsel Sixth Amendment Fourteenth Amendment",
+      "task": "brief",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "research_issues": [
+        {
+          "id": "I1",
+          "question": "Brief Gideon v. Wainwright, including its facts, issue, holding, and reasoning under U.S. constitutional law."
+        }
+      ],
+      "document_coverage": [],
+      "filters": {
+        "court": "scotus",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "issue_id": "I1",
+          "section": "Facts and procedure",
+          "claim": "Clarence Earl Gideon, unable to afford a lawyer, was charged in Florida with a felony for breaking and entering a poolroom. The trial court denied his request for appointed counsel because Florida appointed counsel for indigent defendants only in capital cases. Gideon represented himself, was convicted by a jury, and sentenced to five years in prison. The Florida Supreme Court denied his habeas petition without an opinion; the U.S. Supreme Court granted review.",
+          "source_id": "S1",
+          "quote_id": "S1Q1",
+          "web_source_urls": [],
+          "quote": "Mr. Justice Black delivered the opinion of the Court. Petitioner was charged in a Florida state court with having broken and entered a poolroom with intent to commit a misdemeanor. This offense is a felony under *337Florida law.",
+          "evidence_method": "exact_passage"
+        }
+      ],
+      "removed": 3,
+      "removed_references": [
+        {
+          "reason": "Web reference was not an eligible tool-reported URL, or mixed evidence types.",
+          "mixed_evidence": false,
+          "unmatched_urls": [
+            "https://supreme.justia.com/cases/federal/us/372/335/"
+          ],
+          "urls": [
+            "https://supreme.justia.com/cases/federal/us/372/335/"
+          ]
+        },
+        {
+          "reason": "Web reference was not an eligible tool-reported URL, or mixed evidence types.",
+          "mixed_evidence": false,
+          "unmatched_urls": [
+            "https://supreme.justia.com/cases/federal/us/372/335/"
+          ],
+          "urls": [
+            "https://supreme.justia.com/cases/federal/us/372/335/"
+          ]
+        },
+        {
+          "reason": "Web reference was not an eligible tool-reported URL, or mixed evidence types.",
+          "mixed_evidence": false,
+          "unmatched_urls": [
+            "https://supreme.justia.com/cases/federal/us/372/335/"
+          ],
+          "urls": [
+            "https://supreme.justia.com/cases/federal/us/372/335/"
+          ]
+        }
+      ],
+      "unanswered_issues": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [
+        "Issue",
+        "Holding",
+        "Reasoning"
+      ],
+      "model_used": true,
+      "status": 200
+    },
+    "events": [
+      {
+        "seconds": 1.629,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 1.629,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 4.99,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "brief",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 4.99,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 4.99,
+        "stage": "searching",
+        "message": "Finding the principal opinion\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.99,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 4.99,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 5.001,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 5.028,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 0 passages retrieved."
+      },
+      {
+        "seconds": 5.302,
+        "stage": "reading",
+        "message": "Reading Gideon v. Wainwright\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 5.302,
+        "stage": "reading",
+        "message": "Reading Gideon v. Wainwright\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 5.71,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 6 passages retrieved."
+      },
+      {
+        "seconds": 5.71,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 15.541,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 1,
+    "exact_passages": 1,
+    "web_citations": 0
+  },
+  {
+    "id": "fair_use_memo",
+    "request": {
+      "question": "Write a short US copyright research memo: a nonprofit teacher wants to include one entire copyrighted photograph in a classroom handout critiquing that photograph. Analyze both sides of fair use; assume no license.",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "bd36db29-3935-4e91-a63e-be3a48e7047e"
+    },
+    "review_criteria": "Four statutory factors, concrete supplied hypothetical only, arguments on both sides, no automatic nonprofit immunity or definitive guarantee.",
+    "expected_action": "research",
+    "seconds": 75.295,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-11104453",
+          "name": "Medical Imaging & Technology Alliance v. Library of Congress",
+          "citation": "",
+          "court": "District Court, District of Columbia",
+          "decision_date": "2025-07-21",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10637866/medical-imaging-technology-alliance-v-library-of-congress/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "echnology Association\u2019s motion for summary judgment is denied, and the Library and Librarian of Congress\u2019 motion for summary judgment is granted. I. BACKGROUND The statutory scheme, facts, and procedural history relevant to the pending motion are described below. A. Statutory and Regulatory Background The Copyright Act of 1976 prohibits the unauthorized reproduction of \u201coriginal works of authorship fixed in any tangible medium of expression.\u201d 17 U.S.C. \u00a7 102(a). Such original works include computer programs and software. See id. \u00a7\u00a7 102(a)(1), 109(b)(1)(A). While generally prohibiting the reproduction of original works, the Copyright Act also codifies the fair use doctrine, which allows reproduction of works for certain purposes such as \u201ccriticism, comment, news reporting, teaching . . ., scholarship, or research\u201d upon \u201cconsider[ation]\u201d of four factors: (1) the purpose and character of the use, including whether such use is of a commercial nature or is for nonprofit educational purposes; (2) the nature of the copyrighted work; (3) the amount and substantiality of the portion used in relation to the copyrighted work as a whole; and (4) the effect of the use upon the potential market for or value of the copyrighted work. Id. \u00a7 107. \u201cWhen those factors favor a finding of fair use, that use is \u2018not an infringement of copyright,\u2019\u201d so any party sued for a copyright violation based on that use will have a complete defense. Green v. U.S. Dep\u2019t of Just., 111 F.4th 81, 89 (D.C. Cir. 2024) (quoting 17 U.S.C. \u00a7 107). \u201cIn the 1990s, Congress anticipated that \u2018the movies, music, software, and literary works that are the fruit of American creative genius\u2019 could soon be accessed \u2018quickly and conveniently via the Internet.\u2019\u201d Id. (quoting S. Rep. No. 105-190, at 8 (1998)). Copyright owner",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "cl-11104453:1600"
+        },
+        {
+          "case_id": "cl-10502728",
+          "name": "Canadian Stnrd Assoc v. P.S. Knight Co",
+          "citation": "112 F.4th 298",
+          "court": "Court of Appeals for the Fifth Circuit",
+          "decision_date": "2024-08-09",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10036127/canadian-stnrd-assoc-v-ps-knight-co/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S2",
+          "text": "t constitute copyright infringement as a matter of United States copyright law under Veeck.9 We REVERSE the district court\u2019s summary judgment decisions and REMAND with instructions to grant summary judgment in favor of Knight and to dismiss CSA\u2019s infringement claim. Additionally, because CSA\u2019s claim now fails as a matter of law, we VACATE the district court\u2019s grant of injunctive relief. _____________________ 9 Because Knight\u2019s actions are not infringement as a matter of law, we need not reach Knight\u2019s appeal of the district court\u2019s decision on fair use. 14 Case: 23-50081 Document: 75-1 Page: 15 Date Filed: 08/09/2024 No. 23-50081 Dana M. Douglas, Circuit Judge, dissenting: I agree with the majority that the crux of this dispute hinges on whether Knight\u2019s copying of Canadian law was permissible under our holding in Veeck v. Southern Building Code Congress International, Inc., 293 F.3d 791 (5th Cir. 2002) (en banc). However, because I interpret Veeck differently, I depart ways with the majority and respectfully dissent. \u201cTo prove copyright infringement, a plaintiff must show \u2018ownership of a valid copyright\u2019 and \u2018copying\u2019 by the defendant.\u201d Batiste v. Lewis, 976 F.3d 493, 501 (5th Cir. 2020) (citing Feist Publ\u2019ns, Inc. v. Rural Tel. Serv. Co., 499 U.S. 340, 361 (1991)). I agree with the majority that CSA owns valid Canadian copyrights in all seven of the at-issue model codes. But I disagree that Veeck\u2019s holding on infringement is outcome determinative in this case. Although Veeck considered whether one party infringed on another\u2019s model codes, its analysis focused on whether model codes are copyrightable. 293 F.3d at 794. \u201cOur short answer is that as law, the model codes enter the public domain and are not subject to the copyright holder\u2019s exclusive prerogatives. As model ",
+          "locator": "Whitespace-normalized extracted text, characters 25601\u201327400",
+          "original_id": "cl-10502728:25600"
+        },
+        {
+          "case_id": "cl-10779160",
+          "name": "Capitol Records v. Vimeo",
+          "citation": "",
+          "court": "Court of Appeals for the Second Circuit",
+          "decision_date": "2025-01-13",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10312572/capitol-records-v-vimeo/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": "at the time in question is illustrated by the Supreme Court\u2019s subsequent consideration of Andy Warhol Foundation for the Visual Arts, Inc. v. Goldsmith, 598 U.S. 508 (2023). The question presented to the Court in that case was whether the first statutory factor for a finding of fair use\u2014\u201cthe purpose and character of the use,\u201d 17 U.S.C. \u00a7 107(1)\u2014favored a finding of fair use for a portrait of the singer Prince, created by Andy Warhol in 1984, which incorporated a 29 copyright-protected photograph of Prince taken by photographer Lynn Goldsmith, while making changes to the original. See Warhol, 598 U.S. at 516- 18. More than 40 copyright experts, as \u201cCopyright Law Professors\u201d and \u201cArt Law Professors,\u201d filed amicus briefs in their own names supporting a finding of fair use and consequently no infringement. 10 At the same time, approximately 18 intellectual property professors filed amicus briefs arguing that the copying did not represent fair use. 11 The Court itself also proved to be bitterly divided. In the majority opinion, seven Justices rejected the arguments passionately advanced by two dissenters that Warhol\u2019s changes to 10See Br. of Amici Curiae Copyright Law Professors in Support of Petitioner, Warhol, 598 U.S. 508; Br. of Art Law Professors as Amici Curiae in Support of Petitioner, Warhol, 598 U.S. 508. 11See Br. of Professors Peter S. Menell, Shyamkrishna Balganesh, and Jane C. Ginsburg as Amici Curiae in Support of Respondents, Warhol, 598 U.S. 508; Br. of Amicus Curiae Jeffrey Sedlik, Professional Photographer and Photography Licensing Expert, in Support of Respondents, Warhol, 598 U.S. 508; Br. of Amicus Curiae Prof. Zvi S. Rosen in Support of Respondents, Warhol, 598 U.S. 508; Br. of Professor Guy A. Rub as Amici Curiae in Support of Respondents, Warhol, 598 ",
+          "locator": "Whitespace-normalized extracted text, characters 36801\u201338600",
+          "original_id": "cl-10779160:36800"
+        },
+        {
+          "case_id": "cl-11104453",
+          "name": "Medical Imaging & Technology Alliance v. Library of Congress",
+          "citation": "",
+          "court": "District Court, District of Columbia",
+          "decision_date": "2025-07-21",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10637866/medical-imaging-technology-alliance-v-library-of-congress/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S4",
+          "text": "eriod, adversely affected by\u201d the anticircumvention provision based on four described factors, plus leeway for other \u201cappropriate\u201d factors: (i) the availability for use of copyrighted works; (ii) the availability for use of works for nonprofit archival, preservation, and educational purposes; (iii) the impact that the prohibition on the circumvention of technological measures applied to copyrighted works has on criticism, comment, news reporting, teaching, scholarship, or research; (iv) the effect of circumvention of technological measures on the market for or value of copyrighted works; and (v) such other factors as the Librarian considers appropriate. 17 U.S.C. \u00a7 1201(a)(1)(C). Upon making that determination, the Librarian may waive the anticircumvention provision for that class of works. Id. \u00a7 1201(a)(1)(D). \u201cAlthough the DMCA entrusts the Librarian with the ultimate decision, as a practical matter, the Register performs most of the rulemaking functions,\u201d MITA II, 103 F.4th at 834; H.R. Rep. 105-796, at 64, including soliciting proposed rules, providing notice of such rules, and 1 The U.S. Office of Copyright, headed by the Register of Copyrights, is housed within the Library of Congress. MITA II, 103 F.4th at 833; 17 U.S.C. \u00a7 701(a) (\u201cAll administrative functions and duties under this title, except as otherwise specified, are the responsibility of the Register of Copyrights as director of the Copyright Office of the Library of Congress. The Register of Copyrights, together with the subordinate officers and employees of the Copyright Office, shall be appointed by the Librarian of Congress, and shall act under the Librarian's general direction and supervision.\u201d). 4 opening the rules to public comment, and in doing so, develops a comprehensive administrative record. Se",
+          "locator": "Whitespace-normalized extracted text, characters 6401\u20138200",
+          "original_id": "cl-11104453:6400"
+        },
+        {
+          "case_id": "cl-10502728",
+          "name": "Canadian Stnrd Assoc v. P.S. Knight Co",
+          "citation": "112 F.4th 298",
+          "court": "Court of Appeals for the Fifth Circuit",
+          "decision_date": "2024-08-09",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10036127/canadian-stnrd-assoc-v-ps-knight-co/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": "rnment.\u201d 17 U.S.C. \u00a7 105(a) (emphasis added). But CSA\u2019s works were \u201cauthored in Canada by a private Canadian organization and incorporated only into Canadian law.\u201d 16 Case: 23-50081 Document: 75-1 Page: 17 Date Filed: 08/09/2024 No. 23-50081 Knight\u2019s second argument is that the district court erred in granting summary judgment to CSA on Knight\u2019s fair use defense. In applying the fair use doctrine, we consider the following factors: (1) the purpose and character of the use, including whether such use is of a commercial nature or is for nonprofit educational purposes; (2) the nature of the copyrighted work; (3) the amount and substantiality of the portion used in relation to the copyrighted work as a whole; and (4) the effect of the use upon the potential market for or value of the copyrighted work. 17 U.S.C. \u00a7 107; Bell v. Eagle Mountain Saginaw Indep. Sch. Dist., 27 F.4th 313, 321 (5th Cir. 2022). Here, the overwhelming balance of factors cautions against a finding of fair use. First, Knight\u2019s Codes are not transformative, as they are simply copies of CSA\u2019s code. Beyond providing nothing transformative, their purpose is entirely commercial\u2014Knight is not a nonprofit, but a business, who is actively engaged in undercutting CSA\u2019s prices to make money for itself. See Harper & Row Publishers, Inc. v. Nation Enterprises, 471 U.S. 539, 562 (1985) (\u201cThe fact that a publication was commercial as opposed to a nonprofit is a separate factor that tends to weigh against a finding of fair use.\u201d). The commerciality of Knight\u2019s use distinguishes this case from American Society for Testing & Materials v. Public.Resource.Org Inc., 896 F.3d 437 (D.C. Cir. 2018) (ASTM I) and American Society for Testing and Materials v. Public.Resource.Org Inc., 82 F.4th 1262 (D.C. Cir. 2023) (ASTM II). Th",
+          "locator": "Whitespace-normalized extracted text, characters 30401\u201332200",
+          "original_id": "cl-10502728:30400"
+        },
+        {
+          "case_id": "cl-10779160",
+          "name": "Capitol Records v. Vimeo",
+          "citation": "",
+          "court": "Court of Appeals for the Second Circuit",
+          "decision_date": "2025-01-13",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10312572/capitol-records-v-vimeo/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S6",
+          "text": "ents, Warhol, 598 U.S. 508; Br. of Amicus Curiae Prof. Zvi S. Rosen in Support of Respondents, Warhol, 598 U.S. 508; Br. of Professor Guy A. Rub as Amici Curiae in Support of Respondents, Warhol, 598 U.S. 508; Br. of Amici Curiae Institute for Intellectual Property and Social Justice and Intellectual-Property Professors in Support of Respondents, Warhol, 598 U.S. 508; Br. of Professor Terry Kogan as Amicus Curiae in Support of Respondents, Warhol, 598 U.S. 508. 30 the original Goldsmith photograph were transformative and that the ultimate creation was a fair use. See Warhol, 598 U.S. at 548-50. Where academic scholars specialized in the study of the fair use question and the Justices of the Supreme Court are so divided, we cannot conclude that it was \u201capparent,\u201d as required by Section 512(c)(1)(A)(ii), to untutored employees of Vimeo that dancing, acting, or lip-dubbing performances of copyrighted music uses posted by Vimeo users were not fair use. In making this observation, we express no views on the strength or weakness of arguments that such lip-dubs or dances or acting performances qualify as fair use. We are merely pointing out the weakness of Plaintiffs\u2019 argument that Vimeo had red flag knowledge of infringement based on mere observation of the videos by employees with no training in copyright law. We reject Plaintiffs\u2019 arguments that Vimeo lost the protection of the safe harbor by virtue of having red flag knowledge that user postings were infringing and then failing to remove those postings from its website. 31 2. Right and Ability to Control Plaintiffs also contend that Vimeo lost the protection of the Section 512(c) safe harbor because it \u201creceive[d] a financial benefit directly attributable to the infringing activity, in a case in which [it had] the right an",
+          "locator": "Whitespace-normalized extracted text, characters 38401\u201340200",
+          "original_id": "cl-10779160:38400"
+        },
+        {
+          "case_id": "cl-11104453",
+          "name": "Medical Imaging & Technology Alliance v. Library of Congress",
+          "citation": "",
+          "court": "District Court, District of Columbia",
+          "decision_date": "2025-07-21",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10637866/medical-imaging-technology-alliance-v-library-of-congress/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": " See 2021 Reg. Rec. at 229, AR at 1929. As to the first factor, the availability for use of copyrighted works, the Register considered the proponents\u2019 concern about the inadequate availability of timely, cost-effective repair services during the COVID pandemic given the anticircumvention provision\u2019s restriction of the use of the device software and manuals, countered by the plaintiffs\u2019 assertions that OEMs offered robust service and repair options and that owners and lessees of devices can become authorized to conduct repairs, too, through particular programs. See id. at 224-226, AR at 1924-26. She concluded that the \u201cfactor favors an exemption because the prohibition on circumvention\u201d does make \u201cmedical equipment software and manuals less available for use in noninfringing diagnosis, maintenance, and repair.\u201d Id. at 226, AR at 1926. The Register determined that the second and third factors\u2014the \u201cavailability for use of works for nonprofit archival, preservation, and educational purposes\u201d and \u201cthe impact that the prohibition on the circumvention of technological measures . . . has on criticism, comment, news reporting, teaching, scholarship, or research,\u201d 17 U.S.C. \u00a7 1201(a)(1)(C)(ii)-(iii)\u2014were not \u201cespecially relevant to the determination,\u201d though MITA argued that the commercial nature of the proponents\u2019 interest undercut the nonprofit purposes in these factors, 2021 Reg. Rec. at 226, 11 AR at 1926. The Register noted, however, the unaddressed gap in MITA\u2019s argument that \u201crepair of medical devices and systems that are no longer supported by OEMs arguably preserves the availability for use of the equipment\u2019s software and servicing materials.\u201d Id. Regarding the \u201ceffect of circumvention . . . on the market for or value of copyrighted works,\u201d 17 U.S.C. \u00a7 1201(a)(1)(C)(iv),",
+          "locator": "Whitespace-normalized extracted text, characters 20801\u201322600",
+          "original_id": "cl-11104453:20800"
+        },
+        {
+          "case_id": "cl-10502728",
+          "name": "Canadian Stnrd Assoc v. P.S. Knight Co",
+          "citation": "112 F.4th 298",
+          "court": "Court of Appeals for the Fifth Circuit",
+          "decision_date": "2024-08-09",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10036127/canadian-stnrd-assoc-v-ps-knight-co/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S8",
+          "text": "& Materials v. Public.Resource.Org Inc., 896 F.3d 437 (D.C. Cir. 2018) (ASTM I) and American Society for Testing and Materials v. Public.Resource.Org Inc., 82 F.4th 1262 (D.C. Cir. 2023) (ASTM II). There, defendant was a nonprofit that hosted a free website with the purpose of increasing access to the law and other government materials. ASTM I, 896 F.3d at 443-44. These cases suggest that posting enacted laws for the 17 Case: 23-50081 Document: 75-1 Page: 18 Date Filed: 08/09/2024 No. 23-50081 purpose of educating members of the public is a transformative use. See ASTM II, 82 F.4th at 1268. But Knight was not a nonprofit, and though his copies cost less than CSA\u2019s, charging $60 is by no means free. Thus, ASTM I and II have no bearing on the instant matter. Additionally, the propriety of Knight\u2019s conduct\u2014incorporating a new entity in the United States and transferring assets to that entity to be \u201coutside the direct jurisdiction of the [Canadian] Federal Court\u201d that held it in contempt\u2014weighs against a finding of fair use. See Harper & Row, 471 U.S. at 562. (\u201cAlso relevant to the \u2018character\u2019 of the use is \u2018the propriety of the defendant\u2019s conduct.\u201d) (internal citation omitted). Although the second factor may be neutral, the third factor also weigh against fair use, as Knight\u2019s Codes are not transformative, and CSA\u2019s works are copied in their entirety. See Campbell v. Acuff-Rose Music, Inc., 510 U.S. 569, 587-88 (\u201c[A] work composed primarily of an original, particularly its heart, with little added or changed, is more likely to be a merely superseding use, fulfilling demand for the original.\u201d). Knight even advertises his code as \u201cthe same.\u201d As to the fourth factor, it too weighs against fair use because, as the district court noted, there is evidence in the record that CSA",
+          "locator": "Whitespace-normalized extracted text, characters 32001\u201333800",
+          "original_id": "cl-10502728:32000"
+        },
+        {
+          "id": "W1",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "uscode.house.gov",
+          "citation": "",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=%28title%3A17+section%3A107+edition%3Aprelim%29",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "uscode.house.gov",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W2",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "www.supremecourt.gov",
+          "citation": "",
+          "source_url": "https://www.supremecourt.gov/opinions/boundvolumes/510bv.pdf",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "www.supremecourt.gov",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W19",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "cdn.ca9.uscourts.gov",
+          "citation": "",
+          "source_url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2003/07/07/0055521oop.pdf",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "cdn.ca9.uscourts.gov",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W21",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "www.supremecourt.gov",
+          "citation": "",
+          "source_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r23_6k47.pdf",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "www.supremecourt.gov",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 558,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "U.S. copyright fair use entire photograph classroom handout criticism nonprofit teaching",
+              "mode": "semantic",
+              "court": "",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 558
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 4,
+          "consulted_urls": 41,
+          "consulted_sources": [
+            {
+              "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A17+section%3A107+edition%3Aprelim%29",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/boundvolumes/510bv.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/20pdf/593us1r26_f29g.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/DocketPDF/18/18-956/133556/20200219162704277_18-956%20DJF%20Amicus%20Brief.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/DocketPDF/25/25-235/370677/20250826013438521_DWHHOBSCOTUSFairUSE%202025-08-25%2001%20Petition.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/DocketPDF/24/24A1263/363315/20250616174248620_DWHHOBFairUse%202025-06-16%2002%20Appendix.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://uscode.house.gov/view.xhtml?edition=prelim&req=granuleid%3AUSC-prelim-title17-chapter1",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://uscode.house.gov/download/annualhistoricalarchives/pdf/2011/2011usc17.pdf",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://uscode.house.gov/view.xhtml?edition=prelim&path=%2Fprelim%40title17%2Fchapter1",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://uscode.house.gov/view.xhtml?edition=prelim&hl=false&num=0&req=granuleid%3AUSC-prelim-title17-section107&saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxNy1zZWN0aW9uMTA2%7C%7C%7C0%7Cfalse%7Cprelim",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://uscode.house.gov/view.xhtml?edition=2023&num=0&req=granuleid%3AUSC-2023-title17-section504",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A17+section",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://uscode.house.gov/view.xhtml?edition=2010&num=0&req=granuleid%3AUSC-2010-title17-section107",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A17+section%3A114+edition%3Aprelim%29",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/Search.aspx?Search=campbell+soup+whistle+lower",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://uscode.house.gov/view.xhtml?edition=2023&num=0&req=granuleid%3AUSC-2023-title17-section1401",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://www.ca2.uscourts.gov/clerk/case_filing/rules/title7/rule_27.html",
+              "title": "www.ca2.uscourts.gov"
+            },
+            {
+              "url": "https://uscode.house.gov/view.xhtml?edition=1994&num=0&req=granuleid%3AUSC-1994-title17-section108",
+              "title": "uscode.house.gov"
+            },
+            {
+              "url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2003/07/07/0055521oop.pdf",
+              "title": "cdn.ca9.uscourts.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/22pdf/598us2r23_c0n2.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/22pdf/598us2r23_6k47.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/slipopinion/22?os=io",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://cdn.ca9.uscourts.gov/datastore/uploads/guides/stand_of_review/III.%20Civil%20Proceedings%202022.htm",
+              "title": "cdn.ca9.uscourts.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/search.aspx?Search=warhol",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/search.aspx?filename=%2Fdocket%2FDocketFiles%2Fhtml%2FPublic%2F21-869.html",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/casefinder.aspx",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/slipopinion/22",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/docket/docket.aspx",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/search_center.aspx",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.ca1.uscourts.gov/opn/aci?OPINNUM=99-1249",
+              "title": "www.ca1.uscourts.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/boundvolumes.aspx",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/orders/journal.aspx",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.ca1.uscourts.gov/sites/ca1/files/opnfiles/11-1262P-01A.pdf",
+              "title": "www.ca1.uscourts.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/DocketPDF/21/21-869/233564/20220815175031639_21-869bsacUnitedStates.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/DocketPDF/21/21-869/233541/20220815163511800_CSEL_Goldsmith_Amicus%20MAIN%20August%2015%202022%20EFile.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/DocketPDF/18/18-1430/90519/20190304145955525_00000003.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.ca1.uscourts.gov/opn/aci?page=668",
+              "title": "www.ca1.uscourts.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/Search.aspx?Search=boxes+the+national+apple+music",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/search.aspx?Search=%22fair+use%22",
+              "title": "www.supremecourt.gov"
+            }
+          ],
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:uscode.house.gov 17 U.S.C. 107 fair use \u00b7 site:supremecourt.gov opinions Campbell Acuff-Rose fair use 510 U.S. 569 pdf \u00b7 site:ca2.uscourts.gov fair use photograph entire image Bill Graham Archives Dorling Kindersley opinion \u00b7 site:ca2.uscourts.gov fair use photograph classroom educational reproduction photograph opinion"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:supremecourt.gov/opinions/22pdf Warhol Goldsmith 598 U.S. 508 pdf fair use photograph opinion \u00b7 site:ca2.uscourts.gov \"Bill Graham Archives\" \"Dorling Kindersley\" fair use \u00b7 site:ca1.uscourts.gov Nunez Caribbean International News photograph fair use opinion \u00b7 site:ca9.uscourts.gov Kelly Arriba Soft photograph fair use complete image opinion"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:ca1.uscourts.gov/opn Nunez Caribbean International News 235 F.3d 18 photograph fair use opinion pdf \u00b7 site:ca2.uscourts.gov \"Bill Graham Archives\" \"purpose\" \"full images\" fair use \u00b7 site:supremecourt.gov/opinions/boundvolumes/510bv.pdf Campbell fair use transformative amount reasonable in relation to purpose criticism \u00b7 site:supremecourt.gov/opinions/22pdf/598us2r23_6k47.pdf nature amount market fourth factor Warhol Goldsmith"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:supremecourt.gov/opinions/boundvolumes/510bv.pdf \"amount and substantiality\" \"purpose\" Campbell fair use \u00b7 site:supremecourt.gov/opinions/22pdf/598us2r23_6k47.pdf \"nature of the copyrighted work\" photograph fair use factor"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T08:03:00.713Z",
+      "jurisdiction_note": "",
+      "coverage_notes": [
+        "Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database.",
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "U.S. copyright fair use entire photograph classroom handout criticism nonprofit teaching",
+      "task": "memo",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "research_issues": [
+        {
+          "id": "I1",
+          "question": "Under U.S. copyright law, how do the four fair-use factors apply when a nonprofit teacher reproduces an entire copyrighted photograph in a classroom handout to critique that photograph, and what are the strongest arguments for and against fair use?"
+        },
+        {
+          "id": "I2",
+          "question": "What U.S. Supreme Court and appellate decisions most closely address fair use of photographs, complete-image reproduction, criticism, or educational use, and how do they inform this scenario?"
+        }
+      ],
+      "document_coverage": [],
+      "filters": {
+        "court": "",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "issue_id": "I1",
+          "section": "Rule",
+          "claim": "Section 107 makes fair use a case-specific balancing of four factors: purpose and character (including nonprofit educational purpose), nature of the work, amount and substantiality used, and effect on the work\u2019s potential market or value. Criticism and teaching, including classroom copies, are listed purposes, but neither educational status nor any other factor creates an automatic result.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://uscode.house.gov/view.xhtml?req=%28title%3A17+section%3A107+edition%3Aprelim%29",
+            "https://www.supremecourt.gov/opinions/boundvolumes/510bv.pdf"
+          ],
+          "source_ids": [
+            "W1",
+            "W2"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I2",
+          "section": "Rule",
+          "claim": "The closest Supreme Court authority is Andy Warhol Foundation for the Visual Arts, Inc. v. Goldsmith, 598 U.S. 508 (2023), which concerned an artist\u2019s use of a copyrighted photograph and requires assessing the particular challenged use rather than treating changes to or reuse of a photograph as automatically transformative. Kelly v. Arriba Soft Corp., 336 F.3d 811 (9th Cir. 2003), held that low-resolution thumbnails used by a search engine were fair use, but its thumbnail quality and search function distinguish it from a full photograph in a classroom handout.",
+          "source_id": "W21",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://www.supremecourt.gov/opinions/22pdf/598us2r23_6k47.pdf",
+            "https://cdn.ca9.uscourts.gov/datastore/opinions/2003/07/07/0055521oop.pdf"
+          ],
+          "source_ids": [
+            "W21",
+            "W19"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Application",
+          "claim": "The teacher\u2019s stated purpose\u2014critiquing the photograph\u2014supports fair use because criticism is expressly listed in \u00a7 107, and nonprofit classroom use also favors the teacher under the first factor. But educational or nonprofit use does not by itself establish fair use; the inquiry asks about the specific use and whether its purpose differs from the photograph\u2019s purpose.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://uscode.house.gov/view.xhtml?req=%28title%3A17+section%3A107+edition%3Aprelim%29",
+            "https://www.supremecourt.gov/opinions/22pdf/598us2r23_6k47.pdf",
+            "https://www.supremecourt.gov/opinions/boundvolumes/510bv.pdf"
+          ],
+          "source_ids": [
+            "W1",
+            "W21",
+            "W2"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Application",
+          "claim": "The nature factor likely weighs against fair use because a photograph\u2019s expressive visual choices are creative expression protected by copyright. Reproducing the entire photograph weighs against the teacher on the amount factor; the countervailing argument is that showing the image in full may be reasonably necessary for students to assess the very visual elements being critiqued. Whether the full image is justified depends on the handout\u2019s critical purpose and how the image is used within it.",
+          "source_id": "W21",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://www.supremecourt.gov/opinions/22pdf/598us2r23_6k47.pdf",
+            "https://www.supremecourt.gov/opinions/boundvolumes/510bv.pdf",
+            "https://cdn.ca9.uscourts.gov/datastore/opinions/2003/07/07/0055521oop.pdf"
+          ],
+          "source_ids": [
+            "W21",
+            "W2",
+            "W19"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Application",
+          "claim": "The market factor is uncertain on the stated facts. The teacher\u2019s strongest argument is that a handout using the photograph to critique it serves a different purpose from a licensed copy offered for its own visual appeal. The rights holder\u2019s strongest argument is that distributing a complete, usable image could substitute for paid reproduction or classroom licenses, particularly if copies are numerous or circulate beyond the class. The relevant inquiry includes potential as well as demonstrated market harm.",
+          "source_id": "W2",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://www.supremecourt.gov/opinions/boundvolumes/510bv.pdf",
+            "https://www.supremecourt.gov/opinions/22pdf/598us2r23_6k47.pdf"
+          ],
+          "source_ids": [
+            "W2",
+            "W21"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Counterargument",
+          "claim": "The strongest fair-use case is that the photograph itself is the object of the criticism, so students need to see it to follow the critique; the use is expressly critical and nonprofit educational, rather than an attempt to supply the photograph for its original purpose. The strongest case against fair use is that the handout reproduces the entire creative work, and nonprofit teaching does not excuse copying that substitutes for an existing or potential image-licensing market.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://uscode.house.gov/view.xhtml?req=%28title%3A17+section%3A107+edition%3Aprelim%29",
+            "https://www.supremecourt.gov/opinions/boundvolumes/510bv.pdf",
+            "https://www.supremecourt.gov/opinions/22pdf/598us2r23_6k47.pdf"
+          ],
+          "source_ids": [
+            "W1",
+            "W2",
+            "W21"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Conclusion",
+          "claim": "On the hypothetical as stated, fair use is plausible but not assured: criticism and nonprofit teaching favor the teacher, while the photograph\u2019s creative nature and complete reproduction favor the rights holder. The balance would turn materially on whether the full image is needed for the critique, the scope of distribution, and whether the handout substitutes for a relevant licensing market.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://uscode.house.gov/view.xhtml?req=%28title%3A17+section%3A107+edition%3Aprelim%29",
+            "https://www.supremecourt.gov/opinions/22pdf/598us2r23_6k47.pdf",
+            "https://www.supremecourt.gov/opinions/boundvolumes/510bv.pdf"
+          ],
+          "source_ids": [
+            "W1",
+            "W21",
+            "W2"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "unanswered_issues": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    },
+    "events": [
+      {
+        "seconds": 0.225,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.225,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 5.416,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "memo",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 5.416,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 5.416,
+        "stage": "searching",
+        "message": "Finding opinions about your question\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 5.416,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 5.416,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 5.446,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 5.461,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 0 passages retrieved."
+      },
+      {
+        "seconds": 12.592,
+        "stage": "reading",
+        "message": "Reading Medical Imaging & Technology Alliance v. Library of Congress\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 12.592,
+        "stage": "reading",
+        "message": "Reading Canadian Stnrd Assoc v. P.S. Knight Co\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 12.592,
+        "stage": "reading",
+        "message": "Reading Capitol Records v. Vimeo\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 13.128,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 13.128,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 75.258,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 7,
+    "exact_passages": 0,
+    "web_citations": 7
+  },
+  {
+    "id": "miranda_arguments",
+    "request": {
+      "question": "Give arguments on both sides of suppressing a voluntary but unwarned custodial statement when a US state prosecutor wants to use it only to impeach the defendant who testifies inconsistently.",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "c05ce849-f036-4dc2-af20-f4562c4af366"
+    },
+    "review_criteria": "Distinguish prosecution case-in-chief from impeachment; Harris exception voluntary/trustworthy, do not say every Miranda violation bars all uses.",
+    "expected_action": "research",
+    "seconds": 41.494,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-11098380",
+          "name": "United States v. Steven George Morgan",
+          "citation": "",
+          "court": "Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2025-07-11",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10631793/united-states-v-steven-george-morgan/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "c] rule[] must be justified by its necessity for the protection of the actual right against compelled self-incrimina- tion.\u201d 542 U.S. at 639. Accordingly, the plurality \u201cinsist[ed] that the closest possible fit be maintained between the Self-Incrimina- tion Clause and any rule designed to protect it.\u201d Id. at 641. As the Patane plurality explained, \u201cthe core protection af- forded by the Self-Incrimination Clause is a prohibition on compel- ling a criminal defendant to testify against himself at trial.\u201d Id. at 637. That\u2019s why the government can\u2019t use Miranda-violative state- ments in its case-in-chief. See id. at 639. But other uses of those statements and their fruits are fair game\u2014so long as they are vol- untary and not coerced. See Oregon v. Elstad, 470 U.S. 298, 307 (1985) (\u201c[T]he Miranda presumption, though irrebuttable for pur- poses of the prosecution\u2019s case in chief, does not require that the statements and their fruits be discarded as inherently tainted.\u201d). So, for example, the Court held in Harris v. New York that the USCA11 Case: 23-11114 Document: 71-1 Date Filed: 07/11/2025 Page: 15 of 59 23-11114 Opinion of the Court 15 government could use a voluntary statement obtained in violation of Miranda to impeach the defendant\u2019s testimony. 401 U.S. 222, 224\u201326 (1971); see also New York v. Quarles, 467 U.S. 649, 654\u201357 (1984) (holding that Miranda-violative statements needn\u2019t be sup- pressed when the questioning is conducted to address an ongoing \u201cpublic safety\u201d concern). Most importantly here, the Patane plurality concluded that the Self-Incrimination Clause didn\u2019t require suppression of the de- fendant\u2019s unwarned but voluntary statement telling a police officer where his pistol was hidden. See 542 U.S. at 634. And in a separate concurring opinion that Justice O\u2019Con",
+          "locator": "Whitespace-normalized extracted text, characters 20801\u201322600",
+          "original_id": "cl-11098380:20800"
+        },
+        {
+          "case_id": "cl-9971626",
+          "name": "State v. Van Voorhis",
+          "citation": "2024 Ohio 1898",
+          "court": "Ohio Court of Appeals",
+          "decision_date": "2024-05-17",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9505013/state-v-van-voorhis/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S2",
+          "text": "tends the trial court was obligated to grant him a mistrial because the State\u2019s introduction of the suppressed statement deprived him of a fair trial and violated due process. -10- {\u00b6 27} \u201cWhether suppressed statements of a defendant may be used for cross- examination depends upon the reason for the suppression of those statements.\u201d State v. Fair, 2d Dist. Montgomery No. 24388, 2011-Ohio-4454, \u00b6 55. \u201cUnder Harris v. New York (1971), 401 U.S. 222, 91 S.Ct. 643, 28 L.Ed.2d 1, the state can use an accused\u2019s voluntary, but un-Mirandized statement, to impeach trial testimony.\u201d State v. Hill, 75 Ohio St.3d 195, 207, 661 N.E.2d 1068 (1996). Miranda\u2019s protections do not free a defendant \u201cfrom the risk of confrontation with prior inconsistent utterances.\u201d Harris at 226. Therefore, a defendant\u2019s credibility may be impeached \u201cby use of his earlier conflicting statements\u201d even if they were obtained in violation of Miranda. Id. {\u00b6 28} Van Voorhis does not dispute the foregoing law. Nor does he claim he made the disputed statement involuntarily. Indeed, nothing in the suppression-hearing transcript suggests that Van Voorhis\u2019 statement was the product of police coercion. The detective simply obtained it in the absence of Miranda warnings. Van Voorhis\u2019 only argument is that the State could not use the suppressed statement for impeachment because there was nothing in his trial testimony to impeach. {\u00b6 29} We find Van Voorhis\u2019 argument to be unpersuasive. In a more typical case, a defendant makes incriminating pretrial statements and then at trial denies having engaged in unlawful conduct. In that situation, the incriminating prior inconsistent statements are used to impeach the defendant\u2019s exculpatory trial testimony. In a way, the present case turns that scenario on its head. Following",
+          "locator": "Whitespace-normalized extracted text, characters 14401\u201316200",
+          "original_id": "cl-9971626:14400"
+        },
+        {
+          "case_id": "cl-11077709",
+          "name": "Gaspar Gaspar-Andres v. State of Arkansas",
+          "citation": "2025 Ark. App. 341",
+          "court": "Court of Appeals of Arkansas",
+          "decision_date": "2025-05-28",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10611121/gaspar-gaspar-andres-v-state-of-arkansas/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": "t\u2019s the most accurate.\u201d The circuit court overruled the objection. The State sought to impeach Gaspar\u2019s testimony and diminish his credibility with the prior inconsistent statement multiple times; no further objections were raised. The jury found Gaspar guilty of the first-degree murder of Miguel Ruiz and hindering Paco\u2019s apprehension. The jury recommended consecutive sentences of thirty years\u2019 incarceration for murder and ten years for hindering apprehension. The circuit court sentenced Gaspar accordingly. In this belated appeal, Gaspar contends that the court erred in finding that his custodial statement was admissible because he knowingly and intelligently waived his Miranda rights and that his statement to police was voluntarily given. He claims that he expressly requested an attorney and 4 did not waive his request, yet he was unconstitutionally subjected to further police interrogation. Gaspar asserts that because his statement was not voluntarily given, the circuit court erred in deeming it admissible. First, we note that, although Gaspar asserts error in the circuit court\u2019s ruling regarding the admissibility of his custodial statement following the suppression hearing, the State did not admit it as substantive evidence of guilt. The statement\u2019s sole use was limited to the impeachment of Gaspar\u2019s trial testimony. Even statements inadmissible against a defendant in the prosecution\u2019s case-in-chief because of the lack of procedural safeguards required by Miranda v. Arizona,2 may, if trustworthiness satisfies legal standards, be used for impeachment purposes to attack the credibility of defendant\u2019s trial testimony.3 Therefore, although Gaspar challenges the circuit court\u2019s finding that his custodial statement was made with the full knowledge and waiver of his constit",
+          "locator": "Whitespace-normalized extracted text, characters 6401\u20138200",
+          "original_id": "cl-11077709:6400"
+        },
+        {
+          "case_id": "cl-11098380",
+          "name": "United States v. Steven George Morgan",
+          "citation": "",
+          "court": "Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2025-07-11",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10631793/united-states-v-steven-george-morgan/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S4",
+          "text": "ire suppression of the de- fendant\u2019s unwarned but voluntary statement telling a police officer where his pistol was hidden. See 542 U.S. at 634. And in a separate concurring opinion that Justice O\u2019Connor joined, Justice Kennedy agreed with the three-Justice plurality that \u201c[a]dmission of nontes- timonial physical fruits . . . does not run the risk of admitting into trial an accused\u2019s coerced incriminating statements against him- self.\u201d Id. at 645 (Kennedy, J., concurring). Five Justices thus con- cluded that a violation of Miranda\u2019s prophylactic rule does not nec- essarily require the suppression of physical evidence derived from a suspect\u2019s unwarned-but-uncoerced statement. And unsurpris- ingly, we have since relied on Patane for precisely that proposition. See United States v. Jackson, 506 F.3d 1358, 1361 (11th Cir. 2007) (\u201cBe- cause Jackson\u2019s firearm is physical evidence and he concedes that his unwarned statement was voluntary, Patane allows the admis- sion of Jackson\u2019s firearm.\u201d). Patane\u2019s logic is fatal to Morgan\u2019s position. Morgan\u2019s state- ment disclaiming the LG phone is, for all intents and purposes, identical to Patane\u2019s statement telling the officer where he had USCA11 Case: 23-11114 Document: 71-1 Date Filed: 07/11/2025 Page: 16 of 59 23-11114 Opinion of the Court 16 hidden his gun. See 542 U.S. at 635. To be sure, the precise Miranda violation there was a little different: In Patane, the police obtained the defendant\u2019s statement before they provided him any warnings; here, the agents obtained Morgan\u2019s statements after he had been warned and had invoked his rights to counsel and silence. But that\u2019s neither here nor there. What underlay the Court\u2019s decision in Patane wasn\u2019t the particular species of Miranda violation but, ra- ther, the recognition that while ",
+          "locator": "Whitespace-normalized extracted text, characters 22401\u201324200",
+          "original_id": "cl-11098380:22400"
+        },
+        {
+          "case_id": "cl-9971626",
+          "name": "State v. Van Voorhis",
+          "citation": "2024 Ohio 1898",
+          "court": "Ohio Court of Appeals",
+          "decision_date": "2024-05-17",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9505013/state-v-van-voorhis/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": "n that situation, the incriminating prior inconsistent statements are used to impeach the defendant\u2019s exculpatory trial testimony. In a way, the present case turns that scenario on its head. Following his arrest, Van Voorhis told a detective that he \u201cdidn\u2019t do this.\u201d At trial, however, Van Voorhis testified, in essence, that he \u201cdid do this\u201d but that he did it in self-defense. This aspect of his testimony conflicted -11- with his earlier statement to the detective, making the earlier statement a prior inconsistent one. Therefore, the trial court properly admitted Van Voorhis\u2019 statement to the detective as it went to the credibility of his trial testimony. State v. McClain, 1st Dist. Butler Nos. CA76-05-0044, CA76-05-0052, 1977 WL 199682, *3-4 (June 22, 1977) (allowing defendant\u2019s impeachment with his suppressed statement to a police officer that he had not been involved in a killing where defendant testified at trial and claimed that he had killed the victim in self-defense). {\u00b6 30} Finally, we note too that Van Voorhis could not have been prejudiced by the State\u2019s use of his statement to the detective. On both direct and cross-examination, he acknowledged telling several other people that he had not been involved in Pierce\u2019s disappearance and making up stories about what had happened. The fact that he made a similar denial to the detective added little to the State\u2019s case. {\u00b6 31} For the foregoing reasons, the second and fourth assignments of error are overruled. {\u00b6 32} Van Voorhis\u2019 third assignment of error states: III. THE TRIAL COURT ERRED WHEN IT FAILED TO INSTUCT THE JURY ON VOLUNTARY MANSLAUGHTER. {\u00b6 33} Van Voorhis contends the trial court erred in denying him a requested jury instruction on voluntary manslaughter. Citing his testimony about Pierce trying to cut",
+          "locator": "Whitespace-normalized extracted text, characters 16001\u201317800",
+          "original_id": "cl-9971626:16000"
+        },
+        {
+          "case_id": "cl-11077709",
+          "name": "Gaspar Gaspar-Andres v. State of Arkansas",
+          "citation": "2025 Ark. App. 341",
+          "court": "Court of Appeals of Arkansas",
+          "decision_date": "2025-05-28",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10611121/gaspar-gaspar-andres-v-state-of-arkansas/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S6",
+          "text": "ting an attorney or not.\u201d Nunes, following Detective Fallis\u2019s instructions, explained to Gaspar that he could stop answering questions when he wanted an attorney. Officer Nunes stated that Gaspar then made \u201csome modifications\u201d to the Miranda form because he wanted to continue speaking to officers. He testified that during the interview, Gaspar never indicated that he was confused or lacked 3 understanding. Officer Nunes testified that other than at the end of the interview when questioning ceased, Gaspar did not invoke his Miranda rights. Officer Nunes stated that no promises or threats were made to Gaspar during the interview, nor was an aggressive tone employed. In an order entered on May 5, the circuit court denied Gaspar\u2019s suppression motion, finding that his statement was made with full knowledge of his constitutional rights and that he waived those rights. The court ruled that because Gaspar intelligently, voluntarily, and knowingly gave his statement to police, the statement was admissible. At the four-day jury trial, after the State rested, Gaspar elected to testify in his own defense. Although the State did not admit Gaspar\u2019s custodial statement as substantive evidence of guilt during its case-in-chief, on cross-examination, because of inconsistencies between his trial testimony and his custodial statement to police, the State requested permission to use portions of Gaspar\u2019s pretrial statement for impeachment purposes. Gaspar\u2019s counsel objected \u201cto the extent that a portion of his statement \u2013 it\u2019s not fully fluent in English. His statement in Spanish is the one that\u2019s the most accurate.\u201d The circuit court overruled the objection. The State sought to impeach Gaspar\u2019s testimony and diminish his credibility with the prior inconsistent statement multiple times; no ",
+          "locator": "Whitespace-normalized extracted text, characters 4801\u20136600",
+          "original_id": "cl-11077709:4800"
+        },
+        {
+          "case_id": "cl-11098380",
+          "name": "United States v. Steven George Morgan",
+          "citation": "",
+          "court": "Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2025-07-11",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10631793/united-states-v-steven-george-morgan/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "n\u2019s statement about the phones against him; they used it to justify its warrantless search of Morgan\u2019s phone, even though he had told another agent earlier that the phone was his. Because Gaviria\u2019s false promise deprived Morgan of knowledge of the consequences of his answer to Gavi- ria\u2019s question about the phones, our precedent requires the conclu- sion that Morgan\u2019s response was involuntary. And because Morgan\u2019s response was involuntary, Patane\u2014 which the Majority Opinion relies on, see Maj. Op. at 13\u201316 (citing USCA11 Case: 23-11114 Document: 71-1 Date Filed: 07/11/2025 Page: 50 of 59 23-11114 ROSENBAUM, J., dissenting 15 United States v. Patane, 542 U.S. 636 (2004) (plurality opinion))\u2014is irrelevant here. As the Majority Opinion recognizes, Patane\u2019s plu- rality held that \u201ca police o\ufb03cer\u2019s \u2018failure to give a suspect the [Mi- randa] warnings . . . [does not] require[] suppression of the physical fruits of the suspect\u2019s unwarned but voluntary statements.\u2019\u201d Id. at 13 (alterations in original) (emphasis added) (quoting Patane, 542 U.S. at 633\u201334). In other words, Patane doesn\u2019t govern cases like this one, where involuntary statements are at issue. Instead, Kastigar governs, meaning we must exclude from the criminal case involuntary statements as well as the physical fruits obtained because of those statements. See Kastigar v. United States, 406 U.S. 441, 453 (1972) (explaining the Fifth Amendment prevents the \u201cuse and derivative use\u201d of compelled statements); United States v. Schmidgall, 25 F.3d 1523, 1528 (11th Cir. 1994) (ex- plaining the Fifth Amendment privilege prevents the government from using \u201cany of the evidence\u201d that is \u201cin any way derived\u201d from involuntary testimony); Lall, 607 F.3d at 1291 (\u201c[W]e have found Lall\u2019s confession involuntary\u2014a conclusion that comp",
+          "locator": "Whitespace-normalized extracted text, characters 80001\u201381800",
+          "original_id": "cl-11098380:80000"
+        },
+        {
+          "case_id": "cl-9971626",
+          "name": "State v. Van Voorhis",
+          "citation": "2024 Ohio 1898",
+          "court": "Ohio Court of Appeals",
+          "decision_date": "2024-05-17",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9505013/state-v-van-voorhis/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S8",
+          "text": "} A grand jury indicted Van Voorhis on two counts of murder, two counts of felonious assault, gross abuse of a corpse, evidence tampering, and related firearm specifications. The charges involved Van Voorhis\u2019 allegedly shooting and killing the victim, Clinton Pierce, concealing Pierce\u2019s body in a garage, disposing of Pierce\u2019s cell phone, and tossing the murder weapon from a car window during a police chase. {\u00b6 5} In response to a suppression motion, the trial court suppressed a statement Van Voorhis had made while in custody and prior to the administration of Miranda warnings. When asked by a detective whether he wanted to \u201ctalk with us, give us your side of the story,\u201d Van Voorhis responded, \u201cI do, but I didn\u2019t do this.\u201d The trial court concluded that this response was inadmissible because it was the product of custodial interrogation in violation of Miranda. {\u00b6 6} The case proceeded to trial in March 2023. The evidence established that -3- Van Voorhis and Pierce were friends who worked together installing flooring. They used a detached garage at Van Voorhis\u2019 house on Burkhardt Road to store their materials. On July 15, 2022, Pierce cashed a check for $1,960.36 for a flooring job. Later that day, the two men went to Van Voorhis\u2019 garage to get a roll of carpet. While they were in the garage, Van Voorhis admittedly shot Pierce in the back of the head with a handgun. He then took Pierce\u2019s money and hid his body by covering it with layers of carpet. {\u00b6 7} Following the shooting, Van Voorhis lied to several people regarding Pierce\u2019s whereabouts. He also used Pierce\u2019s cell phone and responded to a text message as if he were Pierce. The cell phone later was discovered in a casino parking lot. Approximately one month after Pierce\u2019s disappearance, his girlfriend and others disc",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "cl-9971626:1600"
+        },
+        {
+          "case_id": "cl-11077709",
+          "name": "Gaspar Gaspar-Andres v. State of Arkansas",
+          "citation": "2025 Ark. App. 341",
+          "court": "Court of Appeals of Arkansas",
+          "decision_date": "2025-05-28",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10611121/gaspar-gaspar-andres-v-state-of-arkansas/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S9",
+          "text": "e credibility of defendant\u2019s trial testimony.3 Therefore, although Gaspar challenges the circuit court\u2019s finding that his custodial statement was made with the full knowledge and waiver of his constitutional rights, the argument is misplaced. Instead, the appropriate inquiry is whether Gaspar\u2019s custodial statement was voluntary. A custodial statement may not be used for impeachment purposes if it was coerced.4 The burden is on the State to show that a custodial statement was made voluntarily, intelligently, and without hope of reward or fear of punishment.5 2 384 U.S. 436 (1966). Harris v. New York, 401 U.S. 222 (1971). 3 Brooks v. State, 308 Ark. 660, 827 S.W.2d 119 (1992) (citing Mincey v. Arizona, 437 U.S.385 4 (1978)). 5 Jackson v. State, 284 Ark. 478, 683 S.W.2d 606 (1985). 5 In support of his argument that the custodial statement was not given voluntarily, he asserts that it was not the product of his own free and deliberate choice. Gaspar alleges that the statement resulted from coercion. He states that statements made by the interrogating officers contributed to a sense of intimidation and coercion. As examples of the alleged coercive statements made by police, Gaspar points to accusations of lying and instructions to be strong and honest. He states that officers also reminded him that his parents in Guatemala depend on him. Gaspar further alleged that he was handcuffed for part of the interview; he was not permitted to leave the room; he was questioned for more than three hours; and he was alone with two officers for most of the time. Gaspar argues that the isolated and unfamiliar environment was intimidating and conferred a psychological advantage to the officers. Gaspar also argues that, while the Miranda form provided the option to request an attorney and he",
+          "locator": "Whitespace-normalized extracted text, characters 8001\u20139800",
+          "original_id": "cl-11077709:8000"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 554,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "Miranda voluntary unwarned custodial statement impeachment defendant inconsistent testimony suppression",
+              "mode": "semantic",
+              "court": "",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 554
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 0,
+          "consulted_urls": 2,
+          "consulted_sources": [
+            {
+              "url": "https://www.ca4.uscourts.gov/Opinions/Published/974750.P.pdf",
+              "title": "www.ca4.uscourts.gov"
+            },
+            {
+              "url": "https://www.govinfo.gov/content/pkg/GPO-CONAN-1992/pdf/GPO-CONAN-1992-10-6.pdf",
+              "title": "www.govinfo.gov"
+            }
+          ],
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:law.cornell.edu/supremecourt/text Harris v New York 401 U.S. 222 impeachment Miranda voluntary \u00b7 site:law.cornell.edu/supremecourt/text Mincey v Arizona 437 U.S. 385 involuntary statement impeachment \u00b7 site:law.cornell.edu/supremecourt/text Oregon v Hass 420 U.S. 714 Miranda impeachment \u00b7 state constitution broader protection Miranda impeachment unwarned voluntary statement state supreme court official"
+            },
+            {
+              "phase": "web open_page",
+              "status": "completed",
+              "query": "https://www.law.cornell.edu/supremecourt/text/420/714"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:law.cornell.edu/supremecourt/text Michigan v Long independent state grounds state constitution more protective federal constitution \u00b7 site:law.cornell.edu/supremecourt/text state may afford greater protection state constitution than federal constitution criminal defendant"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T08:04:14.166Z",
+      "jurisdiction_note": "",
+      "coverage_notes": [
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Miranda voluntary unwarned custodial statement impeachment defendant inconsistent testimony suppression",
+      "task": "arguments",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "research_issues": [
+        {
+          "id": "I1",
+          "question": "Under U.S. constitutional law, what are the arguments for and against allowing a voluntary but unwarned custodial statement to impeach a defendant who testifies inconsistently, and what limits apply?"
+        },
+        {
+          "id": "I2",
+          "question": "Can a state provide broader protection against impeachment use of a voluntary unwarned custodial statement than the federal constitutional rule?"
+        }
+      ],
+      "document_coverage": [],
+      "filters": {
+        "court": "",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [],
+      "removed": 4,
+      "removed_references": [
+        {
+          "reason": "Web reference was not an eligible tool-reported URL, or mixed evidence types.",
+          "mixed_evidence": false,
+          "unmatched_urls": [
+            "https://www.law.cornell.edu/supremecourt/text/401/222"
+          ],
+          "urls": [
+            "https://www.law.cornell.edu/supremecourt/text/401/222"
+          ]
+        },
+        {
+          "reason": "Web reference was not an eligible tool-reported URL, or mixed evidence types.",
+          "mixed_evidence": false,
+          "unmatched_urls": [
+            "https://www.law.cornell.edu/supremecourt/text/401/222"
+          ],
+          "urls": [
+            "https://www.law.cornell.edu/supremecourt/text/401/222"
+          ]
+        },
+        {
+          "reason": "Web reference was not an eligible tool-reported URL, or mixed evidence types.",
+          "mixed_evidence": false,
+          "unmatched_urls": [
+            "https://www.law.cornell.edu/supremecourt/text/401/222",
+            "https://www.law.cornell.edu/supremecourt/text/437/385"
+          ],
+          "urls": [
+            "https://www.law.cornell.edu/supremecourt/text/401/222",
+            "https://www.law.cornell.edu/supremecourt/text/437/385"
+          ]
+        },
+        {
+          "reason": "Web reference was not an eligible tool-reported URL, or mixed evidence types.",
+          "mixed_evidence": false,
+          "unmatched_urls": [
+            "https://www.law.cornell.edu/supremecourt/text/420/714",
+            "https://www.law.cornell.edu/supremecourt/text/463/1032"
+          ],
+          "urls": [
+            "https://www.law.cornell.edu/supremecourt/text/420/714",
+            "https://www.law.cornell.edu/supremecourt/text/463/1032"
+          ]
+        }
+      ],
+      "unanswered_issues": [
+        {
+          "id": "I1",
+          "question": "Under U.S. constitutional law, what are the arguments for and against allowing a voluntary but unwarned custodial statement to impeach a defendant who testifies inconsistently, and what limits apply?"
+        },
+        {
+          "id": "I2",
+          "question": "Can a state provide broader protection against impeachment use of a voluntary unwarned custodial statement than the federal constitutional rule?"
+        }
+      ],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [
+        "Supporting argument",
+        "Opposing argument",
+        "Response and limits"
+      ],
+      "model_used": true,
+      "status": 200
+    },
+    "events": [
+      {
+        "seconds": 0.982,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.982,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 5.997,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "arguments",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 5.997,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 5.997,
+        "stage": "searching",
+        "message": "Finding opinions about your question\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 5.997,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 5.997,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 5.997,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 5.997,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 0 passages retrieved."
+      },
+      {
+        "seconds": 10.757,
+        "stage": "reading",
+        "message": "Reading United States v. Steven George Morgan\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 10.757,
+        "stage": "reading",
+        "message": "Reading State v. Van Voorhis\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 10.757,
+        "stage": "reading",
+        "message": "Reading Gaspar Gaspar-Andres v. State of Arkansas\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 11.187,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 11.187,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 41.428,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 0,
+    "exact_passages": 0,
+    "web_citations": 0
+  },
+  {
+    "id": "foreign_document",
+    "request": {
+      "question": "Summarize the attached French lease excerpt in English without researching French law.",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "867e50ad-b091-453b-9053-3e30ece546f5",
+      "documents": [
+        {
+          "name": "synthetic-french-lease.txt",
+          "type": "text",
+          "pages": [
+            {
+              "number": 1,
+              "text": "Le loyer mensuel est de 900 euros. Le contrat commence le 1er juin 2026 et se termine le 31 mai 2027. Le locataire doit informer le bailleur par \u00e9crit avant de partir."
+            }
+          ]
+        }
+      ],
+      "document_mode": "only"
+    },
+    "review_criteria": "Translate supplied terms, correct dates/rent/written notice, no French-law certification or missing-document clarification.",
+    "expected_action": "research",
+    "seconds": 7.612,
+    "response": {
+      "sources": [
+        {
+          "id": "S1",
+          "case_id": "attachment-1",
+          "name": "synthetic-french-lease.txt",
+          "citation": "synthetic-french-lease.txt \u00b7 Document text",
+          "court": "User-provided document",
+          "decision_date": "Not independently established",
+          "opinion_type": "text",
+          "source_url": "",
+          "database_id": "documents",
+          "database_name": "Attached documents",
+          "kind": "attachment",
+          "source_status": "User-provided text; not verified legal authority. Only selected excerpts are analyzed.",
+          "text": "Le loyer mensuel est de 900 euros. Le contrat commence le 1er juin 2026 et se termine le 31 mai 2027. Le locataire doit informer le bailleur par \u00e9crit avant de partir.",
+          "locator": "Document text, normalized characters 1\u2013167",
+          "page": 1,
+          "original_id": "attachment-1-1-0"
+        }
+      ],
+      "searched": [
+        {
+          "id": "documents",
+          "status": "ok",
+          "passages": 1,
+          "total": 1,
+          "note": "Selected excerpts of attached documents; this is not an exhaustive review."
+        }
+      ],
+      "retrieved_at": "2026-10-05T08:04:48.710Z",
+      "jurisdiction_note": "",
+      "coverage_notes": [],
+      "query": "Summarize the attached French lease excerpt in English without researching French law.",
+      "task": "analyze",
+      "databases": [
+        "documents"
+      ],
+      "database_reason": "Attached documents only.",
+      "research_focus": "general",
+      "research_issues": [
+        {
+          "id": "I1",
+          "question": "Summarize the attached French lease excerpt in English, without researching French law."
+        }
+      ],
+      "document_coverage": [
+        {
+          "name": "synthetic-french-lease.txt",
+          "type": "text",
+          "pages": 1,
+          "extracted_characters": 167,
+          "selected_passages": 1,
+          "selected_characters": 167,
+          "warnings": []
+        }
+      ],
+      "filters": {
+        "court": "",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "issue_id": "I1",
+          "section": "Key terms and facts",
+          "claim": "The excerpt states that monthly rent is \u20ac900 and that the contract runs from June 1, 2026, through May 31, 2027.",
+          "source_id": "S1",
+          "quote_id": "S1Q1",
+          "web_source_urls": [],
+          "quote": "Le loyer mensuel est de 900 euros. Le contrat commence le 1er juin 2026 et se termine le 31 mai 2027. Le locataire doit informer le bailleur par \u00e9crit avant de partir.",
+          "evidence_method": "exact_passage"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Key terms and facts",
+          "claim": "The excerpt says the tenant must notify the landlord in writing before leaving. It does not specify a notice period in the supplied text.",
+          "source_id": "S1",
+          "quote_id": "S1Q1",
+          "web_source_urls": [],
+          "quote": "Le loyer mensuel est de 900 euros. Le contrat commence le 1er juin 2026 et se termine le 31 mai 2027. Le locataire doit informer le bailleur par \u00e9crit avant de partir.",
+          "evidence_method": "exact_passage"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "unanswered_issues": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [
+        "Summary",
+        "Issues to review",
+        "Open questions"
+      ],
+      "model_used": true,
+      "status": 200
+    },
+    "events": [
+      {
+        "seconds": 1.109,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 1.109,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 4.175,
+        "stage": "plan",
+        "message": "Reading attached document excerpts\u2026",
+        "task": "analyze",
+        "databases": [],
+        "reason": "Attached documents only."
+      },
+      {
+        "seconds": 4.179,
+        "stage": "drafting",
+        "message": "Writing an answer from 1 source passages\u2026"
+      },
+      {
+        "seconds": 7.611,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 2,
+    "exact_passages": 2,
+    "web_citations": 0
+  }
+]

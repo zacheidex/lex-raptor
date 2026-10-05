@@ -4,7 +4,7 @@ import {readFile,readdir} from 'node:fs/promises';
 import {Miniflare} from 'miniflare';
 import {reserve,upgradeReservation,settle,CAP,RESERVE,WEB_RESERVE,cost} from '../worker/budget.js';
 import {conversationContext} from '../shared/conversation.js';
-import {quoteSegments,webSources,legalUrl} from '../worker/web.js';
+import {quoteSegments,webSources,legalUrl,referenceKey} from '../worker/web.js';
 
 async function fixture(t,options={}) {
   const calls=[];
@@ -109,6 +109,50 @@ test('ignored attempts after the builtin execution cap do not leave a known resp
   const response=structuredClone(webResponse);response.output.unshift(...Array.from({length:4},()=>({type:'web_search_call',status:'searching',action:{type:'open_page'}})));
   const f=await fixture(t,{webResponse:response}),q=f.question({database_ids:['legal_web']});await f.req('research',q);
   const row=await f.db.prepare('SELECT * FROM demo_calls WHERE id=?').bind(q.request_id).first();assert.equal(row.state,'completed');assert.equal(row.web_search_calls,4);assert.equal(row.charged,40600);
+});
+test('feedback saves without an account, model call, question or attachment by default',async t=>{
+  const f=await fixture(t),id=crypto.randomUUID(),request_id=crypto.randomUUID();
+  const r=await f.req('feedback',{id,request_id,rating:'needs_work',issue:'sources',comment:'The source is outdated.',documents:attached});
+  assert.equal(r.status,200);assert.equal((await r.json()).saved,true);assert.equal(f.calls.length,0);
+  const row=await f.db.prepare('SELECT * FROM research_feedback WHERE id=?').bind(id).first();assert.equal(row.shared_context,null);assert.equal(row.comment,'The source is outdated.');assert.equal(row.request_id,request_id);
+  assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM demo_calls').first()).n,0);
+  assert.equal((await f.req('feedback')).status,405,'Public visitors cannot read saved feedback');
+});
+test('feedback context requires explicit consent and can be removed on update',async t=>{
+  const f=await fixture(t),body={id:crypto.randomUUID(),request_id:crypto.randomUUID(),rating:'helpful'};
+  assert.equal((await f.req('feedback',{...body,question:'Private question',answer:'Private answer'})).status,400);
+  assert.equal((await f.req('feedback',{...body,share_context:true,question:'Question selected for sharing',answer:'Answer selected for sharing'})).status,200);
+  let row=await f.db.prepare('SELECT * FROM research_feedback WHERE id=?').bind(body.id).first();assert.deepEqual(JSON.parse(row.shared_context),{question:'Question selected for sharing',answer:'Answer selected for sharing'});
+  assert.equal((await f.req('feedback',{...body,rating:'needs_work',share_context:false,comment:'Changed my feedback.'})).status,200);
+  row=await f.db.prepare('SELECT * FROM research_feedback WHERE id=?').bind(body.id).first();assert.equal(row.shared_context,null);assert.equal(row.rating,'needs_work');assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM research_feedback').first()).n,1);
+});
+test('feedback rejects cross-origin, oversized and invalid writes, and cannot update another visitor',async t=>{
+  const f=await fixture(t),body={id:crypto.randomUUID(),request_id:crypto.randomUUID(),rating:'helpful'};
+  assert.equal((await f.req('feedback',body,'',{Origin:'https://evil.test'})).status,403);
+  for(const extra of [{rating:'invalid'},{issue:'invalid'},{comment:'x'.repeat(2001)},{share_context:'true'},{share_context:true,question:'x'.repeat(2001),answer:'x'}])assert.equal((await f.req('feedback',{...body,...extra})).status,400);
+  assert.equal((await f.req('feedback',body)).status,200);
+  assert.equal((await f.req('feedback',{...body,rating:'needs_work'},'',{'CF-Connecting-IP':'203.0.113.99'})).status,429);
+  assert.equal((await f.db.prepare('SELECT rating FROM research_feedback WHERE id=?').bind(body.id).first()).rating,'helpful');assert.equal(f.calls.length,0);
+});
+test('feedback volume is bounded without disabling updates or changing research spending',async t=>{
+  const f=await fixture(t),body={id:crypto.randomUUID(),request_id:crypto.randomUUID(),rating:'helpful'};await f.req('feedback',body);
+  const row=await f.db.prepare('SELECT * FROM research_feedback').first();
+  await f.db.batch(Array.from({length:59},()=>f.db.prepare('INSERT INTO research_feedback (id,visitor,created,updated,request_id,rating,issue,comment,model) VALUES (?,?,?,?,?,?,?,?,?)').bind(crypto.randomUUID(),row.visitor,row.created,row.updated,body.request_id,'helpful','','',row.model)));
+  assert.equal((await f.req('feedback',{...body,id:crypto.randomUUID()})).status,429);
+  assert.equal((await f.req('feedback',{...body,comment:'Update still allowed'})).status,200);
+  assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM demo_calls').first()).n,0);
+});
+test('citation normalization removes tracking but preserves content-selecting query parameters',()=>{
+  assert.equal(referenceKey('https://www.supremecourt.gov/opinions/example.pdf?abcdef12345='),referenceKey('https://www.supremecourt.gov/opinions/example.pdf'));
+  assert.equal(referenceKey('https://example.gov/code?section=2&utm_source=search'),referenceKey('https://example.gov/code?section=2'));
+  assert.equal(referenceKey('https://example.gov/code?title=9&section=2'),referenceKey('https://example.gov/code?section=2&title=9'));
+  assert.notEqual(referenceKey('https://example.gov/code?section=2'),referenceKey('https://example.gov/code?section=3'));
+  assert.notEqual(referenceKey('https://example.gov/opinion.pdf?edition=2024'),referenceKey('https://example.gov/opinion.pdf'));
+});
+test('a normalized citation retains the actual provider URL and cannot introduce a new authority',async t=>{
+  const response=structuredClone(webResponse),providerUrl='https://www.supremecourt.gov/opinions/example.pdf?abcdef12345=';
+  response.output[0].action.sources=[{url:providerUrl}];response.output[1].content[0].text=JSON.stringify({propositions:[{section:'Findings',claim:'Finding from a reported PDF.',source_id:'',quote_id:'',web_source_urls:['https://www.supremecourt.gov/opinions/example.pdf']},{section:'Findings',claim:'Different PDF is not allowed.',source_id:'',quote_id:'',web_source_urls:['https://www.supremecourt.gov/opinions/different.pdf']}]});
+  const f=await fixture(t,{webResponse:response}),data=await (await f.req('research',f.question({database_ids:['legal_web']}))).json();assert.equal(data.propositions.length,1);assert.equal(data.sources[0].source_url,providerUrl);assert.equal(data.removed,1);
 });
 
 test('origin, disabled state, visitor identification and selection guard public research',async t=>{
@@ -261,7 +305,7 @@ test('automatic settings use the model and account for planning plus drafting to
   const q=f.question({question:'Why?',task:'auto',database_ids:'auto',context:'User: Tell me about Celotex.'});
   const r=await f.req('research',q);assert.equal(r.status,200);const data=await r.json();
   assert.equal(data.task,'brief');assert.equal(data.query,'Celotex');assert.deepEqual(data.databases,['cap']);assert.equal(data.automatic,true);assert.equal(f.calls.length,2);
-  assert.equal(f.calls[0].max_output_tokens,1024);assert.match(f.calls[0].input,/Tell me about Celotex/);assert.match(f.calls[1].input,/conversation_context/);
+  assert.equal(f.calls[0].max_output_tokens,1536);assert.match(f.calls[0].input,/Tell me about Celotex/);assert.match(f.calls[1].input,/conversation_context/);
   const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.charged,488);assert.equal(ledger.input_tokens,1500);assert.equal(ledger.output_tokens,300);
   assert.equal((await f.req('research',q)).status,429);assert.equal(f.calls.length,2);
 });
@@ -407,7 +451,7 @@ test('automatic routing respects an exhausted budget before either model call',a
 
 test('automatic settings also run on local Ollama without API spending',async t=>{
   const f=await fixture(t,{local:true,bindings:{LOCAL_RESEARCH:'true',OPENAI_API_KEY:''}});
-  const data=await (await f.req('research',f.question({task:'auto',database_ids:'auto'}))).json();assert.equal(data.task,'brief');assert.equal(data.model,'qwen3:14b');assert.equal(f.calls.length,2);assert.equal(f.calls[0].options.num_predict,1024);assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM demo_calls').first()).n,0);
+  const data=await (await f.req('research',f.question({task:'auto',database_ids:'auto'}))).json();assert.equal(data.task,'brief');assert.equal(data.model,'qwen3:14b');assert.equal(f.calls.length,2);assert.equal(f.calls[0].options.num_predict,1536);assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM demo_calls').first()).n,0);
 });
 
 test('demo page offers research without a passcode or login control',async t=>{
@@ -447,4 +491,42 @@ test('invalid attachment metadata, oversized text and request envelopes fail bef
  const f=await fixture(t);
  for(const documents of [[{...attached[0],name:'../secret.txt'}],Array(6).fill(attached[0]),[{...attached[0],pages:[{number:1,text:'a'.repeat(300001)}]}]])assert.equal((await f.req('research',f.question({documents}))).status,400);
  assert.equal((await f.req('research',f.question({padding:'a'.repeat(700001)}))).status,413);assert.equal(f.calls.length,0);
+});
+
+test('validated attachments override a false missing-document plan without external search',async t=>{
+ const f=await fixture(t,{plan:{action:'clarify',clarification_reason:'missing_document',message:'Please reupload.',suggestions:[],task:'analyze',search_query:'review contract',database_ids:[],filters:{court:'',after:'',before:''}}});
+ const data=await (await f.req('research',f.question({task:'auto',documents:attached,database_ids:'auto'}))).json();
+ assert.equal(data.follow_up,undefined);assert.equal(data.task,'analyze');assert.deepEqual(data.databases,['documents']);assert.ok(data.propositions.length);assert.equal(f.calls.length,2);
+});
+test('foreign-only law scope prevents U.S. searches even when the planner requests research',async t=>{
+ const f=await fixture(t,{plan:{action:'research',jurisdiction_scope:'foreign',task:'research',search_query:'inheritance law',database_ids:['legal_web'],filters:{court:'',after:'',before:''}}});
+ const data=await (await f.req('research',f.question({question:'What are inheritance rules in Japan?',task:'auto',database_ids:'auto'}))).json();
+ assert.equal(data.follow_up.kind,'scope');assert.match(data.follow_up.message,/U.S. law/);assert.equal(f.calls.length,1);assert.deepEqual(data.sources,[]);
+});
+
+test('completed page-open URLs count as tool provenance, while attempted and failed opens do not',()=>{
+ const output=[{type:'web_search_call',status:'completed',action:{type:'open_page',url:'https://example.gov/opened'}},{type:'web_search_call',status:'failed',action:{type:'open_page',url:'https://example.gov/failed'}},{type:'web_search_call',status:'searching',action:{type:'open_page',url:'https://example.gov/attempted'}},{type:'web_search_call',status:'completed',action:{type:'search',url:'https://example.gov/guessed'}},{type:'web_search_call',status:'completed',action:{type:'open_page',url:'https://unapproved.example/secret'}}];
+ assert.deepEqual(webSources({output}).map(s=>s.source_url),['https://example.gov/opened']);assert.equal(webSources({output})[0].text,'');
+});
+
+test('recognized case publishers are eligible but unrelated publisher pages are not',()=>{
+ for(const u of ['https://supreme.justia.com/cases/federal/us/372/335/','https://law.justia.com/cases/federal/appellate-courts/ca2/one.html','https://www.law.cornell.edu/supremecourt/text/372/335','https://www.courtlistener.com/opinion/123/case/'])assert.ok(legalUrl(u));
+ for(const u of ['https://supreme.justia.com/blog/advice','https://www.courtlistener.com/docket/123/private','https://www.law.cornell.edu/wex/something'])assert.equal(legalUrl(u),null);
+});
+
+test('case briefs retain opening facts and a distant operative holding within the excerpt budget',async t=>{
+ const text='Atlas asked the state court for counsel and was denied. '+('Background procedural discussion without the operative decision. ').repeat(120)+' We hold that counsel must be appointed in this proceeding. The judgment is reversed. '+('Closing directions to the lower court. ').repeat(20);
+ const f=await fixture(t,{bindings:{COURTLISTENER_API_TOKEN:'fake-token'},source:async req=>{
+  if(!req.url.includes('courtlistener.com'))return;
+  if(new URL(req.url).pathname.endsWith('/search/'))return Response.json({count:1,results:[{cluster_id:1,caseName:'Atlas v. Beacon',citation:['100 U.S. 100'],court:'Supreme Court',court_id:'scotus',absolute_url:'/opinion/1/atlas/',opinions:[{id:11,type:'lead-opinion'}]}]});
+  return Response.json({plain_text:text});
+ }});
+ const data=await (await f.req('research',f.question({task:'brief',search_query:'Atlas v. Beacon',database_ids:['courtlistener']}))).json();
+ assert.ok(data.sources.some(s=>s.text.includes('Atlas asked the state court')));assert.ok(data.sources.some(s=>s.text.includes('We hold that counsel must be appointed')));assert.ok(data.sources.length<=3);
+});
+
+
+test('planning and drafting ceilings remain below their conservative reservations',()=>{
+ assert.ok(Math.ceil((14000+32768+8192)*.225+(1536+6144)*.5)<RESERVE);
+ assert.ok(Math.ceil((14000+4096+5*(32768+4096)+10*128000)*.225+(1536+6144)*.5)+4*10000<WEB_RESERVE);
 });

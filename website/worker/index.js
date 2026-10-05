@@ -5,6 +5,7 @@ import {catalog,validateSelection,filters,searchSources,evidenceSubset,auditCita
 import {local,modelName,modelReady,generate} from './model.js';
 import {planPayload,readPlan} from './planner.js';
 import {validateDocuments,documentPassages,documentCoverage} from './documents.js';
+import {saveFeedback} from './feedback.js';
 const encoder=new TextEncoder();
 const json=(data,status=200,extra={})=>new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...extra}});
 class PublicError extends Error {constructor(status,message){super(message);this.status=status;}}
@@ -33,11 +34,11 @@ async function api(request,env,progress=()=>{}) {
   if(path==='/api/demo/status'&&request.method==='GET') {
     const enabled=!!ready(env);
     const state=await database(env).prepare('SELECT COALESCE(SUM(charged),0) total FROM demo_calls').first();
-    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,research_progress:true,case_treatment_search:true,clarifying_questions:true,research_revision:9,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
+    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,research_progress:true,case_treatment_search:true,clarifying_questions:true,research_revision:13,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
   }
   if(request.method!=='POST')fail(405,'Method not allowed.');
   if(request.headers.get('Origin')!==new URL(request.url).origin||request.headers.get('Sec-Fetch-Site')==='cross-site')fail(403,'Open research on this website to continue.');
-  if(!['/api/demo/research','/api/demo/search','/api/demo/citations'].includes(path))fail(404,'Not found.');
+  if(!['/api/demo/research','/api/demo/search','/api/demo/citations','/api/demo/feedback'].includes(path))fail(404,'Not found.');
   if(env.DEMO_SESSION_SECRET?.length<32||!env.DEMO_SESSION_SECRET)fail(503,'Research access is temporarily unavailable.');
   if(path==='/api/demo/research'&&!ready(env))fail(503,'Online AI is currently unavailable. You can run Lex Raptor locally.');
   const db=database(env),ip=await visitor(request,env);
@@ -46,6 +47,10 @@ async function api(request,env,progress=()=>{}) {
   const sid='public:'+ip;
   const body=await readBody(request);
   if(!body||typeof body!=='object'||Array.isArray(body))fail(400,'Send a research request.');
+  if(path==='/api/demo/feedback'){
+    if(!await saveFeedback(db,body,ip,now,modelName(env)))fail(429,'Feedback could not be saved right now. Please try again later.');
+    return json({saved:true});
+  }
   if(path==='/api/demo/citations'){
     if(!env.COURTLISTENER_API_TOKEN)fail(503,'Citation lookup needs a connected CourtListener account.');
     if(typeof body.text!=='string'||body.text.length<3||body.text.length>6000)fail(400,'Enter 3 to 6,000 characters of public citation text.');
@@ -94,7 +99,7 @@ async function api(request,env,progress=()=>{}) {
   if(automatic){
     progress({stage:'planning',message:'Planning the research…'});
     const planned=await callModel(planPayload(env,body));
-    try{plan=readPlan(planned,env,body);}catch{await reconcile();fail(502,'Automatic settings could not be prepared. Choose task, databases and search terms manually, then try again.');}
+    try{plan=readPlan(planned,env,body);}catch(e){await reconcile();const reason=['Incomplete plan','Invalid action','Invalid follow-up','Invalid coverage','Unknown task','Invalid query','Invalid state','Invalid research scope'].includes(e.message)?e.message:'Invalid plan format';fail(502,'Automatic settings could not be prepared ('+reason+'). Choose task, databases and search terms manually, then try again.');}
   }
   if(plan.follow_up){
     await reconcile();
@@ -130,7 +135,7 @@ async function api(request,env,progress=()=>{}) {
   await reconcile();
   if(useWeb){
     const web=webSources(response);sources.push(...web);
-    Object.assign(meta.searched.find(r=>r.id==='legal_web'),{status:web.length?'ok':'empty',passages:0,pages:web.length,consulted_urls:web.length,searches:webSearches(response),note:'Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.'});
+    Object.assign(meta.searched.find(r=>r.id==='legal_web'),{status:web.length?'ok':'empty',passages:0,pages:web.length,consulted_urls:web.length,consulted_sources:web.map(s=>({url:s.source_url,title:s.name})).slice(0,40),searches:webSearches(response),note:'Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.'});
     meta.coverage_notes.push('Web citations are provided by the search service; their text has not been independently quote-checked.');
   }
   // Public-only cache cleanup never touches the lifetime spending ledger.

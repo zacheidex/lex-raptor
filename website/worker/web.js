@@ -9,11 +9,25 @@ export function legalUrl(value) {
     let status='';
     if(h.endsWith('.gov')||/\.state\.[a-z]{2}\.us$/.test(h))status='Government source; check publication and effective dates.';
     else if(h==='law.justia.com'&&u.pathname.startsWith('/codes/'))status='Unofficial statute mirror; check edition and subsequent amendments.';
-    else if(h==='www.law.cornell.edu'&&/^\/(uscode|cfr|constitution)\//.test(u.pathname))status='Legal Information Institute compilation; check currency.';
+    else if((h==='law.justia.com'&&/^\/cases\/[a-z-]+\//.test(u.pathname))||(h==='supreme.justia.com'&&/^\/cases\/federal\/us\//.test(u.pathname)))status='Unofficial opinion mirror; distinguish the court opinion from editorial summaries.';
+    else if(h==='www.courtlistener.com'&&u.pathname.startsWith('/opinion/'))status='CourtListener opinion record; later treatment not verified.';
+    else if(h==='www.law.cornell.edu'&&/^\/(uscode|cfr|constitution|supremecourt|supct)\//.test(u.pathname))status='Legal Information Institute compilation; check currency.';
     else if(['library.municode.com','codelibrary.amlegal.com','ecode360.com'].includes(h))status='Municipal code publisher; check supplement date and adopting ordinance.';
     if(!status)return null;
     u.hash='';return {url:u.href,host:h,status};
   }catch{return null;}
+}
+export function referenceKey(value) {
+  const safe=legalUrl(value);if(!safe)return '';
+  const u=new URL(safe.url);
+  for(const [key,val] of [...u.searchParams]){
+    // Preserve parameters that select statutes, editions, sections or languages.
+    // Search providers sometimes add empty cache-busting IDs to government PDFs.
+    // Resolve those aliases to the actual provider URL; never invent a source.
+    if(/^utm_/i.test(key)||['gclid','fbclid','msclkid'].includes(key.toLowerCase())||
+       (u.hostname.endsWith('.gov')&&u.pathname.endsWith('.pdf')&&val===''&&/^[a-z0-9]{10,32}$/i.test(key)))u.searchParams.delete(key);
+  }
+  u.searchParams.sort();return u.href;
 }
 export function webSources(response) {
   const found=new Map();
@@ -24,7 +38,13 @@ export function webSources(response) {
   }
   // Only actual tool records/annotations can authorize a URL, never JSON claims.
   for(const o of response.output||[]){
-    if(o.type==='web_search_call')for(const s of o.action?.sources||[])add(s);
+    if(o.type==='web_search_call'){
+      for(const s of o.action?.sources||[])add(s);
+      // A completed open operation reports the actual URL separately from
+      // search-result sources. This proves tool provenance, not successful
+      // page retrieval or claim support; keep the same web-citation disclosure.
+      if(o.status==='completed'&&o.action?.type==='open_page')add({url:o.action.url});
+    }
     if(o.type==='message')for(const c of o.content||[])for(const a of c.annotations||[])if(a.type==='url_citation')add(a);
   }
   return [...found.values()];

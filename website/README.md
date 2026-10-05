@@ -46,7 +46,7 @@ The starter CAP library works offline. Online database selections send search
 terms to those providers, even when inference is local. An optional
 `COURTLISTENER_API_TOKEN` can be supplied in the environment or ignored
 `.env.local`. Public records persist in ignored
-`.local-data/`; questions and drafts are not stored by this workbench.
+`.local-data/`; questions and drafts are not stored automatically; feedback can include a question and answer only when explicitly selected.
 
 ## Database connections
 
@@ -177,8 +177,8 @@ rejected. Source outages and oversized documents are disclosed as incomplete
 coverage, never silently substituted with another database.
 
 Questions and selected public passages are sent to OpenAI with `store:false`.
-This setting does not promise zero provider retention. The server stores no
-question/answer history or attachments; the current chat and files are held in browser memory until reload
+This setting does not promise zero provider retention. The research endpoint stores no
+question/answer history or attachments. Optional feedback can retain the question and answer you explicitly choose to share; the current chat and files are held in browser memory until reload
 or New chat. Recent conversation context is sent with follow-ups. The server stores hashed visitor IDs, legacy session IDs or
 public visitor markers, request IDs, timestamps, reservation states, and token counts. Questions must not
 contain confidential client information. Attachments are extracted in the browser; only extracted text is submitted. Original files are not uploaded or persisted.
@@ -260,3 +260,11 @@ Before web drafting, an atomic ledger update raises the request reservation from
 Clarification reply buttons submit once immediately and retain the conversation context. The inline loading meteor finishes with a small flash, ring and fragments. Reduced-motion mode disables the animation.
 
 The planner decomposes research into up to four explicit questions. Draft findings retain their issue IDs; the result names any issue left unsupported after reference validation. This is coverage bookkeeping, not an automatic legal-correctness grade. The bounded web budget was increased to four calls after two-call tests missed parts of multi-issue questions.
+
+## Feedback
+
+Every AI reply offers Helpful / Needs work and an optional note/category. Votes and notes persist in D1 `research_feedback`, without an account or model call. Question/answer sharing is off by default and requires a separate selection; original attachments, source passages and conversation history are never copied into feedback. A visitor may update their own feedback, including removing shared context. The owner can review the table with the hosting database tools; there is no public feedback-reading API. Writes use the existing hashed visitor identifier, origin checks, bounded fields, and a 60-new-reports-per-hour abuse limit that does not affect research calls.
+
+The chat composer omits the former public/hypothetical-facts notice; data handling remains documented on About. Each answer has a one-click Check citations action: it rechecks saved quotations and requests fresh CourtListener case-citation matches without sending the question or document passages. It flags mismatching or ambiguous case records. Web-page content, statutory correctness, entailment and later treatment are not independently certified by this check. The composer checks typed citations, or the latest answer when empty.
+
+Run `node scripts/diagnose-stress.mjs https://your-host --allow-api-spend` for the 25-case development suite, optionally `--cases=roe,document_review`. Each run saves a new ungraded result file under ignored `.local-data/stress/`, stops on error and never retries automatically. Hosted runs use the shared cap; local runs never use OpenAI.

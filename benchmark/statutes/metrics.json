@@ -1,0 +1,13 @@
+{
+  "as_of": "2026-10-05T08:14:12.402Z",
+  "hosted_research_requests": 54,
+  "matched_ledger_rows": 54,
+  "benchmark_charged_or_reserved_usd": 1.413336,
+  "benchmark_completed_usd": 1.113336,
+  "benchmark_held_usd": 0.3,
+  "lifetime_charged_or_reserved_usd": 1.63981,
+  "lifetime_held_usd": 0.38,
+  "cap_usd": 10,
+  "automated_tests_passed": 61,
+  "method": "Conservative application ledger estimates, not an invoice. Retained reservations are not assumed free. No ledger resets or refunds."
+}

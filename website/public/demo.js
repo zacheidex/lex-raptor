@@ -25,14 +25,12 @@ function render(){
  $('search').disabled=busy||readingFiles||!state.search_enabled||!hasSources;
  $('new-chat').disabled=busy||readingFiles;
  $('check-citations').disabled=busy||!state.databases.some(d=>d.id==='courtlistener'&&d.available);
+ document.querySelectorAll('.answer-citation-check').forEach(b=>b.disabled=busy);
  document.querySelectorAll('.follow-up-choices button').forEach(b=>b.disabled=busy||readingFiles||!state.enabled||state.exhausted);
  $('ask').textContent=busy?'Working':'Send';
  $('runtime-badge').textContent=state.inference==='local'?'Local · '+state.model:'Cloud AI';
  $('selection-note').textContent=$('auto-databases').checked?'Only relevant databases will be chosen from your message.':state.databases.filter(d=>selected.has(d.id)).map(d=>d.name).join(' · ')||'Select at least one connected database.';
  $('availability').textContent=!state.search_enabled?'Research is temporarily unavailable.':state.exhausted?'The shared $10 AI allowance is used. Source search and citation lookup are still available.':!state.enabled?'AI is unavailable. Source search and citation lookup are still available.':'';
- if(state.inference==='local')$('privacy-note').textContent='AI runs locally. Online searches go to the selected databases. Review sources before relying on an answer.';
- else $('privacy-note').textContent='Use public or hypothetical facts. Messages go to OpenAI; searches go to selected databases.';
- if(attachments.length)$('privacy-note').textContent=state.inference==='local'?'Document analysis runs locally. Enabling database research sends your question to those providers.':'On Send, extracted document text goes to OpenAI. Files stay in this tab; Lex Raptor does not save them.';
  $('manual-databases').disabled=$('auto-databases').checked;
  $('open-options').textContent=$('auto-databases').checked?'Sources · Auto':'Sources · '+selected.size;
 }
@@ -44,7 +42,7 @@ async function refresh(){try{state=await api('status');if(!initialized){initiali
 $('auto-databases').addEventListener('change',render);
 $('search-with-documents').addEventListener('change',render);
 $('open-options').addEventListener('click',()=>$('options-dialog').showModal());
-$('open-citations').addEventListener('click',()=>{if($('question').value.trim())$('citation-text').value=$('question').value.trim();$('citation-dialog').showModal();$('citation-status').textContent=state.databases.some(d=>d.id==='courtlistener'&&d.available)?'':'CourtListener is not connected.';});
+$('open-citations').addEventListener('click',()=>{const text=$('question').value.trim();if(text){openCitationCheck();$('citation-text').value=text;lookupCitations(text);}else if(history.some(r=>r.propositions?.length)){checkAnswerCitations(history.findLast(r=>r.propositions?.length));}else openCitationCheck();});
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));
 document.querySelectorAll('[data-question]').forEach(b=>b.addEventListener('click',()=>{$('question').value=b.dataset.question;$('question').focus();}));
 $('new-chat').addEventListener('click',()=>{history.length=0;attachments.length=0;renderAttachments();$('attachment-status').textContent='';$('conversation').replaceChildren();document.body.classList.remove('has-conversation');$('question').value='';$('question').focus();});
@@ -52,7 +50,31 @@ function requestBody(){return {documents:attachments.map(d=>({...d})),document_m
 function link(text,url){const a=el('a',text);try{const u=new URL(url);if(u.protocol!=='https:')return el('span',text);a.href=u.href;}catch{return el('span',text);}a.target='_blank';a.rel='noopener noreferrer';return a;}
 function download(content,name,type){const u=URL.createObjectURL(new Blob([content],{type}));const a=el('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
 function exportText(r){const lines=['Lex Raptor',r.question,'Task: '+r.task,'Search terms: '+r.query,'Retrieved: '+r.retrieved_at,'Model: '+(r.model_used?r.model:'No AI call'),'Review required. Quote matching does not establish legal support or current validity.',...(r.coverage_notes||[]),...(r.unanswered_issues||[]).map(i=>'Unresolved: '+i.question),''];for(const d of r.document_coverage||[])lines.push('DOCUMENT: '+d.name+' — '+d.selected_passages+' excerpt(s) from '+d.extracted_characters+' characters. Not a complete document review.');for(const s of r.searched||[])lines.push(s.id+': '+s.status+' — '+s.note);for(const p of r.propositions||[]){const s=r.sources.find(s=>s.id===p.source_id);lines.push('',p.section,p.claim,p.evidence_method==='web_citation'?'Web citation — page text not independently quote-checked.':'“'+p.quote+'”',s?.citation||'',...(p.source_ids||[p.source_id]).map(id=>r.sources.find(s=>s.id===id)?.source_url||''));}for(const s of r.sources)lines.push('','SOURCE: '+s.name+' · '+s.citation,s.source_status,s.source_url,s.locator,s.text);return lines.join('\n');}
-function showResult(container,data,draft,question,id){
+function feedbackControls(container,record,requestId){
+ if(!requestId)return;
+ const id=crypto.randomUUID(),box=el('div',null,'feedback'),row=el('div',null,'feedback-actions'),yes=el('button','Helpful'),no=el('button','Needs work'),details=el('button','Add a note'),status=el('span',null,'feedback-status');
+ for(const b of [yes,no,details])b.type='button';yes.setAttribute('aria-pressed','false');no.setAttribute('aria-pressed','false');details.hidden=true;status.setAttribute('role','status');
+ box.setAttribute('role','group');box.setAttribute('aria-label','Feedback on this response');
+ const form=el('form',null,'feedback-form');form.hidden=true;
+ const issueLabel=el('label','What could be better?'),issue=el('select');
+ for(const [value,label] of [['','Choose a category (optional)'],['incorrect','Incorrect answer'],['incomplete','Incomplete answer'],['sources','Sources or citations'],['unclear','Hard to understand'],['technical','Something did not work'],['other','Something else']]){const o=el('option',label);o.value=value;issue.append(o);}issueLabel.append(issue);
+ const noteLabel=el('label','Your note (optional)'),note=el('textarea');note.rows=3;note.maxLength=2000;note.placeholder='What did you expect, or what should we fix?';noteLabel.append(note);
+ const consent=el('label',null,'feedback-consent'),share=el('input');share.type='checkbox';consent.append(share,el('span','Include this question and answer. This may contain details from your documents; attachments are not included.'));
+ const save=el('button','Save feedback');save.type='submit';const cancel=el('button','Close');cancel.type='button';cancel.addEventListener('click',()=>{form.hidden=true;details.focus();});
+ const controls=el('div',null,'feedback-actions');controls.append(save,cancel);form.append(issueLabel,noteLabel,consent,el('p','Feedback is saved for the project owner. Please leave out confidential information.','small'),controls);
+ let rating='',sending=false,savedDetails={issue:'',comment:'',share_context:false};
+ async function send(next,fields){
+  if(sending)return false;sending=true;yes.disabled=no.disabled=save.disabled=true;status.textContent='Saving…';
+  const body={id,request_id:requestId,rating:next,...fields};
+  if(fields.share_context){body.question=record.question;body.answer=(record.follow_up?.message||(record.propositions||[]).map(p=>p.claim+'\n'+(p.source_ids||[p.source_id]).map(id=>record.sources.find(s=>s.id===id)?.source_url||'').filter(Boolean).join('\n')).join('\n\n')).slice(0,16000);}
+  try{await api('feedback',body);rating=next;savedDetails=fields;yes.setAttribute('aria-pressed',String(rating==='helpful'));no.setAttribute('aria-pressed',String(rating==='needs_work'));details.hidden=false;status.textContent='Thanks — feedback saved.';return true;}
+  catch(e){status.textContent=e.message;return false;}finally{sending=false;yes.disabled=no.disabled=save.disabled=false;}
+ }
+ yes.addEventListener('click',()=>send('helpful',savedDetails));no.addEventListener('click',()=>{form.hidden=false;send('needs_work',savedDetails);});details.addEventListener('click',()=>{form.hidden=!form.hidden;if(!form.hidden)note.focus();});
+ form.addEventListener('submit',async e=>{e.preventDefault();if(!form.reportValidity())return;if(await send(rating||'needs_work',{issue:issue.value,comment:note.value,share_context:share.checked}))form.hidden=true;});
+ row.append(yes,no,details,status);box.append(row,form);container.append(box);
+}
+function showResult(container,data,draft,question,id,requestId){
  const record={...data,question};if(draft)history.push(record);
  container.replaceChildren();
  if(data.follow_up){
@@ -62,6 +84,7 @@ function showResult(container,data,draft,question,id){
   if(choices.childElementCount)container.append(choices);
   container.append(el('p',choices.childElementCount?'Choose a reply or type your own.':'Reply below.','review-note'));
   for(const note of data.coverage_notes||[])container.append(el('p',note,'coverage-note'));
+  if(draft)feedbackControls(container,record,requestId);
   return;
  }
  const taskName=state.tasks?.[data.task]?.name||'Research';
@@ -83,9 +106,9 @@ function showResult(container,data,draft,question,id){
  for(const d of data.document_coverage||[]){info.append(el('p',d.name+': '+d.selected_passages+' selected passages from '+d.extracted_characters.toLocaleString()+' extracted characters'+(d.type==='PDF'?' across '+d.pages+' pages':'')+'.','small'));for(const w of d.warnings||[])info.append(el('p',w,'source-warning'));}
  for(const s of data.sources){const d=el('details',null,'source-detail');d.id='source-'+id+'-'+s.id;d.append(el('summary',s.name+' · '+s.citation),el('p',(s.database_name||state.databases.find(d=>d.id===s.database_id)?.name||'Source')+' · '+s.court+' · '+s.decision_date),el('p',s.source_status),el('p',s.opinion_type+' · '+s.locator),el('div',s.text,'passage'));if(s.source_url)d.append(link('Open source record',s.source_url));if(s.official_url)d.append(document.createTextNode(' · '),link('Official PDF',s.official_url));info.append(d);}
  container.append(info);
- const notes=[];if(data.removed)notes.push(data.removed+' finding(s) removed because source references could not be verified.');if(data.missing_sections?.length)notes.push('No retained findings for: '+data.missing_sections.join(', ')+'.');if(draft&&data.task==='compare'&&new Set(data.sources.map(s=>s.case_id)).size<2)notes.push('Fewer than two authorities retrieved; comparison is incomplete.');if(notes.length)container.append(el('p',notes.join(' '),'validation-note'));
+ const notes=[];if(data.removed)notes.push(data.removed+' finding(s) removed because source references could not be verified.');if(data.missing_sections?.length)notes.push('No retained findings for: '+data.missing_sections.join(', ')+'.');if(draft&&data.task==='compare'&&new Set(data.sources.map(s=>s.case_id||s.source_url||s.id)).size<2)notes.push('Fewer than two authorities retrieved; comparison is incomplete.');if(notes.length)container.append(el('p',notes.join(' '),'validation-note'));
  if(draft)container.append(el('p',data.research_focus==='case_status'?'This answer uses a limited search for later treatment, not a comprehensive citator check. Review the cited opinions and any jurisdiction-specific law.':'Check the cited sources and legal context. This search does not establish current validity.','review-note'));
- const actions=el('div',null,'export-actions');const txt=el('button','Download text'),json=el('button','Export JSON');txt.type=json.type='button';txt.addEventListener('click',()=>download(exportText(record),'lex-raptor-research.txt','text/plain;charset=utf-8'));json.addEventListener('click',()=>download(JSON.stringify(record,null,2),'lex-raptor-research.json','application/json'));actions.append(txt,json);container.append(actions);
+ const actions=el('div',null,'export-actions');const txt=el('button','Download text'),json=el('button','Export JSON');txt.type=json.type='button';txt.addEventListener('click',()=>download(exportText(record),'lex-raptor-research.txt','text/plain;charset=utf-8'));json.addEventListener('click',()=>download(JSON.stringify(record,null,2),'lex-raptor-research.json','application/json'));actions.append(txt,json);if(data.propositions?.length){const check=el('button','Check citations','answer-citation-check');check.type='button';check.addEventListener('click',()=>checkAnswerCitations(record));actions.prepend(check);}container.append(actions);if(draft)feedbackControls(container,record,requestId);
 }
 async function research(draft){
  if(busy||$(draft?'ask':'search').disabled)return;
@@ -102,13 +125,43 @@ async function research(draft){
  const rect=user.getBoundingClientRect();if(rect.top<0||rect.bottom>innerHeight*.65)user.scrollIntoView({block:'nearest',behavior:'auto'});
  const started=Date.now(),clock=setInterval(()=>{const seconds=Math.floor((Date.now()-started)/1000);elapsed.textContent=seconds+'s'+(seconds>=20?' · Still working. Database responses can take a little longer.':'');},1000),providers=new Map();
  const progress=data=>{stage.textContent=data.message.replace(/[.…]+$/u,'');if(data.database){const name=state.databases.find(d=>d.id===data.database)?.name||data.database;providers.set(data.database,data.stage==='source_complete'?data.message:name+' · Searching and reading');activity.replaceChildren(...[...providers.values()].map(text=>el('div',text)));}};
- try{const data=await researchApi(draft?'research':'search',submitted,progress);showResult(answer,data,draft,submitted.question,id);}catch(e){answer.replaceChildren(el('p',e.message,'error'));const retry=el('button','Edit request');retry.type='button';retry.addEventListener('click',()=>{$('question').value=submitted.question;$('question').focus();});answer.append(retry);}finally{clearInterval(clock);answer.removeAttribute('aria-busy');busy=false;await refresh();}
+ try{const data=await researchApi(draft?'research':'search',submitted,progress);showResult(answer,data,draft,submitted.question,id,submitted.request_id);}catch(e){answer.replaceChildren(el('p',e.message,'error'));const retry=el('button','Edit request');retry.type='button';retry.addEventListener('click',()=>{$('question').value=submitted.question;$('question').focus();});answer.append(retry);if(draft)feedbackControls(answer,{question:submitted.question,follow_up:{message:'Research error: '+e.message},sources:[],propositions:[]},submitted.request_id);}finally{clearInterval(clock);answer.removeAttribute('aria-busy');busy=false;await refresh();}
 
 }
 $('research-form').addEventListener('submit',e=>{e.preventDefault();research(true);});
 $('question').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();research(true);}});
 $('search').addEventListener('click',()=>research(false));
-$('citation-form').addEventListener('submit',async e=>{e.preventDefault();if(busy||$('check-citations').disabled)return;busy=true;render();$('citation-status').textContent='Looking up citations…';$('citation-results').replaceChildren();try{const data=await api('citations',{text:$('citation-text').value});for(const r of data.citations){const item=el('div',null,'citation-result');item.append(el('strong',r.citation),el('p',({200:'Matching record found',300:'Ambiguous: multiple records',404:'No matching record found',400:'Unrecognized citation',429:'Not checked: source limit reached'})[r.status]||'Not checked'));for(const m of r.matches)if(m.url)item.append(link(m.name,m.url));$('citation-results').append(item);}$('citation-status').textContent=(data.citations.length?'':'No case citations were identified. ')+data.limitation;}catch(e){$('citation-status').textContent=e.message;}finally{busy=false;render();}});
+function openCitationCheck(){
+ $('citation-dialog').showModal();$('citation-form').hidden=false;$('citation-status').textContent='';$('citation-results').replaceChildren();
+}
+async function lookupCitations(text,{append=false,expected=[]}={}){
+ if(busy)return;
+ if(!state.databases.some(d=>d.id==='courtlistener'&&d.available)){$('citation-status').textContent='CourtListener is not connected; case records were not checked.';return;}
+ busy=true;render();$('citation-status').textContent='Checking case records…';if(!append)$('citation-results').replaceChildren();
+ try{const data=await api('citations',{text});
+  for(const r of data.citations){const item=el('div',null,'citation-result');
+   const original=expected.find(s=>s.citation?.includes(r.citation)||r.normalized?.some(c=>s.citation?.includes(c)));
+   const canonical=u=>{try{const x=new URL(u);return x.hostname.replace(/^www\./,'')+x.pathname.replace(/\/$/,'');}catch{return '';}};
+   const same=original?.source_url?.includes('courtlistener.com/')&&r.matches.some(m=>canonical(m.url)===canonical(original.source_url));
+   const mismatch=r.status===200&&original?.source_url?.includes('courtlistener.com/')&&!same;
+   item.append(el('strong',r.citation),el('p',mismatch?'Review needed: the citation resolves to a different source record.':same&&r.status===200?'Citation matches the cited case record.':({200:'Matching case record found',300:'Ambiguous: multiple records',404:'No matching record found',400:'Unrecognized citation',429:'Not checked: source limit reached'})[r.status]||'Not checked'));
+   for(const m of r.matches)if(m.url)item.append(link(m.name,m.url));$('citation-results').append(item);
+  }
+  $('citation-status').textContent=(data.citations.length?'':'No case citations were identified. ')+data.limitation;
+ }catch(e){$('citation-status').textContent=e.message;}finally{busy=false;render();}
+}
+function checkAnswerCitations(record){
+ if(busy)return;openCitationCheck();$('citation-form').hidden=true;
+ const used=new Set((record.propositions||[]).flatMap(p=>p.source_ids||[p.source_id])),sources=(record.sources||[]).filter(s=>used.has(s.id));
+ let exact=0,bad=0,web=0;
+ for(const p of record.propositions||[]){const s=sources.find(s=>s.id===p.source_id);if(p.evidence_method==='web_citation'){web++;continue;}if(p.quote&&s?.text?.includes(p.quote))exact++;else bad++;}
+ if(exact||bad)$('citation-results').append(el('p',exact+' quotation(s) match the saved source passages.'+(bad?' '+bad+' quotation(s) could not be matched.':'')));
+ if(web)$('citation-results').append(el('p',web+' finding(s) use recorded web citations. Page contents and legal support have not been independently rechecked.'));
+ const cases=sources.filter(s=>s.citation&&(s.kind==='case'||['cap','courtlistener'].includes(s.database_id)));
+ if(cases.length){const text=[...new Set(cases.map(s=>s.name+' · '+s.citation))].join('\n').slice(0,6000);$('citation-text').value=text;lookupCitations(text,{append:true,expected:cases});}
+ else $('citation-status').textContent='No case citations to look up. Statutes, regulations, web pages and document assertions still require source review.';
+}
+$('citation-form').addEventListener('submit',e=>{e.preventDefault();lookupCitations($('citation-text').value);});
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#source-"]');if(a){const target=document.getElementById(a.hash.slice(1));if(target){target.open=true;let parent=target.parentElement;while(parent){if(parent.tagName==='DETAILS')parent.open=true;parent=parent.parentElement;}}}});
 function renderAttachments(){
  $('attachment-list').replaceChildren();

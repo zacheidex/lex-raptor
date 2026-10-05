@@ -58,7 +58,7 @@ export async function sourceRequest(env,provider,url,{method='GET',body,cache=fa
   return data;
 }
 const tokens=q=>[...new Set(q.toLowerCase().match(/[a-z0-9]{3,}/g)||[])].filter(t=>!['the','and','what','does','about','that','this','from','with','have','under','which'].includes(t)).slice(0,40);
-export function passages(text,meta,query,{treatment=false}={}) {
+export function passages(text,meta,query,{treatment=false,brief=false}={}) {
   const terms=tokens(query),chunks=[];
   for(let offset=0;offset<text.length;offset+=1600){const part=text.slice(offset,offset+1800);if(part.trim().length<30)continue;
     const words=new Set(part.toLowerCase().match(/[a-z0-9]+/g)||[]);
@@ -68,9 +68,12 @@ export function passages(text,meta,query,{treatment=false}={}) {
       if(/we (?:therefore )?(?:hold|overrule|reaffirm)|(?:is|are|must be|hereby) overruled/i.test(part))score+=16;
       if(/do(?:es)? not call into question|still subject to.*stare decisis|does not (?:overrule|disturb)/i.test(part))score+=16;
     }
+    if(brief){if(/we (?:therefore )?(?:hold|conclude)|(?:is|are|must be|hereby) overruled|judgment.{0,80}(?:reversed|affirmed|vacated)|essential to a fair trial/i.test(part))score+=10;}
     chunks.push({...meta,id:meta.case_id+':'+offset,text:part,locator:`Whitespace-normalized extracted text, characters ${offset+1}–${offset+part.length}`,score,offset});
   }
-  return chunks.sort((a,b)=>b.score-a.score||a.offset-b.offset).slice(0,3).map(({score,offset,...s})=>s);
+  const ranked=[...chunks].sort((a,b)=>b.score-a.score||a.offset-b.offset);
+  const chosen=brief&&chunks.length?[chunks[0],...ranked.filter(c=>c.offset!==0).slice(0,2)]:ranked.slice(0,3);
+  return chosen.map(({score,offset,...s})=>s);
 }
 function starterSearch(query,f) {
   if(f.court&&f.court!=='scotus')return [];
@@ -109,7 +112,7 @@ async function courtlistener(env,query,f,progress=()=>{}) {
       const full=await sourceRequest(env,'courtlistener',`https://www.courtlistener.com/api/rest/v4/opinions/${o.id}/`,{cache:true});
       const text=plain(full.plain_text||full.html_with_citations||full.html||full.html_lawbox||full.html_columbia||full.xml_harvard||'');
       if(!text){warnings.push(`Opinion ${o.id}: no usable full text returned.`);return;}
-      const record=passages(text,{case_id:'cl-'+o.id,name:clean(plain(c.caseName)),citation:clean(plain((c.citation||[]).join('; '))),court:clean(c.court),decision_date:clean(c.dateFiled),opinion_type:clean(o.type||full.type||'not specified'),source_url:safeLink(c.absolute_url,'www.courtlistener.com'),official_url:safeLink(o.download_url||full.download_url,'www.supremecourt.gov'),database_id:'courtlistener',database_name:'CourtListener',kind:'case',research_role:phase,source_status:phase==='original'?'Original search result; does not establish current validity':'Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.'},name||query,{treatment:status&&phase!=='original'});
+      const record=passages(text,{case_id:'cl-'+o.id,name:clean(plain(c.caseName)),citation:clean(plain((c.citation||[]).join('; '))),court:clean(c.court),decision_date:clean(c.dateFiled),opinion_type:clean(o.type||full.type||'not specified'),source_url:safeLink(c.absolute_url,'www.courtlistener.com'),official_url:safeLink(o.download_url||full.download_url,'www.supremecourt.gov'),database_id:'courtlistener',database_name:'CourtListener',kind:'case',research_role:phase,source_status:phase==='original'?'Original search result; does not establish current validity':'Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.'},name||query,{treatment:status&&phase!=='original',brief:f.task==='brief'&&phase==='original'});
       groups.push({rank,passages:record});
     }catch(e){warnings.push(`Opinion ${o.id}: ${e instanceof SourceError?e.message:'Retrieval failed.'}`);}
   }

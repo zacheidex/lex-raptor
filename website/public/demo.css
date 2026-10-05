@@ -29,3 +29,5 @@
 @keyframes impact-ring{0%,64%{transform:scale(.5);opacity:0}67%{opacity:1}85%,100%{transform:scale(4);opacity:0}}
 @keyframes impact-debris{0%,65%{opacity:0;transform:scale(.1)}68%{opacity:1;transform:scale(1)}85%,100%{opacity:0;transform:scale(2.8)}}
 }
+
+.feedback{margin-top:1rem}.feedback-actions{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}.feedback-actions button{font-size:.8rem;padding:.4rem .6rem;border:0;background:transparent;color:var(--muted)}.feedback-actions button:hover,.feedback-actions button[aria-pressed=true]{background:var(--raised);color:var(--accent)}.feedback-status{font-size:.75rem;color:var(--muted)}.feedback-form{margin-top:.8rem;padding:1rem;border:1px solid var(--line);border-radius:10px}.feedback-form label{margin:.6rem 0}.feedback-form select,.feedback-form textarea{display:block;width:100%;margin-top:.4rem}.feedback-consent{display:flex;gap:.6rem;align-items:flex-start;line-height:1.5;font-size:.8rem;font-weight:400;color:var(--muted)}.feedback-consent input{flex:none}.feedback-form .small{color:var(--muted)}[hidden]{display:none!important}

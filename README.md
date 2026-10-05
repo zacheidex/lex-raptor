@@ -145,3 +145,5 @@ a claim that every page or clause was analyzed.
 
 
 The hosted chat now includes **Public legal web** among the selectable sources: government guidance, statutes and municipal codes. Web findings link to actual search-tool URLs and are labeled separately from exact quotations in downloaded passages. They are not independently quote-checked. Up to four web calls are charged inside the existing $10 cap; local Ollama never invokes this paid tool. Clarification buttons submit the reply immediately, and the inline meteor has a small impact animation with reduced-motion support. See [the statute and local-rule checks](benchmark/statutes/RESULTS.md) for retained outcomes and limitations.
+
+Each research reply now offers one-click citation checks and Helpful / Needs work feedback. Notes are optional; sharing the question and answer is off by default. Votes and notes persist for the site owner without accounts or model calls. The citation check rechecks saved quotation text and looks up case records, distinguishing matches, ambiguity and unsupported checks.

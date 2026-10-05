@@ -1,0 +1,1201 @@
+[
+  {
+    "id": "roe",
+    "request": {
+      "question": "Does Roe v Wade still guarantee a right to abortion throughout the United States?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "61d6a440-27b3-44a3-8020-877b20e5b6a7"
+    },
+    "review_criteria": "Dobbs overruled Roe; no unsupported statement of state-by-state law.",
+    "expected_action": "research",
+    "seconds": 19.309,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-6353492",
+          "name": "Dobbs v. Jackson Women's Health Organization",
+          "citation": "597 U.S. 215; 213 L. Ed. 2d 545; 142 S. Ct. 2228",
+          "court": "Supreme Court of the United States",
+          "decision_date": "2022-06-24",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/6481357/dobbs-v-jackson-womens-health-organization/",
+          "official_url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "later-treatment",
+          "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+          "id": "S1",
+          "text": "iction on abortion violates this Court\u2019s cases forbidding States to ban abortion pre-viabil- ity. The Fifth Circuit affirmed. Before this Court, petitioners defend the Act on the grounds that Roe and Casey were wrongly decided and that the Act is constitutional because it satisfies rational-basis review. Held: The Constitution does not confer a right to abortion; Roe and Casey are overruled; and the authority to regulate abortion is returned to the people and their elected representatives. Pp. 8\u201379. (a) The critical question is whether the Constitution, properly un- derstood, confers a right to obtain an abortion. Casey\u2019s controlling opinion skipped over that question and reaffirmed Roe solely on the basis of stare decisis. A proper application of stare decisis, however, requires an assessment of the strength of the grounds on which Roe 2 DOBBS v. JACKSON WOMEN\u2019S HEALTH ORGANIZATION Syllabus was based. The Court therefore turns to the question that the Casey plurality did not consider. Pp. 8\u201332. (1) First, the Court reviews the standard that the Court\u2019s cases have used to determine whether the Fourteenth Amendment\u2019s refer- ence to \u201cliberty\u201d protects a particular right. The Constitution makes no express reference to a right to obtain an abortion, but several con- stitutional provisions have been offered as potential homes for an im- plicit constitutional right. Roe held that the abortion right is part of a right to privacy that springs from the First, Fourth, Fifth, Ninth, and Fourteenth Amendments. See 410 U. S., at 152\u2013153. The Casey Court grounded its decision solely on the theory that the right to obtain an abortion is part of the \u201cliberty\u201d protected by the Fourteenth Amend- ment\u2019s Due Process Clause. Others have suggested that support can be found in the Fourteenth ",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "cl-6353492:1600"
+        },
+        {
+          "case_id": "fr-2024-08503",
+          "name": "HIPAA Privacy Rule To Support Reproductive Health Care Privacy",
+          "citation": "89 FR 32976",
+          "court": "Health and Human Services Department, ",
+          "decision_date": "2024-04-26",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2024/04/26/2024-08503/hipaa-privacy-rule-to-support-reproductive-health-care-privacy",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-04-26/pdf/2024-08503.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2024-06-25; verify operative status in the official edition",
+          "id": "S2",
+          "text": "nd is not establishing a new category of particularly sensitive PHI in this final rule. Instead, as discussed more fully below, the Department is finalizing its proposed purpose-based prohibition against certain uses and disclosures. --------------------------------------------------------------------------- \\143\\ See LePage v. Center for Reproductive Medicine, SC-2022- 0515 (Feb. 16, 2024). --------------------------------------------------------------------------- B. Developments in the Legal Environment Are Eroding Individuals' Trust in the Health Care System The Supreme Court's decision in Dobbs overturned Roe v. Wade \\144\\ and Planned Parenthood of Southeastern Pennsylvania v. Casey,\\145\\ thereby enabling states to significantly restrict access to abortion.\\146\\ Following the Supreme Court's decision, the legal landscape has shifted as laws significantly restricting access to abortion have in fact become effective in some jurisdictions. This change has also led to questions about both the current and future lawfulness of other types of reproductive health care, and therefore, the ability of individuals to access such health care.\\147\\ Thus, this shift may interfere with the longstanding expectations of individuals, established by HIPAA and the Privacy Rule, with respect to the privacy of their PHI.\\148\\ For example, while the Privacy Rule currently permits, but does not require, uses and disclosures of PHI for certain purposes,\\149\\ including when another law requires a regulated entity to make the use or disclosure,\\150\\ regulated entities after Dobbs may feel compelled by other applicable law to use or disclose PHI to law enforcement or other persons who may use that health information against an individual, a regulated entity, or another person who has sought, o",
+          "locator": "Whitespace-normalized extracted text, characters 96001\u201397800",
+          "original_id": "fr-2024-08503:96000"
+        },
+        {
+          "case_id": "cl-9889188",
+          "name": "June Medical Services L. L. C. v. Russo",
+          "citation": "140 S. Ct. 2103; 207 L. Ed. 2d 566",
+          "court": "Supreme Court of the United States",
+          "decision_date": "2020-06-29",
+          "opinion_type": "lead-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/4764452/june-medical-services-l-l-c-v-russo/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "later-treatment",
+          "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+          "id": "S3",
+          "text": "pments, and the reliance interests that the precedent has engendered. See Janus v. State, County, and Municipal Employees, 585 U. S. ----, ---- - ----, 138 S.Ct. 2448, 201 L.Ed.2d 924 (2018) (slip op., at 34-35). Stare decisis principles also determine how we handle a decision that itself departed from the cases that came before it. In those instances, \"[r]emaining true to an 'intrinsically sounder' doctrine established in prior cases better serves the values of stare decisis than would following\" the recent departure. *2135Adarand Constructors, Inc. v. Pe\u00f1a , 515 U.S. 200, 231, 115 S.Ct. 2097, 132 L.Ed.2d 158 (1995) (plurality opinion). Stare decisis is pragmatic and contextual, not \"a mechanical formula of adherence to the latest decision.\" Helvering v. Hallock , 309 U.S. 106, 119, 60 S.Ct. 444, 84 L.Ed. 604 (1940). II A Both Louisiana and the providers agree that the undue burden standard announced in Casey provides the appropriate framework to analyze Louisiana's law. Brief for Petitioners in No. 18-1323, pp. 45-47; Brief for Respondent in No. 18-1323, pp. 60-62. Neither party has asked us to reassess the constitutional validity of that standard. Casey reaffirmed \"the most central principle of Roe v. Wade ,\" \"a woman's right to terminate her pregnancy before viability.\" Casey , 505 U.S. at 871, 112 S.Ct. 2791 (plurality opinion).1 At the same time, it recognized that the State has \"important and legitimate interests in ... protecting the health of the pregnant woman and in protecting the potentiality of human life.\" Id., at 875-876, 112 S.Ct. 2791 (internal quotation marks and brackets omitted). To serve the former interest, the State may, \"[a]s with any medical procedure,\" enact \"regulations to further the health or safety of a woman seeking an abortion.\" Id., at 8",
+          "locator": "Whitespace-normalized extracted text, characters 75201\u201377000",
+          "original_id": "cl-9889188:75200"
+        },
+        {
+          "case_id": "fr-2024-08503",
+          "name": "HIPAA Privacy Rule To Support Reproductive Health Care Privacy",
+          "citation": "89 FR 32976",
+          "court": "Health and Human Services Department, ",
+          "decision_date": "2024-04-26",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2024/04/26/2024-08503/hipaa-privacy-rule-to-support-reproductive-health-care-privacy",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-04-26/pdf/2024-08503.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2024-06-25; verify operative status in the official edition",
+          "id": "S4",
+          "text": "s to administer and enforce it to ensure that individuals are not afraid to seek health care from, or share important information with, their health care providers because of a concern that their sensitive information will be disclosed outside of their relationship with their health care provider. Protecting privacy promotes trust between health care providers and individuals, advancing access to and improving the quality of health care. To achieve this goal, the Department generally has applied the same privacy standards to nearly all PHI, regardless of the type of health care at issue. Notably, special protections were given to psychotherapy notes, owing in part to the particularly [[Page 32978]] sensitive information those notes contain.\\9\\ --------------------------------------------------------------------------- \\9\\ See 45 CFR 164.501 and 164.508(a)(2). --------------------------------------------------------------------------- Under its statutory authority to administer and enforce the HIPAA Rules, the Department may modify the HIPAA Rules as needed.\\10\\ The Supreme Court decision in Dobbs v. Jackson Women's Health Organization \\11\\ (Dobbs) overturned precedent that protected a constitutional right to abortion and altered the legal and health care landscape. This decision has far-reaching implications for reproductive health care beyond its effects on access to abortion.\\12\\ This changing legal landscape increases the likelihood that an individual's PHI may be disclosed in ways that cause harm to the interests that HIPAA seeks to protect, including the trust of individuals in health care providers and the health care system.\\13\\ The threat that PHI will be disclosed and used to conduct such an investigation against, or to impose liability upon, an individual or a",
+          "locator": "Whitespace-normalized extracted text, characters 12801\u201314600",
+          "original_id": "fr-2024-08503:12800"
+        },
+        {
+          "case_id": "cl-11269328",
+          "name": "Mirabelli v. Bonta",
+          "citation": "",
+          "court": "Supreme Court of the United States",
+          "decision_date": "2026-03-02",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10802600/mirabelli-v-bonta/",
+          "official_url": "https://www.supremecourt.gov/opinions/25pdf/25a810_b97d.pdf",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "recent-treatment",
+          "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+          "id": "S5",
+          "text": "us quite obviously excludes parents from highly important decisions about their child\u2019s mental health, see Parham, 442 U. S., at 601\u2013 604, and is unlikely to satisfy heightened scrutiny. Our res- olution of the parents\u2019 likelihood of success on this claim is dictated by existing law. The dissent questions how the Court can adhere to parental-rights precedent after its decision in Dobbs v. Jackson Women\u2019s Health Organization, 597 U. S. 215 (2022). Post, at 5\u20136 (opinion of KAGAN, J.). But Dobbs calls into question neither the doctrine of substantive due pro- cess nor the other unexpressed rights that the doctrine pro- tects. Applying Glucksberg, Dobbs holds that Roe v. Wade, 410 U. S. 113 (1973), and Planned Parenthood of Southeast- ern Pa. v. Casey, 505 U. S. 833 (1992), were incorrectly de- cided because a right to abortion is not \u201c \u2018deeply rooted in this Nation\u2019s history and tradition\u2019 and \u2018implicit in the con- cept of ordered liberty.\u2019 \u201d Dobbs, 597 U. S., at 231. And be- cause the Court concluded that the stare decisis factors counseled against retaining these cases, Dobbs overruled them. Id., at 263\u2013290. It does not follow from Dobbs that all our substantive due process cases conflict with Glucks- berg, much less that stare decisis would counsel overruling any that do. No party to this dispute questions the continued validity of Meyer, Pierce, or Parham. For all its concerns about de- ciding the issue in this posture, the dissent expresses \u201cno doubt that parents have rights, even though Cite as: 607 U. S. ____ (2026) 3 BARRETT, J., concurring unenumerated, concerning their children and the life choices they make.\u201d Post, at 6. And the precedent recog- nizing those rights controls our assessment of whether the parents are likely to succeed on the merits. The word \u201clike",
+          "locator": "Whitespace-normalized extracted text, characters 14401\u201316200",
+          "original_id": "cl-11269328:14400"
+        },
+        {
+          "case_id": "fr-2024-08503",
+          "name": "HIPAA Privacy Rule To Support Reproductive Health Care Privacy",
+          "citation": "89 FR 32976",
+          "court": "Health and Human Services Department, ",
+          "decision_date": "2024-04-26",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2024/04/26/2024-08503/hipaa-privacy-rule-to-support-reproductive-health-care-privacy",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2024-04-26/pdf/2024-08503.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2024-06-25; verify operative status in the official edition",
+          "id": "S6",
+          "text": "illing her ethical obligation to protect her patients' health.), https://pubmed.ncbi.nlm.nih.gov/37195699/. \\156\\ See Off. for Civil Rights, ``HHS Office for Civil Rights Resolves Complaints with CVS and Walgreens to Ensure Timely Access to Medications for Women and Support Persons with Disabilities,'' U.S. Dep't of Health and Human Servs. (June 16, 2023), https://www.hhs.gov/civil-rights/for-providers/compliance-enforcement/agreements/cvs-walgreens/index.html. See also Kathryn Starzyk et al., ``More than half of patients with a rheumatic disease or immunologic condition undergoing methotrexate treatment reside in states in which the overturning of Roe v. Wade can jeopardize access to medications with abortifacient potential,'' 75 Arthritis Rheumatol 328 (Feb. 2023); see also Celine Castronuovo, ``Many Female Arthritis Drug Users Face Restrictions After Dobbs,'' Bloomberg Law (Nov. 14, 2022) (noting that 16 out of 524 patients responding to a survey indicated that they've had trouble getting methotrexate, their arthritis medication, since the Dobbs decision.) https://news.bloomberglaw.com/health-law-and-business/many-female-arthritis-drug-users-face-restrictions-after-dobbs; Interview with Donald Miller, PharmD, ``Methotrexate access becomes challenging for some patients following Supreme Court decision on abortion,'' Pharmacy Times (July 20, 2022), https://www.pharmacytimes.com/view/methotrexate-access-becomes-challenging-for-patients-following-supreme-court-decision-on-abortion; Jamie Ducharme, ``Abortion restrictions may be making it harder for patients to get a cancer and arthritis drug,'' Time (July 6, 2022), https://time.com/6194179/abortion-restrictions-methotrexate-cancer-arthritis/; Katie Shepherd & Frances Stead Sellers, ``Abortion bans complicate access to dr",
+          "locator": "Whitespace-normalized extracted text, characters 107201\u2013109000",
+          "original_id": "fr-2024-08503:107200"
+        },
+        {
+          "case_id": "cl-9425157",
+          "name": "Roe v. Wade",
+          "citation": "35 L. Ed. 2d 147; 93 S. Ct. 705; 410 U.S. 113; 1973 U.S. LEXIS 159",
+          "court": "Supreme Court of the United States",
+          "decision_date": "1973-01-22",
+          "opinion_type": "lead-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/108713/roe-v-wade/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "t man\u2019s attitudes toward the abortion procedure over the centuries. We bear in mind, too, Mr. Justice Holmes\u2019 admonition in his now-vindicated dissent in Lochner v. New York, 198 U. S. 45, 76 (1905): \u201c[The Constitution] is made for people of fundamentally differing views, and the accident of our finding certain opinions natural and familiar or novel and even shocking ought not to conclude our judgment upon the question whether statutes embodying them conflict with the Constitution of the United States.\u201d I The Texas statutes that concern us here are Arts. 1191-1194 and 1196 of the State\u2019s Penal Code.1 These make it a crime to \u201cprocure an abortion,\u201d as therein *118defined, or to attempt one, except with respect to \u201can abortion procured or attempted by medical advice for the purpose of saving the life of the mother.\u201d Similar statutes are in existence in a majority of the States.2 *119Texas first enacted a criminal abortion statute in 1854. Texas Laws 1854, c. 49, \u00a7 1, set forth in 3 H. Gammel, Laws of Texas 1502 (1898). This was soon modified into language that has remained substantially unchanged to the present time. See Texas Penal Code of 1857, c. 7, Arts. 531-536; G. Paschal, Laws of Texas, Arts. 2192-2197 (1866); Texas Rev. Stat., c. 8, Arts. 536-541 (1879); Texas Rev. Crim. Stat., Arts. 1071-1076 (1911). The final article in each of these compilations provided the same exception, as does the present Article 1196, for an abortion by \u201cmedical advice for the purpose of saving the life of the mother.\u201d 3 *120HH h \u2014 I Jane Roe,4 a single woman who was residing m Dallas County, Texas, instituted this federal action in March 1970 against the District Attorney of the county. She sought a declaratory judgment that the Texas criminal abortion statutes were unconstitutional on t",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "cl-9425157:1600"
+        },
+        {
+          "case_id": "cl-6353492",
+          "name": "Dobbs v. Jackson Women's Health Organization",
+          "citation": "597 U.S. 215; 213 L. Ed. 2d 545; 142 S. Ct. 2228",
+          "court": "Supreme Court of the United States",
+          "decision_date": "2022-06-24",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/6481357/dobbs-v-jackson-womens-health-organization/",
+          "official_url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "later-treatment",
+          "source_status": "Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.",
+          "id": "S8",
+          "text": " of pregnancy. Others have tightly restricted abortion beginning well before viability. And in this case, 26 States have expressly asked this Court to over- rule Roe and Casey and allow the States to regulate or pro- hibit pre-viability abortions. Before us now is one such state law. The State of Missis- sippi asks us to uphold the constitutionality of a law that generally prohibits an abortion after the 15th week of preg- nancy\u2014several weeks before the point at which a fetus is now regarded as \u201cviable\u201d outside the womb. In defending this law, the State\u2019s primary argument is that we should reconsider and overrule Roe and Casey and once again allow each State to regulate abortion as its citizens wish. On the other side, respondents and the Solicitor General ask us to \u2014\u2014\u2014\u2014\u2014\u2014 10 Id., at 861, 870, 873 (overruling Akron v. Akron Center for Reproduc- tive Health, Inc., 462 U. S. 416 (1983), and Thornburgh v. American Col- lege of Obstetricians and Gynecologists, 476 U. S. 747 (1986)). 11 505 U. S., at 874. 12 Id., at 867. Cite as: 597 U. S. ____ (2022) 5 Opinion of the Court reaffirm Roe and Casey, and they contend that the Missis- sippi law cannot stand if we do so. Allowing Mississippi to prohibit abortions after 15 weeks of pregnancy, they argue, \u201cwould be no different than overruling Casey and Roe en- tirely.\u201d Brief for Respondents 43. They contend that \u201cno half-measures\u201d are available and that we must either reaf- firm or overrule Roe and Casey. Brief for Respondents 50. We hold that Roe and Casey must be overruled. The Con- stitution makes no reference to abortion, and no such right is implicitly protected by any constitutional provision, in- cluding the one on which the defenders of Roe and Casey now chiefly rely\u2014the Due Process Clause of the Fourteenth Amendment. That",
+          "locator": "Whitespace-normalized extracted text, characters 28801\u201330600",
+          "original_id": "cl-6353492:28800"
+        },
+        {
+          "id": "W1",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "www.supremecourt.gov",
+          "citation": "",
+          "source_url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "www.supremecourt.gov",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 11,
+          "note": "Principal opinion plus targeted and recent later-treatment searches; up to 4 full opinions. This is a limited search, not a complete good-law check.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "caseName:(Roe AND Wade)",
+              "mode": "keyword",
+              "court": "",
+              "after": "",
+              "before": "",
+              "order": "citeCount desc",
+              "status": "ok",
+              "matches": 11
+            },
+            {
+              "phase": "later-treatment",
+              "query": "\"Roe v. Wade\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+              "mode": "keyword",
+              "court": "scotus",
+              "after": "1973-01-22",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 86
+            },
+            {
+              "phase": "recent-treatment",
+              "query": "\"Roe v. Wade\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+              "mode": "keyword",
+              "court": "scotus",
+              "after": "1973-01-22",
+              "before": "",
+              "order": "dateFiled desc",
+              "status": "ok",
+              "matches": 86
+            }
+          ],
+          "passages": 12
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "ok",
+          "total": 6,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [
+            "2024-07527: The source service could not complete this search.",
+            "2024-07915: The source service could not complete this search."
+          ],
+          "passages": 3
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 1,
+          "consulted_urls": 16,
+          "consulted_sources": [
+            {
+              "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf?os=rokuXdCL8Tia",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf?os=__",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/21pdf/597us1r58_gebh.pdf",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/docket/docketfiles/html/public/19-1392.html",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/search.aspx?Search=19-1392",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/docket/docket.aspx?Search=19-1392&type=Docket.",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/Docket/SearchCase.aspx?Case=19-1392&SearchTerm=Judgments",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/opinions/slipopinion/21",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/oral_arguments/audio/2021/19-1392",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/Search.aspx?Search=jackson+women+healthcare",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/search.aspx?Search=dobbs",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/search.aspx?Search=Dobbs+v.+Jackson",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/search.aspx?Search=Roe+v+Wade+1973",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/search.aspx?Search=dobbs+v+jackson&type=Site",
+              "title": "www.supremecourt.gov"
+            },
+            {
+              "url": "https://www.supremecourt.gov/search.aspx?Search=roe+v.+wade",
+              "title": "www.supremecourt.gov"
+            }
+          ],
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:supremecourt.gov/opinions/21pdf/19-1392 Dobbs Roe Casey overruled authority regulate abortion returned people elected representatives"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T08:12:12.963Z",
+      "jurisdiction_note": "",
+      "coverage_notes": [
+        "Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database.",
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Roe v. Wade abortion constitutional right nationwide Supreme Court current status Dobbs state abortion laws",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "case_status",
+      "research_issues": [
+        {
+          "id": "I1",
+          "question": "Under current U.S. Supreme Court law, does Roe v. Wade remain in force as a nationwide constitutional guarantee of abortion access, and how does that ruling affect state authority to regulate abortion?"
+        }
+      ],
+      "document_coverage": [],
+      "filters": {
+        "court": "",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "issue_id": "I1",
+          "section": "Findings",
+          "claim": "In Dobbs v. Jackson Women\u2019s Health Organization, decided June 24, 2022, the Supreme Court held that the Constitution does not confer a right to abortion, overruled Roe v. Wade and Planned Parenthood v. Casey, and returned authority to regulate abortion to the people and their elected representatives. Roe therefore no longer guarantees a nationwide constitutional right to abortion; states may regulate abortion without the Roe-based constitutional restriction.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf"
+          ],
+          "source_ids": [
+            "W1"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "unanswered_issues": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    },
+    "events": [
+      {
+        "seconds": 0.204,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.204,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 5.783,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 5.784,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 5.784,
+        "stage": "searching",
+        "message": "Finding the principal opinion\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 5.784,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 5.784,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 5.846,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 6.289,
+        "stage": "reading",
+        "message": "Reading Roe v. Wade\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 6.514,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 3 passages retrieved."
+      },
+      {
+        "seconds": 6.515,
+        "stage": "searching",
+        "message": "Searching for later treatment\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 7.73,
+        "stage": "reading",
+        "message": "Reading Dobbs v. Jackson Women's Health Organization\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 7.731,
+        "stage": "reading",
+        "message": "Reading June Medical Services L. L. C. v. Russo\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 8.449,
+        "stage": "searching",
+        "message": "Searching for later treatment\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 9.567,
+        "stage": "reading",
+        "message": "Reading Mirabelli v. Bonta\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 9.584,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 12 passages retrieved."
+      },
+      {
+        "seconds": 9.584,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 19.307,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 1,
+    "exact_passages": 0,
+    "web_citations": 1
+  },
+  {
+    "id": "miranda_arguments",
+    "request": {
+      "question": "Give arguments on both sides of suppressing a voluntary but unwarned custodial statement when a US state prosecutor wants to use it only to impeach the defendant who testifies inconsistently.",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "af42375e-600a-44a9-8501-9292d044c320"
+    },
+    "review_criteria": "Distinguish prosecution case-in-chief from impeachment; Harris exception voluntary/trustworthy, do not say every Miranda violation bars all uses.",
+    "expected_action": "research",
+    "seconds": 57.238,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-11098380",
+          "name": "United States v. Steven George Morgan",
+          "citation": "",
+          "court": "Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2025-07-11",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10631793/united-states-v-steven-george-morgan/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "c] rule[] must be justified by its necessity for the protection of the actual right against compelled self-incrimina- tion.\u201d 542 U.S. at 639. Accordingly, the plurality \u201cinsist[ed] that the closest possible fit be maintained between the Self-Incrimina- tion Clause and any rule designed to protect it.\u201d Id. at 641. As the Patane plurality explained, \u201cthe core protection af- forded by the Self-Incrimination Clause is a prohibition on compel- ling a criminal defendant to testify against himself at trial.\u201d Id. at 637. That\u2019s why the government can\u2019t use Miranda-violative state- ments in its case-in-chief. See id. at 639. But other uses of those statements and their fruits are fair game\u2014so long as they are vol- untary and not coerced. See Oregon v. Elstad, 470 U.S. 298, 307 (1985) (\u201c[T]he Miranda presumption, though irrebuttable for pur- poses of the prosecution\u2019s case in chief, does not require that the statements and their fruits be discarded as inherently tainted.\u201d). So, for example, the Court held in Harris v. New York that the USCA11 Case: 23-11114 Document: 71-1 Date Filed: 07/11/2025 Page: 15 of 59 23-11114 Opinion of the Court 15 government could use a voluntary statement obtained in violation of Miranda to impeach the defendant\u2019s testimony. 401 U.S. 222, 224\u201326 (1971); see also New York v. Quarles, 467 U.S. 649, 654\u201357 (1984) (holding that Miranda-violative statements needn\u2019t be sup- pressed when the questioning is conducted to address an ongoing \u201cpublic safety\u201d concern). Most importantly here, the Patane plurality concluded that the Self-Incrimination Clause didn\u2019t require suppression of the de- fendant\u2019s unwarned but voluntary statement telling a police officer where his pistol was hidden. See 542 U.S. at 634. And in a separate concurring opinion that Justice O\u2019Con",
+          "locator": "Whitespace-normalized extracted text, characters 20801\u201322600",
+          "original_id": "cl-11098380:20800"
+        },
+        {
+          "case_id": "cl-11077709",
+          "name": "Gaspar Gaspar-Andres v. State of Arkansas",
+          "citation": "2025 Ark. App. 341",
+          "court": "Court of Appeals of Arkansas",
+          "decision_date": "2025-05-28",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10611121/gaspar-gaspar-andres-v-state-of-arkansas/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S2",
+          "text": "t\u2019s the most accurate.\u201d The circuit court overruled the objection. The State sought to impeach Gaspar\u2019s testimony and diminish his credibility with the prior inconsistent statement multiple times; no further objections were raised. The jury found Gaspar guilty of the first-degree murder of Miguel Ruiz and hindering Paco\u2019s apprehension. The jury recommended consecutive sentences of thirty years\u2019 incarceration for murder and ten years for hindering apprehension. The circuit court sentenced Gaspar accordingly. In this belated appeal, Gaspar contends that the court erred in finding that his custodial statement was admissible because he knowingly and intelligently waived his Miranda rights and that his statement to police was voluntarily given. He claims that he expressly requested an attorney and 4 did not waive his request, yet he was unconstitutionally subjected to further police interrogation. Gaspar asserts that because his statement was not voluntarily given, the circuit court erred in deeming it admissible. First, we note that, although Gaspar asserts error in the circuit court\u2019s ruling regarding the admissibility of his custodial statement following the suppression hearing, the State did not admit it as substantive evidence of guilt. The statement\u2019s sole use was limited to the impeachment of Gaspar\u2019s trial testimony. Even statements inadmissible against a defendant in the prosecution\u2019s case-in-chief because of the lack of procedural safeguards required by Miranda v. Arizona,2 may, if trustworthiness satisfies legal standards, be used for impeachment purposes to attack the credibility of defendant\u2019s trial testimony.3 Therefore, although Gaspar challenges the circuit court\u2019s finding that his custodial statement was made with the full knowledge and waiver of his constit",
+          "locator": "Whitespace-normalized extracted text, characters 6401\u20138200",
+          "original_id": "cl-11077709:6400"
+        },
+        {
+          "case_id": "cl-10705081",
+          "name": "Cameron J. Moore v. the State of Texas",
+          "citation": "",
+          "court": "Texas Court of Appeals, 1st District (Houston)",
+          "decision_date": "2024-10-31",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10238491/cameron-j-moore-v-the-state-of-texas/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": "] rights, as required by [Miranda4], and Article 38.22 of the Texas Code of Criminal Procedure.\u201d He also challenged the statement on the basis that it \u201cwas not freely and voluntarily made\u201d because \u201cthe officers to whom the statement was made used misstatement, deception and trickery to get [Moore] to make the statement.\u201d Specifically, he claimed that the officers \u201ctold [him] that unless he talked to them at that time and made a statement, . . . he would not be able to make a statement at all after that.\u201d The trial court conducted a hearing on the motion at the start of trial before the first witness was sworn. In his opening statement at the hearing, Moore asserted that his statement should be suppressed because he was not informed of his Miranda rights before he gave the statement, which he claimed resulted from a custodial interrogation. He asserted that, at the time of his statement, it was \u201cclear that he was going to be charged with murder.\u201d He argued that the recorded statement should be suppressed because he \u201cwas in fear, scared, [and] intimidated\u201d at the time he gave 4 See Miranda v. Arizona, 384 U.S. 436, 478\u201379 (1966) 12 it. The State responded that Moore was not entitled to Miranda warnings because he was not in custody when he made the statement and that he had given the statement voluntarily. A transcript of Moore\u2019s February 2021 statement was admitted into evidence at the suppression hearing, and the defense called Moore to testify. He stated that Detective Thompson told him early in the interview that \u201ceventually [he] would get charged.\u201d Moore testified that, if his rights had been read to him, he would have exercised his right to remain silent. Moore acknowledged that, in the interview, he said that he told Reyes to shoot up the cars. Moore testified that",
+          "locator": "Whitespace-normalized extracted text, characters 16001\u201317800",
+          "original_id": "cl-10705081:16000"
+        },
+        {
+          "case_id": "cl-11098380",
+          "name": "United States v. Steven George Morgan",
+          "citation": "",
+          "court": "Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2025-07-11",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10631793/united-states-v-steven-george-morgan/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S4",
+          "text": "ire suppression of the de- fendant\u2019s unwarned but voluntary statement telling a police officer where his pistol was hidden. See 542 U.S. at 634. And in a separate concurring opinion that Justice O\u2019Connor joined, Justice Kennedy agreed with the three-Justice plurality that \u201c[a]dmission of nontes- timonial physical fruits . . . does not run the risk of admitting into trial an accused\u2019s coerced incriminating statements against him- self.\u201d Id. at 645 (Kennedy, J., concurring). Five Justices thus con- cluded that a violation of Miranda\u2019s prophylactic rule does not nec- essarily require the suppression of physical evidence derived from a suspect\u2019s unwarned-but-uncoerced statement. And unsurpris- ingly, we have since relied on Patane for precisely that proposition. See United States v. Jackson, 506 F.3d 1358, 1361 (11th Cir. 2007) (\u201cBe- cause Jackson\u2019s firearm is physical evidence and he concedes that his unwarned statement was voluntary, Patane allows the admis- sion of Jackson\u2019s firearm.\u201d). Patane\u2019s logic is fatal to Morgan\u2019s position. Morgan\u2019s state- ment disclaiming the LG phone is, for all intents and purposes, identical to Patane\u2019s statement telling the officer where he had USCA11 Case: 23-11114 Document: 71-1 Date Filed: 07/11/2025 Page: 16 of 59 23-11114 Opinion of the Court 16 hidden his gun. See 542 U.S. at 635. To be sure, the precise Miranda violation there was a little different: In Patane, the police obtained the defendant\u2019s statement before they provided him any warnings; here, the agents obtained Morgan\u2019s statements after he had been warned and had invoked his rights to counsel and silence. But that\u2019s neither here nor there. What underlay the Court\u2019s decision in Patane wasn\u2019t the particular species of Miranda violation but, ra- ther, the recognition that while ",
+          "locator": "Whitespace-normalized extracted text, characters 22401\u201324200",
+          "original_id": "cl-11098380:22400"
+        },
+        {
+          "case_id": "cl-11077709",
+          "name": "Gaspar Gaspar-Andres v. State of Arkansas",
+          "citation": "2025 Ark. App. 341",
+          "court": "Court of Appeals of Arkansas",
+          "decision_date": "2025-05-28",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10611121/gaspar-gaspar-andres-v-state-of-arkansas/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": "e credibility of defendant\u2019s trial testimony.3 Therefore, although Gaspar challenges the circuit court\u2019s finding that his custodial statement was made with the full knowledge and waiver of his constitutional rights, the argument is misplaced. Instead, the appropriate inquiry is whether Gaspar\u2019s custodial statement was voluntary. A custodial statement may not be used for impeachment purposes if it was coerced.4 The burden is on the State to show that a custodial statement was made voluntarily, intelligently, and without hope of reward or fear of punishment.5 2 384 U.S. 436 (1966). Harris v. New York, 401 U.S. 222 (1971). 3 Brooks v. State, 308 Ark. 660, 827 S.W.2d 119 (1992) (citing Mincey v. Arizona, 437 U.S.385 4 (1978)). 5 Jackson v. State, 284 Ark. 478, 683 S.W.2d 606 (1985). 5 In support of his argument that the custodial statement was not given voluntarily, he asserts that it was not the product of his own free and deliberate choice. Gaspar alleges that the statement resulted from coercion. He states that statements made by the interrogating officers contributed to a sense of intimidation and coercion. As examples of the alleged coercive statements made by police, Gaspar points to accusations of lying and instructions to be strong and honest. He states that officers also reminded him that his parents in Guatemala depend on him. Gaspar further alleged that he was handcuffed for part of the interview; he was not permitted to leave the room; he was questioned for more than three hours; and he was alone with two officers for most of the time. Gaspar argues that the isolated and unfamiliar environment was intimidating and conferred a psychological advantage to the officers. Gaspar also argues that, while the Miranda form provided the option to request an attorney and he",
+          "locator": "Whitespace-normalized extracted text, characters 8001\u20139800",
+          "original_id": "cl-11077709:8000"
+        },
+        {
+          "case_id": "cl-10705081",
+          "name": "Cameron J. Moore v. the State of Texas",
+          "citation": "",
+          "court": "Texas Court of Appeals, 1st District (Houston)",
+          "decision_date": "2024-10-31",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10238491/cameron-j-moore-v-the-state-of-texas/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S6",
+          "text": "n his own vehicle. The State called Detective Thompson to testify at the suppression hearing. Detective Thompson testified that, during the interview, Moore was not handcuffed and the doors of the car were unlocked. He said that Moore had been free to leave. Detective Thompson acknowledged that he was \u201cpart of the decision\u201d to later charge Moore with Kevin\u2019s murder and that the decision to charge Moore was based in part on the February 2021 interview as well as other evidence collected during the investigation. When questioned by the defense, Detective Thompson acknowledged that, during the interview, he told Moore that \u201ceventually [he was] going to get charged.\u201d He also acknowledged that Moore was the \u201cfocus\u201d of his investigation. In closing argument at the suppression hearing, Moore argued that he was entitled to be informed of his Miranda rights because he was in custody when he gave his statement. He pointed out that he was the focus of the investigation and 14 cited Detective Thompson\u2019s remark that he was \u201ceventually going to get charged.\u201d Moore asserted that he should have been informed of his Miranda rights as soon as Detective Thompson made the remark. Moore also asserted that his statement was not voluntary because he was \u201cin fear, scared, [and] intimidated.\u201d At the end of the hearing, the trial court ruled that Moore\u2019s February 2021 statement was admissible, thereby denying Moore\u2019s motion to suppress. In support of its ruling, the trial court orally found that the statement \u201cwas made freely and voluntarily,\u201d Moore \u201cwas not in custody,\u201d and he \u201cwas free to leave.\u201d The trial court also found that there was \u201cno threats,\u201d and \u201c[t]here was not any intimidation.\u201d The court further found that, \u201cbased on the [its] experience, that various tactics are used with respect",
+          "locator": "Whitespace-normalized extracted text, characters 19201\u201321000",
+          "original_id": "cl-10705081:19200"
+        },
+        {
+          "case_id": "cl-11098380",
+          "name": "United States v. Steven George Morgan",
+          "citation": "",
+          "court": "Court of Appeals for the Eleventh Circuit",
+          "decision_date": "2025-07-11",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10631793/united-states-v-steven-george-morgan/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "t a suspect\u2019s ownership of property. See, e.g., United States v. Gaston, 357 F.3d 77, 82 (D.C. Cir. 2004) (holding that an officer\u2019s questions about the defendant\u2019s address and whether he owned the house fell within the routine-booking ex- ception because they were \u201crelated to \u2018administrative concerns\u2019\u201d); United States v. Tapia-Rodriguez, 968 F.3d 891, 896 (8th Cir. 2020) (holding that officers\u2019 question about which bedroom was the 6 There\u2019s little doubt that Morgan was in custody after the agents handcuffed him and put him in their vehicle. See, e.g., New York v. Quarles, 467 U.S. 649, 655 (1984) (ruling that a defendant was in custody under Miranda as he was \u201chandcuffed when the questioning at issue took place\u201d). USCA11 Case: 23-11114 Document: 71-1 Date Filed: 07/11/2025 Page: 12 of 59 23-11114 Opinion of the Court 12 defendant\u2019s fell within the routine-booking exception because they \u201chad a legitimate need for the information to ensure they were con- ducting a lawful consensual search\u201d). We can assume without deciding that the routine-booking exception covers the interaction with Feo, in which Morgan said that both phones were his. Perhaps not surprisingly, Morgan doesn\u2019t contest the district court\u2019s reliance on that statement at the suppression hearing; if anything, Morgan\u2019s initial claim that both phones (including the LG) were his would seem to cut against the district court\u2019s abandonment finding (though not dispositively so). See supra at 8. But we reject the government\u2019s bid to extend the routine- booking exception any further\u2014specifically, to Gaviria\u2019s question- ing in the squad car that prompted Morgan to disclaim the LG phone. Given the circumstances, it strains credulity to say that Gaviria\u2019s question about the phone was meant \u201cto secure the bio- graphical d",
+          "locator": "Whitespace-normalized extracted text, characters 16001\u201317800",
+          "original_id": "cl-11098380:16000"
+        },
+        {
+          "case_id": "cl-11077709",
+          "name": "Gaspar Gaspar-Andres v. State of Arkansas",
+          "citation": "2025 Ark. App. 341",
+          "court": "Court of Appeals of Arkansas",
+          "decision_date": "2025-05-28",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10611121/gaspar-gaspar-andres-v-state-of-arkansas/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S8",
+          "text": "d and unfamiliar environment was intimidating and conferred a psychological advantage to the officers. Gaspar also argues that, while the Miranda form provided the option to request an attorney and he was told that he could ask for an attorney at any time, he was not provided with additional information about his constitutional rights. Last, Gaspar contends that his inability to fully comprehend English left him vulnerable to misunderstanding. He argues that given the totality of the circumstances, his custodial statement was the product of intimidation, coercion, and deception and not his free and deliberate choice; consequently, it was inadmissible for any purpose, including impeachment. In response, the State contends that Gaspar\u2019s argument regarding involuntariness created by coercion, intimidation, and lack of free will is not preserved for appeal. We agree. Gaspar\u2019s motion to suppress and testimony elicited at the suppression hearing centered on whether he, despite any alleged language barrier, knowingly, intelligently, and voluntarily waived his right to counsel; he made no argument regarding coercion. Here, on appeal, for the first time, Gaspar argues that his 6 custodial statement was made as the result of police coercion and intimidation. Both arguments challenge the voluntariness of the statement; however, the motion to suppress concerned how or if Gaspar\u2019s broken English affected the voluntariness of his request for counsel or the waiver thereof. His argument here is much different\u2014it focuses on confusion caused by coercion, rendering his statement involuntary. Moreover, during trial, when the State sought to impeach Gaspar with his custodial statement, Gaspar failed to object on the grounds that he raises on appeal. Instead, his only objection was to the co",
+          "locator": "Whitespace-normalized extracted text, characters 9601\u201311400",
+          "original_id": "cl-11077709:9600"
+        },
+        {
+          "id": "W1",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "supreme.justia.com",
+          "citation": "",
+          "source_url": "https://supreme.justia.com/cases/federal/us/437/385/",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Unofficial opinion mirror; distinguish the court opinion from editorial summaries.",
+          "decision_date": "",
+          "court": "supreme.justia.com",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W3",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "supreme.justia.com",
+          "citation": "",
+          "source_url": "https://supreme.justia.com/cases/federal/us/401/222/",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Unofficial opinion mirror; distinguish the court opinion from editorial summaries.",
+          "decision_date": "",
+          "court": "supreme.justia.com",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W19",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "supreme.justia.com",
+          "citation": "",
+          "source_url": "https://supreme.justia.com/cases/federal/us/463/1032/",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Unofficial opinion mirror; distinguish the court opinion from editorial summaries.",
+          "decision_date": "",
+          "court": "supreme.justia.com",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 561,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "Miranda voluntary unwarned custodial statement impeachment defendant testifies inconsistently suppression arguments",
+              "mode": "semantic",
+              "court": "",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 561
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 3,
+          "consulted_urls": 47,
+          "consulted_sources": [
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/437/385/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/437/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/401/222/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/538/760/case.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/434/1343/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/495/14/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/499/279/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/536/545/case.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://www.law.cornell.edu/supct/pdf/02-1183P.ZS",
+              "title": "www.law.cornell.edu"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/474/104/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/311/292/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://www.law.cornell.edu/supremecourt/text/448/297",
+              "title": "www.law.cornell.edu"
+            },
+            {
+              "url": "https://www.law.cornell.edu/supremecourt/text/15-1262",
+              "title": "www.law.cornell.edu"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/556/07-542/opinion.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/563/09-1272/index.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://www.law.cornell.edu/supremecourt/text/444/130",
+              "title": "www.law.cornell.edu"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/385/493/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/503/222/case.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/463/1032/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://www.law.cornell.edu/supct/supremes.htm",
+              "title": "www.law.cornell.edu"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/559/08-1175/opinion.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/604/22-7466/case.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/516/163/case.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://www.law.cornell.edu/supct/pdf/09-1454P.ZD",
+              "title": "www.law.cornell.edu"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/547/05-502/concur.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/514/1/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/518/938/case.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/463/1/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/463/491/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/463/825/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/417/433/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/527/706/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://www.law.cornell.edu/supremecourt/text/92/642",
+              "title": "www.law.cornell.edu"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/491/58/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/519/33/case.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/572/12-682/case.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/559/09-338/index.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/411/1/",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/530/428/case.pdf",
+              "title": "supreme.justia.com"
+            },
+            {
+              "url": "https://supreme.justia.com/cases/federal/us/60/393/",
+              "title": "supreme.justia.com"
+            }
+          ],
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:supreme.justia.com/cases/federal/us/401/222 Harris v New York 401 U.S. 222 \u00b7 site:law.cornell.edu/supremecourt/text/401/222 Harris New York \u00b7 site:supreme.justia.com/cases/federal/us/437/385 Mincey v Arizona coerced impeachment"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:supreme.justia.com/cases/federal/us/463/1032 Michigan v Long state courts independent state grounds greater protection \u00b7 site:law.cornell.edu/supremecourt/text/463/1032 Michigan v Long state constitution"
+            },
+            {
+              "phase": "web open_page",
+              "status": "completed",
+              "query": "https://supreme.justia.com/cases/federal/us/401/222/"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:supreme.justia.com/cases/federal/us/547/ Utah state elects to provide greater protection citizens than Federal Constitution requires \u00b7 site:supreme.justia.com/cases/federal/us/ Michigan v Long independent state constitutional protections greater than federal"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T08:12:38.693Z",
+      "jurisdiction_note": "",
+      "coverage_notes": [
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Miranda voluntary unwarned custodial statement impeachment defendant testifies inconsistently suppression arguments",
+      "task": "arguments",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "research_issues": [
+        {
+          "id": "I1",
+          "question": "Under the U.S. Constitution, may a prosecutor use a voluntary but unwarned custodial statement to impeach a defendant who testifies inconsistently, and what are the strongest arguments for and against admission, including limits based on voluntarity,"
+        },
+        {
+          "id": "I2",
+          "question": "scope, and any distinction between federal constitutional law and potentially more protective state law?"
+        }
+      ],
+      "document_coverage": [],
+      "filters": {
+        "court": "",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "issue_id": "I1",
+          "section": "Supporting argument",
+          "claim": "Under the federal Constitution, a voluntary statement obtained in violation of Miranda may be used to impeach a defendant\u2019s inconsistent trial testimony if the statement\u2019s trustworthiness satisfies legal standards; it may not be used as substantive evidence in the prosecution\u2019s case-in-chief. Harris v. New York, 401 U.S. 222 (1971).",
+          "source_id": "W3",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://supreme.justia.com/cases/federal/us/401/222/"
+          ],
+          "source_ids": [
+            "W3"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Supporting argument",
+          "claim": "The Harris majority reasoned that allowing impeachment helps the jury assess credibility and prevents a defendant from using the Miranda violation as a shield for false testimony; it considered exclusion from the case-in-chief sufficient deterrence of improper police conduct.",
+          "source_id": "W3",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://supreme.justia.com/cases/federal/us/401/222/"
+          ],
+          "source_ids": [
+            "W3"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Opposing argument",
+          "claim": "In dissent in Harris, Justice Brennan argued that impeachment use burdens the defendant\u2019s choice to testify, because it makes that choice costly, and weakens Miranda\u2019s deterrent effect by letting police obtain statements they may later use if the defendant takes the stand. This is a dissenting argument, not the Court\u2019s holding.",
+          "source_id": "W3",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://supreme.justia.com/cases/federal/us/401/222/"
+          ],
+          "source_ids": [
+            "W3"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Response and limits",
+          "claim": "The federal impeachment exception does not extend to a coerced or otherwise involuntary statement: Mincey v. Arizona, 437 U.S. 385 (1978), held that using an involuntary statement against a defendant at trial violates due process, even when the proposed use is impeachment.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://supreme.justia.com/cases/federal/us/437/385/"
+          ],
+          "source_ids": [
+            "W1"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I1",
+          "section": "Response and limits",
+          "claim": "The exception is conditional on trustworthiness and impeachment of the defendant\u2019s testimony; it does not authorize substantive use or dispense with resolving a genuine voluntariness challenge. Mincey reaffirmed Harris\u2019s trustworthiness condition and rejected trial use of the involuntary statements before it.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://supreme.justia.com/cases/federal/us/437/385/",
+            "https://supreme.justia.com/cases/federal/us/401/222/"
+          ],
+          "source_ids": [
+            "W1",
+            "W3"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I2",
+          "section": "Response and limits",
+          "claim": "Harris states the federal constitutional baseline, not the rule for every state. A separate, adequate state-law ground may independently support a state-court judgment; Michigan v. Long, 463 U.S. 1032 (1983), recognizes that federal review does not displace a decision clearly resting on such a ground. Because no state is specified, whether that state\u2019s constitution, evidence rules, or statutes provide greater protection requires jurisdiction-specific research.",
+          "source_id": "W19",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://supreme.justia.com/cases/federal/us/463/1032/"
+          ],
+          "source_ids": [
+            "W19"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "issue_id": "I2",
+          "section": "Response and limits",
+          "claim": "As a jurisdiction-specific example\u2014not a nationwide rule\u2014the supplied excerpt from the Arkansas Court of Appeals\u2019 May 28, 2025 decision states that a custodial statement may not be used for impeachment if coerced and places on the State the burden to show voluntariness under the standard it describes.",
+          "source_id": "S5",
+          "quote_id": "S5Q3",
+          "web_source_urls": [],
+          "quote": " A custodial statement may not be used for impeachment purposes if it was coerced.4 The burden is on the State to show that a custodial statement was made voluntarily, intelligently, and without hope of reward or fear of punishment.5 2 384",
+          "evidence_method": "exact_passage"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "unanswered_issues": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    },
+    "events": [
+      {
+        "seconds": 1.327,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 1.327,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 6.954,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "arguments",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 6.954,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 6.954,
+        "stage": "searching",
+        "message": "Finding opinions about your question\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 6.954,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 6.954,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 6.954,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 0 passages retrieved."
+      },
+      {
+        "seconds": 6.965,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 15.501,
+        "stage": "reading",
+        "message": "Reading United States v. Steven George Morgan\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 15.501,
+        "stage": "reading",
+        "message": "Reading Gaspar Gaspar-Andres v. State of Arkansas\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 15.501,
+        "stage": "reading",
+        "message": "Reading Cameron J. Moore v. the State of Texas\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 15.997,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 15.997,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 57.236,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 7,
+    "exact_passages": 1,
+    "web_citations": 6
+  }
+]
