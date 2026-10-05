@@ -1,4 +1,4 @@
-# Lex Raptor website and hosted demo
+# Lex Raptor research chat
 
 The public website and research workbench use a Cloudflare Worker, D1 spending
 ledger, and static assets. The same workbench runs on loopback with local Ollama.
@@ -16,7 +16,7 @@ Both are account-free. The original Python/Next.js matter workspace is separate.
   records. This is not a citator or a good-law determination.
 - Download the draft, quotations and sources as text or JSON.
 
-Each draft uses one bounded model call. These are structured, source-grounded
+Chat is the homepage. Auto mode uses one bounded model call to select the task, search terms, databases and explicit court/date constraints, followed by at most one drafting call. Manual choices override the plan. Recent conversation context is kept only in browser memory and sent with follow-ups. Fully manual requests use one drafting call. These are structured, source-grounded
 workflows, not autonomous full-matter agents. Retrieval reads up to three public
 records per live database, ranks passages locally, interleaves the selected
 collections, and sends at most twelve passages within the existing token budget.
@@ -42,7 +42,7 @@ electricity and any independently purchased data service are your responsibility
 The starter CAP library works offline. Online database selections send search
 terms to those providers, even when inference is local. An optional
 `COURTLISTENER_API_TOKEN` can be supplied in the environment or ignored
-`.env.local`. Public records and provider request counters persist in ignored
+`.env.local`. Public records persist in ignored
 `.local-data/`; questions and drafts are not stored by this workbench.
 
 ## Database connections
@@ -56,12 +56,11 @@ terms to those providers, even when inference is local. An optional
 
 The CourtListener connector is disabled until its token is configured. It uses
 the authenticated v4 API. No PACER purchase, RECAP Fetch/Pray-and-Pay request,
-commercial subscription, or automatic upgrade is made. The default shared
-CourtListener ceiling is 5 requests/minute, 50/hour and 125/day. One case search
-can use up to four requests (search plus three opinions). Existing public
-records are cached for 24 hours to reduce repeat downloads. Provider 429s are
-reported without automatic retries. Local and hosted installations have separate
-counters; the provider applies its account-wide limits across both.
+commercial subscription, or automatic upgrade is made. One case search can use up to four requests (search plus three opinions).
+Existing public records are cached for 24 hours to reduce repeat downloads.
+Provider 429s are reported without automatic retries. Lex Raptor imposes no
+per-minute, hourly, daily or concurrency request-count cap during testing;
+providers still apply their account-wide quotas across local and hosted use.
 
 See [data access and student resources](../docs/DATA_AND_STUDENT_ACCESS.md).
 
@@ -71,7 +70,7 @@ Use Node 20.20+ and npm. Run `npm ci`, `npm run build`, then `npm test`.
 The tests use a local Workers runtime and a simulated provider; they spend no
 API credits. They verify public access, origin checks, database selection, quotation
 validation, idempotency, concurrent budget admission, failure reservations,
-visitor limits, live-source adapters, partial failures, destination restrictions,
+removed historical count limits, automatic task planning and manual overrides, live-source adapters, partial failures, destination restrictions,
 full-text evidence, and local inference without an API key. They are not a legal-quality benchmark.
 
 With the local workbench running, `node scripts/diagnose-workbench.mjs` runs
@@ -104,8 +103,7 @@ commit them. Configure these through the hosting provider's secret settings:
 | `DEMO_EXPIRES_AT` | Unix timestamp; missing or expired disables paid requests |
 
 The demo requires no account, passcode, or session cookie. Preserve the existing
-`DEMO_SESSION_SECRET` value when upgrading: changing the IP-hashing key would
-reset visitor limits. Set an expiration when reviewing the model's current
+`DEMO_SESSION_SECRET` value when upgrading to keep usage accounting consistent. Set an expiration when reviewing the model's current
 price and access. Disabling the demo blocks new requests; requests already
 sent to the provider can still complete and charge.
 
@@ -117,14 +115,16 @@ or reset `demo_calls` on a funded deployment.** A fresh database is a fresh
 budget and requires owner authorization. This app cap covers requests through
 this demo, not other uses of the provider account or hosting charges.
 
-Before each model call, one atomic `INSERT ... SELECT` reserves **$0.02**, only
-if the total ledger charge plus that reservation fits under the cap. Input is
-bounded at 32,768 UTF-8 bytes including instructions/schema, with a 4,096-token
-framing allowance, and output (including reasoning) at 4,096 tokens. At the
-verified standard prices this is below $0.011. No paid tools, loops, automatic
-retries, user-selected models, or user-selected endpoints are allowed.
-
-Successful calls settle conservatively against reported input/output tokens,
+Before the first model call for a request, one atomic `INSERT ... SELECT`
+reserves **$0.02** only if it fits under the lifetime cap. The reservation covers
+both automatic planning and drafting. Planning input is bounded at 14,000 UTF-8
+bytes including schema, with at most 1,024 output tokens. Drafting input is
+bounded at 32,768 bytes, with at most 4,096 output tokens. Each call includes a
+conservative 4,096-token framing allowance. Together these bounds cost less than
+$0.016 at the pinned rates, including the cache-write allowance. There are no
+paid tools, agent loops, automatic retries, or visitor-selected model endpoints.
+Manual source-only search never calls the model.
+Successful requests settle conservatively against the sum of reported input/output tokens from every model call,
 rounded up. The ledger allows $0.225/million input tokens (both the standard
 $0.10 input rate and the $0.125 cache-write rate) and $0.50/million output tokens;
 this intentionally overestimates ordinary input cost. Timeouts, rejected requests, missing usage, and
@@ -145,18 +145,13 @@ requests retain their reservations rather than assuming they were unbilled.
 - [Codex model availability](https://learn.chatgpt.com/docs/models)
 - [Official pricing](https://developers.openai.com/api/docs/pricing)
 
-Additional limits: 10 questions per rolling 24 hours per IP hash,
-3 per minute per IP hash, and at most 2 recent in-flight reservations globally.
-People on the same public network share the IP-based limit. IPs come from the
-edge's `CF-Connecting-IP` header and are HMAC-hashed; a direct host must sanitize
-that header itself. These limits discourage abuse; the durable global budget
-remains authoritative when a visitor changes networks.
-
-Opening public access preserves all ledger rows and applied migrations. The
-legacy `session` column holds a public visitor marker on new rows; the old
-`demo_attempts` table limits hosted research/search requests to 30 per network
-per hour. Remove the obsolete
-`DEMO_PASSCODE` hosting secret when deploying this version.
+The owner removed application request-count limits for testing on 2026-10-05,
+while explicitly retaining the $10 lifetime spending cap. Historical ledger rows
+and applied migrations remain intact. The legacy `demo_attempts` and
+`source_requests` tables are retained but no longer gate requests. Input sizes,
+model output bounds, provider timeouts, origin checks and idempotency remain.
+The edge's `CF-Connecting-IP` is HMAC-hashed for accounting; direct hosts must
+sanitize it. Source-service quotas still apply and return visible errors.
 
 ## Research scope and privacy
 
@@ -167,20 +162,21 @@ gets provider credentials, tools, user-selectable endpoints, or private matter
 documents. Empty or unavailable selections are rejected before model use.
 
 Questions/search terms are sent only to selected data providers. CourtListener
-can log queries according to its account settings. Only a successful retrieval
-with supporting text triggers model use. Free source search remains available
+can log queries according to its account settings. Automatic settings use the model before source retrieval; drafting occurs only
+when supporting text is retrieved. Fully manual requests with no evidence make
+no model call. Free source search remains available
 when the AI allowance is exhausted. Date/court filters do not apply to eCFR's
 current dated snapshot; that distinction is shown in the UI and results.
 
-D1 additionally stores public source-record cache entries and provider request
-counters without question text. A source fetch is capped at 1.5 MB; cached
+D1 additionally stores public source-record cache entries without question text. A source fetch is capped at 1.5 MB; cached
 responses are below 900 KB. Redirects and non-allowlisted destinations are
 rejected. Source outages and oversized documents are disclosed as incomplete
 coverage, never silently substituted with another database.
 
 Questions and selected public passages are sent to OpenAI with `store:false`.
-This setting does not promise zero provider retention. The app stores no
-question/answer history; it stores hashed visitor IDs, legacy session IDs or
+This setting does not promise zero provider retention. The server stores no
+question/answer history; the current chat is held in browser memory until reload
+or New chat. Recent conversation context is sent with follow-ups. The server stores hashed visitor IDs, legacy session IDs or
 public visitor markers, request IDs, timestamps, reservation states, and token counts. Questions must not
 contain confidential client information. No documents can be uploaded here.
 

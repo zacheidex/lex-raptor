@@ -8,9 +8,9 @@ Lex Raptor searches a local case-law library, drafts answers with inspectable so
 
 The project is **AGPL-3.0-only**. The code, local inference, search, source reader, document workflows, and API adapters are all included. Optional managed API connections are the planned paid service; payment collection is not implemented. See [the business model](docs/BUSINESS_MODEL.md) and [governance](GOVERNANCE.md).
 
-The intended public project domain is **lexraptor.com**, purchased through Porkbun. Its static source is in [website/](website/). The source repository is [zacheidex/lex-raptor](https://github.com/zacheidex/lex-raptor). The website introduces the project and distributes the source; research runs in the local app.
+**[lexraptor.com](https://lexraptor.com)** opens directly to research chat. Its source is in [website/](website/). Automatic mode selects tasks, search terms and databases; users can override each choice. Project information is on separate About, Sources and Run locally pages. The source repository is [zacheidex/lex-raptor](https://github.com/zacheidex/lex-raptor).
 
-## Try the running MVP
+## Local matter workspace
 
 After starting the app, open **http://localhost:3000**. The local workspace opens directly: **no account, email, password, or API connection required**. Choose your databases, enter a legal question, then choose **Search opinions** or **Ask Lex Raptor**. Select any citation to inspect its quotation, extracted passage, opinion type, and original Harvard CAP record. Research history survives reloads. The application uses the owner's supplied raptor monogram logo.
 
@@ -97,9 +97,9 @@ Copyright 2026 Lex Raptor contributors. Distributed under GNU AGPL version 3 onl
 
 AGPL does not prohibit acquisition or commercial hosting. It preserves compliant recipients' rights to released versions and requires qualifying modified network versions to offer their corresponding source. Community forks remain possible. There is no copyright assignment requirement for contributions and no promise that a company, trademark or future development can never change hands.
 
-## Hosted demo
+## Research chat
 
-The [research workbench](https://lexraptor.com/demo) supports source search, case briefs, research memos, authority comparisons, arguments and responses, citation lookup, and text/JSON exports. It searches live eCFR and Federal Register data without a key, the bundled CAP starter library offline, and nationwide CourtListener case law when its owner token is configured. Source search uses no model credits. Hosted drafts use the existing server-side OpenAI key and durable **$10 total demo cap**; no account or passcode is required.
+The [research chat](https://lexraptor.com) supports source search, case briefs, research memos, authority comparisons, arguments and responses, citation lookup, and text/JSON exports. It searches live eCFR and Federal Register data without a key, the bundled CAP starter library offline, and nationwide CourtListener case law when its owner token is configured. Source search uses no model credits. Hosted drafts use the existing server-side OpenAI key and durable **$10 total API cap**; no account or passcode is required. App request-count limits are removed for testing; provider quotas still apply.
 
 The same workbench can draft with local Ollama, without an OpenAI key or model fee:
 

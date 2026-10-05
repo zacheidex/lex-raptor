@@ -18,13 +18,8 @@ export async function reserve(db, id, visitor, session, now) {
     (id,visitor,session,created,state,charged,model)
     SELECT ?,?,?,?,'reserved',?,? WHERE
       (SELECT COALESCE(SUM(charged),0) FROM demo_calls) + ? <= ?
-      AND (SELECT COUNT(*) FROM demo_calls WHERE visitor=? AND created>?) < 10
-      AND (SELECT COUNT(*) FROM demo_calls WHERE session=? AND created>?) < 10
-      AND (SELECT COUNT(*) FROM demo_calls WHERE visitor=? AND created>?) < 3
-      AND (SELECT COUNT(*) FROM demo_calls WHERE state='reserved' AND created>?) < 2
     ON CONFLICT(id) DO NOTHING RETURNING id`).bind(
-      id,visitor,session,now,RESERVE,MODEL,RESERVE,CAP,
-      visitor,now-86400,session,now-86400,visitor,now-60,now-120
+      id,visitor,session,now,RESERVE,MODEL,RESERVE,CAP
     ).first();
   return !!row;
 }

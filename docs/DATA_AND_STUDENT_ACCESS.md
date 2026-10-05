@@ -21,7 +21,7 @@ provides the public regulation endpoints. eCFR is an editorial compilation;
 FederalRegister.gov text should be checked against the linked official edition.
 A proposal, notice, regulation, and judicial opinion are different source types.
 
-## CourtListener: the next case-law connection
+## CourtListener: connected case-law search
 
 [Free Law Project's membership page](https://free.law/membership/) lists a free
 non-member API tier of **5 requests/minute, 50/hour and 125/day**. Membership
@@ -45,8 +45,7 @@ describes coverage of over nine million decisions from more than 2,000 courts.
 4. For hosting, add the token as a server-side secret and redeploy. For local
    use, restart `npm run local`.
 
-The workbench applies the free-tier ceiling conservatively to all visitors
-sharing the token. A search can use one search request plus up to three opinion
+The website is connected. App-imposed count ceilings have been removed for testing; CourtListener still enforces the account’s own quotas. A search can use one search request plus up to three opinion
 requests; cached public documents reduce that. Citation lookup also consumes
 source requests. It verifies existence/ambiguity only; it is not a replacement
 for a treatment citator. Provider limits cover every installation sharing the

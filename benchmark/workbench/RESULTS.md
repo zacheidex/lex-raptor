@@ -57,11 +57,12 @@ rerun after this change, so their results are development evidence only.
 
 ## Source and application checks
 
-- Twelve local Workers/D1 integration tests passed using simulated providers.
+- Seventeen local Workers/D1 integration tests passed using simulated providers.
   They cover source selection, dated/full-text evidence, partial outages,
   credential boundaries, blocked source destinations, citation lookup, local
   inference without an API key, origin checks, duplicate requests, historical
-  visitor limits, concurrent budget admission, and held failure reservations.
+  removal of historical count limits, automatic planning, manual overrides,
+  follow-up context, concurrent budget admission, and held failure reservations.
 - Real CourtListener search returned 499 reported matches for `caseName:Celotex`
   and eight retrieved passages from up to three opinion records. One earlier
   broad search timed out at 20 seconds. The adapter now avoids unnecessary
@@ -82,7 +83,7 @@ The hosted demo uses a different model (GPT-6 Luna); these local-model outcomes
 must not be described as its scores. The original $10 hosted lifetime budget and
 historical charges remain intact.
 
-## Hosted production check
+## Earlier hosted production check (before request-count removal)
 
 After publishing, a real CourtListener search from lexraptor.com completed in
 1.86 seconds and returned eight passages from the live collection. The new
@@ -91,10 +92,35 @@ An attempted hosted regulatory AI draft returned HTTP 429 because the testing
 network had already consumed its rolling ten-request allowance. The test stopped
 without another model attempt. The lifetime ledger stayed at **$0.130570**
 consumed or reserved (**$9.869430** remaining), so this update added **$0** in
-model API spending. The UI now reports daily allowance and the next available
-slot before submission; source search stays enabled.
+model API spending. This block occurred before the owner authorized removing request-count limits.
+Those limits have now been removed; the lifetime money cap is unchanged.
 
-The new prompts were therefore not smoke-tested against GPT-6 Luna on the live
+At that point the new prompts had not been smoke-tested against GPT-6 Luna on the live
 server. Existing provider behavior was covered by earlier deployment checks,
 and the new request/validation paths by simulated-provider tests. This limit is
 reported explicitly rather than bypassing the established request controls.
+
+## Chat and automatic-field checks
+
+The homepage is now chat. About, Sources and Run locally are separate pages.
+Seventeen integration tests pass, including automatic planning, manual overrides,
+invalid-plan rejection, combined planning/drafting accounting, duplicate requests,
+and admission under the unchanged $10 cap with historical request counts present.
+Browser checks cover follow-up context, per-message exports, source anchors,
+new-chat reset, database selection, all information routes, and mobile overflow.
+
+A new real local Qwen3:14b check (`chat-local-results.json`) automatically selected
+a Celotex case brief and then honored a manual memo choice in a follow-up. The
+brief retained seven findings in 14.552 seconds; the memo retained four in 11.09
+seconds. All retained quotations matched their passages. These two development
+checks do not establish task-selection accuracy or legal correctness; model API
+cost was $0.
+
+Qualitative review of this new local run found a material error: the brief
+characterized the Supreme Court as having held that summary judgment was
+properly granted, instead of preserving the distinction between its Rule 56
+holding and the remanded sufficiency issue. The memo repeated a similar
+overstatement. The brief also omitted its Issue section. These are retained
+reasoning/context failures despite literal quote matches, not passing legal
+answers. The routing checks and quotation counts must not be presented as an
+accuracy score.

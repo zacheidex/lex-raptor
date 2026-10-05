@@ -1,0 +1,457 @@
+{
+  "model_api_spend": 0,
+  "results": [
+    {
+      "id": "automatic_brief",
+      "request": {
+        "question": "Brief Celotex Corp. v. Catrett, 477 U.S. 317 (1986).",
+        "task": "auto",
+        "database_ids": [
+          "cap"
+        ]
+      },
+      "status": 200,
+      "seconds": 14.552,
+      "retained": 7,
+      "literal_quotes": 7,
+      "response": {
+        "sources": [
+          {
+            "id": "S1",
+            "case_id": "cap-6207800",
+            "ordinal": 2,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 3, characters 1\u20131042",
+            "opinion_type": "majority",
+            "text": "The United States District Court for the District of Columbia granted the motion of petitioner Celotex Corporation for summary judgment against respondent Catrett because the latter was unable to produce evidence in support of her allegation in her wrongful-death complaint that the decedent had been exposed to petitioner\u2019s asbestos products. A divided panel of the Court of Appeals for the District of Columbia Circuit reversed, however, holding that petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor. Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 756 F. 2d 181 (1985). This view conflicted with that of the Third Circuit in In re Japanese Electronic Products, 723 F. 2d 238 (1983), rev\u2019d on other grounds sub nom. Matsushita Electric Industrial Co. v. Zenith Radio Corp., 475 U. S. 574 (1986). We granted certiorari to resolve the conflict, 474 U. S. 944 (1985), and now reverse the decision of the District of Columbia Circuit.",
+            "name": "Celotex Corp. v. Catrett",
+            "citation": "477 U.S. 317",
+            "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+            "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6207800:070684a85533:1:3:0"
+          },
+          {
+            "id": "S2",
+            "case_id": "cap-6207800",
+            "ordinal": 21,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 20, characters 1\u2013927",
+            "opinion_type": "majority",
+            "text": "Justice Stevens\u2019 position is factually incorrect. The District Court expressly stated that respondent had made no showing of exposure to Celotex asbestos products \u201cin the District of Columbia or elsewhere.\u201d App. 217 (emphasis added). Unlike Justice Stevens, we assume that the District Court meant what it said. The majority of the Court of Appeals addressed the very issue raised by Justice Stevens, and decided that \u201c[t]he District Court\u2019s grant of summary judgment must therefore have been based on its conclusion that there was \u2018no showing that the plaintiff was exposed to defendant Celotex\u2019s product in the District of Columbia or elsewhere within the statutory period.\u2019\u201d Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 162, n. 3, 756 F. 2d 181, 183, n. 3 (1985) (emphasis in original). In other words, no judge involved in this case to date shares Justice Stevens\u2019 view of the District Court\u2019s decision.",
+            "name": "Celotex Corp. v. Catrett",
+            "citation": "477 U.S. 317",
+            "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+            "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6207800:070684a85533:1:20:0"
+          },
+          {
+            "id": "S3",
+            "case_id": "cap-6207800",
+            "ordinal": 3,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 4, characters 1\u20131800",
+            "opinion_type": "majority",
+            "text": "Respondent commenced this lawsuit in September 1980, alleging that the death in 1979 of her husband, Louis H. Catrett, resulted from his exposure to products containing asbestos manufactured or distributed by 15 named corporations. Respondent\u2019s complaint sounded in negligence, breach of warranty, and strict liability. Two of the defendants filed motions challenging the District Court\u2019s in perso-nam jurisdiction, and the remaining 13, including petitioner, filed motions for summary judgment. Petitioner\u2019s motion, which was first filed in September 1981, argued that summary judgment was proper because respondent had \u201cfailed to produce evidence that any [Celotex] product . . . was the proximate cause of the injuries alleged within the jurisdictional limits of [the District] Court. \u201d In particular, petitioner noted that respondent had failed to identify, in answering interrogatories specifically requesting such information, any witnesses who could testify about the decedent\u2019s exposure to petitioner\u2019s asbestos products. In response to petitioner\u2019s summary judgment motion, respondent then produced three documents which she claimed \u201cdemonstrate that there is a genuine material factual dispute\u201d as to whether the decedent had ever been exposed to petitioner\u2019s asbestos products. The three documents included a transcript of a deposition of the decedent, a letter from an official of one of the decedent\u2019s former employers whom petitioner planned to call as a trial witness, and a letter from an insurance company to respondent\u2019s attorney, all tending to establish that the decedent had been exposed to petitioner\u2019s asbestos products in Chicago during 1970-1971. Petitioner, in turn, argued that the three documents were inadmissible hearsay and thus could not be considered in opposition to",
+            "name": "Celotex Corp. v. Catrett",
+            "citation": "477 U.S. 317",
+            "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+            "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6207800:070684a85533:1:4:0"
+          },
+          {
+            "id": "S4",
+            "case_id": "cap-6205783",
+            "ordinal": 65,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 66, characters 1\u2013463",
+            "opinion_type": "majority",
+            "text": "Respondents argued before the District Court that petitioners had failed to carry their initial burden under Federal Rule of Civil Procedure 56(c) of demonstrating the absence of a genuine issue of material fact. See Adickes v. S. H. Kress & Co., 398 U. S. 144, 157 (1970). Cf. Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 756 F. 2d 181, cert. granted, 474 U. S. 944 (1985). That issue was resolved in petitioners\u2019 favor, and is not before us.",
+            "name": "Matsushita Electric Industrial Co. v. Zenith Radio Corp.",
+            "citation": "475 U.S. 574",
+            "source_url": "https://static.case.law/us/475/cases/0574-01.json",
+            "source_sha256": "c76dd48b76982e03156c35e3a543542ee9ff143b3f55df4e8d067e709c9c062a",
+            "decision_date": "1986-03-26",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6205783:c76dd48b7698:1:66:0"
+          },
+          {
+            "id": "S5",
+            "case_id": "cap-6206897",
+            "ordinal": 46,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 46, characters 1\u2013367",
+            "opinion_type": "majority",
+            "text": "Our analysis here does not address the question of the initial burden of production of evidence placed by Rule 56 on the party moving for summary judgment. See Celotex Corp. v. Catrett, post, p. 317. Respondents have not raised this issue here, and for the purposes of our discussion we assume that the moving party has met initially the requisite evidentiary burden.",
+            "name": "Anderson v. Liberty Lobby, Inc.",
+            "citation": "477 U.S. 242",
+            "source_url": "https://static.case.law/us/477/cases/0242-01.json",
+            "source_sha256": "60437e85b0c28cae977aef33e855f15dca5cce20539922aa04d234bb2154ab07",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6206897:60437e85b0c2:1:46:0"
+          },
+          {
+            "id": "S6",
+            "case_id": "cap-3556136",
+            "ordinal": 4,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 5, characters 1\u2013850",
+            "opinion_type": "majority",
+            "text": "The upshot of the 1984 divestiture of the American Telephone & Telegraph Company\u2019s (AT&T) local telephone business was a system of regional service monopolies (variously called \u201cRegional Bell Operating Companies,\u201d \u201cBaby Bells,\u201d or \u201cIncumbent Local Exchange Carriers\u201d (ILECs)), and a separate, competitive market for long-distance service from which the ILECs were excluded. More than a decade later, Congress withdrew approval of the ILECs\u2019 monopolies by enacting the Telecommunications Act of 1996 (1996 Act), 110 Stat. 56, which \u201cfundamentally restructure[d] local telephone markets\u201d and \u201csubjected] [ILECs] to a host of duties intended to facilitate market entry.\u201d AT&T Corp. v. Iowa Utilities Bd., 525 U. S. 366, 371 (1999). In recompense, the 1996 Act set conditions for authorizing ILECs to enter the long-distance market. See 47 U. S. C. \u00a7271.",
+            "name": "Bell Atlantic Corp. v. Twombly",
+            "citation": "550 U.S. 544",
+            "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+            "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+            "decision_date": "2007-05-21",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-3556136:d5accdbe495b:1:5:0"
+          },
+          {
+            "id": "S7",
+            "case_id": "cap-3556136",
+            "ordinal": 11,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 12, characters 1\u20131720",
+            "opinion_type": "majority",
+            "text": "The United States District Court for the Southern District of New York dismissed the complaint for failure to state a claim upon which relief can be granted. The District Court acknowledged that \u201cplaintiffs may allege a conspiracy by citing instances of parallel business behavior that suggest an agreement,\u201d but emphasized that \u201cwhile \u2018[circumstantial evidence of consciously parallel behavior may have made heavy inroads into the traditional judicial attitude toward conspiracy[, . . .] \u201cconscious parallelism\u201d has not yet read conspiracy out of the Sherman Act entirely.\u2019\u201d 313 F. Supp. 2d 174, 179 (2003) (quoting Theatre Enterprises, Inc. v. Paramount Film Distributing Corp., 346 U. S. 537, 541 (1954); alterations in original). Thus, the District Court understood that allegations of parallel business conduct, taken alone, do not state a claim under \u00a7 1; plaintiffs must allege additional facts that \u201cten[d] to exclude independent self-interested conduct as an explanation for defendants\u2019 parallel behavior.\u201d 313 F. Supp. 2d, at 179. The District Court found plaintiffs\u2019 allegations of parallel ILEC actions to discourage competition inadequate because \u201cthe behavior of each ILEC in resisting the incursion of CLECs is fully explained by the ILEC\u2019s own interests in defending its individual territory.\u201d Id., at 183. As to the ILECs\u2019 supposed agreement against competing with each other, the District Court found that the complaint does not \u201calleg[e] facts . . . suggesting that refraining from competing in other territories as CLECs was contrary to [the ILECs\u2019] apparent economic interests, and consequently [does] not rais[e] an inference that [the ILECs\u2019] actions were the result of a conspiracy.\u201d Id., at 188.",
+            "name": "Bell Atlantic Corp. v. Twombly",
+            "citation": "550 U.S. 544",
+            "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+            "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+            "decision_date": "2007-05-21",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-3556136:d5accdbe495b:1:12:0"
+          },
+          {
+            "id": "S8",
+            "case_id": "cap-3556136",
+            "ordinal": 16,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 17, characters 1\u20131494",
+            "opinion_type": "majority",
+            "text": "Because \u00a71 of the Sherman Act \u201cdoes not prohibit [all] unreasonable restraints of trade . . . but only restraints effected by a contract, combination, or conspiracy,\u201d Copperweld Corp. v. Independence Tube Corp., 467 U. S. 752, 775 (1984), \u201c[t]he crucial question\u201d is whether the challenged anticompetitive conduct \u201cstem[s] from independent decision or from an agreement, tacit or express,\u201d Theatre Enterprises, 346 U. S., at 540. While a showing of parallel \u201cbusiness behavior is admissible circumstantial evidence from which the fact finder may infer agreement,\u201d it falls short of \u201cconclusively establishing] agreement or . . . itself constituting] a Sherman Act offense.\u201d Id., at 540-541. Even \u201cconscious parallelism,\u201d a common reaction of \u201cfirms in a concentrated market [that] recogniz[e] their shared economic interests and their interdependence with respect to price and output deeisions\u201d is \u201cnot in itself unlawful.\u201d Brooke Group Ltd. v. Brown & Williamson Tobacco Corp., 509 U. S. 209, 227 (1993); see 6 P. Areeda & H. Hovenkamp, Antitrust Law \u00b6 1433a, p. 236 (2d ed. 2003) (hereinafter Ajreeda & Hovenkamp) (\u201cThe courts are nearly unanimous in saying that mere interdependent parallelism does not establish the contract, combination, or conspiracy required by Sherman Act \u00a7 1\u201d); Turner, The Definition of Agreement Under the Sherman Act: Conscious Parallelism and Refusals to Deal, 75 Harv. L. Rev. 655, 672 (1962) (\u201c[M]ere interdependence of basic price decisions is not conspiracy\u201d).",
+            "name": "Bell Atlantic Corp. v. Twombly",
+            "citation": "550 U.S. 544",
+            "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+            "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+            "decision_date": "2007-05-21",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-3556136:d5accdbe495b:1:17:0"
+          }
+        ],
+        "searched": [
+          {
+            "id": "cap",
+            "status": "ok",
+            "total": null,
+            "note": "Search of the 12 imported starter opinions.",
+            "passages": 8
+          }
+        ],
+        "retrieved_at": "2026-10-05T05:23:16.788Z",
+        "query": "Celotex Corp. v. Catrett",
+        "task": "brief",
+        "databases": [
+          "cap"
+        ],
+        "filters": {
+          "court": "",
+          "after": "",
+          "before": ""
+        },
+        "automatic": true,
+        "model": "qwen3:14b",
+        "inference": "local",
+        "propositions": [
+          {
+            "section": "Facts and procedure",
+            "claim": "Respondent Catrett filed a wrongful-death lawsuit against Celotex Corporation and other defendants, alleging her husband\u2019s death resulted from exposure to asbestos products.",
+            "source_id": "S3",
+            "quote": "Respondent commenced this lawsuit in September 1980, alleging that the death in 1979 of her husband, Louis H. Catrett, resulted from his exposure to products containing asbestos manufactured or distributed by 15 named corporations."
+          },
+          {
+            "section": "Facts and procedure",
+            "claim": "The District Court granted Celotex\u2019s motion for summary judgment, but the Court of Appeals for the District of Columbia Circuit reversed.",
+            "source_id": "S1",
+            "quote": "The United States District Court for the District of Columbia granted the motion of petitioner Celotex Corporation for summary judgment against respondent Catrett because the latter was unable to produce evidence in support of her allegation in her wrongful-death complaint that the decedent had been exposed to petitioner\u2019s asbestos products. A divided panel of the Court of Appeals for the District of Columbia Circuit reversed, however, holding that petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor."
+          },
+          {
+            "section": "Facts and procedure",
+            "claim": "The Supreme Court granted certiorari to resolve a conflict between the Court of Appeals for the District of Columbia Circuit and the Third Circuit.",
+            "source_id": "S1",
+            "quote": "We granted certiorari to resolve the conflict, 474 U. S. 944 (1985), and now reverse the decision of the District of Columbia Circuit."
+          },
+          {
+            "section": "Holding",
+            "claim": "The Supreme Court held that the District Court properly granted Celotex\u2019s motion for summary judgment.",
+            "source_id": "S1",
+            "quote": "We granted certiorari to resolve the conflict, 474 U. S. 944 (1985), and now reverse the decision of the District of Columbia Circuit."
+          },
+          {
+            "section": "Holding",
+            "claim": "The Court emphasized that the District Court\u2019s decision was based on the absence of evidence showing exposure to Celotex\u2019s asbestos products.",
+            "source_id": "S2",
+            "quote": "The District Court expressly stated that respondent had made no showing of exposure to Celotex asbestos products \u201cin the District of Columbia or elsewhere.\u201d App. 217 (emphasis added)."
+          },
+          {
+            "section": "Reasoning",
+            "claim": "The Court reasoned that the burden of proof in summary judgment proceedings lies with the party opposing the motion to demonstrate a genuine issue of material fact.",
+            "source_id": "S5",
+            "quote": "Our analysis here does not address the question of the initial burden of production of evidence placed by Rule 56 on the party moving for summary judgment."
+          },
+          {
+            "section": "Reasoning",
+            "claim": "The Court concluded that the failure to produce evidence of exposure to Celotex\u2019s products justified the grant of summary judgment.",
+            "source_id": "S2",
+            "quote": "In other words, no judge involved in this case to date shares Justice Stevens\u2019 view of the District Court\u2019s decision."
+          }
+        ],
+        "removed": 1,
+        "incomplete": false,
+        "missing_sections": [
+          "Issue"
+        ],
+        "model_used": true
+      }
+    },
+    {
+      "id": "manual_memo_followup",
+      "request": {
+        "question": "Turn that case brief into a short research memo about the summary judgment burden.",
+        "context": "User: Brief Celotex Corp. v. Catrett, 477 U.S. 317 (1986).",
+        "task": "memo",
+        "database_ids": [
+          "cap"
+        ],
+        "auto_fields": true
+      },
+      "status": 200,
+      "seconds": 11.09,
+      "retained": 4,
+      "literal_quotes": 4,
+      "response": {
+        "sources": [
+          {
+            "id": "S1",
+            "case_id": "cap-6207800",
+            "ordinal": 2,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 3, characters 1\u20131042",
+            "opinion_type": "majority",
+            "text": "The United States District Court for the District of Columbia granted the motion of petitioner Celotex Corporation for summary judgment against respondent Catrett because the latter was unable to produce evidence in support of her allegation in her wrongful-death complaint that the decedent had been exposed to petitioner\u2019s asbestos products. A divided panel of the Court of Appeals for the District of Columbia Circuit reversed, however, holding that petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor. Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 756 F. 2d 181 (1985). This view conflicted with that of the Third Circuit in In re Japanese Electronic Products, 723 F. 2d 238 (1983), rev\u2019d on other grounds sub nom. Matsushita Electric Industrial Co. v. Zenith Radio Corp., 475 U. S. 574 (1986). We granted certiorari to resolve the conflict, 474 U. S. 944 (1985), and now reverse the decision of the District of Columbia Circuit.",
+            "name": "Celotex Corp. v. Catrett",
+            "citation": "477 U.S. 317",
+            "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+            "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6207800:070684a85533:1:3:0"
+          },
+          {
+            "id": "S2",
+            "case_id": "cap-6207800",
+            "ordinal": 21,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 20, characters 1\u2013927",
+            "opinion_type": "majority",
+            "text": "Justice Stevens\u2019 position is factually incorrect. The District Court expressly stated that respondent had made no showing of exposure to Celotex asbestos products \u201cin the District of Columbia or elsewhere.\u201d App. 217 (emphasis added). Unlike Justice Stevens, we assume that the District Court meant what it said. The majority of the Court of Appeals addressed the very issue raised by Justice Stevens, and decided that \u201c[t]he District Court\u2019s grant of summary judgment must therefore have been based on its conclusion that there was \u2018no showing that the plaintiff was exposed to defendant Celotex\u2019s product in the District of Columbia or elsewhere within the statutory period.\u2019\u201d Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 162, n. 3, 756 F. 2d 181, 183, n. 3 (1985) (emphasis in original). In other words, no judge involved in this case to date shares Justice Stevens\u2019 view of the District Court\u2019s decision.",
+            "name": "Celotex Corp. v. Catrett",
+            "citation": "477 U.S. 317",
+            "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+            "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6207800:070684a85533:1:20:0"
+          },
+          {
+            "id": "S3",
+            "case_id": "cap-6207800",
+            "ordinal": 3,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 4, characters 1\u20131800",
+            "opinion_type": "majority",
+            "text": "Respondent commenced this lawsuit in September 1980, alleging that the death in 1979 of her husband, Louis H. Catrett, resulted from his exposure to products containing asbestos manufactured or distributed by 15 named corporations. Respondent\u2019s complaint sounded in negligence, breach of warranty, and strict liability. Two of the defendants filed motions challenging the District Court\u2019s in perso-nam jurisdiction, and the remaining 13, including petitioner, filed motions for summary judgment. Petitioner\u2019s motion, which was first filed in September 1981, argued that summary judgment was proper because respondent had \u201cfailed to produce evidence that any [Celotex] product . . . was the proximate cause of the injuries alleged within the jurisdictional limits of [the District] Court. \u201d In particular, petitioner noted that respondent had failed to identify, in answering interrogatories specifically requesting such information, any witnesses who could testify about the decedent\u2019s exposure to petitioner\u2019s asbestos products. In response to petitioner\u2019s summary judgment motion, respondent then produced three documents which she claimed \u201cdemonstrate that there is a genuine material factual dispute\u201d as to whether the decedent had ever been exposed to petitioner\u2019s asbestos products. The three documents included a transcript of a deposition of the decedent, a letter from an official of one of the decedent\u2019s former employers whom petitioner planned to call as a trial witness, and a letter from an insurance company to respondent\u2019s attorney, all tending to establish that the decedent had been exposed to petitioner\u2019s asbestos products in Chicago during 1970-1971. Petitioner, in turn, argued that the three documents were inadmissible hearsay and thus could not be considered in opposition to",
+            "name": "Celotex Corp. v. Catrett",
+            "citation": "477 U.S. 317",
+            "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+            "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6207800:070684a85533:1:4:0"
+          },
+          {
+            "id": "S4",
+            "case_id": "cap-6206897",
+            "ordinal": 46,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 46, characters 1\u2013367",
+            "opinion_type": "majority",
+            "text": "Our analysis here does not address the question of the initial burden of production of evidence placed by Rule 56 on the party moving for summary judgment. See Celotex Corp. v. Catrett, post, p. 317. Respondents have not raised this issue here, and for the purposes of our discussion we assume that the moving party has met initially the requisite evidentiary burden.",
+            "name": "Anderson v. Liberty Lobby, Inc.",
+            "citation": "477 U.S. 242",
+            "source_url": "https://static.case.law/us/477/cases/0242-01.json",
+            "source_sha256": "60437e85b0c28cae977aef33e855f15dca5cce20539922aa04d234bb2154ab07",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6206897:60437e85b0c2:1:46:0"
+          },
+          {
+            "id": "S5",
+            "case_id": "cap-6205783",
+            "ordinal": 65,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 66, characters 1\u2013463",
+            "opinion_type": "majority",
+            "text": "Respondents argued before the District Court that petitioners had failed to carry their initial burden under Federal Rule of Civil Procedure 56(c) of demonstrating the absence of a genuine issue of material fact. See Adickes v. S. H. Kress & Co., 398 U. S. 144, 157 (1970). Cf. Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 756 F. 2d 181, cert. granted, 474 U. S. 944 (1985). That issue was resolved in petitioners\u2019 favor, and is not before us.",
+            "name": "Matsushita Electric Industrial Co. v. Zenith Radio Corp.",
+            "citation": "475 U.S. 574",
+            "source_url": "https://static.case.law/us/475/cases/0574-01.json",
+            "source_sha256": "c76dd48b76982e03156c35e3a543542ee9ff143b3f55df4e8d067e709c9c062a",
+            "decision_date": "1986-03-26",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6205783:c76dd48b7698:1:66:0"
+          },
+          {
+            "id": "S6",
+            "case_id": "cap-6205783",
+            "ordinal": 28,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 29, characters 1\u20131245",
+            "opinion_type": "majority",
+            "text": "Second, the issue of fact must be \u201cgenuine.\u201d Fed. Rules Civ. Proc. 56(c), (e). When the moving party has carried its burden under Rule 56(c), its opponent must do more than simply show that there is some metaphysical doubt as to the material facts. See DeLuca v. Atlantic Refining Co., 176 F. 2d 421, 423 (CA2 1949) (L. Hand, J.), cert. denied, 338 U. S. 943 (1950); 10A C. Wright, A. Miller, & M. Kane, Federal Practice and Procedure \u00a72727 (1983); Clark, Special Problems in Drafting and Interpreting Procedural Codes and Rules, 3 Vand. L. Rev. 493, 504-505 (1950). Cf. Sartor v. Arkansas Natural Gas Corp., 321 U. S. 620, 627 (1944). In the language of the Rule, the nonmoving party must come forward with \u201cspecific facts showing that there is a genuine issue for trial.\u201d Fed. Rule Civ. Proc. 56(e) (emphasis added). See also Advisory Committee Note to 1963 Amendment of Fed. Rule Civ. Proc. 56(e), 28 U. S. C. App., p. 626 (purpose of summary judgment is to \u201cpierce the pleadings and to assess the proof in order to see whether there is a genuine need for trial\u201d). Where the record taken as a whole could not lead a rational trier of fact to find for the non-moving party, there is no \u201cgenuine issue for trial.\u201d Cities Service, supra, at 289.",
+            "name": "Matsushita Electric Industrial Co. v. Zenith Radio Corp.",
+            "citation": "475 U.S. 574",
+            "source_url": "https://static.case.law/us/475/cases/0574-01.json",
+            "source_sha256": "c76dd48b76982e03156c35e3a543542ee9ff143b3f55df4e8d067e709c9c062a",
+            "decision_date": "1986-03-26",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6205783:c76dd48b7698:1:29:0"
+          },
+          {
+            "id": "S7",
+            "case_id": "cap-3556136",
+            "ordinal": 17,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 18, characters 1\u20131240",
+            "opinion_type": "majority",
+            "text": "The inadequacy of showing parallel conduct or interdependence, without more, mirrors the ambiguity of the behavior: consistent with conspiracy, but just as much in line with a wide swath of rational and competitive business strategy unilaterally prompted by common perceptions of the market. See, e. g., AEI-Brookings Joint Center for Regulatory Studies, Epstein, Motions to Dismiss Antitrust Cases: Separating Fact from Fantasy, Related Publication 06-08, pp. 3-4 (2006) (discussing problem of \u201cfalse positives\u201d in \u00a7 1 suits). Accordingly, we have previously hedged against false inferences from identical behavior at a number of points in the trial sequence. An antitrust conspiracy plaintiff with evidence showing nothing beyond parallel conduct is not entitled to a directed verdict, see Theatre Enterprises, supra; proof of a \u00a7 1 conspiracy must include evidence tending to exclude the possibility of independent action, see Monsanto Co. v. Spray-Rite Service Corp., 465 U. S. 752 (1984); and at the summary judgment stage a \u00a7 1 plaintiff\u2019s offer of conspiracy evidence must tend to rule out the possibility that the defendants were acting independently, see Matsushita Elec. Industrial Co. v. Zenith Radio Corp., 475 U. S. 574 (1986).",
+            "name": "Bell Atlantic Corp. v. Twombly",
+            "citation": "550 U.S. 544",
+            "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+            "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+            "decision_date": "2007-05-21",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-3556136:d5accdbe495b:1:18:0"
+          },
+          {
+            "id": "S8",
+            "case_id": "cap-3556136",
+            "ordinal": 38,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 37, characters 1\u20131796",
+            "opinion_type": "majority",
+            "text": "Plaintiffs say that our analysis runs counter to Swierkiewicz, 534 U. S., at 508, which held that \u201ca complaint in an employment discrimination lawsuit [need] not contain specific facts establishing a prima facie case of discrimination under the framework set forth in McDonnell Douglas Corp. v. Green, 411 U. S. 792 (1973).\u201d They argue that just as the prima facie case is a \u201cflexible evidentiary standard\u201d that \u201cshould not be transposed into a rigid pleading standard for discrimination cases,\u201d Swierkiewicz, supra, at 512, \u201ctrans-posting] 'plus factor\u2019 summary judgment analysis woodenly into a rigid Rule 12(b)(6) pleading standard . . . would be unwise,\u201d Brief for Respondents 39. As the District Court correctly understood, however, \u201cSwierkiewicz did not change the law of pleading, but simply re-emphasized . . . that the Second Circuit\u2019s use of a heightened pleading standard for Title VII cases was contrary to the Federal Rules\u2019 structure of liberal pleading requirements.\u201d 313 F. Supp. 2d, at 181 (citation and footnote omitted). Even though Swierkiewicz\u2019s pleadings \u201cdetailed the events leading to his termination, provided relevant dates, and included the ages and nationalities of at least some of the relevant persons involved with his termination,\u201d the Court of Appeals dismissed his complaint for failing to allege certain additional facts that Swierkiewicz would need at the trial stage to support his claim in the absence of direct evidence of discrimination. Swierkiewicz, 534 U. S., at 514. We reversed on the ground that the Court of Appeals had impermissibly applied what amounted to a heightened pleading requirement by insisting that Swierkiewicz allege \u201cspecific facts\u201d beyond those necessary to state his claim and the grounds showing entitlement to relief. Id., at 508.",
+            "name": "Bell Atlantic Corp. v. Twombly",
+            "citation": "550 U.S. 544",
+            "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+            "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+            "decision_date": "2007-05-21",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-3556136:d5accdbe495b:1:37:0"
+          }
+        ],
+        "searched": [
+          {
+            "id": "cap",
+            "status": "ok",
+            "total": null,
+            "note": "Search of the 12 imported starter opinions.",
+            "passages": 8
+          }
+        ],
+        "retrieved_at": "2026-10-05T05:23:28.502Z",
+        "query": "summary judgment burden Celotex Corp. v. Catrett",
+        "task": "memo",
+        "databases": [
+          "cap"
+        ],
+        "filters": {
+          "court": "",
+          "after": "",
+          "before": ""
+        },
+        "automatic": true,
+        "model": "qwen3:14b",
+        "inference": "local",
+        "propositions": [
+          {
+            "section": "Rule",
+            "claim": "The moving party in a summary judgment motion bears the initial burden of showing the absence of a genuine issue of material fact.",
+            "source_id": "S4",
+            "quote": "Our analysis here does not address the question of the initial burden of production of evidence placed by Rule 56 on the party moving for summary judgment."
+          },
+          {
+            "section": "Application",
+            "claim": "In Celotex Corp. v. Catrett, the plaintiff failed to produce evidence showing exposure to the defendant\u2019s asbestos products, which supported the grant of summary judgment.",
+            "source_id": "S3",
+            "quote": "Respondent\u2019s complaint sounded in negligence, breach of warranty, and strict liability."
+          },
+          {
+            "section": "Counterargument",
+            "claim": "The Court of Appeals for the District of Columbia Circuit initially held that the defendant\u2019s failure to support its motion with evidence tending to negate exposure precluded the entry of summary judgment.",
+            "source_id": "S1",
+            "quote": "A divided panel of the Court of Appeals for the District of Columbia Circuit reversed, however, holding that petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor."
+          },
+          {
+            "section": "Conclusion",
+            "claim": "In Celotex Corp. v. Catrett, the failure to produce evidence of exposure supported the grant of summary judgment.",
+            "source_id": "S3",
+            "quote": "Respondent\u2019s complaint sounded in negligence, breach of warranty, and strict liability."
+          }
+        ],
+        "removed": 4,
+        "incomplete": false,
+        "missing_sections": [],
+        "model_used": true
+      }
+    }
+  ]
+}

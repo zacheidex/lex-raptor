@@ -7,7 +7,7 @@ export async function generate(env,input) {
     // The portable launcher binds to loopback. Hosted deployments never set
     // LOCAL_RESEARCH; neither model nor endpoint can be selected by a visitor.
     const body=JSON.parse(input);
-    const result=await fetch('http://127.0.0.1:11434/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:modelName(env),stream:false,think:false,format:body.text.format.schema,messages:[{role:'system',content:body.instructions},{role:'user',content:body.input}],options:{temperature:0,num_predict:MAX_OUTPUT,num_ctx:16384}}),signal:AbortSignal.timeout(180000)});
+    const result=await fetch('http://127.0.0.1:11434/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:modelName(env),stream:false,think:false,format:body.text.format.schema,messages:[{role:'system',content:body.instructions},{role:'user',content:body.input}],options:{temperature:0,num_predict:Math.min(body.max_output_tokens||MAX_OUTPUT,MAX_OUTPUT),num_ctx:16384}}),signal:AbortSignal.timeout(180000)});
     if(!result.ok)return {ok:false,status:result.status,error:{code:'local_model_unavailable'}};
     const data=await result.json();
     return {ok:true,data:{status:data.done_reason==='length'?'incomplete':'completed',output:[{type:'message',content:[{type:'output_text',text:data.message?.content||''}]}],usage:{input_tokens:data.prompt_eval_count||0,output_tokens:data.eval_count||0}}};

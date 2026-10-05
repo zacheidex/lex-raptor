@@ -13,12 +13,13 @@ async function fixture(t,options={}) {
     outboundService:async request=>{
       if(options.source){const response=await options.source(request);if(response)return response;}
       if(options.local&&request.url==='http://127.0.0.1:11434/api/chat'){
-        const body=await request.json();calls.push(body);const {sources}=JSON.parse(body.messages[1].content);
+        const body=await request.json();calls.push(body);if(body.format.properties.search_query)return Response.json({done:true,done_reason:'stop',prompt_eval_count:500,eval_count:100,message:{content:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}});const {sources}=JSON.parse(body.messages[1].content);
         return Response.json({done:true,done_reason:'stop',prompt_eval_count:1000,eval_count:200,message:{content:JSON.stringify({propositions:[{section:body.format.properties.propositions.items.properties.section.enum[0],claim:'Local fixture finding.',source_id:sources[0].id,quote:sources[0].text.slice(0,80)}]})}});
       }
       assert.equal(request.url,'https://api.openai.com/v1/responses');
       const body=await request.json();calls.push(body);
       if(options.fail)return new Response('{}',{status:500});
+      if(body.text.format.name==='research_plan')return Response.json({status:'completed',usage:{input_tokens:500,output_tokens:100},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}]}]});
       const {sources}=JSON.parse(body.input),s=sources[0];
       return Response.json({status:'completed',usage:{input_tokens:1000,output_tokens:200},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify({propositions:[{claim:'A fixture claim to verify citation handling.',source_id:s.id,quote:s.text.slice(0,100)},{claim:'Invented authority must be removed.',source_id:'invented',quote:'This quotation is not a real supplied source.'}]})}]}]});
     }
@@ -164,21 +165,53 @@ test('provider failures and missing usage retain their full reservation',async t
   assert.equal(cost({input_tokens:-1,output_tokens:0}),null);
 });
 
-test('historical daily visitor limits survive public access and cookie changes',async t=>{
-  const f=await fixture(t),now=Math.floor(Date.now()/1000);
-  const encoder=new TextEncoder();
-  const key=await crypto.subtle.importKey('raw',encoder.encode('test-session-secret-not-for-production'),{name:'HMAC',hash:'SHA-256'},false,['sign']);
+test('historical daily and hourly request counts no longer block testing or reset spending',async t=>{
+  const f=await fixture(t),now=Math.floor(Date.now()/1000),encoder=new TextEncoder();
+  const key=await crypto.subtle.importKey('raw',encoder.encode(f.bindings.DEMO_SESSION_SECRET),{name:'HMAC',hash:'SHA-256'},false,['sign']);
   const ip=[...new Uint8Array(await crypto.subtle.sign('HMAC',key,encoder.encode('203.0.113.1')))].map(b=>b.toString(16).padStart(2,'0')).join('');
-  for(let i=0;i<10;i++)await f.db.prepare('INSERT INTO demo_calls(id,visitor,session,created,state,charged) VALUES(?,?,?,?,?,?)').bind('old'+i,ip,'old-signed-session',now-500,'completed',1000).run();
-  const status=await (await f.req('status')).json();assert.equal(status.daily_remaining,0);assert.equal(status.search_enabled,true);assert.ok(status.daily_reset_at);
-  assert.equal((await f.req('research',f.question())).status,429);
-  assert.equal((await f.req('research',f.question(),'__Host-lex-demo=new-cookie')).status,429);
-  assert.equal(f.calls.length,0);
-  assert.equal((await f.db.prepare('SELECT SUM(charged) n FROM demo_calls').first()).n,10000);
-  assert.equal((await f.req('research',f.question(),'',{'CF-Connecting-IP':'203.0.113.2'})).status,200);
+  for(let i=0;i<40;i++)await f.db.prepare('INSERT INTO demo_calls(id,visitor,session,created,state,charged) VALUES(?,?,?,?,?,?)').bind('old'+i,ip,'public:'+ip,now-2,'completed',1000).run();
+  await f.db.prepare('INSERT INTO demo_attempts(id,count,expires) VALUES(?,100,?)').bind('research:'+ip+':'+Math.floor(now/3600),now+7200).run();
+  const status=await (await f.req('status')).json();assert.equal(status.request_limits,false);assert.equal(status.cap,10);assert.equal(status.daily_remaining,undefined);
+  assert.equal((await f.req('research',f.question())).status,200);
+  assert.equal((await f.db.prepare('SELECT SUM(charged) n FROM demo_calls').first()).n,40325);
+  const admitted=await Promise.all(Array.from({length:15},()=>reserve(f.db,crypto.randomUUID(),ip,'public:'+ip,now)));
+  assert.equal(admitted.filter(Boolean).length,15,'No minute or concurrent count ceiling');
+});
+
+test('automatic settings use the model and account for planning plus drafting together',async t=>{
+  const f=await fixture(t);
+  const q=f.question({task:'auto',database_ids:'auto',context:'User: Tell me about Celotex.'});
+  const r=await f.req('research',q);assert.equal(r.status,200);const data=await r.json();
+  assert.equal(data.task,'brief');assert.equal(data.query,'Celotex');assert.deepEqual(data.databases,['cap']);assert.equal(data.automatic,true);assert.equal(f.calls.length,2);
+  assert.equal(f.calls[0].max_output_tokens,1024);assert.match(f.calls[0].input,/Tell me about Celotex/);assert.match(f.calls[1].input,/conversation_context/);
+  const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.charged,488);assert.equal(ledger.input_tokens,1500);assert.equal(ledger.output_tokens,300);
+  assert.equal((await f.req('research',q)).status,429);assert.equal(f.calls.length,2);
+});
+
+test('manual task, database, query and filters override the automatic plan',async t=>{
+  const f=await fixture(t,{plan:{task:'memo',search_query:'unwanted query',database_ids:['ecfr'],filters:{court:'ca9',after:'2021-01-01',before:'2024-01-01'}}});
+  const data=await (await f.req('research',f.question({task:'compare',auto_fields:true,search_query:'Twombly Iqbal',filters:{court:'scotus',after:'1900-01-01',before:'2015-01-01'}}))).json();
+  assert.equal(data.task,'compare');assert.equal(data.query,'Twombly Iqbal');assert.deepEqual(data.databases,['cap']);assert.equal(data.filters.court,'scotus');assert.equal(data.filters.after,'1900-01-01');assert.equal(data.filters.before,'2015-01-01');assert.equal(f.calls.length,2);
+});
+
+test('invalid automatic plans fail without drafting or arbitrary source access',async t=>{
+  const f=await fixture(t,{plan:{task:'brief',search_query:'Celotex',database_ids:['attacker'],filters:{court:'',after:'',before:''}}});
+  assert.equal((await f.req('research',f.question({task:'auto',database_ids:'auto'}))).status,502);
+  assert.equal(f.calls.length,1);assert.equal((await f.db.prepare('SELECT charged FROM demo_calls').first()).charged,163);
+});
+
+test('automatic routing respects an exhausted budget before either model call',async t=>{
+  const f=await fixture(t);await f.db.prepare("INSERT INTO demo_calls(id,visitor,session,created,state,charged) VALUES('spent','a','a',0,'completed',?)").bind(CAP).run();
+  assert.equal((await f.req('research',f.question({task:'auto',database_ids:'auto'}))).status,429);assert.equal(f.calls.length,0);
+  assert.equal((await f.req('search',f.question())).status,200);
+});
+
+test('automatic settings also run on local Ollama without API spending',async t=>{
+  const f=await fixture(t,{local:true,bindings:{LOCAL_RESEARCH:'true',OPENAI_API_KEY:''}});
+  const data=await (await f.req('research',f.question({task:'auto',database_ids:'auto'}))).json();assert.equal(data.task,'brief');assert.equal(data.model,'qwen3:14b');assert.equal(f.calls.length,2);assert.equal(f.calls[0].options.num_predict,1024);assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM demo_calls').first()).n,0);
 });
 
 test('demo page offers research without a passcode or login control',async t=>{
   const f=await fixture(t);
-  const r=await f.mf.dispatchFetch('https://lex.test/demo');assert.equal(r.status,200);const html=await r.text();assert.doesNotMatch(html,/passcode|unlock-panel|lock-demo|type="password"/);assert.match(html,/Search databases/);assert.ok(!html.includes('fake-test-key'));assert.match(r.headers.get('Content-Security-Policy'),/frame-ancestors 'none'/);
+  const r=await f.mf.dispatchFetch('https://lex.test/demo');assert.equal(r.status,200);const html=await r.text();assert.doesNotMatch(html,/passcode|unlock-panel|lock-demo|type="password"/);assert.match(html,/Search databases/);assert.match(html,/Auto task/);assert.doesNotMatch(html,/MVP|Early research|Public preview/);const home=await f.mf.dispatchFetch('https://lex.test/');assert.match(await home.text(),/What are you researching/);assert.ok(!html.includes('fake-test-key'));assert.match(r.headers.get('Content-Security-Policy'),/frame-ancestors 'none'/);
 });

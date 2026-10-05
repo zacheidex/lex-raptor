@@ -32,6 +32,7 @@ FILES = {
     "uv.lock",
     ".env.example",
     ".gitignore",
+    "website/.gitignore",
     ".dockerignore",
     "supabase/config.toml",
     "apps/web/package.json",

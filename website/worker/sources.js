@@ -33,20 +33,11 @@ export function filters(input={}) {
 export function safeLink(value,host) {
   try{const u=new URL(value,'https://'+host);return u.protocol==='https:'&&u.hostname===host&&!u.username&&!u.password?u.href:'';}catch{return '';}
 }
-async function quota(env,provider) {
-  const now=Math.floor(Date.now()/1000),limits=provider==='courtlistener'?[5,50,125]:[30,300,1500];
-  const row=await env.DB.prepare(`INSERT INTO source_requests(id,provider,created) SELECT ?,?,? WHERE
-    (SELECT COUNT(*) FROM source_requests WHERE provider=? AND created>?)<? AND
-    (SELECT COUNT(*) FROM source_requests WHERE provider=? AND created>?)<? AND
-    (SELECT COUNT(*) FROM source_requests WHERE provider=? AND created>?)<? RETURNING id`).bind(crypto.randomUUID(),provider,now,provider,now-60,limits[0],provider,now-3600,limits[1],provider,now-86400,limits[2]).first();
-  if(!row)throw new SourceError('The shared '+provider.replaceAll('_',' ')+' source limit has been reached. Try later.');
-}
 export async function sourceRequest(env,provider,url,{method='GET',body,cache=false,json=true}={}) {
   const host={courtlistener:'www.courtlistener.com',ecfr:'www.ecfr.gov',federal_register:'www.federalregister.gov'}[provider];
   if(!host||!safeLink(url,host))throw new SourceError('Unsupported source address.');
   const now=Math.floor(Date.now()/1000);
   if(cache){const old=await env.DB.prepare('SELECT body FROM source_cache WHERE id=? AND expires>?').bind(url,now).first();if(old)return json?JSON.parse(old.body):old.body;}
-  await quota(env,provider);
   const headers={Accept:json?'application/json':'*/*','Accept-Encoding':'gzip','User-Agent':'LexRaptor/0.4 (+https://lexraptor.com)'};
   if(provider==='courtlistener'){
     if(!env.COURTLISTENER_API_TOKEN)throw new SourceError('CourtListener is not connected.');
@@ -57,7 +48,7 @@ export async function sourceRequest(env,provider,url,{method='GET',body,cache=fa
   try{response=await fetch(url,{method,headers,body,redirect:'manual',signal:AbortSignal.timeout(provider==='courtlistener'?45000:20000)});}catch{throw new SourceError('The source service did not respond. Try again later.');}
   if(!response.ok)throw new SourceError(response.status===429?'The source service is rate limited. Try again later.':response.status===401||response.status===403?'The source service declined access. Its connection needs attention.':'The source service could not complete this search.');
   const reader=response.body.getReader(),parts=[];let size=0;
-  for(;;){const {value,done}=await reader.read();if(done)break;size+=value.length;if(size>1500000){await reader.cancel();throw new SourceError('A source document exceeds the preview size limit. Open the original record.');}parts.push(value);}
+  for(;;){const {value,done}=await reader.read();if(done)break;size+=value.length;if(size>1500000){await reader.cancel();throw new SourceError('A source document exceeds the source size limit. Open the original record.');}parts.push(value);}
   const bytes=new Uint8Array(size);let at=0;for(const part of parts){bytes.set(part,at);at+=part.length;}
   const text=new TextDecoder().decode(bytes);
   let data;try{data=json?JSON.parse(text):text;}catch{throw new SourceError('The source returned an unreadable response.');}
