@@ -33,6 +33,8 @@ FILES = {
     ".env.example",
     ".gitignore",
     "website/.gitignore",
+    ".gitattributes",
+    "website/.gitattributes",
     ".dockerignore",
     "supabase/config.toml",
     "apps/web/package.json",
@@ -92,7 +94,7 @@ def main():
             content = path.read_bytes()
             info = tarfile.TarInfo("lex-raptor/" + relative)
             info.size = len(content)
-            info.mode = 0o644
+            info.mode = 0o755 if path.stat().st_mode & 0o111 else 0o644
             info.mtime = 0
             archive.addfile(info, io.BytesIO(content))
             included.append(relative)

@@ -48,7 +48,7 @@ test('origin, disabled state, visitor identification and selection guard public 
   assert.equal((await f.req('research',f.question({database_ids:['courtlistener']}))).status,400);
   assert.equal((await f.req('research',f.question({question:'a'.repeat(2001)}))).status,400);
   assert.equal((await f.req('research',f.question({question:'   '}))).status,400);
-  assert.equal((await f.req('research',f.question({question:'a'.repeat(11000)}))).status,413);
+  assert.equal((await f.req('research',f.question({question:'a'.repeat(11000)}))).status,400);
   assert.equal((await f.req('unlock',{})).status,404);
   assert.equal(f.calls.length,0);
   const disabled=await fixture(t,{bindings:{DEMO_ENABLED:'false'}});
@@ -228,4 +228,25 @@ test('a drafting failure after successful planning retains the entire two-call r
   assert.equal((await f.req('research',q)).status,502);assert.equal(f.calls.length,2);
   const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.state,'reserved');assert.equal(ledger.charged,RESERVE);
   assert.equal((await f.req('research',q)).status,429);assert.equal(f.calls.length,2);
+});
+
+const attached=[{name:'sample.txt',type:'text',pages:[{number:1,text:'Either party may terminate the agreement by giving thirty days of written notice. The project starts on March 15, 2026.'}]}];
+test('document-only research cites attachments without querying public databases or caching private text',async t=>{
+ const f=await fixture(t);const data=await (await f.req('research',f.question({task:'analyze',documents:attached,document_mode:'only',database_ids:[]}))).json();
+ assert.equal(data.task,'analyze');assert.deepEqual(data.databases,['documents']);assert.equal(data.sources[0].kind,'attachment');assert.equal(data.sources[0].source_url,'');assert.match(data.propositions[0].quote,/terminate/);assert.equal(data.document_coverage[0].name,'sample.txt');
+ assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM source_cache').first()).n,0);assert.equal(f.calls.length,1);
+});
+test('automatic document analysis honors document-only scope even when the planner names a database',async t=>{
+ const f=await fixture(t,{plan:{task:'analyze',search_query:'termination',database_ids:['ecfr'],filters:{court:'',after:'',before:''}}});
+ const data=await (await f.req('research',f.question({task:'auto',documents:attached,database_ids:'auto'}))).json();
+ assert.equal(data.task,'analyze');assert.deepEqual(data.databases,['documents']);assert.equal(f.calls.length,2);assert.ok(!f.calls[0].input.includes('thirty days'),'Planner gets metadata, not document contents');
+});
+test('explicit combined research keeps public authorities distinct from attached documents',async t=>{
+ const f=await fixture(t);const data=await (await f.req('research',f.question({task:'memo',documents:attached,document_mode:'with_sources',database_ids:['cap']}))).json();
+ assert.deepEqual(data.databases,['documents','cap']);assert.ok(data.sources.some(s=>s.kind==='attachment'));assert.ok(data.sources.some(s=>s.database_id==='cap'));assert.equal(data.document_coverage.length,1);
+});
+test('invalid attachment metadata, oversized text and request envelopes fail before inference',async t=>{
+ const f=await fixture(t);
+ for(const documents of [[{...attached[0],name:'../secret.txt'}],Array(6).fill(attached[0]),[{...attached[0],pages:[{number:1,text:'a'.repeat(300001)}]}]])assert.equal((await f.req('research',f.question({documents}))).status,400);
+ assert.equal((await f.req('research',f.question({padding:'a'.repeat(700001)}))).status,413);assert.equal(f.calls.length,0);
 });

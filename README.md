@@ -113,3 +113,32 @@ With Ollama running and `qwen3:14b` installed, open http://127.0.0.1:8787/demo. 
 [Hosted demo smoke checks and cost record](benchmark/hosted-demo/RESULTS.md) describe the limited live validation separately from the local-model diagnostic.
 
 [Workbench development diagnostic](benchmark/workbench/RESULTS.md) covers the expanded workflows and live data adapters, including failed early runs and remaining quality gaps.
+
+## Documents and terminal research
+
+The chat homepage uses a dark theme and an open-source raptor identity. Attach
+PDF, DOCX, TXT or Markdown files and ask for analysis, comparisons or a timeline.
+Files are parsed on your device. Hosted requests send selected extracted text
+to the API model; local Ollama keeps model inference on your computer. Document-only
+mode is the default; combining files with public databases is an explicit choice.
+
+The same tools work from a terminal, without starting a browser server:
+
+```sh
+cd website
+npm ci
+npm run cli -- ask "Summarize the termination terms" --file ./contract.pdf
+npm run cli -- ask "Compare the agreements" --dir ./agreements --task compare
+cat notes.txt | npm run cli -- ask "Build a timeline" --stdin --task timeline
+npm run cli -- chat --file ./brief.docx
+```
+
+Use `npm link` to install the `lex-raptor` command, or `node scripts/cli.mjs`
+directly. For machine-readable output use `lex-raptor ... --json` or
+`npm run --silent cli -- ... --json`. The CLI only uses local Ollama; online
+databases are opt-in through `--sources`. See [complete CLI and attachment
+instructions](website/README.md#document-attachments-and-cli).
+
+Attachments support five files, 5 MB each, up to 200 PDF pages and 300 KB combined
+extracted text. Scans need OCR first. Results disclose selected excerpts, not
+a claim that every page or clause was analyzed.

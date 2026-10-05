@@ -1,0 +1,93 @@
+{
+  "sources": [
+    {
+      "id": "S1",
+      "case_id": "attachment-1",
+      "name": "agreement.docx",
+      "citation": "agreement.docx · Document body",
+      "court": "User-provided document",
+      "decision_date": "Not independently established",
+      "opinion_type": "DOCX",
+      "source_url": "",
+      "database_id": "documents",
+      "database_name": "Attached documents",
+      "kind": "attachment",
+      "source_status": "User-provided text; not verified legal authority. Only selected excerpts are analyzed.",
+      "text": "SYNTHETIC EXAMPLE — NOT A REAL CLIENT DOCUMENT On March 1, 2026, Orion Studio and Finch Research signed this sample services agreement. The project starts on March 15, 2026 and ends on June 30, 2026. Either party may terminate the agreement by giving the other party thirty days of written notice. The client must pay each invoice within fifteen days after receiving it. Confidential information must not be disclosed to third parties without prior written consent. This sample does not specify a governing law or a dispute resolution forum.",
+      "locator": "Document body, normalized characters 1–541",
+      "page": 1,
+      "original_id": "attachment-1-1-0"
+    }
+  ],
+  "searched": [
+    {
+      "id": "documents",
+      "status": "ok",
+      "passages": 1,
+      "total": 1,
+      "note": "Selected excerpts of attached documents; this is not an exhaustive review."
+    }
+  ],
+  "retrieved_at": "2026-10-05T05:41:58.328Z",
+  "query": "Summarize the notice, payment, and confidentiality terms in the attached sample. Identify any missing governing-law term.",
+  "task": "analyze",
+  "databases": [
+    "documents"
+  ],
+  "document_coverage": [
+    {
+      "name": "agreement.docx",
+      "type": "DOCX",
+      "pages": 1,
+      "extracted_characters": 541,
+      "selected_passages": 1,
+      "selected_characters": 541,
+      "warnings": [
+        "Extracted DOCX text has no original pagination or formatting."
+      ]
+    }
+  ],
+  "filters": {
+    "court": "",
+    "after": "",
+    "before": ""
+  },
+  "automatic": true,
+  "model": "qwen3:14b",
+  "inference": "local",
+  "propositions": [
+    {
+      "section": "Summary",
+      "claim": "The agreement requires written notice of termination thirty days in advance.",
+      "source_id": "S1",
+      "quote": "Either party may terminate the agreement by giving the other party thirty days of written notice."
+    },
+    {
+      "section": "Summary",
+      "claim": "The client must pay invoices within fifteen days of receipt.",
+      "source_id": "S1",
+      "quote": "The client must pay each invoice within fifteen days after receiving it."
+    },
+    {
+      "section": "Summary",
+      "claim": "Confidential information cannot be disclosed to third parties without prior written consent.",
+      "source_id": "S1",
+      "quote": "Confidential information must not be disclosed to third parties without prior written consent."
+    },
+    {
+      "section": "Summary",
+      "claim": "The agreement does not specify a governing law.",
+      "source_id": "S1",
+      "quote": "This sample does not specify a governing law or a dispute resolution forum."
+    }
+  ],
+  "removed": 0,
+  "incomplete": false,
+  "missing_sections": [
+    "Key terms and facts",
+    "Issues to review",
+    "Open questions"
+  ],
+  "model_used": true,
+  "question": "Summarize the notice, payment, and confidentiality terms in the attached sample. Identify any missing governing-law term."
+}

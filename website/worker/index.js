@@ -3,6 +3,7 @@ import {tasks,payload,validate} from './research.js';
 import {catalog,validateSelection,filters,searchSources,evidenceSubset,auditCitations,SourceError} from './sources.js';
 import {local,modelName,modelReady,generate} from './model.js';
 import {planPayload,readPlan} from './planner.js';
+import {validateDocuments,documentPassages,documentCoverage} from './documents.js';
 const encoder=new TextEncoder();
 const json=(data,status=200,extra={})=>new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...extra}});
 class PublicError extends Error {constructor(status,message){super(message);this.status=status;}}
@@ -22,7 +23,7 @@ async function readBody(request) {
   if(!request.headers.get('Content-Type')?.startsWith('application/json'))fail(415,'Send a JSON request.');
   const reader=request.body?.getReader();if(!reader)fail(400,'Missing request.');
   let size=0;const chunks=[];
-  while(true){const {value,done}=await reader.read();if(done)break;size+=value.length;if(size>10000){await reader.cancel();fail(413,'The question is too long.');}chunks.push(value);}
+  while(true){const {value,done}=await reader.read();if(done)break;size+=value.length;if(size>700000){await reader.cancel();fail(413,'The request is too large. Split the documents.');}chunks.push(value);}
   const bytes=new Uint8Array(size);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.length;}
   try{return JSON.parse(new TextDecoder().decode(bytes));}catch{fail(400,'Invalid request.');}
 }
@@ -31,7 +32,7 @@ async function api(request,env) {
   if(path==='/api/demo/status'&&request.method==='GET') {
     const enabled=!!ready(env);
     const state=await database(env).prepare('SELECT COALESCE(SUM(charged),0) total FROM demo_calls').first();
-    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
+    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
   }
   if(request.method!=='POST')fail(405,'Method not allowed.');
   if(request.headers.get('Origin')!==new URL(request.url).origin||request.headers.get('Sec-Fetch-Site')==='cross-site')fail(403,'Open research on this website to continue.');
@@ -50,8 +51,11 @@ async function api(request,env) {
     return json({citations:await auditCitations(env,body.text),limitation:'Checks case-citation existence and ambiguity only. No treatment, good-law status, or proposition support determination.',model_used:false});
   }
   if(typeof body.question!=='string'||body.question.trim().length<1||body.question.length>2000)fail(400,'Enter a message between 1 and 2,000 characters.');
+  const documents=validateDocuments(body.documents);
+  if(body.document_mode!==undefined&&!['only','with_sources'].includes(body.document_mode))fail(400,'Choose a valid document research scope.');
+  const onlyDocuments=documents.length>0&&body.document_mode!=='with_sources';
   const automatic=path==='/api/demo/research'&&(body.task==='auto'||body.database_ids==='auto'||body.auto_fields===true);
-  if(body.database_ids!=='auto')validateSelection(body.database_ids,env);
+  if(!onlyDocuments&&body.database_ids!=='auto')validateSelection(body.database_ids,env);
   if(body.database_ids==='auto'&&!automatic&&path!=='/api/demo/search')fail(400,'Choose databases.');
   const selectedFilters=filters(body.filters),requestedTask=body.task||'research';
   if(requestedTask!=='auto'&&!Object.hasOwn(tasks,requestedTask))fail(400,'Choose an available research workflow.');
@@ -82,11 +86,18 @@ async function api(request,env) {
     const planned=await callModel(planPayload(env,body));
     try{plan=readPlan(planned,env,body);}catch{await reconcile();fail(502,'Automatic settings could not be prepared. Choose task, databases and search terms manually, then try again.');}
   }
+  if(onlyDocuments)plan.database_ids=[];
   const {query,task,database_ids,...searchFilters}=plan;
-  const found=await searchSources(env,plan);
-  const meta={...found,query,task,databases:database_ids,filters:searchFilters,automatic,model:modelName(env),inference:local(env)?'local':'api'};
+  const found=onlyDocuments?{sources:[],searched:[],retrieved_at:new Date().toISOString()}:await searchSources(env,plan);
+  const docPassages=documentPassages(documents,body.question);
+  if(documents.length){
+    const merged=[];for(let i=0;i<Math.max(docPassages.length,found.sources.length);i++){if(docPassages[i])merged.push(docPassages[i]);if(found.sources[i])merged.push(found.sources[i]);}found.sources=merged;
+    found.searched.unshift({id:'documents',status:docPassages.length?'ok':'empty',passages:docPassages.length,total:documents.length,note:'Selected excerpts of attached documents; this is not an exhaustive review.'});
+  }
+  const meta={...found,query,task,databases:[...(documents.length?['documents']:[]),...database_ids],document_coverage:documentCoverage(documents,found.sources),filters:searchFilters,automatic,model:modelName(env),inference:local(env)?'local':'api'};
   if(path==='/api/demo/search')return json({...meta,model_used:false});
   const sources=evidenceSubset(found.sources,body.context?18500:22000);
+  meta.document_coverage=documentCoverage(documents,sources);
   if(!sources.length){await reconcile();return json({...meta,propositions:[],sources:[],removed:0,incomplete:false,no_evidence:true,model_used:automatic});}
   const response=await callModel(payload(body.question,sources,task,body.context||''));
   await reconcile();
@@ -106,7 +117,7 @@ export default {
       else if(['/about','/sources','/run-locally'].includes(url.pathname))url.pathname+='.html';
       const result=await env.ASSETS.fetch(new Request(url,request));
       const headers=new Headers(result.headers);
-      headers.set('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+      headers.set('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; worker-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
       headers.set('X-Content-Type-Options','nosniff');headers.set('Referrer-Policy','no-referrer');
       return new Response(result.body,{status:result.status,headers});
     } catch(error) {

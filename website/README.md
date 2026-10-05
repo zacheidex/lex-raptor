@@ -6,6 +6,8 @@ Both are account-free. The original Python/Next.js matter workspace is separate.
 
 ## Research tools
 
+- Attach PDF, DOCX, TXT or Markdown documents; analyze their text, compare terms, or build a timeline.
+- Use the local CLI with files, folders, stdin, JSON output or interactive chat.
 - Search selected databases without an AI call.
 - Draft a research answer, case brief, memo, comparison, or arguments and responses.
 - Filter cases by CourtListener court ID and decision date; filter Federal
@@ -175,10 +177,10 @@ coverage, never silently substituted with another database.
 
 Questions and selected public passages are sent to OpenAI with `store:false`.
 This setting does not promise zero provider retention. The server stores no
-question/answer history; the current chat is held in browser memory until reload
+question/answer history or attachments; the current chat and files are held in browser memory until reload
 or New chat. Recent conversation context is sent with follow-ups. The server stores hashed visitor IDs, legacy session IDs or
 public visitor markers, request IDs, timestamps, reservation states, and token counts. Questions must not
-contain confidential client information. No documents can be uploaded here.
+contain confidential client information. Attachments are extracted in the browser; only extracted text is submitted. Original files are not uploaded or persisted.
 
 Claims lacking a literal quote from the selected passage are removed. A
 matching quote does not prove legal entailment, correct context, or current
@@ -190,3 +192,54 @@ retriever/model. Human review remains necessary.
 AGPL-3.0-only. Full corresponding source is in the public Lex Raptor repository
 and source download. The source archive deliberately omits secrets and runtime
 state. See the root project's LICENSE, NOTICE, and corpus lockfile.
+
+## Document attachments and CLI
+
+The homepage uses a dark theme, visible open-source identity and a small dinosaur
+mascot. Citation lookup lives in the chat composer. Attach documents by file picker
+or drag-and-drop. The default attachment scope is **documents only**; explicitly
+enable database research to combine files with public authorities. The planner
+sees attachment metadata, not document text. Public search queries derive from
+your message; the file contents do not go to public search services. Hosted AI
+receives selected extracted passages and recent conversation context with
+`store:false`; provider retention policies still apply. Local Ollama makes no
+paid model calls. Extracted documents are not written to D1 or any upload store.
+
+Supported: PDF with a text layer, DOCX, UTF-8 TXT and Markdown. Bounds: five files,
+5 MB each, 200 PDF pages, 300 KB combined extracted text. Scans need OCR first;
+password-protected PDFs are rejected. DOCX main text and footnotes/endnotes are
+extracted, without layout, headers/footers, comments, text boxes or deleted text.
+PDF multi-column reading order and document extraction can be imperfect.
+Quotations match normalized extracted text, with PDF page numbers or explicitly
+unpaginated DOCX/text locators. Excerpt selection is bounded by the existing model
+context; results disclose per-file extraction and selected-passage counts. This
+is not an exhaustive document review.
+
+From this directory, with dependencies and Ollama installed:
+
+```sh
+npm run cli -- ask "Review notice and payment terms" --file ./contract.pdf
+npm run cli -- ask "Compare these documents" --dir ./agreements --task compare
+cat notes.txt | npm run cli -- ask "Build a timeline" --stdin --task timeline
+npm run cli -- chat --file ./brief.docx
+npm run cli -- inspect --file ./opinion.pdf --json
+npm run cli -- search "Celotex summary judgment" --sources cap
+```
+
+Optionally `npm link` installs `lex-raptor`. Use `--help` for all options. For clean JSON in shell pipelines, use the installed command, `node scripts/cli.mjs`, or `npm run --silent cli`. Files
+are read only when selected with `--file`, `--dir`, `--stdin` or `/attach`. Folder
+scans skip hidden entries, symlinks and dependency/build directories. Output files
+are created with owner-only permissions and are not overwritten without `--force`.
+Interactive commands include `/files`, `/clear`, `/new`, `/task`, `/sources`,
+`/save` and `/quit`; they do not execute shell commands. Full paths stay local.
+
+The CLI embeds the same local Workers runtime; no browser server is required.
+It builds missing runtime output automatically. It never loads or uses an OpenAI
+key, and defaults to document-only or offline CAP research. Online data sources
+require explicit `--sources` selection. `--model` chooses an installed Ollama model.
+
+Parsing uses [PDF.js](https://mozilla.github.io/pdf.js/),
+[fflate](https://github.com/101arrowz/fflate) and
+[xmldom](https://github.com/xmldom/xmldom). DOCX extraction rejects DTD/entity
+declarations and bounds expanded XML before decompression. Model output remains
+subject to quote validation and the hosted lifetime spending ledger.

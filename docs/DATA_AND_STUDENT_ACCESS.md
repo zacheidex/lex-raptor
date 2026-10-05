@@ -84,3 +84,13 @@ The next useful evaluation is a held-out set across jurisdictions and tasks,
 with human review of retrieval completeness, controlling authority, exceptions,
 adverse cases, and each proposition's support. Existing small diagnostics and
 quote-match rates do not establish parity with commercial products.
+
+## Local document work
+
+PDF, DOCX, TXT and Markdown extraction runs on the device and needs no document
+parsing subscription. The CLI uses local Ollama with no model API fee; choose
+files, folders or stdin explicitly. Hosted attachment analysis still uses the
+shared $10 model budget. Scanned PDFs need separate OCR; no paid OCR service is
+connected. Document text is not sent to CourtListener or other search services
+by the file parser. If database research is enabled, the question/search query
+is sent to those selected services.

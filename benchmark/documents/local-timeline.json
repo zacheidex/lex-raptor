@@ -1,0 +1,89 @@
+{
+  "sources": [
+    {
+      "id": "S1",
+      "case_id": "attachment-1",
+      "name": "agreement.txt",
+      "citation": "agreement.txt · Document text",
+      "court": "User-provided document",
+      "decision_date": "Not independently established",
+      "opinion_type": "text",
+      "source_url": "",
+      "database_id": "documents",
+      "database_name": "Attached documents",
+      "kind": "attachment",
+      "source_status": "User-provided text; not verified legal authority. Only selected excerpts are analyzed.",
+      "text": "SYNTHETIC EXAMPLE — NOT A REAL CLIENT DOCUMENT On March 1, 2026, Orion Studio and Finch Research signed this sample services agreement. The project starts on March 15, 2026 and ends on June 30, 2026. Either party may terminate the agreement by giving the other party thirty days of written notice. The client must pay each invoice within fifteen days after receiving it. Confidential information must not be disclosed to third parties without prior written consent. This sample does not specify a governing law or a dispute resolution forum.",
+      "locator": "Document text, normalized characters 1–541",
+      "page": 1,
+      "original_id": "attachment-1-1-0"
+    }
+  ],
+  "searched": [
+    {
+      "id": "documents",
+      "status": "ok",
+      "passages": 1,
+      "total": 1,
+      "note": "Selected excerpts of attached documents; this is not an exhaustive review."
+    }
+  ],
+  "retrieved_at": "2026-10-05T05:45:15.412Z",
+  "query": "Build a timeline of the agreement's dated events.",
+  "task": "timeline",
+  "databases": [
+    "documents"
+  ],
+  "document_coverage": [
+    {
+      "name": "agreement.txt",
+      "type": "text",
+      "pages": 1,
+      "extracted_characters": 541,
+      "selected_passages": 1,
+      "selected_characters": 541,
+      "warnings": []
+    }
+  ],
+  "filters": {
+    "court": "",
+    "after": "",
+    "before": ""
+  },
+  "automatic": true,
+  "model": "qwen3:14b",
+  "inference": "local",
+  "propositions": [
+    {
+      "section": "Events",
+      "claim": "On March 1, 2026, Orion Studio and Finch Research signed the services agreement.",
+      "source_id": "S1",
+      "quote": "On March 1, 2026, Orion Studio and Finch Research signed this sample services agreement."
+    },
+    {
+      "section": "Events",
+      "claim": "The project starts on March 15, 2026.",
+      "source_id": "S1",
+      "quote": "The project starts on March 15, 2026 and ends on June 30, 2026."
+    },
+    {
+      "section": "Events",
+      "claim": "The agreement may be terminated by either party with thirty days of written notice.",
+      "source_id": "S1",
+      "quote": "Either party may terminate the agreement by giving the other party thirty days of written notice."
+    },
+    {
+      "section": "Events",
+      "claim": "The client must pay each invoice within fifteen days after receiving it.",
+      "source_id": "S1",
+      "quote": "The client must pay each invoice within fifteen days after receiving it."
+    }
+  ],
+  "removed": 0,
+  "incomplete": false,
+  "missing_sections": [
+    "Unclear dates and gaps"
+  ],
+  "model_used": true,
+  "question": "Build a timeline of the agreement's dated events."
+}
