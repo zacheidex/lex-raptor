@@ -2,8 +2,9 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {Miniflare} from 'miniflare';
-import {reserve,settle,CAP,RESERVE,cost} from '../worker/budget.js';
+import {reserve,upgradeReservation,settle,CAP,RESERVE,WEB_RESERVE,cost} from '../worker/budget.js';
 import {conversationContext} from '../shared/conversation.js';
+import {quoteSegments,webSources,legalUrl} from '../worker/web.js';
 
 async function fixture(t,options={}) {
   const calls=[];
@@ -15,15 +16,17 @@ async function fixture(t,options={}) {
       if(options.source){const response=await options.source(request);if(response)return response;}
       if(options.local&&request.url==='http://127.0.0.1:11434/api/chat'){
         const body=await request.json();calls.push(body);if(body.format.properties.search_query)return Response.json({done:true,done_reason:'stop',prompt_eval_count:500,eval_count:100,message:{content:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}});const {sources}=JSON.parse(body.messages[1].content);
-        return Response.json({done:true,done_reason:'stop',prompt_eval_count:1000,eval_count:200,message:{content:JSON.stringify({propositions:[{section:body.format.properties.propositions.items.properties.section.enum[0],claim:'Local fixture finding.',source_id:sources[0].id,quote:sources[0].text.slice(0,80)}]})}});
+        return Response.json({done:true,done_reason:'stop',prompt_eval_count:1000,eval_count:200,message:{content:JSON.stringify({propositions:[{section:body.format.properties.propositions.items.properties.section.enum[0],claim:'Local fixture finding.',source_id:sources[0].id,quote_id:sources[0].text.match(/\[(S\d+Q\d+)\]/)[1],web_source_url:''}]})}});
       }
       assert.equal(request.url,'https://api.openai.com/v1/responses');
       const body=await request.json();calls.push(body);
       if(options.beforeDraft&&body.text.format.name==='legal_research')await options.beforeDraft();
       if(options.fail||(options.failDraft&&body.text.format.name==='legal_research'))return new Response('{}',{status:500});
       if(body.text.format.name==='research_plan')return Response.json({status:'completed',usage:{input_tokens:500,output_tokens:100},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}]}]});
+      if(options.webResponse&&body.tools)return Response.json(options.webResponse);
+      if(options.draftResponse)return Response.json(options.draftResponse);
       const {sources}=JSON.parse(body.input),s=sources[0];
-      return Response.json({status:'completed',usage:{input_tokens:1000,output_tokens:200},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify({propositions:[{claim:'A fixture claim to verify citation handling.',source_id:s.id,quote:s.text.slice(0,100)},{claim:'Invented authority must be removed.',source_id:'invented',quote:'This quotation is not a real supplied source.'}]})}]}]});
+      return Response.json({status:'completed',usage:{input_tokens:1000,output_tokens:200},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify({propositions:[{claim:'A fixture claim to verify citation handling.',source_id:s.id,quote_id:s.text.match(/\[(S\d+Q\d+)\]/)[1],web_source_url:''},{claim:'Invented authority must be removed.',source_id:'invented',quote:'This quotation is not a real supplied source.'}]})}]}]});
     }
   });
   t.after(()=>mf.dispose());
@@ -35,6 +38,78 @@ async function fixture(t,options={}) {
   const question=(extra={})=>({question:'What does Celotex say about the burden on summary judgment?',database_ids:['cap'],request_id:crypto.randomUUID(),...extra});
   return {mf,db,calls,req,question,bindings};
 }
+
+const webUrl='https://example.gov/statutes/property';
+const webResponse={status:'completed',usage:{input_tokens:2000,output_tokens:300},output:[{type:'web_search_call',status:'completed',action:{sources:[{url:webUrl,title:'Example government code'},{url:'https://lawfirm.example/blog'}]}},{type:'message',content:[{type:'output_text',text:JSON.stringify({propositions:[{section:'Findings',claim:'A supported web finding.',source_id:'',quote_id:'',web_source_url:webUrl},{section:'Findings',claim:'Invented source rejected.',source_id:'',quote_id:'',web_source_url:'https://example.gov/invented'}]})}]}]};
+test('public legal web uses bounded tool calls, checks provenance and accounts for the tool fee',async t=>{
+  const f=await fixture(t,{webResponse,plan:{task:'research',search_query:'property limitation period',database_ids:['legal_web'],coverage_gaps:['state_codes'],filters:{court:'',after:'',before:''}}});
+  const q=f.question({task:'auto',database_ids:'auto'}),r=await f.req('research',q),data=await r.json();
+  assert.equal(r.status,200);assert.equal(f.calls.length,2);assert.equal(f.calls[1].max_tool_calls,4);assert.equal(f.calls[1].tools[0].type,'web_search');
+  assert.equal(data.propositions.length,1);assert.equal(data.removed,1);assert.equal(data.propositions[0].evidence_method,'web_citation');assert.equal(data.propositions[0].quote,'');
+  assert.equal(data.sources.length,1);assert.equal(data.sources[0].text,'');assert.equal(data.sources[0].source_url,webUrl);assert.equal(data.searched[0].pages,1);
+  assert.match(data.coverage_notes.join(' '),/selective/);
+  const row=await f.db.prepare('SELECT * FROM demo_calls WHERE id=?').bind(q.request_id).first();assert.equal(row.web_search_calls,1);assert.equal(row.charged,10763);assert.equal(row.state,'completed');
+});
+test('source-only and local research never invoke the paid web tool',async t=>{
+  const f=await fixture(t);const r=await (await f.req('search',f.question({database_ids:['legal_web']}))).json();
+  assert.equal(r.model_used,false);assert.equal(f.calls.length,0);assert.equal(r.searched[0].status,'pending');
+  const l=await fixture(t,{local:true,bindings:{LOCAL_RESEARCH:'true'}});
+  assert.equal((await (await l.req('status')).json()).databases.find(d=>d.id==='legal_web').available,false);
+  assert.equal((await l.req('research',l.question({database_ids:['legal_web']}))).status,400);assert.equal(l.calls.length,0);
+});
+test('web reservation upgrades are atomic and preserve the lifetime cap',async t=>{
+  const f=await fixture(t);
+  await f.db.prepare("INSERT INTO demo_calls (id,visitor,session,created,state,charged) VALUES ('historical','v','s',0,'completed',?)").bind(CAP-WEB_RESERVE-RESERVE).run();
+  assert.equal(await reserve(f.db,'a','v','s',1),true);assert.equal(await reserve(f.db,'b','v','s',1),true);
+  const upgrades=await Promise.all(['a','b'].map(id=>upgradeReservation(f.db,id)));assert.equal(upgrades.filter(Boolean).length,1);
+  assert.equal((await f.db.prepare('SELECT SUM(charged) n FROM demo_calls').first()).n,CAP);
+  assert.equal(cost({input_tokens:1,output_tokens:1,web_search_calls:-1}),null);
+});
+test('a refused web upgrade settles planning and never sends the paid tool call',async t=>{
+  const f=await fixture(t,{webResponse,plan:{task:'research',search_query:'property limits',database_ids:['legal_web'],filters:{court:'',after:'',before:''}}});
+  await f.db.prepare("INSERT INTO demo_calls (id,visitor,session,created,state,charged) VALUES ('old','v','s',0,'completed',?)").bind(CAP-RESERVE).run();
+  const q=f.question({task:'auto',database_ids:'auto'});assert.equal((await f.req('research',q)).status,429);assert.equal(f.calls.length,1);
+  assert.equal((await f.db.prepare('SELECT charged FROM demo_calls WHERE id=?').bind(q.request_id).first()).charged,163);
+});
+test('web provider failures or missing tool accounting retain the larger reservation',async t=>{
+  for(const options of [{fail:true},{webResponse:{...webResponse,output:webResponse.output.slice(1)}}]){
+    const f=await fixture(t,options),q=f.question({database_ids:['legal_web']});await f.req('research',q);
+    const row=await f.db.prepare('SELECT state,charged FROM demo_calls WHERE id=?').bind(q.request_id).first();assert.equal(row.state,'reserved');assert.equal(row.charged,WEB_RESERVE);
+  }
+});
+test('web provenance rejects unsafe and unapproved hosts, and quotation segments preserve exact text',()=>{
+  for(const url of ['http://example.gov/law','https://example.gov:123/law','https://user@example.gov/law','https://example.gov.evil.test/law','https://127.0.0.1/law','https://law.justia.com/cases/test','javascript:alert(1)'])assert.equal(legalUrl(url),null);
+  assert.ok(legalUrl('https://leg.state.fl.us/code'));assert.ok(legalUrl('https://library.municode.com/ga/atlanta/codes/code_of_ordinances'));
+  assert.equal(webSources({output:[{type:'message',content:[{type:'output_text',text:webUrl}]}]}).length,0);
+  const source={id:'S1',text:('The original document’s punctuation and  whitespace remain intact. '+ 'Details follow without any fictional authority. ').repeat(15)};
+  for(const q of quoteSegments(source)){assert.ok(source.text.includes(q.quote));assert.ok(q.quote.length>=20&&q.quote.length<=240);}
+});
+test('a finding can cite several actual web sources; one invented reference rejects the finding',async t=>{
+  const second='https://example.gov/city/code',response=structuredClone(webResponse);
+  response.output[0].action.sources.push({url:second,title:'City code'});
+  response.output[1].content[0].text=JSON.stringify({propositions:[
+    {section:'Findings',claim:'Both sources support distinct parts.',source_id:'',quote_id:'',web_source_urls:[webUrl,second]},
+    {section:'Findings',claim:'One source is invented.',source_id:'',quote_id:'',web_source_urls:[webUrl,'https://example.gov/missing']}
+  ]});
+  const f=await fixture(t,{webResponse:response}),data=await (await f.req('research',f.question({database_ids:['legal_web']}))).json();
+  assert.equal(data.propositions.length,1);assert.equal(data.propositions[0].source_ids.length,2);assert.equal(data.sources.length,2);assert.equal(data.removed,1);assert.equal(data.removed_references.length,1);
+});
+test('an invented quotation segment cannot fall back to a supplied quote',async t=>{
+  const f=await fixture(t,{draftResponse:{status:'completed',usage:{input_tokens:1000,output_tokens:100},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify({propositions:[{section:'Findings',claim:'Invalid segment.',source_id:'S1',quote_id:'S1Q999999',quote:'A fabricated fallback quote.',web_source_urls:[]}]})}]}]}});
+  const data=await (await f.req('research',f.question())).json();assert.equal(data.propositions.length,0);assert.equal(data.removed,1);assert.match(data.removed_references[0].reason,/segment/);
+});
+test('unanswered parts of a multi-issue request remain visible after citation validation',async t=>{
+  const response=structuredClone(webResponse);response.output[1].content[0].text=JSON.stringify({propositions:[{issue_id:'I1',section:'Findings',claim:'Only the first issue has support.',source_id:'',quote_id:'',web_source_urls:[webUrl]}]});
+  const f=await fixture(t,{webResponse:response,plan:{task:'research',search_query:'two issues',research_questions:['What is the state rule?','What is the city rule?'],database_ids:['legal_web'],filters:{court:'',after:'',before:''}}});
+  const data=await (await f.req('research',f.question({task:'auto',database_ids:'auto'}))).json();
+  assert.deepEqual(data.unanswered_issues,[{id:'I2',question:'What is the city rule?'}]);assert.equal(data.propositions.length,1);assert.equal(data.research_issues.length,2);
+  assert.equal(JSON.parse(f.calls[1].input).research_issues[1].question,'What is the city rule?');
+});
+test('ignored attempts after the builtin execution cap do not leave a known response reserved',async t=>{
+  const response=structuredClone(webResponse);response.output.unshift(...Array.from({length:4},()=>({type:'web_search_call',status:'searching',action:{type:'open_page'}})));
+  const f=await fixture(t,{webResponse:response}),q=f.question({database_ids:['legal_web']});await f.req('research',q);
+  const row=await f.db.prepare('SELECT * FROM demo_calls WHERE id=?').bind(q.request_id).first();assert.equal(row.state,'completed');assert.equal(row.web_search_calls,4);assert.equal(row.charged,40600);
+});
 
 test('origin, disabled state, visitor identification and selection guard public research',async t=>{
   const f=await fixture(t);
@@ -145,7 +220,7 @@ test('research without cookies or passcode settles tokens, validates quotes and 
   const f=await fixture(t),q=f.question();
   const r=await f.req('research',q);assert.equal(r.status,200);assert.equal(r.headers.get('set-cookie'),null);
   const result=await r.json();assert.equal(result.propositions.length,1);assert.equal(result.removed,1);assert.ok(result.sources.length);
-  assert.equal(f.calls[0].store,false);assert.equal(f.calls[0].service_tier,'default');assert.equal(f.calls[0].max_output_tokens,4096);assert.equal(f.calls[0].model,'gpt-6-luna');assert.equal(f.calls[0].tools,undefined);
+  assert.equal(f.calls[0].store,false);assert.equal(f.calls[0].service_tier,'default');assert.equal(f.calls[0].max_output_tokens,6144);assert.equal(f.calls[0].model,'gpt-6-luna');assert.equal(f.calls[0].tools,undefined);
   const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.charged,325);assert.equal(ledger.state,'completed');assert.equal(ledger.model,'gpt-6-luna');
   assert.equal((await f.req('research',q,'__Host-lex-demo=obsolete-cookie')).status,429);assert.equal(f.calls.length,1);
   const serialized=JSON.stringify(result);assert.ok(!serialized.includes('fake-test-key'));

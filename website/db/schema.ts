@@ -8,6 +8,7 @@ export const calls = sqliteTable('demo_calls', {
   charged: integer('charged').notNull(),
   inputTokens: integer('input_tokens'),
   outputTokens: integer('output_tokens'),
+  webSearchCalls: integer('web_search_calls').notNull().default(0),
   // Existing ledger entries used the original model; new calls set this explicitly.
   model: text('model').notNull().default('gpt-5.3-codex'),
 }, t => [index('calls_visitor_time').on(t.visitor, t.created), index('calls_session_time').on(t.session, t.created)]);

@@ -12,7 +12,7 @@ export async function generate(env,input) {
     const data=await result.json();
     return {ok:true,data:{status:data.done_reason==='length'?'incomplete':'completed',output:[{type:'message',content:[{type:'output_text',text:data.message?.content||''}]}],usage:{input_tokens:data.prompt_eval_count||0,output_tokens:data.eval_count||0}}};
   }
-  const result=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+env.OPENAI_API_KEY},body:input,redirect:'manual',signal:AbortSignal.timeout(90000)});
+  const result=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+env.OPENAI_API_KEY},body:input,redirect:'manual',signal:AbortSignal.timeout(150000)});
   if(!result.ok){const data=await result.json().catch(()=>({}));return {ok:false,status:result.status,error:data.error||{}};}
   return {ok:true,data:await result.json()};
 }

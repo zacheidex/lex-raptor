@@ -61,7 +61,7 @@ Starter sources are downloaded from Harvard's [Caselaw Access Project](https://c
 
 The importer follows CAP's opinion labels, with explicit heading detection for merged dissents/concurrences. These extraction heuristics are not a certified opinion-segmentation system. Locators identify **CAP extracted paragraphs and character offsets**, not invented reporter pinpoint citations. Source records may contain OCR errors. Research generation selects a disclosed subset of retrieved passages; it does not read every opinion. Matter drafting, in contrast, fails on excessive input rather than silently dropping evidence.
 
-An exact quoted passage is not proof that the model's proposition follows from it. **Current validity, subsequent treatment, legal completeness, and semantic entailment are not automatically certified.** Inspect the actual holding, context, opinion type and later authorities before relying on an answer. Legal-source content is treated as untrusted evidence; there are no model tools for web browsing, shell access, filing, sending messages, or training on private matter data.
+An exact quoted passage is not proof that the model's proposition follows from it. **Current validity, subsequent treatment, legal completeness, and semantic entailment are not automatically certified.** Inspect the actual holding, context, opinion type and later authorities before relying on an answer. Legal-source content is treated as untrusted evidence. The original matter workspace has no model web tools, shell access, filing or messaging. The separate hosted research chat offers bounded public legal web search, described below.
 
 ## Tests and benchmark
 
@@ -142,3 +142,6 @@ instructions](website/README.md#document-attachments-and-cli).
 Attachments support five files, 5 MB each, up to 200 PDF pages and 300 KB combined
 extracted text. Scans need OCR first. Results disclose selected excerpts, not
 a claim that every page or clause was analyzed.
+
+
+The hosted chat now includes **Public legal web** among the selectable sources: government guidance, statutes and municipal codes. Web findings link to actual search-tool URLs and are labeled separately from exact quotations in downloaded passages. They are not independently quote-checked. Up to four web calls are charged inside the existing $10 cap; local Ollama never invokes this paid tool. Clarification buttons submit the reply immediately, and the inline meteor has a small impact animation with reduced-motion support. See [the statute and local-rule checks](benchmark/statutes/RESULTS.md) for retained outcomes and limitations.

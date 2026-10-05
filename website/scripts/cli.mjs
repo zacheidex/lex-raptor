@@ -48,7 +48,7 @@ function markdown(r,question){
  const lines=['# Lex Raptor',question,'',`Task: ${r.task} | Sources: ${r.databases.join(', ')} | Model: ${r.model_used?r.model:'No model call'}`,''];
  lines.push(...(r.coverage_notes||[]));if(r.jurisdiction_note)lines.push(r.jurisdiction_note);
  for(const d of r.document_coverage||[])lines.push(`Document: ${d.name} — ${d.selected_passages} excerpt(s) from ${d.extracted_characters} extracted characters.`,...(d.warnings||[]));
- let section='';for(const p of r.propositions||[]){if(p.section!==section){section=p.section;lines.push('',`## ${section}`);}const s=r.sources.find(s=>s.id===p.source_id);lines.push('',p.claim,'',`> ${p.quote}`,'',`${s?.citation||p.source_id} · ${s?.locator||''}`,s?.source_url||'');}
+ let section='';for(const p of r.propositions||[]){if(p.section!==section){section=p.section;lines.push('',`## ${section}`);}const s=r.sources.find(s=>s.id===p.source_id);lines.push('',p.claim,'',p.evidence_method==='web_citation'?'Web citation — page text not independently quote-checked.':`> ${p.quote}`,'',`${s?.citation||p.source_id} · ${s?.locator||''}`,...(p.source_ids||[p.source_id]).map(id=>r.sources.find(s=>s.id===id)?.source_url||''));}
  if(r.model_used&&!r.propositions?.length)lines.push('No supported findings were returned. Inspect the source results or refine the request.');
  for(const s of r.searched||[])lines.push('',s.id+': '+s.status+' — '+s.note,...(s.warnings||[]));
  if(r.missing_sections?.length)lines.push('Missing sections: '+r.missing_sections.join(', '));

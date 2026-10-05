@@ -81,7 +81,7 @@ the six public development prompts. It refuses API-model deployments and saves
 results in ignored `.local-data/`. See `../benchmark/workbench/RESULTS.md` for
 retained failures, iteration history and qualitative limitations.
 
-For the three case-status regression prompts, run `node scripts/diagnose-case-status.mjs` locally. Against a hosted URL, explicitly add `--allow-api-spend`; all three requests reserve at most $0.06 within the existing server cap, with no retries. Outputs go to ignored `.local-data/case-status/`. Review the actual holdings and qualifications manually; literal quotation counts are not accuracy scores.
+For the three case-status regression prompts, run `node scripts/diagnose-case-status.mjs` locally. Against a hosted URL, explicitly add `--allow-api-spend`; all three requests reserve at most $1.20 within the existing server cap, with no retries. Outputs go to ignored `.local-data/case-status/`. Review the actual holdings and qualifications manually; literal quotation counts are not accuracy scores.
 
 `db/schema.ts` is the schema source. Run `npm run db:generate` after schema
 changes and inspect the generated SQL. Preserve already applied migrations.
@@ -124,10 +124,9 @@ Before the first model call for a request, one atomic `INSERT ... SELECT`
 reserves **$0.02** only if it fits under the lifetime cap. The reservation covers
 both automatic planning and drafting. Planning input is bounded at 14,000 UTF-8
 bytes including schema, with at most 1,024 output tokens. Drafting input is
-bounded at 32,768 bytes, with at most 4,096 output tokens. Each call includes a
+bounded at 32,768 bytes, with at most 6,144 output tokens. Each call includes a
 conservative 4,096-token framing allowance. Together these bounds cost less than
-$0.016 at the pinned rates, including the cache-write allowance. There are no
-paid tools, agent loops, automatic retries, or visitor-selected model endpoints.
+$0.016 at the pinned rates, including the cache-write allowance. These are the limits for excerpt-only drafting. Public legal web drafting first raises the reservation to $0.40 and includes paid tool fees as described below. There are no agent loops, automatic retries, or visitor-selected model endpoints.
 Manual source-only search never calls the model.
 Successful requests settle conservatively against the sum of reported input/output tokens from every model call,
 rounded up. The ledger allows $0.225/million input tokens (both the standard
@@ -138,7 +137,7 @@ unknown charges against provider usage before changing those rows; automatic
 expiry never refunds money. Duplicate request IDs cannot make another call.
 
 The pinned model is `gpt-6-luna`, a current low-cost model available in Codex,
-using the Responses API, standard service, and low reasoning. Rates verified
+using the Responses API, standard service, and medium reasoning for drafting (low for planning). Rates verified
 2026-10-05: $0.10/million input and $0.50/million output tokens, with cache writes
 listed at $0.125/million. Historical charges stay in the same lifetime ledger.
 There is no silent model fallback. Recheck prices and revise the reservation
@@ -184,7 +183,7 @@ or New chat. Recent conversation context is sent with follow-ups. The server sto
 public visitor markers, request IDs, timestamps, reservation states, and token counts. Questions must not
 contain confidential client information. Attachments are extracted in the browser; only extracted text is submitted. Original files are not uploaded or persisted.
 
-Claims lacking a literal quote from the selected passage are removed. A
+Downloaded-passage findings select a stable segment ID; the server inserts the exact text. Invalid or mismatched references are removed. Web findings instead link to a tool-reported URL on an eligible legal/government host and are labeled as provider web citations; their page text is not independently quote-checked. A
 matching quote does not prove legal entailment, correct context, or current
 validity. The local Qwen benchmark does not measure this different hosted
 retriever/model. Human review remains necessary.
@@ -246,8 +245,18 @@ Parsing uses [PDF.js](https://mozilla.github.io/pdf.js/),
 declarations and bounds expanded XML before decompression. Model output remains
 subject to quote validation and the hosted lifetime spending ledger.
 
-Chat can ask a focused clarification before retrieval when a missing fact materially changes the research. Short replies retain the prior question and clarification in the browser and CLI. Clear questions and requested general overviews proceed directly. This uses the existing bounded planning call, with no draft call or source search for a clarification. State codes and the U.S. Code are not directly connected; coverage notes distinguish case discussions from current statutory text.
+Chat can ask a focused clarification before retrieval when a missing fact materially changes the research. Short replies retain the prior question and clarification in the browser and CLI. Clear questions and requested general overviews proceed directly. This uses the existing bounded planning call, with no draft call or source search for a clarification. Hosted Public legal web search adds selective statutory, municipal-code and government-guidance coverage. Coverage notes distinguish provider web citations from downloaded passages, and historical editions from current statutory text.
 
 Automatic topic queries use CourtListener semantic search. Named cases and explicit manual queries retain keyword search; court/date filters still apply. Only retrieved full opinion text is answer evidence, never search snippets.
 
 For an explicit single-state law question, automatic court scope uses state appellate IDs from CourtListener’s [court API](https://www.courtlistener.com/help/api/jurisdictions/) (snapshot 2026-10-05, `jurisdiction=S` and `jurisdiction=SA`, active courts without an end date). `worker/state-courts.json` maps all 50 states and DC. The result discloses that this scope may omit federal interpretations and trial decisions; manual court/query overrides take precedence. This is a court filter, not a state-code database.
+
+## Public legal web and spending
+
+`legal_web` is a selectable hosted-only source, included among the connected online defaults. Manual source choices take precedence. Local Ollama never enables the paid web tool; document-only requests and Source search make no web tool calls. The final drafting request can use up to four built-in `web_search` calls on gpt-6-luna. This remains at most two model requests: plan and draft. The server validates URLs against actual tool source records/annotations and an explicit government/legal-publisher allowlist, not against URLs invented in the model's JSON. Web citations carry no purported literal quotation or generated source text.
+
+Before web drafting, an atomic ledger update raises the request reservation from $0.02 to $0.40 (or reserves $0.40 directly for manual web research). The lifetime cap remains $10 across deployments. Web tool calls cost $0.01 each, plus model tokens; token rates conservatively include the input/cache-write allowance. Known usage is reconciled including tool fees; uncertain calls retain the full reservation. The reserve covers four bounded 128k web contexts, their cumulative reuse over model turns, input and output at the pinned rates, with headroom. Prices: https://developers.openai.com/api/docs/pricing . No new data subscription is required.
+
+Clarification reply buttons submit once immediately and retain the conversation context. The inline loading meteor finishes with a small flash, ring and fragments. Reduced-motion mode disables the animation.
+
+The planner decomposes research into up to four explicit questions. Draft findings retain their issue IDs; the result names any issue left unsupported after reference validation. This is coverage bookkeeping, not an automatic legal-correctness grade. The bounded web budget was increased to four calls after two-call tests missed parts of multi-issue questions.

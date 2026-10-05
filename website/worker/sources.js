@@ -16,11 +16,12 @@ export function catalog(env) {
     {id:'courtlistener',name:'CourtListener',available:!!env.COURTLISTENER_API_TOKEN,description:env.COURTLISTENER_API_TOKEN?'Live federal and state case-law search':'Needs an owner-supplied API token',kind:'cases'},
     {id:'ecfr',name:'eCFR',available:true,description:'Live search across federal regulations; dated source text',kind:'regulations'},
     {id:'federal_register',name:'Federal Register',available:true,description:'Rules, proposed rules, notices and presidential documents',kind:'notices'},
+    {id:'legal_web',name:'Public legal web',available:env.LOCAL_RESEARCH!=='true'&&env.DEMO_ENABLED==='true'&&!!env.OPENAI_API_KEY,description:env.LOCAL_RESEARCH==='true'?'Hosted AI feature; local inference never calls the paid web tool':'Statutes, government guidance and municipal codes · AI search',kind:'web'},
     {id:'cap',name:'CAP starter library',available:true,description:'12 Supreme Court opinions · 1938–2014 · works offline',kind:'cases',cases:12}
   ];
 }
 export function validateSelection(ids,env) {
-  if(!Array.isArray(ids)||!ids.length||ids.length>4||new Set(ids).size!==ids.length||ids.some(id=>!catalog(env).some(d=>d.id===id&&d.available)))throw new SourceError('Select at least one connected database.');
+  if(!Array.isArray(ids)||!ids.length||ids.length>5||new Set(ids).size!==ids.length||ids.some(id=>!catalog(env).some(d=>d.id===id&&d.available)))throw new SourceError('Select at least one connected database.');
 }
 export function filters(input={}) {
   if(!input||typeof input!=='object'||Array.isArray(input))throw new SourceError('Use valid search filters.');
@@ -182,6 +183,7 @@ async function ecfr(env,query) {
 }
 export async function searchSources(env,{query,database_ids,...f},progress=()=>{}) {
   const outcomes=await Promise.all(database_ids.map(async id=>{
+    if(id==='legal_web')return {id,status:'pending',sources:[],total:null,note:'Public legal web search runs only with AI Send; Source search makes no paid web calls.'};
     progress({stage:'searching',database:id,message:'Searching '+(catalog(env).find(d=>d.id===id)?.name||id)+'…'});
     try{const result=id==='cap'?{sources:starterSearch(query,f),total:null,note:'Search of the 12 imported starter opinions.'}:await ({courtlistener,ecfr,federal_register:federalRegister}[id])(env,query,f,progress);
       progress({stage:'source_complete',database:id,message:(catalog(env).find(d=>d.id===id)?.name||id)+': '+result.sources.length+' passages retrieved.'});

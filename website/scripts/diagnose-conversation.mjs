@@ -5,7 +5,7 @@ import {conversationContext} from '../shared/conversation.js';
 const args=process.argv.slice(2),base=(args.find(a=>a.startsWith('http'))||'http://127.0.0.1:8787').replace(/\/$/,'');
 const status=await (await fetch(base+'/api/demo/status')).json();
 if(!status.clarifying_questions||status.research_revision<5)throw new Error('Expected research revision is not live; no test sent.');
-if(status.inference!=='local'&&!args.includes('--allow-api-spend'))throw new Error('Hosted checks require --allow-api-spend. Twelve requests reserve at most $0.24 within the server budget; no retries.');
+if(status.inference!=='local'&&!args.includes('--allow-api-spend'))throw new Error('Hosted checks require --allow-api-spend. Twelve requests reserve at most $4.80 within the server budget; no retries.');
 const tests=[
  {id:'georgia',question:'What is the statute of limitations in Georgia?',expected:'clarify',review:'Ask the claim/offense type; do not state one deadline.'},
  {id:'landlord',question:'Can my landlord do that?',expected:'clarify',review:'Ask what happened and/or the jurisdiction.'},
@@ -27,7 +27,7 @@ for(const test of tests){
  const started=Date.now();
  const r=await fetch(base+'/api/demo/research',{method:'POST',headers:{'Content-Type':'application/json',Origin:base},body:JSON.stringify(body),signal:AbortSignal.timeout(240000)});
  const data=await r.json(),actual=data.follow_up?.kind||'research',sources=new Map((data.sources||[]).map(s=>[s.id,s]));
- const record={id:test.id,request:body,expected_action:test.expected,actual_action:actual,routing_pass:r.ok&&actual===test.expected,review_criteria:test.review,http_status:r.status,seconds:(Date.now()-started)/1000,retained:data.propositions?.length||0,literal_quotes:(data.propositions||[]).filter(p=>sources.get(p.source_id)?.text.includes(p.quote)).length,response:data};
+ const record={id:test.id,request:body,expected_action:test.expected,actual_action:actual,routing_pass:r.ok&&actual===test.expected,review_criteria:test.review,http_status:r.status,seconds:(Date.now()-started)/1000,retained:data.propositions?.length||0,web_citations:(data.propositions||[]).filter(p=>p.evidence_method==='web_citation').length,literal_quotes:(data.propositions||[]).filter(p=>p.evidence_method!=='web_citation'&&p.quote?.length>=20&&sources.get(p.source_id)?.text.includes(p.quote)).length,response:data};
  records.push(record);await writeFile(new URL(test.id+'.json',output),JSON.stringify(record,null,2)+'\n',{mode:0o600});
  console.log(JSON.stringify({id:test.id,action:actual,routing_pass:record.routing_pass,seconds:record.seconds,retained:record.retained,follow_up:data.follow_up,filters:data.filters,manual_review_required:true}));
  if(!r.ok)break;

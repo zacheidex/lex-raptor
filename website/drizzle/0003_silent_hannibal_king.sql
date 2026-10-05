@@ -1,0 +1,1 @@
+ALTER TABLE `demo_calls` ADD `web_search_calls` integer DEFAULT 0 NOT NULL;

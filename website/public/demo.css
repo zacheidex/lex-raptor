@@ -11,5 +11,21 @@
 .research-meteor{position:absolute;left:48px;top:4px;width:5px;height:5px;transform:translate(-12px,4px)}
 .research-meteor::before{content:"";position:absolute;left:2px;top:1px;width:13px;height:3px;border-radius:50%;transform:rotate(-22deg);transform-origin:0 50%;background:linear-gradient(90deg,#e8bc7580,#e8bc7500)}
 .research-meteor::after{content:"";position:absolute;inset:0;border-radius:50%;background:#dfba7d}
-@media(prefers-reduced-motion:no-preference){.research-meteor{animation:meteor-approach 3.8s linear infinite}@keyframes meteor-approach{0%{opacity:0;transform:translate(0,0)}15%{opacity:1}80%{opacity:1;transform:translate(-27px,9px)}96%,100%{opacity:0;transform:translate(-30px,10px)}}}
-.follow-up-choices{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0}.follow-up-choices button{font-size:.85rem;border-radius:18px;padding:.5rem .85rem;color:var(--accent)}.coverage-note{font-size:.85rem;line-height:1.7;color:var(--muted)}
+
+.web-citation{font-size:.85rem;color:var(--muted)}
+.research-impact,.research-debris{position:absolute;left:17px;top:14px;width:4px;height:4px;opacity:0;pointer-events:none}
+.research-impact{border-radius:50%;background:#ffde9e;box-shadow:0 0 3px #f5b664}
+.research-impact::after{content:"";position:absolute;inset:-2px;border:1px solid #efc17f;border-radius:50%}
+.research-debris{border-radius:50%;background:#f9d59a;box-shadow:-5px -4px 0 -1px #edb878,5px -2px 0 -1px #c6df9b,-3px 5px 0 -1px #8fba8a,4px 4px 0 -1px #edb878}
+@media(prefers-reduced-motion:no-preference){
+.research-meteor{animation:meteor-approach 3.8s linear infinite}
+.research-earth{animation:earth-impact 3.8s ease-out infinite}
+.research-impact{animation:impact-flash 3.8s ease-out infinite}
+.research-impact::after{animation:impact-ring 3.8s ease-out infinite}
+.research-debris{animation:impact-debris 3.8s ease-out infinite}
+@keyframes meteor-approach{0%{opacity:0;transform:translate(0,0)}12%{opacity:1}65%{opacity:1;transform:translate(-30px,10px)}67%,100%{opacity:0;transform:translate(-30px,10px)}}
+@keyframes earth-impact{0%,64%{opacity:1;transform:none}68%{opacity:.3;transform:translate(-1px,1px) scale(.88)}75%{opacity:.4;transform:translate(1px,-1px) scale(.95)}90%,100%{opacity:1;transform:none}}
+@keyframes impact-flash{0%,64%,86%,100%{opacity:0;transform:scale(.2)}67%{opacity:1;transform:scale(2)}73%{opacity:.7;transform:scale(1.2)}}
+@keyframes impact-ring{0%,64%{transform:scale(.5);opacity:0}67%{opacity:1}85%,100%{transform:scale(4);opacity:0}}
+@keyframes impact-debris{0%,65%{opacity:0;transform:scale(.1)}68%{opacity:1;transform:scale(1)}85%,100%{opacity:0;transform:scale(2.8)}}
+}

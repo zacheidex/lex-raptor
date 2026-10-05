@@ -1,4 +1,5 @@
-import {database,reserve,settle,CAP,RESERVE} from './budget.js';
+import {database,reserve,upgradeReservation,settle,CAP,RESERVE,WEB_RESERVE} from './budget.js';
+import {webSources,webSearches,WEB_CALL_LIMIT} from './web.js';
 import {tasks,payload,validate} from './research.js';
 import {catalog,validateSelection,filters,searchSources,evidenceSubset,auditCitations,SourceError} from './sources.js';
 import {local,modelName,modelReady,generate} from './model.js';
@@ -32,7 +33,7 @@ async function api(request,env,progress=()=>{}) {
   if(path==='/api/demo/status'&&request.method==='GET') {
     const enabled=!!ready(env);
     const state=await database(env).prepare('SELECT COALESCE(SUM(charged),0) total FROM demo_calls').first();
-    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,research_progress:true,case_treatment_search:true,clarifying_questions:true,research_revision:6,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
+    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,request_limits:false,automatic_fields:true,attachments:true,research_progress:true,case_treatment_search:true,clarifying_questions:true,research_revision:9,databases:catalog(env),tasks,model:modelName(env),cap:local(env)?null:CAP/1e6});
   }
   if(request.method!=='POST')fail(405,'Method not allowed.');
   if(request.headers.get('Origin')!==new URL(request.url).origin||request.headers.get('Sec-Fetch-Site')==='cross-site')fail(403,'Open research on this website to continue.');
@@ -62,14 +63,16 @@ async function api(request,env,progress=()=>{}) {
   if(body.search_query!==undefined&&(typeof body.search_query!=='string'||body.search_query.length>300))fail(400,'Keep search terms within 300 characters.');
   if(body.context!==undefined&&(typeof body.context!=='string'||body.context.length>3500))fail(400,'Conversation context is too long. Start a new chat.');
   if(path==='/api/demo/research'&&!/^[a-f0-9-]{36}$/.test(body.request_id||''))fail(400,'Missing request identifier.');
-  let reserved=false,usage={input_tokens:0,output_tokens:0},usageKnown=true;
-  async function admission(){
-    if(reserved||local(env))return;
-    if(!await reserve(db,body.request_id,ip,sid,now))fail(429,'The shared AI spending allowance is exhausted, or this request was already submitted. Source search is still available.');
-    reserved=true;
+  let reserved=0,usage={input_tokens:0,output_tokens:0,web_search_calls:0},usageKnown=true;
+  async function admission(amount){
+    if(local(env)||reserved>=amount)return;
+    if(reserved){
+      if(!await upgradeReservation(db,body.request_id)){await reconcile();fail(429,'There is not enough of the shared $10 allowance remaining for web research. Choose other sources or run locally.');}
+    }else if(!await reserve(db,body.request_id,ip,sid,now,amount))fail(429,'The shared AI spending allowance is exhausted, or this request was already submitted. Source search is still available.');
+    reserved=amount;
   }
-  async function callModel(input){
-    await admission();
+  async function callModel(input,useWeb=false){
+    await admission(useWeb?WEB_RESERVE:RESERVE);
     let result;
     try{result=await generate(env,input);}catch{fail(504,local(env)?'The local model request was interrupted.':'The model request was interrupted. Its cost reservation is held; there is no automatic retry.');}
     if(!result.ok){
@@ -78,6 +81,12 @@ async function api(request,env,progress=()=>{}) {
       fail(502,local(env)?'The local model is unavailable. Start Ollama and install the configured model.':'The model provider could not complete the request. Its cost reservation is held; there is no automatic retry.');
     }
     for(const k of ['input_tokens','output_tokens']){const n=result.data.usage?.[k];if(!Number.isSafeInteger(n)||n<0)usageKnown=false;else usage[k]+=n;}
+    if(useWeb){
+      const calls=Array.isArray(result.data.output)?result.data.output.filter(o=>o.type==='web_search_call').length:null;
+      // The API may return an extra ignored attempt after max_tool_calls.
+      // Charge every reported attempt up to the provider-enforced execution cap.
+      if(calls===null||calls<1)usageKnown=false;else usage.web_search_calls+=Math.min(calls,WEB_CALL_LIMIT);
+    }
     return result.data;
   }
   async function reconcile(){if(reserved&&usageKnown)await settle(db,body.request_id,usage);}
@@ -97,6 +106,7 @@ async function api(request,env,progress=()=>{}) {
   if(onlyDocuments)plan.database_ids=[];
   const {query,task,database_ids}=plan;
   const searchFilters=filters(plan);
+  const issues=(plan.research_questions||[query]).map((question,i)=>({id:'I'+(i+1),question}));
   progress({stage:'plan',message:onlyDocuments?'Reading attached document excerpts…':'Searching selected databases…',task,databases:database_ids,reason:plan.database_reason||'Searching your selected databases.'});
   const found=onlyDocuments?{sources:[],searched:[],retrieved_at:new Date().toISOString()}:await searchSources(env,plan,progress);
   const docPassages=documentPassages(documents,body.question);
@@ -104,20 +114,34 @@ async function api(request,env,progress=()=>{}) {
     const merged=[];for(let i=0;i<Math.max(docPassages.length,found.sources.length);i++){if(docPassages[i])merged.push(docPassages[i]);if(found.sources[i])merged.push(found.sources[i]);}found.sources=merged;
     found.searched.unshift({id:'documents',status:docPassages.length?'ok':'empty',passages:docPassages.length,total:documents.length,note:'Selected excerpts of attached documents; this is not an exhaustive review.'});
   }
-  const meta={...found,jurisdiction_note:plan.jurisdiction_note||'',coverage_notes:plan.coverage_notes||[],query,task,databases:[...(documents.length?['documents']:[]),...database_ids],database_reason:plan.database_reason||'Searching your selected databases.',research_focus:plan.research_focus||'general',document_coverage:documentCoverage(documents,found.sources),filters:searchFilters,automatic,model:modelName(env),inference:local(env)?'local':'api'};
+  const meta={...found,jurisdiction_note:plan.jurisdiction_note||'',coverage_notes:plan.coverage_notes||[],query,task,databases:[...(documents.length?['documents']:[]),...database_ids],database_reason:plan.database_reason||'Searching your selected databases.',research_focus:plan.research_focus||'general',research_issues:issues,document_coverage:documentCoverage(documents,found.sources),filters:searchFilters,automatic,model:modelName(env),inference:local(env)?'local':'api'};
   if(path==='/api/demo/search')return json({...meta,model_used:false});
   const sources=evidenceSubset(found.sources,body.context?18500:22000);
+  const useWeb=!local(env)&&database_ids.includes('legal_web');
   meta.document_coverage=documentCoverage(documents,sources);
-  if(!sources.length){await reconcile();return json({...meta,propositions:[],sources:[],removed:0,incomplete:false,no_evidence:true,model_used:automatic});}
-  progress({stage:'drafting',message:'Writing an answer from '+sources.length+' source passages…'});
-  const response=await callModel(payload(body.question,sources,task,body.context||'',plan.research_focus));
+  if(!sources.length&&!useWeb){await reconcile();return json({...meta,propositions:[],sources:[],removed:0,incomplete:false,no_evidence:true,model_used:automatic});}
+  // Fit the actual encoded schema, issue list and annotated excerpts, including
+  // multibyte text. Remove the lowest-priority final passage before any draft call.
+  let draftInput;
+  for(;;){try{draftInput=payload(body.question,sources,task,body.context||'',plan.research_focus,useWeb,query,issues);break;}catch(e){if(e.message!=='Context too large'||sources.length<=1)throw e;sources.pop();}}
+  meta.document_coverage=documentCoverage(documents,sources);
+  progress({stage:'drafting',...(useWeb?{database:'legal_web'}:{}),message:useWeb?'Searching public legal sources and writing an answer…':'Writing an answer from '+sources.length+' source passages…'});
+  const response=await callModel(draftInput,useWeb);
   await reconcile();
+  if(useWeb){
+    const web=webSources(response);sources.push(...web);
+    Object.assign(meta.searched.find(r=>r.id==='legal_web'),{status:web.length?'ok':'empty',passages:0,pages:web.length,consulted_urls:web.length,searches:webSearches(response),note:'Up to four web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.'});
+    meta.coverage_notes.push('Web citations are provided by the search service; their text has not been independently quote-checked.');
+  }
   // Public-only cache cleanup never touches the lifetime spending ledger.
   await db.prepare('DELETE FROM source_cache WHERE expires<?').bind(now).run();
   await db.prepare('DELETE FROM source_requests WHERE created<?').bind(now-172800).run();
   await db.prepare('DELETE FROM demo_attempts WHERE expires<?').bind(now).run();
   progress({stage:'checking',message:'Checking source quotations…'});
-  return json({...meta,...validate(response,sources,task),sources,model_used:true});
+  const checked=validate(response,sources,task,issues),used=new Set(checked.propositions.flatMap(p=>p.source_ids||[p.source_id]));
+  const displayed=sources.filter(s=>s.evidence_method!=='web_citation'||used.has(s.id));
+  if(useWeb)meta.searched.find(r=>r.id==='legal_web').pages=displayed.filter(s=>s.evidence_method==='web_citation').length;
+  return json({...meta,...checked,sources:displayed,model_used:true});
 }
 function errorResponse(error){
   // Never log prompts, provider response bodies, documents or keys.

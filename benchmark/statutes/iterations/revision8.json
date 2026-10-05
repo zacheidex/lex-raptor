@@ -1,0 +1,2010 @@
+[
+  {
+    "id": "georgia",
+    "request": {
+      "question": "What are the statute of limitations in Georgia?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "84702be0-e5cb-4e52-acce-eb02bc81cfb6"
+    },
+    "expected_action": "clarify",
+    "actual_action": "clarify",
+    "routing_pass": true,
+    "seconds": 3.575,
+    "events": [
+      {
+        "seconds": 0.299,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.299,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      }
+    ],
+    "retained": 0,
+    "exact_passages": 0,
+    "web_citations": 0,
+    "response": {
+      "follow_up": {
+        "kind": "clarify",
+        "message": "Which type of claim do you mean (for example, personal injury, contract, medical malpractice, or a criminal offense)? Georgia\u2019s limitation period depends on the claim.",
+        "suggestions": [
+          "Civil claim",
+          "Criminal offense",
+          "Several types of claims",
+          "General overview"
+        ]
+      },
+      "needs_clarification": true,
+      "coverage_notes": [
+        "Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database."
+      ],
+      "query": "Georgia statute of limitations claim type",
+      "task": "research",
+      "databases": [],
+      "searched": [],
+      "sources": [],
+      "propositions": [],
+      "automatic": true,
+      "model_used": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "status": 200
+    }
+  },
+  {
+    "id": "property",
+    "request": {
+      "question": "Property damage",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "97ac563f-87b6-4f8b-8ca8-6982c5fae9d4",
+      "context": "User: What are the statute of limitations in Georgia?\nResolved topic: Georgia statute of limitations claim type\nAssistant follow-up: Which type of claim do you mean (for example, personal injury, contract, medical malpractice, or a criminal offense)? Georgia\u2019s limitation period depends on the claim."
+    },
+    "expected_action": "research",
+    "actual_action": "research",
+    "routing_pass": true,
+    "seconds": 23.06,
+    "events": [
+      {
+        "seconds": 0.716,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.716,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 5.02,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 5.02,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 5.02,
+        "stage": "searching",
+        "message": "Finding opinions about your question\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 5.02,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 5.02,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 5.02,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 5.938,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 9 passages retrieved."
+      },
+      {
+        "seconds": 13.619,
+        "stage": "reading",
+        "message": "Reading JOHN DOE v. PERRY JONES\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 13.619,
+        "stage": "reading",
+        "message": "Reading JOHN REEVES v. ALLSTATE INSURANCE COMPANY\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 13.619,
+        "stage": "reading",
+        "message": "Reading Walmart Stores East, Lp v. Leverette\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 14.037,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 14.038,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 23.047,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 2,
+    "exact_passages": 0,
+    "web_citations": 2,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-11086672",
+          "name": "JOHN DOE v. PERRY JONES",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2025-06-30",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10620084/john-doe-v-perry-jones/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "o the house, which caused damage to personal property, and as a result, Perry suffered emotional distress that manifested itself in acute anxiety disorder. On December 7, 2021, the trial court ruled in favor of the Joneses on this issue, agreeing that the pecuniary loss rule covered Perry\u2019s claim. Specifically, the trial court ruled that Perry could pursue his emotional distress claim because Green\u2019s vehicle caused damage to the Joneses\u2019 real and personal property and Perry \u201chas presented evidence of a diagnosis of an acute 3 The pecuniary loss rule is discussed in more detail below. 3 stress disorder caused from his proximity to the crash, and he has presented evidence of the medical expenses related to that emotional distress.\u201d4 In October 2023, as noted above, Progressive elected to proceed in the name of \u201cJohn Doe,\u201d and Doe filed a motion for partial summary judgment, citing this Court\u2019s decision in Mayorga v. Benton, 364 Ga. App. 665 (875 SE2d 908) (2022), which was decided after the court\u2019s 2021 grant of partial summary judgment to the Joneses. Doe argued that Mayorga clarified that a plaintiff cannot recover emotional distress damages under a pecuniary loss theory based on property damage alone. The Joneses opposed the motion, insisting that the \u201cpecuniary loss exception that is anchored to damage to real property or to personal property applies . . . to Perry Jones\u2019 personal injury claim and remains legally viable and remains untouched by Mayor[g]a.\u201d In a one-page order, the trial court denied the motion, finding that Mayorga \u201cleft intact the portion of the pecuniary loss rule that applies to [Perry\u2019s] emotional distress claim.\u201d At Doe\u2019s request, the court certified its order for 4 The trial court previously had granted partial summary judgment to Progressive an",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "cl-11086672:3200"
+        },
+        {
+          "case_id": "fr-2026-08943",
+          "name": "Designation-Restrict the Operation of Unmanned Aircraft in Close Proximity to a Fixed Site Facility",
+          "citation": "91 FR 24650",
+          "court": "Transportation Department, Federal Aviation Administration",
+          "decision_date": "2026-05-06",
+          "opinion_type": "Proposed Rule",
+          "source_url": "https://www.federalregister.gov/documents/2026/05/06/2026-08943/designation-restrict-the-operation-of-unmanned-aircraft-in-close-proximity-to-a-fixed-site-facility",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-05-06/pdf/2026-08943.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Proposed Rule; no effective date supplied; verify operative status in the official edition",
+          "id": "S2",
+          "text": "ontained statutory deadlines either for implementation or for the promulgation [[Page 24679]] of an NPRM and final rule. This rule also responds to Executive Order 14305 which states: ``It is the policy of the United States to ensure control over our national airspace and to protect the public, critical infrastructure, mass gathering events, and military and sensitive government installations and operations from threats posed by the careless or unlawful use of UAS.'' The agency has not yet determined whether a final rule here would be considered `regulatory' or partially or fully exempt from the requirements of Executive Order 14192, but will make that determination at the time of the final rule. A. Summary of the Regulatory Impact Analysis 1. Baseline for the Analysis The National Security Memorandum on Critical Infrastructure Security and Resilience (NSM-22) identified 16 critical infrastructure sectors. SRMAs identified approximately 125,000 fixed site facilities in these sectors that may be high priority for a UAFR based on minimum thresholds established in the proposed rule. Criteria are not yet fully established for all sectors as there may be additional public comment, and thus additional facilities may be identified. Operation of UAS within the boundaries of most of these facilities currently are not regulated. However, in separate rulemaking, FAA is establishing a regulatory framework to enable scaled UAS beyond visual line of sight operations which, depending on timing, may be in effect prior to this rule. SRMAs have identified the risks of UAS activity over fixed critical infrastructure sites to include explosion or release of toxins (i.e., hazardous material), fatality or injury, property damage, prison contraband access, intelligence, surveillance, cyber in",
+          "locator": "Whitespace-normalized extracted text, characters 212801\u2013214600",
+          "original_id": "fr-2026-08943:212800"
+        },
+        {
+          "case_id": "cl-9964706",
+          "name": "JOHN REEVES v. ALLSTATE INSURANCE COMPANY",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2024-04-30",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9498093/john-reeves-v-allstate-insurance-company/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": "y endorsement was clear and unambiguous when it provided that \u201c[a]ny action must be started within two years after the date of loss for the peril of fire\u201d and that \u201c[f]or all other perils, any action must be started within one year after the date of loss\u201d). 24 291 Ga. 306 (728 SE2d 685) (2012). 25 See Ga. Comp. R. & Regs. 120-2-19-.01 (providing, in the Standard Fire Policy of Georgia, that \u201c[n]o suit or action on this policy for the recovery of any claim shall be sustainable in any court of law or equity unless all the requirements of this policy shall have been complied with, and unless commenced within two (2) years next after inception of the loss\u201d). 26 White, 291 Ga. at 308-09 (1) (construing Ga. Comp. R. & Regs. 120-2-20-.02 and OCGA \u00a7 33-32-1 (a) to conclude that the regulation \u201cimposes the Standard Fire 11 our Supreme Court invalidated Georgia Regulation 120-2-20-.02 as having exceeded the insurance commissioner\u2019s authority.27 And although White concerned application Policy\u2019s two-year statute of limitations on all property insurance policies providing first-party insurance coverage for loss or damage to any type of real or personal property\u201d with the effect that \u201call property loss coverage contained in multiple line insurance contracts, whether the loss is occasioned by fire or otherwise, must conform to the requirements of the Standard Fire Policy\u201d when the Code Section instead \u201cindicates that the required terms of the Standard Fire Policy, which would include the two-year statute of limitations, must be incorporated only into the fire coverage provisions of a multiple line policy\u201d); see OCGA \u00a7 33-32-1 (a) (\u201cNo policy of fire insurance covering property located in this state shall be made, issued, or delivered unless it conforms as to all provisions and the seq",
+          "locator": "Whitespace-normalized extracted text, characters 16001\u201317800",
+          "original_id": "cl-9964706:16000"
+        },
+        {
+          "case_id": "fr-2026-08943",
+          "name": "Designation-Restrict the Operation of Unmanned Aircraft in Close Proximity to a Fixed Site Facility",
+          "citation": "91 FR 24650",
+          "court": "Transportation Department, Federal Aviation Administration",
+          "decision_date": "2026-05-06",
+          "opinion_type": "Proposed Rule",
+          "source_url": "https://www.federalregister.gov/documents/2026/05/06/2026-08943/designation-restrict-the-operation-of-unmanned-aircraft-in-close-proximity-to-a-fixed-site-facility",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-05-06/pdf/2026-08943.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Proposed Rule; no effective date supplied; verify operative status in the official edition",
+          "id": "S4",
+          "text": " critical infrastructure sites to include explosion or release of toxins (i.e., hazardous material), fatality or injury, property damage, prison contraband access, intelligence, surveillance, cyber intrusion, reconnaissance, and a stop or delay of operations (e.g., harassment, disruption). Recent incidents over eligible fixed site facilities highlight these risks and have included groups of drones flying several feet above chemical facilities, unmanned aircraft flying over a pipeline, near an oil refinery, and near an electrical substation, and multiple cases involving drone-delivered contraband to State prisons. 2. Benefits FAA anticipates enactment of a UAFR would result in: (1) compliant operators would avoid the designated airspace; (2) facility operators and law enforcement would be better able to distinguish between lawful and unlawful operations; and (3) local law enforcement, FAA, the Department of Justice, and the Department of Homeland Security would be able to focus resources and efforts on enforcement actions as needed. FAA does not have data on how these outcomes would reduce risks under the proposed rule. As such, FAA relied on information provided by security partners, industry organizations, and research institutions. A UAFR will not necessarily deter operators who willfully disregard their responsibilities and obligations for operating in the NAS from operating near the fixed site facilities in question. However, based on the reduction of compliant UAS operations over eligible fixed site facilities, FAA estimates the probability of these consequences occurring is reduced under the proposed rule. Consequences potentially avoided include fatalities and injuries, property damage, and other economic losses from impacts to operations, the value of which woul",
+          "locator": "Whitespace-normalized extracted text, characters 214401\u2013216200",
+          "original_id": "fr-2026-08943:214400"
+        },
+        {
+          "case_id": "cl-11147007",
+          "name": "Walmart Stores East, Lp v. Leverette",
+          "citation": "321 Ga. 854",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2025-06-24",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10680420/walmart-stores-east-lp-v-leverette/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": "hree years after this Court was created in 1845, we applied the bedrock principle that \u201c[w]henever the Com- mon Law gives a right or prohibits an injury, it also gives a remedy, by action.\u201d 4 Ga. 241, 261 (1848). See also id. at 260 (\u201c[T]he overflow- ing of the land of a riparian proprietor, within the banks of the stream, is an injury to the rights of the party whose property is so overflowed, for which the law will imply damage.\u201d). And we applied the normal rule for when nominal damages were appropriate, hold- ing that the plaintiff was \u201centitled to maintain an action against [the 21 defendants], and to recover nominal damages for the protection of that right, if no perceptible damage shall be proved on the trial.\u201d Id. at 265. See also id. at 264 (\u201c[T]he party injured is entitled to main- tain his action for nominal damages, in vindication of his right, if no other damages are fit and proper, to remunerate him.\u201d (quoting Webb v. Portland Mfg. Co., 29 F. Cas. 506, 508 (C.C. Me. 1838) (Story, J.))). And another decision issued just a few years later, Jones v. Water Lot Co. of Columbus, recognized two more of the settled characteristics of nominal damages: that they are for the jury to award, and that they are for a trivial sum. 18 Ga. 539, 541 (1855) (disapproving trial court\u2019s offer to defendants after a defense verdict to deny a new trial if the defendants would \u201cpay nominal damages and cost,\u201d asking \u201c[w]hat right has the [c]ourt to determine what the nominal damages shall be? Whether one dollar or five dollars?\u201d). See also Powell v. Augusta & Summerville R. Co., 77 Ga. 192, 197, 201 (3 SE 757) (1887) (describing verdicts for $7,500 and around half that amount as not \u201cnominal, or anything like it\u201d). 22 B. Nominal Damages in Georgia Law So, the nominal damages that ent",
+          "locator": "Whitespace-normalized extracted text, characters 25601\u201327400",
+          "original_id": "cl-11147007:25600"
+        },
+        {
+          "case_id": "fr-2026-08943",
+          "name": "Designation-Restrict the Operation of Unmanned Aircraft in Close Proximity to a Fixed Site Facility",
+          "citation": "91 FR 24650",
+          "court": "Transportation Department, Federal Aviation Administration",
+          "decision_date": "2026-05-06",
+          "opinion_type": "Proposed Rule",
+          "source_url": "https://www.federalregister.gov/documents/2026/05/06/2026-08943/designation-restrict-the-operation-of-unmanned-aircraft-in-close-proximity-to-a-fixed-site-facility",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-05-06/pdf/2026-08943.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Proposed Rule; no effective date supplied; verify operative status in the official edition",
+          "id": "S6",
+          "text": "dance for Law Enforcement,'' www.faa.gov/newsroom/faa-issues-uas-guidance-law-enforcement?newsId=81244 (January 8, 2015). Updated guidance for the law enforcement community can be found at FAA's drone Public Safety and Government web page, https://www.faa.gov/uas/public_safety_gov. \\14\\ Registration and Marking Requirements for Small Unmanned Aircraft, interim final rule, 80 FR 78594 (December 16, 2015). \\15\\ Registration and Marking Requirements for Small Unmanned Aircraft. 14 CFR 48. \\16\\ Operation and Certification of Small Unmanned Aircraft Systems, Final Rule, 81 FR 42064 (June 28, 2016). \\17\\ Remote Identification of Unmanned Aircraft final rule, 86 FR 4390 (January 15, 2020). \\18\\ Advisory and Rulemaking Committees--UAS Detection and Mitigation Systems Aviation Rulemaking Committee Final Report, February 5, 2024. https://www.faa.gov/regulations_policies/rulemaking/committees/documents/media/UAS-Detection-Mitigation-Systems-ARC_Final-Report_02052024.pdf. \\19\\ Id. \\20\\ 49 U.S.C. 44802. \\21\\ FAA defined an unmanned aircraft event in this rulemaking effort as any unmanned aircraft related activity that could cause risk or damage to another aircraft, people or property on the ground, or a facility's resources or assets. \\22\\ FAA regulations mandate that a remote pilot in command report any instance of an unmanned aircraft operation causing serious injury to a person or loss of consciousness, or damage to property in excess of $500. 14 CFR 107.9. \\23\\ ``Drone Crashes Into Truck Outside New Jersey Oil Refinery,'' CDL Life, November 20, 2015. Accessed May 8, 2023, at http://www.cdllife.com/2015/drone-crashes-into-truck-outside-new-jersey-oil-refinery/. \\24\\ ``A Drone Tried to Disrupt the Power Grid. It Won't Be the Last,'' Wired, November 5, 2021. Accessed May 8, 2023, a",
+          "locator": "Whitespace-normalized extracted text, characters 305601\u2013307400",
+          "original_id": "fr-2026-08943:305600"
+        },
+        {
+          "case_id": "cl-11086672",
+          "name": "JOHN DOE v. PERRY JONES",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2025-06-30",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10620084/john-doe-v-perry-jones/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "ustained a pecuniary loss resulting from a trespass and a mental injury to the person, she may pursue her claim for damages notwithstanding the lack of physical injury.\u201d Id. (footnote omitted). 6 In the trial court\u2019s December 2021 summary judgment ruling, the court reasoned that, even though Perry suffered no physical impact or injury from the crash, [Green\u2019s] vehicle caused damage to [Perry\u2019s] real property and personal property when [Green] trespassed. [Perry] has presented evidence of a diagnosis of an acute stress disorder caused from his proximity to the crash, and he has presented evidence of the medical expenses related to that emotional distress. Thus, the trial court concluded that Perry had established a viable claim under the pecuniary loss rule as described in Lam and determined that he could proceed to trial on his claim for emotional distress. Thereafter, in July 2022, this Court issued a divided whole court opinion in Mayorga in which we explained that \u201cmedical expenses, psychological treatment fees, and lost income incurred as a result of emotional distress do not qualify as a pecuniary loss.\u201d Id. at 678 (2). Mayorga explicitly overruled Lam, stating that \u201cLam wrongly applied the pecuniary loss rule by finding that the medical bills and lost wages incurred by the plaintiff supplied the pecuniary loss for her claim.\u201d Mayorga, 364 Ga. App. at 679 (2) (citation and punctuation omitted). See also Owens v. Gateway Mgmt. Co., 227 Ga. App. 815, 816 (490 SE2d 501) (1997) (pecuniary loss exception did not apply 7 \u201cbecause the only pecuniary loss plaintiff complains of on appeal is that incurred due to medical bills and lost time from work she allegedly incurred because of the emotional distress following the incident in question\u201d). Perry argues that when this Cou",
+          "locator": "Whitespace-normalized extracted text, characters 8001\u20139800",
+          "original_id": "cl-11086672:8000"
+        },
+        {
+          "id": "W1",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "law.justia.com",
+          "citation": "",
+          "source_url": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Unofficial statute mirror; check edition and subsequent amendments.",
+          "decision_date": "",
+          "court": "law.justia.com",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W2",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "law.justia.com",
+          "citation": "",
+          "source_url": "https://law.justia.com/codes/georgia/2020/title-9/chapter-3/article-2/section-9-3-31/",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Unofficial statute mirror; check edition and subsequent amendments.",
+          "decision_date": "",
+          "court": "law.justia.com",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 556,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "Georgia statute of limitations property damage injury to personal property real property",
+              "mode": "semantic",
+              "court": "ga gactapp",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 556
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "ok",
+          "total": 383,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 9
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to two web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 2,
+          "consulted_urls": 16,
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "Georgia official code 9-3-30 injury to real property limitation four years \u00b7 Georgia official code 9-3-31 injury to personalty four years"
+            },
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-31/ \"2025 Georgia Code\""
+            },
+            {
+              "phase": "web open_page",
+              "status": "searching",
+              "query": "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-31/"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T07:31:34.664Z",
+      "jurisdiction_note": "Court search is limited to Georgia appellate courts. Federal interpretations and trial-court decisions may be missed.",
+      "coverage_notes": [
+        "Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database.",
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Georgia statute of limitations property damage injury to personal property real property",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "document_coverage": [],
+      "filters": {
+        "court": "ga gactapp",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "section": "Findings",
+          "claim": "For damage to real property, Georgia generally requires an action for trespass upon or damage to realty to be brought within four years after the claim accrues. O.C.G.A. \u00a7 9-3-30 has specific exceptions, including a discovery-based accrual rule for certain siding-related damage.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://law.justia.com/codes/georgia/title-9/chapter-3/article-2/section-9-3-30/"
+          ],
+          "source_ids": [
+            "W1"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "section": "Findings",
+          "claim": "For damage to personal property, Georgia law generally provides a four-year limitation period. The available statutory text is from the 2020 Georgia Code, so this research does not verify the current text of O.C.G.A. \u00a7 9-3-31.",
+          "source_id": "W2",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://law.justia.com/codes/georgia/2020/title-9/chapter-3/article-2/section-9-3-31/"
+          ],
+          "source_ids": [
+            "W2"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    }
+  },
+  {
+    "id": "atlanta",
+    "request": {
+      "question": "Is marijuana legal in Atlanta?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "f9a70f48-f7ed-4f9e-9f37-9974e9af03f0"
+    },
+    "expected_action": "research",
+    "actual_action": "research",
+    "routing_pass": true,
+    "seconds": 19.745,
+    "events": [
+      {
+        "seconds": 0.301,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.301,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 4.791,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 4.791,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 4.791,
+        "stage": "searching",
+        "message": "Finding opinions about your question\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.791,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 4.791,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 4.861,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 4.863,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 0 passages retrieved."
+      },
+      {
+        "seconds": 10.692,
+        "stage": "reading",
+        "message": "Reading Jagrutiben Patel v. State of Georgia\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 10.692,
+        "stage": "reading",
+        "message": "Reading Avery Mondell Davis v. State\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 10.692,
+        "stage": "reading",
+        "message": "Reading The STATE v. SASS GROUP, LLC (Two Cases)\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 10.989,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 10.989,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 19.744,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 1,
+    "exact_passages": 0,
+    "web_citations": 1,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-10823007",
+          "name": "Jagrutiben Patel v. State of Georgia",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2025-03-14",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10356419/jagrutiben-patel-v-state-of-georgia/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "man, P. J., concurs specially and Mercier, C. J., concurs in judgment only. 8 PATEL v. THE STATE. RICKMAN, Presiding Judge, concurring specially. I concur with the majority opinion that the state failed to carry its burden of proving that Patel engaged in conduct giving rise to forfeiture, and that the trial court erred by granting the petition seeking forfeiture of currency seized from her convenience store. I write separately to further explain why, on the record before us, the state failed to show that the delta-8-THC contained in the products sold by Patel was a controlled substance as defined by Georgia law and, consequently, failed to present a prima facie case that the seized funds were subject to forfeiture. Georgia law in this area continues to evolve. In 2019, the Georgia General Assembly passed the Georgia Hemp Farming Act, which adopted the federal definition of hemp and hemp products and permitted their cultivation and sale under certain circumstances. See OCGA \u00a7 2-23-1 et seq. In November 2021, the Georgia Controlled Substances Act included THC in its list of Schedule I controlled substances, but explicitly exempted THC \u201cwhen found in hemp.\u201d See OCGA \u00a7 16- 13-25 (3) (P). The Georgia Hemp Farming Act defined \u201chemp\u201d as \u201cthe Cannabis sativa L. plant and any part of such plant, including . . . all derivatives, extracts, [and] cannabinoids . . ., with [a delta-9-THC concentration of not more than 0.3 percent on a dry weight basis].\u201d OCGA \u00a7 2-23-3 (5) (2021); see 7 USCA \u00a7 1639o (1). With respect to the products containing delta-8-THC seized by law enforcement from Patel\u2019s store and used to sustain the state\u2019s petition of forfeiture, Patel submitted affidavits from a pharmacologist and a board-certified technologist in chemistry, both of whom explained that delta",
+          "locator": "Whitespace-normalized extracted text, characters 9601\u201311400",
+          "original_id": "cl-10823007:9600"
+        },
+        {
+          "case_id": "cl-10769691",
+          "name": "Avery Mondell Davis v. State",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2024-12-23",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10303103/avery-mondell-davis-v-state/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S2",
+          "text": "to the enterprise of sale.\u201d10 Here, the State presented evidence that Davis was at least in joint possession of 50.31 grams (approximately 1.77 ounces11) of marijuana, which was packaged in at least three smaller bags. In fact, at the scene of the traffic stop and a short time later at the detention center, Davis made statements claiming ownership of the marijuana.12 evidence of intent to distribute is offered, such as scales, drug paraphernalia, large amounts of cash, division of drugs into individual packages, or a prior conviction of possession with intent to distribute, expert testimony is critical, and the conviction cannot be sustained without it\u201d (punctuation omitted)). 10 Patel, 351 Ga. App. at 582 (punctuation omitted). 11 According to the National Institute of Standards and Technology, one avoirdupois ounce is precisely 28.349523125 grams. See Specifications, Tolerances, and Other Technical Requirements for Weighing and Measuring Devices, National Institute of Standards and Technology, Handbook No. 44, Appendix C at 12 (2010); see also OCGA \u00a7 10-2-2 (\u201cThe definitions of basic units of weight and measure, the tables of weight and measure, and weights and measures equivalents as published by the National Bureau of Standards [now the National Institute of Standards and Technology] are recognized and shall govern weighing and measuring equipment and transactions in the State of Georgia.\u201d). 12 See Jackson, 314 Ga. App. at 274 (1) (a) (explaining that under Georgia law, the owner of an automobile is presumed to be in possession and control of any contraband found in the automobile, and although this presumption is rebuttable by evidence of equal access to the contraband by others, that rule has no application when all persons allegedly having equal access to the con",
+          "locator": "Whitespace-normalized extracted text, characters 9601\u201311400",
+          "original_id": "cl-10769691:9600"
+        },
+        {
+          "case_id": "cl-9379487",
+          "name": "The STATE v. SASS GROUP, LLC (Two Cases)",
+          "citation": "",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2023-03-15",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9384011/the-state-v-sass-group-llc-two-cases/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": " on their claim for declaratory relief, they may then also seek injunctive relief to \u201cenforce [the court\u2019s] judgment.\u201d See id. at Para. V (b) (1). To take advantage of this new waiver of the doctrine of sovereign immunity, however, the Constitution provides that such actions must be brought \u201cexclusively\u201d against the State. See id. When a plaintiff\u2019s suit violates this exclusivity provision, the Constitution requires the suit (extending sovereign immunity to suits against the State for declaratory and injunctive relief). 2 to be dismissed. See id. at Para. V (b) (2). For reasons set forth more fully below, we hold that this exclusivity provision of Paragraph V means what it says: it requires dismissal of a lawsuit brought under that paragraph against the State if it names defendants other than the State or local governments specifically authorized by that provision. When other defendants are named in such a lawsuit, the Constitution requires that the entire suit be dismissed. Here, the plaintiffs\u2019 suit named a defendant for whom a waiver is not provided by Paragraph V. Accordingly, the Constitution requires the suit to be dismissed. We therefore vacate the trial court\u2019s grant of an interlocutory injunction, reverse the denial of the State\u2019s motion to dismiss, and remand this case with direction that it be dismissed. I. Background The plaintiffs in the underlying suit are purveyors of, among other things, hemp-derived products. As such, they operate in treacherous waters created by the tension among existing federal criminal law and its selective enforcement, existing state law and 3 related enforcement decisions, and the public policy battles still swirling around the use of marijuana, hemp, tetrahydrocannabinol (\u201cTHC\u201d), cannabidiol (\u201cCBD\u201d), and related compounds. Plaint",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "cl-9379487:3200"
+        },
+        {
+          "case_id": "cl-10823007",
+          "name": "Jagrutiben Patel v. State of Georgia",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2025-03-14",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10356419/jagrutiben-patel-v-state-of-georgia/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S4",
+          "text": "FIFTH DIVISION MERCIER, C. J., MCFADDEN, P. J., and RICKMAN, P. J. NOTICE: Motions for reconsideration must be physically received in our clerk\u2019s office within ten days of the date of decision to be deemed timely filed. https://www.gaappeals.us/rules March 14, 2025 In the Court of Appeals of Georgia A24A1477. PATEL v. STATE OF GEORGIA. MCFADDEN, Presiding Judge. Jagrutiben Patel appeals from a judgment in favor of the state on its petition seeking forfeiture of currency in connection with the possession and sale by Patel\u2019s convenience store of edible products containing delta-8-THC. She argues, among other things, that the trial court erred because the state \u201cfailed to carry its burden of proof to support its forfeiture petition.\u201d We agree that the state did not present evidence to meet its \u201cburden of proof . . . to show by a preponderance of the evidence that seized property is subject to forfeiture.\u201d OCGA \u00a7 9-16-17 (a) (1). So we reverse the judgment. Given this disposition, we do not reach Patel\u2019s other enumerations of error. 1. Facts and procedural history The state filed a petition for forfeiture under OCGA \u00a7\u00a7 9-16-12 of the Uniform Civil Forfeiture Procedure Act and 16-13-49 (b) of the Georgia Controlled Substances Act, asserting that law enforcement officers had executed a search warrant at Patel\u2019s store and had discovered various delta-8-THC products that the state alleged were controlled substances and, therefore, contraband. The state asserted that it had seized an amount of currency that was subject to forfeiture because it \u201cwas directly or indirectly used or intended for use to facilitate the possession, storage, and distribution of [the] products . . . and/or is proceeds derived or realized therefrom and/or was found in close proximity to the products. . . ",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-10823007:0"
+        },
+        {
+          "case_id": "cl-10769691",
+          "name": "Avery Mondell Davis v. State",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2024-12-23",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10303103/avery-mondell-davis-v-state/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": " intent from the case, relying on the Eleventh Circuit and applying our current Evidence code, we have already considered and rejected that argument ); Silvey v. State, 335 Ga. App. 383, 387 (1) (a) (780 SE2d 708) (2015) (physical precedent only as to Divisions 2 (a) and 3 (b) (ii)) (same); United States v. Nahoom, 791 F2d 841, 845 (II) (11th Cir. 1986) (rejecting argument that denial of involvement in crime removes issue of intent from the case when defendant pleaded not guilty); United States v. Holman, 680 F2d 1340, 1349 (II) (B) (11th Cir. 1982) (holding that unequivocal denials of participation in the crime along with representations that defendant would not actively dispute the existence of intent were insufficient to remove the issue of intent from the case). Importantly, when Georgia appellate courts have considered the meaning of Rule 404 (b), we \u201cconsistently have looked for guidance in the decisions of the federal appellate courts construing and applying Federal Rule of Evidence 404 (b).\u201d Olds, 299 Ga. at 69 (2) (punctuation omitted). 18 illegal drugs but an intent to do so for reasons other than personal use.34 And indeed, evidence of prior drug activity is \u201chighly probative of intent to sell a controlled substance.\u201d35 As to Davis\u2019s assertion that the probative value of the evidence was substantially outweighed by its prejudicial effect, we are not persuaded. Although Davis claimed ownership of the marijuana at the scene of the traffic stop and while entering the detention center, at trial\u2014given Yarborough-Bryant\u2019s testimony\u2014his defense clearly shifted to denying possession. And even without this more recent 34 See OCGA \u00a7 16-13-30 (b) (\u201cExcept as authorized by this article, it is unlawful for any person to manufacture, deliver, distribute, dispense, administ",
+          "locator": "Whitespace-normalized extracted text, characters 27201\u201329000",
+          "original_id": "cl-10769691:27200"
+        },
+        {
+          "case_id": "cl-9379487",
+          "name": "The STATE v. SASS GROUP, LLC (Two Cases)",
+          "citation": "",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2023-03-15",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9384011/the-state-v-sass-group-llc-two-cases/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S6",
+          "text": "aw and 3 related enforcement decisions, and the public policy battles still swirling around the use of marijuana, hemp, tetrahydrocannabinol (\u201cTHC\u201d), cannabidiol (\u201cCBD\u201d), and related compounds. Plaintiffs\u2019 litigation interest is based upon a desire to affirm their right to sell certain products. More specifically, SASS Group, LLC and Great Vape, LLC (collectively, the \u201cPlaintiffs\u201d) seek declaratory judgment affirming the legality of their actions and injunctive relief to protect their future commercial activities. As background, in 2018, the United States Congress enacted the Agriculture Improvement Act of 2018, which, among other things, legalized the possession and distribution of hemp and hemp extracts. See Pub. L. No. 115-334, 132 Stat. 4490, and 7 USC \u00a7 1639o (1). That same year, the federal Controlled Substances Act was also amended to exclude the THC found in hemp from the list of controlled substances. See 21 USC \u00a7\u00a7 802 (16) (B) (i), 812 (Schedule I (c) (17)). Several states similarly enacted legislation distinguishing hemp as a non-controlled substance, including Georgia. In 2019, the Georgia General Assembly passed the Georgia Hemp Farming Act, 4 which adopted the federal definition of hemp and hemp products and permitted their cultivation and sale under certain circumstances. See OCGA \u00a7\u00a7 2-23-3 \u2013 2-23-12. The hemp industry, it appears, has since taken root in Georgia. Plaintiffs are businesses in Gwinnett County, which, until recently, sold Delta-8-tetrahydrocannabinol (\u201cDelta-8-THC\u201d), Delta-10-tetrahydrocannabinol (\u201cDelta-10-THC\u201d), and other hemp-derived products that they allege fall within Georgia\u2019s definition of legal \u201chemp products.\u201d On January 25, 2022, the Gwinnett County District Attorney issued a press release announcing that her office would pursue ",
+          "locator": "Whitespace-normalized extracted text, characters 4801\u20136600",
+          "original_id": "cl-9379487:4800"
+        },
+        {
+          "case_id": "cl-10823007",
+          "name": "Jagrutiben Patel v. State of Georgia",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2025-03-14",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10356419/jagrutiben-patel-v-state-of-georgia/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "nnabinolic acid, or a combination of tetrahydrocannabinolic acid which does not contain plant material 4 exhibiting the external morphological features of the plant of the genus Cannabis, but not including such substance when found in hemp or hemp products as such terms are defined in Code Section 2-23-3 [of the Georgia Hemp Farming Act]. OCGA \u00a7 16-13-25 (3) (P) (emphasis supplied). Thus, if a product falls within the definition of \u201chemp\u201d or \u201chemp product\u201d under the Georgia Hemp Farming Act, then it is not a controlled substance even if it contains THC. In this case the question is whether the products constituted \u201chemp.\u201d We do not consider whether they fell within the definition of \u201chemp products\u201d because at the time of the proceedings below, the Georgia Hemp Farming Act defined \u201chemp products\u201d to exclude \u201cfood products infused with THC unless approved by the United States Food and Drug Administration.\u201d OCGA \u00a7 2-23-3 (6) (2021). The parties stipulated that the products in this case were edible gummies infused with THC, the trial court held that they were food products that had not been approved by the FDA, and Patel does not contest that holding. Instead, she argues that we should apply retroactively an amendment to the Georgia Hemp Farming Act that eliminated the requirement for FDA approval from the definition of \u201chemp products.\u201d See OCGA \u00a7 2-23-3 (13). We cannot do so because the amendment went into effect on 5 October 1, 2024, after the trial court entered judgment in this case, and the statutory text does not indicate that the amendment should be applied retroactively. See Deal v. Coleman, 294 Ga. 170, 174-175 (1) (b) (751 SE2d 337) (2013) (\u201cGenerally speaking, the retroactive application of statutes has long been disfavored in the law, even if it is not always fo",
+          "locator": "Whitespace-normalized extracted text, characters 4801\u20136600",
+          "original_id": "cl-10823007:4800"
+        },
+        {
+          "case_id": "cl-10769691",
+          "name": "Avery Mondell Davis v. State",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2024-12-23",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10303103/avery-mondell-davis-v-state/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S8",
+          "text": "FOURTH DIVISION DILLARD, P. J., BROWN and PADGETT, JJ. NOTICE: Motions for reconsideration must be physically received in our clerk\u2019s office within ten days of the date of decision to be deemed timely filed. https://www.gaappeals.us/rules December 23, 2024 In the Court of Appeals of Georgia A24A1810. DAVIS v. THE STATE. DILLARD, Presiding Judge. Following trial, a jury convicted Avery Davis on one count of possession of marijuana with intent to distribute. Davis now appeals his conviction and the denial of his motion for new trial. Specifically, Davis argues the evidence was insufficient to support his conviction and that the trial court erred in (1) denying his motion to suppress statements that he made while in custody but prior to being informed of his right to remain silent, (2) admitting evidence of other acts, and (3) refusing to instruct the jury on misdemeanor possession of marijuana as a lesser-included offense of possession with intent to distribute. But for the following reasons, we affirm Davis\u2019s conviction and the denial of his motion for new trial. Viewed in the light most favorable to the jury\u2019s verdict,1 the record shows that around 9:00 p.m. on the night of April 12, 2022, a patrolling deputy with the Jeff Davis County Sheriff\u2019s Office observed a vehicle driving with one of its headlights out. And as a result, the deputy illuminated his vehicle\u2019s blue lights and initiated a traffic stop. As the deputy exited his vehicle and approached the stopped vehicle, he recognized the driver as Davis, with whom he was familiar. The deputy also observed Abigail Yarborough-Bryant\u2014Davis\u2019s girlfriend\u2014sitting in the front passenger seat of Davis\u2019s vehicle. The deputy asked Davis for his license and registration, but Davis immediately admitted that his license was suspen",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-10769691:0"
+        },
+        {
+          "case_id": "cl-9379487",
+          "name": "The STATE v. SASS GROUP, LLC (Two Cases)",
+          "citation": "",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2023-03-15",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9384011/the-state-v-sass-group-llc-two-cases/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S9",
+          "text": "ory in Georgia is long and sometimes winding. 1 Here, we are called upon to examine the See, e.g., Gilbert v. Richardson, 264 Ga. 744, 745 (1) (452 SE2d 476) 1 (1994) (noting that Georgia adopted \u201c[t]he common law doctrine of sovereign immunity\u201d in 1784); Intl. Bus. Machines Corp. v. Evans, 265 Ga. 215, 216 (1) (453 SE2d 706) (1995) (holding that sovereign immunity does not bar suits seeking injunctive relief to curtail alleged illegal or ultra vires acts of government entities), overruled by Ga. Dept. of Nat. Res. v. Center for a Sustainable Coast, Inc., 294 Ga. 593, 596-603 (2) (755 SE2d 184) (2014); Ga. Dept. of Nat. Res., 294 Ga. at 596-603 (2) (holding that sovereign immunity barred injunctive relief against the State and overruling Evans); Olvera v. Univ. System of Georgia\u2019s Bd. of Regents, 298 Ga. 425, 426-429 (782 SE2d 436) (2016) (declaratory judgment action against state agency barred by sovereign immunity); Lathrop v. Deal, 301 Ga. 408, 440 (III) (C) (801 SE2d 867) (2017) 1 newest chapter in this history. In November of 2020, the people of Georgia, through the results of a ballot question posed in the general election, amended our Constitution to allow for a specific waiver of sovereign immunity. See Ga. L. 2020, Act 596, p. 917, \u00a7 1. See also Ga. L. 2021, p. 362A (setting forth referendum results). This new waiver allows citizens to sue the State (and, in provisions unrelated to this appeal, to sue local governments) for declaratory relief. See Ga. Const. of 1983, Art. I, Sec. II, Para. V (b) (\u201cParagraph V\u201d). To the extent that citizens obtain a favorable ruling on their claim for declaratory relief, they may then also seek injunctive relief to \u201cenforce [the court\u2019s] judgment.\u201d See id. at Para. V (b) (1). To take advantage of this new waiver of the doctrine ",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "cl-9379487:1600"
+        },
+        {
+          "id": "W1",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "www.legis.ga.gov",
+          "citation": "",
+          "source_url": "https://www.legis.ga.gov/legislation/70559",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "www.legis.ga.gov",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W3",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "www.legis.ga.gov",
+          "citation": "",
+          "source_url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-research-office-document-library/opla-post-signature-final-passage-2026-pdf.pdf",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "www.legis.ga.gov",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 568,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "Atlanta Georgia marijuana possession local ordinance Georgia cannabis law medical cannabis federal marijuana law",
+              "mode": "semantic",
+              "court": "ga gactapp",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 568
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to two web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 2,
+          "consulted_urls": 14,
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:legis.ga.gov Georgia Code marijuana possession 16-13-30 less than one ounce \u00b7 Atlanta city ordinance marijuana possession one ounce official code \u00b7 site:legis.ga.gov Georgia medical cannabis low THC oil law official \u00b7 site:uscode.house.gov marijuana controlled substances schedule I 21 USC 812"
+            },
+            {
+              "phase": "web open_page",
+              "status": "completed",
+              "query": "https://uscode.house.gov/view.xhtml?req=%28title%3A21+section%3A812+edition%3Aprelim"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T07:31:54.658Z",
+      "jurisdiction_note": "Court search is limited to Georgia appellate courts. Federal interpretations and trial-court decisions may be missed.",
+      "coverage_notes": [
+        "Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database.",
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Atlanta Georgia marijuana possession local ordinance Georgia cannabis law medical cannabis federal marijuana law",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "document_coverage": [],
+      "filters": {
+        "court": "ga gactapp",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "section": "Findings",
+          "claim": "Georgia\u2019s 2026 medical-cannabis legislation took effect July 1, 2026; this is a limited statutory medical-cannabis framework, not general legalization of recreational marijuana.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://www.legis.ga.gov/legislation/70559",
+            "https://www.legis.ga.gov/api/document/docs/default-source/senate-research-office-document-library/opla-post-signature-final-passage-2026-pdf.pdf"
+          ],
+          "source_ids": [
+            "W1",
+            "W3"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        }
+      ],
+      "removed": 1,
+      "removed_references": [
+        {
+          "reason": "Web reference was not an eligible tool-reported URL, or mixed evidence types.",
+          "urls": [
+            "https://atlanta.elaws.us/code/coor_ptii_ch106_artiv_div3_sec106-182"
+          ]
+        }
+      ],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    }
+  },
+  {
+    "id": "both",
+    "request": {
+      "question": "Both",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "19bcb132-0608-484f-8c12-50a059621828",
+      "context": "User: Is marijuana legal in Atlanta?\nResolved topic: Atlanta Georgia marijuana possession local ordinance Georgia cannabis law medical cannabis federal marijuana law\nAssistant follow-up: "
+    },
+    "expected_action": "research",
+    "actual_action": "research",
+    "routing_pass": true,
+    "seconds": 10.153,
+    "events": [
+      {
+        "seconds": 0.309,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.309,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 4.093,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 4.093,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 4.093,
+        "stage": "searching",
+        "message": "Finding opinions about your question\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.093,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 4.093,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 4.116,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 0 passages retrieved."
+      },
+      {
+        "seconds": 4.215,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 4.399,
+        "stage": "reading",
+        "message": "Reading Jagrutiben Patel v. State of Georgia\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.399,
+        "stage": "reading",
+        "message": "Reading Avery Mondell Davis v. State\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.399,
+        "stage": "reading",
+        "message": "Reading The STATE v. SASS GROUP, LLC (Two Cases)\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.42,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 4.42,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 10.126,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 3,
+    "exact_passages": 1,
+    "web_citations": 2,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-10823007",
+          "name": "Jagrutiben Patel v. State of Georgia",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2025-03-14",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10356419/jagrutiben-patel-v-state-of-georgia/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "man, P. J., concurs specially and Mercier, C. J., concurs in judgment only. 8 PATEL v. THE STATE. RICKMAN, Presiding Judge, concurring specially. I concur with the majority opinion that the state failed to carry its burden of proving that Patel engaged in conduct giving rise to forfeiture, and that the trial court erred by granting the petition seeking forfeiture of currency seized from her convenience store. I write separately to further explain why, on the record before us, the state failed to show that the delta-8-THC contained in the products sold by Patel was a controlled substance as defined by Georgia law and, consequently, failed to present a prima facie case that the seized funds were subject to forfeiture. Georgia law in this area continues to evolve. In 2019, the Georgia General Assembly passed the Georgia Hemp Farming Act, which adopted the federal definition of hemp and hemp products and permitted their cultivation and sale under certain circumstances. See OCGA \u00a7 2-23-1 et seq. In November 2021, the Georgia Controlled Substances Act included THC in its list of Schedule I controlled substances, but explicitly exempted THC \u201cwhen found in hemp.\u201d See OCGA \u00a7 16- 13-25 (3) (P). The Georgia Hemp Farming Act defined \u201chemp\u201d as \u201cthe Cannabis sativa L. plant and any part of such plant, including . . . all derivatives, extracts, [and] cannabinoids . . ., with [a delta-9-THC concentration of not more than 0.3 percent on a dry weight basis].\u201d OCGA \u00a7 2-23-3 (5) (2021); see 7 USCA \u00a7 1639o (1). With respect to the products containing delta-8-THC seized by law enforcement from Patel\u2019s store and used to sustain the state\u2019s petition of forfeiture, Patel submitted affidavits from a pharmacologist and a board-certified technologist in chemistry, both of whom explained that delta",
+          "locator": "Whitespace-normalized extracted text, characters 9601\u201311400",
+          "original_id": "cl-10823007:9600"
+        },
+        {
+          "case_id": "cl-10769691",
+          "name": "Avery Mondell Davis v. State",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2024-12-23",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10303103/avery-mondell-davis-v-state/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S2",
+          "text": "to the enterprise of sale.\u201d10 Here, the State presented evidence that Davis was at least in joint possession of 50.31 grams (approximately 1.77 ounces11) of marijuana, which was packaged in at least three smaller bags. In fact, at the scene of the traffic stop and a short time later at the detention center, Davis made statements claiming ownership of the marijuana.12 evidence of intent to distribute is offered, such as scales, drug paraphernalia, large amounts of cash, division of drugs into individual packages, or a prior conviction of possession with intent to distribute, expert testimony is critical, and the conviction cannot be sustained without it\u201d (punctuation omitted)). 10 Patel, 351 Ga. App. at 582 (punctuation omitted). 11 According to the National Institute of Standards and Technology, one avoirdupois ounce is precisely 28.349523125 grams. See Specifications, Tolerances, and Other Technical Requirements for Weighing and Measuring Devices, National Institute of Standards and Technology, Handbook No. 44, Appendix C at 12 (2010); see also OCGA \u00a7 10-2-2 (\u201cThe definitions of basic units of weight and measure, the tables of weight and measure, and weights and measures equivalents as published by the National Bureau of Standards [now the National Institute of Standards and Technology] are recognized and shall govern weighing and measuring equipment and transactions in the State of Georgia.\u201d). 12 See Jackson, 314 Ga. App. at 274 (1) (a) (explaining that under Georgia law, the owner of an automobile is presumed to be in possession and control of any contraband found in the automobile, and although this presumption is rebuttable by evidence of equal access to the contraband by others, that rule has no application when all persons allegedly having equal access to the con",
+          "locator": "Whitespace-normalized extracted text, characters 9601\u201311400",
+          "original_id": "cl-10769691:9600"
+        },
+        {
+          "case_id": "cl-9379487",
+          "name": "The STATE v. SASS GROUP, LLC (Two Cases)",
+          "citation": "",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2023-03-15",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9384011/the-state-v-sass-group-llc-two-cases/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": " on their claim for declaratory relief, they may then also seek injunctive relief to \u201cenforce [the court\u2019s] judgment.\u201d See id. at Para. V (b) (1). To take advantage of this new waiver of the doctrine of sovereign immunity, however, the Constitution provides that such actions must be brought \u201cexclusively\u201d against the State. See id. When a plaintiff\u2019s suit violates this exclusivity provision, the Constitution requires the suit (extending sovereign immunity to suits against the State for declaratory and injunctive relief). 2 to be dismissed. See id. at Para. V (b) (2). For reasons set forth more fully below, we hold that this exclusivity provision of Paragraph V means what it says: it requires dismissal of a lawsuit brought under that paragraph against the State if it names defendants other than the State or local governments specifically authorized by that provision. When other defendants are named in such a lawsuit, the Constitution requires that the entire suit be dismissed. Here, the plaintiffs\u2019 suit named a defendant for whom a waiver is not provided by Paragraph V. Accordingly, the Constitution requires the suit to be dismissed. We therefore vacate the trial court\u2019s grant of an interlocutory injunction, reverse the denial of the State\u2019s motion to dismiss, and remand this case with direction that it be dismissed. I. Background The plaintiffs in the underlying suit are purveyors of, among other things, hemp-derived products. As such, they operate in treacherous waters created by the tension among existing federal criminal law and its selective enforcement, existing state law and 3 related enforcement decisions, and the public policy battles still swirling around the use of marijuana, hemp, tetrahydrocannabinol (\u201cTHC\u201d), cannabidiol (\u201cCBD\u201d), and related compounds. Plaint",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "cl-9379487:3200"
+        },
+        {
+          "case_id": "cl-10823007",
+          "name": "Jagrutiben Patel v. State of Georgia",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2025-03-14",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10356419/jagrutiben-patel-v-state-of-georgia/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S4",
+          "text": "FIFTH DIVISION MERCIER, C. J., MCFADDEN, P. J., and RICKMAN, P. J. NOTICE: Motions for reconsideration must be physically received in our clerk\u2019s office within ten days of the date of decision to be deemed timely filed. https://www.gaappeals.us/rules March 14, 2025 In the Court of Appeals of Georgia A24A1477. PATEL v. STATE OF GEORGIA. MCFADDEN, Presiding Judge. Jagrutiben Patel appeals from a judgment in favor of the state on its petition seeking forfeiture of currency in connection with the possession and sale by Patel\u2019s convenience store of edible products containing delta-8-THC. She argues, among other things, that the trial court erred because the state \u201cfailed to carry its burden of proof to support its forfeiture petition.\u201d We agree that the state did not present evidence to meet its \u201cburden of proof . . . to show by a preponderance of the evidence that seized property is subject to forfeiture.\u201d OCGA \u00a7 9-16-17 (a) (1). So we reverse the judgment. Given this disposition, we do not reach Patel\u2019s other enumerations of error. 1. Facts and procedural history The state filed a petition for forfeiture under OCGA \u00a7\u00a7 9-16-12 of the Uniform Civil Forfeiture Procedure Act and 16-13-49 (b) of the Georgia Controlled Substances Act, asserting that law enforcement officers had executed a search warrant at Patel\u2019s store and had discovered various delta-8-THC products that the state alleged were controlled substances and, therefore, contraband. The state asserted that it had seized an amount of currency that was subject to forfeiture because it \u201cwas directly or indirectly used or intended for use to facilitate the possession, storage, and distribution of [the] products . . . and/or is proceeds derived or realized therefrom and/or was found in close proximity to the products. . . ",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-10823007:0"
+        },
+        {
+          "case_id": "cl-10769691",
+          "name": "Avery Mondell Davis v. State",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2024-12-23",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10303103/avery-mondell-davis-v-state/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": " intent from the case, relying on the Eleventh Circuit and applying our current Evidence code, we have already considered and rejected that argument ); Silvey v. State, 335 Ga. App. 383, 387 (1) (a) (780 SE2d 708) (2015) (physical precedent only as to Divisions 2 (a) and 3 (b) (ii)) (same); United States v. Nahoom, 791 F2d 841, 845 (II) (11th Cir. 1986) (rejecting argument that denial of involvement in crime removes issue of intent from the case when defendant pleaded not guilty); United States v. Holman, 680 F2d 1340, 1349 (II) (B) (11th Cir. 1982) (holding that unequivocal denials of participation in the crime along with representations that defendant would not actively dispute the existence of intent were insufficient to remove the issue of intent from the case). Importantly, when Georgia appellate courts have considered the meaning of Rule 404 (b), we \u201cconsistently have looked for guidance in the decisions of the federal appellate courts construing and applying Federal Rule of Evidence 404 (b).\u201d Olds, 299 Ga. at 69 (2) (punctuation omitted). 18 illegal drugs but an intent to do so for reasons other than personal use.34 And indeed, evidence of prior drug activity is \u201chighly probative of intent to sell a controlled substance.\u201d35 As to Davis\u2019s assertion that the probative value of the evidence was substantially outweighed by its prejudicial effect, we are not persuaded. Although Davis claimed ownership of the marijuana at the scene of the traffic stop and while entering the detention center, at trial\u2014given Yarborough-Bryant\u2019s testimony\u2014his defense clearly shifted to denying possession. And even without this more recent 34 See OCGA \u00a7 16-13-30 (b) (\u201cExcept as authorized by this article, it is unlawful for any person to manufacture, deliver, distribute, dispense, administ",
+          "locator": "Whitespace-normalized extracted text, characters 27201\u201329000",
+          "original_id": "cl-10769691:27200"
+        },
+        {
+          "case_id": "cl-9379487",
+          "name": "The STATE v. SASS GROUP, LLC (Two Cases)",
+          "citation": "",
+          "court": "Supreme Court of Georgia",
+          "decision_date": "2023-03-15",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/9384011/the-state-v-sass-group-llc-two-cases/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S6",
+          "text": "aw and 3 related enforcement decisions, and the public policy battles still swirling around the use of marijuana, hemp, tetrahydrocannabinol (\u201cTHC\u201d), cannabidiol (\u201cCBD\u201d), and related compounds. Plaintiffs\u2019 litigation interest is based upon a desire to affirm their right to sell certain products. More specifically, SASS Group, LLC and Great Vape, LLC (collectively, the \u201cPlaintiffs\u201d) seek declaratory judgment affirming the legality of their actions and injunctive relief to protect their future commercial activities. As background, in 2018, the United States Congress enacted the Agriculture Improvement Act of 2018, which, among other things, legalized the possession and distribution of hemp and hemp extracts. See Pub. L. No. 115-334, 132 Stat. 4490, and 7 USC \u00a7 1639o (1). That same year, the federal Controlled Substances Act was also amended to exclude the THC found in hemp from the list of controlled substances. See 21 USC \u00a7\u00a7 802 (16) (B) (i), 812 (Schedule I (c) (17)). Several states similarly enacted legislation distinguishing hemp as a non-controlled substance, including Georgia. In 2019, the Georgia General Assembly passed the Georgia Hemp Farming Act, 4 which adopted the federal definition of hemp and hemp products and permitted their cultivation and sale under certain circumstances. See OCGA \u00a7\u00a7 2-23-3 \u2013 2-23-12. The hemp industry, it appears, has since taken root in Georgia. Plaintiffs are businesses in Gwinnett County, which, until recently, sold Delta-8-tetrahydrocannabinol (\u201cDelta-8-THC\u201d), Delta-10-tetrahydrocannabinol (\u201cDelta-10-THC\u201d), and other hemp-derived products that they allege fall within Georgia\u2019s definition of legal \u201chemp products.\u201d On January 25, 2022, the Gwinnett County District Attorney issued a press release announcing that her office would pursue ",
+          "locator": "Whitespace-normalized extracted text, characters 4801\u20136600",
+          "original_id": "cl-9379487:4800"
+        },
+        {
+          "case_id": "cl-10823007",
+          "name": "Jagrutiben Patel v. State of Georgia",
+          "citation": "",
+          "court": "Court of Appeals of Georgia",
+          "decision_date": "2025-03-14",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10356419/jagrutiben-patel-v-state-of-georgia/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "nnabinolic acid, or a combination of tetrahydrocannabinolic acid which does not contain plant material 4 exhibiting the external morphological features of the plant of the genus Cannabis, but not including such substance when found in hemp or hemp products as such terms are defined in Code Section 2-23-3 [of the Georgia Hemp Farming Act]. OCGA \u00a7 16-13-25 (3) (P) (emphasis supplied). Thus, if a product falls within the definition of \u201chemp\u201d or \u201chemp product\u201d under the Georgia Hemp Farming Act, then it is not a controlled substance even if it contains THC. In this case the question is whether the products constituted \u201chemp.\u201d We do not consider whether they fell within the definition of \u201chemp products\u201d because at the time of the proceedings below, the Georgia Hemp Farming Act defined \u201chemp products\u201d to exclude \u201cfood products infused with THC unless approved by the United States Food and Drug Administration.\u201d OCGA \u00a7 2-23-3 (6) (2021). The parties stipulated that the products in this case were edible gummies infused with THC, the trial court held that they were food products that had not been approved by the FDA, and Patel does not contest that holding. Instead, she argues that we should apply retroactively an amendment to the Georgia Hemp Farming Act that eliminated the requirement for FDA approval from the definition of \u201chemp products.\u201d See OCGA \u00a7 2-23-3 (13). We cannot do so because the amendment went into effect on 5 October 1, 2024, after the trial court entered judgment in this case, and the statutory text does not indicate that the amendment should be applied retroactively. See Deal v. Coleman, 294 Ga. 170, 174-175 (1) (b) (751 SE2d 337) (2013) (\u201cGenerally speaking, the retroactive application of statutes has long been disfavored in the law, even if it is not always fo",
+          "locator": "Whitespace-normalized extracted text, characters 4801\u20136600",
+          "original_id": "cl-10823007:4800"
+        },
+        {
+          "id": "W1",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "uscode.house.gov",
+          "citation": "",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=%28title%3A21+section%3A812+edition%3Aprelim",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "uscode.house.gov",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W3",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "www.atlantaga.gov",
+          "citation": "",
+          "source_url": "https://www.atlantaga.gov/Home/Components/News/News/8192/1338?backlist=%2F",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "www.atlantaga.gov",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 568,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "Atlanta Georgia marijuana possession local ordinance Georgia cannabis law medical cannabis federal marijuana law",
+              "mode": "semantic",
+              "court": "ga gactapp",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 568
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to two web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 2,
+          "consulted_urls": 17,
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:atlantaga.gov marijuana possession ordinance Atlanta 1 ounce \u00b7 site:legis.ga.gov Georgia Code 16-13-2 marijuana possession less than one ounce \u00b7 site:uscode.house.gov 21 USC 812 marijuana controlled substance"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T07:32:07.878Z",
+      "jurisdiction_note": "Court search is limited to Georgia appellate courts. Federal interpretations and trial-court decisions may be missed.",
+      "coverage_notes": [
+        "Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database.",
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Atlanta Georgia marijuana possession local ordinance Georgia cannabis law medical cannabis federal marijuana law",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "document_coverage": [],
+      "filters": {
+        "court": "ga gactapp",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "section": "Findings",
+          "claim": "In Atlanta, possession of one ounce or less of marijuana is not legalized: the city\u2019s announced ordinance reduced the local penalty to a maximum $75 fine and eliminated jail as a city-ordinance penalty, while expressly stating that possession remains illegal under Georgia law.",
+          "source_id": "W3",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://www.atlantaga.gov/Home/Components/News/News/8192/1338?backlist=%2F"
+          ],
+          "source_ids": [
+            "W3"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "section": "Findings",
+          "claim": "Federal law lists marijuana as a Schedule I controlled substance, while excluding hemp as defined by federal law from the listed tetrahydrocannabinols provision.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://uscode.house.gov/view.xhtml?req=%28title%3A21+section%3A812+edition%3Aprelim"
+          ],
+          "source_ids": [
+            "W1"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "section": "Findings",
+          "claim": "The supplied Georgia appellate excerpt states that marijuana possession of 50.31 grams was at issue in a criminal case, but it does not establish the applicable statutory penalty; the Atlanta local penalty should not be mistaken for statewide legalization.",
+          "source_id": "S2",
+          "quote_id": "S2Q1",
+          "web_source_urls": [],
+          "quote": "to the enterprise of sale.\u201d10 Here, the State presented evidence that Davis was at least in joint possession of 50.31 grams (approximately 1.77 ounces11) of marijuana, which was packaged in at least three smaller bags.",
+          "evidence_method": "exact_passage"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    }
+  },
+  {
+    "id": "newyork",
+    "request": {
+      "question": "What is the general statute of limitations for breach of a written contract in New York?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "d1f999c6-ad7c-4cf7-8ee2-e899d54237d9"
+    },
+    "expected_action": "research",
+    "actual_action": "research",
+    "routing_pass": true,
+    "seconds": 27.784,
+    "events": [
+      {
+        "seconds": 0.334,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 0.334,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 2.744,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 2.744,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 2.744,
+        "stage": "searching",
+        "message": "Finding opinions about your question\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 2.744,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 2.744,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 2.744,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 3.461,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 3 passages retrieved."
+      },
+      {
+        "seconds": 23.225,
+        "stage": "reading",
+        "message": "Reading Hernandez Tech., Inc. v. Rivera\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 23.225,
+        "stage": "reading",
+        "message": "Reading Kliger-Weiss Infosystems, Inc. v. Darien Sport Shop, Inc.\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 23.225,
+        "stage": "reading",
+        "message": "Reading Okafor v. Okafor Bldg. Corp.\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 23.652,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 9 passages retrieved."
+      },
+      {
+        "seconds": 23.653,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 27.749,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 2,
+    "exact_passages": 1,
+    "web_citations": 1,
+    "response": {
+      "sources": [
+        {
+          "case_id": "cl-11066845",
+          "name": "Hernandez Tech., Inc. v. Rivera",
+          "citation": "2025 NY Slip Op 03474",
+          "court": "Appellate Division of the Supreme Court of the State of New York",
+          "decision_date": "2025-06-06",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10600257/hernandez-tech-inc-v-rivera/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S1",
+          "text": "ix-year statute of limitations for the breach of contract (see CPLR 213 [2]) and Labor Law counterclaims (see Labor Law \u00a7 198 [3]), any counterclaims that accrued prior to August 27, 2014 would be time-barred. We agree with defendant, however, that the court failed to account for the fact that the statute of limitations was tolled pursuant to executive orders issued during the COVID-19 pandemic (see generally State of New York v Williams, 224 AD3d 1356, 1357 [4th Dept 2024]; Harden v Weinraub, 221 AD3d 1460, 1461-1462 [4th Dept 2023]). We therefore conclude that defendant may recover affirmative damages for any breach that occurred dating back to March 20, 2014, and we therefore modify the order in appeal No. 1 accordingly. We reject defendant's further contention that the court erred in determining that First Capital's alleged liability for the breach of contract and Labor Law causes of action ended on May 13, 2015, the day defendant obtained the spreadsheet. Where, as here, defendant was an employee at will, First Capital was entitled to prospectively change the terms of an employment agreement (see Gertler v Davidoff Hutcher & Citron LLP, 186 AD3d 801, 805-806 [2d Dept 2020]; Gebhardt v Time Warner Entertainment-Advance/Newhouse, 284 AD2d 978, 979 [4th Dept 2001]). Even if First Capital did not \"change\" the terms of the Compensation Agreements, when defendant remained in First Capital's employment after being notified of the way commissions were calculated, he was deemed to have agreed to that method of calculating commissions (see Gertler, 186 AD3d at 806-807; Gebhardt, 284 AD2d at 979; Bottini v Lewis & Judge Co., 211 AD2d 1006, 1007-1008 [3d Dept 1995]). Defendant further contends in appeal No. 1 that the court erred in denying that part of his cross-motion seekin",
+          "locator": "Whitespace-normalized extracted text, characters 14401\u201316200",
+          "original_id": "cl-11066845:14400"
+        },
+        {
+          "case_id": "fr-2019-19309",
+          "name": "Student Assistance General Provisions, Federal Family Education Loan Program, and William D. Ford Federal Direct Loan Program",
+          "citation": "84 FR 49788",
+          "court": "Education Department",
+          "decision_date": "2019-09-23",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2019/09/23/2019-19309/student-assistance-general-provisions-federal-family-education-loan-program-and-william-d-ford",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2019-09-23/pdf/2019-19309.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2020-07-01; verify operative status in the official edition",
+          "id": "S2",
+          "text": "hools and negatively impact their long-term financial stability. We considered the commenter's suggestion to begin the limitation period at the discovery of harm. The Department recognizes that this standard can be found in other bodies of law. However, we have concluded that this suggestion would not be appropriate for an administrative proceeding like the adjudication of a borrower defense claim. Determining whether and when a borrower discovered or should have discovered the misrepresentation is a difficult task that is administratively burdensome. Such a determination is very subjective. Such a determination also requires the Department to consider evidence that likely will not be part of the borrower defense to repayment application or readily available to the borrower or the institution, especially if much time has passed between enrollment and the discovery of the misrepresentation. The Department notes that while the limitations period begins at graduation, the institution's misrepresentation was likely committed before the borrower enrolled. Taking into account the period of the borrower's enrollment--whether two, three, or four years--the effective limitations period is between five and seven years. Consequently, the limitations period is comparable to State statute of limitations periods for civil fraud. For example, New York state law requires that a fraud-based action must be commenced within six years of the fraud or within two years from the time the plaintiff discovered the fraud or could have discovered it with reasonable diligence.\\93\\ --------------------------------------------------------------------------- \\93\\ Sargiss v. Magarelli, 12 NY3d 527, 532 (2009), quoting CPLR 213 [8] and CLPR 203 [g]. -----------------------------------------------------",
+          "locator": "Whitespace-normalized extracted text, characters 272001\u2013273800",
+          "original_id": "fr-2019-19309:272000"
+        },
+        {
+          "case_id": "cl-11139829",
+          "name": "Kliger-Weiss Infosystems, Inc. v. Darien Sport Shop, Inc.",
+          "citation": "2025 NY Slip Op 04981",
+          "court": "Appellate Division of the Supreme Court of the State of New York",
+          "decision_date": "2025-09-17",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10673242/kliger-weiss-infosystems-inc-v-darien-sport-shop-inc/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S3",
+          "text": "Kliger-Weiss Infosystems, Inc. v Darien Sport Shop, Inc. (2025 NY Slip Op 04981) Kliger-Weiss Infosystems, Inc. v Darien Sport Shop, Inc. 2025 NY Slip Op 04981 Decided on September 17, 2025 Appellate Division, Second Department Published by New York State Law Reporting Bureau pursuant to Judiciary Law \u00a7 431. This opinion is uncorrected and subject to revision before publication in the Official Reports. Decided on September 17, 2025 SUPREME COURT OF THE STATE OF NEW YORK Appellate Division, Second Judicial Department ANGELA G. IANNACCI, J.P. ROBERT J. MILLER LILLIAN WAN CARL J. LANDICINO, JJ. 2024-07243 (Index No. 620693/23) [*1]Kliger-Weiss Infosystems, Inc., appellant, v Darien Sport Shop, Incorporated, etc., respondent. McLaughlin & Stern, LLP, Garden City, NY (John M. Brickman of counsel), for appellant. Certilman Balin Adler & Hyman, LLP, East Meadow, NY (Thomas J. McNamara and Christopher P. Dooley of counsel), for respondent. DECISION & ORDER In an action, inter alia, to recover damages for breach of contract, the plaintiff appeals from an order of the Supreme Court, Nassau County (Jerome C. Murphy, J.), entered June 12, 2024. The order, in effect, granted the defendant's motion pursuant to CPLR 3211(a) to dismiss the complaint. ORDERED that the order is affirmed, with costs. In March 2009, the parties entered into a written agreement in which the defendant agreed to purchase point of sale registers from the plaintiff and the plaintiff agreed to provide certain computerized management information services to the defendant (hereinafter the agreement). Paragraph 9.1 of the agreement provided that the agreement \"will run for a minimum thirty six (36) months from the first store going live (first month of store billing), after thirty six (36) months this Agreement may",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-11139829:0"
+        },
+        {
+          "case_id": "fr-2019-19309",
+          "name": "Student Assistance General Provisions, Federal Family Education Loan Program, and William D. Ford Federal Direct Loan Program",
+          "citation": "84 FR 49788",
+          "court": "Education Department",
+          "decision_date": "2019-09-23",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2019/09/23/2019-19309/student-assistance-general-provisions-federal-family-education-loan-program-and-william-d-ford",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2019-09-23/pdf/2019-19309.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2020-07-01; verify operative status in the official edition",
+          "id": "S4",
+          "text": "ch the loan was made, including, but not limited to-- (A) Personal injury; (B) Sexual harassment; (C) A violation of civil rights; (D) Slander or defamation; (E) Property damage; (F) The general quality of the student's education or the reasonableness of an educator's conduct in providing educational services; (G) Informal communication from other students; (H) Academic disputes and disciplinary matters; and (I) Breach of contract, unless the school's act or omission would otherwise constitute the basis for a successful defense to repayment under this paragraph (e). (6) Limitations period and tolling of the limitations period for arbitration proceedings. (i) A borrower must assert a defense to repayment under this paragraph (e) within three years from the date the student is no longer enrolled at the institution. A borrower may only assert a defense to repayment under this paragraph (e) within the timeframes set forth in Sec. 685.206(e)(6)(i) and (ii) and (e)(7). (ii) For pre-dispute arbitration agreements, as defined in Sec. 668.41(h)(2)(iii), the limitations period will be tolled for the time period beginning on the date that a written request for arbitration is filed, by either the student or the institution, and concluding on the date the arbitrator submits, in writing, a final decision, final award, or other final determination, to the parties. (7) Extension of limitation periods and reopening of applications. For loans first disbursed on or after July 1, 2020, the Secretary may extend the time period when a borrower may assert a defense to repayment under Sec. 685.206(e)(6) or may reopen a borrower's defense to repayment application to consider evidence that was not previously considered only if there is: (i) A final, non-default judgment on the merits by a State ",
+          "locator": "Whitespace-normalized extracted text, characters 945601\u2013947400",
+          "original_id": "fr-2019-19309:945600"
+        },
+        {
+          "case_id": "cl-11091434",
+          "name": "Okafor v. Okafor Bldg. Corp.",
+          "citation": "2025 NY Slip Op 03731",
+          "court": "Appellate Division of the Supreme Court of the State of New York",
+          "decision_date": "2025-06-18",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10624846/okafor-v-okafor-bldg-corp/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S5",
+          "text": "Nkemkude defendants appeal. \"The essential elements of a cause of action to recover damages for breach of contract are the existence of a contract, the plaintiff's performance pursuant to the contract, the defendant's breach of its contractual obligations, and damages resulting from the breach\" (Compensation Guidance, Inc. v Ashnu Intl., Inc., 220 AD3d 683, 684 [internal quotation marks omitted]). \"The statute of limitations for a cause of action alleging breach of contract is six years\" (Filasky v Andover Cos., 230 AD3d 1297, 1299-1300, citing CPLR 213[2]). \"As a general principle, the statute of limitations begins to run when a cause of action accrues, that is, when all of the facts necessary to the cause of action have occurred so that the party would be entitled to obtain relief in court\" (County of Suffolk v Suburban Hous. Dev. & Research, Inc., 160 AD3d 607, 609 [citation and internal quotation marks omitted]). \"A breach of contract cause of action accrues at, and the statute of limitations begins to run from, the time of the breach\" (Rad & D'Aprile, Inc. v Arnell Constr. Corp., 203 AD3d 855, 858; see Ely-Cruikshank Co. v Bank of Montreal, 81 NY2d 399, 402). Here, contrary to the defendants' contentions, the Supreme Court, in effect, correctly determined that the breach of contract cause of action was not time-barred (see Morrow v Vibration Mountings & Controls, Inc., 223 AD3d 736, 738; Trujillo v Collado, 217 AD3d 891, 893). The defendants' remaining contentions are without merit. DILLON, J.P., WARHIT, LANDICINO and VENTURA, JJ., concur. ENTER: Darrell M. Joseph Clerk of the Court",
+          "locator": "Whitespace-normalized extracted text, characters 6401\u20138014",
+          "original_id": "cl-11091434:6400"
+        },
+        {
+          "case_id": "fr-2019-19309",
+          "name": "Student Assistance General Provisions, Federal Family Education Loan Program, and William D. Ford Federal Direct Loan Program",
+          "citation": "84 FR 49788",
+          "court": "Education Department",
+          "decision_date": "2019-09-23",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2019/09/23/2019-19309/student-assistance-general-provisions-federal-family-education-loan-program-and-william-d-ford",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2019-09-23/pdf/2019-19309.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2020-07-01; verify operative status in the official edition",
+          "id": "S6",
+          "text": "ate law standard in the 2016 final regulations because a State law standard may result in inequities among borrowers who qualify for relief. If one State's laws are more generous than those in another State, then two equally situated borrowers may obtain very different results in their respective State courts. If a judgment based on State law automatically qualifies a borrower for a borrower defense to repayment, then inequities among borrowers will perpetually continue. Accordingly, the Department has determined that a judgment against the school, alone, should not constitute the Federal standard. In order to ensure that both borrowers and institutions have due process rights, these final regulations add new steps to the borrower defense to repayment adjudication process that provides both with an opportunity to provide evidence and respond to evidence provided by the other party. Therefore, automatic relief under any circumstance would be inappropriate, especially since the circumstances that resulted in a breach of contract may or may not meet the Federal standard for misrepresentation. As such, while a judgment or breach of contract related to enrollment or the provision of educational services may serve as compelling evidence to support a borrower's borrower defense to repayment claim, the Department cannot award automatic borrower defense relief since that would eliminate the opportunity for the institution to respond to the borrower's claim with the Department. The Department sufficiently explained in this Preamble that a judgment and/ or a breach of contract may be used as evidence in support of a borrower defense to repayment claim. Changing the amendatory language to this effect is not necessary and may mislead or confuse borrowers by implying that a judgment ",
+          "locator": "Whitespace-normalized extracted text, characters 187201\u2013189000",
+          "original_id": "fr-2019-19309:187200"
+        },
+        {
+          "case_id": "cl-11066845",
+          "name": "Hernandez Tech., Inc. v. Rivera",
+          "citation": "2025 NY Slip Op 03474",
+          "court": "Appellate Division of the Supreme Court of the State of New York",
+          "decision_date": "2025-06-06",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10600257/hernandez-tech-inc-v-rivera/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S7",
+          "text": "npaid wages. We agree in part. The court denied that part of defendant's cross-motion seeking summary judgment dismissing First Capital's affirmative defense of the statute of limitations and agreed with First Capital that defendant could recover affirmative damages for any breach of contract or Labor Law violation that occurred only between August 28, 2014 to May 13, 2015. We reject defendant's contention that the six-year statute of limitations for breach of contract (see CPLR 213 [2]) did not accrue until after he received the May 13, 2015 spreadsheet and discovered the 30% keep. That cause of action accrued upon the alleged breach by First Capital (see Ely-Cruikshank Co. v Bank of Montreal, 81 NY2d 399, 402 [1993]), regardless of whether defendant was unaware of the breach at the time it occurred (see Marrow v Brighthouse Life Ins. Co. of NY, 200 AD3d 1622, 1623 [4th Dept 2021]; Brooks v AXA Advisors, LLC [appeal No. 2], 104 AD3d 1178, 1180 [4th Dept 2013], lv denied 21 NY3d 858 [2013]). Defendant's reliance on CPLR 203 (g) (1) is misplaced inasmuch as it applies only \"where the time within which an action must be commenced is computed from the time when facts were discovered or . . . could with reasonable diligence have been discovered,\" neither of which applies here. Defendant's \" '[k]nowledge of the occurrence of the wrong . . . is [*4]not necessary to start the [s]tatute of [l]imitations running in [a] contract [action]' \" (Ely-Cruikshank Co., 81 NY2d at 403). Here, defendant filed his answer with the counterclaims on August 27, 2020, meaning that, pursuant to the six-year statute of limitations for the breach of contract (see CPLR 213 [2]) and Labor Law counterclaims (see Labor Law \u00a7 198 [3]), any counterclaims that accrued prior to August 27, 2014 would be tim",
+          "locator": "Whitespace-normalized extracted text, characters 12801\u201314600",
+          "original_id": "cl-11066845:12800"
+        },
+        {
+          "case_id": "cl-11139829",
+          "name": "Kliger-Weiss Infosystems, Inc. v. Darien Sport Shop, Inc.",
+          "citation": "2025 NY Slip Op 04981",
+          "court": "Appellate Division of the Supreme Court of the State of New York",
+          "decision_date": "2025-09-17",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10673242/kliger-weiss-infosystems-inc-v-darien-sport-shop-inc/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S8",
+          "text": "Analyzers, LLC, 112 AD3d at 898). \"Moreover, any ambiguity in this regard must be construed against the drafter, which in this case, is the plaintiff\" (Aron Sec., Inc. v Unkechaug Indian Nation, 151 AD3d 674, 676; see Matter of Cowen & Co. v Anderson, 76 NY2d 318, 323; Onekey, LLC v Byron Place Assoc., LLC, 200 AD3d 896, 898). Therefore, the documentary evidence submitted by the defendant conclusively disposed of the plaintiff's cause of action alleging breach of contract (see Hanover Ins. Co. v Catlin Specialty Ins. Co., 218 AD3d at 755; Bedford-Carp Constr., Inc., v Brooklyn Union Gas Co., 215 AD3d at 909). \"Quantum meruit may be pleaded in the alternative where there is a bona fide dispute as to the existence of a contract, or where the contract does not cover the dispute in issue\" (Tutor Perini Corp. v State of New York, 209 AD3d 692, 698; see R & B Design Concepts, Inc. v Wenger Constr. Co., Inc., 153 AD3d 864, 865). Here, there was clearly a valid contract, and the amount in dispute was incurred pursuant to the contract. Accordingly, the Supreme Court properly, in effect, granted the defendant's motion pursuant to CPLR 3211(a) to dismiss the complaint. IANNACCI, J.P., MILLER, WAN and LANDICINO, JJ., concur. ENTER: Darrell M. Joseph Clerk of the Court",
+          "locator": "Whitespace-normalized extracted text, characters 6401\u20137676",
+          "original_id": "cl-11139829:6400"
+        },
+        {
+          "case_id": "cl-11091434",
+          "name": "Okafor v. Okafor Bldg. Corp.",
+          "citation": "2025 NY Slip Op 03731",
+          "court": "Appellate Division of the Supreme Court of the State of New York",
+          "decision_date": "2025-06-18",
+          "opinion_type": "combined-opinion",
+          "source_url": "https://www.courtlistener.com/opinion/10624846/okafor-v-okafor-bldg-corp/",
+          "official_url": "",
+          "database_id": "courtlistener",
+          "database_name": "CourtListener",
+          "kind": "case",
+          "research_role": "original",
+          "source_status": "Original search result; does not establish current validity",
+          "id": "S9",
+          "text": "Okafor v Okafor Bldg. Corp. (2025 NY Slip Op 03731) Okafor v Okafor Bldg. Corp. 2025 NY Slip Op 03731 Decided on June 18, 2025 Appellate Division, Second Department Published by New York State Law Reporting Bureau pursuant to Judiciary Law \u00a7 431. This opinion is uncorrected and subject to revision before publication in the Official Reports. Decided on June 18, 2025 SUPREME COURT OF THE STATE OF NEW YORK Appellate Division, Second Judicial Department MARK C. DILLON, J.P. BARRY E. WARHIT CARL J. LANDICINO LOURDES M. VENTURA, JJ. 2023-02887 2024-01623 (Index No. 700819/21) [*1]Anne Okafor, respondent, v Okafor Building Corp., et al., appellants. Hirschel Law Firm, P.C., Valley Stream, NY (Daniel Hirschel of counsel), for appellants Okafor Building Corp. and Nkemkude Okafor. Khari Peter Prescod, New York, NY, for appellant Hillary Okafor. DECISION & ORDER In an action, inter alia, to recover damages for breach of contract, (1) the defendants Okafor Building Corp. and Nkemkude Okafor appeal, and the defendant Hillary Okafor separately appeals, from an order and judgment (one paper) of the Supreme Court, Queens County (Ulysses B. Leverett, J.), entered February 1, 2023, and (2) the defendants Okafor Building Corp. and Nkemkude Okafor appeal from an order and judgment (one paper) of the same court entered January 17, 2024. The order and judgment entered February 1, 2023, insofar as appealed from, granted that branch of the plaintiff's motion which was, in effect, to compel the defendants to comply with a decision of the same court (Elizabeth Yablon, Ct. Atty. Ref) dated November 4, 2019, and directed them to transfer the subject properties to the plaintiff in exchange for the sum of $150,000. The order and judgment entered January 17, 2024, insofar as appealed from, upon rearg",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "cl-11091434:0"
+        },
+        {
+          "id": "W3",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "www.nysenate.gov",
+          "citation": "",
+          "source_url": "https://www.nysenate.gov/legislation/laws/CVP/A2",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "www.nysenate.gov",
+          "opinion_type": "Public legal web page"
+        },
+        {
+          "id": "W8",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "www.nycourts.gov",
+          "citation": "",
+          "source_url": "https://www.nycourts.gov/help/representing-yourself-court/statute-limitations-timetable",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "www.nycourts.gov",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "ok",
+          "total": 592,
+          "note": "Published opinions; up to 3 full opinions, preferring lead opinions. Search snippets are never evidence.",
+          "warnings": [],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "New York statute of limitations breach written contract accrual CPLR 213(2)",
+              "mode": "semantic",
+              "court": "ny nyappdiv nyappterm",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 592
+            }
+          ],
+          "passages": 9
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "ok",
+          "total": 1,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 3
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to two web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 2,
+          "consulted_urls": 18,
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "site:nysenate.gov/legislation/laws/CVP/213 CPLR 213(2) six years contract \u00b7 site:nycourts.gov breach contract six year statute limitations CPLR 213(2) accrues breach New York"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T07:32:37.198Z",
+      "jurisdiction_note": "Court search is limited to New York appellate courts. Federal interpretations and trial-court decisions may be missed.",
+      "coverage_notes": [
+        "Public legal web research is selective. Check the source edition and effective date; coverage is not a complete statutory or municipal database.",
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "New York statute of limitations breach written contract accrual CPLR 213(2)",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "general",
+      "document_coverage": [],
+      "filters": {
+        "court": "ny nyappdiv nyappterm",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "section": "Findings",
+          "claim": "New York generally allows six years to bring an action for breach of a written contract under CPLR 213(2).",
+          "source_id": "W3",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://www.nysenate.gov/legislation/laws/CVP/A2",
+            "https://www.nycourts.gov/help/representing-yourself-court/statute-limitations-timetable"
+          ],
+          "source_ids": [
+            "W3",
+            "W8"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        },
+        {
+          "section": "Findings",
+          "claim": "The six-year period generally begins when the breach occurs\u2014not when the plaintiff discovers it.",
+          "source_id": "S5",
+          "quote_id": "S5Q6",
+          "web_source_urls": [],
+          "quote": " \"A breach of contract cause of action accrues at, and the statute of limitations begins to run from, the time of the breach\" (Rad & D'Aprile, Inc. v Arnell Constr. Corp., 203 AD3d 855, 858; see Ely-Cruikshank Co.",
+          "evidence_method": "exact_passage"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    }
+  },
+  {
+    "id": "fictional",
+    "request": {
+      "question": "Is Raptor v Galactic Toaster, 999 U.S. 999, still good law?",
+      "task": "auto",
+      "database_ids": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "request_id": "87cf163f-e103-42c8-937f-a22ae2988611"
+    },
+    "expected_action": "research",
+    "actual_action": "research",
+    "routing_pass": true,
+    "seconds": 9.979,
+    "events": [
+      {
+        "seconds": 1.175,
+        "stage": "accepted",
+        "message": "Starting research\u2026"
+      },
+      {
+        "seconds": 1.175,
+        "stage": "planning",
+        "message": "Planning the research\u2026"
+      },
+      {
+        "seconds": 3.938,
+        "stage": "plan",
+        "message": "Searching selected databases\u2026",
+        "task": "research",
+        "databases": [
+          "courtlistener",
+          "ecfr",
+          "federal_register",
+          "legal_web"
+        ],
+        "reason": "Searching the databases selected in Search settings."
+      },
+      {
+        "seconds": 3.938,
+        "stage": "searching",
+        "database": "courtlistener",
+        "message": "Searching CourtListener\u2026"
+      },
+      {
+        "seconds": 3.938,
+        "stage": "searching",
+        "message": "Finding the principal opinion\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 3.938,
+        "stage": "searching",
+        "database": "ecfr",
+        "message": "Searching eCFR\u2026"
+      },
+      {
+        "seconds": 3.938,
+        "stage": "searching",
+        "database": "federal_register",
+        "message": "Searching Federal Register\u2026"
+      },
+      {
+        "seconds": 4.032,
+        "stage": "source_complete",
+        "database": "ecfr",
+        "message": "eCFR: 0 passages retrieved."
+      },
+      {
+        "seconds": 4.09,
+        "stage": "source_complete",
+        "database": "federal_register",
+        "message": "Federal Register: 0 passages retrieved."
+      },
+      {
+        "seconds": 4.245,
+        "stage": "searching",
+        "message": "Searching for later treatment\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 4.979,
+        "stage": "searching",
+        "message": "Searching for later treatment\u2026",
+        "database": "courtlistener"
+      },
+      {
+        "seconds": 6.01,
+        "stage": "source_complete",
+        "database": "courtlistener",
+        "message": "CourtListener: 0 passages retrieved."
+      },
+      {
+        "seconds": 6.01,
+        "stage": "drafting",
+        "database": "legal_web",
+        "message": "Searching public legal sources and writing an answer\u2026"
+      },
+      {
+        "seconds": 9.979,
+        "stage": "checking",
+        "message": "Checking source quotations\u2026"
+      }
+    ],
+    "retained": 1,
+    "exact_passages": 0,
+    "web_citations": 1,
+    "response": {
+      "sources": [
+        {
+          "id": "W1",
+          "database_id": "legal_web",
+          "kind": "web_page",
+          "evidence_method": "web_citation",
+          "name": "www.supremecourt.gov",
+          "citation": "",
+          "source_url": "https://www.supremecourt.gov/opinions/boundvolumes/510bv.pdf",
+          "text": "",
+          "locator": "Provider web citation; page text was not independently retrieved by Lex Raptor.",
+          "source_status": "Government source; check publication and effective dates.",
+          "decision_date": "",
+          "court": "www.supremecourt.gov",
+          "opinion_type": "Public legal web page"
+        }
+      ],
+      "searched": [
+        {
+          "id": "courtlistener",
+          "status": "empty",
+          "total": 0,
+          "note": "Principal opinion plus targeted and recent later-treatment searches; up to 4 full opinions. This is a limited search, not a complete good-law check.",
+          "warnings": [
+            "No later-treatment full text was retrieved. The original decision alone cannot establish present validity."
+          ],
+          "searches": [
+            {
+              "phase": "original",
+              "query": "caseName:(Raptor AND Galactic AND Toaster)",
+              "mode": "keyword",
+              "court": "",
+              "after": "",
+              "before": "",
+              "order": "citeCount desc",
+              "status": "ok",
+              "matches": 0
+            },
+            {
+              "phase": "later-treatment",
+              "query": "\"Raptor v. Galactic Toaster\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+              "mode": "keyword",
+              "court": "",
+              "after": "",
+              "before": "",
+              "order": "score desc",
+              "status": "ok",
+              "matches": 0
+            },
+            {
+              "phase": "recent-treatment",
+              "query": "\"Raptor v. Galactic Toaster\" AND (overrul* OR abrogat* OR supersed* OR reaffirm*)",
+              "mode": "keyword",
+              "court": "",
+              "after": "",
+              "before": "",
+              "order": "dateFiled desc",
+              "status": "ok",
+              "matches": 0
+            }
+          ],
+          "passages": 0
+        },
+        {
+          "id": "ecfr",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "federal_register",
+          "status": "empty",
+          "total": 0,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 0
+        },
+        {
+          "id": "legal_web",
+          "status": "ok",
+          "total": null,
+          "note": "Up to two web tool calls. Listed pages are cited in the answer. Web citations are provider-reported; page text is not independently quote-checked. Court/date filters apply only to the database connectors, not web search.",
+          "passages": 0,
+          "pages": 1,
+          "consulted_urls": 4,
+          "searches": [
+            {
+              "phase": "web search",
+              "status": "completed",
+              "query": "\"Raptor v. Galactic Toaster\" \"999 U.S. 999\" \u00b7 \"999 U.S. 999\" case"
+            }
+          ]
+        }
+      ],
+      "retrieved_at": "2026-10-05T07:32:47.422Z",
+      "jurisdiction_note": "",
+      "coverage_notes": [
+        "Web citations are provided by the search service; their text has not been independently quote-checked."
+      ],
+      "query": "Raptor v Galactic Toaster 999 U.S. 999 later treatment good law",
+      "task": "research",
+      "databases": [
+        "courtlistener",
+        "ecfr",
+        "federal_register",
+        "legal_web"
+      ],
+      "database_reason": "Searching the databases selected in Search settings.",
+      "research_focus": "case_status",
+      "document_coverage": [],
+      "filters": {
+        "court": "",
+        "after": "",
+        "before": ""
+      },
+      "automatic": true,
+      "model": "gpt-6-luna",
+      "inference": "api",
+      "propositions": [
+        {
+          "section": "Findings",
+          "claim": "The search found no verifiable U.S. Supreme Court case matching \u201cRaptor v. Galactic Toaster, 999 U.S. 999.\u201d The citation therefore does not provide a basis to assess the case\u2019s precedential status; this limited search is not a comprehensive citator check.",
+          "source_id": "W1",
+          "quote_id": "",
+          "web_source_urls": [
+            "https://www.supremecourt.gov/opinions/boundvolumes/510bv.pdf"
+          ],
+          "source_ids": [
+            "W1"
+          ],
+          "quote": "",
+          "evidence_method": "web_citation"
+        }
+      ],
+      "removed": 0,
+      "removed_references": [],
+      "incomplete": false,
+      "abstained": false,
+      "missing_sections": [],
+      "model_used": true,
+      "status": 200
+    }
+  }
+]

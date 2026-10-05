@@ -66,6 +66,9 @@
   "benchmark/research/local-results.json",
   "benchmark/research/tasks.json",
   "benchmark/smoke-preflight.json",
+  "benchmark/statutes/RESULTS.md",
+  "benchmark/statutes/iterations/revision7.json",
+  "benchmark/statutes/iterations/revision8.json",
   "benchmark/upstream-license/LICENSE",
   "benchmark/validation-summary.json",
   "benchmark/verified-pricing-2026-10-04.json",
@@ -152,9 +155,11 @@
   "website/drizzle/0000_fixed_omega_sentinel.sql",
   "website/drizzle/0001_powerful_mongu.sql",
   "website/drizzle/0002_orange_plazm.sql",
+  "website/drizzle/0003_silent_hannibal_king.sql",
   "website/drizzle/meta/0000_snapshot.json",
   "website/drizzle/meta/0001_snapshot.json",
   "website/drizzle/meta/0002_snapshot.json",
+  "website/drizzle/meta/0003_snapshot.json",
   "website/drizzle/meta/_journal.json",
   "website/hosting.example.json",
   "website/package-lock.json",
@@ -175,6 +180,7 @@
   "website/scripts/cli.mjs",
   "website/scripts/diagnose-case-status.mjs",
   "website/scripts/diagnose-conversation.mjs",
+  "website/scripts/diagnose-statutes.mjs",
   "website/scripts/diagnose-workbench.mjs",
   "website/scripts/local-runtime.mjs",
   "website/scripts/local-workbench.mjs",
@@ -195,5 +201,6 @@
   "website/worker/planner.js",
   "website/worker/research.js",
   "website/worker/sources.js",
-  "website/worker/state-courts.json"
+  "website/worker/state-courts.json",
+  "website/worker/web.js"
 ]

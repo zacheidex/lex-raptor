@@ -99,3 +99,10 @@ shared $10 model budget. Scanned PDFs need separate OCR; no paid OCR service is
 connected. Document text is not sent to CourtListener or other search services
 by the file parser. If database research is enabled, the question/search query
 is sent to those selected services.
+
+
+## Public legal web (hosted chat)
+
+The selectable `legal_web` source adds searches of government sites, state code editions, Cornell LII, and municipal code publishers. It uses OpenAI's built-in web-search tool on the existing cheap model, with at most four tool calls per research answer. [Published pricing](https://developers.openai.com/api/docs/pricing) is $0.01 per tool call plus model tokens (checked 2026-10-05). This spending stays inside the owner's $10 lifetime hosted allowance. No separate database subscription or student discount is required for this connector.
+
+The local model remains free of paid inference and web-tool calls. Local users can attach statutory text, use existing free data APIs, or open public code sources manually. Provider web citations are visibly distinct from independently downloaded and quotation-checked excerpts. They are selective, may point to historical editions, and do not establish comprehensive or current legal validity.
