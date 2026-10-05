@@ -44,9 +44,3 @@ export async function settle(db,id,usage) {
   await db.prepare(`UPDATE demo_calls SET charged=?,state='completed',input_tokens=?,output_tokens=?
     WHERE id=? AND state='reserved'`).bind(amount,usage.input_tokens,usage.output_tokens,id).run();
 }
-
-export async function attempt(db, key, now) {
-  const row=await db.prepare(`INSERT INTO demo_attempts(id,count,expires) VALUES(?,1,?)
-    ON CONFLICT(id) DO UPDATE SET count=count+1 RETURNING count`).bind(key,now+1800).first();
-  return row.count<=10;
-}

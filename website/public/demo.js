@@ -1,23 +1,19 @@
 const $=id=>document.getElementById(id);
-let state={enabled:false,unlocked:false,exhausted:false},busy=false;
+let state={enabled:false,exhausted:false},busy=false;
 const el=(tag,text,className)=>{const n=document.createElement(tag);if(text)n.textContent=text;if(className)n.className=className;return n;};
 async function api(path,body){
   const response=await fetch('/api/demo/'+path,{credentials:'same-origin',cache:'no-store',...(body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{})});
-  const data=await response.json();if(!response.ok){if(response.status===401){state.unlocked=false;render();}throw new Error(data.error||'The demo is unavailable.');}return data;
+  const data=await response.json();if(!response.ok)throw new Error(data.error||'The demo is unavailable.');return data;
 }
 function render(){
-  $('unlock-panel').hidden=!state.enabled||state.unlocked||state.exhausted;
-  $('lock-demo').hidden=!state.unlocked;
-  $('ask').disabled=busy||!state.enabled||!state.unlocked||state.exhausted||!$('cap').checked;
+  $('ask').disabled=busy||!state.enabled||state.exhausted||!$('cap').checked;
   $('ask').textContent=busy?'Reading the selected opinions…':'Research question';
   $('selection-note').textContent=$('cap').checked?'Searching CAP · 12 opinions':'Select at least one available database';
-  $('availability').textContent=!state.enabled?'The online demo is awaiting activation. You can explore the questions below or run the full app locally.':state.exhausted?'The shared demo allowance has been used. The local app remains available.':state.unlocked?'Demo unlocked. Questions use the shared API allowance.':'The research demo is available with a passcode from the project owner.';
+  $('availability').textContent=!state.enabled?'The online demo is awaiting activation. You can explore the questions below or run the full app locally.':state.exhausted?'The shared demo allowance has been used. The local app remains available.':'The demo is open to everyone. Questions use the shared API allowance.';
 }
 async function refresh(){try{state=await api('status');render();}catch(e){$('availability').textContent=e.message;$('ask').disabled=true;}}
 $('cap').addEventListener('change',render);
 document.querySelectorAll('[data-question]').forEach(b=>b.addEventListener('click',()=>{$('question').value=b.dataset.question;$('question').focus();}));
-$('unlock-form').addEventListener('submit',async e=>{e.preventDefault();const button=e.submitter;button.disabled=true;$('unlock-status').textContent='';try{await api('unlock',{passcode:$('passcode').value});$('passcode').value='';await refresh();$('question').focus();}catch(err){$('unlock-status').textContent=err.message;}finally{button.disabled=false;}});
-$('lock-demo').addEventListener('click',async()=>{try{await api('logout',{});state.unlocked=false;render();}catch(err){$('research-status').textContent=err.message;}});
 $('research-form').addEventListener('submit',async e=>{
   e.preventDefault();if(busy||$('ask').disabled)return;busy=true;render();$('research-status').textContent='Searching the selected collection and checking quoted passages. This can take up to 90 seconds.';$('result').hidden=true;
   try {

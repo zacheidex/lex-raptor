@@ -72,3 +72,15 @@ checked against official model/pricing documentation on 2026-10-05.
 Eight paid-request attempts used the setup network's rolling 10-per-day limit;
 two remain for that network until those attempts age out. Other visitors have
 their own network/session limits but share the same $10 total allowance.
+
+## Public access update — 2026-10-05
+
+After the smoke checks above, the owner removed the passcode requirement.
+Research now works without an account or cookie. The six updated local
+Workers/D1 tests passed with a simulated provider and no API spending. They
+verify no-cookie research, origin and database validation, missing edge-IP
+rejection, duplicate-request rejection, concurrent budget admission, failure
+reservations, and preservation of historical daily limits after opening access.
+The unchanged lifetime ledger and IP-hashing secret preserve existing charges
+and network limits. No additional live model call was made for this change;
+the earlier passcode and logout observations describe the prior deployment.

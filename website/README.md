@@ -1,6 +1,6 @@
 # Lex Raptor website and hosted demo
 
-The public project website and passcode-protected research preview. Local Lex
+The public project website and public research preview. Local Lex
 Raptor remains account-free and does not need a provider key. This website is a
 separate Cloudflare Worker with a D1 spending ledger and static assets.
 
@@ -8,7 +8,7 @@ separate Cloudflare Worker with a D1 spending ledger and static assets.
 
 Use Node 20.20+ and npm. Run `npm ci`, `npm run build`, then `npm test`.
 The tests use a local Workers runtime and a simulated provider; they spend no
-API credits. They verify access controls, database selection, quotation
+API credits. They verify public access, origin checks, database selection, quotation
 validation, idempotency, concurrent budget admission, failure reservations,
 and visitor limits. They are not a legal-quality benchmark.
 
@@ -31,14 +31,15 @@ commit them. Configure these through the hosting provider's secret settings:
 | Name | Purpose |
 | --- | --- |
 | `OPENAI_API_KEY` | Dedicated project key for the demo; secret |
-| `DEMO_PASSCODE` | Shared access code, at least 16 characters; secret |
-| `DEMO_SESSION_SECRET` | Random signing key, at least 32 characters; secret |
+| `DEMO_SESSION_SECRET` | Stable IP-hashing key, at least 32 characters; secret |
 | `DEMO_ENABLED` | Exactly `true` to enable paid requests; otherwise disabled |
 | `DEMO_EXPIRES_AT` | Unix timestamp; missing or expired disables paid requests |
 
-Set an expiration when reviewing the model's current price and access. Rotation
-of the passcode invalidates existing sessions. Disabling the demo blocks new
-requests; requests already sent to the provider can still complete and charge.
+The demo requires no account, passcode, or session cookie. Preserve the existing
+`DEMO_SESSION_SECRET` value when upgrading: changing the IP-hashing key would
+reset visitor limits. Set an expiration when reviewing the model's current
+price and access. Disabling the demo blocks new requests; requests already
+sent to the provider can still complete and charge.
 
 ## Spending controls
 
@@ -76,12 +77,17 @@ requests retain their reservations rather than assuming they were unbilled.
 - [Codex model availability](https://learn.chatgpt.com/docs/models)
 - [Official pricing](https://developers.openai.com/api/docs/pricing)
 
-Additional limits: 10 questions per rolling 24 hours per IP hash and session,
-3 per minute per IP hash, at most 2 recent in-flight reservations globally,
-and 10 passcode attempts per IP hash per 15-minute window. IPs come from the
+Additional limits: 10 questions per rolling 24 hours per IP hash,
+3 per minute per IP hash, and at most 2 recent in-flight reservations globally.
+People on the same public network share the IP-based limit. IPs come from the
 edge's `CF-Connecting-IP` header and are HMAC-hashed; a direct host must sanitize
 that header itself. These limits discourage abuse; the durable global budget
-remains authoritative when a visitor changes networks or shares the passcode.
+remains authoritative when a visitor changes networks.
+
+Opening public access preserves all ledger rows and applied migrations. The
+legacy `session` column holds a public visitor marker on new rows; the old
+`demo_attempts` table is retained but unused. Remove the obsolete
+`DEMO_PASSCODE` hosting secret when deploying this version.
 
 ## Research scope and privacy
 
@@ -94,7 +100,8 @@ are rejected on the server before model use.
 
 Questions and selected public passages are sent to OpenAI with `store:false`.
 This setting does not promise zero provider retention. The app stores no
-question/answer history; it stores hashed visitor IDs, session IDs, request
+question/answer history; it stores hashed visitor IDs, legacy session IDs or
+public visitor markers, request
 IDs, timestamps, reservation states, and token counts. Questions must not
 contain confidential client information. No documents can be uploaded here.
 
