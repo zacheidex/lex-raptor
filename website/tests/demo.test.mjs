@@ -59,13 +59,13 @@ test('origin, disabled state, visitor identification and selection guard public 
 
 const regulationText='A program of vocational rehabilitation benefits may include self-employment when the agency determines that it is a suitable vocational goal.';
 const noticeText='The agency proposes to revise the eligibility requirements. This is a proposed rule and is not a final determination of eligibility.';
-function remoteFixture(seen,{failCourt=false,hostile=false}={}) {
+function remoteFixture(seen,{failCourt=false,hostile=false,duplicateEcfr=false}={}) {
   return async request=>{
     if(request.url.startsWith('https://api.openai.com/'))return;
     seen.push({url:request.url,authorization:request.headers.get('authorization')});
     const u=new URL(request.url);
     if(u.hostname==='www.ecfr.gov'){
-      if(u.pathname.includes('/search/'))return Response.json({meta:{total_count:250},results:[{type:'Section',hierarchy:{title:'38',part:'21',section:'21.257'},headings:{section:'Self-<strong>employment</strong>',chapter:'Veterans Affairs'}}]});
+      if(u.pathname.includes('/search/'))return Response.json({meta:{total_count:250},results:Array.from({length:duplicateEcfr?2:1},()=>({type:'Section',hierarchy:{title:'38',part:'21',section:'21.257'},headings:{section:'Self-<strong>employment</strong>',chapter:'Veterans Affairs'}}))});
       if(u.pathname.endsWith('titles.json'))return Response.json({titles:[{number:38,name:'Veterans benefits',up_to_date_as_of:'2026-10-01'}]});
       return new Response('<DIV8><P>'+regulationText+'</P></DIV8>');
     }
@@ -214,4 +214,10 @@ test('automatic settings also run on local Ollama without API spending',async t=
 test('demo page offers research without a passcode or login control',async t=>{
   const f=await fixture(t);
   const r=await f.mf.dispatchFetch('https://lex.test/demo');assert.equal(r.status,200);const html=await r.text();assert.doesNotMatch(html,/passcode|unlock-panel|lock-demo|type="password"/);assert.match(html,/Search databases/);assert.match(html,/Auto task/);assert.doesNotMatch(html,/MVP|Early research|Public preview/);const home=await f.mf.dispatchFetch('https://lex.test/');assert.match(await home.text(),/What are you researching/);assert.ok(!html.includes('fake-test-key'));assert.match(r.headers.get('Content-Security-Policy'),/frame-ancestors 'none'/);
+});
+
+test('duplicate regulation sections do not consume multiple evidence slots',async t=>{
+  const seen=[],f=await fixture(t,{source:remoteFixture(seen,{duplicateEcfr:true})});
+  const data=await (await f.req('search',f.question({database_ids:['ecfr'],search_query:'self-employment vocational'}))).json();
+  assert.equal(data.sources.length,1);assert.equal(seen.filter(s=>s.url.includes('/full/')).length,1);
 });

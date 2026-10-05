@@ -1,0 +1,422 @@
+{
+  "model": "gpt-6-luna",
+  "results": [
+    {
+      "id": "auto_regulation",
+      "request": {
+        "question": "What do federal regulations say about vocational self-employment assistance for veterans?",
+        "task": "auto",
+        "database_ids": "auto"
+      },
+      "status": 200,
+      "seconds": 5.133,
+      "retained": 0,
+      "literal_quotes": 0,
+      "response": {
+        "sources": [
+          {
+            "case_id": "ecfr-45-233.20-2026-10-01",
+            "name": "Need and amount of assistance.",
+            "citation": "45 CFR 233.20",
+            "court": "Office of Family Assistance (Assistance Programs), Administration for Children and Families, Department of Health and Human Services",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-45/section-233.20",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S1",
+            "text": " defined in section 475(4)(A) of the Act, and a child whose costs in a foster family home or child-care institution are covered by the foster care maintenance payments made with respect to his or her minor parent under sections 472(h) and 475(4)(B) of the Act. \u201cIndividuals with respect to whom Federal adoption assistance payments are made\u201d means a child who receives payments made under an approved title IV-E plan based on an adoption assistance agreement between the State and the adoptive parents of a child with special needs, pursuant to sections 473 and 475(3) of the Social Security Act. (B) Income of an alien parent, who is disqualified pursuant to \u00a7 233.50(c) is considered available to the otherwise eligible child by applying the stepparent deeming formula at 45 CFR 233.20(a)(3)(xiv). (vii) If the State agency establishes policy under which assistance from other agencies and organizations will not be deducted in determining the amount of assistance to be paid, provide that no duplication shall exist between such other assistance and that provided by the public assistance agency. In such complementary program relationships, nonduplication shall be assured by provision that such aid will be considered in relation to: (a) The different purpose for which the other agency grants aid such as vocational rehabilitation; (b) the provision of goods and services that are not included in the statewide standard of the public assistance agency, e.g., a private agency might provide money for special training for a child or for medical care when the public assistance agency does not carry this responsibility; or housing and urban development payments might be provided to cover moving expenses that are not included in the assistance standard; or (c) the fact that public assistance f",
+            "locator": "Whitespace-normalized extracted text, characters 24001\u201325800",
+            "original_id": "ecfr-45-233.20-2026-10-01:24000"
+          },
+          {
+            "case_id": "ecfr-45-233.20-2026-10-01",
+            "name": "Need and amount of assistance.",
+            "citation": "45 CFR 233.20",
+            "court": "Office of Family Assistance (Assistance Programs), Administration for Children and Families, Department of Health and Human Services",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-45/section-233.20",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S2",
+            "text": "reau of Indian Affairs education assistance programs. (q) For AFDC, any payments made as restitution to an individual under title I of Public Law 100-383 (the Civil Liberties Act of 1988) or under title II of Public Law 100-383 (the Aleutian and Pribilof Islands Restitution Act). (r) Any Federal major disaster and emergency assistance provided under the Disaster Relief Act of 1974, as amended by Public Law 100-707 (the Disaster Relief and Emergency Assistance Amendments of 1988) and comparable disaster assistance provided by States, local governments and disaster assistance organizations. (s) Any payments made pursuant to the settlement in the In Re Agent Orange Product liability litigation, M.D.L. No. 381 (E.D.N.Y.). (t) Student financial assistance made available for the attendance costs defined in this paragraph under programs in the Carl D. Perkins Vocational and Applied Technology Education Act (20 U.S.C. 2301 et seq.). Attendance costs are: tuition and fees normally assessed a student carrying the same academic workload as determined by the institution, and including costs for rental or purchase of any equipment, materials, or supplies required of all students in the same course of study; and an allowance for books, supplies, transportation, dependent care and miscellaneous personal expenses for a student attending the institution on at least a half-time basis, as determined by the institution. (u) For AFDC, any payments made pursuant to section 6(h)(2) of Public Law 101-426, the Radiation Exposure Compensation Act. (iii) Provide that income and resources which are disregarded or set aside under this part will not be taken into consideration in determining the need of any other individual for assistance. (iv) For AFDC, any amounts determined to have been paid by a",
+            "locator": "Whitespace-normalized extracted text, characters 41601\u201343400",
+            "original_id": "ecfr-45-233.20-2026-10-01:41600"
+          },
+          {
+            "case_id": "ecfr-45-233.20-2026-10-01",
+            "name": "Need and amount of assistance.",
+            "citation": "45 CFR 233.20",
+            "court": "Office of Family Assistance (Assistance Programs), Administration for Children and Families, Department of Health and Human Services",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-45/section-233.20",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S3",
+            "text": ". If the State chooses to prorate under this paragraph, it must prorate both the need standard and payment standard. (ii) If the State agency elects to prorate allowances for shelter, utilities, and similar needs the State plan must: (A) Indicate which allowances will be prorated, and describe the procedure which will be used to prorate the allowances; (B) Provide that the allowances will be prorated on a reasonable basis; and (C) Specify the circumstances under which proration will occur, including a description of which individuals are considered to be living with an AFDC assistance unit as a household. (6) Disregard of earned income; definition. Provide that for purposes of disregarding earned income the agency policies will include: (i) A definition of earned income in accordance with the provisions of paragraphs (a)(6) (iii) through (ix) of this section; and (ii) Provision for disregarding earned income for the period during which it is earned, rather than when it is paid, in cases of lump-sum payment for services rendered over a period of more than 1 month. (iii) The term earned income encompasses income in cash or in kind earned by an individual through the receipt of wages, salary, commissions, or profit from activities in which he is engaged as a self-employed individual or as an employee. For AFDC, earned income means gross earned income prior to any deductions for taxes or for any other purposes, except as provided in paragraph (a)(6)(v). Such earned income may be derived from his own employment, such as a business enterprise, or farming; or derived from wages or salary received as an employee. It includes earnings over a period of time for which settlement is made at one given time, as in the instance of sale of farm crops, livestock, or poultry. For OAA, AB",
+            "locator": "Whitespace-normalized extracted text, characters 44801\u201346600",
+            "original_id": "ecfr-45-233.20-2026-10-01:44800"
+          },
+          {
+            "case_id": "ecfr-7-253.6-2026-10-01",
+            "name": "Eligibility of households.",
+            "citation": "7 CFR 253.6",
+            "court": "Food and Nutrition Service, Department of Agriculture",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-7/section-253.6",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S4",
+            "text": "ch all members are included in such a general assistance grant, shall, if otherwise eligible under this part, be determined to be eligible to participate in the Food Distribution Program while receiving such grants without regard to the income of household members. (d) Income\u2014(1) Income eligibility standards for nonassistance households. (i) The State agency shall apply uniform national income eligibility standards for the Food Distribution Program except for households in which all members are recipients of public assistance, SSI, paragraph (c) of this section, or certain general assistance program payments as provided in \u00a7 283.6(c). The income eligibility standards shall be the applicable SNAP net monthly income eligibility standards for the appropriate area, increased by the amount of the applicable SNAP standard deduction for that area. (ii) The income eligibility standards for the Food Distribution Program shall be adjusted each October 1, as necessary, to reflect changes in SNAP income eligibility limits and standard deductions. (2) Definition of income. Household income shall mean all income from whatever source, excluding only items specified in paragraph (e)(3) of this section. (i) Earned income shall include: (A) All wages and salaries of an employee. (B) The total gross income from a self-employment enterprise, including the net profit from the sale of any capital goods or equipment related to the business. Ownership of rental property shall be considered a self-employment enterprise. Payments from a roomer and returns on rental property shall be considered self-employment income. (C) Training allowances from vocational and rehabilitative programs recognized by Federal, State or local governments, such as the Work Incentive Program, and programs authorized by",
+            "locator": "Whitespace-normalized extracted text, characters 4801\u20136600",
+            "original_id": "ecfr-7-253.6-2026-10-01:4800"
+          },
+          {
+            "case_id": "ecfr-7-253.6-2026-10-01",
+            "name": "Eligibility of households.",
+            "citation": "7 CFR 253.6",
+            "court": "Food and Nutrition Service, Department of Agriculture",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-7/section-253.6",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S5",
+            "text": "om the job or training site are excluded as income. (vi) Monies received and used for care and maintenance of a third party beneficiary who is not a household member. (vii) The earned income (as defined in paragraph (d)(2)(i) of this section) of children who are members of the household, who are students at least half time and who have not attained their eighteenth birthday. The exclusion shall continue to apply during temporary interruptions in school attendance due to semester or vacation breaks, provided the child's enrollment will resume following the break. Individuals are considered children for purposes of this provision if they are under the parental control of another household member. (viii) Money received in the form of a nonrecurring lump sum payment, including but not limited to, income tax refunds, rebates, or credits; retroactive lump-sum social security, SSI, public assistance, railroad retirement benefits or other payments, or retroactive lump-sum insurance settlements; refunds of security deposits on rental properties or utilities or lump-sum payments arising from land interests held in trust for, or by, a tribe. (ix) The cost of producing self-employment income. The procedures for computing the cost of producing self-employment income are described in \u00a7 253.7(b)(1)(iii). (x) Any income that is specifically excluded by any other Federal statute from consideration as income. The following Federal statutes provide such an exclusion. (A) Reimbursements from the Uniform Relocation Assistance and Real Property Acquisition Policy Act of 1970 (Pub. L. 91-646, section 216). (B) Payments received under the Alaska Native Claims Settlement Act (Pub. L. 92-203, section 21(a)). (C) Any payment to volunteers under Title II (RSVP, foster grandparents, and others) and",
+            "locator": "Whitespace-normalized extracted text, characters 11201\u201313000",
+            "original_id": "ecfr-7-253.6-2026-10-01:11200"
+          },
+          {
+            "case_id": "ecfr-7-253.6-2026-10-01",
+            "name": "Eligibility of households.",
+            "citation": "7 CFR 253.6",
+            "court": "Food and Nutrition Service, Department of Agriculture",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-7/section-253.6",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S6",
+            "text": "employment income. (C) Training allowances from vocational and rehabilitative programs recognized by Federal, State or local governments, such as the Work Incentive Program, and programs authorized by the Job Training Partnership Act, to the extent they are not a reimbursement. (ii) Unearned income shall include, but not be limited to: (A) Assistance payments from Federal or Federally aided public assistance programs, such as Supplemental Security Income (SSI) or Temporary Assistance for Needy Families (TANF), General Assistance (GA) programs, or other assistance programs based on need. (B) Annuities; pensions; retirement; veteran's or disability benefits; worker's or unemployment compensation; old-age, survivors, or social security benefits; strike benefits; foster care payments for children or adults. (C) Support or alimony payments made directly to the household from nonhousehold members. (D) Scholarships, education grants, fellowships, deferred payment loans for education, veteran's education benefit and the like in excess of amounts excluded under paragraph (d)(3)(iii) of this section. (E) Payments from Government-sponsored programs, dividends, interest, royalties, and all other direct money payments from any source which can be construed to be a gain or benefit. (F) Per capita payments that are derived from the profits of Tribal enterprises and distributed to Tribal members on a monthly basis. (G) The earned or unearned income of an individual disqualified from participation in SNAP for fraud shall continue to be counted as income, less the pro rata share for the disqualified member. Procedures for calculating this pro rata share are described in \u00a7 253.7. (iii) Income shall not include the following: (A) Monies withheld from an assistance payment, earned income or",
+            "locator": "Whitespace-normalized extracted text, characters 6401\u20138200",
+            "original_id": "ecfr-7-253.6-2026-10-01:6400"
+          },
+          {
+            "case_id": "ecfr-7-253.6-2026-10-01",
+            "name": "Eligibility of households.",
+            "citation": "7 CFR 253.6",
+            "court": "Food and Nutrition Service, Department of Agriculture",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-7/section-253.6",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S7",
+            "text": "ch all members are included in such a general assistance grant, shall, if otherwise eligible under this part, be determined to be eligible to participate in the Food Distribution Program while receiving such grants without regard to the income of household members. (d) Income\u2014(1) Income eligibility standards for nonassistance households. (i) The State agency shall apply uniform national income eligibility standards for the Food Distribution Program except for households in which all members are recipients of public assistance, SSI, paragraph (c) of this section, or certain general assistance program payments as provided in \u00a7 283.6(c). The income eligibility standards shall be the applicable SNAP net monthly income eligibility standards for the appropriate area, increased by the amount of the applicable SNAP standard deduction for that area. (ii) The income eligibility standards for the Food Distribution Program shall be adjusted each October 1, as necessary, to reflect changes in SNAP income eligibility limits and standard deductions. (2) Definition of income. Household income shall mean all income from whatever source, excluding only items specified in paragraph (e)(3) of this section. (i) Earned income shall include: (A) All wages and salaries of an employee. (B) The total gross income from a self-employment enterprise, including the net profit from the sale of any capital goods or equipment related to the business. Ownership of rental property shall be considered a self-employment enterprise. Payments from a roomer and returns on rental property shall be considered self-employment income. (C) Training allowances from vocational and rehabilitative programs recognized by Federal, State or local governments, such as the Work Incentive Program, and programs authorized by",
+            "locator": "Whitespace-normalized extracted text, characters 4801\u20136600",
+            "original_id": "ecfr-7-253.6-2026-10-01:4800"
+          },
+          {
+            "case_id": "ecfr-7-253.6-2026-10-01",
+            "name": "Eligibility of households.",
+            "citation": "7 CFR 253.6",
+            "court": "Food and Nutrition Service, Department of Agriculture",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-7/section-253.6",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S8",
+            "text": "om the job or training site are excluded as income. (vi) Monies received and used for care and maintenance of a third party beneficiary who is not a household member. (vii) The earned income (as defined in paragraph (d)(2)(i) of this section) of children who are members of the household, who are students at least half time and who have not attained their eighteenth birthday. The exclusion shall continue to apply during temporary interruptions in school attendance due to semester or vacation breaks, provided the child's enrollment will resume following the break. Individuals are considered children for purposes of this provision if they are under the parental control of another household member. (viii) Money received in the form of a nonrecurring lump sum payment, including but not limited to, income tax refunds, rebates, or credits; retroactive lump-sum social security, SSI, public assistance, railroad retirement benefits or other payments, or retroactive lump-sum insurance settlements; refunds of security deposits on rental properties or utilities or lump-sum payments arising from land interests held in trust for, or by, a tribe. (ix) The cost of producing self-employment income. The procedures for computing the cost of producing self-employment income are described in \u00a7 253.7(b)(1)(iii). (x) Any income that is specifically excluded by any other Federal statute from consideration as income. The following Federal statutes provide such an exclusion. (A) Reimbursements from the Uniform Relocation Assistance and Real Property Acquisition Policy Act of 1970 (Pub. L. 91-646, section 216). (B) Payments received under the Alaska Native Claims Settlement Act (Pub. L. 92-203, section 21(a)). (C) Any payment to volunteers under Title II (RSVP, foster grandparents, and others) and",
+            "locator": "Whitespace-normalized extracted text, characters 11201\u201313000",
+            "original_id": "ecfr-7-253.6-2026-10-01:11200"
+          },
+          {
+            "case_id": "ecfr-7-253.6-2026-10-01",
+            "name": "Eligibility of households.",
+            "citation": "7 CFR 253.6",
+            "court": "Food and Nutrition Service, Department of Agriculture",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-7/section-253.6",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S9",
+            "text": "employment income. (C) Training allowances from vocational and rehabilitative programs recognized by Federal, State or local governments, such as the Work Incentive Program, and programs authorized by the Job Training Partnership Act, to the extent they are not a reimbursement. (ii) Unearned income shall include, but not be limited to: (A) Assistance payments from Federal or Federally aided public assistance programs, such as Supplemental Security Income (SSI) or Temporary Assistance for Needy Families (TANF), General Assistance (GA) programs, or other assistance programs based on need. (B) Annuities; pensions; retirement; veteran's or disability benefits; worker's or unemployment compensation; old-age, survivors, or social security benefits; strike benefits; foster care payments for children or adults. (C) Support or alimony payments made directly to the household from nonhousehold members. (D) Scholarships, education grants, fellowships, deferred payment loans for education, veteran's education benefit and the like in excess of amounts excluded under paragraph (d)(3)(iii) of this section. (E) Payments from Government-sponsored programs, dividends, interest, royalties, and all other direct money payments from any source which can be construed to be a gain or benefit. (F) Per capita payments that are derived from the profits of Tribal enterprises and distributed to Tribal members on a monthly basis. (G) The earned or unearned income of an individual disqualified from participation in SNAP for fraud shall continue to be counted as income, less the pro rata share for the disqualified member. Procedures for calculating this pro rata share are described in \u00a7 253.7. (iii) Income shall not include the following: (A) Monies withheld from an assistance payment, earned income or",
+            "locator": "Whitespace-normalized extracted text, characters 6401\u20138200",
+            "original_id": "ecfr-7-253.6-2026-10-01:6400"
+          }
+        ],
+        "searched": [
+          {
+            "id": "ecfr",
+            "status": "ok",
+            "total": 19,
+            "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+            "warnings": [],
+            "passages": 9
+          }
+        ],
+        "retrieved_at": "2026-10-05T05:26:09.633Z",
+        "query": "federal regulations vocational self-employment assistance veterans",
+        "task": "research",
+        "databases": [
+          "ecfr"
+        ],
+        "filters": {
+          "court": "",
+          "after": "",
+          "before": ""
+        },
+        "automatic": true,
+        "model": "gpt-6-luna",
+        "inference": "api",
+        "propositions": [],
+        "removed": 0,
+        "incomplete": false,
+        "missing_sections": [
+          "Findings"
+        ],
+        "model_used": true
+      }
+    },
+    {
+      "id": "auto_case_brief",
+      "request": {
+        "question": "Brief Celotex Corp. v. Catrett, 477 U.S. 317 (1986).",
+        "task": "auto",
+        "database_ids": [
+          "cap"
+        ]
+      },
+      "status": 200,
+      "seconds": 7.69,
+      "retained": 4,
+      "literal_quotes": 4,
+      "response": {
+        "sources": [
+          {
+            "id": "S1",
+            "case_id": "cap-6207800",
+            "ordinal": 2,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 3, characters 1\u20131042",
+            "opinion_type": "majority",
+            "text": "The United States District Court for the District of Columbia granted the motion of petitioner Celotex Corporation for summary judgment against respondent Catrett because the latter was unable to produce evidence in support of her allegation in her wrongful-death complaint that the decedent had been exposed to petitioner\u2019s asbestos products. A divided panel of the Court of Appeals for the District of Columbia Circuit reversed, however, holding that petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor. Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 756 F. 2d 181 (1985). This view conflicted with that of the Third Circuit in In re Japanese Electronic Products, 723 F. 2d 238 (1983), rev\u2019d on other grounds sub nom. Matsushita Electric Industrial Co. v. Zenith Radio Corp., 475 U. S. 574 (1986). We granted certiorari to resolve the conflict, 474 U. S. 944 (1985), and now reverse the decision of the District of Columbia Circuit.",
+            "name": "Celotex Corp. v. Catrett",
+            "citation": "477 U.S. 317",
+            "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+            "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6207800:070684a85533:1:3:0"
+          },
+          {
+            "id": "S2",
+            "case_id": "cap-6207800",
+            "ordinal": 21,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 20, characters 1\u2013927",
+            "opinion_type": "majority",
+            "text": "Justice Stevens\u2019 position is factually incorrect. The District Court expressly stated that respondent had made no showing of exposure to Celotex asbestos products \u201cin the District of Columbia or elsewhere.\u201d App. 217 (emphasis added). Unlike Justice Stevens, we assume that the District Court meant what it said. The majority of the Court of Appeals addressed the very issue raised by Justice Stevens, and decided that \u201c[t]he District Court\u2019s grant of summary judgment must therefore have been based on its conclusion that there was \u2018no showing that the plaintiff was exposed to defendant Celotex\u2019s product in the District of Columbia or elsewhere within the statutory period.\u2019\u201d Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 162, n. 3, 756 F. 2d 181, 183, n. 3 (1985) (emphasis in original). In other words, no judge involved in this case to date shares Justice Stevens\u2019 view of the District Court\u2019s decision.",
+            "name": "Celotex Corp. v. Catrett",
+            "citation": "477 U.S. 317",
+            "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+            "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6207800:070684a85533:1:20:0"
+          },
+          {
+            "id": "S3",
+            "case_id": "cap-6207800",
+            "ordinal": 3,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 4, characters 1\u20131800",
+            "opinion_type": "majority",
+            "text": "Respondent commenced this lawsuit in September 1980, alleging that the death in 1979 of her husband, Louis H. Catrett, resulted from his exposure to products containing asbestos manufactured or distributed by 15 named corporations. Respondent\u2019s complaint sounded in negligence, breach of warranty, and strict liability. Two of the defendants filed motions challenging the District Court\u2019s in perso-nam jurisdiction, and the remaining 13, including petitioner, filed motions for summary judgment. Petitioner\u2019s motion, which was first filed in September 1981, argued that summary judgment was proper because respondent had \u201cfailed to produce evidence that any [Celotex] product . . . was the proximate cause of the injuries alleged within the jurisdictional limits of [the District] Court. \u201d In particular, petitioner noted that respondent had failed to identify, in answering interrogatories specifically requesting such information, any witnesses who could testify about the decedent\u2019s exposure to petitioner\u2019s asbestos products. In response to petitioner\u2019s summary judgment motion, respondent then produced three documents which she claimed \u201cdemonstrate that there is a genuine material factual dispute\u201d as to whether the decedent had ever been exposed to petitioner\u2019s asbestos products. The three documents included a transcript of a deposition of the decedent, a letter from an official of one of the decedent\u2019s former employers whom petitioner planned to call as a trial witness, and a letter from an insurance company to respondent\u2019s attorney, all tending to establish that the decedent had been exposed to petitioner\u2019s asbestos products in Chicago during 1970-1971. Petitioner, in turn, argued that the three documents were inadmissible hearsay and thus could not be considered in opposition to",
+            "name": "Celotex Corp. v. Catrett",
+            "citation": "477 U.S. 317",
+            "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+            "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6207800:070684a85533:1:4:0"
+          },
+          {
+            "id": "S4",
+            "case_id": "cap-6206897",
+            "ordinal": 46,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 46, characters 1\u2013367",
+            "opinion_type": "majority",
+            "text": "Our analysis here does not address the question of the initial burden of production of evidence placed by Rule 56 on the party moving for summary judgment. See Celotex Corp. v. Catrett, post, p. 317. Respondents have not raised this issue here, and for the purposes of our discussion we assume that the moving party has met initially the requisite evidentiary burden.",
+            "name": "Anderson v. Liberty Lobby, Inc.",
+            "citation": "477 U.S. 242",
+            "source_url": "https://static.case.law/us/477/cases/0242-01.json",
+            "source_sha256": "60437e85b0c28cae977aef33e855f15dca5cce20539922aa04d234bb2154ab07",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6206897:60437e85b0c2:1:46:0"
+          },
+          {
+            "id": "S5",
+            "case_id": "cap-6205783",
+            "ordinal": 23,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 24, characters 1\u20131774",
+            "opinion_type": "majority",
+            "text": "We begin by emphasizing what respondents\u2019 claim is not. Respondents cannot recover antitrust damages based solely on an alleged cartelization of the Japanese market, because American antitrust laws do not regulate the competitive conditions of other nations\u2019 economies. United States v. Aluminum Co. of America, 148 F. 2d 416, 443 (CA2 1945) (L. Hand, J.); 1 P. Areeda & D. Turner, Antitrust Law \u00b6 236d (1978). Nor can respondents recover damages for any conspiracy by petitioners to charge higher than competitive prices in the American market. Such conduct would indeed violate the Sherman Act, United States v. Trenton Potteries Co., 273 U. S. 392 (1927); United States v. Socony-Vacuum Oil Co., 310 U. S. 150, 223 (1940), but it could not injure respondents: as petitioners\u2019 competitors, respondents stand to gain from any conspiracy to raise the market price in CEPs. Cf. Brunswick Corp. v. Pueblo Bowl-O-Mat, Inc., 429 U. S. 477, 488-489 (1977). Finally, for the same reason, respondents cannot recover for a conspiracy to impose non-price restraints that have the effect of either raising market price or limiting output. Such restrictions, though harmful to competition, actually benefit competitors by making supra-competitive pricing more attractive. Thus, neither petitioners\u2019 alleged supracompetitive pricing in Japan, nor the five company rule that limited distribution in this country, nor the check prices insofar as they established minimum prices in this country, can by themselves give respondents a cognizable claim against petitioners for antitrust damages. The Court of Appeals therefore erred to the extent that it found evidence of these alleged conspiracies to be \u201cdirect evidence\u201d of a conspiracy that injured respondents. See 723 F. 2d, at 304-305.",
+            "name": "Matsushita Electric Industrial Co. v. Zenith Radio Corp.",
+            "citation": "475 U.S. 574",
+            "source_url": "https://static.case.law/us/475/cases/0574-01.json",
+            "source_sha256": "c76dd48b76982e03156c35e3a543542ee9ff143b3f55df4e8d067e709c9c062a",
+            "decision_date": "1986-03-26",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6205783:c76dd48b7698:1:24:0"
+          },
+          {
+            "id": "S6",
+            "case_id": "cap-6205783",
+            "ordinal": 61,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 62, characters 1\u2013947",
+            "opinion_type": "majority",
+            "text": "Respondents also argue that the check prices, the five company rule, and the price fixing in Japan are all part of one large conspiracy that includes monopolization of the American market through predatory pricing. The argument is mistaken. However one decides to describe the contours of the asserted conspiracy \u2014 whether there is one conspiracy or several-respondents must show that the conspiracy caused them an injury for which the antitrust laws provide relief. Associated General Contractors of California, Inc. v. Carpenters, 459 U. S. 519, 538-540 (1983); Brunswick Corp. v. Pueblo Bowl-O-Mat, Inc., 429 U. S. 477, 488-489 (1977); see also Note, Antitrust Standing, Antitrust Injury, and the Per Se Standard, 93 Yale L. J. 1309 (1984). That showing depends in turn on proof that petitioners conspired to price predatorily in the American market, since the other conduct involved in the alleged conspiracy cannot have caused such an injury.",
+            "name": "Matsushita Electric Industrial Co. v. Zenith Radio Corp.",
+            "citation": "475 U.S. 574",
+            "source_url": "https://static.case.law/us/475/cases/0574-01.json",
+            "source_sha256": "c76dd48b76982e03156c35e3a543542ee9ff143b3f55df4e8d067e709c9c062a",
+            "decision_date": "1986-03-26",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6205783:c76dd48b7698:1:62:0"
+          },
+          {
+            "id": "S7",
+            "case_id": "cap-6205783",
+            "ordinal": 65,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 66, characters 1\u2013463",
+            "opinion_type": "majority",
+            "text": "Respondents argued before the District Court that petitioners had failed to carry their initial burden under Federal Rule of Civil Procedure 56(c) of demonstrating the absence of a genuine issue of material fact. See Adickes v. S. H. Kress & Co., 398 U. S. 144, 157 (1970). Cf. Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 756 F. 2d 181, cert. granted, 474 U. S. 944 (1985). That issue was resolved in petitioners\u2019 favor, and is not before us.",
+            "name": "Matsushita Electric Industrial Co. v. Zenith Radio Corp.",
+            "citation": "475 U.S. 574",
+            "source_url": "https://static.case.law/us/475/cases/0574-01.json",
+            "source_sha256": "c76dd48b76982e03156c35e3a543542ee9ff143b3f55df4e8d067e709c9c062a",
+            "decision_date": "1986-03-26",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6205783:c76dd48b7698:1:66:0"
+          },
+          {
+            "id": "S8",
+            "case_id": "cap-6206897",
+            "ordinal": 24,
+            "locator": "CAP opinion 1 (majority), extracted paragraph 25, characters 1\u2013899",
+            "opinion_type": "majority",
+            "text": "The Court has said that summary judgment should be granted where the evidence is such that it \u201cwould require a directed verdict for the moving party.\u201d Sartor v. Arkansas Gas Corp., 321 U. S. 620, 624 (1944). And we have noted that the \u201cgenuine issue\u201d summary judgment standard is \u201cvery close\u201d to the \u201creasonable jury\u201d directed verdict standard: \u201cThe primary difference between the two motions is procedural; summary judgment motions are usually made before trial and decided on documentary evidence, while directed verdict motions are made at trial and decided on the evidence that has been admitted.\u201d Bill Johnson\u2019s Restaurants, Inc. v. NLRB, 461 U. S. 731, 745, n. 11 (1983). In essence, though, the inquiry under each is the same: whether the evidence presents a sufficient disagreement to require submission to a jury or whether it is so one-sided that one party must prevail as a matter of law.",
+            "name": "Anderson v. Liberty Lobby, Inc.",
+            "citation": "477 U.S. 242",
+            "source_url": "https://static.case.law/us/477/cases/0242-01.json",
+            "source_sha256": "60437e85b0c28cae977aef33e855f15dca5cce20539922aa04d234bb2154ab07",
+            "decision_date": "1986-06-25",
+            "database_id": "cap",
+            "database_name": "CAP starter library",
+            "kind": "case",
+            "source_status": "Historical opinion; later treatment not checked",
+            "original_id": "cap-6206897:60437e85b0c2:1:25:0"
+          }
+        ],
+        "searched": [
+          {
+            "id": "cap",
+            "status": "ok",
+            "total": null,
+            "note": "Search of the 12 imported starter opinions.",
+            "passages": 8
+          }
+        ],
+        "retrieved_at": "2026-10-05T05:26:13.884Z",
+        "query": "Celotex Corp. v. Catrett, 477 U.S. 317 (1986)",
+        "task": "brief",
+        "databases": [
+          "cap"
+        ],
+        "filters": {
+          "court": "",
+          "after": "",
+          "before": ""
+        },
+        "automatic": true,
+        "model": "gpt-6-luna",
+        "inference": "api",
+        "propositions": [
+          {
+            "section": "Facts and procedure",
+            "claim": "Catrett brought a wrongful-death action alleging her husband\u2019s death resulted from asbestos exposure, and Celotex sought summary judgment based on her failure to produce evidence of exposure to its products.",
+            "source_id": "S3",
+            "quote": "alleging that the death in 1979 of her husband, Louis H. Catrett, resulted from his exposure to products containing asbestos manufactured or distributed by 15 named corporations."
+          },
+          {
+            "section": "Facts and procedure",
+            "claim": "The district court granted Celotex\u2019s motion; the court of appeals reversed, and the Supreme Court granted certiorari to resolve a conflict over the basis for summary judgment.",
+            "source_id": "S1",
+            "quote": "The United States District Court for the District of Columbia granted the motion of petitioner Celotex Corporation for summary judgment against respondent Catrett"
+          },
+          {
+            "section": "Issue",
+            "claim": "The dispute presented was whether Celotex\u2019s failure to submit evidence tending to negate exposure barred summary judgment when Catrett was unable to produce evidence supporting exposure.",
+            "source_id": "S1",
+            "quote": "petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor."
+          },
+          {
+            "section": "Holding",
+            "claim": "The Supreme Court reversed the court of appeals\u2019 decision.",
+            "source_id": "S1",
+            "quote": "We granted certiorari to resolve the conflict, 474 U. S. 944 (1985), and now reverse the decision of the District of Columbia Circuit."
+          }
+        ],
+        "removed": 0,
+        "incomplete": false,
+        "missing_sections": [
+          "Reasoning"
+        ],
+        "model_used": true
+      }
+    }
+  ]
+}

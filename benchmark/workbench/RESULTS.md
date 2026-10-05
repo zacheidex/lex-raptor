@@ -57,7 +57,7 @@ rerun after this change, so their results are development evidence only.
 
 ## Source and application checks
 
-- Seventeen local Workers/D1 integration tests passed using simulated providers.
+- Eighteen local Workers/D1 integration tests passed using simulated providers.
   They cover source selection, dated/full-text evidence, partial outages,
   credential boundaries, blocked source destinations, citation lookup, local
   inference without an API key, origin checks, duplicate requests, historical
@@ -103,7 +103,7 @@ reported explicitly rather than bypassing the established request controls.
 ## Chat and automatic-field checks
 
 The homepage is now chat. About, Sources and Run locally are separate pages.
-Seventeen integration tests pass, including automatic planning, manual overrides,
+Eighteen integration tests pass, including automatic planning, manual overrides,
 invalid-plan rejection, combined planning/drafting accounting, duplicate requests,
 and admission under the unchanged $10 cap with historical request counts present.
 Browser checks cover follow-up context, per-message exports, source anchors,
@@ -124,3 +124,18 @@ overstatement. The brief also omitted its Issue section. These are retained
 reasoning/context failures despite literal quote matches, not passing legal
 answers. The routing checks and quotation counts must not be presented as an
 accuracy score.
+
+## Initial hosted automatic-field check
+
+On the live GPT-6 Luna deployment, automatic mode selected research + eCFR
+for the veterans regulation question, and brief + the manually selected CAP
+collection for Celotex. The regulatory search retrieved tangential benefits
+material and repeated one section; the model returned no findings (5.133 s).
+The case brief retained four exact quotations (7.690 s), but omitted Reasoning
+and gave only a disposition-level Holding. These are incomplete outputs.
+
+The two requests added $0.002439 to the conservative spending ledger, taking
+its lifetime total to $0.133009. Both planning and drafting were accounted for.
+`chat-hosted-initial.json` preserves these failures. Automatic search instructions
+were then tightened to emphasize distinctive subject terms, and duplicate
+eCFR sections are now removed before evidence selection.

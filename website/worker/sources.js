@@ -103,10 +103,12 @@ async function federalRegister(env,query,f) {
 async function ecfr(env,query) {
   const u=new URL('https://www.ecfr.gov/api/search/v1/results');u.search=new URLSearchParams({query,per_page:'3'});
   const [result,titles]=await Promise.all([sourceRequest(env,'ecfr',u.href),sourceRequest(env,'ecfr','https://www.ecfr.gov/api/versioner/v1/titles.json',{cache:true})]);
-  const hits=[],warnings=[];
+  const hits=[],warnings=[],seen=new Set();
   for(const r of (result.results||[]).slice(0,3)){
     const h=r.hierarchy||{},title=(titles.titles||[]).find(t=>String(t.number)===h.title),date=title?.up_to_date_as_of;
     if(r.type!=='Section'||r.removed||r.reserved||!/^\d{4}-\d{2}-\d{2}$/.test(date||'')||!/^\d+$/.test(h.title||'')||!/^\d[\w.\-]*$/.test(h.section||''))continue;
+    const sectionKey=`${h.title}:${h.part||''}:${h.section}:${date}`;
+    if(seen.has(sectionKey))continue;seen.add(sectionKey);
     const url=new URL(`https://www.ecfr.gov/api/versioner/v1/full/${date}/title-${h.title}.xml`);url.search=new URLSearchParams({section:h.section,...(h.part?{part:h.part}:{})});
     try{
       const text=plain(await sourceRequest(env,'ecfr',url.href,{cache:true,json:false}));
