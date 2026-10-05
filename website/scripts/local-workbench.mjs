@@ -11,7 +11,7 @@ const server=createServer(async(req,res)=>{
     let size=0;const parts=[];
     for await(const part of req){size+=part.length;if(size>700000){res.writeHead(413);res.end('Request too large');return;}parts.push(part);}
     const path=req.url==='/'?'/demo':req.url;
-    const result=await mf.dispatchFetch('http://'+req.headers.host+path,{method:req.method,headers:{...req.headers,'CF-Connecting-IP':'127.0.0.1'},...(['GET','HEAD'].includes(req.method)?{}:{body:Buffer.concat(parts)})});
+    const result=await mf.dispatchFetch('http://'+req.headers.host+path,{method:req.method,redirect:'manual',headers:{...req.headers,'CF-Connecting-IP':'127.0.0.1'},...(['GET','HEAD'].includes(req.method)?{}:{body:Buffer.concat(parts)})});
     res.writeHead(result.status,Object.fromEntries(result.headers));
     if(result.body)await pipeline(Readable.fromWeb(result.body),res);else res.end();
   }catch{if(!res.headersSent){res.writeHead(503,{'Content-Type':'text/plain'});res.end('The local workbench could not complete this request.');}else res.destroy();}

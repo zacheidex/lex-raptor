@@ -21,19 +21,21 @@ async function researchApi(path,body,onProgress){
 function render(){
  const hasSources=attachments.length||$('auto-databases').checked||selected.size>0;
  const task=$('task').value,direct=['collect','lookup','search','citations'].includes(task);
- $('attach').disabled=busy||readingFiles;
+ $('attach').disabled=busy||readingFiles||task==='scholar';
  $('attachment-scope').hidden=!attachments.length;
  $('attachment-scope').textContent=task==='collect'?'Citation collection · no AI':$('search-with-documents').checked?'Documents + database research':'Document-only analysis · change in Refine';
- $('file-input').disabled=busy||readingFiles;
- $('ask').disabled=busy||readingFiles||(direct?!state.search_enabled:!state.enabled||state.exhausted||!hasSources);
+ $('file-input').disabled=busy||readingFiles||task==='scholar';
+ $('ask').disabled=busy||readingFiles||(task==='scholar'?false:direct?!state.search_enabled:!state.enabled||state.exhausted||!hasSources);
  $('task').disabled=busy||readingFiles;
  $('new-chat').disabled=busy||readingFiles;
  $('check-citations').disabled=busy||!state.databases.some(d=>d.id==='courtlistener'&&d.available);
  document.querySelectorAll('.answer-citation-check').forEach(b=>b.disabled=busy);
  document.querySelectorAll('.follow-up-choices button').forEach(b=>b.disabled=busy||readingFiles||!state.enabled||state.exhausted);
- $('ask').textContent=busy?'Working':({collect:'Collect cases',lookup:'Find case',search:'Search',citations:'Check'})[task]||'Send';
+ $('ask').textContent=busy?'Working':({collect:'Collect cases',lookup:'Find case',search:'Search',citations:'Check',scholar:'Open'})[task]||'Send';
  workbench.refreshCopy();
- $('action-data-note').hidden=!attachments.length&&task!=='collect';
+ $('action-data-note').hidden=!attachments.length&&!['collect','scholar'].includes(task);
+ if(task==='scholar'){$('action-data-note').textContent='Opens Google Scholar case-law search in a new tab. Your typed search terms go to Google; attachments are not sent. Set courts and dates in Scholar. Results are not imported.';}
+ $('open-options').disabled=task==='scholar';
  $('selection-note').textContent=$('auto-databases').checked?'Only relevant databases will be chosen from your message.':state.databases.filter(d=>selected.has(d.id)).map(d=>d.name).join(' · ')||'Select at least one connected database.';
  $('availability').textContent=!state.search_enabled?'Research is temporarily unavailable.':state.exhausted?'The shared $10 AI allowance is used. Source search and citation lookup are still available.':!state.enabled?'AI is unavailable. Source search and citation lookup are still available.':'';
  if(state.access_required&&state.login_url){$('availability').replaceChildren(document.createTextNode('This pilot is invite-only. '),link('Sign in',state.login_url));}
@@ -143,6 +145,7 @@ function showResult(container,data,draft,question,id,requestId){
 async function research(draft){
  const task=$('task').value;
  if(busy||$('ask').disabled)return;
+ if(task==='scholar'){if($('research-form').reportValidity()){const a=link('Open Google Scholar case law','https://scholar.google.com/scholar?as_sdt=2006&q='+encodeURIComponent($('question').value.trim()));$('action-data-note').append(document.createTextNode(' '),a);a.click();}return;}
  if(task==='lookup'){if($('research-form').reportValidity()){const choice=nextSelectedCase;nextSelectedCase=undefined;await workbench.openCase($('question').value.trim(),choice);}return;}
  if(task==='citations'){checkCurrentCitations();return;}
  if(task==='search')draft=false;

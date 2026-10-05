@@ -250,8 +250,9 @@ export default {
       if(new URL(request.url).pathname.startsWith('/api/'))return await api(request,env);
       if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405});
       const url=new URL(request.url);
+      if(['/sources','/sources.html'].includes(url.pathname))return new Response(null,{status:308,headers:{Location:'/open-source'+url.search+'#datasets'}});
       if(url.pathname==='/'||url.pathname==='/demo')url.pathname='/index.html';
-      else if(['/about','/sources','/run-locally'].includes(url.pathname))url.pathname+='.html';
+      else if(['/about','/open-source','/run-locally'].includes(url.pathname))url.pathname+='.html';
       const result=await env.ASSETS.fetch(new Request(url,request));
       const headers=new Headers(result.headers);
       headers.set('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; worker-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");

@@ -8,7 +8,7 @@ Lex Raptor searches public legal databases and a bundled case-law library, draft
 
 The project is **AGPL-3.0-only**. The code, local inference, search, source reader, document workflows, and API adapters are all included. Optional managed API connections are the planned paid service; payment collection is not implemented. See [the business model](docs/BUSINESS_MODEL.md) and [governance](GOVERNANCE.md).
 
-**[lexraptor.com](https://lexraptor.com)** opens directly to research chat. Its source is in [website/](website/). **Auto task** selects the research format, search terms and databases from the prompt. Its menu also holds case collection, direct lookup and source-only search; **Refine** holds jurisdiction, dates and source overrides. A discreet sidebar **Demo** badge explains the shared $10 API budget. Project information is on separate About, Sources and Run locally pages. The source repository is [zacheidex/lex-raptor](https://github.com/zacheidex/lex-raptor).
+**[lexraptor.com](https://lexraptor.com)** opens directly to research chat. Its source is in [website/](website/). **Auto task** selects the research format, search terms and databases from the prompt. Its menu also holds case collection, direct lookup and source-only search; **Refine** holds jurisdiction, dates and source overrides. A discreet sidebar **Demo** badge explains the shared $10 API budget. Project information is on separate About, Open source and Run locally pages. Open source explains datasets, free local use and planned API services. Google Scholar is an optional external case-law search in the task menu; its results are not imported automatically. The source repository is [zacheidex/lex-raptor](https://github.com/zacheidex/lex-raptor).
 
 ## Local matter workspace
 

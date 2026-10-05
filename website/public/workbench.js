@@ -27,7 +27,7 @@ export function createWorkbench({api,run,history,state,research,restore,getSetti
   flow=task==='collect'?'collect':task==='brief'?'brief':'issue';$('task').value=task;
   $('collection').hidden=flow!=='collect';$('conversation').hidden=flow==='collect';
   $('question').required=!['collect','citations'].includes(task);$('question').maxLength=task==='collect'?64000:task==='citations'?6000:2000;
-  $('question').placeholder=({collect:'Paste case citations, or attach a brief…',brief:'Enter a case name or exact citation, e.g. 477 U.S. 317…',lookup:'Enter a case name or reporter citation…',search:'Enter search terms to search sources without AI…',citations:'Paste citations, or leave blank to review the last answer…'})[task]||'Ask about a case, compare authorities, or work through an argument…';
+  $('question').placeholder=({collect:'Paste case citations, or attach a brief…',brief:'Enter a case name or exact citation, e.g. 477 U.S. 317…',lookup:'Enter a case name or reporter citation…',search:'Enter search terms to search sources without AI…',citations:'Paste citations, or leave blank to review the last answer…',scholar:'Enter a case name, citation or search terms for Google Scholar…'})[task]||'Ask about a case, compare authorities, or work through an argument…';
   $('welcome').hidden=flow==='collect';if(flow==='collect')caseContext=null;refreshCopy();onFlow?.();
  }
  function setFlow(value){setTask(value==='issue'?'auto':value);}

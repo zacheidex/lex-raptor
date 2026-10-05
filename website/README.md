@@ -106,3 +106,7 @@ Unit/workflow tests use Miniflare with mocked providers. Browser checks mock all
 `db/schema.ts` is authoritative; `npm run db:generate` produces migrations. Preserve applied migrations and the spending ledger. Build output includes `dist/server/index.js`, `dist/client`, `dist/.openai/drizzle`. Hosting needs `DB` (D1) and `ASSETS`. The existing Site keeps `.openai/hosting.json`: run Sites workflow checks/build/package, save the matching pushed source/version, deploy that saved version. Ordinary releases need no DNS or secret changes. New independent hosts can use `hosting.example.json` and their own bindings/migrations; a new funded ledger requires owner budget authorization.
 
 AGPL-3.0 source downloads include this workbench. The fixed cyan mascot carries Microsoft Fluent UI Emoji MIT attribution in `public/mascot-license.txt`.
+
+The public **Open source** page at `/open-source` explains free local use, the capped hosted demo, planned API services, dataset access and local setup. Legacy `/sources` links redirect to its datasets section.
+
+`npm run test:layout` checks narrow composer layouts, 200% text size, Open source navigation and legacy redirects, and Google Scholar handoff using a mocked destination. Set `LEX_RAPTOR_BROWSER=webkit` after installing Playwright WebKit and its host dependencies to run the same checks in WebKit. No live Google requests or AI calls are made.
