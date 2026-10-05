@@ -15,6 +15,13 @@
       "when": 1791165914018,
       "tag": "0001_powerful_mongu",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791176064013,
+      "tag": "0002_orange_plazm",
+      "breakpoints": true
     }
   ]
 }

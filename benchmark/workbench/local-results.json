@@ -1,0 +1,1068 @@
+[
+  {
+    "case": {
+      "id": "case_brief",
+      "task": "brief",
+      "question": "Brief Celotex: identify supported facts and procedure, issue, holding and reasoning. Omit details absent from these excerpts.",
+      "search_query": "Celotex",
+      "database_ids": [
+        "cap"
+      ]
+    },
+    "http_status": 200,
+    "seconds": 10.828,
+    "retained": 5,
+    "exact_quotes": 5,
+    "removed": 3,
+    "result": {
+      "sources": [
+        {
+          "id": "S1",
+          "case_id": "cap-6207800",
+          "ordinal": 2,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 3, characters 1\u20131042",
+          "opinion_type": "majority",
+          "text": "The United States District Court for the District of Columbia granted the motion of petitioner Celotex Corporation for summary judgment against respondent Catrett because the latter was unable to produce evidence in support of her allegation in her wrongful-death complaint that the decedent had been exposed to petitioner\u2019s asbestos products. A divided panel of the Court of Appeals for the District of Columbia Circuit reversed, however, holding that petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor. Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 756 F. 2d 181 (1985). This view conflicted with that of the Third Circuit in In re Japanese Electronic Products, 723 F. 2d 238 (1983), rev\u2019d on other grounds sub nom. Matsushita Electric Industrial Co. v. Zenith Radio Corp., 475 U. S. 574 (1986). We granted certiorari to resolve the conflict, 474 U. S. 944 (1985), and now reverse the decision of the District of Columbia Circuit.",
+          "name": "Celotex Corp. v. Catrett",
+          "citation": "477 U.S. 317",
+          "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+          "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6207800:070684a85533:1:3:0"
+        },
+        {
+          "id": "S2",
+          "case_id": "cap-6207800",
+          "ordinal": 3,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 4, characters 1\u20131800",
+          "opinion_type": "majority",
+          "text": "Respondent commenced this lawsuit in September 1980, alleging that the death in 1979 of her husband, Louis H. Catrett, resulted from his exposure to products containing asbestos manufactured or distributed by 15 named corporations. Respondent\u2019s complaint sounded in negligence, breach of warranty, and strict liability. Two of the defendants filed motions challenging the District Court\u2019s in perso-nam jurisdiction, and the remaining 13, including petitioner, filed motions for summary judgment. Petitioner\u2019s motion, which was first filed in September 1981, argued that summary judgment was proper because respondent had \u201cfailed to produce evidence that any [Celotex] product . . . was the proximate cause of the injuries alleged within the jurisdictional limits of [the District] Court. \u201d In particular, petitioner noted that respondent had failed to identify, in answering interrogatories specifically requesting such information, any witnesses who could testify about the decedent\u2019s exposure to petitioner\u2019s asbestos products. In response to petitioner\u2019s summary judgment motion, respondent then produced three documents which she claimed \u201cdemonstrate that there is a genuine material factual dispute\u201d as to whether the decedent had ever been exposed to petitioner\u2019s asbestos products. The three documents included a transcript of a deposition of the decedent, a letter from an official of one of the decedent\u2019s former employers whom petitioner planned to call as a trial witness, and a letter from an insurance company to respondent\u2019s attorney, all tending to establish that the decedent had been exposed to petitioner\u2019s asbestos products in Chicago during 1970-1971. Petitioner, in turn, argued that the three documents were inadmissible hearsay and thus could not be considered in opposition to",
+          "name": "Celotex Corp. v. Catrett",
+          "citation": "477 U.S. 317",
+          "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+          "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6207800:070684a85533:1:4:0"
+        },
+        {
+          "id": "S3",
+          "case_id": "cap-6207800",
+          "ordinal": 5,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 5, characters 1\u20131800",
+          "opinion_type": "majority",
+          "text": "In July 1982, almost two years after the commencement of the lawsuit, the District Court granted all of the motions filed by the various defendants. The court explained that it was granting petitioner\u2019s summary judgment motion because \u201cthere [was] no showing that the plaintiff was exposed to the defendant Celotex\u2019s product in the District of Columbia or elsewhere within the statutory period.\u201d App. 217. Respondent appealed only the grant of summary judgment in favor of petitioner, and a divided panel of the District of Columbia Circuit reversed. The majority of the Court of Appeals held that petitioner\u2019s summary judgment motion was rendered \u201cfatally defective\u201d by the fact that petitioner \u201cmade no effort to adduce any evidence, in the form of affidavits or otherwise, to support its motion.\u201d 244 U. S. App. D. C., at 163, 756 F. 2d, at 184 (emphasis in original). According to the majority, Rule 56(e) of the Federal Rules of Civil Procedure, and this Court\u2019s decision in Adickes v. S. H. Kress & Co., 398 U. S. 144, 159 (1970), establish that \u201cthe party opposing the motion for summary judgment bears the burden of responding only after the moving party has met its burden of coming forward with proof of the absence of any genuine issues of material fact.\u201d 244 U. S. App. D. C., at 163, 756 F. 2d, at 184 (emphasis in original; footnote omitted). The majority therefore declined to consider petitioner\u2019s argument that none of the evidence produced by respondent in opposition to the motion for summary judgment would have been admissible at trial. Ibid. The dissenting judge argued that \u201c[t]he majority errs in supposing that a party seeking summary judgment must always make an affirmative eviden-tiary showing, even in cases where there is not a triable, factual dispute.\u201d Id., at 167, 75",
+          "name": "Celotex Corp. v. Catrett",
+          "citation": "477 U.S. 317",
+          "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+          "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6207800:070684a85533:1:5:0"
+        },
+        {
+          "id": "S4",
+          "case_id": "cap-6206897",
+          "ordinal": 46,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 46, characters 1\u2013367",
+          "opinion_type": "majority",
+          "text": "Our analysis here does not address the question of the initial burden of production of evidence placed by Rule 56 on the party moving for summary judgment. See Celotex Corp. v. Catrett, post, p. 317. Respondents have not raised this issue here, and for the purposes of our discussion we assume that the moving party has met initially the requisite evidentiary burden.",
+          "name": "Anderson v. Liberty Lobby, Inc.",
+          "citation": "477 U.S. 242",
+          "source_url": "https://static.case.law/us/477/cases/0242-01.json",
+          "source_sha256": "60437e85b0c28cae977aef33e855f15dca5cce20539922aa04d234bb2154ab07",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6206897:60437e85b0c2:1:46:0"
+        }
+      ],
+      "searched": [
+        {
+          "id": "cap",
+          "status": "ok",
+          "total": null,
+          "note": "Search of the 12 imported starter opinions.",
+          "passages": 4
+        }
+      ],
+      "retrieved_at": "2026-10-05T05:06:01.977Z",
+      "query": "Celotex",
+      "task": "brief",
+      "databases": [
+        "cap"
+      ],
+      "model": "qwen3:14b",
+      "inference": "local",
+      "propositions": [
+        {
+          "section": "Facts and procedure",
+          "claim": "The District Court granted Celotex\u2019s motion for summary judgment because respondent could not produce evidence that the decedent was exposed to Celotex\u2019s asbestos products.",
+          "source_id": "S1",
+          "quote": "The United States District Court for the District of Columbia granted the motion of petitioner Celotex Corporation for summary judgment against respondent Catrett because the latter was unable to produce evidence in support of her allegation in her wrongful-death complaint that the decedent had been exposed to petitioner\u2019s asbestos products."
+        },
+        {
+          "section": "Facts and procedure",
+          "claim": "Respondent filed a wrongful-death lawsuit against 15 corporations, including Celotex, alleging her husband\u2019s death resulted from exposure to asbestos products.",
+          "source_id": "S2",
+          "quote": "Respondent commenced this lawsuit in September 1980, alleging that the death in 1979 of her husband, Louis H. Catrett, resulted from his exposure to products containing asbestos manufactured or distributed by 15 named corporations."
+        },
+        {
+          "section": "Facts and procedure",
+          "claim": "The District Court granted summary judgment in favor of Celotex, but the Court of Appeals for the District of Columbia Circuit reversed.",
+          "source_id": "S1",
+          "quote": "A divided panel of the Court of Appeals for the District of Columbia Circuit reversed, however, holding that petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor."
+        },
+        {
+          "section": "Holding",
+          "claim": "The Supreme Court reversed the Court of Appeals, holding that the moving party does not need to provide evidence to negate the opposing party\u2019s claims.",
+          "source_id": "S1",
+          "quote": "We granted certiorari to resolve the conflict, 474 U. S. 944 (1985), and now reverse the decision of the District of Columbia Circuit."
+        },
+        {
+          "section": "Reasoning",
+          "claim": "The Court emphasized that the opposing party must produce evidence to create a genuine issue of material fact, not the moving party.",
+          "source_id": "S3",
+          "quote": "the party opposing the motion for summary judgment bears the burden of responding only after the moving party has met its burden of coming forward with proof of the absence of any genuine issues of material fact."
+        }
+      ],
+      "removed": 3,
+      "incomplete": false,
+      "missing_sections": [
+        "Issue"
+      ],
+      "model_used": true
+    }
+  },
+  {
+    "case": {
+      "id": "case_comparison",
+      "task": "compare",
+      "question": "Compare Twombly and Iqbal on plausible pleading. Distinguish the two decisions and cite each when supported.",
+      "search_query": "Twombly Iqbal plausibility",
+      "database_ids": [
+        "cap"
+      ]
+    },
+    "http_status": 200,
+    "seconds": 9.92,
+    "retained": 6,
+    "exact_quotes": 6,
+    "removed": 2,
+    "result": {
+      "sources": [
+        {
+          "id": "S1",
+          "case_id": "cap-3653744",
+          "ordinal": 13,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 14, characters 1\u2013879",
+          "opinion_type": "majority",
+          "text": "The Court of Appeals considered Twombly\u2019s applicability to this case. Acknowledging that Twombly retired the Conley no-set-of-facts test relied upon by the District Court, the Court of Appeals\u2019 opinion discussed at length how to apply this Court\u2019s \u201cstandard for assessing the adequacy of pleadings.\u201d 490 F. 3d, at 155. It concluded that Twombly called for a \u201cflexible \u2018plausibility standard,\u2019 which obliges a pleader to amplify a claim with some factual allegations in those contexts where such amplification is needed to render the claim plausible\u201d Id., at 157-158. The court found that petitioners\u2019 appeal did not present one of \u201cthose contexts\u201d requiring amplification. As a consequence, it held respondent\u2019s pleading adequate to allege petitioners\u2019 personal involvement in discriminatory decisions which, if true, violated clearly established constitutional law. Id., at 174.",
+          "name": "Ashcroft v. Iqbal",
+          "citation": "556 U.S. 662",
+          "source_url": "https://static.case.law/us/556/cases/0662-01.json",
+          "source_sha256": "3ab00dfbf4dd9d2c9ea7cd740fae9f61e53626a13721187ce507105e930b3a77",
+          "decision_date": "2009-05-18",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3653744:3ab00dfbf4dd:1:14:0"
+        },
+        {
+          "id": "S2",
+          "case_id": "cap-3653744",
+          "ordinal": 52,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 53, characters 1\u2013755",
+          "opinion_type": "majority",
+          "text": "Respondent first says that our decision in Twombly should be limited to pleadings made in the context of an antitrust dispute. Iqbal Brief 37-38. This argument is not supported by Twombly and is incompatible with the Federal Rules of Civil Procedure. Though Twombly determined the sufficiency of a complaint sounding in antitrust, the decision was based on our interpretation and application of Rule 8. 550 U. S., at 554. That Rule in turn governs the pleading standard \u201cin all civil actions and proceedings in the United States district courts.\u201d Fed. Rule Civ. Proc. 1. Our decision in Twombly expounded the pleading standard for \u201call civil actions,\u201d ibid., and it applies to antitrust and discrimination suits alike, see 550 U. S., at 555-556, and n. 3.",
+          "name": "Ashcroft v. Iqbal",
+          "citation": "556 U.S. 662",
+          "source_url": "https://static.case.law/us/556/cases/0662-01.json",
+          "source_sha256": "3ab00dfbf4dd9d2c9ea7cd740fae9f61e53626a13721187ce507105e930b3a77",
+          "decision_date": "2009-05-18",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3653744:3ab00dfbf4dd:1:53:0"
+        },
+        {
+          "id": "S3",
+          "case_id": "cap-3653744",
+          "ordinal": 54,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 55, characters 1\u2013876",
+          "opinion_type": "majority",
+          "text": "Respondent next implies that our construction of Rule 8 should be tempered where, as here, the Court of Appeals has \u201cinstructed the district court to cabin discovery in such a way as to preserve\u201d petitioners\u2019 defense of qualified immunity \u201cas much as possible in anticipation of a summary judgment motion.\u201d Iqbal Brief 27. We have held, however, that the question presented by a motion to dismiss a complaint for insufficient pleadings does not turn on the controls placed upon the discovery process. Twombly, supra, at 559 (\u201cIt is no answer to say that a claim just shy of a plausible entitlement to relief can, if groundless, be weeded out early in the discovery process through careful case management given the common lament that the success of judicial supervision in checking discovery abuse has been on the modest side\u201d (internal quotation marks and citation omitted)).",
+          "name": "Ashcroft v. Iqbal",
+          "citation": "556 U.S. 662",
+          "source_url": "https://static.case.law/us/556/cases/0662-01.json",
+          "source_sha256": "3ab00dfbf4dd9d2c9ea7cd740fae9f61e53626a13721187ce507105e930b3a77",
+          "decision_date": "2009-05-18",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3653744:3ab00dfbf4dd:1:55:0"
+        },
+        {
+          "id": "S4",
+          "case_id": "cap-3556136",
+          "ordinal": 22,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 22, characters 1\u20131262",
+          "opinion_type": "majority",
+          "text": "The need at the pleading stage for allegations plausibly suggesting (not merely consistent with) agreement reflects the threshold requirement of Rule 8(a)(2) that the \u201cplain statement\u201d possess enough heft to \u201csho[w] that the pleader is entitled to relief.\u201d A statement of parallel conduct, even conduct consciously undertaken, needs some setting suggesting the agreement necessary to make out a \u00a7 1 claim; without that further circumstance pointing toward a meeting of the minds, an account of a defendant\u2019s commercial efforts stays in neutral territory. An allegation of parallel conduct is thus much like a naked assertion of conspiracy in a \u00a7 1 complaint: it gets the eomplaint close to stating a claim, but without some further factual enhancement it stops short of the line between possibility and plausibility of \u201centitle[ment] to relief.\u201d Cf. DM Research, Inc. v. College of Am. Pathologists, 170 F. 3d 53, 56 (CA1 1999) (\u201c[T]erms like \u2018conspiracy,\u2019 or even \u2018agreement,\u2019 are border-line: they might well be sufficient in conjunction with a more specific allegation \u2014 for example, identifying a written agreement or even a basis for inferring a tacit agreement,. . . but a court is not required to accept such terms as a sufficient basis for a complaint\u201d).",
+          "name": "Bell Atlantic Corp. v. Twombly",
+          "citation": "550 U.S. 544",
+          "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+          "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+          "decision_date": "2007-05-21",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3556136:d5accdbe495b:1:22:0"
+        },
+        {
+          "id": "S5",
+          "case_id": "cap-3556136",
+          "ordinal": 23,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 23, characters 1\u20131223",
+          "opinion_type": "majority",
+          "text": "We alluded to the practical significance of the Rule 8 entitlement requirement in Dura Pharmaceuticals, Inc. v. Broudo, 544 U. S. 336 (2005), when we explained that something beyond the mere possibility of loss causation must be alleged, lest a plaintiff with \u201c \u2018a largely groundless claim\u2019 \u201d be allowed to \u201c \u2018take up the time of a number of other people, with the right to do so representing an in terrorem increment of the settlement value.\u2019\u201d Id., at 347 (quoting Blue Chip Stamps v. Manor Drug Stores, 421 U. S. 723, 741 (1975)). So, when the allegations in a complaint, however true, could not raise a claim of entitlement to relief, \u201c \u2018this basic deficiency should ... be exposed at the point of minimum expenditure of time and money by the parties and the court.\u2019\u201d 5 Wright & Miller \u00a71216, at 233-234 (quoting Daves v. Hawaiian Dredging Co., 114 F. Supp. 643, 645 (Haw. 1953)); see also Dura, supra, at 346; Asahi Glass Co. v. Pentech Pharmaceuticals, Inc., 289 F. Supp. 2d 986, 995 (ND Ill. 2003) (Posner, J., sitting by designation) (\u201c[S]ome threshold of plausibility must be crossed at the outset before a patent antitrust ease should be permitted to go into its inevitably costly and protracted discovery phase\u201d).",
+          "name": "Bell Atlantic Corp. v. Twombly",
+          "citation": "550 U.S. 544",
+          "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+          "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+          "decision_date": "2007-05-21",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3556136:d5accdbe495b:1:23:0"
+        },
+        {
+          "id": "S6",
+          "case_id": "cap-3556136",
+          "ordinal": 27,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 26, characters 1\u20131209",
+          "opinion_type": "majority",
+          "text": "Plaintiffs do not, of course, dispute the requirement of plausibility and the need for something more than merely parallel behavior explained in Theatre Enterprises, Monsanto, and Matsushita, and their main argument against the plausibility standard at the pleading stage is its ostensible conflict with an early statement of ours construing Rule 8. Justice Black\u2019s opinion for the Court in Conley v. Gibson spoke not only of the need for fair notice of the grounds for entitlement to relief but of \u201cthe accepted rule that a complaint should not be dismissed for failure to state a claim unless it appears beyond doubt that the plaintiff can prove no set of facts in support of his claim which would entitle him to relief.\u201d 355 U. S., at 45-46. This \u201cno set of facts\u201d language can be read in isolation as saying that any statement revealing the theory of the claim will suffice unless its factual impossibility may be shown from the face of the pleadings; and the Court of Appeals appears to have read Conley in some such way when formulating its understanding of the proper pleading standard, see 425 F. 3d, at 106, 114 (invoking Conley\u2019s \u201cno set of facts\u201d language in describing the standard for dismissal).",
+          "name": "Bell Atlantic Corp. v. Twombly",
+          "citation": "550 U.S. 544",
+          "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+          "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+          "decision_date": "2007-05-21",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3556136:d5accdbe495b:1:26:0"
+        }
+      ],
+      "searched": [
+        {
+          "id": "cap",
+          "status": "ok",
+          "total": null,
+          "note": "Search of the 12 imported starter opinions.",
+          "passages": 6
+        }
+      ],
+      "retrieved_at": "2026-10-05T05:06:12.802Z",
+      "query": "Twombly Iqbal plausibility",
+      "task": "compare",
+      "databases": [
+        "cap"
+      ],
+      "model": "qwen3:14b",
+      "inference": "local",
+      "propositions": [
+        {
+          "section": "Differences",
+          "claim": "Twombly focuses on the need for factual allegations to show plausibility in antitrust cases, while Iqbal extends this standard to discrimination suits.",
+          "source_id": "S1",
+          "quote": "It concluded that Twombly called for a \u201cflexible \u2018plausibility standard,\u2019 which obliges a pleader to amplify a claim with some factual allegations in those contexts where such amplification is needed to render the claim plausible\u201d Id., at 157-158."
+        },
+        {
+          "section": "Differences",
+          "claim": "Iqbal explicitly rejects the idea that Twombly\u2019s standard should be limited to antitrust cases, affirming its broader application.",
+          "source_id": "S2",
+          "quote": "Though Twombly determined the sufficiency of a complaint sounding in antitrust, the decision was based on our interpretation and application of Rule 8."
+        },
+        {
+          "section": "Differences",
+          "claim": "Twombly discusses the need for factual allegations to show plausibility in the context of antitrust claims, while Iqbal applies this standard to the context of discrimination claims.",
+          "source_id": "S1",
+          "quote": "The court found that petitioners\u2019 appeal did not present one of \u201cthose contexts\u201d requiring amplification."
+        },
+        {
+          "section": "Differences",
+          "claim": "Iqbal addresses the issue of discovery limitations and how they do not affect the pleading standard, whereas Twombly does not directly address this issue.",
+          "source_id": "S3",
+          "quote": "We have held, however, that the question presented by a motion to dismiss a complaint for insufficient pleadings does not turn on the controls placed upon the discovery process."
+        },
+        {
+          "section": "Differences",
+          "claim": "Twombly emphasizes the need for factual allegations to show plausibility in the context of antitrust claims, while Iqbal applies this standard to the context of discrimination claims.",
+          "source_id": "S1",
+          "quote": "As a consequence, it held respondent\u2019s pleading adequate to allege petitioners\u2019 personal involvement in discriminatory decisions which, if true, violated clearly established constitutional law."
+        },
+        {
+          "section": "Differences",
+          "claim": "Iqbal explicitly states that the pleading standard applies to all civil actions, while Twombly focuses on antitrust cases but is based on Rule 8, which applies to all civil actions.",
+          "source_id": "S2",
+          "quote": "That Rule in turn governs the pleading standard \u201cin all civil actions and proceedings in the United States district courts.\u201d Fed. Rule Civ. Proc. 1."
+        }
+      ],
+      "removed": 2,
+      "incomplete": false,
+      "missing_sections": [
+        "Shared rule",
+        "Practical implications"
+      ],
+      "model_used": true
+    }
+  },
+  {
+    "case": {
+      "id": "opposing_arguments",
+      "task": "arguments",
+      "question": "Pressure-test the position that conclusory allegations alone survive a motion to dismiss under Twombly and Iqbal.",
+      "search_query": "Twombly Iqbal conclusory",
+      "database_ids": [
+        "cap"
+      ]
+    },
+    "http_status": 200,
+    "seconds": 9.107,
+    "retained": 3,
+    "exact_quotes": 3,
+    "removed": 5,
+    "result": {
+      "sources": [
+        {
+          "id": "S1",
+          "case_id": "cap-3653744",
+          "ordinal": 36,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 37, characters 1\u20131369",
+          "opinion_type": "majority",
+          "text": "Two working principles underlie our decision in Twombly. First, the tenet that a court must accept as true all of the allegations contained in a complaint is inapplicable to legal conclusions. Threadbare recitals of the elements of a cause of action, supported by mere conclusory statements, do not suffice. Id., at 555 (Although for the purposes of a motion to dismiss we must take all of the factual allegations in the complaint as true, we \u201care not bound to accept as true a legal conclusion couched as a factual allegation\u201d (internal quotation marks omitted)). Rule 8 marks a notable and generous departure from the hyperteehnical, code-pleading regime of a prior era, but it does not unlock the doors of discovery for a plaintiff armed with nothing more than conclusions. Second, only a complaint that states a plausible claim for relief survives a motion to dismiss. Id., at 556. Determining whether a complaint states a plausible claim for relief will, as the Court of Appeals observed, be a context-specific task that requires the reviewing court to draw on its judicial experience and common sense. 490 F. 3d, at 157-158. But where the well-pleaded facts do not permit the court to infer more than the mere possibility of misconduct, the complaint has alleged \u2014 but it has not \u201cshow[n]\u201d \u2014 \u201cthat the pleader is entitled to relief.\u201d Fed. Rule Civ. Proc. 8(a)(2).",
+          "name": "Ashcroft v. Iqbal",
+          "citation": "556 U.S. 662",
+          "source_url": "https://static.case.law/us/556/cases/0662-01.json",
+          "source_sha256": "3ab00dfbf4dd9d2c9ea7cd740fae9f61e53626a13721187ce507105e930b3a77",
+          "decision_date": "2009-05-18",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3653744:3ab00dfbf4dd:1:37:0"
+        },
+        {
+          "id": "S2",
+          "case_id": "cap-3653744",
+          "ordinal": 42,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 43, characters 1\u20131646",
+          "opinion_type": "majority",
+          "text": "We begin our analysis by identifying the allegations in the complaint that are not entitled to the assumption of truth. Respondent pleads that petitioners \u201cknew of, condoned, and willfully and maliciously agreed to subject [him]\u201d to harsh conditions of confinement \u201cas a matter of policy, solely on account of [his] religion, race, and/or national origin and for no legitimate penological interest.\u201d Complaint \u00b6 96, App. to Pet. for Cert. 173a-174a. The complaint alleges that Ashcroft was the \u201cprincipal architect\u201d of this invidious policy, id., \u00b6 10, at 157a, and that Mueller was \u201cinstrumental\u201d in adopting and executing it, id., \u00b6 11, at 157a. These bare assertions, much like the pleading of conspiracy in Twombly, amount to nothing more than a \u201cformulaic recitation of the elements\u201d of a constitutional discrimination claim, 550 U. S., at 555, namely, that petitioners adopted a policy \u201c\u2018because of,\u2019 not merely \u2018in spite of,\u2019 its adverse effects upon an identifiable group,\u201d Feeney, 442 U. S., at 279. As such, the allegations are conclusory and not entitled to be assumed true. Twombly, 550 U. S., at 554-555. To be clear, we do not reject these bald allegations on the ground that they are unrealistic or nonsensical. We do not so characterize them any more than the Court in Twombly rejected the plaintiffs\u2019 express allegation of a \u201c \u2018contract, combination or conspiracy to prevent competitive entry,\u2019 \u201d id., at 551, because it thought that claim too chimerical to be maintained. It is the conclusory nature of respondent\u2019s allegations, rather than their extravagantly fanciful nature, that disentitles them to the presumption of truth.",
+          "name": "Ashcroft v. Iqbal",
+          "citation": "556 U.S. 662",
+          "source_url": "https://static.case.law/us/556/cases/0662-01.json",
+          "source_sha256": "3ab00dfbf4dd9d2c9ea7cd740fae9f61e53626a13721187ce507105e930b3a77",
+          "decision_date": "2009-05-18",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3653744:3ab00dfbf4dd:1:43:0"
+        },
+        {
+          "id": "S3",
+          "case_id": "cap-3653744",
+          "ordinal": 59,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 60, characters 1\u2013769",
+          "opinion_type": "majority",
+          "text": "Respondent finally maintains that the Federal Rules expressly allow him to allege petitioners\u2019 discriminatory intent \u201cgenerally,\u201d which he equates with a conclusory allegation. Iqbal Brief 32 (citing Fed. Rule Civ. Proc. 9). It follows, respondent says, that his complaint is sufficiently well pleaded because it claims that petitioners discriminated against him \u201con account of [his] religion, race, and/or national origin and for no legitimate penological interest.\u201d Complaint \u00b696, App. to Pet. for Cert. 172a-173a. Were we required to accept this allegation as true, respondent\u2019s complaint would survive petitioners\u2019 motion to dismiss. But the Federal Rules do not require courts to credit a complaint\u2019s conclusory statements without reference to its factual context.",
+          "name": "Ashcroft v. Iqbal",
+          "citation": "556 U.S. 662",
+          "source_url": "https://static.case.law/us/556/cases/0662-01.json",
+          "source_sha256": "3ab00dfbf4dd9d2c9ea7cd740fae9f61e53626a13721187ce507105e930b3a77",
+          "decision_date": "2009-05-18",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3653744:3ab00dfbf4dd:1:60:0"
+        },
+        {
+          "id": "S4",
+          "case_id": "cap-3556136",
+          "ordinal": 21,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 21, characters 1\u20131430",
+          "opinion_type": "majority",
+          "text": "In applying these general standards to a \u00a7 1 claim, we hold that stating such a claim requires a complaint with enough factual matter (taken as true) to suggest that an agreement was made. Asking for plausible grounds to infer an agreement does not impose a probability requirement at the pleading stage; it simply calls for enough fact to raise a reasonable expectation that discovery will reveal evidence of illegal agreement. And, of course, a well-pleaded complaint may proceed even if it strikes a savvy judge that actual proof of the facts alleged is improbable, and \u201cthat a recovery is very remote and unlikely.\u201d Ibid. In identifying facts that are suggestive enough to render a \u00a7 1 conspiracy plausible, we have the benefit of the prior rulings and considered views of leading commentators, already quoted, that lawful parallel conduct fails to bespeak unlawful agreement. It makes sense to say, therefore, that an allegation of parallel conduct and a bare assertion of conspiracy will not suffice. Without more, parallel conduct does not suggest conspiracy, and a conclusory allegation of agreement at some unidentified point does not supply facts adequate to show illegality. Hence, when allegations of parallel conduct are set out in order to make a \u00a7 1 claim, they must be placed in a context that raises a suggestion of a preceding agreement, not merely parallel conduct that could just as well be independent action.",
+          "name": "Bell Atlantic Corp. v. Twombly",
+          "citation": "550 U.S. 544",
+          "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+          "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+          "decision_date": "2007-05-21",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3556136:d5accdbe495b:1:21:0"
+        },
+        {
+          "id": "S5",
+          "case_id": "cap-3556136",
+          "ordinal": 28,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 27, characters 1\u2013828",
+          "opinion_type": "majority",
+          "text": "On such a focused and literal reading of Conley\u2019s \u201cno set of facts,\u201d a wholly conclusory statement of claim would survive a motion to dismiss whenever the pleadings left open the possibility that a plaintiff might later establish some \u201cset of [undisclosed] facts\u201d to support recovery. So here, the Court of Appeals specifically found the prospect of unearthing direct evidence of conspiracy sufficient to preclude dismissal, even though the complaint does not set forth a single fact in a context that suggests an agreement. 425 F. 3d, at 106,114. It seems fair to say that this approach to pleading would dispense with any showing of a \u201c \u2018reasonably founded hope\u2019\u201d that a plaintiff would be able to make a case, see Dura, 544 U. S., at 347 (quoting Blue Chip Stamps, 421 U. S., at 741); Mr. Micawber\u2019s optimism would be enough.",
+          "name": "Bell Atlantic Corp. v. Twombly",
+          "citation": "550 U.S. 544",
+          "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+          "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+          "decision_date": "2007-05-21",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3556136:d5accdbe495b:1:27:0"
+        },
+        {
+          "id": "S6",
+          "case_id": "cap-3556136",
+          "ordinal": 48,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 47, characters 1\u2013215",
+          "opinion_type": "majority",
+          "text": "The border in DM Research was the line between the conclusory and the factual. Here it lies between the factually neutral and the factually suggestive. Each must be crossed to enter the realm of plausible liability.",
+          "name": "Bell Atlantic Corp. v. Twombly",
+          "citation": "550 U.S. 544",
+          "source_url": "https://static.case.law/us/550/cases/0544-01.json",
+          "source_sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+          "decision_date": "2007-05-21",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-3556136:d5accdbe495b:1:47:0"
+        },
+        {
+          "id": "S7",
+          "case_id": "cap-6207800",
+          "ordinal": 41,
+          "locator": "CAP opinion 3 (dissent), extracted paragraph 8, characters 1\u20131263",
+          "opinion_type": "dissent",
+          "text": "Where the moving party adopts this second option and seeks summary judgment on the ground that the nonmoving party \u2014 who will bear the burden of persuasion at trial \u2014 has no evidence, the mechanics of discharging Rule 56\u2019s burden of production are somewhat trickier. Plainly, a conclusory assertion that the nonmoving party has no evidence is insufficient. See ante, at 328 (White, J., concurring). Such a \u201cburden\u201d of production is no burden at all and would simply permit summary judgment procedure to be converted into a tool for harassment. See Louis 750-751. Rather, as the Court confirms, a party who moves for summary judgment on the ground that the nonmoving party has no evidence must affirmatively show the absence of evidence in the record. Ante, at 323. This may require the moving party to depose the nonmoving party\u2019s witnesses or to establish the inadequacy of documentary evidence. If there is literally no evidence in the record, the moving party may demonstrate this by reviewing for the court the admissions, interrogatories, and other exchanges between the parties that are in the record. Either way, however, the moving party must affirmatively demonstrate that there is no evidence in the record to support a judgment for the nonmoving party.",
+          "name": "Celotex Corp. v. Catrett",
+          "citation": "477 U.S. 317",
+          "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+          "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6207800:070684a85533:3:8:0"
+        }
+      ],
+      "searched": [
+        {
+          "id": "cap",
+          "status": "ok",
+          "total": null,
+          "note": "Search of the 12 imported starter opinions.",
+          "passages": 7
+        }
+      ],
+      "retrieved_at": "2026-10-05T05:06:22.721Z",
+      "query": "Twombly Iqbal conclusory",
+      "task": "arguments",
+      "databases": [
+        "cap"
+      ],
+      "model": "qwen3:14b",
+      "inference": "local",
+      "propositions": [
+        {
+          "section": "Supporting argument",
+          "claim": "Conclusory allegations alone do not suffice to survive a motion to dismiss under Twombly and Iqbal.",
+          "source_id": "S1",
+          "quote": "Threadbare recitals of the elements of a cause of action, supported by mere conclusory statements, do not suffice."
+        },
+        {
+          "section": "Opposing argument",
+          "claim": "A complaint may survive a motion to dismiss if it leaves open the possibility that a plaintiff might later establish some set of facts to support recovery.",
+          "source_id": "S5",
+          "quote": "On such a focused and literal reading of Conley\u2019s \u201cno set of facts,\u201d a wholly conclusory statement of claim would survive a motion to dismiss whenever the pleadings left open the possibility that a plaintiff might later establish some \u201cset of [undisclosed] facts\u201d to support recovery."
+        },
+        {
+          "section": "Response and limits",
+          "claim": "A complaint must cross the border between the factually neutral and the factually suggestive to enter the realm of plausible liability.",
+          "source_id": "S6",
+          "quote": "The border in DM Research was the line between the conclusory and the factual. Here it lies between the factually neutral and the factually suggestive."
+        }
+      ],
+      "removed": 5,
+      "incomplete": false,
+      "missing_sections": [],
+      "model_used": true
+    }
+  },
+  {
+    "case": {
+      "id": "regulation_research",
+      "task": "research",
+      "question": "What limits apply to self-employment vocational rehabilitation assistance?",
+      "search_query": "self-employment vocational",
+      "database_ids": [
+        "ecfr"
+      ]
+    },
+    "http_status": 200,
+    "seconds": 12.953,
+    "retained": 6,
+    "exact_quotes": 6,
+    "removed": 2,
+    "result": {
+      "sources": [
+        {
+          "case_id": "ecfr-34-361.48-2026-10-01",
+          "name": "Scope of vocational rehabilitation services for individuals with disabilities.",
+          "citation": "34 CFR 361.48",
+          "court": "Office of Special Education and Rehabilitative Services, Department of Education",
+          "decision_date": "2026-10-01",
+          "opinion_type": "Regulation",
+          "source_url": "https://www.ecfr.gov/on/2026-10-01/title-34/section-361.48",
+          "database_id": "ecfr",
+          "database_name": "eCFR",
+          "kind": "regulation",
+          "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+          "id": "S1",
+          "text": "\u00a7 361.48 Scope of vocational rehabilitation services for individuals with disabilities. (a) Pre-employment transition services. Each State must ensure that the designated State unit, in collaboration with the local educational agencies involved, provide, or arrange for the provision of, pre-employment transition services for all students with disabilities, as defined in \u00a7 361.5(c)(51), in need of such services, without regard to the type of disability, from Federal funds reserved in accordance with \u00a7 361.65, and any funds made available from State, local, or private funding sources. Funds reserved and made available may be used for the required, authorized, and pre-employment transition coordination activities under paragraphs (2), (3) and (4) of this section. (1) Availability of services. Pre-employment transition services must be made available Statewide to all students with disabilities, regardless of whether the student has applied or been determined eligible for vocational rehabilitation services. (2) Required activities. The designated State unit must provide the following pre-employment transition services: (i) Job exploration counseling; (ii) Work-based learning experiences, which may include in-school or after school opportunities, or experience outside the traditional school setting (including internships), that is provided in an integrated environment in the community to the maximum extent possible; (iii) Counseling on opportunities for enrollment in comprehensive transition or postsecondary educational programs at institutions of higher education; (iv) Workplace readiness training to develop social skills and independent living; and (v) Instruction in self-advocacy (including instruction in person-centered planning), which may include peer mentoring (includi",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "ecfr-34-361.48-2026-10-01:0"
+        },
+        {
+          "case_id": "ecfr-34-361.48-2026-10-01",
+          "name": "Scope of vocational rehabilitation services for individuals with disabilities.",
+          "citation": "34 CFR 361.48",
+          "court": "Office of Special Education and Rehabilitative Services, Department of Education",
+          "decision_date": "2026-10-01",
+          "opinion_type": "Regulation",
+          "source_url": "https://www.ecfr.gov/on/2026-10-01/title-34/section-361.48",
+          "database_id": "ecfr",
+          "database_name": "eCFR",
+          "kind": "regulation",
+          "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+          "id": "S2",
+          "text": " readiness training to develop social skills and independent living; and (v) Instruction in self-advocacy (including instruction in person-centered planning), which may include peer mentoring (including peer mentoring from individuals with disabilities working in competitive integrated employment). (3) Authorized activities. Funds available and remaining after the provision of the required activities described in paragraph (a)(2) of this section may be used to improve the transition of students with disabilities from school to postsecondary education or an employment outcome by\u2014 (i) Implementing effective strategies to increase the likelihood of independent living and inclusion in communities and competitive integrated workplaces; (ii) Developing and improving strategies for individuals with intellectual disabilities and individuals with significant disabilities to live independently; participate in postsecondary education experiences; and obtain, advance in and retain competitive integrated employment; (iii) Providing instruction to vocational rehabilitation counselors, school transition personnel, and other persons supporting students with disabilities; (iv) Disseminating information about innovative, effective, and efficient approaches to achieve the goals of this section; (v) Coordinating activities with transition services provided by local educational agencies under the Individuals with Disabilities Education Act (20 U.S.C. 1400 et seq.); (vi) Applying evidence-based findings to improve policy, procedure, practice, and the preparation of personnel, in order to better achieve the goals of this section; (vii) Developing model transition demonstration projects; (viii) Establishing or supporting multistate or regional partnerships involving States, local educational a",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133400",
+          "original_id": "ecfr-34-361.48-2026-10-01:1600"
+        },
+        {
+          "case_id": "ecfr-34-361.48-2026-10-01",
+          "name": "Scope of vocational rehabilitation services for individuals with disabilities.",
+          "citation": "34 CFR 361.48",
+          "court": "Office of Special Education and Rehabilitative Services, Department of Education",
+          "decision_date": "2026-10-01",
+          "opinion_type": "Regulation",
+          "source_url": "https://www.ecfr.gov/on/2026-10-01/title-34/section-361.48",
+          "database_id": "ecfr",
+          "database_name": "eCFR",
+          "kind": "regulation",
+          "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+          "id": "S3",
+          "text": "achieve the goals of this section; (vii) Developing model transition demonstration projects; (viii) Establishing or supporting multistate or regional partnerships involving States, local educational agencies, designated State units, developmental disability agencies, private businesses, or other participants to achieve the goals of this section; and (ix) Disseminating information and strategies to improve the transition to postsecondary activities of individuals who are members of traditionally unserved and underserved populations. (4) Pre-employment transition coordination. Each local office of a designated State unit must carry out responsibilities consisting of\u2014 (i) Attending individualized education program meetings for students with disabilities, when invited; (ii) Working with the local workforce development boards, one-stop centers, and employers to develop work opportunities for students with disabilities, including internships, summer employment and other employment opportunities available throughout the school year, and apprenticeships; (iii) Working with schools, including those carrying out activities under section 614(d) of the IDEA, to coordinate and ensure the provision of pre-employment transition services under this section; (iv) When invited, attending person-centered planning meetings for individuals receiving services under title XIX of the Social Security Act (42 U.S.C. 1396 et seq.); and (b) Services for individuals who have applied for or been determined eligible for vocational rehabilitation services. As appropriate to the vocational rehabilitation needs of each individual and consistent with each individual's individualized plan for employment, the designated State unit must ensure that the following vocational rehabilitation services are availa",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20135000",
+          "original_id": "ecfr-34-361.48-2026-10-01:3200"
+        },
+        {
+          "case_id": "ecfr-38-21.258-2026-10-01",
+          "name": "Cost limitations on approval of self-employment plans.",
+          "citation": "38 CFR 21.258",
+          "court": "Department of Veterans Affairs",
+          "decision_date": "2026-10-01",
+          "opinion_type": "Regulation",
+          "source_url": "https://www.ecfr.gov/on/2026-10-01/title-38/section-21.258",
+          "database_id": "ecfr",
+          "database_name": "eCFR",
+          "kind": "regulation",
+          "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+          "id": "S4",
+          "text": "\u00a7 21.258 Cost limitations on approval of self-employment plans. A self-employment plan with an estimated or actual cost of less than $25,000 may be approved by the Veteran Readiness and Employment (VR&E) Officer with jurisdiction. Any self-employment plan with an estimated or actual cost of $25,000 or more must be approved by the Executive Director, VR&E Service. (Authority: 38 U.S.C. 3104) [75 FR 3170, Jan. 20, 2010, as amended at 87 FR 8743, Feb. 16, 2022]",
+          "locator": "Whitespace-normalized extracted text, characters 1\u2013462",
+          "original_id": "ecfr-38-21.258-2026-10-01:0"
+        },
+        {
+          "case_id": "ecfr-38-21.257-2026-10-01",
+          "name": "Self-employment.",
+          "citation": "38 CFR 21.257",
+          "court": "Department of Veterans Affairs",
+          "decision_date": "2026-10-01",
+          "opinion_type": "Regulation",
+          "source_url": "https://www.ecfr.gov/on/2026-10-01/title-38/section-21.257",
+          "database_id": "ecfr",
+          "database_name": "eCFR",
+          "kind": "regulation",
+          "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+          "id": "S5",
+          "text": "\u00a7 21.257 Self-employment. (a) Approval of self-employment as a vocational goal. A program of vocational rehabilitation benefits and services may include self-employment for an individual if VA determines that such an objective is a suitable vocational goal. VA will make this determination based on\u2014 (1) The results of the individual's initial evaluation conducted in accordance with the provisions of \u00a7 21.50; and (2) The provisions of this section. (Authority: 38 U.S.C. 3104(a)) (b) Definition. For purposes of this subpart, individuals with the most severe service-connected disability(ies) who require self-employment means individuals who have been determined by VA to have limitations affecting employability arising from the effects of each individual's service-connected disability(ies), which are so severe as to necessitate selection of self-employment as the only reasonably feasible vocational goal for the individuals. (Authority: 38 U.S.C. 3104) (c) Scope of self-employment benefits and services. (1) VA may provide the self-employment services listed in paragraph (d) of this section to program participants who are pursuing the vocational goal of self-employment. (2) VA may provide the more extensive services listed in paragraph (e) of this section to individuals with the most severe service-connected disability(ies) who require self-employment. (Authority: 38 U.S.C. 3104(a)) (d) Assistance for other individuals in self-employment. Subject to the provisions of \u00a7 21.258, VA may provide the following assistance to any individual for whom self-employment is determined to be a suitable vocational goal\u2014 (1) Vocational training; (2) Incidental training in the management of a business; (3) License or other fees required for self-employment; (4) Necessary tools and supplies for",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "ecfr-38-21.257-2026-10-01:0"
+        },
+        {
+          "case_id": "ecfr-38-21.257-2026-10-01",
+          "name": "Self-employment.",
+          "citation": "38 CFR 21.257",
+          "court": "Department of Veterans Affairs",
+          "decision_date": "2026-10-01",
+          "opinion_type": "Regulation",
+          "source_url": "https://www.ecfr.gov/on/2026-10-01/title-38/section-21.257",
+          "database_id": "ecfr",
+          "database_name": "eCFR",
+          "kind": "regulation",
+          "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+          "id": "S6",
+          "text": "suitable vocational goal\u2014 (1) Vocational training; (2) Incidental training in the management of a business; (3) License or other fees required for self-employment; (4) Necessary tools and supplies for the occupation; and (5) Services described in \u00a7 21.252. (Authority: 38 U.S.C. 3104(a)) (e) Special self-employment services for individuals with the most severe service-connected disability(ies) who require self-employment. Individuals described in paragraph (b) of this section who are in a self-employment program may receive\u2014 (1) The services described in paragraph (d) of this section; and (2) The assistance described in \u00a7 21.214. (Authority: 38 U.S.C. 3104, 3116, 3117) (f) Feasibility analysis of a proposed self-employment business plan. VA will conduct a comprehensive review and analysis of the feasibility of a proposed business plan, as submitted by the individual or developed with VA's assistance, prior to authorizing a rehabilitation plan leading to self-employment (a \u201cself-employment plan\u201d). The feasibility analysis must include\u2014 (1) An analysis of the economic viability of the proposed business; (2) A cost analysis specifying the amount and types of assistance that VA will provide; (3) A market analysis for the individual's proposed services or products; (4) Availability of financing from non-VA sources, including the individual's personal resources, local banks, and other sources; (5) Evidence of coordination with the Small Business Administration to secure special consideration under section 8 of the Small Business Act, as amended; (6) The location of the site for the proposed business and the cost of the site, if any; and (7) A training plan to operate a successful business. (Authority: 38 U.S.C. 3104) [75 FR 3170, Jan. 20, 2010]",
+          "locator": "Whitespace-normalized extracted text, characters 1601\u20133367",
+          "original_id": "ecfr-38-21.257-2026-10-01:1600"
+        },
+        {
+          "case_id": "ecfr-38-21.257-2026-10-01",
+          "name": "Self-employment.",
+          "citation": "38 CFR 21.257",
+          "court": "Department of Veterans Affairs",
+          "decision_date": "2026-10-01",
+          "opinion_type": "Regulation",
+          "source_url": "https://www.ecfr.gov/on/2026-10-01/title-38/section-21.257",
+          "database_id": "ecfr",
+          "database_name": "eCFR",
+          "kind": "regulation",
+          "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+          "id": "S7",
+          "text": "e proposed business and the cost of the site, if any; and (7) A training plan to operate a successful business. (Authority: 38 U.S.C. 3104) [75 FR 3170, Jan. 20, 2010]",
+          "locator": "Whitespace-normalized extracted text, characters 3201\u20133367",
+          "original_id": "ecfr-38-21.257-2026-10-01:3200"
+        }
+      ],
+      "searched": [
+        {
+          "id": "ecfr",
+          "status": "ok",
+          "total": 59,
+          "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+          "warnings": [],
+          "passages": 7
+        }
+      ],
+      "retrieved_at": "2026-10-05T05:06:32.028Z",
+      "query": "self-employment vocational",
+      "task": "research",
+      "databases": [
+        "ecfr"
+      ],
+      "model": "qwen3:14b",
+      "inference": "local",
+      "propositions": [
+        {
+          "section": "Findings",
+          "claim": "Self-employment plans with an estimated or actual cost of $25,000 or more must be approved by the Executive Director, VR&E Service.",
+          "source_id": "S4",
+          "quote": "Any self-employment plan with an estimated or actual cost of $25,000 or more must be approved by the Executive Director, VR&E Service."
+        },
+        {
+          "section": "Findings",
+          "claim": "Self-employment may be approved as a vocational goal if VA determines it is suitable based on the individual's initial evaluation and the provisions of this section.",
+          "source_id": "S5",
+          "quote": "A program of vocational rehabilitation benefits and services may include self-employment for an individual if VA determines that such an objective is a suitable vocational goal."
+        },
+        {
+          "section": "Findings",
+          "claim": "Individuals with the most severe service-connected disabilities who require self-employment may receive more extensive services, including assistance described in \u00a7 21.214.",
+          "source_id": "S6",
+          "quote": "Individuals described in paragraph (b) of this section who are in a self-employment program may receive\u2014 (1) The services described in paragraph (d) of this section; and (2) The assistance described in \u00a7 21.214."
+        },
+        {
+          "section": "Findings",
+          "claim": "Pre-employment transition services must be made available Statewide to all students with disabilities, regardless of whether the student has applied or been determined eligible for vocational rehabilitation services.",
+          "source_id": "S1",
+          "quote": "Pre-employment transition services must be made available Statewide to all students with disabilities, regardless of whether the student has applied or been determined eligible for vocational rehabilitation services."
+        },
+        {
+          "section": "Findings",
+          "claim": "Funds reserved and made available may be used for the required, authorized, and pre-employment transition coordination activities under paragraphs (2), (3), and (4) of this section.",
+          "source_id": "S1",
+          "quote": "Funds reserved and made available may be used for the required, authorized, and pre-employment transition coordination activities under paragraphs (2), (3) and (4) of this section."
+        },
+        {
+          "section": "Findings",
+          "claim": "The designated State unit must provide job exploration counseling as a required pre-employment transition service.",
+          "source_id": "S1",
+          "quote": "(i) Job exploration counseling; (ii) Work-based learning experiences, which may include in-school or after school opportunities, or experience outside the traditional school setting (including internships), that is provided in an integrated environment in the community to the maximum extent possible;"
+        }
+      ],
+      "removed": 2,
+      "incomplete": false,
+      "missing_sections": [],
+      "model_used": true
+    }
+  },
+  {
+    "case": {
+      "id": "proposed_rule_memo",
+      "task": "memo",
+      "question": "Explain the proposed changes to asylum employment authorization. Do not treat a proposed rule as binding law. No client facts are supplied.",
+      "search_query": "employment authorization asylum",
+      "database_ids": [
+        "federal_register"
+      ]
+    },
+    "http_status": 200,
+    "seconds": 9.421,
+    "retained": 6,
+    "exact_quotes": 6,
+    "removed": 2,
+    "result": {
+      "sources": [
+        {
+          "case_id": "fr-2026-03595",
+          "name": "Employment Authorization Reform for Asylum Applicants",
+          "citation": "91 FR 8616",
+          "court": "Homeland Security Department",
+          "decision_date": "2026-02-23",
+          "opinion_type": "Proposed Rule",
+          "source_url": "https://www.federalregister.gov/documents/2026/02/23/2026-03595/employment-authorization-reform-for-asylum-applicants",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-02-23/pdf/2026-03595.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Proposed Rule; no effective date supplied; verify operative status in the official edition",
+          "id": "S1",
+          "text": "Federal Register, Volume 91 Issue 35 (Monday, February 23, 2026) [Federal Register Volume 91, Number 35 (Monday, February 23, 2026)] [Proposed Rules] [Pages 8616-8700] From the Federal Register Online via the Government Publishing Office [www.gpo.gov] [FR Doc No: 2026-03595] [[Page 8615]] Vol. 91 Monday, No. 35 February 23, 2026 Part III Department of Homeland Security ----------------------------------------------------------------------- 8 CFR Parts 208 and 274a Employment Authorization Reform for Asylum Applicants; Proposed Rule Federal Register / Vol. 91, No. 35 / Monday, February 23, 2026 / Proposed Rules [[Page 8616]] ----------------------------------------------------------------------- DEPARTMENT OF HOMELAND SECURITY 8 CFR Parts 208 and 274a [CIS No. 2799-25; DHS Docket No. USCIS-2025-0370] RIN 1615-AC97 Employment Authorization Reform for Asylum Applicants AGENCY: U.S. Citizenship and Immigration Services, DHS. ACTION: Notice of proposed rulemaking. ----------------------------------------------------------------------- SUMMARY: The U.S. Department of Homeland Security (DHS) proposes to modify regulations governing applications for asylum and withholding of removal (asylum applications) and employment authorization based on a pending asylum application. The proposed rule would change filing and eligibility requirements for aliens requesting employment authorization and an employment authorization document (EAD) based on a pending asylum application. The changes include pausing acceptance of EAD applications from asylum applicants during periods when affirmative asylum average processing time exceeds 180 days, extending the waiting period to apply for employment authorization to 365 days, changing EAD application processing time requirements, and adding eligibi",
+          "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+          "original_id": "fr-2026-03595:0"
+        },
+        {
+          "case_id": "fr-2026-03595",
+          "name": "Employment Authorization Reform for Asylum Applicants",
+          "citation": "91 FR 8616",
+          "court": "Homeland Security Department",
+          "decision_date": "2026-02-23",
+          "opinion_type": "Proposed Rule",
+          "source_url": "https://www.federalregister.gov/documents/2026/02/23/2026-03595/employment-authorization-reform-for-asylum-applicants",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-02-23/pdf/2026-03595.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Proposed Rule; no effective date supplied; verify operative status in the official edition",
+          "id": "S2",
+          "text": " have increased, so has the need to thoroughly screen and vet cases, especially where there may be security concerns, and while the agency continues to meet its national security responsibilities, the 30-day EAD processing timeframe also continues to make this effort challenging. --------------------------------------------------------------------------- \\61\\ Memorandum from Michael Aytes, Associate Director, District Operations, HQOFO 70/1-P (May 11, 2007) https://www.uscis.gov/sites/default/files/document/memos/AncillaryEPSNS051107.pdf. \\62\\ Id. --------------------------------------------------------------------------- Rosario v. USCIS. Another ensuing challenge encountered for asylum related [[Page 8634]] employment authorization applications was the Rosario litigation. On May 22, 2015, Rosario v. USCIS was filed in the U.S. District Court for the Western District of Washington under case no. 2:15-cv-00813 challenging the delays in processing initial EADs for asylum applicants.\\63\\ On July 26, 2018, in a published order, the District Court found that USCIS data revealed that ``from 2010 to 2017, USCIS met its 30-day deadline in only 22% of cases--that is, out of 698,096 total applications, USCIS resolved only 154,629 applications on time. In 2017, USCIS timely resolved only 28% of applications.'' \\64\\ --------------------------------------------------------------------------- \\63\\ 365 F. Supp. 3d 1156 (W.D. Wash. 2018). \\64\\ Rosario, 365 F.Supp.3d at 1158. --------------------------------------------------------------------------- However, the District Court recognized USCIS made some changes in response to the need to more quickly adjudicate the (c)(8) EAD applications. First, the court recognized that two years earlier, USCIS had increased the validity period of a",
+          "locator": "Whitespace-normalized extracted text, characters 100801\u2013102600",
+          "original_id": "fr-2026-03595:100800"
+        },
+        {
+          "case_id": "fr-2026-03595",
+          "name": "Employment Authorization Reform for Asylum Applicants",
+          "citation": "91 FR 8616",
+          "court": "Homeland Security Department",
+          "decision_date": "2026-02-23",
+          "opinion_type": "Proposed Rule",
+          "source_url": "https://www.federalregister.gov/documents/2026/02/23/2026-03595/employment-authorization-reform-for-asylum-applicants",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-02-23/pdf/2026-03595.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Proposed Rule; no effective date supplied; verify operative status in the official edition",
+          "id": "S3",
+          "text": "USCIS made some changes in response to the need to more quickly adjudicate the (c)(8) EAD applications. First, the court recognized that two years earlier, USCIS had increased the validity period of an initial asylum EAD from one year to two years.\\65\\ Second, the court recognized that the previous year USCIS provided checklists on its websites to assist asylum applicants seeking to submit (c)(8) EAD applications.\\66\\ The court found one of the ``chief purposes'' of the 30-day asylum EAD processing timeframe, as part of the larger INS regulatory amendments, was ``to ensure that bona fide asylees are eligible to obtain employment authorization as quickly as possible.'' \\67\\ The court noted that the focus on expediency is reinforced by how the agency described the INS's 1994 proposed rule: ``The INS will adjudicate these applications for work authorization within 30 days of receipt, regardless of the merits of the underlying asylum claim.'' \\68\\ Ultimately, the court granted the plaintiffs' motion for summary judgment, denied USCIS' motion for summary judgment, found that USCIS was in violation of 8 CFR 208.7(a)(1), enjoined USCIS from further failing to adhere to the 30- day asylum EAD processing timeframe as set forth in 8 CFR 208.7(a)(1), and ordered USCIS to submit status reports every six months regarding the rate of compliance with the 30-day EAD processing timeframe.\\69\\ USCIS still submits status reports in compliance with the court order as of the publication of this NPRM.\\70\\ --------------------------------------------------------------------------- \\65\\ See USCIS, ``USCIS Increases Validity of Work Permits to Two Years for Asylum Applicants, U.S. Citizenship and Immigration Services'' (Oct. 6, 2016), https://www.uscis.gov/archive/uscis-increases-validity-of-wo",
+          "locator": "Whitespace-normalized extracted text, characters 102401\u2013104200",
+          "original_id": "fr-2026-03595:102400"
+        },
+        {
+          "case_id": "fr-2026-15190",
+          "name": "Affirmative Asylum Referrals Without Interview",
+          "citation": "91 FR 47101",
+          "court": "Homeland Security Department",
+          "decision_date": "2026-07-28",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2026/07/28/2026-15190/affirmative-asylum-referrals-without-interview",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-28/pdf/2026-15190.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2026-07-28; verify operative status in the official edition",
+          "id": "S4",
+          "text": "------- \\50\\ This interview waiver program was developed after the agency noticed that some aliens who filed their applications 10 or more years after their entry to the United States were not genuinely seeking asylum but instead wanted to use the affirmative asylum process as a vehicle to obtain employment authorization and a pathway to removal proceedings where they could apply for cancellation of removal and adjustment of status to lawful permanent resident under INA 240A(b), 8 U.S.C. 1229b(b), before an IJ. As of December 11, 2025, the Asylum Division estimates that it had approximately 129,525 ``cancellation cases'' pending, filed by aliens who were living in the United States for at least 10 years at the time of filing his or her asylum application. See Table 1 for details on affirmative asylum applications that were filed on or after April 16, 1998, and where the application was filed with USCIS 10 years or more after the alien's last entry into the United States or where the alien did not include a date of entry on the application. --------------------------------------------------------------------------- E. Aliens Barred From a Grant of Asylum or Do Not Merit a Grant as a Matter of Discretion The Asylum Division will implement processes for applications under the rule where the alien is barred from a grant of asylum or does not merit a grant as a matter of discretion, including cases where the alien has a connection to terrorism or serious crime, as the Asylum Division further defines these terms in operational guidance. This may include cases where an alien is barred from a grant due to a mandatory criminal bar, as described in section III.B.3 of this preamble. This may also include cases where negative factors outweigh any positive factors in the totality of",
+          "locator": "Whitespace-normalized extracted text, characters 102401\u2013104200",
+          "original_id": "fr-2026-15190:102400"
+        },
+        {
+          "case_id": "fr-2026-15190",
+          "name": "Affirmative Asylum Referrals Without Interview",
+          "citation": "91 FR 47101",
+          "court": "Homeland Security Department",
+          "decision_date": "2026-07-28",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2026/07/28/2026-15190/affirmative-asylum-referrals-without-interview",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-28/pdf/2026-15190.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2026-07-28; verify operative status in the official edition",
+          "id": "S5",
+          "text": "anted until the identity of the applicant has been checked against all appropriate records or databases,'' and that aliens who fail ``to appear for an interview or hearing'' may have their applications dismissed or may be sanctioned; as well as to clarify implications for employment authorization. There is no statutory requirement that a decision letter communicating a referral on an asylum application include an assessment of the alien's credibility. See, e.g., INA 208(b) and (d), 8 U.S.C. 1158(b) and (d).\\9\\ Therefore, amending provisions at 8 CFR 208.19 to remove language about including an assessment of the alien's credibility for referral letters is still in compliance with the INA. Furthermore, under the rule, USCIS still communicates a referral of asylum in writing and states the basis for referral. See 8 CFR 208.19. --------------------------------------------------------------------------- \\9\\ Per INA 208(b)(1)(B)(iii), 8 U.S.C. 1158(b)(1)(B)(iii): ``If no adverse credibility determination is explicitly made, the applicant or witness shall have a rebuttable presumption of credibility on appeal.'' --------------------------------------------------------------------------- Lastly, where USCIS refers an application as a matter of discretion, the agency had a long-standing practice of instructing AOs to make a determination of statutory eligibility before addressing the exercise of discretion.\\10\\ However, there is no statutory or regulatory requirement that an AO make an eligibility determination prior to making a discretionary determination. The Asylum Division acknowledges this fact in existing policy guidance to adjudicators, which states: ``As a legal matter, it is permissible to deny an application as a matter of discretion, without determining whether the al",
+          "locator": "Whitespace-normalized extracted text, characters 32001\u201333800",
+          "original_id": "fr-2026-15190:32000"
+        },
+        {
+          "case_id": "fr-2026-15190",
+          "name": "Affirmative Asylum Referrals Without Interview",
+          "citation": "91 FR 47101",
+          "court": "Homeland Security Department",
+          "decision_date": "2026-07-28",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2026/07/28/2026-15190/affirmative-asylum-referrals-without-interview",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-28/pdf/2026-15190.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2026-07-28; verify operative status in the official edition",
+          "id": "S6",
+          "text": "Amend regulations to Applicants-- Applicants-- application to EOIR without remove language stating Reduced applicant Possibility interview. that an AO ``in an wait times and faster of increased wait interview'' shall review case resolution at USCIS times and slower the application and give for both meritorious case resolution for the alien the opportunity claims and referrals.. some aliens who to present any relevant [cir] Earlier clarity and under the previous and useful information less time in legal process would have bearing on any uncertainty.. asylum granted by prohibitions on filing. [cir] Faster access to USCIS. Update to 8 CFR 208.4(a).. long-term protection and Government-- Amend regulations to family re-unification.. Possible permit an AO to refer an [cir] Better preservation costs to DOJ to affirmative Form I-589 to of evidence.. develop certain EOIR without interview, [cir] Earlier work elements of the based on the record and authorization for aliens case during removal other relevant evidence.. who are approvable.. proceedings where Addition of 8 CFR Sec. [cir] Earlier access to USCIS no longer 208.9(a)(2).. INA 240 removal performs an Amend regulations to proceedings.. interview. remove language referring [cir] Earlier access to Possible to ``right to an'' procedural protections.. new costs to DOJ interview.. [cir] Reduced procedural for processing Update to 8 CFR Sec. redundancy.. referred asylum 208.10.. Better cases that USCIS Amend regulations to understanding of the could have granted. include that an AO can asylum process.. refer an asylum [cir] Explaining that an application to EOIR interview may not be without offering an offered for all cases.. opportunity for an [cir] Greater awareness to interview, and to remove submit any and all language refe",
+          "locator": "Whitespace-normalized extracted text, characters 144001\u2013145800",
+          "original_id": "fr-2026-15190:144000"
+        },
+        {
+          "case_id": "fr-2025-19702",
+          "name": "Removal of the Automatic Extension of Employment Authorization Documents",
+          "citation": "90 FR 48799",
+          "court": "Homeland Security Department",
+          "decision_date": "2025-10-30",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2025/10/30/2025-19702/removal-of-the-automatic-extension-of-employment-authorization-documents",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-10-30/pdf/2025-19702.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2025-10-30; verify operative status in the official edition",
+          "id": "S7",
+          "text": "o instead must obtain employment authorization from USCIS pursuant to 8 CFR 274a.12(c), before accepting employment in the United States, such as adjustment of status applicants or aliens with a pending asylum application, USCIS determines the length of the period of employment authorization in the exercise of its discretion and thereafter, issues an EAD reflecting the validity period.\\120\\ Therefore, the EAD will expire and the employment authorization will terminate the day after the end validity date stated on the face of the EAD, in the situations outlined in 8 CFR 274a.14, or for TPS applicants pursuant to section 244 of the Act and 8 CFR part 244.\\121\\ See new 8 CFR 274a.13(e)(2). --------------------------------------------------------------------------- \\120\\ Employment authorization granted pursuant to 8 CFR 274a.12(c) is generally granted in the discretion of the Secretary. See 8 CFR 274a.13(a)(1) (``The approval of applications filed under 8 CFR 274a.12(c), except for 8 CFR 274a.12(c)(8), are within the discretion of USCIS.''). \\121\\ For example, employment authorization may also end prior to the expiration date displayed on the EAD, in accordance with 8 CFR 274a.14, if exclusion or deportation proceedings are instituted against the alien; if a condition upon which the EAD was granted has not been met or no longer exists; or upon a showing that the information contained in the request for an EAD was not true and correct. --------------------------------------------------------------------------- For example, an alien with a pending adjustment of status application (Form I-485) is in possession of an EAD that expires on December 15, 2025. The alien's adjustment of status application has not yet been adjudicated and continues to be pending. The alien is eligibl",
+          "locator": "Whitespace-normalized extracted text, characters 110401\u2013112200",
+          "original_id": "fr-2025-19702:110400"
+        },
+        {
+          "case_id": "fr-2025-19702",
+          "name": "Removal of the Automatic Extension of Employment Authorization Documents",
+          "citation": "90 FR 48799",
+          "court": "Homeland Security Department",
+          "decision_date": "2025-10-30",
+          "opinion_type": "Rule",
+          "source_url": "https://www.federalregister.gov/documents/2025/10/30/2025-19702/removal-of-the-automatic-extension-of-employment-authorization-documents",
+          "official_url": "https://www.govinfo.gov/content/pkg/FR-2025-10-30/pdf/2025-19702.pdf",
+          "database_id": "federal_register",
+          "database_name": "Federal Register",
+          "kind": "regulatory document",
+          "source_status": "Rule; stated effective date 2025-10-30; verify operative status in the official edition",
+          "id": "S8",
+          "text": "R part 244. III. Background & Purpose A. Legal Authority The Secretary of Homeland Security's (Secretary) authority for the regulatory amendments made in this IFR are found in various sections of the Immigration and Nationality Act (INA or the Act), 8 U.S.C. 1101 et seq., and the Homeland Security Act of 2002 (HSA), Public Law 107-296, 116 Stat. 2135 (codified in part at 6 U.S.C. 101 et seq.). General authority for issuing this rule is found in section 103(a) of the INA, 8 U.S.C. 1103(a), which authorizes the Secretary to administer and enforce the immigration and nationality laws and establish such regulations as the Secretary deems necessary for carrying out such authority, as well as section 102 of the HSA, 6 U.S.C. 112, which vests all of the functions of DHS in the Secretary and authorizes the Secretary [[Page 48801]] to issue regulations.\\3\\ Further authority for this rule is found in: --------------------------------------------------------------------------- \\3\\ Although several provisions of the INA discussed in this final rule refer exclusively to the ``Attorney General,'' such provisions are now to be read as referring to the Secretary of Homeland Security by operation of the HSA. See 6 U.S.C. 202(3), 251, 271(b), 542 note, 557; 8 U.S.C. 1103(a)(1) and (g), 1551 note; Nielsen v. Preap, 586 U.S. 392, 397 n.2 (2019). --------------------------------------------------------------------------- Section 208(d)(2) of the INA, 8 U.S.C. 1158(d)(2), which provides the Secretary with authority to grant employment authorization, in her discretion, to applicants for asylum if 180 days have passed since filing an application for asylum; Section 214 of the INA, 8 U.S.C. 1184, including section 214(a)(1) of the INA, 8 U.S.C. 1184(a)(1), which authorizes the Secretary to pres",
+          "locator": "Whitespace-normalized extracted text, characters 12801\u201314600",
+          "original_id": "fr-2025-19702:12800"
+        }
+      ],
+      "searched": [
+        {
+          "id": "federal_register",
+          "status": "ok",
+          "total": 458,
+          "note": "Up to 3 full documents. Proposed rules and notices are not automatically binding law.",
+          "warnings": [],
+          "passages": 9
+        }
+      ],
+      "retrieved_at": "2026-10-05T05:06:45.106Z",
+      "query": "employment authorization asylum",
+      "task": "memo",
+      "databases": [
+        "federal_register"
+      ],
+      "model": "qwen3:14b",
+      "inference": "local",
+      "propositions": [
+        {
+          "section": "Rule",
+          "claim": "The proposed rule would pause acceptance of EAD applications from asylum applicants when the average processing time for affirmative asylum exceeds 180 days.",
+          "source_id": "S1",
+          "quote": "The proposed rule would change filing and eligibility requirements for aliens requesting employment authorization and an employment authorization document (EAD) based on a pending asylum application."
+        },
+        {
+          "section": "Rule",
+          "claim": "The waiting period to apply for employment authorization would be extended to 365 days under the proposed rule.",
+          "source_id": "S1",
+          "quote": "extending the waiting period to apply for employment authorization to 365 days"
+        },
+        {
+          "section": "Rule",
+          "claim": "The proposed rule would change EAD application processing time requirements.",
+          "source_id": "S1",
+          "quote": "changing EAD application processing time requirements"
+        },
+        {
+          "section": "Counterargument",
+          "claim": "The court recognized that USCIS had made some changes to improve the processing of EAD applications.",
+          "source_id": "S2",
+          "quote": "USCIS made some changes in response to the need to more quickly adjudicate the (c)(8) EAD applications."
+        },
+        {
+          "section": "Rule",
+          "claim": "The rule removes the automatic extension of employment authorization documents and requires aliens to obtain employment authorization from USCIS before accepting employment.",
+          "source_id": "S7",
+          "quote": "o instead must obtain employment authorization from USCIS pursuant to 8 CFR 274a.12(c), before accepting employment in the United States"
+        },
+        {
+          "section": "Rule",
+          "claim": "The rule specifies that employment authorization terminates the day after the validity date on the EAD.",
+          "source_id": "S7",
+          "quote": "the employment authorization will terminate the day after the end validity date stated on the face of the EAD"
+        }
+      ],
+      "removed": 2,
+      "incomplete": false,
+      "missing_sections": [
+        "Application",
+        "Conclusion"
+      ],
+      "model_used": true
+    }
+  },
+  {
+    "case": {
+      "id": "absent_current_treatment",
+      "task": "research",
+      "question": "Has Celotex been overruled as of October 2026? Give a definitive current-validity determination.",
+      "search_query": "Celotex",
+      "database_ids": [
+        "cap"
+      ]
+    },
+    "http_status": 200,
+    "seconds": 0.351,
+    "retained": 0,
+    "exact_quotes": 0,
+    "removed": 0,
+    "result": {
+      "sources": [
+        {
+          "id": "S1",
+          "case_id": "cap-6207800",
+          "ordinal": 2,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 3, characters 1\u20131042",
+          "opinion_type": "majority",
+          "text": "The United States District Court for the District of Columbia granted the motion of petitioner Celotex Corporation for summary judgment against respondent Catrett because the latter was unable to produce evidence in support of her allegation in her wrongful-death complaint that the decedent had been exposed to petitioner\u2019s asbestos products. A divided panel of the Court of Appeals for the District of Columbia Circuit reversed, however, holding that petitioner\u2019s failure to support its motion with evidence tending to negate such exposure precluded the entry of summary judgment in its favor. Catrett v. Johns-Manville Sales Corp., 244 U. S. App. D. C. 160, 756 F. 2d 181 (1985). This view conflicted with that of the Third Circuit in In re Japanese Electronic Products, 723 F. 2d 238 (1983), rev\u2019d on other grounds sub nom. Matsushita Electric Industrial Co. v. Zenith Radio Corp., 475 U. S. 574 (1986). We granted certiorari to resolve the conflict, 474 U. S. 944 (1985), and now reverse the decision of the District of Columbia Circuit.",
+          "name": "Celotex Corp. v. Catrett",
+          "citation": "477 U.S. 317",
+          "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+          "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6207800:070684a85533:1:3:0"
+        },
+        {
+          "id": "S2",
+          "case_id": "cap-6207800",
+          "ordinal": 3,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 4, characters 1\u20131800",
+          "opinion_type": "majority",
+          "text": "Respondent commenced this lawsuit in September 1980, alleging that the death in 1979 of her husband, Louis H. Catrett, resulted from his exposure to products containing asbestos manufactured or distributed by 15 named corporations. Respondent\u2019s complaint sounded in negligence, breach of warranty, and strict liability. Two of the defendants filed motions challenging the District Court\u2019s in perso-nam jurisdiction, and the remaining 13, including petitioner, filed motions for summary judgment. Petitioner\u2019s motion, which was first filed in September 1981, argued that summary judgment was proper because respondent had \u201cfailed to produce evidence that any [Celotex] product . . . was the proximate cause of the injuries alleged within the jurisdictional limits of [the District] Court. \u201d In particular, petitioner noted that respondent had failed to identify, in answering interrogatories specifically requesting such information, any witnesses who could testify about the decedent\u2019s exposure to petitioner\u2019s asbestos products. In response to petitioner\u2019s summary judgment motion, respondent then produced three documents which she claimed \u201cdemonstrate that there is a genuine material factual dispute\u201d as to whether the decedent had ever been exposed to petitioner\u2019s asbestos products. The three documents included a transcript of a deposition of the decedent, a letter from an official of one of the decedent\u2019s former employers whom petitioner planned to call as a trial witness, and a letter from an insurance company to respondent\u2019s attorney, all tending to establish that the decedent had been exposed to petitioner\u2019s asbestos products in Chicago during 1970-1971. Petitioner, in turn, argued that the three documents were inadmissible hearsay and thus could not be considered in opposition to",
+          "name": "Celotex Corp. v. Catrett",
+          "citation": "477 U.S. 317",
+          "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+          "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6207800:070684a85533:1:4:0"
+        },
+        {
+          "id": "S3",
+          "case_id": "cap-6207800",
+          "ordinal": 5,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 5, characters 1\u20131800",
+          "opinion_type": "majority",
+          "text": "In July 1982, almost two years after the commencement of the lawsuit, the District Court granted all of the motions filed by the various defendants. The court explained that it was granting petitioner\u2019s summary judgment motion because \u201cthere [was] no showing that the plaintiff was exposed to the defendant Celotex\u2019s product in the District of Columbia or elsewhere within the statutory period.\u201d App. 217. Respondent appealed only the grant of summary judgment in favor of petitioner, and a divided panel of the District of Columbia Circuit reversed. The majority of the Court of Appeals held that petitioner\u2019s summary judgment motion was rendered \u201cfatally defective\u201d by the fact that petitioner \u201cmade no effort to adduce any evidence, in the form of affidavits or otherwise, to support its motion.\u201d 244 U. S. App. D. C., at 163, 756 F. 2d, at 184 (emphasis in original). According to the majority, Rule 56(e) of the Federal Rules of Civil Procedure, and this Court\u2019s decision in Adickes v. S. H. Kress & Co., 398 U. S. 144, 159 (1970), establish that \u201cthe party opposing the motion for summary judgment bears the burden of responding only after the moving party has met its burden of coming forward with proof of the absence of any genuine issues of material fact.\u201d 244 U. S. App. D. C., at 163, 756 F. 2d, at 184 (emphasis in original; footnote omitted). The majority therefore declined to consider petitioner\u2019s argument that none of the evidence produced by respondent in opposition to the motion for summary judgment would have been admissible at trial. Ibid. The dissenting judge argued that \u201c[t]he majority errs in supposing that a party seeking summary judgment must always make an affirmative eviden-tiary showing, even in cases where there is not a triable, factual dispute.\u201d Id., at 167, 75",
+          "name": "Celotex Corp. v. Catrett",
+          "citation": "477 U.S. 317",
+          "source_url": "https://static.case.law/us/477/cases/0317-01.json",
+          "source_sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6207800:070684a85533:1:5:0"
+        },
+        {
+          "id": "S4",
+          "case_id": "cap-6206897",
+          "ordinal": 46,
+          "locator": "CAP opinion 1 (majority), extracted paragraph 46, characters 1\u2013367",
+          "opinion_type": "majority",
+          "text": "Our analysis here does not address the question of the initial burden of production of evidence placed by Rule 56 on the party moving for summary judgment. See Celotex Corp. v. Catrett, post, p. 317. Respondents have not raised this issue here, and for the purposes of our discussion we assume that the moving party has met initially the requisite evidentiary burden.",
+          "name": "Anderson v. Liberty Lobby, Inc.",
+          "citation": "477 U.S. 242",
+          "source_url": "https://static.case.law/us/477/cases/0242-01.json",
+          "source_sha256": "60437e85b0c28cae977aef33e855f15dca5cce20539922aa04d234bb2154ab07",
+          "decision_date": "1986-06-25",
+          "database_id": "cap",
+          "database_name": "CAP starter library",
+          "kind": "case",
+          "source_status": "Historical opinion; later treatment not checked",
+          "original_id": "cap-6206897:60437e85b0c2:1:46:0"
+        }
+      ],
+      "searched": [
+        {
+          "id": "cap",
+          "status": "ok",
+          "total": null,
+          "note": "Search of the 12 imported starter opinions.",
+          "passages": 4
+        }
+      ],
+      "retrieved_at": "2026-10-05T05:06:54.205Z",
+      "query": "Celotex",
+      "task": "research",
+      "databases": [
+        "cap"
+      ],
+      "model": "qwen3:14b",
+      "inference": "local",
+      "propositions": [],
+      "removed": 0,
+      "incomplete": false,
+      "missing_sections": [
+        "Findings"
+      ],
+      "model_used": true
+    }
+  }
+]

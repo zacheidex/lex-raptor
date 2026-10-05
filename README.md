@@ -99,6 +99,17 @@ AGPL does not prohibit acquisition or commercial hosting. It preserves compliant
 
 ## Hosted demo
 
-The [public website](https://lexraptor.com) also contains a [public research preview](https://lexraptor.com/demo). It searches the 12-case public starter collection using a server-side OpenAI connection when enabled. A durable $10 total demo budget, visitor limits, and per-request reservations control model spending. Private documents and local inference stay in the separate local app. See [website/README.md](website/README.md) for configuration, security boundaries, and the full hosted source.
+The [research workbench](https://lexraptor.com/demo) supports source search, case briefs, research memos, authority comparisons, arguments and responses, citation lookup, and text/JSON exports. It searches live eCFR and Federal Register data without a key, the bundled CAP starter library offline, and nationwide CourtListener case law when its owner token is configured. Source search uses no model credits. Hosted drafts use the existing server-side OpenAI key and durable **$10 total demo cap**; no account or passcode is required.
+
+The same workbench can draft with local Ollama, without an OpenAI key or model fee:
+
+```sh
+npm --prefix website ci
+npm --prefix website run local
+```
+
+With Ollama running and `qwen3:14b` installed, open http://127.0.0.1:8787/demo. The original Python/Next.js workspace and private Matters features remain separate. See [workbench setup and limits](website/README.md) and [free data access and student resources](docs/DATA_AND_STUDENT_ACCESS.md). Online data selections send search terms to the selected provider even when the model runs locally.
 
 [Hosted demo smoke checks and cost record](benchmark/hosted-demo/RESULTS.md) describe the limited live validation separately from the local-model diagnostic.
+
+[Workbench development diagnostic](benchmark/workbench/RESULTS.md) covers the expanded workflows and live data adapters, including failed early runs and remaining quality gaps.

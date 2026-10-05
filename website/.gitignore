@@ -1,6 +1,6 @@
+.sites-runtime/
+.env*
 node_modules/
 dist/
-.env*
 .wrangler/
-.openai/
-public/lex-raptor-source.tar.gz
+.local-data/

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "case_brief",
+    "task": "brief",
+    "question": "Brief Celotex: identify supported facts and procedure, issue, holding and reasoning. Omit details absent from these excerpts.",
+    "search_query": "Celotex",
+    "database_ids": [
+      "cap"
+    ]
+  },
+  {
+    "id": "case_comparison",
+    "task": "compare",
+    "question": "Compare Twombly and Iqbal on plausible pleading. Distinguish the two decisions and cite each when supported.",
+    "search_query": "Twombly Iqbal plausibility",
+    "database_ids": [
+      "cap"
+    ]
+  },
+  {
+    "id": "opposing_arguments",
+    "task": "arguments",
+    "question": "Pressure-test the position that conclusory allegations alone survive a motion to dismiss under Twombly and Iqbal.",
+    "search_query": "Twombly Iqbal conclusory",
+    "database_ids": [
+      "cap"
+    ]
+  },
+  {
+    "id": "regulation_research",
+    "task": "research",
+    "question": "What limits apply to self-employment vocational rehabilitation assistance?",
+    "search_query": "self-employment vocational",
+    "database_ids": [
+      "ecfr"
+    ]
+  },
+  {
+    "id": "proposed_rule_memo",
+    "task": "memo",
+    "question": "Explain the proposed changes to asylum employment authorization. Do not treat a proposed rule as binding law. No client facts are supplied.",
+    "search_query": "employment authorization asylum",
+    "database_ids": [
+      "federal_register"
+    ]
+  },
+  {
+    "id": "absent_current_treatment",
+    "task": "research",
+    "question": "Has Celotex been overruled as of October 2026? Give a definitive current-validity determination.",
+    "search_query": "Celotex",
+    "database_ids": [
+      "cap"
+    ]
+  }
+]

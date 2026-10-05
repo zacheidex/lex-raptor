@@ -11,6 +11,11 @@ async function fixture(t,options={}) {
     bindings,
     serviceBindings:{ASSETS:async request=>new Response(await readFile('public'+(new URL(request.url).pathname==='/'?'/index.html':new URL(request.url).pathname)))},
     outboundService:async request=>{
+      if(options.source){const response=await options.source(request);if(response)return response;}
+      if(options.local&&request.url==='http://127.0.0.1:11434/api/chat'){
+        const body=await request.json();calls.push(body);const {sources}=JSON.parse(body.messages[1].content);
+        return Response.json({done:true,done_reason:'stop',prompt_eval_count:1000,eval_count:200,message:{content:JSON.stringify({propositions:[{section:body.format.properties.propositions.items.properties.section.enum[0],claim:'Local fixture finding.',source_id:sources[0].id,quote:sources[0].text.slice(0,80)}]})}});
+      }
       assert.equal(request.url,'https://api.openai.com/v1/responses');
       const body=await request.json();calls.push(body);
       if(options.fail)return new Response('{}',{status:500});
@@ -49,6 +54,87 @@ test('origin, disabled state, visitor identification and selection guard public 
   assert.equal((await (await disabled.req('status')).json()).enabled,false);
   assert.equal(disabled.calls.length,0);
   assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM demo_calls').first()).n,0);
+});
+
+const regulationText='A program of vocational rehabilitation benefits may include self-employment when the agency determines that it is a suitable vocational goal.';
+const noticeText='The agency proposes to revise the eligibility requirements. This is a proposed rule and is not a final determination of eligibility.';
+function remoteFixture(seen,{failCourt=false,hostile=false}={}) {
+  return async request=>{
+    if(request.url.startsWith('https://api.openai.com/'))return;
+    seen.push({url:request.url,authorization:request.headers.get('authorization')});
+    const u=new URL(request.url);
+    if(u.hostname==='www.ecfr.gov'){
+      if(u.pathname.includes('/search/'))return Response.json({meta:{total_count:250},results:[{type:'Section',hierarchy:{title:'38',part:'21',section:'21.257'},headings:{section:'Self-<strong>employment</strong>',chapter:'Veterans Affairs'}}]});
+      if(u.pathname.endsWith('titles.json'))return Response.json({titles:[{number:38,name:'Veterans benefits',up_to_date_as_of:'2026-10-01'}]});
+      return new Response('<DIV8><P>'+regulationText+'</P></DIV8>');
+    }
+    if(u.hostname==='www.federalregister.gov'){
+      if(u.pathname==='/api/v1/documents.json')return Response.json({count:120,results:[{document_number:'2026-12345'}]});
+      if(u.pathname.includes('/api/v1/documents/'))return Response.json({document_number:'2026-12345',title:'Eligibility proposal',citation:'91 FR 12345',publication_date:'2026-10-01',type:'Proposed Rule',raw_text_url:hostile?'https://attacker.invalid/steal':'https://www.federalregister.gov/documents/full_text/text/2026/10/01/2026-12345.txt',html_url:'https://www.federalregister.gov/documents/2026/10/01/2026-12345/eligibility',agencies:[{name:'Agency'}]});
+      return new Response('<html><body><pre>'+noticeText+'</pre></body></html>');
+    }
+    if(u.hostname==='www.courtlistener.com'){
+      if(failCourt)return new Response('{}',{status:503});
+      assert.equal(request.headers.get('authorization'),'Token fake-court-token');
+      if(u.pathname.endsWith('/citation-lookup/'))return Response.json([{citation:'477 U.S. 317',status:200,normalized_citations:['477 U.S. 317'],clusters:[{case_name:'Celotex',absolute_url:'/opinion/123/celotex/'}]},{citation:'999 U.S. 999',status:404,clusters:[]}]);
+      if(u.pathname.endsWith('/search/'))return Response.json({count:150000,results:[{caseName:'Example v. Example',citation:['123 F.3d 456'],court:'Ninth Circuit',dateFiled:'2020-05-01',absolute_url:'/opinion/123/example/',opinions:[{id:123,type:'lead-opinion',snippet:'SNIPPET MUST NEVER BE EVIDENCE'}]}]});
+      if(u.pathname.endsWith('/opinions/123/'))return Response.json({plain_text:'The judgment is reversed because the party was entitled to notice and an opportunity to be heard before the final decision.'});
+    }
+    throw new Error('Unexpected remote destination');
+  };
+}
+
+test('live-database search uses fetched text, preserves source types, and spends no model credits',async t=>{
+  const seen=[],f=await fixture(t,{source:remoteFixture(seen)});
+  const r=await f.req('search',f.question({database_ids:['ecfr','federal_register'],search_query:'eligibility',filters:{after:'2020-01-01'}}));assert.equal(r.status,200);
+  const data=await r.json();assert.equal(data.model_used,false);assert.equal(f.calls.length,0);
+  assert.equal(data.searched.length,2);assert.ok(data.searched.every(s=>s.status==='ok'));
+  assert.ok(data.sources.some(s=>s.text===regulationText&&s.source_status.includes('2026-10-01')));
+  assert.ok(data.sources.some(s=>s.text===noticeText&&s.opinion_type==='Proposed Rule'));
+  assert.ok(seen.every(s=>s.authorization===null));
+  assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM demo_calls').first()).n,0);
+  const docsBefore=seen.filter(s=>s.url.includes('/full/')).length;
+  await f.req('search',f.question({database_ids:['ecfr'],search_query:'eligibility'}));
+  assert.equal(seen.filter(s=>s.url.includes('/full/')).length,docsBefore,'Public document cache should avoid repeat full-text downloads');
+});
+
+test('a failed selected database is disclosed while other sources remain usable',async t=>{
+  const seen=[],f=await fixture(t,{bindings:{COURTLISTENER_API_TOKEN:'fake-court-token'},source:remoteFixture(seen,{failCourt:true})});
+  const data=await (await f.req('search',f.question({database_ids:['courtlistener','ecfr']}))).json();
+  assert.equal(data.searched.find(s=>s.id==='courtlistener').status,'unavailable');
+  assert.equal(data.searched.find(s=>s.id==='ecfr').status,'ok');assert.ok(data.sources.every(s=>s.database_id==='ecfr'));assert.equal(f.calls.length,0);
+});
+
+test('CourtListener search and citation audit keep the token server-side and never cite snippets',async t=>{
+  const seen=[],f=await fixture(t,{bindings:{COURTLISTENER_API_TOKEN:'fake-court-token'},source:remoteFixture(seen)});
+  const data=await (await f.req('search',f.question({database_ids:['courtlistener'],filters:{court:'ca9',after:'2010-01-01'}}))).json();
+  assert.ok(data.sources.length);assert.ok(data.sources.every(s=>!s.text.includes('SNIPPET')));assert.ok(seen[0].url.includes('court=ca9'));
+  const audit=await (await f.req('citations',{text:'477 U.S. 317 and 999 U.S. 999'})).json();
+  assert.deepEqual(audit.citations.map(c=>c.status),[200,404]);assert.equal(audit.model_used,false);assert.equal(f.calls.length,0);
+  assert.ok(!JSON.stringify({data,audit}).includes('fake-court-token'));
+});
+
+test('untrusted source URLs cannot forward credentials or fetch another host',async t=>{
+  const seen=[],f=await fixture(t,{source:remoteFixture(seen,{hostile:true})});
+  const data=await (await f.req('search',f.question({database_ids:['federal_register']}))).json();
+  assert.equal(data.sources.length,0);assert.equal(seen.length,2);assert.ok(seen.every(s=>s.url.startsWith('https://www.federalregister.gov/')));
+});
+
+test('all advanced workflows run through local Ollama without an API key or spending ledger debit',async t=>{
+  const f=await fixture(t,{local:true,bindings:{LOCAL_RESEARCH:'true',OPENAI_API_KEY:'',DEMO_ENABLED:'false',DEMO_EXPIRES_AT:'0'}});
+  const status=await (await f.req('status')).json();assert.equal(status.enabled,true);assert.equal(status.inference,'local');assert.equal(status.cap,null);
+  for(const task of ['brief','memo','compare','arguments']){
+    const r=await f.req('research',f.question({task}));assert.equal(r.status,200);const data=await r.json();assert.equal(data.task,task);assert.equal(data.propositions.length,1);assert.equal(data.model,'qwen3:14b');
+  }
+  assert.equal(f.calls.length,4);assert.equal((await f.db.prepare('SELECT COUNT(*) n FROM demo_calls').first()).n,0);
+});
+
+test('date filtering happens before selection and unsupported workflows fail without inference',async t=>{
+  const f=await fixture(t);
+  const data=await (await f.req('research',f.question({filters:{after:'2020-01-01'}}))).json();assert.equal(data.no_evidence,true);assert.equal(f.calls.length,0);
+  assert.equal((await f.req('research',f.question({task:'invented'}))).status,400);
+  assert.equal((await f.req('research',f.question({filters:{after:'2026-02-31'}}))).status,400);
+  assert.equal((await f.req('research',f.question({filters:{after:'2026-01-01',before:'2020-01-01'}}))).status,400);
 });
 
 test('research without cookies or passcode settles tokens, validates quotes and refuses duplicate IDs',async t=>{

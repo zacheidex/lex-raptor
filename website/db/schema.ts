@@ -14,3 +14,9 @@ export const calls = sqliteTable('demo_calls', {
 export const attempts = sqliteTable('demo_attempts', {
   id: text('id').primaryKey(), count: integer('count').notNull(), expires: integer('expires').notNull()
 });
+export const sourceRequests = sqliteTable('source_requests', {
+  id:text('id').primaryKey(),provider:text('provider').notNull(),created:integer('created').notNull()
+},t=>[index('source_provider_time').on(t.provider,t.created)]);
+export const sourceCache = sqliteTable('source_cache', {
+  id:text('id').primaryKey(),body:text('body').notNull(),expires:integer('expires').notNull()
+},t=>[index('source_cache_expiry').on(t.expires)]);

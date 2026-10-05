@@ -1,0 +1,19 @@
+{
+  "citations": [
+    {
+      "citation": "477 U.S. 317",
+      "status": 200,
+      "normalized": [
+        "477 U.S. 317"
+      ],
+      "matches": [
+        {
+          "name": "Celotex Corp. v. Catrett, Administratrix of the Estate of Catrett",
+          "url": "https://www.courtlistener.com/opinion/111722/celotex-corp-v-catrett-administratrix-of-the-estate-of-catrett/"
+        }
+      ]
+    }
+  ],
+  "limitation": "Checks case-citation existence and ambiguity only. No treatment, good-law status, or proposition support determination.",
+  "model_used": false
+}
