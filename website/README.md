@@ -48,11 +48,11 @@ or reset `demo_calls` on a funded deployment.** A fresh database is a fresh
 budget and requires owner authorization. This app cap covers requests through
 this demo, not other uses of the provider account or hosting charges.
 
-Before each model call, one atomic `INSERT ... SELECT` reserves **$0.15**, only
+Before each model call, one atomic `INSERT ... SELECT` reserves **$0.02**, only
 if the total ledger charge plus that reservation fits under the cap. Input is
 bounded at 32,768 UTF-8 bytes including instructions/schema, with a 4,096-token
 framing allowance, and output (including reasoning) at 4,096 tokens. At the
-verified standard prices this is below $0.122. No paid tools, loops, automatic
+verified standard prices this is below $0.018. No paid tools, loops, automatic
 retries, user-selected models, or user-selected endpoints are allowed.
 
 Successful calls settle against reported input/output tokens at the full
@@ -61,13 +61,14 @@ interrupted workers retain the full reservation. The owner must reconcile
 unknown charges against provider usage before changing those rows; automatic
 expiry never refunds money. Duplicate request IDs cannot make another call.
 
-The pinned model is `gpt-5.3-codex`, Responses API, standard service, low
-reasoning. Rates verified 2026-10-05: $1.75/million input and $14/million output
+The pinned model is `gpt-5.1-codex-mini`, Responses API, standard service, low
+reasoning. This reduces both token rates by about 86% from the original
+GPT-5.3-Codex demo. Historical charges stay in the same lifetime ledger. Rates verified 2026-10-05: $0.25/million input and $2/million output
 tokens. The model page marks this model deprecated; availability must be
 checked with the owner's project. There is no silent model fallback. Recheck
 prices and revise the reservation before changing models or extending access.
 
-- [Official model documentation](https://developers.openai.com/api/docs/models/gpt-5.3-codex)
+- [Official model documentation](https://developers.openai.com/api/docs/models/gpt-5.1-codex-mini)
 - [Official pricing](https://developers.openai.com/api/docs/pricing)
 
 Additional limits: 10 questions per rolling 24 hours per IP hash and session,

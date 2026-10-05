@@ -8,6 +8,13 @@
       "when": 1791164520280,
       "tag": "0000_fixed_omega_sentinel",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791165914018,
+      "tag": "0001_powerful_mongu",
+      "breakpoints": true
     }
   ]
 }

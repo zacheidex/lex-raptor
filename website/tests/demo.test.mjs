@@ -48,15 +48,15 @@ test('research settles actual tokens, removes fabricated evidence and refuses du
   const f=await fixture(t),cookie=await f.unlock(),q=f.question();
   const r=await f.req('research',q,cookie);assert.equal(r.status,200);
   const result=await r.json();assert.equal(result.propositions.length,1);assert.equal(result.removed,1);assert.ok(result.sources.length);
-  assert.equal(f.calls[0].store,false);assert.equal(f.calls[0].service_tier,'default');assert.equal(f.calls[0].max_output_tokens,4096);assert.equal(f.calls[0].model,'gpt-5.3-codex');assert.equal(f.calls[0].tools,undefined);
-  const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.charged,4550);assert.equal(ledger.state,'completed');
+  assert.equal(f.calls[0].store,false);assert.equal(f.calls[0].service_tier,'default');assert.equal(f.calls[0].max_output_tokens,4096);assert.equal(f.calls[0].model,'gpt-5.1-codex-mini');assert.equal(f.calls[0].tools,undefined);
+  const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.charged,650);assert.equal(ledger.state,'completed');assert.equal(ledger.model,'gpt-5.1-codex-mini');
   assert.equal((await f.req('research',q,cookie)).status,429);assert.equal(f.calls.length,1);
   const serialized=JSON.stringify(result);assert.ok(!serialized.includes('fake-test-key'));
 });
 
 test('parallel requests cannot overspend the last reservation',async t=>{
   const f=await fixture(t),now=Math.floor(Date.now()/1000);
-  await f.db.prepare(`INSERT INTO demo_calls VALUES('earlier','other','other',?,'completed',?,NULL,NULL)`).bind(now-1000,CAP-RESERVE).run();
+  await f.db.prepare(`INSERT INTO demo_calls(id,visitor,session,created,state,charged) VALUES('earlier','other','other',?,'completed',?)`).bind(now-1000,CAP-RESERVE).run();
   const admitted=await Promise.all(Array.from({length:30},(_,i)=>reserve(f.db,crypto.randomUUID(),'ip'+i,'s'+i,now)));
   assert.equal(admitted.filter(Boolean).length,1);
   assert.equal((await f.db.prepare('SELECT SUM(charged) n FROM demo_calls').first()).n,CAP);
@@ -73,7 +73,7 @@ test('provider failures and missing usage retain their full reservation',async t
 
 test('daily visitor limits survive a new session, and passcode guessing is throttled',async t=>{
   const f=await fixture(t),now=Math.floor(Date.now()/1000);
-  for(let i=0;i<10;i++)await f.db.prepare('INSERT INTO demo_calls VALUES(?,?,?,?,?,?,NULL,NULL)').bind('old'+i,'same-ip','old-session',now-500,'completed',1000).run();
+  for(let i=0;i<10;i++)await f.db.prepare('INSERT INTO demo_calls(id,visitor,session,created,state,charged) VALUES(?,?,?,?,?,?)').bind('old'+i,'same-ip','old-session',now-500,'completed',1000).run();
   assert.equal(await reserve(f.db,crypto.randomUUID(),'same-ip','new-session',now),false);
   for(let i=0;i<10;i++)assert.equal((await f.req('unlock',{passcode:'wrong'})).status,401);
   assert.equal((await f.req('unlock',{passcode:'test-demo-passcode-only'})).status,429);

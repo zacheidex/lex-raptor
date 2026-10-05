@@ -1,4 +1,4 @@
-import {database,reserve,settle,attempt,CAP,MODEL} from './budget.js';
+import {database,reserve,settle,attempt,CAP,MODEL,RESERVE} from './budget.js';
 import {databases,retrieve,payload,validate} from './research.js';
 const encoder=new TextEncoder();
 const COOKIE='__Host-lex-demo';
@@ -42,7 +42,7 @@ async function api(request,env) {
     const enabled=!!ready(env);
     const unlocked=enabled&&!!await session(request,env,now);
     const state=await database(env).prepare('SELECT COALESCE(SUM(charged),0) total FROM demo_calls').first();
-    return json({enabled,unlocked,exhausted:state.total+150000>CAP,databases,model:MODEL,limit:'10 questions per visitor per day',cap:10});
+    return json({enabled,unlocked,exhausted:state.total+RESERVE>CAP,databases,model:MODEL,limit:'10 questions per visitor per day',cap:10});
   }
   if(request.method!=='POST')fail(405,'Method not allowed.');
   if(request.headers.get('Origin')!==new URL(request.url).origin||request.headers.get('Sec-Fetch-Site')==='cross-site')fail(403,'Open the demo on this website to continue.');

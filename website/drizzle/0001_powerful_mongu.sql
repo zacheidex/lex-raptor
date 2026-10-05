@@ -1,0 +1,1 @@
+ALTER TABLE `demo_calls` ADD `model` text DEFAULT 'gpt-5.3-codex' NOT NULL;

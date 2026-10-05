@@ -48,7 +48,7 @@ export function payload(question,sources) {
   const encoded=JSON.stringify(body);
   // UTF-8 byte ceiling bounds byte-level text tokens conservatively, including
   // instructions and schema. 4096 extra framing tokens + output ceiling cost
-  // under $0.122 at the pinned rates; reserve $0.15 before making the call.
+  // under $0.018 at the pinned rates; reserve $0.02 before making the call.
   if(new TextEncoder().encode(encoded).length>MAX_INPUT_BYTES) throw new Error('Context too large');
   return encoded;
 }
