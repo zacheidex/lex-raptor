@@ -20,7 +20,7 @@ The starter library contains **12 U.S. Supreme Court opinions, 1938–2014**, se
 
 **What works:** local full-text retrieval, bounded local AI answers, exact quotation checking, opinion reader, saved research, source provenance and hashes, separate majority/dissent labels, source export, private matters, original-document uploads and ingestion, source-supported document drafting, attorney review and DOCX export, tenant isolation, durable jobs, cancellation, and optional metered API adapters. Local inference is the default.
 
-**What remains:** corpus expansion/updates, additional database connectors, a validated subsequent-treatment citator, broader legal-quality evaluation, semantic retrieval, managed billing, and hosted research. The owner has authorized a public repository and project website. The source download contains the corresponding application source; it excludes credentials, private matters, private build notes, model weights, and downloaded case data.
+**What remains:** corpus expansion/updates, additional database connectors, a validated subsequent-treatment citator, broader legal-quality evaluation, semantic retrieval, managed billing, and broader hosted evaluation. The owner has authorized a public repository and project website. The source download contains the corresponding application source; it excludes credentials, private matters, private build notes, model weights, and downloaded case data.
 
 ## Start locally
 
@@ -99,7 +99,7 @@ AGPL does not prohibit acquisition or commercial hosting. It preserves compliant
 
 ## Research chat
 
-The [research chat](https://lexraptor.com) supports source search, case briefs, research memos, authority comparisons, arguments and responses, citation lookup, and text/JSON exports. It searches live eCFR and Federal Register data without a key, the bundled CAP starter library offline, and nationwide CourtListener case law when its owner token is configured. Source search uses no model credits. Hosted drafts use the existing server-side OpenAI key and durable **$10 total API cap**; no account or passcode is required. App request-count limits are removed for testing; provider quotas still apply.
+The [research chat](https://lexraptor.com) supports source search, case briefs, research memos, authority comparisons, arguments and responses, citation lookup, and text/JSON exports. It searches live eCFR and Federal Register data without a key, the bundled CAP starter library offline, and nationwide CourtListener case law when its owner token is configured. Source search uses no model credits. Hosted drafts use the existing server-side OpenAI key and durable **$10 total API cap**; no account or passcode is required. Server request/concurrency limits and provider quotas apply. Exact-case routing, browser-local projects, evidence review, authority packets and DOCX exports are available; see the [workbench walkthrough](website/docs/WORKFLOWS.md).
 
 The same workbench can draft with local Ollama, without an OpenAI key or model fee:
 

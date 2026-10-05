@@ -26,3 +26,6 @@ export const researchFeedback = sqliteTable('research_feedback', {
   requestId:text('request_id').notNull(),rating:text('rating').notNull(),issue:text('issue').notNull(),comment:text('comment').notNull(),
   model:text('model').notNull(),sharedContext:text('shared_context')
 },t=>[index('feedback_visitor_time').on(t.visitor,t.created)]);
+export const researchJobs=sqliteTable('research_jobs',{
+ id:text('id').primaryKey(),visitor:text('visitor').notNull(),created:integer('created').notNull(),state:text('state').notNull(),ai:integer('ai').notNull()
+},t=>[index('jobs_visitor_created').on(t.visitor,t.created)]);

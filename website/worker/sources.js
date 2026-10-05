@@ -1,4 +1,5 @@
-import {retrieve as starter} from './research.js';
+import {retrieve as starter,modelSource} from './research.js';
+import {limited,checkpoint} from './runtime.js';
 
 const encoder=new TextEncoder();
 export class SourceError extends Error {}
@@ -26,7 +27,7 @@ export function validateSelection(ids,env) {
 export function filters(input={}) {
   if(!input||typeof input!=='object'||Array.isArray(input))throw new SourceError('Use valid search filters.');
   const out={court:input.court||'',after:input.after||'',before:input.before||''};
-  if(typeof out.court!=='string'||!/^([a-z0-9]{2,20}( [a-z0-9]{2,20}){0,39})?$/.test(out.court))throw new SourceError('Use a CourtListener court ID, such as scotus or ca9.');
+  if(typeof out.court!=='string'||!/^([a-z0-9]{2,20}( [a-z0-9]{2,20}){0,599})?$/.test(out.court))throw new SourceError('Use a CourtListener court ID, such as scotus or ca9.');
   for(const k of ['after','before'])if(out[k]&&(typeof out[k]!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(out[k])||!Number.isFinite(Date.parse(out[k]))||new Date(out[k]).toISOString().slice(0,10)!==out[k]))throw new SourceError('Use valid dates for the search range.');
   if(out.after&&out.before&&out.after>out.before)throw new SourceError('The start date must come before the end date.');
   return out;
@@ -35,19 +36,26 @@ export function safeLink(value,host) {
   if(typeof value!=='string'||!value.trim())return '';
   try{const u=new URL(value,'https://'+host);return u.protocol==='https:'&&u.hostname===host&&!u.username&&!u.password?u.href:'';}catch{return '';}
 }
+export function opinionText(raw){
+ const input=raw.xml_harvard||raw.html_with_citations||raw.html||raw.html_lawbox||raw.html_columbia||raw.plain_text||'';
+ return plain(input.replace(/<(?:page-number|span)\b([^>]*(?:star-pagination|citation-index)[^>]*)>([\s\S]*?)<\/(?:page-number|span)>/gi,(m,attrs,inner)=>{const label=attrs.match(/label=["']([^"']+)["']/)?.[1]||plain(inner).replace(/^\*/,'');return /^\d+[A-Za-z]?$/.test(label)?' [Source page '+label+'] ':inner;}));
+}
+
 export async function sourceRequest(env,provider,url,{method='GET',body,cache=false,json=true}={}) {
+  await checkpoint(env);
   const host={courtlistener:'www.courtlistener.com',ecfr:'www.ecfr.gov',federal_register:'www.federalregister.gov'}[provider];
   if(!host||!safeLink(url,host))throw new SourceError('Unsupported source address.');
   const now=Math.floor(Date.now()/1000);
-  if(cache){const old=await env.DB.prepare('SELECT body FROM source_cache WHERE id=? AND expires>?').bind(url,now).first();if(old)return json?JSON.parse(old.body):old.body;}
+  if(cache){const old=await env.DB.prepare('SELECT body FROM source_cache WHERE id=? AND expires>?').bind(url,now).first();if(old){if(env.REQUEST)env.REQUEST.metrics.cache_hits++;return json?JSON.parse(old.body):old.body;}}
   const headers={Accept:json?'application/json':'*/*','Accept-Encoding':'gzip','User-Agent':'LexRaptor/0.4 (+https://lexraptor.com)'};
   if(provider==='courtlistener'){
     if(!env.COURTLISTENER_API_TOKEN)throw new SourceError('CourtListener is not connected.');
     headers.Authorization='Token '+env.COURTLISTENER_API_TOKEN;
   }
   if(body)headers['Content-Type']='application/x-www-form-urlencoded';
+  return limited(env,provider,async()=>{
   let response;
-  try{response=await fetch(url,{method,headers,body,redirect:'manual',signal:AbortSignal.timeout(provider==='courtlistener'?45000:20000)});}catch{throw new SourceError('The source service did not respond. Try again later.');}
+  try{response=await fetch(url,{method,headers,body,redirect:'manual',signal:AbortSignal.timeout(provider==='courtlistener'?45000:20000)});}catch(e){if(e.status===499)throw e;throw new SourceError('The source service did not respond. Try again later.');}
   if(!response.ok)throw new SourceError(response.status===429?'The source service is rate limited. Try again later.':response.status===401||response.status===403?'The source service declined access. Its connection needs attention.':'The source service could not complete this search.');
   const reader=response.body.getReader(),parts=[];let size=0;
   for(;;){const {value,done}=await reader.read();if(done)break;size+=value.length;if(size>1500000){await reader.cancel();throw new SourceError('A source document exceeds the source size limit. Open the original record.');}parts.push(value);}
@@ -56,6 +64,7 @@ export async function sourceRequest(env,provider,url,{method='GET',body,cache=fa
   let data;try{data=json?JSON.parse(text):text;}catch{throw new SourceError('The source returned an unreadable response.');}
   if(cache&&size<900000){await env.DB.prepare('INSERT INTO source_cache(id,body,expires) VALUES(?,?,?) ON CONFLICT(id) DO UPDATE SET body=excluded.body,expires=excluded.expires').bind(url,text,now+86400).run();}
   return data;
+  });
 }
 const tokens=q=>[...new Set(q.toLowerCase().match(/[a-z0-9]{3,}/g)||[])].filter(t=>!['the','and','what','does','about','that','this','from','with','have','under','which'].includes(t)).slice(0,40);
 export function passages(text,meta,query,{treatment=false,brief=false}={}) {
@@ -110,13 +119,13 @@ async function courtlistener(env,query,f,progress=()=>{}) {
     progress({stage:'reading',message:'Reading '+plain(c.caseName).slice(0,160)+'…',database:'courtlistener'});
     try{
       const full=await sourceRequest(env,'courtlistener',`https://www.courtlistener.com/api/rest/v4/opinions/${o.id}/`,{cache:true});
-      const text=plain(full.plain_text||full.html_with_citations||full.html||full.html_lawbox||full.html_columbia||full.xml_harvard||'');
+      const text=opinionText(full);const clusterId=Number(c.cluster_id)||Number(String(full.cluster||'').match(/\/(\d+)\/?$/)?.[1])||undefined;if(c.cluster_id&&full.cluster&&Number(String(full.cluster).match(/\/(\d+)\/?$/)?.[1])!==Number(c.cluster_id))throw new SourceError('The opinion did not match the returned case identity.');
       if(!text){warnings.push(`Opinion ${o.id}: no usable full text returned.`);return;}
-      const record=passages(text,{case_id:'cl-'+o.id,name:clean(plain(c.caseName)),citation:clean(plain((c.citation||[]).join('; '))),court:clean(c.court),decision_date:clean(c.dateFiled),opinion_type:clean(o.type||full.type||'not specified'),source_url:safeLink(c.absolute_url,'www.courtlistener.com'),official_url:safeLink(o.download_url||full.download_url,'www.supremecourt.gov'),database_id:'courtlistener',database_name:'CourtListener',kind:'case',research_role:phase,source_status:phase==='original'?'Original search result; does not establish current validity':'Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.'},name||query,{treatment:status&&phase!=='original',brief:f.task==='brief'&&phase==='original'});
+      const record=passages(text,{case_id:'cl-'+o.id,cluster_id:clusterId,opinion_id:o.id,identity:clusterId?'cl-'+clusterId:undefined,court_id:c.court_id||'',source_kind:'Court opinion text via CourtListener; provider transcription',short_name:clean(plain(c.caseNameShort||c.caseName)),name:clean(plain(c.caseName)),citation:clean(plain((c.citation||[]).join('; '))),court:clean(c.court),decision_date:clean(c.dateFiled),opinion_type:clean(o.type||full.type||'not specified'),source_url:safeLink(c.absolute_url,'www.courtlistener.com'),official_url:safeLink(o.download_url||full.download_url,'www.supremecourt.gov'),database_id:'courtlistener',database_name:'CourtListener',kind:'case',research_role:phase,source_status:phase==='original'?'Original search result; does not establish current validity':'Later-treatment search result; read the opinion to establish what treatment occurred. Not a citator determination.'},name||query,{treatment:status&&phase!=='original',brief:f.task==='brief'&&phase==='original'});
       groups.push({rank,passages:record});
     }catch(e){warnings.push(`Opinion ${o.id}: ${e instanceof SourceError?e.message:'Retrieval failed.'}`);}
   }
-  const original=await search(name?caseNameQuery(name):query,f,name?'citeCount desc':'score desc','original');
+  const original=f.resolved_case?{count:1,results:[{caseName:f.resolved_case.name,court_id:f.resolved_case.court_id,dateFiled:f.resolved_case.date,cluster_id:f.resolved_case.id,opinions:[]}]}:await search(name?caseNameQuery(name):query,f,name?'citeCount desc':'score desc','original');
   const primary=original.results?.[0];
   await Promise.all((original.results||[]).slice(0,status&&name?1:3).map(c=>read(c,'original')));
   if(status&&name){
@@ -189,6 +198,7 @@ export async function searchSources(env,{query,database_ids,...f},progress=()=>{
     if(id==='legal_web')return {id,status:'pending',sources:[],total:null,note:'Public legal web search runs only with AI Send; Source search makes no paid web calls.'};
     progress({stage:'searching',database:id,message:'Searching '+(catalog(env).find(d=>d.id===id)?.name||id)+'…'});
     try{const result=id==='cap'?{sources:starterSearch(query,f),total:null,note:'Search of the 12 imported starter opinions.'}:await ({courtlistener,ecfr,federal_register:federalRegister}[id])(env,query,f,progress);
+      progress({stage:'authorities',database:id,sources:result.sources,message:'Authorities available from '+id});
       progress({stage:'source_complete',database:id,message:(catalog(env).find(d=>d.id===id)?.name||id)+': '+result.sources.length+' passages retrieved.'});
       return {id,status:result.sources.length?'ok':(result.warnings?.length?'unavailable':'empty'),...result};
     }catch(e){progress({stage:'source_complete',database:id,message:(catalog(env).find(d=>d.id===id)?.name||id)+': unavailable.'});return {id,status:'unavailable',sources:[],total:null,note:e instanceof SourceError?e.message:'This database could not be searched.'};}
@@ -200,7 +210,7 @@ export async function searchSources(env,{query,database_ids,...f},progress=()=>{
 }
 export function evidenceSubset(sources,maxBytes=22000) {
   const result=[];let size=0;
-  for(const s of sources){const n=encoder.encode(JSON.stringify(s)).length;if(size+n<=maxBytes){result.push(s);size+=n;}if(result.length===12)break;}
+  for(const s of sources){const n=encoder.encode(JSON.stringify(modelSource(s))).length;if(size+n<=maxBytes){result.push(s);size+=n;}if(result.length===12)break;}
   return result.map((s,i)=>({...s,original_id:s.id,id:'S'+(i+1)}));
 }
 export async function auditCitations(env,text) {

@@ -1,0 +1,8 @@
+import {mkdir,writeFile} from 'node:fs/promises';
+const base=process.env.LEX_RAPTOR_URL||'http://127.0.0.1:8787',out='.local-data/authority-audit';
+const status=await(await fetch(base+'/api/demo/status')).json();
+if(status.inference!=='local'&&process.argv.includes('--brief')&&!process.argv.includes('--allow-api-spend'))throw new Error('Hosted briefing spends credits. Add --allow-api-spend explicitly. Direct lookup and collection need no model.');
+await mkdir(out,{recursive:true});
+const cases=[['celotex-lookup','resolve',{text:'477 U.S. 317'}],['erie-lookup','resolve',{text:'304 U.S. 64'}],['collection','collect',{text:'477 U.S. 317, 106 S. Ct. 2548. Again 477 U.S. 317. Erie 304 U.S. 64. 1 H. 150. 999 U.S. 999. 33 Umbrella 422. Id. at 321.'}]];
+if(process.argv.includes('--brief'))cases.push(['celotex-brief','research',{question:'Brief Celotex Corp. v. Catrett, 477 U.S. 317 (1986)',task:'auto',database_ids:'auto',source_mode:'auto'}]);
+for(const [name,path,body] of cases){const start=performance.now(),response=await fetch(base+'/api/demo/'+path,{method:'POST',headers:{Origin:new URL(base).origin,'Content-Type':'application/json'},body:JSON.stringify({...body,request_id:crypto.randomUUID()})}),data=await response.json(),seconds=Number(((performance.now()-start)/1000).toFixed(2));await writeFile(out+'/'+name+'.json',JSON.stringify({seconds,http_status:response.status,request:body,result:data},null,2));console.log(JSON.stringify({name,seconds,http_status:response.status,metrics:data.metrics,resolution:data.resolution?.status,case_id:data.resolution?.case?.id,sections:data.propositions?.map(p=>p.section),missing:data.missing_sections,entries:data.items?.map(i=>i.status),error:data.error}));if(!response.ok)process.exitCode=1;}

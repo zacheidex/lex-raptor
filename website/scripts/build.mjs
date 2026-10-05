@@ -16,3 +16,5 @@ await mkdir('dist/client/pdf',{recursive:true});
 for(const folder of ['cmaps','standard_fonts'])await cp('node_modules/pdfjs-dist/'+folder,'dist/client/pdf/'+folder,{recursive:true});
 
 await cp('shared/conversation.js','dist/client/conversation.js');
+
+await build({entryPoints:['client/exports.js'],bundle:true,format:'esm',platform:'browser',target:'es2022',outfile:'dist/client/exports.js',minify:true});

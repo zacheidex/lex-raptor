@@ -1,0 +1,16 @@
+# SERVER values only. Replace placeholders through the host secret manager.
+DEMO_ENABLED=true
+DEMO_EXPIRES_AT=<owner-chosen Unix timestamp>
+DEMO_SESSION_SECRET=<stable random secret, 32+ characters>
+OPENAI_API_KEY=<dedicated project key>
+COURTLISTENER_API_TOKEN=<optional CourtListener token>
+ACCESS_MODE=public
+# Optional pilot (configure Cloudflare Access first):
+# ACCESS_MODE=invite
+# ACCESS_TEAM_DOMAIN=https://YOUR-TEAM.cloudflareaccess.com
+# ACCESS_AUD=<application audience tag>
+REQUESTS_PER_HOUR=120
+AI_REQUESTS_PER_HOUR=20
+# Local launcher/CLI only:
+# OLLAMA_MODEL=qwen3:14b
+# LEX_RAPTOR_PORT=8787

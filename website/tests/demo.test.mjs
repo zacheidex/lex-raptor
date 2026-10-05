@@ -6,39 +6,7 @@ import {reserve,upgradeReservation,settle,CAP,RESERVE,WEB_RESERVE,cost} from '..
 import {conversationContext} from '../shared/conversation.js';
 import {quoteSegments,webSources,legalUrl,referenceKey} from '../worker/web.js';
 
-async function fixture(t,options={}) {
-  const calls=[];
-  const bindings={DEMO_ENABLED:'true',OPENAI_API_KEY:'fake-test-key',DEMO_SESSION_SECRET:'test-session-secret-not-for-production',DEMO_EXPIRES_AT:String(Math.floor(Date.now()/1000)+86400),...options.bindings};
-  const mf=new Miniflare({modules:true,scriptPath:'dist/server/index.js',compatibilityDate:'2025-09-01',d1Databases:['DB'],
-    bindings,
-    serviceBindings:{ASSETS:async request=>new Response(await readFile('public'+(new URL(request.url).pathname==='/'?'/index.html':new URL(request.url).pathname)))},
-    outboundService:async request=>{
-      if(options.source){const response=await options.source(request);if(response)return response;}
-      if(options.local&&request.url==='http://127.0.0.1:11434/api/chat'){
-        const body=await request.json();calls.push(body);if(body.format.properties.search_query)return Response.json({done:true,done_reason:'stop',prompt_eval_count:500,eval_count:100,message:{content:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}});if(options.verify&&body.format.properties.findings)return Response.json({done:true,done_reason:'stop',prompt_eval_count:500,eval_count:100,message:{content:JSON.stringify({findings:[]})}});const {sources}=JSON.parse(body.messages[1].content);
-        return Response.json({done:true,done_reason:'stop',prompt_eval_count:1000,eval_count:200,message:{content:JSON.stringify({propositions:[{section:body.format.properties.propositions.items.properties.section.enum[0],claim:'Local fixture finding.',source_id:sources[0].id,quote_id:sources[0].text.match(/\[(S\d+Q\d+)\]/)[1],web_source_url:''}]})}});
-      }
-      assert.equal(request.url,'https://api.openai.com/v1/responses');
-      const body=await request.json();calls.push(body);
-      if(options.verify&&['citation_page_reader','citation_support_review'].includes(body.text.format.name))return Response.json(await options.verify(body));
-      if(options.beforeDraft&&body.text.format.name==='legal_research')await options.beforeDraft();
-      if(options.fail||(options.failDraft&&body.text.format.name==='legal_research'))return new Response('{}',{status:500});
-      if(body.text.format.name==='research_plan')return Response.json({status:'completed',usage:{input_tokens:500,output_tokens:100},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}]}]});
-      if(options.webResponse&&body.tools)return Response.json(options.webResponse);
-      if(options.draftResponse)return Response.json(options.draftResponse);
-      const {sources}=JSON.parse(body.input),s=sources[0];
-      return Response.json({status:'completed',usage:{input_tokens:1000,output_tokens:200},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify({propositions:[{claim:'A fixture claim to verify citation handling.',source_id:s.id,quote_id:s.text.match(/\[(S\d+Q\d+)\]/)[1],web_source_url:''},{claim:'Invented authority must be removed.',source_id:'invented',quote:'This quotation is not a real supplied source.'}]})}]}]});
-    }
-  });
-  t.after(()=>mf.dispose());
-  const db=await mf.getD1Database('DB');
-  for(const f of (await readdir('drizzle')).filter(f=>f.endsWith('.sql')).sort()) {
-    for(const sql of (await readFile('drizzle/'+f,'utf8')).split('--> statement-breakpoint').filter(s=>s.trim()))await db.prepare(sql).run();
-  }
-  async function req(path,body,cookie='',headers={}){return mf.dispatchFetch('https://lex.test/api/demo/'+path,{...(body!==undefined?{method:'POST',body:JSON.stringify(body)}:{}),headers:{'Content-Type':'application/json',Origin:'https://lex.test','CF-Connecting-IP':'203.0.113.1',Cookie:cookie,...headers}});}
-  const question=(extra={})=>({question:'What does Celotex say about the burden on summary judgment?',database_ids:['cap'],request_id:crypto.randomUUID(),...extra});
-  return {mf,db,calls,req,question,bindings};
-}
+import {fixture} from './fixture.mjs';
 
 const webUrl='https://example.gov/statutes/property';
 const webResponse={status:'completed',usage:{input_tokens:2000,output_tokens:300},output:[{type:'web_search_call',status:'completed',action:{sources:[{url:webUrl,title:'Example government code'},{url:'https://lawfirm.example/blog'}]}},{type:'message',content:[{type:'output_text',text:JSON.stringify({propositions:[{section:'Findings',claim:'A supported web finding.',source_id:'',quote_id:'',web_source_url:webUrl},{section:'Findings',claim:'Invented source rejected.',source_id:'',quote_id:'',web_source_url:'https://example.gov/invented'}]})}]}]};
@@ -288,13 +256,13 @@ test('provider failures and missing usage retain their full reservation',async t
   assert.equal(cost({input_tokens:-1,output_tokens:0}),null);
 });
 
-test('historical daily and hourly request counts no longer block testing or reset spending',async t=>{
+test('legacy counts do not reset spending; the new job limiter is reported separately',async t=>{
   const f=await fixture(t),now=Math.floor(Date.now()/1000),encoder=new TextEncoder();
   const key=await crypto.subtle.importKey('raw',encoder.encode(f.bindings.DEMO_SESSION_SECRET),{name:'HMAC',hash:'SHA-256'},false,['sign']);
   const ip=[...new Uint8Array(await crypto.subtle.sign('HMAC',key,encoder.encode('203.0.113.1')))].map(b=>b.toString(16).padStart(2,'0')).join('');
   for(let i=0;i<40;i++)await f.db.prepare('INSERT INTO demo_calls(id,visitor,session,created,state,charged) VALUES(?,?,?,?,?,?)').bind('old'+i,ip,'public:'+ip,now-2,'completed',1000).run();
   await f.db.prepare('INSERT INTO demo_attempts(id,count,expires) VALUES(?,100,?)').bind('research:'+ip+':'+Math.floor(now/3600),now+7200).run();
-  const status=await (await f.req('status')).json();assert.equal(status.request_limits,false);assert.equal(status.cap,10);assert.equal(status.daily_remaining,undefined);
+  const status=await (await f.req('status')).json();assert.equal(status.request_limits,true);assert.equal(status.cap,10);assert.equal(status.daily_remaining,undefined);
   assert.equal((await f.req('research',f.question())).status,200);
   assert.equal((await f.db.prepare('SELECT SUM(charged) n FROM demo_calls').first()).n,40325);
   const admitted=await Promise.all(Array.from({length:15},()=>reserve(f.db,crypto.randomUUID(),ip,'public:'+ip,now)));

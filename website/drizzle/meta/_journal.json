@@ -36,6 +36,13 @@
       "when": 1791186275084,
       "tag": "0004_bouncy_nicolaos",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1791219324242,
+      "tag": "0005_burly_deadpool",
+      "breakpoints": true
     }
   ]
 }

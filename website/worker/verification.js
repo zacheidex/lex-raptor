@@ -1,6 +1,7 @@
 import {legalUrl,referenceKey,WEB_CALL_LIMIT,webSearches} from './web.js';
 import {plain,SourceError} from './sources.js';
 import {MODEL,MAX_INPUT_BYTES} from './budget.js';
+import {limited,checkpoint} from './runtime.js';
 import {local} from './model.js';
 const bytes=value=>new TextEncoder().encode(JSON.stringify(value)).length;
 const object=properties=>({type:'object',properties,required:Object.keys(properties),additionalProperties:false});
@@ -85,7 +86,7 @@ function reviewPayload(findings,pages) {
 export async function verifyCitations(env,input,callModel,progress=()=>{}) {
   progress({stage:'opening',message:'Reopening cited sources…'});
   const pages=[];let readerActions=[];
-  for(let i=0;i<input.pages.length;i+=4)pages.push(...await Promise.all(input.pages.slice(i,i+4).map(fetchPage)));
+  for(let i=0;i<input.pages.length;i+=4)pages.push(...await Promise.all(input.pages.slice(i,i+4).map(page=>limited(env,'legal_web_page',()=>fetchPage(page)))));
   const missing=pages.filter(p=>p.status!=='read').slice(0,WEB_CALL_LIMIT);
   if(missing.length&&!local(env)){
     for(let i=0;i<missing.length;i++){
@@ -123,4 +124,31 @@ export async function verifyCitations(env,input,callModel,progress=()=>{}) {
     return {...f,verdict,reason,evidence};
   });
   return {checked_at:new Date().toISOString(),reader_actions:readerActions,findings,pages:pages.map(({text,...p})=>p),limitation:'AI review of retrieved excerpts. Later treatment and current validity are not comprehensively checked.'};
+}
+
+export async function reviewPassageFindings(env,body,callModel,progress=()=>{}){
+ if(!/^[a-f0-9-]{36}$/.test(body.request_id||'')||!Array.isArray(body.findings)||!body.findings.length||body.findings.length>8||!Array.isArray(body.sources)||body.sources.length>16)throw new SourceError('Select up to eight findings for support review.');
+ const {authority}=await import('./cases.js');
+ const pages=[],records=new Map();
+ for(const s of body.sources){
+  if(typeof s.id!=='string'||s.id.length>80)throw new SourceError('Invalid source reference.');
+  let text='',method='saved_excerpt',detail='AI review of the saved excerpt; source was not freshly retrieved.',url=legalUrl(s.source_url)?.url||'';
+  if(s.cluster_id&&s.opinion_id){
+   try{if(!records.has(s.cluster_id))records.set(s.cluster_id,await authority(env,s.cluster_id));const a=records.get(s.cluster_id),o=a.opinions.find(o=>o.id===Number(s.opinion_id));text=o?.text||'';url=a.source_url;method='direct';detail='Case identity and fresh/cached public opinion record re-resolved.';}catch{detail='The opinion record could not be re-resolved.';}
+  }else if(typeof s.text==='string'&&s.text.length<=22000)text=s.text;
+  pages.push({id:s.id,url,text,status:text?'read':'unavailable',method,detail});
+ }
+ const findings=body.findings.map((f,i)=>{
+  if(typeof f.claim!=='string'||!f.claim.trim()||f.claim.length>2500||!pages.some(p=>p.id===f.source_id))throw new SourceError('Invalid finding or source for support review.');
+  return {id:'F'+(i+1),claim:f.claim,source_ids:[f.source_id],quote:typeof f.quote==='string'?f.quote:''};
+ });
+ const {input,sources}=reviewPayload(findings,pages);progress({stage:'reviewing',message:'Reviewing whether the cited opinion text supports each finding…'});
+ const reviewed=pages.some(p=>p.text)?parse(await callModel(input)):{};
+ return {checked_at:new Date().toISOString(),findings:findings.map(f=>{
+  const r=Array.isArray(reviewed.findings)?reviewed.findings.find(x=>x.finding_id===f.id):null,p=pages.find(p=>p.id===f.source_ids[0]);
+  let verdict=r?.verdict||'unverified',reason=typeof r?.reason==='string'?r.reason:'No usable support review was returned.';
+  const evidence=(Array.isArray(r?.evidence_ids)?r.evidence_ids:[]).slice(0,6).map(id=>sources.filter(s=>f.source_ids.includes(s.id)).flatMap(s=>s.segments.map(e=>({...e,source_id:s.id,url:s.url,method:s.method}))).find(e=>e.id===id));
+  if(!['supported','partial','contradicted','unverified'].includes(verdict)||evidence.some(e=>!e)||verdict!=='unverified'&&!evidence.length){verdict='unverified';reason='The review did not return traceable evidence.';}
+  return {...f,verdict,reason,evidence:evidence.filter(Boolean),quotation:f.quote&&p?.text.includes(f.quote)?'Exact match':'Unmatched or unavailable',citation:p?.method==='direct'?'Re-resolved opinion identity':'Not independently resolved',review_method:p?.method};
+ }),pages:pages.map(({text,...p})=>p),limitation:'AI review of selected excerpts; later treatment and current validity are not comprehensively checked.'};
 }

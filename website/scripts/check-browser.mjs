@@ -1,0 +1,51 @@
+// Bounded browser regression suite. All provider/AI endpoints are mocked.
+// Start npm run local first; install Chromium with npx playwright install chromium.
+import {chromium} from '@playwright/test';
+import assert from 'node:assert/strict';
+import {readFile,mkdir} from 'node:fs/promises';
+import {unzipSync,strFromU8} from 'fflate';
+const base=process.env.LEX_RAPTOR_URL||'http://127.0.0.1:8787';
+if(!['127.0.0.1','localhost'].includes(new URL(base).hostname))throw new Error('Run browser fixture tests against a local build.');
+const authority=JSON.parse(await readFile('tests/fixtures/celotex-public.json','utf8')),collection=JSON.parse(await readFile('tests/fixtures/collection-public.json','utf8'));
+const erie=JSON.parse(await readFile('tests/fixtures/erie-public.json','utf8'));
+const quote=authority.opinions[0].text.slice(0,160),source={id:'S1',kind:'case',database_id:'courtlistener',name:authority.name,short_name:'Celotex',citation:'477 U.S. 317',court:authority.court,decision_date:authority.date,cluster_id:authority.id,opinion_id:authority.principal_id,text:quote+' Supporting context.',source_url:authority.source_url,locator:'Source page 318',source_kind:authority.source_kind};
+const record={task:'brief',sources:[source],propositions:[{section:'Holding',claim:'A public fixture claim for evidence review.',quote,source_id:'S1',evidence_method:'exact_passage',verification:{quotation:'Exact match',citation:'Resolved exact case',support:{verdict:'not_reviewed'},later_treatment:'Not reviewed'}}],authorities:[authority],resolution:{status:'resolved',case:authority},searched:[{id:'courtlistener',status:'ok',passages:1,note:'Fixture'}],filters:{},databases:['courtlistener'],model_used:true,missing_sections:['Facts'],scope:{level:'any'}};
+await mkdir('.local-data/browser-check',{recursive:true});
+const browser=await chromium.launch({headless:true});let assertions=0;
+try{for(const width of [1440,390]){const page=await browser.newPage({viewport:{width,height:1000},acceptDownloads:true}),errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.route('**/api/demo/**',async route=>{const path=new URL(route.request().url()).pathname.split('/').at(-1),body=route.request().postDataJSON();if(body)requests.push({path,body});let data;
+  if(path==='status')data={enabled:true,search_enabled:true,inference:'api',cap:10,databases:[{id:'courtlistener',name:'CourtListener',available:true},{id:'legal_web',name:'Public legal web',available:true}],tasks:{brief:{name:'Case brief'}}};
+  else if(path==='courts')data={courts:[{id:'scotus',name:'Supreme Court of the United States',short_name:'SCOTUS',level:'federal',state:''},{id:'ga',name:'Supreme Court of Georgia',short_name:'Georgia',state:'GA',level:'state'}],states:[{id:'GA',name:'Georgia'}]};
+  else if(path==='resolve')data={resolution:{status:'resolved',case:authority},model_used:false};
+  else if(path==='authority')data={authority:Number(body.cluster_id)===103012?erie:authority};
+  else if(path==='citations')data={citations:[{citation:'477 U.S. 317',status:200,matches:[{name:authority.name,url:authority.source_url}]}]};
+  else if(path==='review')data={checked_at:new Date().toISOString(),findings:body.findings.map(()=>({verdict:'partial',reason:'Fixture review: a material qualification is missing.',citation:'Resolved actual source',quotation:'Exact match',evidence:[{text:quote,method:'retrieved_opinion'}]}))};
+  else if(path==='collect')data=structuredClone(collection);
+  else if(path==='research'||path==='search'){data={...structuredClone(record),scope:body.scope};if(path==='search')data.propositions=[];if(/statute/.test(body.question)){data.sources=[{id:'S1',name:'Alabama self-defense statute',citation:'Alabama Code § 13A-3-23 (2024 edition)',source_url:'https://law.justia.com/codes/alabama/2024/title-13a/chapter-3/section-13a-3-23/',kind:'web_page',evidence_method:'web_citation',source_kind:'Unofficial mirror',text:''}];data.propositions=[{claim:'A fixture statute finding.',source_id:'S1',source_ids:['S1'],evidence_method:'web_citation'}];}}
+  else if(path==='feedback'||path==='cancel')data={saved:true};
+  else throw new Error('Unexpected API '+path);
+  await route.fulfill({contentType:'application/json',body:JSON.stringify(data)});
+ });
+ await page.goto(base);await page.waitForFunction(()=>!document.getElementById('ask').disabled);assert.match(await page.locator('#demo-budget').innerText(),/\$10 expedition budget/);assertions++;
+ await page.locator('#question').fill('477 U.S. 317');await page.locator('#direct-lookup').click();await page.getByRole('button',{name:'Open opinion',exact:true}).waitFor();assert.equal(requests.filter(r=>r.path==='research').length,0);assertions++;
+ await page.locator('#citation-dialog [data-close]').click();await page.locator('[data-flow="brief"]').click();await page.locator('#question').fill('Brief Celotex, 477 U.S. 317');await page.locator('#ask').click();await page.locator('.finding').waitFor();
+ await page.locator('.finding-text').click();await page.locator('#evidence-dialog mark').first().waitFor();assert.equal(await page.locator('#evidence-dialog mark').first().innerText(),quote);assertions++;
+ await page.getByRole('button',{name:'Review this finding with AI'}).click();await page.getByText('Partially supported · Fixture review:',{exact:false}).waitFor();await page.getByRole('button',{name:'Bookmark authority',exact:true}).click();await page.locator('#evidence-dialog [data-close]').click();
+ assert.match(await page.locator('.review-state').innerText(),/Partially supported/);assertions++;
+ const docEvent=page.waitForEvent('download');await page.getByRole('button',{name:'Download DOCX'}).click();const doc=await docEvent,docFiles=unzipSync(new Uint8Array(await readFile(await doc.path())));assert.match(strFromU8(docFiles['word/document.xml']),/partial/);assertions++;
+ await page.locator('#scope-state').selectOption('GA');await page.locator('#scope-level').selectOption('state');await page.locator('#question').fill('Explain the holding');await page.locator('#ask').click();await page.waitForFunction(()=>document.querySelectorAll('.finding').length===2);assert.equal(requests.findLast(r=>r.path==='research').body.scope.state,'GA');assertions++;
+ await page.locator('#question').fill('Summary judgment sources');await page.locator('#search').click();await page.getByText('Source search · CourtListener',{exact:true}).waitFor();
+ await page.locator('#save-project').click();await page.locator('#project-name').fill('Public fixture research');await page.locator('#project-notes').fill('Check the qualification.');await page.locator('#project-save-confirm').click();await page.getByText('Saved in this browser. Export a backup for another device.',{exact:true}).waitFor();
+ const exportEvent=page.waitForEvent('download');await page.locator('#project-export').click();const exported=await exportEvent,projectPath=await exported.path(),project=JSON.parse(await readFile(projectPath,'utf8'));assert.equal(project.history[0].propositions[0].verification.support.verdict,'partial');assert.equal(project.bookmarks.length,1);assert.equal(project.history[2].source_only,true);assertions++;assert.equal(project.history[0].documents,undefined);assertions+=3;
+ await page.reload();await page.locator('#open-projects').click();await page.locator('#project-list').getByRole('button',{name:'Public fixture research',exact:true}).click();await page.waitForFunction(()=>document.querySelectorAll('.finding').length===2);assert.equal(await page.locator('.finding').count(),2);assert.match(await page.locator('.review-state').first().innerText(),/Partially supported/);assert.equal(await page.locator('#scope-state').inputValue(),'GA');assertions+=3;
+ await page.locator('#open-projects').click();await page.locator('#project-import').setInputFiles(projectPath);await page.getByText('Imported “Public fixture research”. Open it below.',{exact:true}).waitFor();await page.waitForFunction(()=>document.querySelectorAll('#project-list .project-row').length===2);assert.equal(await page.locator('#project-list .project-row').count(),2);assertions++;
+ await page.locator('#projects-dialog [data-close]').click();await page.locator('[data-flow="collect"]').click();assert.equal(await page.locator('#ask').innerText(),'Collect cases');assertions++;
+ await page.locator('#question').fill('477 U.S. 317. 304 U.S. 64. 1 H. 150. 999 U.S. 999.');await page.locator('#ask').click();await page.locator('.collection-table').waitFor();assert.equal(await page.locator('.collection-table tbody tr').count(),6);assertions++;
+ const csvEvent=page.waitForEvent('download');await page.getByRole('button',{name:'Download CSV',exact:true}).click();assert.match(await readFile(await(await csvEvent).path(),'utf8'),/999 U.S. 999/);assertions++;
+ const zipEvent=page.waitForEvent('download');await page.getByRole('button',{name:'Download authority packet',exact:true}).click();const zip=unzipSync(new Uint8Array(await readFile(await(await zipEvent).path())));assert.ok(zip['manifest.json']);assert.match(strFromU8(zip['table-of-authorities.csv']),/not_found/);assert.ok(zip['case-111722-text.html']);assert.ok(zip['case-103012-text.html']);assertions+=3;
+ await page.locator('.collection-table select').selectOption({index:1});assert.ok(await page.locator('.collection-table tbody').innerText());assertions++;
+ await page.locator('[data-flow="issue"]').click();await page.locator('#question').fill('A statute question');await page.locator('#question').press('Enter');await page.getByRole('button',{name:/Alabama Code § 13A-3-23/}).first().waitFor();assertions++;
+ await page.locator('.finding-text').last().click();assert.match(await page.locator('#evidence-content').innerText(),/Source text is unavailable/);assertions++;await page.keyboard.press('Escape');assert.equal(await page.locator('#evidence-dialog').evaluate(e=>e.open),false);assertions++;
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.deepEqual(errors,[]);assertions+=2;
+ await page.screenshot({path:'.local-data/browser-check/workflows-'+width+'.png',fullPage:true});console.log(JSON.stringify({viewport:width,provider_mode:'mocked',browser_errors:errors.length,assertions}));await page.close();
+ }}finally{await browser.close();}

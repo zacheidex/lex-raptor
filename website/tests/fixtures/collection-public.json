@@ -1,0 +1,322 @@
+{
+  "items": [
+    {
+      "key": "case:111722",
+      "status": "resolved",
+      "case": {
+        "id": 111722,
+        "identity": "cl-111722",
+        "name": "Celotex Corp. v. Catrett, Administratrix of the Estate of Catrett",
+        "short_name": "Celotex Corp. v. Catrett",
+        "citations": [
+          "477 U.S. 317",
+          "106 S. Ct. 2548",
+          "91 L. Ed. 2d 265",
+          "1986 U.S. LEXIS 118",
+          "54 U.S.L.W. 4775",
+          "4 Fed. R. Serv. 3d 1024"
+        ],
+        "citation": "477 U.S. 317; 106 S. Ct. 2548; 91 L. Ed. 2d 265; 1986 U.S. LEXIS 118; 54 U.S.L.W. 4775; 4 Fed. R. Serv. 3d 1024",
+        "court_id": "",
+        "court": "",
+        "date": "1986-06-25",
+        "source_url": "https://www.courtlistener.com/opinion/111722/celotex-corp-v-catrett-administratrix-of-the-estate-of-catrett/",
+        "precedential_status": "Published",
+        "docket_id": 1324054,
+        "opinion_ids": [
+          9430607,
+          9430608,
+          9430609,
+          9430610,
+          111722
+        ],
+        "stage": "Check opinion and disposition"
+      },
+      "candidates": [
+        {
+          "id": 111722,
+          "identity": "cl-111722",
+          "name": "Celotex Corp. v. Catrett, Administratrix of the Estate of Catrett",
+          "short_name": "Celotex Corp. v. Catrett",
+          "citations": [
+            "477 U.S. 317",
+            "106 S. Ct. 2548",
+            "91 L. Ed. 2d 265",
+            "1986 U.S. LEXIS 118",
+            "54 U.S.L.W. 4775",
+            "4 Fed. R. Serv. 3d 1024"
+          ],
+          "citation": "477 U.S. 317; 106 S. Ct. 2548; 91 L. Ed. 2d 265; 1986 U.S. LEXIS 118; 54 U.S.L.W. 4775; 4 Fed. R. Serv. 3d 1024",
+          "court_id": "",
+          "court": "",
+          "date": "1986-06-25",
+          "source_url": "https://www.courtlistener.com/opinion/111722/celotex-corp-v-catrett-administratrix-of-the-estate-of-catrett/",
+          "precedential_status": "Published",
+          "docket_id": 1324054,
+          "opinion_ids": [
+            9430607,
+            9430608,
+            9430609,
+            9430610,
+            111722
+          ],
+          "stage": "Check opinion and disposition"
+        }
+      ],
+      "occurrences": [
+        {
+          "document": "Pasted text",
+          "page": null,
+          "location": "Extracted text",
+          "text": "477 U.S. 317",
+          "start": 26,
+          "end": 38,
+          "uncertain": false
+        },
+        {
+          "document": "Pasted text",
+          "page": null,
+          "location": "Extracted text",
+          "text": "106 S. Ct. 2548",
+          "start": 40,
+          "end": 55,
+          "uncertain": false
+        },
+        {
+          "document": "Pasted text",
+          "page": null,
+          "location": "Extracted text",
+          "text": "477 U.S. 317",
+          "start": 70,
+          "end": 82,
+          "uncertain": false
+        }
+      ],
+      "original_citations": [
+        "477 U.S. 317",
+        "106 S. Ct. 2548"
+      ],
+      "availability": "Not retrieved",
+      "error": ""
+    },
+    {
+      "key": "case:103012",
+      "status": "resolved",
+      "case": {
+        "id": 103012,
+        "identity": "cl-103012",
+        "name": "Erie Railroad v. Tompkins",
+        "short_name": "Erie R. Co.",
+        "citations": [
+          "304 U.S. 64",
+          "58 S. Ct. 817",
+          "82 L. Ed. 1188",
+          "1938 U.S. LEXIS 984",
+          "11 Ohio Op. 246",
+          "114 A.L.R. 1487"
+        ],
+        "citation": "304 U.S. 64; 58 S. Ct. 817; 82 L. Ed. 1188; 1938 U.S. LEXIS 984; 11 Ohio Op. 246; 114 A.L.R. 1487",
+        "court_id": "",
+        "court": "",
+        "date": "1938-04-25",
+        "source_url": "https://www.courtlistener.com/opinion/103012/erie-railroad-v-tompkins/",
+        "precedential_status": "Published",
+        "docket_id": 119296,
+        "opinion_ids": [
+          103012,
+          9418969,
+          9418970
+        ],
+        "stage": "Check opinion and disposition"
+      },
+      "candidates": [
+        {
+          "id": 103012,
+          "identity": "cl-103012",
+          "name": "Erie Railroad v. Tompkins",
+          "short_name": "Erie R. Co.",
+          "citations": [
+            "304 U.S. 64",
+            "58 S. Ct. 817",
+            "82 L. Ed. 1188",
+            "1938 U.S. LEXIS 984",
+            "11 Ohio Op. 246",
+            "114 A.L.R. 1487"
+          ],
+          "citation": "304 U.S. 64; 58 S. Ct. 817; 82 L. Ed. 1188; 1938 U.S. LEXIS 984; 11 Ohio Op. 246; 114 A.L.R. 1487",
+          "court_id": "",
+          "court": "",
+          "date": "1938-04-25",
+          "source_url": "https://www.courtlistener.com/opinion/103012/erie-railroad-v-tompkins/",
+          "precedential_status": "Published",
+          "docket_id": 119296,
+          "opinion_ids": [
+            103012,
+            9418969,
+            9418970
+          ],
+          "stage": "Check opinion and disposition"
+        }
+      ],
+      "occurrences": [
+        {
+          "document": "Pasted text",
+          "page": null,
+          "location": "Extracted text",
+          "text": "304 U.S. 64",
+          "start": 90,
+          "end": 101,
+          "uncertain": false
+        }
+      ],
+      "original_citations": [
+        "304 U.S. 64"
+      ],
+      "availability": "Not retrieved",
+      "error": ""
+    },
+    {
+      "key": "citation:1h150",
+      "status": "ambiguous",
+      "case": null,
+      "candidates": [
+        {
+          "id": 8535319,
+          "identity": "cl-8535319",
+          "name": "Louis v. Steamboat Buckeye",
+          "short_name": "Louis",
+          "citations": [
+            "1 Handy 150"
+          ],
+          "citation": "1 Handy 150",
+          "court_id": "",
+          "court": "",
+          "date": "1854-06-15",
+          "source_url": "https://www.courtlistener.com/opinion/8535319/louis-v-steamboat-buckeye/",
+          "precedential_status": "Published",
+          "docket_id": 65797743,
+          "opinion_ids": [
+            8507841
+          ],
+          "stage": "Check opinion and disposition"
+        },
+        {
+          "id": 6606131,
+          "identity": "cl-6606131",
+          "name": "Fell v. Parke",
+          "short_name": "Fell",
+          "citations": [
+            "1 Haw. 150"
+          ],
+          "citation": "1 Haw. 150",
+          "court_id": "",
+          "court": "",
+          "date": "1854-10-15",
+          "source_url": "https://www.courtlistener.com/opinion/6606131/fell-v-parke/",
+          "precedential_status": "Published",
+          "docket_id": 63536458,
+          "opinion_ids": [
+            6481976
+          ],
+          "stage": "Check opinion and disposition"
+        }
+      ],
+      "occurrences": [
+        {
+          "document": "Pasted text",
+          "page": null,
+          "location": "Extracted text",
+          "text": "1 H. 150",
+          "start": 114,
+          "end": 122,
+          "uncertain": false
+        }
+      ],
+      "original_citations": [
+        "1 H. 150"
+      ],
+      "availability": "Not retrieved",
+      "error": ""
+    },
+    {
+      "key": "citation:999us999",
+      "status": "not_found",
+      "case": null,
+      "candidates": [],
+      "occurrences": [
+        {
+          "document": "Pasted text",
+          "page": null,
+          "location": "Extracted text",
+          "text": "999 U.S. 999",
+          "start": 133,
+          "end": 145,
+          "uncertain": false
+        }
+      ],
+      "original_citations": [
+        "999 U.S. 999"
+      ],
+      "availability": "Not retrieved",
+      "error": "Citation not found: '999 U.S. 999'"
+    },
+    {
+      "key": "citation:33umbrella422",
+      "status": "unrecognized",
+      "case": null,
+      "candidates": [],
+      "occurrences": [
+        {
+          "document": "Pasted text",
+          "page": null,
+          "location": "Extracted text",
+          "text": "33 Umbrella 422",
+          "start": 158,
+          "end": 173,
+          "uncertain": false
+        }
+      ],
+      "original_citations": [
+        "33 Umbrella 422"
+      ],
+      "availability": "Not retrieved",
+      "error": "The parser could not recognize this citation."
+    },
+    {
+      "key": "citation:idat321",
+      "status": "unrecognized",
+      "case": null,
+      "candidates": [],
+      "occurrences": [
+        {
+          "document": "Pasted text",
+          "page": null,
+          "location": "Extracted text",
+          "text": "Id. at 321",
+          "start": 182,
+          "end": 192,
+          "uncertain": true
+        }
+      ],
+      "original_citations": [
+        "Id. at 321"
+      ],
+      "availability": "Not retrieved",
+      "error": "Short or malformed reference; supply a full citation."
+    }
+  ],
+  "occurrence_count": 8,
+  "method": "Deterministic candidate parsing and CourtListener/Eyecite resolution; no model",
+  "warnings": [],
+  "unparsed_note": "Short forms, unusual citation formats and OCR errors may require correction.",
+  "retrieved_at": "2026-10-05T17:18:44.454Z",
+  "model_used": false,
+  "metrics": {
+    "provider_requests": {
+      "courtlistener": 1
+    },
+    "cache_hits": 5,
+    "model_requests": 0,
+    "elapsed_ms": 396
+  }
+}

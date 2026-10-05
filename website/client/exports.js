@@ -1,0 +1,41 @@
+import {zipSync,strToU8} from 'fflate';
+const xml=s=>String(s??'').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g,'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+export function recordLines(r){
+ const scope=r.scope||{},lines=[['title','Lex Raptor'],['h1',r.question||'Research'],['p','Jurisdiction: '+(scope.description||[scope.level,scope.state,...(scope.labels||[]),scope.after,scope.before].filter(Boolean).join(' · ')||'Not specified')],['p','Governing-law context: '+(scope.governing_law||'Not specified')],['p','Sources actually searched: '+(r.searched||[]).map(s=>s.id+' ('+s.status+')').join(', ')]];
+ if(r.follow_up)lines.push(['p',r.follow_up.message]);
+ for(const p of r.propositions||[]){const s=r.sources?.find(s=>s.id===p.source_id),v=p.verification||{},review=v.support||{};
+  lines.push(['h1',p.section||'Finding'],['p',p.claim],['p','AI support review: '+(review.verdict||'not_reviewed')+' — '+(review.reason||'Not yet reviewed.')],['p','Citation resolution: '+(v.citation||'Not reviewed')+' · Quotation: '+(v.quotation||'Not reviewed')],['p','Later treatment: '+(v.later_treatment||'Not reviewed')]);
+  if(p.quote)lines.push(['quote',p.quote]);
+  for(const e of review.evidence||[])lines.push(['quote',e.text],['p','Reviewed excerpt · '+(e.method||'source')]);
+  if(s)lines.push(['p',[s.short_name||s.name,s.citation,s.court,s.decision_date,s.locator,s.source_kind].filter(Boolean).join(' · ')]);
+  for(const id of p.source_ids||[p.source_id]){const ref=r.sources?.find(s=>s.id===id);if(ref?.source_url)lines.push(['link',ref.source_url]);}
+ }
+ lines.push(['h1','Unresolved review items']);
+ for(const section of r.missing_sections||[])lines.push(['p',section+': missing or removed evidence. Review the full opinion or supply additional text.']);
+ for(const item of r.removed_references||[])lines.push(['p',(item.section?item.section+': ':'')+item.reason]);
+ for(const note of r.coverage_notes||[])lines.push(['p',note]);
+ for(const item of r.unanswered_issues||[])lines.push(['p',item.question]);
+ lines.push(['h1','Sources']);for(const s of r.sources||[]){lines.push(['p',[s.name,s.citation,s.court,s.decision_date,s.opinion_type,s.source_kind,s.source_status,s.relationship,s.locator].filter(Boolean).join(' · ')]);if(s.text)lines.push(['quote',s.text]);if(s.source_url)lines.push(['link',s.source_url]);}
+ lines.push(['p','Exported '+new Date().toISOString()+'. Verification states match the saved research record. AI review is not a comprehensive citator.']);return lines;
+}
+export const researchText=r=>recordLines(r).map(([,s])=>s).join('\n\n');
+export function researchDocx(r){
+ const links=[],p=recordLines(r).map(([kind,text])=>{
+  const style={title:'Title',h1:'Heading1',quote:'Quote'}[kind]||'Normal';
+  let run='<w:r><w:t xml:space="preserve">'+xml(text)+'</w:t></w:r>';
+  if(kind==='link'&&/^https:\/\//.test(text)){const id='rId'+(links.length+2);links.push({id,url:text});run='<w:hyperlink r:id="'+id+'">'+run+'</w:hyperlink>';}
+  return '<w:p><w:pPr><w:pStyle w:val="'+style+'"/></w:pPr>'+run+'</w:p>';
+ }).join('');
+ const types='<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/></Types>';
+ const ns='http://schemas.openxmlformats.org/officeDocument/2006/relationships',rels=items=>'<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+items+'</Relationships>';
+ return zipSync({'[Content_Types].xml':strToU8(types),'_rels/.rels':strToU8(rels('<Relationship Id="rId1" Type="'+ns+'/officeDocument" Target="word/document.xml"/>')),'word/document.xml':strToU8('<?xml version="1.0" encoding="UTF-8"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="'+ns+'"><w:body>'+p+'<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1080" w:right="1080" w:bottom="1080" w:left="1080"/></w:sectPr></w:body></w:document>'),'word/_rels/document.xml.rels':strToU8(rels('<Relationship Id="rId1" Type="'+ns+'/styles" Target="styles.xml"/>'+links.map(l=>'<Relationship Id="'+l.id+'" Type="'+ns+'/hyperlink" Target="'+xml(l.url)+'" TargetMode="External"/>').join(''))),'word/styles.xml':strToU8('<?xml version="1.0" encoding="UTF-8"?><w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:pPr><w:spacing w:after="160"/></w:pPr><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:sz w:val="22"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/><w:rPr><w:b/><w:sz w:val="36"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1"/><w:pPr><w:keepNext/><w:spacing w:before="240"/></w:pPr><w:rPr><w:b/><w:sz w:val="26"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Quote"><w:name w:val="Quote"/><w:pPr><w:ind w:left="360"/></w:pPr><w:rPr><w:i/></w:rPr></w:style></w:styles>')});
+}
+export function authorityHTML(a){return '<!doctype html><html lang="en"><meta charset="utf-8"><title>'+xml(a.name)+'</title><style>body{font:17px/1.6 Georgia,serif;max-width:800px;margin:3rem auto;padding:1rem}pre{white-space:pre-wrap;font:inherit}aside{padding:1rem;background:#eee}</style><h1>'+xml(a.name)+'</h1><p>'+xml(a.citation)+' · '+xml(a.court)+' · '+xml(a.date)+'</p><aside>Text edition generated by Lex Raptor from the retrieved CourtListener transcription. This is not an original court PDF. Source page markers are preserved when supplied.</aside><p><a href="'+xml(/^https:\/\//.test(a.source_url||'')?a.source_url:'#')+'">Original source record</a> · Retrieved '+xml(a.retrieved_at)+'</p>'+a.opinions.map(o=>'<h2>'+xml(o.label)+'</h2><pre>'+xml(o.text||'Opinion text unavailable.')+'</pre>').join('');}
+const cell=v=>'"'+String(v??'').replace(/^[=+@-]/,"'$&").replace(/"/g,'""')+'"';
+export function authorityCSV(items){return [['Case name','Original citations','Resolved citations','Court','Decision date','Status','Document availability','Source URL','Occurrences'],...items.map(i=>[i.case?.name||'',i.original_citations?.join('; '),i.case?.citations?.join('; ')||i.case?.citation||'',i.case?.court||i.case?.court_id||'',i.case?.date||'',i.status,i.availability||'',i.case?.source_url||'',i.occurrences?.map(o=>o.document+' '+(o.location||'')+' characters '+(o.start+1)+'–'+o.end).join('; ')])].map(row=>row.map(cell).join(',')).join('\r\n');}
+export function authorityPacket(items,files){
+ let size=0;const zip={};for(const f of files){size+=f.bytes.length;if(size>50000000)throw new Error('Packet exceeds 50 MB. Select fewer cases.');if(!/^[a-zA-Z0-9_.-]+$/.test(f.name))throw new Error('Invalid packet filename.');zip[f.name]=f.bytes;}
+ const manifest={generated_at:new Date().toISOString(),format_version:1,source:'Lex Raptor authority collection',items:items.map(i=>({key:i.key,status:i.status,selected:!!i.selected,case:i.case?{id:i.case.id,name:i.case.name,citations:i.case.citations,court:i.case.court,date:i.case.date,source_url:i.case.source_url,retrieved_at:i.case.retrieved_at,opinion_ids:i.case.opinions?.map(o=>o.id)}:null,corrected_from:i.corrected_from,original_citations:i.original_citations,occurrences:i.occurrences,availability:i.availability,error:i.error||'',files:files.filter(f=>f.key===i.key).map(({bytes,...f})=>({...f,size:bytes.length}))})),limitations:['Unresolved and unavailable entries are retained.','Generated HTML/text is explicitly labeled and is not an original court PDF.','Cited/citing links are not a comprehensive treatment review.']};
+ zip['table-of-authorities.csv']=strToU8(authorityCSV(items));zip['manifest.json']=strToU8(JSON.stringify(manifest,null,2));return zipSync(zip,{level:6});
+}
+export {strToU8};

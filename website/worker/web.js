@@ -1,3 +1,4 @@
+import {legalCitation,sourceKind} from '../shared/legal-citations.js';
 // Web citations have provider provenance, not independently downloaded text.
 // Keep this distinct from the exact passage checks on our API connectors.
 export const WEB_CALL_LIMIT=4;
@@ -33,8 +34,8 @@ export function webSources(response) {
   const found=new Map();
   function add(item) {
     const safe=legalUrl(item?.url);if(!safe)return;
-    if(found.has(safe.url)){if(typeof item.title==='string')found.get(safe.url).name=item.title.slice(0,250);return;}
-    found.set(safe.url,{id:'W'+(found.size+1),database_id:'legal_web',kind:'web_page',evidence_method:'web_citation',name:typeof item.title==='string'?item.title.slice(0,250):safe.host,citation:'',source_url:safe.url,text:'',locator:'Provider web citation; page text was not independently retrieved by Lex Raptor.',source_status:safe.status,decision_date:'',court:safe.host,opinion_type:'Public legal web page'});
+    if(found.has(safe.url)){if(typeof item.title==='string'){found.get(safe.url).name=item.title.slice(0,250);found.get(safe.url).citation=legalCitation(safe.url,item.title);}return;}
+    found.set(safe.url,{id:'W'+(found.size+1),database_id:'legal_web',kind:'web_page',evidence_method:'web_citation',name:typeof item.title==='string'?item.title.slice(0,250):safe.host,citation:legalCitation(safe.url,item.title||''),source_kind:sourceKind(safe.url),source_url:safe.url,text:'',locator:'Provider web citation; page text was not independently retrieved by Lex Raptor.',source_status:safe.status,decision_date:'',court:safe.host,opinion_type:'Public legal web page'});
   }
   // Only actual tool records/annotations can authorize a URL, never JSON claims.
   for(const o of response.output||[]){
