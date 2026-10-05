@@ -100,3 +100,5 @@ AGPL does not prohibit acquisition or commercial hosting. It preserves compliant
 ## Hosted demo
 
 The [public website](https://lexraptor.com) also contains a [passcode-protected research preview](https://lexraptor.com/demo). It searches the 12-case public starter collection using a server-side OpenAI connection when enabled. A durable $10 total demo budget, visitor limits, and per-request reservations control model spending. Private documents and local inference stay in the separate local app. See [website/README.md](website/README.md) for configuration, security boundaries, and the full hosted source.
+
+[Hosted demo smoke checks and cost record](benchmark/hosted-demo/RESULTS.md) describe the limited live validation separately from the local-model diagnostic.

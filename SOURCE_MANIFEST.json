@@ -24,6 +24,8 @@
   "benchmark/RESULTS.md",
   "benchmark/custom-preflight.json",
   "benchmark/fixtures.lock.json",
+  "benchmark/hosted-demo/RESULTS.md",
+  "benchmark/hosted-demo/smoke-results.json",
   "benchmark/latest-preflight.json",
   "benchmark/manifest.json",
   "benchmark/operational-report.json",
