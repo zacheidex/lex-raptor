@@ -41,6 +41,7 @@
   "benchmark/verified-pricing-2026-10-04.json",
   "benchmark/workbench/RESULTS.md",
   "benchmark/workbench/chat-hosted-initial.json",
+  "benchmark/workbench/chat-hosted-refined.json",
   "benchmark/workbench/chat-local-results.json",
   "benchmark/workbench/citation-lookup.json",
   "benchmark/workbench/courtlistener-search.json",

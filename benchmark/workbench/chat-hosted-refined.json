@@ -1,0 +1,131 @@
+{
+  "model": "gpt-6-luna",
+  "results": [
+    {
+      "id": "auto_regulation_refined",
+      "request": {
+        "question": "What do federal regulations say about vocational self-employment assistance for veterans?",
+        "task": "auto",
+        "database_ids": "auto"
+      },
+      "status": 200,
+      "seconds": 5.266,
+      "retained": 2,
+      "literal_quotes": 2,
+      "response": {
+        "sources": [
+          {
+            "case_id": "ecfr-38-21.146-2026-10-01",
+            "name": "Independent instructor course.",
+            "citation": "38 CFR 21.146",
+            "court": "Department of Veterans Affairs",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-38/section-21.146",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S1",
+            "text": "\u00a7 21.146 Independent instructor course. (a) Definition. An independent instructor course is a full-time course of vocational training which the veteran pursues with an individual instructor, who, independently of a training institution or on-job training establishment, furnishes and conducts a vocational course at a suitable place of training. (b) Limitations on including an independent instructor course in a rehabilitation plan. A veteran and his or her case manager may include an independent instructor course in a rehabilitation plan, other than one involving a farm cooperative program, only when either or both of the following conditions exist: (1) Training is not available through an established school, on-job training establishment, rehabilitation facility or sheltered workshop within a reasonable commuting distance from the veteran's home; or (2) The veteran's condition or other circumstances do not permit the veteran to attend an otherwise suitable facility within commuting distance. See \u00a7 21.126. (c) Training in the home. Training in the home is a specialized type of independent instructor course which the veteran pursues in his or her home if: (1) He or she is unable to pursue training at an otherwise suitable facility because of the effects of his or her disability; (2) Based on proper medical opinion, the veteran is able to pursue the prescribed training; and (3) The veteran's home provides a favorable educational environment with adequate work and study space. (d) Planning an individual instructor course. The case manager, the veteran, and the instructor should jointly plan the training program for a veteran for whom an independent instructor course is prescribed. (e) Assuring employment. Since the customary channels leading to employment may not be readily ",
+            "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+            "original_id": "ecfr-38-21.146-2026-10-01:0"
+          },
+          {
+            "case_id": "ecfr-38-21.146-2026-10-01",
+            "name": "Independent instructor course.",
+            "citation": "38 CFR 21.146",
+            "court": "Department of Veterans Affairs",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-38/section-21.146",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S2",
+            "text": "jointly plan the training program for a veteran for whom an independent instructor course is prescribed. (e) Assuring employment. Since the customary channels leading to employment may not be readily available to a veteran requiring an individual instructor course, the IEAP (Individual Employment Assistance Plan) shall indicate thorough consideration of plans and prospects for seeking and obtaining employment, including self-employment, upon completion of training. (f) Rate of pursuit. A veteran in an independent instructor program shall pursue training at a rate comparable to the rate at which similar training is pursued on an institutional basis, unless the veteran's work tolerance is reduced by the effects of his or her disability. (Authority: 38 U.S.C. 3104(a)(7))",
+            "locator": "Whitespace-normalized extracted text, characters 1601\u20132378",
+            "original_id": "ecfr-38-21.146-2026-10-01:1600"
+          },
+          {
+            "case_id": "ecfr-38-21.430-2026-10-01",
+            "name": "Accountability for authorization and payment of training and rehabilitation services.",
+            "citation": "38 CFR 21.430",
+            "court": "Department of Veterans Affairs",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-38/section-21.430",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S3",
+            "text": "\u00a7 21.430 Accountability for authorization and payment of training and rehabilitation services. (a) General. VA shall maintain policies and procedures which provide accountability in the authorization and payment of program costs for training and rehabilitation services. The procedures established under this section are applicable to all program costs except subsistence allowance (or the optional allowance at Chapter 34 rates). Policies and procedures governing payment of subsistence allowance are governed by \u00a7\u00a7 21.260 through 21.276, and \u00a7\u00a7 21.320 through 21.334. (b) Determining necessary costs for training and rehabilitation services. The estimates of program costs during a calendar year or lesser period shall be based upon the services necessary to carry out the veteran's rehabilitation plan during that period (\u00a7\u00a7 21.80 through 21.96). The estimates will be developed by the VBA case manager. If additional approval is required, the VBA case manager shall secure such additional approval prior to authorization of services. (c) Veteran Readiness and Employment (VR&E) Officer's review of program costs. The VR&E Officer will review the program costs for the services in paragraphs (c)(1) through (3) of this section if the case manager's program cost estimate for a calendar year exceeds $25,000. The VR&E Officer may not delegate this responsibility. The case manager will neither sign a rehabilitation plan nor authorize expenditures before the VR&E Officer approves the program costs. The services subject to this review are: (1) Providing supplies to help establish a small business; (2) A period of extended evaluation; or (3) A program of independent living services. (Authority: 38 U.S.C. 3115(b)(4)) Cross References: See \u00a7 21.156. Other incidental goods and services. \u00a7 21.258.",
+            "locator": "Whitespace-normalized extracted text, characters 1\u20131800",
+            "original_id": "ecfr-38-21.430-2026-10-01:0"
+          },
+          {
+            "case_id": "ecfr-38-21.430-2026-10-01",
+            "name": "Accountability for authorization and payment of training and rehabilitation services.",
+            "citation": "38 CFR 21.430",
+            "court": "Department of Veterans Affairs",
+            "decision_date": "2026-10-01",
+            "opinion_type": "Regulation",
+            "source_url": "https://www.ecfr.gov/on/2026-10-01/title-38/section-21.430",
+            "database_id": "ecfr",
+            "database_name": "eCFR",
+            "kind": "regulation",
+            "source_status": "eCFR snapshot as of 2026-10-01; an editorial compilation, not an official legal edition",
+            "id": "S4",
+            "text": "; (2) A period of extended evaluation; or (3) A program of independent living services. (Authority: 38 U.S.C. 3115(b)(4)) Cross References: See \u00a7 21.156. Other incidental goods and services. \u00a7 21.258. Special assistance for veterans in self-employment. [49 FR 40814, Oct. 18, 1984, as amended at 51 FR 45767, Dec. 22, 1986; 55 FR 25975, June 26, 1990; 62 FR 17710, Apr. 11, 1997; 84 FR 194, Jan. 18, 2019; 87 FR 8743, Feb. 16, 2022]",
+            "locator": "Whitespace-normalized extracted text, characters 1601\u20132032",
+            "original_id": "ecfr-38-21.430-2026-10-01:1600"
+          }
+        ],
+        "searched": [
+          {
+            "id": "ecfr",
+            "status": "ok",
+            "total": 31,
+            "note": "Up to 3 dated sections. Court and publication-date filters do not apply to this current eCFR snapshot.",
+            "warnings": [],
+            "passages": 4
+          }
+        ],
+        "retrieved_at": "2026-10-05T05:29:05.010Z",
+        "query": "veteran vocational self-employment rehabilitation",
+        "task": "research",
+        "databases": [
+          "ecfr"
+        ],
+        "filters": {
+          "court": "",
+          "after": "",
+          "before": ""
+        },
+        "automatic": true,
+        "model": "gpt-6-luna",
+        "inference": "api",
+        "propositions": [
+          {
+            "section": "Findings",
+            "claim": "For a veteran prescribed an independent instructor course, the Individual Employment Assistance Plan must thoroughly consider plans and prospects for seeking and obtaining employment after training, including self-employment.",
+            "source_id": "S2",
+            "quote": "the IEAP (Individual Employment Assistance Plan) shall indicate thorough consideration of plans and prospects for seeking and obtaining employment, including self-employment, upon completion of training."
+          },
+          {
+            "section": "Findings",
+            "claim": "When a case manager\u2019s estimated program costs for a calendar year exceed $25,000, the VR&E Officer must review costs for supplies to help establish a small business before the plan is signed or expenditures are authorized.",
+            "source_id": "S3",
+            "quote": "The case manager will neither sign a rehabilitation plan nor authorize expenditures before the VR&E Officer approves the program costs."
+          }
+        ],
+        "removed": 0,
+        "incomplete": false,
+        "missing_sections": [],
+        "model_used": true
+      }
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 **Open-source legal research. Your sources, your model, your control.**
 
-Lex Raptor searches a local case-law library, drafts answers with inspectable source quotations, and keeps private matter documents in a separate workspace. Run inference locally for **$0 software, connection, or model API fees**; you supply the hardware and electricity. Optional OpenAI/Anthropic API inference retains explicit administrator controls and hard spending limits. No automatic cloud fallback.
+Lex Raptor searches public legal databases and a bundled case-law library, drafts answers with inspectable source quotations, and keeps private matter documents in a separate workspace. Run inference locally for **$0 software, connection, or model API fees**; you supply the hardware and electricity. Optional OpenAI/Anthropic API inference retains explicit administrator controls and hard spending limits. No automatic cloud fallback.
 
 The project is **AGPL-3.0-only**. The code, local inference, search, source reader, document workflows, and API adapters are all included. Optional managed API connections are the planned paid service; payment collection is not implemented. See [the business model](docs/BUSINESS_MODEL.md) and [governance](GOVERNANCE.md).
 

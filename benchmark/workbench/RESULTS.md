@@ -57,7 +57,7 @@ rerun after this change, so their results are development evidence only.
 
 ## Source and application checks
 
-- Eighteen local Workers/D1 integration tests passed using simulated providers.
+- Nineteen local Workers/D1 integration tests passed using simulated providers.
   They cover source selection, dated/full-text evidence, partial outages,
   credential boundaries, blocked source destinations, citation lookup, local
   inference without an API key, origin checks, duplicate requests, historical
@@ -103,7 +103,7 @@ reported explicitly rather than bypassing the established request controls.
 ## Chat and automatic-field checks
 
 The homepage is now chat. About, Sources and Run locally are separate pages.
-Eighteen integration tests pass, including automatic planning, manual overrides,
+Nineteen integration tests pass, including automatic planning, manual overrides,
 invalid-plan rejection, combined planning/drafting accounting, duplicate requests,
 and admission under the unchanged $10 cap with historical request counts present.
 Browser checks cover follow-up context, per-message exports, source anchors,
@@ -139,3 +139,25 @@ its lifetime total to $0.133009. Both planning and drafting were accounted for.
 `chat-hosted-initial.json` preserves these failures. Automatic search instructions
 were then tightened to emphasize distinctive subject terms, and duplicate
 eCFR sections are now removed before evidence selection.
+
+## Hosted rerun after search refinement
+
+The same regulation prompt selected eCFR and the shorter query `veteran
+vocational self-employment rehabilitation`. It returned two retained findings
+with exact quotations in 5.266 seconds, using 38 CFR 21.146 and 21.430. The
+results addressed related training/employment planning and cost approval; they
+did not retrieve the central self-employment provision, 38 CFR 21.257. This is
+a partial improvement, not a complete regulatory answer. The prompt was used
+to tune search instructions, so this rerun is not held-out evidence. Raw output
+is in `chat-hosted-refined.json`; the initial failure remains published.
+
+All nineteen Workers/D1 integration tests pass. The added failure test confirms
+that successful planning followed by a failed draft keeps the entire reservation
+and cannot be replayed under the same request ID. Browser checks still cover
+the shipped chat interface, manual overrides, follow-ups, exports and mobile.
+
+Across all three new hosted requests, conservative accounted usage increased
+by **$0.003179**. Lifetime consumed/reserved usage is **$0.133749**, leaving
+**$9.866251** of the unchanged $10 cap. These figures include historical held
+reservations and intentionally conservative token pricing; they are not a
+provider invoice reconciliation. No paid data subscription was purchased.

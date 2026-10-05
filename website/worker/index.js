@@ -49,7 +49,7 @@ async function api(request,env) {
     if(typeof body.text!=='string'||body.text.length<3||body.text.length>6000)fail(400,'Enter 3 to 6,000 characters of public citation text.');
     return json({citations:await auditCitations(env,body.text),limitation:'Checks case-citation existence and ambiguity only. No treatment, good-law status, or proposition support determination.',model_used:false});
   }
-  if(typeof body.question!=='string'||body.question.trim().length<10||body.question.length>2000)fail(400,'Enter a question between 10 and 2,000 characters.');
+  if(typeof body.question!=='string'||body.question.trim().length<1||body.question.length>2000)fail(400,'Enter a message between 1 and 2,000 characters.');
   const automatic=path==='/api/demo/research'&&(body.task==='auto'||body.database_ids==='auto'||body.auto_fields===true);
   if(body.database_ids!=='auto')validateSelection(body.database_ids,env);
   if(body.database_ids==='auto'&&!automatic&&path!=='/api/demo/search')fail(400,'Choose databases.');

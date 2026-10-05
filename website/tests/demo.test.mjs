@@ -18,7 +18,7 @@ async function fixture(t,options={}) {
       }
       assert.equal(request.url,'https://api.openai.com/v1/responses');
       const body=await request.json();calls.push(body);
-      if(options.fail)return new Response('{}',{status:500});
+      if(options.fail||(options.failDraft&&body.text.format.name==='legal_research'))return new Response('{}',{status:500});
       if(body.text.format.name==='research_plan')return Response.json({status:'completed',usage:{input_tokens:500,output_tokens:100},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify(options.plan||{task:'brief',search_query:'Celotex',database_ids:['cap'],filters:{court:'',after:'',before:''}})}]}]});
       const {sources}=JSON.parse(body.input),s=sources[0];
       return Response.json({status:'completed',usage:{input_tokens:1000,output_tokens:200},output:[{type:'message',content:[{type:'output_text',text:JSON.stringify({propositions:[{claim:'A fixture claim to verify citation handling.',source_id:s.id,quote:s.text.slice(0,100)},{claim:'Invented authority must be removed.',source_id:'invented',quote:'This quotation is not a real supplied source.'}]})}]}]});
@@ -47,6 +47,7 @@ test('origin, disabled state, visitor identification and selection guard public 
   assert.equal((await f.req('research',f.question({database_ids:[]}))).status,400);
   assert.equal((await f.req('research',f.question({database_ids:['courtlistener']}))).status,400);
   assert.equal((await f.req('research',f.question({question:'a'.repeat(2001)}))).status,400);
+  assert.equal((await f.req('research',f.question({question:'   '}))).status,400);
   assert.equal((await f.req('research',f.question({question:'a'.repeat(11000)}))).status,413);
   assert.equal((await f.req('unlock',{})).status,404);
   assert.equal(f.calls.length,0);
@@ -180,7 +181,7 @@ test('historical daily and hourly request counts no longer block testing or rese
 
 test('automatic settings use the model and account for planning plus drafting together',async t=>{
   const f=await fixture(t);
-  const q=f.question({task:'auto',database_ids:'auto',context:'User: Tell me about Celotex.'});
+  const q=f.question({question:'Why?',task:'auto',database_ids:'auto',context:'User: Tell me about Celotex.'});
   const r=await f.req('research',q);assert.equal(r.status,200);const data=await r.json();
   assert.equal(data.task,'brief');assert.equal(data.query,'Celotex');assert.deepEqual(data.databases,['cap']);assert.equal(data.automatic,true);assert.equal(f.calls.length,2);
   assert.equal(f.calls[0].max_output_tokens,1024);assert.match(f.calls[0].input,/Tell me about Celotex/);assert.match(f.calls[1].input,/conversation_context/);
@@ -220,4 +221,11 @@ test('duplicate regulation sections do not consume multiple evidence slots',asyn
   const seen=[],f=await fixture(t,{source:remoteFixture(seen,{duplicateEcfr:true})});
   const data=await (await f.req('search',f.question({database_ids:['ecfr'],search_query:'self-employment vocational'}))).json();
   assert.equal(data.sources.length,1);assert.equal(seen.filter(s=>s.url.includes('/full/')).length,1);
+});
+
+test('a drafting failure after successful planning retains the entire two-call reservation',async t=>{
+  const f=await fixture(t,{failDraft:true}),q=f.question({task:'auto',database_ids:'auto'});
+  assert.equal((await f.req('research',q)).status,502);assert.equal(f.calls.length,2);
+  const ledger=await f.db.prepare('SELECT * FROM demo_calls').first();assert.equal(ledger.state,'reserved');assert.equal(ledger.charged,RESERVE);
+  assert.equal((await f.req('research',q)).status,429);assert.equal(f.calls.length,2);
 });
