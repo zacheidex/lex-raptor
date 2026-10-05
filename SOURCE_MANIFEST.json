@@ -42,6 +42,8 @@
   "benchmark/workbench/RESULTS.md",
   "benchmark/workbench/citation-lookup.json",
   "benchmark/workbench/courtlistener-search.json",
+  "benchmark/workbench/hosted-results.json",
+  "benchmark/workbench/hosted-source-search.json",
   "benchmark/workbench/initial-results.json",
   "benchmark/workbench/intermediate-results.json",
   "benchmark/workbench/local-results.json",

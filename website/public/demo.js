@@ -10,12 +10,12 @@ async function api(path,body){
 function render(){
  const connected=state.databases.some(d=>d.id==='courtlistener'&&d.available);
  $('search').disabled=busy||!state.search_enabled||!selected.size;
- $('ask').disabled=busy||!state.enabled||state.exhausted||!selected.size;
+ $('ask').disabled=busy||!state.enabled||state.exhausted||state.daily_remaining===0||!selected.size;
  $('check-citations').disabled=busy||!connected;
  $('task-description').textContent=descriptions[$('task').value];
  $('ask').textContent=busy?'Working…':'Draft '+({'research':'answer',brief:'case brief',memo:'memo',compare:'comparison',arguments:'arguments'}[$('task').value]);
  $('selection-note').textContent=state.databases.filter(d=>selected.has(d.id)).map(d=>d.name).join(' · ')||'Select a connected database';
- $('availability').textContent=!state.search_enabled?'The research service is temporarily unavailable.':state.inference==='local'?'Local model mode. Search public databases or use the offline starter library.':state.exhausted?'The shared AI allowance has been used. Source search and citation lookup remain available.':!state.enabled?'Source search is available. AI drafting is currently disabled.':'Open research preview. Search sources without AI credits; drafting uses the shared API allowance.';
+ $('availability').textContent=!state.search_enabled?'The research service is temporarily unavailable.':state.inference==='local'?'Local model mode. Search public databases or use the offline starter library.':state.exhausted?'The shared AI allowance has been used. Source search and citation lookup remain available.':!state.enabled?'Source search is available. AI drafting is currently disabled.':state.daily_remaining===0?'This network has used its daily AI allowance. A slot opens '+new Date(state.daily_reset_at).toLocaleString()+'. Source search remains available; local Ollama drafting has no demo limit.':'Open research preview. '+state.daily_remaining+' AI drafts remain for this network today. Source search uses no model credits.';
  if(!connected)$('citation-status').textContent='Connect CourtListener to enable citation lookup.';
  if(state.inference==='local'){
   $('runtime-badge').textContent='Local · '+state.model;

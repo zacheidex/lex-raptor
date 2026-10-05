@@ -170,6 +170,7 @@ test('historical daily visitor limits survive public access and cookie changes',
   const key=await crypto.subtle.importKey('raw',encoder.encode('test-session-secret-not-for-production'),{name:'HMAC',hash:'SHA-256'},false,['sign']);
   const ip=[...new Uint8Array(await crypto.subtle.sign('HMAC',key,encoder.encode('203.0.113.1')))].map(b=>b.toString(16).padStart(2,'0')).join('');
   for(let i=0;i<10;i++)await f.db.prepare('INSERT INTO demo_calls(id,visitor,session,created,state,charged) VALUES(?,?,?,?,?,?)').bind('old'+i,ip,'old-signed-session',now-500,'completed',1000).run();
+  const status=await (await f.req('status')).json();assert.equal(status.daily_remaining,0);assert.equal(status.search_enabled,true);assert.ok(status.daily_reset_at);
   assert.equal((await f.req('research',f.question())).status,429);
   assert.equal((await f.req('research',f.question(),'__Host-lex-demo=new-cookie')).status,429);
   assert.equal(f.calls.length,0);

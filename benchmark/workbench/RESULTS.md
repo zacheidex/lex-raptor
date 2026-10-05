@@ -81,3 +81,20 @@ hashes, session cookies, request identifiers, or private documents are included.
 The hosted demo uses a different model (GPT-6 Luna); these local-model outcomes
 must not be described as its scores. The original $10 hosted lifetime budget and
 historical charges remain intact.
+
+## Hosted production check
+
+After publishing, a real CourtListener search from lexraptor.com completed in
+1.86 seconds and returned eight passages from the live collection. The new
+source-cache and provider-counter tables were present in the deployed database.
+An attempted hosted regulatory AI draft returned HTTP 429 because the testing
+network had already consumed its rolling ten-request allowance. The test stopped
+without another model attempt. The lifetime ledger stayed at **$0.130570**
+consumed or reserved (**$9.869430** remaining), so this update added **$0** in
+model API spending. The UI now reports daily allowance and the next available
+slot before submission; source search stays enabled.
+
+The new prompts were therefore not smoke-tested against GPT-6 Luna on the live
+server. Existing provider behavior was covered by earlier deployment checks,
+and the new request/validation paths by simulated-provider tests. This limit is
+reported explicitly rather than bypassing the established request controls.

@@ -1,0 +1,21 @@
+[
+  {
+    "case": {
+      "id": "hosted_regulation",
+      "question": "What requirements apply to self-employment vocational rehabilitation assistance?",
+      "search_query": "self-employment vocational",
+      "database_ids": [
+        "ecfr"
+      ],
+      "task": "research"
+    },
+    "http_status": 429,
+    "seconds": 1.653,
+    "retained": 0,
+    "exact_quotes": 0,
+    "removed": null,
+    "result": {
+      "error": "The shared budget, visitor limit, or concurrent request limit has been reached. A repeated request cannot be charged twice."
+    }
+  }
+]

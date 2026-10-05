@@ -30,7 +30,14 @@ async function api(request,env) {
   if(path==='/api/demo/status'&&request.method==='GET') {
     const enabled=!!ready(env);
     const state=await database(env).prepare('SELECT COALESCE(SUM(charged),0) total FROM demo_calls').first();
-    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,databases:catalog(env),tasks,model:modelName(env),limit:local(env)?'Local inference has no demo cap':'10 AI drafts per network per day',cap:local(env)?null:10});
+    let daily_remaining=null,daily_reset_at=null;
+    if(!local(env)&&env.DEMO_SESSION_SECRET?.length>=32){
+      const ip=await visitor(request,env);
+      const usage=await database(env).prepare('SELECT COUNT(*) total,MIN(created) first FROM demo_calls WHERE visitor=? AND created>?').bind(ip,now-86400).first();
+      daily_remaining=Math.max(0,10-usage.total);
+      if(!daily_remaining&&usage.first)daily_reset_at=new Date((usage.first+86400)*1000).toISOString();
+    }
+    return json({enabled,search_enabled:env.DEMO_SESSION_SECRET?.length>=32,access:'public',inference:local(env)?'local':'api',exhausted:!local(env)&&state.total+RESERVE>CAP,daily_remaining,daily_reset_at,databases:catalog(env),tasks,model:modelName(env),limit:local(env)?'Local inference has no demo cap':'10 AI drafts per network per day',cap:local(env)?null:10});
   }
   if(request.method!=='POST')fail(405,'Method not allowed.');
   if(request.headers.get('Origin')!==new URL(request.url).origin||request.headers.get('Sec-Fetch-Site')==='cross-site')fail(403,'Open the demo on this website to continue.');
