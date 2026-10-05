@@ -1,0 +1,28 @@
+Lex Raptor
+Copyright 2026 Lex Raptor contributors.
+
+First-party source files in this repository are licensed under the GNU Affero
+General Public License, version 3 only (SPDX-License-Identifier: AGPL-3.0-only),
+unless a file carries another notice. The full license is in LICENSE. This
+program is distributed WITHOUT ANY WARRANTY; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+The first-party source distribution includes the web application, Python engine,
+provider connectors, scripts, tests and database migrations. Third-party packages
+referenced by lockfiles are not relicensed by this notice.
+
+Harvey LAB benchmark fixtures/adapters reference upstream material under the
+retained MIT notice at benchmark/upstream-license/LICENSE. Pinned upstream source
+and downloaded documents are not included in the application source archive.
+
+Harvard University and the Caselaw Access Project supply the public case records.
+See https://case.law/terms/ and benchmark/research/corpus.lock.json. The importer
+uses opinion text, not publisher headnotes. Raw case files are downloaded
+separately and are not covered by the application license.
+
+Ollama is separately licensed under MIT. Qwen3-14B is separately licensed under
+Apache-2.0. Runtime binaries and model weights are not distributed in this source
+archive. Their notices and terms continue to apply.
+
+Lex Raptor is an independent project, unaffiliated with Thomson Reuters, Westlaw,
+Casetext, Harvard University, Free Law Project, Alibaba/Qwen or Ollama.

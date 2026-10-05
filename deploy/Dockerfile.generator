@@ -1,0 +1,9 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY deploy/requirements-engine.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+RUN mkdir -p /app/defense
+COPY engine/defense/__init__.py engine/defense/settings.py engine/defense/ingest.py engine/defense/models.py engine/defense/engine.py engine/defense/sandbox.py /app/defense/
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+USER 65534:65534
+CMD ["python","-m","defense.sandbox","product_pipeline"]

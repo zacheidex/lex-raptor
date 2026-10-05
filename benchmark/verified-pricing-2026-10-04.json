@@ -1,0 +1,52 @@
+[
+  {
+    "model_id": "gpt-6.1-sol",
+    "provider": "openai",
+    "input_micro_per_million": 5000000,
+    "output_micro_per_million": 15000000,
+    "context_limit": 1050000,
+    "verified_at": "2026-10-04T21:27:43.595602+00:00",
+    "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+    "notes": "Standard default service tier, global endpoint. Reservation uses maximum long-context/cache-write rates; settlement uses returned usage and actual tier.",
+    "billing_rates": {
+      "long_threshold_tokens": 272000,
+      "short": {
+        "input": 2000000,
+        "cached_input": 100000,
+        "cache_write": 2500000,
+        "output": 10000000
+      },
+      "long": {
+        "input": 4000000,
+        "cached_input": 200000,
+        "cache_write": 5000000,
+        "output": 15000000
+      }
+    }
+  },
+  {
+    "model_id": "gpt-6-luna",
+    "provider": "openai",
+    "input_micro_per_million": 250000,
+    "output_micro_per_million": 750000,
+    "context_limit": 1050000,
+    "verified_at": "2026-10-04T21:27:43.595611+00:00",
+    "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+    "notes": "Standard default service tier, global endpoint. Reservation uses maximum long-context/cache-write rates; settlement uses returned usage and actual tier.",
+    "billing_rates": {
+      "long_threshold_tokens": 272000,
+      "short": {
+        "input": 100000,
+        "cached_input": 10000,
+        "cache_write": 125000,
+        "output": 500000
+      },
+      "long": {
+        "input": 200000,
+        "cached_input": 20000,
+        "cache_write": 250000,
+        "output": 750000
+      }
+    }
+  }
+]

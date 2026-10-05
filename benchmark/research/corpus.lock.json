@@ -1,0 +1,110 @@
+[
+  {
+    "id": "cap-6207800",
+    "label": "Celotex",
+    "name": "Celotex Corp. v. Catrett",
+    "url": "https://static.case.law/us/477/cases/0317-01.json",
+    "sha256": "070684a85533121af10e47abcf238dfbd00967b7dbd484f561ae4039f37cb1a0",
+    "file": "us-477-0317-01.json",
+    "decision_date": "1986-06-25"
+  },
+  {
+    "id": "cap-6206897",
+    "label": "Anderson",
+    "name": "Anderson v. Liberty Lobby, Inc.",
+    "url": "https://static.case.law/us/477/cases/0242-01.json",
+    "sha256": "60437e85b0c28cae977aef33e855f15dca5cce20539922aa04d234bb2154ab07",
+    "file": "us-477-0242-01.json",
+    "decision_date": "1986-06-25"
+  },
+  {
+    "id": "cap-6205783",
+    "label": "Matsushita",
+    "name": "Matsushita Electric Industrial Co. v. Zenith Radio Corp.",
+    "url": "https://static.case.law/us/475/cases/0574-01.json",
+    "sha256": "c76dd48b76982e03156c35e3a543542ee9ff143b3f55df4e8d067e709c9c062a",
+    "file": "us-475-0574-01.json",
+    "decision_date": "1986-03-26"
+  },
+  {
+    "id": "cap-3556136",
+    "label": "Twombly",
+    "name": "Bell Atlantic Corp. v. Twombly",
+    "url": "https://static.case.law/us/550/cases/0544-01.json",
+    "sha256": "d5accdbe495b12fcc49a644819df140a93ace0a984b0222eb1b590f87ee609da",
+    "file": "us-550-0544-01.json",
+    "decision_date": "2007-05-21"
+  },
+  {
+    "id": "cap-3653744",
+    "label": "Iqbal",
+    "name": "Ashcroft v. Iqbal",
+    "url": "https://static.case.law/us/556/cases/0662-01.json",
+    "sha256": "3ab00dfbf4dd9d2c9ea7cd740fae9f61e53626a13721187ce507105e930b3a77",
+    "file": "us-556-0662-01.json",
+    "decision_date": "2009-05-18"
+  },
+  {
+    "id": "cap-355769",
+    "label": "Daubert",
+    "name": "Daubert v. Merrell Dow Pharmaceuticals, Inc.",
+    "url": "https://static.case.law/us/509/cases/0579-01.json",
+    "sha256": "231a39b0c6b7bbc1b2359eace720dd65e8f0d6db6513dbd1b4aaf66d095b5629",
+    "file": "us-509-0579-01.json",
+    "decision_date": "1993-06-28"
+  },
+  {
+    "id": "cap-11132917",
+    "label": "Kumho",
+    "name": "Kumho Tire Co. v. Carmichael",
+    "url": "https://static.case.law/us/526/cases/0137-01.json",
+    "sha256": "66d67cae074a65f4f32fa9f79527ea789d49dd7809036ea64b56d56bc5774271",
+    "file": "us-526-0137-01.json",
+    "decision_date": "1999-03-23"
+  },
+  {
+    "id": "cap-10687",
+    "label": "Erie",
+    "name": "Erie Railroad v. Tompkins",
+    "url": "https://static.case.law/us/304/cases/0064-01.json",
+    "sha256": "943d7cfef836feb62e1e88cf7d7f557b53010b4079fb373268e0d92a1411256f",
+    "file": "us-304-0064-01.json",
+    "decision_date": "1938-04-25"
+  },
+  {
+    "id": "cap-6157001",
+    "label": "International Shoe",
+    "name": "International Shoe Co. v. Washington",
+    "url": "https://static.case.law/us/326/cases/0310-01.json",
+    "sha256": "191b755d45a97f24ca95d02ea031d35edbed8c91b4c26086912837e397a6b8a4",
+    "file": "us-326-0310-01.json",
+    "decision_date": "1945-12-03"
+  },
+  {
+    "id": "cap-12701990",
+    "label": "Walden",
+    "name": "Walden v. Fiore",
+    "url": "https://static.case.law/us/571/cases/0277-01.json",
+    "sha256": "2e239dad7c0e2e743d733b9ffa291b6662d9b038a0b42d6355371bffa21baf16",
+    "file": "us-571-0277-01.json",
+    "decision_date": "2014-02-25"
+  },
+  {
+    "id": "cap-6162253",
+    "label": "Hanson",
+    "name": "Hanson v. Denckla",
+    "url": "https://static.case.law/us/357/cases/0235-01.json",
+    "sha256": "fbd134c71399d1b77b42e8ae6da143d3f947de6c7ba327e2052fb66cb8be6940",
+    "file": "us-357-0235-01.json",
+    "decision_date": "1958-06-23"
+  },
+  {
+    "id": "cap-11301409",
+    "label": "Brown",
+    "name": "Brown v. Board of Education",
+    "url": "https://static.case.law/us/347/cases/0483-01.json",
+    "sha256": "d7cb3aec98641e4c7e87edff6186da9fafa7255bafb6a07259fe062d28c1459d",
+    "file": "us-347-0483-01.json",
+    "decision_date": "1954-05-17"
+  }
+]

@@ -1,0 +1,15 @@
+.env*
+.git
+.venv
+data
+node_modules
+apps/web/node_modules
+apps/web/.next
+apps/web/browser-check.mjs
+**/__pycache__
+.pytest_cache
+.ruff_cache
+tests
+benchmark
+docs
+supabase/.temp

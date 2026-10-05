@@ -1,0 +1,9 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY deploy/requirements-engine.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt && useradd -m -u 10001 defense
+COPY engine/defense /app/defense
+COPY supabase/migrations /app/supabase/migrations
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 DEFENSE_ROOT=/app
+USER defense
+CMD ["python","-m","defense.worker"]

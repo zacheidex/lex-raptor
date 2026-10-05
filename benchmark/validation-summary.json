@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-10-04T21:40:10.123756+00:00",
+  "python_tests": {
+    "passed": 37,
+    "log": "data/tests-final.txt"
+  },
+  "browser": {
+    "real_local_supabase_auth": true,
+    "upload": true,
+    "durable_worker_ingestion": true,
+    "reload_persistence": true,
+    "untrusted_html_escaped": true,
+    "mobile_no_overflow": true,
+    "javascript_errors": [],
+    "paid_calls": 0
+  },
+  "ruff": "passed",
+  "next_build_and_typescript": "passed",
+  "worker_image_build": "passed",
+  "web_image_build": "passed",
+  "compose_validation": "passed",
+  "worker_container_database": "passed",
+  "web_container_api_proxy": "passed",
+  "public_registration": "422 signup_disabled",
+  "additional_provider_spend_usd": "0.00",
+  "live_model_benchmark": "not_run_missing_API_key",
+  "public_deployment": "not_deployed_missing_host_and_managed_Supabase"
+}

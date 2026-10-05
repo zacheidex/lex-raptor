@@ -1,0 +1,131 @@
+{
+  "mode": "dry-run",
+  "run_id": "preflight-a2102ccb-3c20-4521-938c-27b289cae152",
+  "created_at": "2026-10-04T21:30:44.942105+00:00",
+  "tasks": [
+    {
+      "task_id": "litigation-dispute-resolution/draft-responses-to-interrogatories",
+      "tier": "core",
+      "files": [
+        {
+          "name": "aldersgate-report-summary.docx",
+          "sha256": "73a01b014df283a138295b743f939a0d294616abaee453cbd3e7c8fa7bb22189",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "case-management-order.docx",
+          "sha256": "f8c958fe43ab3e4dfc662fd051076379e68c1315ebbbb2cc13e4157eb7ef5b19",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "client-interview-memo.docx",
+          "sha256": "c5057575c8a7d0ab70b15e1aa0e114d4966ec6adb2ca7a07fbf87c445b896734",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "discovery-response-guidelines.docx",
+          "sha256": "c673dcdecee7bb31b736935edb0161bc7824a671caf1d6fa3f0aa0adccc23498",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "first-set-interrogatories.docx",
+          "sha256": "b12df94d99c0f7ec5ef70fb11f49d16575e3341f88e6948c30074c3c54ad4c5e",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "internal-emails-compilation.docx",
+          "sha256": "d713b5e0aae770c3c0cd19301768d43e710ea52f1703072d0049c96f3fd88dbf",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "master-distribution-agreement.docx",
+          "sha256": "650585a1dbd82e1c0c4c1867a92233fde4527ec915cf625fe3a601a37b6280da",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "pinnacle-answer.docx",
+          "sha256": "eb512c271f25c321fbd4011a4c518a7f267dc4281447ee2abf7c598743dd348b",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "termination-letter.docx",
+          "sha256": "f6468c751de79643a20e11745562d8a9c99322a6e40ca40c54a5c91da570b09d",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "tri-basin-purchase-history.xlsx",
+          "sha256": "15d11763b459e4dec5f0786771057e491bd6419384f36051e8aa4a72f6923196",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        }
+      ],
+      "chunks": 3197,
+      "characters": 361539,
+      "ingestion_complete": true,
+      "generation_calls": 2,
+      "judge_calls": 96,
+      "input_bounds": {
+        "chat_baseline": 609672,
+        "product_pipeline": 610135
+      },
+      "upper_bound_micro": 11968859,
+      "blockers": []
+    }
+  ],
+  "systems": [
+    "chat_baseline",
+    "product_pipeline"
+  ],
+  "repetitions": 1,
+  "model": "gpt-6.1-sol",
+  "judges": [
+    "gpt-6-luna"
+  ],
+  "judge_output_tokens": 8192,
+  "paid_calls_made": 0,
+  "actual_cost_micro": 0,
+  "owner_cap_usd": "100",
+  "total_upper_bound_micro": 11968859,
+  "pricing_status": "verified",
+  "limitations": [
+    "This is a task subset, not an independently authored legal gold-standard benchmark or the entire LAB leaderboard.",
+    "Selected scenarios do not establish Georgia auto-injury defense competence.",
+    "Synthetic documents and rubrics require attorney audit; score improvements alone do not establish saved review time.",
+    "No dedicated raw medical-record/OCR evaluation is supplied by this subset.",
+    "Coverage opinions and invoice audits serve distinct workflows and buyers.",
+    "No live model, judge or application performance has been tested while compiling this manifest."
+  ],
+  "all_public_fixtures": "development; not an untouched holdout",
+  "interpretation": "Operational preflight only; no legal performance has been measured.",
+  "total_generation_calls": 2,
+  "total_judge_calls": 96
+}

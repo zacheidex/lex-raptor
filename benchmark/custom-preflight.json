@@ -1,0 +1,866 @@
+{
+  "mode": "dry-run",
+  "run_id": "preflight-f7672d14-1a65-40fc-b9ec-34847c10e87e",
+  "created_at": "2026-10-04T21:30:43.690497+00:00",
+  "tasks": [
+    {
+      "task_id": "litigation-dispute-resolution/draft-responses-to-interrogatories",
+      "tier": "core",
+      "files": [
+        {
+          "name": "aldersgate-report-summary.docx",
+          "sha256": "73a01b014df283a138295b743f939a0d294616abaee453cbd3e7c8fa7bb22189",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "case-management-order.docx",
+          "sha256": "f8c958fe43ab3e4dfc662fd051076379e68c1315ebbbb2cc13e4157eb7ef5b19",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "client-interview-memo.docx",
+          "sha256": "c5057575c8a7d0ab70b15e1aa0e114d4966ec6adb2ca7a07fbf87c445b896734",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "discovery-response-guidelines.docx",
+          "sha256": "c673dcdecee7bb31b736935edb0161bc7824a671caf1d6fa3f0aa0adccc23498",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "first-set-interrogatories.docx",
+          "sha256": "b12df94d99c0f7ec5ef70fb11f49d16575e3341f88e6948c30074c3c54ad4c5e",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "internal-emails-compilation.docx",
+          "sha256": "d713b5e0aae770c3c0cd19301768d43e710ea52f1703072d0049c96f3fd88dbf",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "master-distribution-agreement.docx",
+          "sha256": "650585a1dbd82e1c0c4c1867a92233fde4527ec915cf625fe3a601a37b6280da",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "pinnacle-answer.docx",
+          "sha256": "eb512c271f25c321fbd4011a4c518a7f267dc4281447ee2abf7c598743dd348b",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "termination-letter.docx",
+          "sha256": "f6468c751de79643a20e11745562d8a9c99322a6e40ca40c54a5c91da570b09d",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "tri-basin-purchase-history.xlsx",
+          "sha256": "15d11763b459e4dec5f0786771057e491bd6419384f36051e8aa4a72f6923196",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        }
+      ],
+      "chunks": 3197,
+      "characters": 361539,
+      "ingestion_complete": true,
+      "generation_calls": 2,
+      "judge_calls": 96,
+      "input_bounds": {
+        "chat_baseline": 609672,
+        "product_pipeline": 610135
+      },
+      "upper_bound_micro": 11968859,
+      "blockers": []
+    },
+    {
+      "task_id": "litigation-dispute-resolution/draft-litigation-discovery-responses",
+      "tier": "core",
+      "files": [
+        {
+          "name": "answer.docx",
+          "sha256": "f30c3595bba07d52086c812925d0b8a9747284d6573e519ec3cf53ad5249dd6a",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "complaint.docx",
+          "sha256": "42caafed3f774edfc2389d67ce7a190b4faa9e759fb9f4f84d48230e892e23c5",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "discovery-stipulation.docx",
+          "sha256": "83f011df1f9b3896c37eb67aae627adc2e1bf28ab7dc1744ab98c10a228edf20",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "plaintiff-rfas.docx",
+          "sha256": "b5ce0b92e39fc1ee4be6432e0539efd367809f3168042c6c6cd7cccecebf54c8",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "plaintiff-rfps.docx",
+          "sha256": "800793f88a065c1e1c5f419cf11cd41af1739f785e8bb9e68c9deb66deb9015e",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "precedent-discovery-responses.docx",
+          "sha256": "d903fa3e7e20cf8de4e128bc392d4666a2b4b37181a06b70b5c4c5612a876ebb",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "scheduling-order.docx",
+          "sha256": "3198ba0c44bf039e6fbf4f2cae005ced5362470d78dd42922ed14f55a068a484",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        }
+      ],
+      "chunks": 923,
+      "characters": 158294,
+      "ingestion_complete": true,
+      "generation_calls": 2,
+      "judge_calls": 122,
+      "input_bounds": {
+        "chat_baseline": 222869,
+        "product_pipeline": 223332
+      },
+      "upper_bound_micro": 9560573,
+      "blockers": []
+    },
+    {
+      "task_id": "litigation-dispute-resolution/build-litigation-case-timeline",
+      "tier": "core",
+      "files": [
+        {
+          "name": "defendant-answer-counterclaim.docx",
+          "sha256": "77c9a0376f47d3483ad0ce76f91f492d61c38bf03c04e07bce3fc7bde28cff49",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "deposition-summary-fong.docx",
+          "sha256": "41ef7668339dbd25690cf40d052edf50f92bb345d8dbedcf49244b100869a01a",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "deposition-summary-holcomb.docx",
+          "sha256": "e1c05e8cdca61999b062a50eccacbb3f9568d32b21fff0363f7e281ec1562dd3",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "email-stanton-to-ivers.eml",
+          "sha256": "19259e88385e0269bdecc7f68e2e2c094c6113a93120e77a1ad38e48c1933bfe",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "exclusive-distribution-agreement.docx",
+          "sha256": "be6a8483c139722018b15402b331cd2f98137d8fa3c6c4db16a968a720a55a62",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "expert-report-buckley.docx",
+          "sha256": "c41b2e935b1324ee420651a7544b7ee8b878f1a4029865e61ad55710454ea285",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "expert-report-chakrabarti.docx",
+          "sha256": "dcff66f56cf5cb0545057827c1c05fac1b77964c5e272e35e720f35ce3c9652a",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "harborview-breach-response.docx",
+          "sha256": "a6affc55cff161d95fd5aec24791c32843669509fff1c407f4a68ca8df5ef037",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "internal-emails-holcomb-yee-stanton.eml",
+          "sha256": "00c7da9a025f1ba07624e446261e79eae616f1cd3cf625e911425a1683f6921e",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "internal-emails-stanton-fong-qa.eml",
+          "sha256": "5752276410c070e63aea3a8d00bfcc0a2c3a7eaaa693ed9e4a0d49ef5df65c65",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "notice-of-material-breach.docx",
+          "sha256": "1409aa70df57ef6b275cfdb10f28639054ecc5a7f152d0555fa1c5ec57626b0d",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "notice-of-termination.docx",
+          "sha256": "f3be84896b9057c0d46f871e5307d707054b03d211e5ac8407c3d577d9f4c6d3",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "plaintiff-complaint.docx",
+          "sha256": "6e6eebe1bbe4b430d322881be4b26bc04b0cc7ff8161cfb8897c04d51fead904",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "qa-rejection-log.xlsx",
+          "sha256": "fb562024dd1af77a229044dfaa6c2de0311ea8f09209a9453dd6d83b15bc7b3b",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "scheduling-order.docx",
+          "sha256": "31c6af19abf38f371eb85a31a63cde0a83605a34bfea011743a98c6d4e0215e3",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        }
+      ],
+      "chunks": 2153,
+      "characters": 354281,
+      "ingestion_complete": true,
+      "generation_calls": 2,
+      "judge_calls": 128,
+      "input_bounds": {
+        "chat_baseline": 514696,
+        "product_pipeline": 515047
+      },
+      "upper_bound_micro": 12815147,
+      "blockers": []
+    },
+    {
+      "task_id": "litigation-dispute-resolution/extract-key-admissions-from-deposition-transcript",
+      "tier": "core",
+      "files": [
+        {
+          "name": "cms-cease-desist-letter.docx",
+          "sha256": "53e3152275ac217cea5c4323c439715d1dd546d9a18507b235b20d0aa7b7984d",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "forensic-report.docx",
+          "sha256": "a88d6b28d60ffa8bd5522ef333d454f8b711209c48ec515415ef590ff188b080",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "separation-acknowledgment.docx",
+          "sha256": "7ea193f3f2bd3fe01e1f7a3f5288e7c337886cc8917453fa260d57d0a8a599e4",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "yoon-deposition-vol1.docx",
+          "sha256": "b349f2623a836a8876bb9ef367f4d799074744eb3d7b38788cf662d5e3eabd19",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "yoon-deposition-vol2.docx",
+          "sha256": "835e9d491bcc602e4a4a94a6d7e1ffa5e207828dd5ed4317568201b779538285",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "yoon-employment-agreement.docx",
+          "sha256": "fa4405f3756b8c70836496aa08eb93550f2f6d6e5e9573cb753c03d6c72e4a0d",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "yoon-interrogatory-answers.docx",
+          "sha256": "bf0a81edaf047a474f4f2fa726e4ca1fb30c66331f16001b2c5f6487fa791296",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        }
+      ],
+      "chunks": 2230,
+      "characters": 294164,
+      "ingestion_complete": true,
+      "generation_calls": 2,
+      "judge_calls": 92,
+      "input_bounds": {
+        "chat_baseline": 441099,
+        "product_pipeline": 441447
+      },
+      "upper_bound_micro": 10057978,
+      "blockers": []
+    },
+    {
+      "task_id": "litigation-dispute-resolution/draft-case-assessment-memorandum",
+      "tier": "core",
+      "files": [
+        {
+          "name": "bridger-damages-report.docx",
+          "sha256": "d09b3c3ca95799d8aa3ff8e9bfa47d7fe8be1c544612478aac1f13d884497d62",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "cascade-complaint.docx",
+          "sha256": "03849312be39319182287b8ca1b9c3a77ee30224ec69a3f55f04b7a0afa0d462",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "cascade-forensic-summary.docx",
+          "sha256": "f1067ed3312395e35c0cdf068d4efc49274accfe3bcc301e0167e73fc983edca",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "cascade-rejection-letter.docx",
+          "sha256": "da70ba42755e2129e2b20308acc5c1d9dc79ebb5e15c07d83749ac75fc0718e3",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "distribution-agreement.docx",
+          "sha256": "93787423243b8829122587d2b800e698f9819339baa42a61c4d8dc8e8dcb8b2e",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "greenleaf-internal-emails.eml",
+          "sha256": "c1e5ab5facd0205d1abec2cb8ef1524326f78d2920d55959e17e7b79112cfe12",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "jantzen-employment-agreement.docx",
+          "sha256": "ccee346b4b364ae025d33e012c8464ebfbbf14156bc05429d185757de02b3783",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "termination-letter.docx",
+          "sha256": "fd1bf67470a946577b8d6ef0b10346996560cee428a363180ba11dc6a67a08ae",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        }
+      ],
+      "chunks": 1069,
+      "characters": 177563,
+      "ingestion_complete": true,
+      "generation_calls": 2,
+      "judge_calls": 110,
+      "input_bounds": {
+        "chat_baseline": 253874,
+        "product_pipeline": 254190
+      },
+      "upper_bound_micro": 9196160,
+      "blockers": []
+    },
+    {
+      "task_id": "litigation-dispute-resolution/categorize-document-production-set-by-relevance-and-privilege",
+      "tier": "core",
+      "files": [
+        {
+          "name": "acs-conference-registration.eml",
+          "sha256": "23bba684e386de63e065fd579fc649da48bf22a133b9c579fa8a7116af67ac58",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "alderwood-draft-audit-report.docx",
+          "sha256": "da0d2bf04f86150d30d7ac9135ed76cddea7c584feebc276ff4387a4f401b005",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "alderwood-engagement-letter.docx",
+          "sha256": "678e77855fc69abc76ffc5196f7f6a706a74e25c9ba84933f2a976714023a257",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "bellworth-reply-adding-gc.eml",
+          "sha256": "3387ff2c29bdbad65322a6aa72fbe84b6b8b7c82555bde34d0b57131d829a66d",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "board-minutes-april2023.docx",
+          "sha256": "ab9d706d6812549cbf78c196324445d43daa1792acc7371bccd1a24466c7ccbc",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "burrell-stanton-joint-defense.eml",
+          "sha256": "daad78abe9483d7a51718749f7c040be735afa14fa2ded902e94e61eb6e765a3",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "chandrasekaran-ack-email.eml",
+          "sha256": "54c301832906879a8b3564316c666ce3c5b91402cea8ad67a7974853cb33d8a2",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "chandrasekaran-burrell-litrisik-email.eml",
+          "sha256": "e78c44b156d4f44d7aaacd708f6077040c3024551e59074968dca582d8be1f32",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "chandrasekaran-fwd-burrell-memo.eml",
+          "sha256": "8d51b7356900d3abc2b2d26fb9a14eddef539eae19b02594129d075c0a677759",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "chandrasekaran-meeting-notes-aug28.docx",
+          "sha256": "b7a3695dc5f75e80392b78ac5adfa81d3935d8ea0c18684f45523722a88ba35c",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "inventor-list-email-chain.eml",
+          "sha256": "5a839a7040387da57b15eca06641ecd4fade9654bbd38858196808e33ed574cc",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "it-backup-notification.eml",
+          "sha256": "c2e4fd634382b468f73889fc4648c98b6eefb1c1a8b1cc406837949f8efc642a",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "litigation-hold-notice.docx",
+          "sha256": "c8f10552561dde88b3858548f1a85dfd32c9f3fdc4b80748061ccdafd47bd3f2",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "mpc7x-continuation-app.docx",
+          "sha256": "07c2b8df5c36151f9ab06ad9252388d463af70d47d6d210e97e813cf81ba0287",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "mpc7x-original-patent.docx",
+          "sha256": "1b6e59b46e3c4eed268b2c1363b4a24e333738062b040845ff65b4bb03896c9e",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "plaintiff-demand-letter.docx",
+          "sha256": "e14c5c214a263fe8d51f5f0d82ef701a38c7920f56d3c2be3b9735786c5090e0",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "simmons-bellworth-ops-metrics.eml",
+          "sha256": "499c87081815e43ac6aba6b9c3cf99668144f6925761adfa4d10a078ffcd770d",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "simmons-vasquez-situation-email.eml",
+          "sha256": "5c8dfb1dc6589b1c31deace78b09fb77b689480fb288588e332ad661c3759f01",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "vasquez-benefits-enrollment.docx",
+          "sha256": "9a7183a6015fbf65e8c09beace3bb37627400837dc94fe2f25f15d751104ec93",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "vasquez-env-compliance-memo.docx",
+          "sha256": "cabf986ee4a1c80707a70b3d66d7a0c05aca1225715c7e79e933f0feaacb272b",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "vasquez-invention-assignment.docx",
+          "sha256": "3b384cdb71e4698621c68eee04852011fcc4bb7238cf530a7cc813a89585ccfd",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "vasquez-performance-summary.docx",
+          "sha256": "c7e5d19dd1b16c69043fd7894630151ddfa9cb1590fa245d5b54b7d40b6e0e90",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "vasquez-pip.docx",
+          "sha256": "e0e12560de7051a7873d469f6e9d6ac4f709963e9060bd0c636667658529a9a2",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "vasquez-separation-agreement.docx",
+          "sha256": "1ac7fd0b6b6366be577736c3e93c2a9eb31caae7e6d35b8eb21994867a4c1c4d",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "vasquez-termination-letter.docx",
+          "sha256": "0e201b1c52fad9da8515fd489c9295ee6e4a52664c5921a1d35dfee865cc4ff7",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        }
+      ],
+      "chunks": 1599,
+      "characters": 308456,
+      "ingestion_complete": true,
+      "generation_calls": 2,
+      "judge_calls": 134,
+      "input_bounds": {
+        "chat_baseline": 421145,
+        "product_pipeline": 421745
+      },
+      "upper_bound_micro": 12217746,
+      "blockers": []
+    },
+    {
+      "task_id": "litigation-dispute-resolution/compare-document-production-against-discovery-requests",
+      "tier": "core",
+      "files": [
+        {
+          "name": "answer-counterclaim.docx",
+          "sha256": "cb9d2fa4535d1f8e535d6e82f29d82653a69d88444c3f49cb9429430518b3b5b",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "complaint.docx",
+          "sha256": "11511ed7c1b6b9e5a4537892c3639bacee3e5138547b4af30a0f52b637a5676b",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "meet-confer-emails.eml",
+          "sha256": "98a9b4be2781550c791d47d0878834b884d7a8b7333ca532cd78238dffb8a3f6",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "meridian-rfp-responses.docx",
+          "sha256": "89a1a0389c4ea9cb448209db766cfce1c70b3479406687bf60ce1968a97f8645",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "privilege-log.xlsx",
+          "sha256": "4c7be8e2fcb5c6c0229fa90e9bdeb7461e875999efd54933a9b70d718b6020c4",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "production-index.xlsx",
+          "sha256": "f226216ade0272cc65a9d54a769894f42d547eb15a35fdd1dbf6f0056957fd03",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "rfps-first-set.docx",
+          "sha256": "35bc21538b825724c6be2897a70f32fd28553a4508d62446285a376721b88865",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "scheduling-order.docx",
+          "sha256": "2b3bdd07528d10e95048ad4a5c6d9310e05ed1981b75c4e44128776f4c8f1cfc",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        }
+      ],
+      "chunks": 4649,
+      "characters": 264951,
+      "ingestion_complete": true,
+      "generation_calls": 2,
+      "judge_calls": 92,
+      "input_bounds": {
+        "chat_baseline": 635846,
+        "product_pipeline": 636146
+      },
+      "upper_bound_micro": 12005208,
+      "blockers": []
+    },
+    {
+      "task_id": "litigation-dispute-resolution/draft-responses-to-requests-for-production",
+      "tier": "core",
+      "files": [
+        {
+          "name": "answer-affirmative-defenses.docx",
+          "sha256": "9a975949c238ac46cec382df63b6654db853f16aecd3dc3e2fce9a09f4bce9a9",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "collection-summary.docx",
+          "sha256": "4aab0dabf45d9e4f88a084f2c9de985e4de027ee45ab619b24b45a924cf85eef",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "distribution-agreement.docx",
+          "sha256": "d4bd0b3f7105a109333e8a41f145a06f108c2741dca7791ffa45b8970a27f8d1",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "kessler-foss-email.eml",
+          "sha256": "b58746e07d35d5a35ee0020a5a57c2f7f5d12a0d656e34a8e730adb117e4d12c",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "objection-playbook.docx",
+          "sha256": "8b8a50d9abf6fd3d1a32068dcfadf1996ed06c20ae815a6b1ebb51b1d61bc955",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "privilege-log.xlsx",
+          "sha256": "1efe5ce4cee0e402064e32363e8ea175b4b602125807fff2fba3e40d35e40201",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        },
+        {
+          "name": "rfp-first-set.docx",
+          "sha256": "70d6a61741248d6d7db4507893295a479bc2cc6160c2cdf55bfca5cad9104b1d",
+          "version": "extract-1.0",
+          "status": "ready",
+          "warnings": [],
+          "error_code": null
+        }
+      ],
+      "chunks": 2343,
+      "characters": 249397,
+      "ingestion_complete": true,
+      "generation_calls": 2,
+      "judge_calls": 90,
+      "input_bounds": {
+        "chat_baseline": 428668,
+        "product_pipeline": 429131
+      },
+      "upper_bound_micro": 9821955,
+      "blockers": []
+    }
+  ],
+  "systems": [
+    "chat_baseline",
+    "product_pipeline"
+  ],
+  "repetitions": 1,
+  "model": "gpt-6.1-sol",
+  "judges": [
+    "gpt-6-luna"
+  ],
+  "judge_output_tokens": 8192,
+  "paid_calls_made": 0,
+  "actual_cost_micro": 0,
+  "owner_cap_usd": "100",
+  "total_upper_bound_micro": 87643626,
+  "pricing_status": "verified",
+  "limitations": [
+    "This is a task subset, not an independently authored legal gold-standard benchmark or the entire LAB leaderboard.",
+    "Selected scenarios do not establish Georgia auto-injury defense competence.",
+    "Synthetic documents and rubrics require attorney audit; score improvements alone do not establish saved review time.",
+    "No dedicated raw medical-record/OCR evaluation is supplied by this subset.",
+    "Coverage opinions and invoice audits serve distinct workflows and buyers.",
+    "No live model, judge or application performance has been tested while compiling this manifest."
+  ],
+  "all_public_fixtures": "development; not an untouched holdout",
+  "interpretation": "Operational preflight only; no legal performance has been measured.",
+  "total_generation_calls": 16,
+  "total_judge_calls": 864
+}

@@ -1,0 +1,328 @@
+{
+  "benchmark_id": "insurance-defense-lab-subset",
+  "version": "0.1.0",
+  "created_date": "2026-10-04",
+  "status": "manifest_verified_runs_not_performed",
+  "description": "A curated LAB task subset for evaluating civil and insurance-defense workflows; synthetic commercial and employment scenarios, with a separate coverage-law track.",
+  "source": {
+    "repository_url": "https://github.com/harveyai/harvey-labs",
+    "commit": "465d1fcf270daa01b0d1d63e30e3da9876d7a268",
+    "license": "MIT",
+    "license_url": "https://github.com/harveyai/harvey-labs/blob/465d1fcf270daa01b0d1d63e30e3da9876d7a268/LICENSE",
+    "instruction": "Fetch task data at this exact commit, retain the upstream license and copyright notice, verify hashes, and lock the complete documents and evaluator provenance before execution."
+  },
+  "task_counts": {
+    "core": 8,
+    "extended": 5,
+    "coverage": 3
+  },
+  "primary_product_workflows": [
+    "discovery_responses",
+    "chronology",
+    "deposition_analysis",
+    "case_assessment"
+  ],
+  "tiers": {
+    "core": "Eight initial workflow evaluations; run a one-task bounded smoke test before the complete core set.",
+    "extended": "Five optional evaluations for adjacent workflows; run only explicitly selected tasks within the benchmark budget.",
+    "coverage": "Three separate coverage-law evaluations; report separately from liability-defense results."
+  },
+  "evaluation": {
+    "upstream_reference": "Use the evaluator and judge profile at the pinned LAB commit; inspect its actual schema and command flags before running.",
+    "score_labels": {
+      "upstream_reference": "Pinned LAB reference harness, selected task subset.",
+      "chat_baseline": "Adapted comparison: general chatbot-style baseline using the same source documents and model.",
+      "product_pipeline": "Adapted comparison: MVP engine on the same tasks and required deliverables."
+    },
+    "systems": [
+      "chat_baseline",
+      "product_pipeline",
+      "upstream_reference_optional"
+    ],
+    "controls": [
+      "same selected task documents",
+      "same model ID and reasoning settings",
+      "declared token and tool budgets",
+      "same pinned rubric and judge profile",
+      "equal access to source content with ingestion differences disclosed"
+    ],
+    "report_separate_tiers": true,
+    "default_repetitions": 1,
+    "follow_up_repetitions_if_budget_allows": 3,
+    "one_run_interpretation": "Exploratory smoke comparison, not a stable performance estimate.",
+    "metrics": [
+      "pinned LAB headline score",
+      "all-pass per judge and strict both-agree result when supported",
+      "task-level and criterion-level diagnostics",
+      "unsupported material assertions",
+      "material omissions",
+      "citation entailment and locator accuracy",
+      "required artifact validity",
+      "end-to-end latency",
+      "paid input/output/reasoning/embedding/judging usage and cost",
+      "attorney correction time when actually measured"
+    ],
+    "cost_gate": "Require live execution flag and an explicit dollar cap. Apply the cap to generation, grading, retries and every other paid call; fail closed before spend if pricing or bounded usage is unknown.",
+    "missing_or_failed_task_handling": "Record and include task failures in the intended denominator; list missing fixtures and operational failures. Never silently discard difficult or unsupported tasks.",
+    "rubric_isolation": "No rubric, match_criteria, reference grading output or prior judged answer may enter the agent-visible documents, prompt, search index or tool access.",
+    "holdout": "Mark public development vs untouched public holdout before tuning prompts; public-source contamination may already exist. Add authorized private matters split by matter/client as the stronger later holdout."
+  },
+  "limitations": [
+    "This is a task subset, not an independently authored legal gold-standard benchmark or the entire LAB leaderboard.",
+    "Selected scenarios do not establish Georgia auto-injury defense competence.",
+    "Synthetic documents and rubrics require attorney audit; score improvements alone do not establish saved review time.",
+    "No dedicated raw medical-record/OCR evaluation is supplied by this subset.",
+    "Coverage opinions and invoice audits serve distinct workflows and buyers.",
+    "No live model, judge or application performance has been tested while compiling this manifest."
+  ],
+  "post_training": {
+    "enabled": false,
+    "note": "Future possibility only; first improve prompting, evidence retrieval, extraction, review flow and evaluation."
+  },
+  "tasks": [
+    {
+      "task_id": "litigation-dispute-resolution/draft-responses-to-interrogatories",
+      "tier": "core",
+      "workflow": "discovery_responses",
+      "evaluation_goal": "Draft source-supported interrogatory answers and issue-specific objections.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-responses-to-interrogatories/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-responses-to-interrogatories",
+      "source_task_json_sha256": "697ce47446a84daa6163cd4b4f0b5e5cd51330c58af4f8df75cdd31df04635c3",
+      "expected_deliverables": [
+        "interrogatory-responses.docx"
+      ],
+      "rubric_criterion_count_at_pin": 48,
+      "upstream_work_type": "draft",
+      "enabled_by_default": true
+    },
+    {
+      "task_id": "litigation-dispute-resolution/draft-litigation-discovery-responses",
+      "tier": "core",
+      "workflow": "discovery_responses",
+      "evaluation_goal": "Prepare responses to requests for admission and production, plus a strategy memo.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-litigation-discovery-responses/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-litigation-discovery-responses",
+      "source_task_json_sha256": "572177c70e70f6267410d3cc5a80ac257b42557aa024cd4fc81108954353d86a",
+      "expected_deliverables": [
+        "discovery-response-plan.docx",
+        "rfa-and-rfp-responses.docx"
+      ],
+      "rubric_criterion_count_at_pin": 61,
+      "upstream_work_type": "draft",
+      "enabled_by_default": true
+    },
+    {
+      "task_id": "litigation-dispute-resolution/build-litigation-case-timeline",
+      "tier": "core",
+      "workflow": "chronology",
+      "evaluation_goal": "Reconstruct dated events and material connections across the matter files.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/build-litigation-case-timeline/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/build-litigation-case-timeline",
+      "source_task_json_sha256": "09c89c73dfe1007c6763031a5625d1aec67c5f79a6e4dc3edfe5363ba29f03d6",
+      "expected_deliverables": [
+        "litigation-case-timeline.docx"
+      ],
+      "rubric_criterion_count_at_pin": 64,
+      "upstream_work_type": "analyze",
+      "enabled_by_default": true
+    },
+    {
+      "task_id": "litigation-dispute-resolution/extract-key-admissions-from-deposition-transcript",
+      "tier": "core",
+      "workflow": "deposition_analysis",
+      "evaluation_goal": "Identify admissions and contradictions with transcript support.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/extract-key-admissions-from-deposition-transcript/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/extract-key-admissions-from-deposition-transcript",
+      "source_task_json_sha256": "05b3cda8051eca6e4710acfcec8322e979f1e7ffa4be9626e4181fb6a791011b",
+      "expected_deliverables": [
+        "admission-summary-memo.docx"
+      ],
+      "rubric_criterion_count_at_pin": 46,
+      "upstream_work_type": "analyze",
+      "enabled_by_default": true
+    },
+    {
+      "task_id": "litigation-dispute-resolution/draft-case-assessment-memorandum",
+      "tier": "core",
+      "workflow": "case_assessment",
+      "evaluation_goal": "Synthesize supplied facts, claims, exposure, and unresolved issues.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-case-assessment-memorandum/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-case-assessment-memorandum",
+      "source_task_json_sha256": "fb4554a653d195d3d6ff42225159299a62c8cf3c39797348e3908fccdabe1a32",
+      "expected_deliverables": [
+        "case-assessment-memo.docx"
+      ],
+      "rubric_criterion_count_at_pin": 55,
+      "upstream_work_type": "draft",
+      "enabled_by_default": true
+    },
+    {
+      "task_id": "litigation-dispute-resolution/categorize-document-production-set-by-relevance-and-privilege",
+      "tier": "core",
+      "workflow": "document_review",
+      "evaluation_goal": "Classify relevance and potential privilege and produce a reviewable privilege log.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/categorize-document-production-set-by-relevance-and-privilege/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/categorize-document-production-set-by-relevance-and-privilege",
+      "source_task_json_sha256": "616c560ea144881642e595db90e26ed157e26ff59327ee495aad73c4eaf45d1f",
+      "expected_deliverables": [
+        "privilege-log.docx",
+        "relevance-classification-report.docx"
+      ],
+      "rubric_criterion_count_at_pin": 67,
+      "upstream_work_type": "analyze",
+      "enabled_by_default": true
+    },
+    {
+      "task_id": "litigation-dispute-resolution/compare-document-production-against-discovery-requests",
+      "tier": "core",
+      "workflow": "production_completeness",
+      "evaluation_goal": "Identify production gaps and inconsistencies between requests, responses, and records.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/compare-document-production-against-discovery-requests/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/compare-document-production-against-discovery-requests",
+      "source_task_json_sha256": "3ae46f29893b0b20533ffe4f5e2889295d7d317f7142fdd4192a7f4d2b289957",
+      "expected_deliverables": [
+        "discovery-gap-analysis.docx"
+      ],
+      "rubric_criterion_count_at_pin": 46,
+      "upstream_work_type": "analyze",
+      "enabled_by_default": true
+    },
+    {
+      "task_id": "litigation-dispute-resolution/draft-responses-to-requests-for-production",
+      "tier": "core",
+      "workflow": "discovery_responses",
+      "evaluation_goal": "Draft request-specific production responses.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-responses-to-requests-for-production/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-responses-to-requests-for-production",
+      "source_task_json_sha256": "2d8474b007305a4091cd1d89895185604d34cc64e9618c9b687d843574752dd3",
+      "expected_deliverables": [
+        "rfp-responses.docx",
+        "discovery-issues-memo.docx"
+      ],
+      "rubric_criterion_count_at_pin": 45,
+      "upstream_work_type": "draft",
+      "enabled_by_default": true
+    },
+    {
+      "task_id": "litigation-dispute-resolution/draft-deposition-outline",
+      "tier": "extended",
+      "workflow": "deposition_preparation",
+      "evaluation_goal": "Prepare an issue-based questioning outline connected to the supplied exhibits.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-deposition-outline/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-deposition-outline",
+      "source_task_json_sha256": "06e89e9cb4158ee21d707d94f82dd46989ece0ca620365b700d2d50455b27d58",
+      "expected_deliverables": [
+        "whitford-deposition-outline.docx"
+      ],
+      "rubric_criterion_count_at_pin": 59,
+      "upstream_work_type": "draft",
+      "enabled_by_default": false
+    },
+    {
+      "task_id": "litigation-dispute-resolution/analyze-counterparty-requests-for-production-for-objectionable-and-overbroad-discovery-demands",
+      "tier": "extended",
+      "workflow": "request_review",
+      "evaluation_goal": "Flag problematic production requests and recommend supported responses.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/analyze-counterparty-requests-for-production-for-objectionable-and-overbroad-discovery-demands/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/analyze-counterparty-requests-for-production-for-objectionable-and-overbroad-discovery-demands",
+      "source_task_json_sha256": "39b16da628d6fb40c5ebba36a2cdf25e2cad3487805bde5d310208e6ddd50c32",
+      "expected_deliverables": [
+        "rfp-issue-memorandum.docx"
+      ],
+      "rubric_criterion_count_at_pin": 47,
+      "upstream_work_type": "analyze",
+      "enabled_by_default": false
+    },
+    {
+      "task_id": "litigation-dispute-resolution/review-privilege-log-clawback-review",
+      "tier": "extended",
+      "workflow": "privilege_review",
+      "evaluation_goal": "Review the privilege log and clawback issues.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/review-privilege-log-clawback-review/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/review-privilege-log-clawback-review",
+      "source_task_json_sha256": "57694f4956737ce4a12b44ea69e1ca858c75645a9e37edfda121f9991ae873b5",
+      "expected_deliverables": [
+        "deficiency-analysis-memo.docx",
+        "clawback-candidate-list.xlsx"
+      ],
+      "rubric_criterion_count_at_pin": 82,
+      "upstream_work_type": "review",
+      "enabled_by_default": false
+    },
+    {
+      "task_id": "litigation-dispute-resolution/review-litigation-invoice-against-outside-counsel-billing-guidelines",
+      "tier": "extended",
+      "workflow": "invoice_compliance",
+      "evaluation_goal": "Check invoice entries against supplied client billing rules.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/review-litigation-invoice-against-outside-counsel-billing-guidelines/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/review-litigation-invoice-against-outside-counsel-billing-guidelines",
+      "source_task_json_sha256": "e2cea36fb6888cb8395587484f2fd8ff09873f9fc931c28ed23bb81749daacc3",
+      "expected_deliverables": [
+        "invoice-compliance-deviation-report.docx"
+      ],
+      "rubric_criterion_count_at_pin": 49,
+      "upstream_work_type": "review",
+      "enabled_by_default": false
+    },
+    {
+      "task_id": "litigation-dispute-resolution/draft-motion-in-limine-to-exclude-expert-testimony-and-prejudicial-evidence",
+      "tier": "extended",
+      "workflow": "motion_drafting",
+      "evaluation_goal": "Draft a supported challenge to expert testimony or prejudicial evidence.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-motion-in-limine-to-exclude-expert-testimony-and-prejudicial-evidence/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/litigation-dispute-resolution/draft-motion-in-limine-to-exclude-expert-testimony-and-prejudicial-evidence",
+      "source_task_json_sha256": "44e2c9bcc6064ef7b91881f742dc85671680ce45c55c6893aefde42e278f9766",
+      "expected_deliverables": [
+        "motion-in-limine.docx"
+      ],
+      "rubric_criterion_count_at_pin": 49,
+      "upstream_work_type": "draft",
+      "enabled_by_default": false
+    },
+    {
+      "task_id": "insurance/draft-coverage-opinion-letter",
+      "tier": "coverage",
+      "workflow": "coverage_opinion",
+      "evaluation_goal": "Analyze the tendered claim against the supplied policy and evidence.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/insurance/draft-coverage-opinion-letter/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/insurance/draft-coverage-opinion-letter",
+      "source_task_json_sha256": "9b2c072e56d90c5baca9ee655d1dd412a9c39364576e03430523cb05fe20216f",
+      "expected_deliverables": [
+        "coverage-opinion-letter.docx"
+      ],
+      "rubric_criterion_count_at_pin": 64,
+      "upstream_work_type": "draft",
+      "enabled_by_default": false
+    },
+    {
+      "task_id": "insurance/draft-reservation-of-rights-letter",
+      "tier": "coverage",
+      "workflow": "reservation_of_rights",
+      "evaluation_goal": "Draft a reviewable reservation-of-rights letter from supplied matter facts.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/insurance/draft-reservation-of-rights-letter/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/insurance/draft-reservation-of-rights-letter",
+      "source_task_json_sha256": "7d78b729e6b6ce26d8c39490b36c21ce293445ab3cf1f7827026a4e00ed0aac5",
+      "expected_deliverables": [
+        "reservation-of-rights-letter.docx"
+      ],
+      "rubric_criterion_count_at_pin": 48,
+      "upstream_work_type": "draft",
+      "enabled_by_default": false
+    },
+    {
+      "task_id": "insurance/identify-issues-in-coverage-denial-letter",
+      "tier": "coverage",
+      "workflow": "coverage_review",
+      "evaluation_goal": "Evaluate a denial letter against the supplied policy and supporting records.",
+      "source_task_json_url": "https://raw.githubusercontent.com/harveyai/harvey-labs/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/insurance/identify-issues-in-coverage-denial-letter/task.json",
+      "source_folder_url": "https://github.com/harveyai/harvey-labs/tree/465d1fcf270daa01b0d1d63e30e3da9876d7a268/tasks/insurance/identify-issues-in-coverage-denial-letter",
+      "source_task_json_sha256": "2d64f65cc55fb2ff00bb9ec23265fdb8fe9f7aafa7f11296c13180117d86d64a",
+      "expected_deliverables": [
+        "coverage-analysis-memorandum.docx"
+      ],
+      "rubric_criterion_count_at_pin": 32,
+      "upstream_work_type": "analyze",
+      "enabled_by_default": false
+    }
+  ]
+}
